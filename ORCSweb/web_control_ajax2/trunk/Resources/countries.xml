@@ -1,0 +1,239 @@
+<countries>
+  <country code="AF" iso="4" country="Afghanistan"></country>
+  <country code="AL" iso="8" country="Albania"></country>
+  <country code="DZ" iso="12" country="Algeria"></country>
+  <country code="AS" iso="16" country="American Samoa"></country>
+  <country code="AD" iso="20" country="Andorra"></country>
+  <country code="AO" iso="24" country="Angola"></country>
+  <country code="AI" iso="660" country="Anguilla"></country>
+  <country code="AQ" iso="10" country="Antarctica"></country>
+  <country code="AG" iso="28" country="Antigua And Barbuda"></country>
+  <country code="AR" iso="32" country="Argentina"></country>
+  <country code="AM" iso="51" country="Armenia"></country>
+  <country code="AW" iso="533" country="Aruba"></country>
+  <country code="AU" iso="36" country="Australia"></country>
+  <country code="AT" iso="40" country="Austria"></country>
+  <country code="AZ" iso="31" country="Azerbaijan"></country>
+  <country code="BS" iso="44" country="Bahamas"></country>
+  <country code="BH" iso="48" country="Bahrain"></country>
+  <country code="BD" iso="50" country="Bangladesh"></country>
+  <country code="BB" iso="52" country="Barbados"></country>
+  <country code="BY" iso="112" country="Belarus"></country>
+  <country code="BE" iso="56" country="Belgium"></country>
+  <country code="BZ" iso="84" country="Belize"></country>
+  <country code="BJ" iso="204" country="Benin"></country>
+  <country code="BM" iso="60" country="Bermuda"></country>
+  <country code="BT" iso="64" country="Bhutan"></country>
+  <country code="BO" iso="68" country="Bolivia"></country>
+  <country code="BA" iso="70" country="Bosnia And Herzegovina"></country>
+  <country code="BW" iso="72" country="Botswana"></country>
+  <country code="BV" iso="74" country="Bouvet Island"></country>
+  <country code="BR" iso="76" country="Brazil"></country>
+  <country code="IO" iso="86" country="British Indian Ocean Territory"></country>
+  <country code="BN" iso="96" country="Brunei Darussalam"></country>
+  <country code="BG" iso="100" country="Bulgaria"></country>
+  <country code="BF" iso="854" country="Burkina Faso"></country>
+  <country code="BI" iso="108" country="Burundi"></country>
+  <country code="KH" iso="116" country="Cambodia"></country>
+  <country code="CM" iso="120" country="Cameroon"></country>
+  <country code="CA" iso="124" country="Canada"></country>
+  <country code="CV" iso="132" country="Cape Verde"></country>
+  <country code="KY" iso="136" country="Cayman Islands"></country>
+  <country code="CF" iso="140" country="Central African Republic"></country>
+  <country code="TD" iso="148" country="Chad"></country>
+  <country code="CL" iso="152" country="Chile"></country>
+  <country code="CN" iso="156" country="China"></country>
+  <country code="CX" iso="162" country="Christmas Island"></country>
+  <country code="CC" iso="166" country="Cocos(Keeling)Islands"></country>
+  <country code="CO" iso="170" country="Colombia"></country>
+  <country code="KM" iso="174" country="Comoros"></country>
+  <country code="CG" iso="178" country="Congo"></country>
+  <country code="CK" iso="184" country="Cook Islands"></country>
+  <country code="CR" iso="188" country="Costa Rica"></country>
+  <country code="CI" iso="384" country="Cote D'Ivoire"></country>
+  <country code="HR" iso="191" country="Croatia(Hrvatska)"></country>
+  <country code="CU" iso="192" country="Cuba"></country>
+  <country code="CY" iso="196" country="Cyprus"></country>
+  <country code="CZ" iso="203" country="Czech Republic"></country>
+  <country code="DK" iso="208" country="Denmark"></country>
+  <country code="DJ" iso="262" country="Djibouti"></country>
+  <country code="DM" iso="212" country="Dominica"></country>
+  <country code="DO" iso="214" country="Dominican Republic"></country>
+  <country code="EC" iso="218" country="Ecuador"></country>
+  <country code="EG" iso="818" country="Egypt"></country>
+  <country code="SV" iso="222" country="El Salvador"></country>
+  <country code="GQ" iso="226" country="Equatorial Guinea"></country>
+  <country code="ER" iso="232" country="Eritrea"></country>
+  <country code="EE" iso="233" country="Estonia"></country>
+  <country code="ET" iso="210" country="Ethiopia"></country>
+  <country code="FK" iso="238" country="Falkland Islands(Malvinas)"></country>
+  <country code="FO" iso="234" country="Faroe Islands"></country>
+  <country code="FJ" iso="242" country="Fiji"></country>
+  <country code="FI" iso="246" country="Finland"></country>
+  <country code="FR" iso="250" country="France"></country>
+  <country code="FX" iso="249" country="France, Metropolitan"></country>
+  <country code="GF" iso="254" country="French Guiana"></country>
+  <country code="PF" iso="258" country="French Polynesia"></country>
+  <country code="TF" iso="260" country="French Southern Territories"></country>
+  <country code="GA" iso="266" country="Gabon"></country>
+  <country code="GM" iso="270" country="Gambia"></country>
+  <country code="GE" iso="268" country="Georgia"></country>
+  <country code="DE" iso="276" country="Germany"></country>
+  <country code="GH" iso="288" country="Ghana"></country>
+  <country code="GI" iso="292" country="Gibraltar"></country>
+  <country code="GR" iso="300" country="Greece"></country>
+  <country code="GL" iso="304" country="Greenland"></country>
+  <country code="GD" iso="308" country="Grenada"></country>
+  <country code="GP" iso="312" country="Guadeloupe"></country>
+  <country code="GU" iso="316" country="Guam"></country>
+  <country code="GT" iso="320" country="Guatemala"></country>
+  <country code="GN" iso="324" country="Guinea"></country>
+  <country code="GW" iso="624" country="Guinea-Bissau"></country>
+  <country code="GY" iso="328" country="Guyana"></country>
+  <country code="HT" iso="332" country="Haiti"></country>
+  <country code="HM" iso="334" country="Heard/Mcdonald Islands"></country>
+  <country code="HN" iso="340" country="Honduras"></country>
+  <country code="HK" iso="344" country="Hong Kong"></country>
+  <country code="HU" iso="348" country="Hungary"></country>
+  <country code="IS" iso="352" country="Iceland"></country>
+  <country code="IN" iso="356" country="India"></country>
+  <country code="ID" iso="360" country="Indonesia"></country>
+  <country code="IR" iso="364" country="Iran, Islamic Republic"></country>
+  <country code="IQ" iso="368" country="Iraq"></country>
+  <country code="IE" iso="372" country="Ireland"></country>
+  <country code="IL" iso="376" country="Israel"></country>
+  <country code="IT" iso="380" country="Italy"></country>
+  <country code="JM" iso="388" country="Jamaica"></country>
+  <country code="JP" iso="392" country="Japan"></country>
+  <country code="JO" iso="400" country="Jordan"></country>
+  <country code="KZ" iso="398" country="Kazakhstan"></country>
+  <country code="KE" iso="404" country="Kenya"></country>
+  <country code="KI" iso="296" country="Kiribati"></country>
+  <country code="KP" iso="408" country="Korea, Democratic Republic"></country>
+  <country code="KR" iso="410" country="Korea, Republic"></country>
+  <country code="KW" iso="414" country="Kuwait"></country>
+  <country code="KG" iso="417" country="Kyrgyzstan"></country>
+  <country code="LA" iso="418" country="Lao Democratic Republic"></country>
+  <country code="LV" iso="428" country="Latvia"></country>
+  <country code="LB" iso="422" country="Lebanon"></country>
+  <country code="LS" iso="426" country="Lesotho"></country>
+  <country code="LR" iso="430" country="Liberia"></country>
+  <country code="LY" iso="434" country="Libyan Arab Jamahiriya"></country>
+  <country code="LI" iso="438" country="Liechtenstein"></country>
+  <country code="LT" iso="440" country="Lithuania"></country>
+  <country code="LU" iso="442" country="Luxembourg"></country>
+  <country code="MO" iso="446" country="Macau"></country>
+  <country code="MK" iso="807" country="Macedonia,Yugoslav Rep."></country>
+  <country code="MG" iso="450" country="Madagascar"></country>
+  <country code="MW" iso="454" country="Malawi"></country>
+  <country code="MY" iso="458" country="Malaysia"></country>
+  <country code="MV" iso="462" country="Maldives"></country>
+  <country code="ML" iso="466" country="Mali"></country>
+  <country code="MT" iso="470" country="Malta"></country>
+  <country code="MH" iso="584" country="Marshall Islands"></country>
+  <country code="MQ" iso="474" country="Martinique"></country>
+  <country code="MR" iso="478" country="Mauritania"></country>
+  <country code="MU" iso="480" country="Mauritius"></country>
+  <country code="YT" iso="175" country="Mayotte"></country>
+  <country code="MX" iso="484" country="Mexico"></country>
+  <country code="FM" iso="583" country="Micronesia, Federated States"></country>
+  <country code="MD" iso="498" country="Moldova, Republic"></country>
+  <country code="MC" iso="492" country="Monaco"></country>
+  <country code="MN" iso="496" country="Mongolia"></country>
+  <country code="MS" iso="500" country="Montserrat"></country>
+  <country code="MA" iso="504" country="Morocco"></country>
+  <country code="MZ" iso="508" country="Mozambique"></country>
+  <country code="MM" iso="104" country="Myanmar"></country>
+  <country code="NA" iso="516" country="Namibia"></country>
+  <country code="NR" iso="520" country="Nauru"></country>
+  <country code="NP" iso="524" country="Nepal"></country>
+  <country code="NL" iso="528" country="Netherlands"></country>
+  <country code="AN" iso="530" country="Netherlands Antilles"></country>
+  <country code="NC" iso="540" country="New Caledonia"></country>
+  <country code="NZ" iso="554" country="New Zealand"></country>
+  <country code="NI" iso="558" country="Nicaragua"></country>
+  <country code="NE" iso="562" country="Niger"></country>
+  <country code="NG" iso="566" country="Nigeria"></country>
+  <country code="NU" iso="570" country="Niue"></country>
+  <country code="NF" iso="574" country="Norfolk Island"></country>
+  <country code="MP" iso="580" country="Northern Mariana Islands"></country>
+  <country code="NO" iso="578" country="Norway"></country>
+  <country code="OM" iso="512" country="Oman"></country>
+  <country code="PK" iso="586" country="Pakistan"></country>
+  <country code="PW" iso="585" country="Palau"></country>
+  <country code="PA" iso="591" country="Panama"></country>
+  <country code="PG" iso="598" country="Papua New Guinea"></country>
+  <country code="PY" iso="600" country="Paraguay"></country>
+  <country code="PE" iso="604" country="Peru"></country>
+  <country code="PH" iso="608" country="Philippines"></country>
+  <country code="PN" iso="612" country="Pitcairn"></country>
+  <country code="PL" iso="616" country="Poland"></country>
+  <country code="PT" iso="620" country="Portugal"></country>
+  <country code="PR" iso="630" country="Puerto Rico"></country>
+  <country code="QA" iso="634" country="Qatar"></country>
+  <country code="RE" iso="638" country="Reunion"></country>
+  <country code="RO" iso="642" country="Romania"></country>
+  <country code="RU" iso="643" country="Russian Federation"></country>
+  <country code="RW" iso="646" country="Rwanda"></country>
+  <country code="SH" iso="654" country="Saint Helena"></country>
+  <country code="KN" iso="659" country="Saint Kitts And Nevis"></country>
+  <country code="LC" iso="662" country="Saint Lucia"></country>
+  <country code="PM" iso="666" country="Saint Pierre And Miquelon"></country>
+  <country code="VC" iso="670" country="Saint Vincent, Grenadines"></country>
+  <country code="WS" iso="882" country="Samoa"></country>
+  <country code="SM" iso="674" country="San Marino"></country>
+  <country code="ST" iso="678" country="Sao Tome And Principe"></country>
+  <country code="SA" iso="682" country="Saudi Arabia"></country>
+  <country code="SN" iso="686" country="Senegal"></country>
+  <country code="SC" iso="690" country="Seychelles"></country>
+  <country code="SL" iso="694" country="Sierra Leone"></country>
+  <country code="SG" iso="702" country="Singapore"></country>
+  <country code="SK" iso="703" country="Slovakia(Slovak Republic)"></country>
+  <country code="SI" iso="705" country="Slovenia"></country>
+  <country code="SB" iso="90" country="Solomon Islands"></country>
+  <country code="SO" iso="706" country="Somalia"></country>
+  <country code="ZA" iso="710" country="South Africa"></country>
+  <country code="ES" iso="724" country="Spain"></country>
+  <country code="LK" iso="144" country="Sri Lanka"></country>
+  <country code="SD" iso="736" country="Sudan"></country>
+  <country code="SR" iso="740" country="Suriname"></country>
+  <country code="SJ" iso="744" country="Svalbard,Jan Mayen Islands"></country>
+  <country code="SZ" iso="748" country="Swaziland"></country>
+  <country code="SE" iso="752" country="Sweden"></country>
+  <country code="CH" iso="756" country="Switzerland"></country>
+  <country code="SY" iso="760" country="Syrian Arab Republic"></country>
+  <country code="TW" iso="158" country="Taiwan, Province of China"></country>
+  <country code="TJ" iso="762" country="Tajikistan"></country>
+  <country code="TZ" iso="834" country="Tanzania, United Republic"></country>
+  <country code="TH" iso="764" country="Thailand"></country>
+  <country code="TG" iso="768" country="Togo"></country>
+  <country code="TK" iso="772" country="Tokelau"></country>
+  <country code="TO" iso="776" country="Tonga"></country>
+  <country code="TT" iso="780" country="Trinidad And Tobago"></country>
+  <country code="TN" iso="788" country="Tunisia"></country>
+  <country code="TR" iso="792" country="Turkey"></country>
+  <country code="TM" iso="795" country="Turkmenistan"></country>
+  <country code="TC" iso="796" country="Turks And Caicos Islands"></country>
+  <country code="TV" iso="798" country="Tuvalu"></country>
+  <country code="UG" iso="800" country="Uganda"></country>
+  <country code="UA" iso="804" country="Ukraine"></country>
+  <country code="AE" iso="784" country="United Arab Emirates"></country>
+  <country code="GB" iso="826" country="United Kingdom"></country>
+  <country code="US" iso="840" country="United States"></country>
+  <country code="UM" iso="581" country="US Minor Outlying Islands"></country>
+  <country code="UY" iso="858" country="Uruguay"></country>
+  <country code="UZ" iso="860" country="Uzbekistan"></country>
+  <country code="VU" iso="548" country="Vanuatu"></country>
+  <country code="VA" iso="336" country="Vatican City State"></country>
+  <country code="VE" iso="862" country="Venezuela"></country>
+  <country code="VN" iso="704" country="Viet Nam"></country>
+  <country code="VG" iso="92" country="Virgin Islands(British)"></country>
+  <country code="VI" iso="850" country="Virgin Islands(U.S.)"></country>
+  <country code="WF" iso="876" country="Wallis, Futuna Islands"></country>
+  <country code="EH" iso="732" country="Western Sahara"></country>
+  <country code="YE" iso="887" country="Yemen"></country>
+  <country code="YU" iso="891" country="Yugoslavia"></country>
+  <country code="ZR" iso="180" country="Zaire"></country>
+  <country code="ZM" iso="894" country="Zambia"></country>
+  <country code="ZW" iso="716" country="Zimbabwe"></country>
+</countries>
