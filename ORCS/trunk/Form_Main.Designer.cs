@@ -2389,6 +2389,7 @@ namespace Robot
             // 
             // button83
             // 
+            this.button83.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.button83, "button83");
             this.button83.Name = "button83";
             this.button83.UseVisualStyleBackColor = true;
@@ -2396,6 +2397,7 @@ namespace Robot
             // 
             // button71
             // 
+            this.button71.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.button71, "button71");
             this.button71.Name = "button71";
             this.button71.UseVisualStyleBackColor = true;
@@ -2403,6 +2405,7 @@ namespace Robot
             // 
             // m_pToggleSend2
             // 
+            this.m_pToggleSend2.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.m_pToggleSend2, "m_pToggleSend2");
             this.m_pToggleSend2.Name = "m_pToggleSend2";
             this.m_pToggleSend2.UseVisualStyleBackColor = true;
@@ -2690,6 +2693,7 @@ namespace Robot
             // 
             // m_pToggleRun2
             // 
+            this.m_pToggleRun2.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.m_pToggleRun2, "m_pToggleRun2");
             this.m_pToggleRun2.Name = "m_pToggleRun2";
             this.m_pToggleRun2.UseVisualStyleBackColor = true;
