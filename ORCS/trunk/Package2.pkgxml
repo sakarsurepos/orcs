@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>Robot</name>
+  <shortname>robot</shortname>
+  <summary>A Mono Application</summary>
+  <version>1.0</version>
+  <url />
+  <license>Proprietary</license>
+  <type>Winexe</type>
+  <description>A Mono Application</description>
+  <createdesktopfile>true</createdesktopfile>
+  <icon />
+  <categories />
+  <group>Productivity/Other</group>
+  <needsprepopulate>false</needsprepopulate>
+  <dependencies />
+  <provides />
+  <filetree name="Application Root" writable="false">
+    <directories />
+    <files />
+  </filetree>
+  <autogeneraterelease>true</autogeneraterelease>
+  <release />
+  <preinstallscript />
+  <postinstallscript />
+  <preuninstallscript />
+  <postuninstallscript />
+  <useiomap>true</useiomap>
+  <minimummono>2.4.2</minimummono>
+  <leaveonserver>false</leaveonserver>
+  <serverlocation />
+</package>
