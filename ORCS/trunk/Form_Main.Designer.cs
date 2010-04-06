@@ -238,6 +238,9 @@ namespace Robot
             this.m_pRecordFileBrowse = new System.Windows.Forms.Button();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
             this.groupBox34 = new System.Windows.Forms.GroupBox();
+            this.button87 = new System.Windows.Forms.Button();
+            this.button85 = new System.Windows.Forms.Button();
+            this.label160 = new System.Windows.Forms.Label();
             this.label147 = new System.Windows.Forms.Label();
             this.label146 = new System.Windows.Forms.Label();
             this.button82 = new System.Windows.Forms.Button();
@@ -720,10 +723,7 @@ namespace Robot
             this.label43 = new System.Windows.Forms.Label();
             this.label122 = new System.Windows.Forms.Label();
             this.pictureBox43 = new System.Windows.Forms.PictureBox();
-            this.label160 = new System.Windows.Forms.Label();
-            this.button85 = new System.Windows.Forms.Button();
             this.cameraWindow = new Robot.CameraWindow();
-            this.button87 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
@@ -2604,6 +2604,28 @@ namespace Robot
             resources.ApplyResources(this.groupBox34, "groupBox34");
             this.groupBox34.Name = "groupBox34";
             this.groupBox34.TabStop = false;
+            // 
+            // button87
+            // 
+            this.button87.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.button87, "button87");
+            this.button87.Name = "button87";
+            this.button87.UseVisualStyleBackColor = true;
+            this.button87.Click += new System.EventHandler(this.button87_Click);
+            // 
+            // button85
+            // 
+            this.button85.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.button85, "button85");
+            this.button85.Name = "button85";
+            this.button85.UseVisualStyleBackColor = true;
+            this.button85.Click += new System.EventHandler(this.button85_Click_1);
+            // 
+            // label160
+            // 
+            resources.ApplyResources(this.label160, "label160");
+            this.label160.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label160.Name = "label160";
             // 
             // label147
             // 
@@ -6345,19 +6367,6 @@ namespace Robot
             this.pictureBox43.Name = "pictureBox43";
             this.pictureBox43.TabStop = false;
             // 
-            // label160
-            // 
-            resources.ApplyResources(this.label160, "label160");
-            this.label160.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label160.Name = "label160";
-            // 
-            // button85
-            // 
-            this.button85.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.button85, "button85");
-            this.button85.Name = "button85";
-            this.button85.UseVisualStyleBackColor = true;
-            // 
             // cameraWindow
             // 
             this.cameraWindow.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -6367,13 +6376,6 @@ namespace Robot
             resources.ApplyResources(this.cameraWindow, "cameraWindow");
             this.cameraWindow.Name = "cameraWindow";
             this.cameraWindow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cameraWindow_MouseMove);
-            // 
-            // button87
-            // 
-            this.button87.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.button87, "button87");
-            this.button87.Name = "button87";
-            this.button87.UseVisualStyleBackColor = true;
             // 
             // Robot1
             // 

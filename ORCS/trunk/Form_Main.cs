@@ -4182,6 +4182,20 @@ namespace Robot
             m_pCodec.SelectedIndex = 0;
         }
 
+        private void button85_Click_1(object sender, EventArgs e) //Activate all RTP Sound stream
+        {
+            button85_Click(sender, e);       //receive
+            button71_Click_1(sender, e);     //send
+            m_pToggleSend2_Click(sender, e); //ok
+        }
+
+        private void button87_Click(object sender, EventArgs e)
+        {
+            m_pToggleSend2_Click(sender, e); //ok
+            button83_Click(sender, e);       //exit
+            button85_Click(sender, e);       //receive
+        }
+
 
 
         //Check Status
