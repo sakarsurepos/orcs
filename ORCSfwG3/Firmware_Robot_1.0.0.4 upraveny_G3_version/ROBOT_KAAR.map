@@ -1,0 +1,35 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+tx_buffer0                                                        0500h      128
+rx_buffer1                                                        0580h      128
+rx_buffer0                                                        0600h       20
+GPS_data                                                          0614h      128
+data_bytes                                                        0694h       20
+data_0                                                            06A8h       20
+adc_data                                                          06BCh        1
+rx_rd_index1                                                      06BDh        2
+rx_counter1                                                       06BFh        2
+rx_wr_index0                                                      06C1h        2
+rx_rd_index0                                                      06C3h        2
+rx_counter0                                                       06C5h        2
+counter                                                           06C7h        2
+tx_rd_index0                                                      06C9h        2
+tx_counter0                                                       06CBh        2
+tx_wr_index0                                                      06CDh        2
+p                                                                 06CFh        2
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+rx_buffer_overflow1                                               R2.0      1bit
+rx_buffer_overflow0                                               R2.1      1bit
+GPS_index                                                         R4,R5        2
+Timer_0                                                           R6,R7        2
+status                                                            R8,R9        2
+c_counter                                                         R10,R11      2
+rx_wr_index1                                                      R12,R13      2
