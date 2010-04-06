@@ -1,0 +1,54 @@
+<html>
+
+<SCRIPT LANGUAGE="JavaScript">
+function Init() {
+    cvcs.RemoteHost = "147.232.20.242"
+    cvcs.RemoteWeb = 80
+    cvcs.RemotePort = 8481
+    cvcs.Timeout = 5
+    cvcs.AuthType = 1
+    cvcs.PreviewFrameRate = 1
+    cvcs.PreviewWidth = 400
+    cvcs.PreviewHeight = 300
+    cvcs.DeviceSerialNo = ""
+    window.setInterval("ShowFrameRate()", 1000)
+}
+
+function ShowFrameRate() {
+    if (0)
+    {
+       var fFrameRate = cvcs.FrameRate
+       window.status = "Frame:" + fFrameRate.toString() + " fps"
+    }
+    cvcs.Play()
+    //CurrentTime.innerHTML = cvcs.TimeString
+    GetTrigger()
+}
+
+function GetTrigger() {
+    if (cvcs.ImageUpload == 1) {
+       ImageUpload.innerHTML = "[ON]"
+    }
+    else {
+       //ImageUpload.innerHTML = "[OFF]"
+    }
+
+    if (cvcs.EmailImage == 1) {
+       EmailImage.innerHTML = "[ON]"
+    }
+    else {
+      // EmailImage.innerHTML = "[OFF]"
+    }
+}
+</SCRIPT>
+
+<body onload="Init()" onunload="cvcs.Stop()">
+    
+<OBJECT ID="cvcs" WIDTH=400 HEIGHT=300
+CLASSID="CLSID:CCA0B877-CB5E-4adc-AD30-457C379512DD"
+CODEBASE="xplugLite.cab#version=2,1,16,0">
+</OBJECT>
+      
+</body>
+</html>
+
