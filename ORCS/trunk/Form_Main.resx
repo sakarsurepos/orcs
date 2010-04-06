@@ -23617,9 +23617,6 @@ Mouse y:
         AACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAMADAADgBwAA8A8AAA==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1024, 768</value>
   </data>
