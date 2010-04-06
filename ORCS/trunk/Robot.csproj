@@ -1,0 +1,453 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{522786CB-EDE7-4585-BECF-00F646BF7557}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Robot</RootNamespace>
+    <AssemblyName>Robot</AssemblyName>
+    <Win32Resource>
+    </Win32Resource>
+    <ApplicationIcon>Robot.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <ManifestCertificateThumbprint>ADB6D67989525C8022EE8D52FEB4D1A9C890FF19</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Robot_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <SignManifests>true</SignManifests>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <PublishUrl>D:\_GPS_ROBOT\Publish_folder_robotG4\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>1</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>true</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://orcs.sebsoft.com/firmware/orcs_desktop/</UpdateUrl>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>ORCS G4 Security Guard Robot</ProductName>
+    <PublisherName>Elite Robot</PublisherName>
+    <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
+    <WebPage>www.orcs.sebsoft.com</WebPage>
+    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Imaging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=38eb47741dd0492e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=1.2.0.0, Culture=neutral, PublicKeyToken=e12ceb15b47eb5cc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="dshow, Version=1.0.3227.14695, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\dshow.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DxVBLibA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LumiSoft.Net, Version=2.0.3396.16260, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Microsoft.DirectX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="MTV3D65, Version=6.5.2823.21213, Culture=neutral" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TerminalControl, Version=1.0.3439.32834, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\TerminalControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tiger.Video.VFW, Version=1.0.3227.14696, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Tiger.Video.VFW.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="battery.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="CameraWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CaptureDeviceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Communication.cs" />
+    <Compile Include="Devices.cs" />
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_main.sk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Form_main.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GPS.cs" />
+    <Compile Include="wfrm_Receive2.cs">
+    </Compile>
+    <Compile Include="IMotionDetector.cs" />
+    <Compile Include="JoystickDevice.cs" />
+    <Compile Include="kinematics.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Mjpegsmallcam.cs">
+    </Compile>
+    <Compile Include="MjpegStream.cs" />
+    <Compile Include="MotionDetector1.cs" />
+    <Compile Include="MotionDetector2.cs" />
+    <Compile Include="MotionDetector3.cs" />
+    <Compile Include="MotionDetector3Optimized.cs" />
+    <Compile Include="MotionDetector4.cs" />
+    <Compile Include="Movement.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CameraWindow.resx">
+      <DependentUpon>CameraWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaptureDeviceForm.resx">
+      <DependentUpon>CaptureDeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Main.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_main.sk.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form_main.sk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="VideoSource\ByteArrayUtils.cs" />
+    <Compile Include="VideoSource\CameraEvents.cs" />
+    <Compile Include="VideoSource\CaptureDevice.cs" />
+    <Compile Include="VideoSource\IVideoSource.cs" />
+    <Compile Include="VideoSource\JPEGStream.cs" />
+    <Compile Include="VideoSource\MJPEGStream.cs" />
+    <Compile Include="VideoSource\VideoFileSource.cs" />
+    <Compile Include="VideoSource\VideoStream.cs" />
+    <Compile Include="wfrm_Receive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfrm_RTP_Debug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfrm_SendAudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfrm_SendMic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfrm_SendMic2.cs">
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="mapa_kosice_okolie.bmp" />
+    <Content Include="CAMERA_activeX.htm" />
+    <Content Include="CAMERA_activeX2.htm" />
+    <None Include="mapa_kosice.bmp" />
+    <None Include="mapa_areal_tuke.bmp" />
+    <None Include="mapa_zlin.bmp" />
+    <None Include="letecka_2.bmp" />
+    <None Include="cpustat.gif" />
+    <None Include="connect.gif" />
+    <Content Include="Models\chassis.TVM" />
+    <Content Include="Models\chassis_old.TVM" />
+    <Content Include="Models\pk.TVM" />
+    <Content Include="Models\pk8.TVM" />
+    <Content Include="Models\PK9.3DS" />
+    <Content Include="Models\pk9.tvm" />
+    <Content Include="Models\pk92.3DS" />
+    <Content Include="Models\pk92.max" />
+    <Content Include="Models\pk92.X" />
+    <Content Include="Models\ship.tvm" />
+    <Content Include="Models\wheel_l.TVM" />
+    <Content Include="Models\wheel_r.TVM" />
+    <None Include="Package1.pkgxml" />
+    <None Include="Package2.pkgxml" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Robot_TemporaryKey.pfx" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\1.gif" />
+    <Content Include="Heightmaps\heightmap.bmp" />
+    <Content Include="Maps\letecka_2.bmp" />
+    <Content Include="Maps\letecka_2_source.bmp" />
+    <Content Include="Maps\mapa_areal_tuke.bmp" />
+    <Content Include="Maps\mapa_areal_tuke_old.bmp" />
+    <Content Include="Maps\mapa_areal_tuke_old2.bmp" />
+    <Content Include="Maps\mapa_areal_tuke_old3.bmp" />
+    <Content Include="Maps\mapa_kosice.bmp" />
+    <Content Include="Maps\mapa_kosice_okolie.bmp" />
+    <Content Include="Maps\mapa_slovensko.bmp" />
+    <Content Include="Maps\mapa_zlin.bmp" />
+    <Content Include="Resources\1downarrow1.png" />
+    <None Include="Resources\1gps3.png" />
+    <Content Include="Resources\1leftarrow1.png" />
+    <Content Include="Resources\1rightarrow1.png" />
+    <Content Include="Resources\1uparrow1.png" />
+    <EmbeddedResource Include="Resources\2.gif" />
+    <Content Include="Resources\2dowarrow1.png" />
+    <Content Include="Resources\2downarrow.png" />
+    <Content Include="Resources\2leftarrow1.png" />
+    <Content Include="Resources\2rightarrow1.png" />
+    <Content Include="Resources\2uparrow.png" />
+    <Content Include="Resources\2uparrow1.png" />
+    <EmbeddedResource Include="Resources\3.gif" />
+    <EmbeddedResource Include="Resources\4.gif" />
+    <EmbeddedResource Include="Resources\5.gif" />
+    <EmbeddedResource Include="Resources\6.gif" />
+    <EmbeddedResource Include="Resources\7.gif" />
+    <EmbeddedResource Include="Resources\8.gif" />
+    <EmbeddedResource Include="Resources\9.gif" />
+    <Content Include="Resources\AForge.dll" />
+    <Content Include="Resources\AForge.Imaging.dll" />
+    <Content Include="Resources\AForge.Math.dll" />
+    <Content Include="Resources\apply.png" />
+    <None Include="Resources\Battery.jpg" />
+    <None Include="Resources\Battery2.png" />
+    <None Include="Resources\blank.png" />
+    <None Include="Resources\Batterysmall.png" />
+    <None Include="Resources\Batterysmall2.png" />
+    <None Include="Resources\back.png" />
+    <Content Include="Resources\CAMERA_activeX.htm" />
+    <Content Include="Resources\CAMERA_activeX2.htm" />
+    <None Include="Resources\chip5.png" />
+    <Content Include="Resources\compass.png" />
+    <Content Include="Resources\compass1.png" />
+    <Content Include="Resources\compass2.png" />
+    <Content Include="Resources\Dossier Fichier.png" />
+    <Content Include="Resources\Dossier Fichier1.png" />
+    <Content Include="Resources\dshow.dll" />
+    <Content Include="Resources\energy.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\folder1.png" />
+    <Content Include="Resources\folder2.png" />
+    <Content Include="Resources\folder_slin_open.png" />
+    <Content Include="Resources\Globe1.png" />
+    <Content Include="Resources\GPS.jpg" />
+    <Content Include="Resources\Image1.bmp" />
+    <Content Include="Resources\image1.jpg" />
+    <Content Include="Resources\imager.jpg" />
+    <Content Include="Resources\input_devices_settings.png" />
+    <Content Include="Resources\kcmpci.png" />
+    <Content Include="Resources\linux.jpg" />
+    <None Include="Resources\linux2.png" />
+    <None Include="Resources\mic4.png" />
+    <None Include="Resources\math7.png" />
+    <None Include="Resources\logo_TU.jpg" />
+    <None Include="Resources\logo_Kaar.jpg" />
+    <None Include="Resources\logo_sjf.jpg" />
+    <Content Include="Resources\Microsoft.DirectX.DirectInput.dll" />
+    <Content Include="Resources\Microsoft.DirectX.dll" />
+    <None Include="Resources\mw_joomla_logo.png" />
+    <Content Include="Resources\OFF.png" />
+    <None Include="Resources\Openwrt_logo_small.jpg" />
+    <None Include="Resources\ON.gif" />
+    <None Include="Resources\ON2.gif" />
+    <None Include="Resources\ON3.gif" />
+    <None Include="Resources\ON4.gif" />
+    <None Include="Resources\ON5.gif" />
+    <None Include="Resources\ON9.gif" />
+    <None Include="Resources\ON0.gif" />
+    <Content Include="Resources\reload.png" />
+    <None Include="Resources\robot_logo.jpg" />
+    <None Include="Resources\sebsoft_logo.jpg" />
+    <None Include="Resources\robot_logo1.jpg" />
+    <Content Include="Resources\Service Manager.png" />
+    <Content Include="Resources\Services.png" />
+    <Content Include="Resources\stop1.png" />
+    <Content Include="Resources\Tiger.Video.VFW.dll" />
+    <None Include="Resources\tu3.png" />
+    <Content Include="Resources\usb.png" />
+    <Content Include="Resources\webcam.png" />
+    <None Include="Resources\wifi2.gif" />
+    <Content Include="Robot.ico" />
+    <Content Include="sk\Robot.resources.dll" />
+    <Content Include="Textures\ChassisSTi.bmp" />
+    <Content Include="Textures\grass.jpg" />
+    <Content Include="Textures\grass3.jpg" />
+    <Content Include="Textures\letecka_2.bmp" />
+    <Content Include="Textures\pk9tex.bmp" />
+    <Content Include="Textures\skyback.jpg" />
+    <Content Include="Textures\skydown.jpg" />
+    <Content Include="Textures\skyfront.jpg" />
+    <Content Include="Textures\skyleft.jpg" />
+    <Content Include="Textures\skyright.jpg" />
+    <Content Include="Textures\skyup.jpg" />
+    <Content Include="Textures\Undercarriage.bmp" />
+    <Content Include="Textures\Wheel.bmp" />
+    <Content Include="Textures\Windows.bmp" />
+    <None Include="wifi2r.gif" />
+    <None Include="wifi2y.gif" />
+    <None Include="tux.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Particles\" />
+    <Folder Include="Shaders\" />
+    <Folder Include="Sounds\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
