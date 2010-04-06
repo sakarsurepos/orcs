@@ -2294,7 +2294,6 @@ namespace Robot
             resources.ApplyResources(this.label73, "label73");
             this.label73.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label73.Name = "label73";
-            this.label73.Click += new System.EventHandler(this.label73_Click);
             // 
             // labelclicky
             // 
@@ -2307,7 +2306,6 @@ namespace Robot
             resources.ApplyResources(this.label74, "label74");
             this.label74.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label74.Name = "label74";
-            this.label74.Click += new System.EventHandler(this.label74_Click);
             // 
             // labelclickx
             // 
@@ -2320,21 +2318,18 @@ namespace Robot
             resources.ApplyResources(this.label75, "label75");
             this.label75.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label75.Name = "label75";
-            this.label75.Click += new System.EventHandler(this.label75_Click);
             // 
             // label76
             // 
             resources.ApplyResources(this.label76, "label76");
             this.label76.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label76.Name = "label76";
-            this.label76.Click += new System.EventHandler(this.label76_Click);
             // 
             // label77
             // 
             resources.ApplyResources(this.label77, "label77");
             this.label77.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label77.Name = "label77";
-            this.label77.Click += new System.EventHandler(this.label77_Click);
             // 
             // groupCameraView
             // 
@@ -3269,7 +3264,6 @@ namespace Robot
             // 
             resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button53
             // 
@@ -3358,7 +3352,6 @@ namespace Robot
             this.webBrowser3.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser3.Name = "webBrowser3";
             this.webBrowser3.ScrollBarsEnabled = false;
-            this.webBrowser3.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser3_DocumentCompleted);
             // 
             // pictureBox37
             // 
@@ -5003,7 +4996,6 @@ namespace Robot
             this.label26.BackColor = System.Drawing.SystemColors.Control;
             this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label26.Name = "label26";
-            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // labelConnectingStatus
             // 

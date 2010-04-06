@@ -3814,46 +3814,6 @@ namespace Robot
             }
         }
 
-        private void label26_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label73_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label74_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label75_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label76_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label77_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void webBrowser3_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-
-        }
-
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             HelpForm Helpf = new HelpForm();
@@ -3976,11 +3936,6 @@ namespace Robot
         private void button1_Click_1(object sender, EventArgs e)
         {
             mjpegsmall.smallcamClose();
-        }
-
-        private void connectAllDevicesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void connectAllDevicesToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -4206,7 +4161,7 @@ namespace Robot
                 m_pRtpSession.CreateSession(new RTP_Address(IPAddress.Parse(m_pLocalIP.Text), (int)m_pLocalPort.Value, (int)m_pLocalPort.Value + 1), new RTP_Clock(0, 8000));
                 m_pRtpSession.Sessions[0].AddTarget(new RTP_Address(IPAddress.Parse(m_pRemoteIP.Text), (int)m_pRemotePort.Value, (int)m_pRemotePort.Value + 1));
                 m_pRtpSession.Sessions[0].NewSendStream += new EventHandler<RTP_SendStreamEventArgs>(m_pRtpSession_NewSendStream);
-                m_pRtpSession.Sessions[0].NewReceiveStream += new EventHandler<RTP_ReceiveStreamEventArgs>(m_pRtpSession_NewReceiveStream);
+                m_pRtpSession.Sessions[0].NewReceiveStream += new EventHandler<RTP_ReceiveStreamEventArgs>(m_pRtpSession_NewReceiveStream2); //change
                 m_pRtpSession.Sessions[0].Payload = 8;
                 m_pRtpSession.Sessions[0].Start();
 
