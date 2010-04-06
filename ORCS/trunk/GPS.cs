@@ -29,11 +29,11 @@ namespace Robot
             string Status = new string(GPS_Data, 14, 1);
             if (Status == "A")
             {
-                GPS_PositionStatus = "Valid position";
+                GPS_PositionStatus = "Fix";
             }
             else if (Status == "V")
             {
-                GPS_PositionStatus = "Not valid position";
+                GPS_PositionStatus = "Not";
             }
             return GPS_PositionStatus;
         }
