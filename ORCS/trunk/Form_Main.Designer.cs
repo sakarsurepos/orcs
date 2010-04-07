@@ -207,6 +207,7 @@ namespace Robot
             this.label77 = new System.Windows.Forms.Label();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.groupBox27 = new System.Windows.Forms.GroupBox();
             this.button83 = new System.Windows.Forms.Button();
@@ -314,6 +315,7 @@ namespace Robot
             this.ViewSatellites = new System.Windows.Forms.PictureBox();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.button90 = new System.Windows.Forms.Button();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.groupBox51 = new System.Windows.Forms.GroupBox();
             this.radioButton3a = new System.Windows.Forms.RadioButton();
@@ -351,6 +353,7 @@ namespace Robot
             this.txtByte02 = new System.Windows.Forms.TextBox();
             this.txtByte01 = new System.Windows.Forms.TextBox();
             this.pictureBox34 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button88 = new System.Windows.Forms.Button();
             this.button89 = new System.Windows.Forms.Button();
             this.btnMode = new System.Windows.Forms.Button();
@@ -595,8 +598,9 @@ namespace Robot
             this.ItemsMenu = new System.Windows.Forms.MenuStrip();
             this.plugIn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripconnect = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectAllDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripdisconnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectAllDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disconnectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settings = new System.Windows.Forms.ToolStripMenuItem();
             this.CommunicationType = new System.Windows.Forms.ToolStripMenuItem();
             this.TCPClient = new System.Windows.Forms.ToolStripMenuItem();
@@ -778,10 +782,7 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
-            this.button90 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cameraWindow = new Robot.CameraWindow();
-            this.disconnectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button91 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
@@ -2408,6 +2409,16 @@ namespace Robot
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
             // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cameraWindow.Camera = null;
+            this.cameraWindow.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.cameraWindow.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
+            this.cameraWindow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cameraWindow_MouseMove);
+            // 
             // tabPage17
             // 
             this.tabPage17.BackColor = System.Drawing.Color.Lavender;
@@ -3002,6 +3013,7 @@ namespace Robot
             // 
             // groupBox25
             // 
+            this.groupBox25.Controls.Add(this.button91);
             this.groupBox25.Controls.Add(this.label137);
             this.groupBox25.Controls.Add(this.textBox32);
             this.groupBox25.Controls.Add(this.textInfraBack);
@@ -3240,6 +3252,14 @@ namespace Robot
             resources.ApplyResources(this.groupBox31, "groupBox31");
             this.groupBox31.Name = "groupBox31";
             this.groupBox31.TabStop = false;
+            // 
+            // button90
+            // 
+            this.button90.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.button90, "button90");
+            this.button90.Name = "button90";
+            this.button90.UseVisualStyleBackColor = true;
+            this.button90.Click += new System.EventHandler(this.button90_Click);
             // 
             // txtOutput
             // 
@@ -3488,6 +3508,11 @@ namespace Robot
             resources.ApplyResources(this.pictureBox34, "pictureBox34");
             this.pictureBox34.Name = "pictureBox34";
             this.pictureBox34.TabStop = false;
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
             // 
             // button88
             // 
@@ -5467,6 +5492,13 @@ namespace Robot
             this.toolStripconnect.Name = "toolStripconnect";
             this.toolStripconnect.Click += new System.EventHandler(this.toolStripconnect_Click);
             // 
+            // toolStripdisconnect
+            // 
+            resources.ApplyResources(this.toolStripdisconnect, "toolStripdisconnect");
+            this.toolStripdisconnect.Image = global::Robot.Properties.Resources.stop1;
+            this.toolStripdisconnect.Name = "toolStripdisconnect";
+            this.toolStripdisconnect.Click += new System.EventHandler(this.toolStripdisconnect_Click);
+            // 
             // connectAllDevicesToolStripMenuItem
             // 
             this.connectAllDevicesToolStripMenuItem.Image = global::Robot.Properties.Resources.ON0;
@@ -5474,12 +5506,11 @@ namespace Robot
             resources.ApplyResources(this.connectAllDevicesToolStripMenuItem, "connectAllDevicesToolStripMenuItem");
             this.connectAllDevicesToolStripMenuItem.Click += new System.EventHandler(this.connectAllDevicesToolStripMenuItem_Click_1);
             // 
-            // toolStripdisconnect
+            // disconnectAllToolStripMenuItem
             // 
-            resources.ApplyResources(this.toolStripdisconnect, "toolStripdisconnect");
-            this.toolStripdisconnect.Image = global::Robot.Properties.Resources.stop1;
-            this.toolStripdisconnect.Name = "toolStripdisconnect";
-            this.toolStripdisconnect.Click += new System.EventHandler(this.toolStripdisconnect_Click);
+            this.disconnectAllToolStripMenuItem.Image = global::Robot.Properties.Resources.OFF;
+            this.disconnectAllToolStripMenuItem.Name = "disconnectAllToolStripMenuItem";
+            resources.ApplyResources(this.disconnectAllToolStripMenuItem, "disconnectAllToolStripMenuItem");
             // 
             // settings
             // 
@@ -6799,34 +6830,11 @@ namespace Robot
             this.timerMain.Interval = 40;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
             // 
-            // button90
+            // button91
             // 
-            this.button90.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.button90, "button90");
-            this.button90.Name = "button90";
-            this.button90.UseVisualStyleBackColor = true;
-            this.button90.Click += new System.EventHandler(this.button90_Click);
-            // 
-            // panel1
-            // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.cameraWindow.Camera = null;
-            this.cameraWindow.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.cameraWindow.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
-            this.cameraWindow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cameraWindow_MouseMove);
-            // 
-            // disconnectAllToolStripMenuItem
-            // 
-            this.disconnectAllToolStripMenuItem.Image = global::Robot.Properties.Resources.OFF;
-            this.disconnectAllToolStripMenuItem.Name = "disconnectAllToolStripMenuItem";
-            resources.ApplyResources(this.disconnectAllToolStripMenuItem, "disconnectAllToolStripMenuItem");
+            resources.ApplyResources(this.button91, "button91");
+            this.button91.Name = "button91";
+            this.button91.UseVisualStyleBackColor = true;
             // 
             // Robot1
             // 
@@ -7851,6 +7859,7 @@ namespace Robot
         private System.Windows.Forms.Button button90;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem disconnectAllToolStripMenuItem;
+        private System.Windows.Forms.Button button91;
 
 
     }
