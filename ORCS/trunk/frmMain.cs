@@ -121,7 +121,7 @@ namespace Robot
                 t[i] = new Thread(new ThreadStart(mjpg[i].FetchStream));
                 t[i].Name = Convert.ToString(i);
                 t[i].Start();
-                Batt_Etime.Text = Robot1.batt.aktualne_nap.ToString(); 
+                Batt_Etime.Text = Robot1.batt.aktualne_nap.ToString("F1"); 
             }
 		}
 
