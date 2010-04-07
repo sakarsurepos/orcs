@@ -7185,6 +7185,30 @@ Mouse y:
   <data name="&gt;&gt;groupBox26.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="button91.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 136</value>
+  </data>
+  <data name="button91.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button91.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="button91.Text" xml:space="preserve">
+    <value>button91</value>
+  </data>
+  <data name="&gt;&gt;button91.Name" xml:space="preserve">
+    <value>button91</value>
+  </data>
+  <data name="&gt;&gt;button91.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button91.Parent" xml:space="preserve">
+    <value>groupBox25</value>
+  </data>
+  <data name="&gt;&gt;button91.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label137.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7213,7 +7237,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label137.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="textBox32.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 87</value>
@@ -7222,7 +7246,7 @@ Mouse y:
     <value>True</value>
   </data>
   <data name="textBox32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 67</value>
+    <value>180, 40</value>
   </data>
   <data name="textBox32.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -7237,7 +7261,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textBox32.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="textInfraBack.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 187</value>
@@ -7258,7 +7282,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textInfraBack.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label131.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7288,7 +7312,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label131.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label125.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7318,7 +7342,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label125.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="textInfraFront.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 163</value>
@@ -7339,7 +7363,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textInfraFront.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label130.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7369,7 +7393,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label130.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label126.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7399,7 +7423,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label126.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="textBox29.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 46</value>
@@ -7420,7 +7444,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textBox29.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="label129.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7450,7 +7474,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label129.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label128.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7480,7 +7504,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label128.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="textSonarValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 22</value>
@@ -7501,7 +7525,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textSonarValue.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label127.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7531,7 +7555,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label127.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="pictureBox30.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7555,7 +7579,7 @@ Mouse y:
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;pictureBox30.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="groupBox25.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 258</value>
@@ -15823,7 +15847,7 @@ Mouse y:
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="toolStripconnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 34</value>
+    <value>190, 22</value>
   </data>
   <data name="toolStripconnect.Text" xml:space="preserve">
     <value>Connect Control System</value>
@@ -15835,19 +15859,19 @@ Mouse y:
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="toolStripdisconnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 34</value>
+    <value>190, 22</value>
   </data>
   <data name="toolStripdisconnect.Text" xml:space="preserve">
     <value>Disconnect</value>
   </data>
   <data name="connectAllDevicesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 34</value>
+    <value>190, 22</value>
   </data>
   <data name="connectAllDevicesToolStripMenuItem.Text" xml:space="preserve">
     <value>Connect All Devices</value>
   </data>
   <data name="disconnectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 34</value>
+    <value>190, 22</value>
   </data>
   <data name="disconnectAllToolStripMenuItem.Text" xml:space="preserve">
     <value>Disconnect All</value>
@@ -25111,9 +25135,6 @@ Mouse y:
         AACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAMADAADgBwAA8A8AAA==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1024, 768</value>
   </data>
@@ -25138,16 +25159,22 @@ Mouse y:
   <data name="&gt;&gt;toolStripconnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripdisconnect.Name" xml:space="preserve">
+    <value>toolStripdisconnect</value>
+  </data>
+  <data name="&gt;&gt;toolStripdisconnect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;connectAllDevicesToolStripMenuItem.Name" xml:space="preserve">
     <value>connectAllDevicesToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;connectAllDevicesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripdisconnect.Name" xml:space="preserve">
-    <value>toolStripdisconnect</value>
+  <data name="&gt;&gt;disconnectAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>disconnectAllToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;toolStripdisconnect.Type" xml:space="preserve">
+  <data name="&gt;&gt;disconnectAllToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;settings.Name" xml:space="preserve">
@@ -25347,12 +25374,6 @@ Mouse y:
   </data>
   <data name="&gt;&gt;timerMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;disconnectAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>disconnectAllToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;disconnectAllToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Robot1</value>
