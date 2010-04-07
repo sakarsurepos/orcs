@@ -106,14 +106,8 @@
     </Reference>
     <Reference Include="Interop.DxVBLibA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="LumiSoft.Net, Version=2.0.3396.16260, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Resources\Microsoft.DirectX.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Resources\Microsoft.DirectX.DirectInput.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Microsoft.JScript" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -175,6 +169,10 @@
       <DependentUpon>Form_main.sk.resx</DependentUpon>
     </Compile>
     <Compile Include="GPS.cs" />
+    <Compile Include="UsrCtrlAxis2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utility.cs" />
     <Compile Include="wfrm_Receive2.cs">
     </Compile>
     <Compile Include="IMotionDetector.cs" />
@@ -509,6 +507,9 @@
     <EmbeddedResource Include="Resources\7.gif" />
     <EmbeddedResource Include="Resources\8.gif" />
     <EmbeddedResource Include="Resources\9.gif" />
+    <EmbeddedResource Include="UsrCtrlAxis2D.resx">
+      <DependentUpon>UsrCtrlAxis2D.cs</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Resources\AForge.dll" />
     <Content Include="Resources\AForge.Imaging.dll" />
     <Content Include="Resources\AForge.Math.dll" />
