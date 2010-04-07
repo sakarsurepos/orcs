@@ -15823,16 +15823,10 @@ Mouse y:
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="toolStripconnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
+    <value>202, 34</value>
   </data>
   <data name="toolStripconnect.Text" xml:space="preserve">
-    <value>Connect</value>
-  </data>
-  <data name="connectAllDevicesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="connectAllDevicesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Connect All Devices</value>
+    <value>Connect Control System</value>
   </data>
   <data name="toolStripdisconnect.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -15841,10 +15835,22 @@ Mouse y:
     <value>Tahoma, 8.25pt</value>
   </data>
   <data name="toolStripdisconnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
+    <value>202, 34</value>
   </data>
   <data name="toolStripdisconnect.Text" xml:space="preserve">
     <value>Disconnect</value>
+  </data>
+  <data name="connectAllDevicesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 34</value>
+  </data>
+  <data name="connectAllDevicesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Connect All Devices</value>
+  </data>
+  <data name="disconnectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 34</value>
+  </data>
+  <data name="disconnectAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Disconnect All</value>
   </data>
   <data name="plugIn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt, style=Bold</value>
@@ -25341,6 +25347,12 @@ Mouse y:
   </data>
   <data name="&gt;&gt;timerMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;disconnectAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>disconnectAllToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;disconnectAllToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Robot1</value>

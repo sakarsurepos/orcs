@@ -781,6 +781,7 @@ namespace Robot
             this.button90 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cameraWindow = new Robot.CameraWindow();
+            this.disconnectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
@@ -5452,8 +5453,9 @@ namespace Robot
             // 
             this.plugIn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripconnect,
+            this.toolStripdisconnect,
             this.connectAllDevicesToolStripMenuItem,
-            this.toolStripdisconnect});
+            this.disconnectAllToolStripMenuItem});
             resources.ApplyResources(this.plugIn, "plugIn");
             this.plugIn.Image = global::Robot.Properties.Resources.folder2;
             this.plugIn.Name = "plugIn";
@@ -6820,6 +6822,12 @@ namespace Robot
             this.cameraWindow.Name = "cameraWindow";
             this.cameraWindow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cameraWindow_MouseMove);
             // 
+            // disconnectAllToolStripMenuItem
+            // 
+            this.disconnectAllToolStripMenuItem.Image = global::Robot.Properties.Resources.OFF;
+            this.disconnectAllToolStripMenuItem.Name = "disconnectAllToolStripMenuItem";
+            resources.ApplyResources(this.disconnectAllToolStripMenuItem, "disconnectAllToolStripMenuItem");
+            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -7842,6 +7850,7 @@ namespace Robot
         private System.Windows.Forms.Timer timerMain;
         private System.Windows.Forms.Button button90;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem disconnectAllToolStripMenuItem;
 
 
     }
