@@ -284,6 +284,7 @@ namespace Robot
             this.textMicLeft = new System.Windows.Forms.TextBox();
             this.label133 = new System.Windows.Forms.Label();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
+            this.buttonUltraSonicScan = new System.Windows.Forms.Button();
             this.label137 = new System.Windows.Forms.Label();
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textInfraBack = new System.Windows.Forms.TextBox();
@@ -297,7 +298,7 @@ namespace Robot
             this.label128 = new System.Windows.Forms.Label();
             this.textSonarValue = new System.Windows.Forms.TextBox();
             this.label127 = new System.Windows.Forms.Label();
-            this.pictureBox30 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxUltraSonicScan = new System.Windows.Forms.PictureBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.pictureBox32 = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -782,7 +783,6 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
-            this.button91 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
@@ -845,7 +845,7 @@ namespace Robot
             this.groupBox26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar7)).BeginInit();
             this.groupBox25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUltraSonicScan)).BeginInit();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewSatellites)).BeginInit();
@@ -3013,7 +3013,7 @@ namespace Robot
             // 
             // groupBox25
             // 
-            this.groupBox25.Controls.Add(this.button91);
+            this.groupBox25.Controls.Add(this.buttonUltraSonicScan);
             this.groupBox25.Controls.Add(this.label137);
             this.groupBox25.Controls.Add(this.textBox32);
             this.groupBox25.Controls.Add(this.textInfraBack);
@@ -3027,11 +3027,19 @@ namespace Robot
             this.groupBox25.Controls.Add(this.label128);
             this.groupBox25.Controls.Add(this.textSonarValue);
             this.groupBox25.Controls.Add(this.label127);
-            this.groupBox25.Controls.Add(this.pictureBox30);
+            this.groupBox25.Controls.Add(this.pictureBoxUltraSonicScan);
             this.groupBox25.ForeColor = System.Drawing.Color.RoyalBlue;
             resources.ApplyResources(this.groupBox25, "groupBox25");
             this.groupBox25.Name = "groupBox25";
             this.groupBox25.TabStop = false;
+            this.groupBox25.Enter += new System.EventHandler(this.groupBox25_Enter);
+            // 
+            // buttonUltraSonicScan
+            // 
+            resources.ApplyResources(this.buttonUltraSonicScan, "buttonUltraSonicScan");
+            this.buttonUltraSonicScan.Name = "buttonUltraSonicScan";
+            this.buttonUltraSonicScan.UseVisualStyleBackColor = true;
+            this.buttonUltraSonicScan.Click += new System.EventHandler(this.button91_Click);
             // 
             // label137
             // 
@@ -3110,12 +3118,13 @@ namespace Robot
             this.label127.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label127.Name = "label127";
             // 
-            // pictureBox30
+            // pictureBoxUltraSonicScan
             // 
-            this.pictureBox30.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.pictureBox30, "pictureBox30");
-            this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.TabStop = false;
+            this.pictureBoxUltraSonicScan.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.pictureBoxUltraSonicScan, "pictureBoxUltraSonicScan");
+            this.pictureBoxUltraSonicScan.Name = "pictureBoxUltraSonicScan";
+            this.pictureBoxUltraSonicScan.TabStop = false;
+            this.pictureBoxUltraSonicScan.Click += new System.EventHandler(this.pictureBoxUltraSonicScan_Click);
             // 
             // groupBox10
             // 
@@ -6830,12 +6839,6 @@ namespace Robot
             this.timerMain.Interval = 40;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
             // 
-            // button91
-            // 
-            resources.ApplyResources(this.button91, "button91");
-            this.button91.Name = "button91";
-            this.button91.UseVisualStyleBackColor = true;
-            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -6975,7 +6978,7 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.trackBar7)).EndInit();
             this.groupBox25.ResumeLayout(false);
             this.groupBox25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUltraSonicScan)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
@@ -7611,7 +7614,7 @@ namespace Robot
         private System.Windows.Forms.Label label128;
         private System.Windows.Forms.TextBox textSonarValue;
         private System.Windows.Forms.Label label127;
-        private System.Windows.Forms.PictureBox pictureBox30;
+        private System.Windows.Forms.PictureBox pictureBoxUltraSonicScan;
         private System.Windows.Forms.Label label131;
         private System.Windows.Forms.Label label130;
         private System.Windows.Forms.TextBox textBox29;
@@ -7859,7 +7862,7 @@ namespace Robot
         private System.Windows.Forms.Button button90;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem disconnectAllToolStripMenuItem;
-        private System.Windows.Forms.Button button91;
+        private System.Windows.Forms.Button buttonUltraSonicScan;
 
 
     }
