@@ -343,6 +343,16 @@ namespace Robot
         /////////////
 
         /////////////
+        //ultra sonic
+        double xultra;
+        double yultra;
+        int[] bultr = new int[25] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 140, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+        int UltraSonic;
+        int lop;
+        //ultra sonic
+        /////////////
+
+        /////////////
         //CONSOLE
         char[] test2;
         Thread ThreadCheckStat;
@@ -846,6 +856,7 @@ namespace Robot
         {
             char[] sens = sensors.ToCharArray();
             int intsens = Convert.ToInt16(sens[6]);
+            UltraSonic = intsens;
             //Texbox Export
             return (intsens.ToString("f1"));
         }
@@ -4580,6 +4591,170 @@ namespace Robot
         private void button90_Click(object sender, EventArgs e)
         {
             this.panel1.Controls.Add(this.usrCtrlAxis2D);
+        }
+
+
+        //ultra funkcia
+        public void ultra()
+        {
+            int a = 120;
+            //int d = 0;
+
+            Graphics Obj1 = pictureBoxUltraSonicScan.CreateGraphics();
+
+
+            Pen p2 = new Pen(Brushes.Red, 2);
+
+            //kresli os
+            Graphics Obj3 = pictureBoxUltraSonicScan.CreateGraphics();
+            Obj1.DrawLine(p2, 20, 20, 20, 170);
+
+            //kresli os
+            Graphics Obj4 = pictureBoxUltraSonicScan.CreateGraphics();
+            Obj1.DrawLine(p2, 20, 160, 300, 160);
+
+            //kreslios
+            Graphics Obj5 = pictureBoxUltraSonicScan.CreateGraphics();
+            Obj1.DrawLine(p2, 300, 20, 300, 170);
+
+
+            float h = 20;
+            float jk = 140;
+            
+            //ciachovanie na osi
+            while (h < 160) //300
+            {
+                Pen p4 = new Pen(Brushes.Red, 2);
+
+                Graphics Obj6 = pictureBoxUltraSonicScan.CreateGraphics();
+                Obj6.DrawLine(p4, 10, h, 30, h);
+
+                Obj6.DrawString(jk.ToString(), new Font("Verdana", 5), new SolidBrush(Color.Red), 300, h);
+
+                Graphics Obj7 = pictureBoxUltraSonicScan.CreateGraphics();
+                Obj7.DrawLine(p4, 290, h, 310, h);
+
+                Obj7.DrawString(jk.ToString(), new Font("Verdana", 5), new SolidBrush(Color.Red), 0, h);
+
+                h = (h + 20);
+                jk = (jk - 20);
+            }
+
+            float s = 20;
+            float kl = -140;
+            //ciachovanie na osi
+
+            while (s < 300)
+            {
+                Pen p5 = new Pen(Brushes.Red, 2);
+
+                Graphics Obj8 = pictureBoxUltraSonicScan.CreateGraphics();
+                Obj8.DrawLine(p5, s, 150, s, 170);
+                Obj8.DrawString(kl.ToString(), new Font("Verdana", 4), new SolidBrush(Color.Red), s, 160);
+
+                s = (s + 20);
+                kl = (kl + 20);
+            }
+
+            while (a <= 240)
+            {
+
+                Thread.Sleep(250);
+                xultra = Math.Sin(a * (Math.PI / 180));
+                yultra = Math.Cos(a * (Math.PI / 180));
+
+                yultra = (yultra * UltraSonic);
+                xultra = (xultra * UltraSonic);
+
+
+                float x1 = (float)(160 - xultra);
+
+                float y1 = (float)(160 + yultra);
+
+
+                //Pen p2 = new Pen(Brushes.Red, 2);
+                Pen p3 = new Pen(Brushes.Black, 2);
+
+
+
+                //kresli ciaru
+                Graphics Obj2 = pictureBoxUltraSonicScan.CreateGraphics();
+                Obj2.DrawLine(p3, x1, y1, 160, 160);
+
+                //kresli stredovy bod
+                //Graphics Obj1 = pictureBox1.CreateGraphics();
+                Obj1.DrawLine(p2, 160, 165 + 5, 160, 165 + 1);
+
+                //kresli os
+                //Graphics Obj3 = pictureBox1.CreateGraphics();
+                //Obj1.DrawLine(p2, 20, 20, 20, 170);
+
+                //kresli os
+                //Graphics Obj4 = pictureBox1.CreateGraphics();
+                //Obj1.DrawLine(p2, 20, 160, 300, 160);
+
+                //kreslios
+                //Graphics Obj5 = pictureBox1.CreateGraphics();
+                // Obj1.DrawLine(p2, 300, 20, 300, 170);
+
+
+                //zvysuje premennu
+                //d = (d + 1);
+                a = (a + 5);
+
+            }
+
+            /*float h = 20;
+            float jk = 140;
+            //ciachovanie na osi
+            while (h < 160) //300
+            {
+                Pen p4 = new Pen(Brushes.Red, 2);
+
+                Graphics Obj6 = pictureBox1.CreateGraphics();
+                Obj6.DrawLine(p4, 10, h, 30, h);
+                
+                Obj6.DrawString(jk.ToString(), new Font("Verdana", 5), new SolidBrush(Color.Red), 300, h);
+
+                Graphics Obj7 = pictureBox1.CreateGraphics();
+                Obj7.DrawLine(p4, 290, h, 310, h);
+
+                Obj7.DrawString(jk.ToString(), new Font("Verdana", 5), new SolidBrush(Color.Red), 0, h);
+                
+                h = (h + 20);
+                jk = (jk - 20);
+            }
+
+            float s = 20;
+            float kl = -140;
+            //ciachovanie na osi
+            
+            while (s < 300)
+            {
+                Pen p5 = new Pen(Brushes.Red, 2);
+
+                Graphics Obj8 = pictureBox1.CreateGraphics();
+                Obj8.DrawLine(p5, s, 150, s, 170);
+                Obj8.DrawString(kl.ToString(), new Font("Verdana", 4), new SolidBrush(Color.Red), s, 160);
+                
+                s = (s + 20);
+                kl = (kl + 20);
+            } */
+        }
+        /////Tlacitko na scanovanie
+        private void button91_Click(object sender, EventArgs e)
+        {
+            ultra();
+        }
+
+        private void groupBox25_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxUltraSonicScan_Click(object sender, EventArgs e)
+        {
+
         }
 
         //Check Status
