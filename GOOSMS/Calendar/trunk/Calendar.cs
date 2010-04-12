@@ -362,8 +362,8 @@ namespace SampleApp
                 {
                     item.SubItems.Add(entry.Times[0].StartTime.TimeOfDay.ToString()); 
                     item.SubItems.Add(entry.Times[0].EndTime.TimeOfDay.ToString()); 
-                    item.SubItems.Add(entry.Times[0].Count.ToString()); // .GetType());
-                    //item.SubItems.Add(entry.Times[0].Reminders.IndexOf(0)
+                    item.SubItems.Add(entry.Times[0].Reminders.Count.ToString()); // .GetType());
+                    //item.SubItems.Add(entry.Reminder.Method.ToString());
                 }
 
                 this.DayEvents.Items.Add(item);
