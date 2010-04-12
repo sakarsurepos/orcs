@@ -37,6 +37,7 @@ namespace SampleApp
         private ArrayList entryList;
         public string older;
         private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
         public string newer;
 
         public Calendar()
@@ -100,6 +101,7 @@ namespace SampleApp
             this.button1 = new System.Windows.Forms.Button();
             this.timer50 = new System.Windows.Forms.Timer(this.components);
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // calendarControl
@@ -176,7 +178,8 @@ namespace SampleApp
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
             this.DayEvents.FullRowSelect = true;
             this.DayEvents.GridLines = true;
             this.DayEvents.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -224,6 +227,10 @@ namespace SampleApp
             // columnHeader5
             // 
             this.columnHeader5.Text = "Reminder";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Type";
             // 
             // Calendar
             // 
@@ -355,7 +362,8 @@ namespace SampleApp
                 {
                     item.SubItems.Add(entry.Times[0].StartTime.TimeOfDay.ToString()); 
                     item.SubItems.Add(entry.Times[0].EndTime.TimeOfDay.ToString()); 
-                    item.SubItems.Add(entry.Times[0].Reminders.Count.ToString()); // .GetType());
+                    item.SubItems.Add(entry.Times[0].Count.ToString()); // .GetType());
+                    //item.SubItems.Add(entry.Times[0].Reminders.IndexOf(0)
                 }
 
                 this.DayEvents.Items.Add(item);
@@ -382,7 +390,7 @@ namespace SampleApp
             entry.Times.Add(eventTime);
 
             //Add SMS Reminder
-            Reminder fiftyReminder = new Reminder();
+            Reminder fiftyMinReminder = new Reminder();
             fiftyMinReminder.Minutes = 5;
             fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
             entry.Reminders.Add(fiftyMinReminder);
