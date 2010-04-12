@@ -32,11 +32,11 @@ namespace SampleApp
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private Button button1;
         private Timer timer50;
-        private Button button2;
 
 
         private ArrayList entryList;
         public string older;
+        private ColumnHeader columnHeader5;
         public string newer;
 
         public Calendar()
@@ -99,7 +99,7 @@ namespace SampleApp
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.button1 = new System.Windows.Forms.Button();
             this.timer50 = new System.Windows.Forms.Timer(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // calendarControl
@@ -166,7 +166,7 @@ namespace SampleApp
             this.Go.Name = "Go";
             this.Go.Size = new System.Drawing.Size(96, 24);
             this.Go.TabIndex = 7;
-            this.Go.Text = "&Connect";
+            this.Go.Text = "&Read Data";
             this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
             // DayEvents
@@ -175,14 +175,15 @@ namespace SampleApp
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.DayEvents.FullRowSelect = true;
             this.DayEvents.GridLines = true;
             this.DayEvents.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.DayEvents.LabelWrap = false;
             this.DayEvents.Location = new System.Drawing.Point(8, 184);
             this.DayEvents.Name = "DayEvents";
-            this.DayEvents.Size = new System.Drawing.Size(424, 88);
+            this.DayEvents.Size = new System.Drawing.Size(568, 88);
             this.DayEvents.TabIndex = 8;
             this.DayEvents.UseCompatibleStateImageBehavior = false;
             this.DayEvents.View = System.Windows.Forms.View.Details;
@@ -207,7 +208,7 @@ namespace SampleApp
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(480, 184);
+            this.button1.Location = new System.Drawing.Point(503, 131);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 23);
             this.button1.TabIndex = 9;
@@ -220,20 +221,14 @@ namespace SampleApp
             this.timer50.Interval = 2000;
             this.timer50.Tick += new System.EventHandler(this.timer50_Tick);
             // 
-            // button2
+            // columnHeader5
             // 
-            this.button2.Location = new System.Drawing.Point(382, 130);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Disconnect";
-            this.button2.UseVisualStyleBackColor = true;
+            this.columnHeader5.Text = "Reminder";
             // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(592, 278);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DayEvents);
             this.Controls.Add(this.Go);
@@ -360,6 +355,7 @@ namespace SampleApp
                 {
                     item.SubItems.Add(entry.Times[0].StartTime.TimeOfDay.ToString()); 
                     item.SubItems.Add(entry.Times[0].EndTime.TimeOfDay.ToString()); 
+                    item.SubItems.Add(entry.Times[0].Reminders.Count.ToString()); // .GetType());
                 }
 
                 this.DayEvents.Items.Add(item);
@@ -385,16 +381,17 @@ namespace SampleApp
             When eventTime = new When(DateTime.Now.AddMinutes(15), DateTime.Now.AddHours(2));
             entry.Times.Add(eventTime);
 
+            //Add SMS Reminder
+            Reminder fiftyReminder = new Reminder();
+            fiftyMinReminder.Minutes = 5;
+            fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
+            entry.Reminders.Add(fiftyMinReminder);
+
             Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
 
             // Send the request and receive the response:
             AtomEntry insertedEntry = service.Insert(postUri, entry);
 
-            //Add SMS Reminder
-            Reminder fifteenMinReminder = new Reminder();
-            fifteenMinReminder.Minutes = 5;
-            fifteenMinReminder.Method = Reminder.ReminderMethod.sms;
-            entry.Reminders.Add(fifteenMinReminder);
 //            entry.Update();
 
             /*
@@ -458,29 +455,28 @@ namespace SampleApp
                     EventEntry entry = new EventEntry();
 
                     // Set the title and content of the entry.
-                    entry.Title.Text = "Tennis with Beth";
-                    entry.Content.Content = "Meet for a quick lesson.";
+                    entry.Title.Text = "Lockerz";
+                    entry.Content.Content = "Redemption begins.";
 
                     // Set a location for the event.
                     Where eventLocation = new Where();
-                    eventLocation.ValueString = "South Tennis Courts";
+                    eventLocation.ValueString = "PC";
                     entry.Locations.Add(eventLocation);
 
                     When eventTime = new When(DateTime.Now.AddMinutes(15), DateTime.Now.AddHours(2));
                     entry.Times.Add(eventTime);
 
+                    //Add SMS Reminder
+                    Reminder fifteenMinReminder = new Reminder();
+                    fifteenMinReminder.Minutes = 5;
+                    fifteenMinReminder.Method = Reminder.ReminderMethod.email;
+                    entry.Reminders.Add(fifteenMinReminder);
+                    entry.Update();
+
                     Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
 
                     // Send the request and receive the response:
                     AtomEntry insertedEntry = service.Insert(postUri, entry);
-
-                    //Add SMS Reminder
-                    Reminder fifteenMinReminder = new Reminder();
-                    fifteenMinReminder.Minutes = 5;
-                    fifteenMinReminder.Method = Reminder.ReminderMethod.sms;
-                    entry.Reminders.Add(fifteenMinReminder);
-                    entry.Update();
-
                 }
                 // Save to older.
                 older = newer;
