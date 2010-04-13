@@ -445,7 +445,7 @@ namespace SampleApp
                 //Check 0 original Lockerz
 
                 // Create a request for the URL. 		
-                WebRequest request = WebRequest.Create("http://ptzplace.lockerz.com/"); //http://ptzplace.lockerz.com/
+                WebRequest request = WebRequest.Create("http://www.kaar.sebsoft.com/"); //http://ptzplace.lockerz.com/
                 // If required by the server, set the credentials.
                 request.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
@@ -501,7 +501,7 @@ namespace SampleApp
                 //Check 0 original Lockerz
 
                 // Create a request for the URL. 		
-            WebRequest request3 = WebRequest.Create("http://ptzplace.lockerz.com/"); //http://ptzplace.lockerz.com/
+            WebRequest request3 = WebRequest.Create("http://www.kaar.sebsoft.com/"); //http://ptzplace.lockerz.com/
                 // If required by the server, set the credentials.
                 request3.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
