@@ -36,9 +36,16 @@ namespace SampleApp
 
         private ArrayList entryList;
         public string older;
+        public string older1;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
+        private Button button2;
+        private Label labelLastCheck;
+        private Button button3;
         public string newer;
+        private Label labelRedeem;
+        private Button button4;
+        public string newer1;
 
         public Calendar()
         {
@@ -98,10 +105,15 @@ namespace SampleApp
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.button1 = new System.Windows.Forms.Button();
-            this.timer50 = new System.Windows.Forms.Timer(this.components);
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timer50 = new System.Windows.Forms.Timer(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.labelLastCheck = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.labelRedeem = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // calendarControl
@@ -114,7 +126,7 @@ namespace SampleApp
             // 
             // CalendarURI
             // 
-            this.CalendarURI.Location = new System.Drawing.Point(280, 32);
+            this.CalendarURI.Location = new System.Drawing.Point(260, 20);
             this.CalendarURI.Name = "CalendarURI";
             this.CalendarURI.Size = new System.Drawing.Size(296, 20);
             this.CalendarURI.TabIndex = 1;
@@ -122,7 +134,7 @@ namespace SampleApp
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(200, 32);
+            this.label1.Location = new System.Drawing.Point(180, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 2;
@@ -130,7 +142,7 @@ namespace SampleApp
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(200, 68);
+            this.label2.Location = new System.Drawing.Point(180, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 24);
             this.label2.TabIndex = 3;
@@ -138,7 +150,7 @@ namespace SampleApp
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(200, 112);
+            this.label3.Location = new System.Drawing.Point(180, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 4;
@@ -146,7 +158,7 @@ namespace SampleApp
             // 
             // UserName
             // 
-            this.UserName.Location = new System.Drawing.Point(280, 68);
+            this.UserName.Location = new System.Drawing.Point(260, 56);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(296, 20);
             this.UserName.TabIndex = 5;
@@ -154,17 +166,17 @@ namespace SampleApp
             // 
             // Password
             // 
-            this.Password.Location = new System.Drawing.Point(280, 104);
+            this.Password.Location = new System.Drawing.Point(260, 92);
             this.Password.Name = "Password";
             this.Password.PasswordChar = '*';
-            this.Password.Size = new System.Drawing.Size(296, 20);
+            this.Password.Size = new System.Drawing.Size(128, 20);
             this.Password.TabIndex = 6;
             this.Password.Text = "joneson55";
             // 
             // Go
             // 
             this.Go.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Go.Location = new System.Drawing.Point(280, 130);
+            this.Go.Location = new System.Drawing.Point(183, 132);
             this.Go.Name = "Go";
             this.Go.Size = new System.Drawing.Size(96, 24);
             this.Go.TabIndex = 7;
@@ -184,9 +196,9 @@ namespace SampleApp
             this.DayEvents.GridLines = true;
             this.DayEvents.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.DayEvents.LabelWrap = false;
-            this.DayEvents.Location = new System.Drawing.Point(8, 184);
+            this.DayEvents.Location = new System.Drawing.Point(11, 182);
             this.DayEvents.Name = "DayEvents";
-            this.DayEvents.Size = new System.Drawing.Size(568, 88);
+            this.DayEvents.Size = new System.Drawing.Size(568, 128);
             this.DayEvents.TabIndex = 8;
             this.DayEvents.UseCompatibleStateImageBehavior = false;
             this.DayEvents.View = System.Windows.Forms.View.Details;
@@ -209,9 +221,17 @@ namespace SampleApp
             // 
             this.columnHeader4.Text = "End";
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Reminder";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Type";
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(503, 131);
+            this.button1.Location = new System.Drawing.Point(285, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 23);
             this.button1.TabIndex = 9;
@@ -221,21 +241,68 @@ namespace SampleApp
             // 
             // timer50
             // 
-            this.timer50.Interval = 2000;
+            this.timer50.Interval = 300000;
             this.timer50.Tick += new System.EventHandler(this.timer50_Tick);
             // 
-            // columnHeader5
+            // button2
             // 
-            this.columnHeader5.Text = "Reminder";
+            this.button2.Location = new System.Drawing.Point(481, 133);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Fast SMS";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // columnHeader6
+            // labelLastCheck
             // 
-            this.columnHeader6.Text = "Type";
+            this.labelLastCheck.AutoSize = true;
+            this.labelLastCheck.Location = new System.Drawing.Point(417, 95);
+            this.labelLastCheck.Name = "labelLastCheck";
+            this.labelLastCheck.Size = new System.Drawing.Size(58, 13);
+            this.labelLastCheck.TabIndex = 11;
+            this.labelLastCheck.Text = "LastCheck";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(426, 133);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(49, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Test";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // labelRedeem
+            // 
+            this.labelRedeem.AutoSize = true;
+            this.labelRedeem.ForeColor = System.Drawing.Color.Red;
+            this.labelRedeem.Location = new System.Drawing.Point(307, 166);
+            this.labelRedeem.Name = "labelRedeem";
+            this.labelRedeem.Size = new System.Drawing.Size(81, 13);
+            this.labelRedeem.TabIndex = 13;
+            this.labelRedeem.Text = "No Redemption";
+            // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(364, 132);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(56, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Stop";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(592, 278);
+            this.ClientSize = new System.Drawing.Size(592, 322);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.labelRedeem);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.labelLastCheck);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DayEvents);
             this.Controls.Add(this.Go);
@@ -248,7 +315,7 @@ namespace SampleApp
             this.Controls.Add(this.calendarControl);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Calendar";
-            this.Text = "Google Calendar Demo Application";
+            this.Text = "GooSMS Page Checker";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,68 +439,71 @@ namespace SampleApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CalendarService service = new CalendarService("exampleCo-exampleApp-1");
-            service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
+                button4.Enabled = true;
+                button1.Enabled = false;
+                //////////////////////////
+                //Check 0 original Lockerz
 
-            EventEntry entry = new EventEntry();
+                // Create a request for the URL. 		
+                WebRequest request = WebRequest.Create("http://ptzplace.lockerz.com/");
+                // If required by the server, set the credentials.
+                request.Credentials = CredentialCache.DefaultCredentials;
+                // Get the response.
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                // Display the status.
+                Console.WriteLine(response.StatusDescription);
+                // Get the stream containing content returned by the server.
+                Stream dataStream = response.GetResponseStream();
+                // Open the stream using a StreamReader for easy access.
+                StreamReader reader = new StreamReader(dataStream);
+                // Read the content.
+                string responseFromServer = reader.ReadToEnd();
+                // Save to newer.
+                older = responseFromServer;
+                // Cleanup the streams and the response.
+                reader.Close();
+                dataStream.Close();
+                response.Close();
 
-            // Set the title and content of the entry.
-            entry.Title.Text = "Lockerz";
-            entry.Content.Content = "Redemption begins.";
+                //////////////////////////
+                //Check 1 LockerzNews
 
-            // Set a location for the event.
-            Where eventLocation = new Where();
-            eventLocation.ValueString = "PC";
-            entry.Locations.Add(eventLocation);
-
-            When eventTime = new When(DateTime.Now.AddMinutes(15), DateTime.Now.AddHours(2));
-            entry.Times.Add(eventTime);
-
-            //Add SMS Reminder
-            Reminder fiftyMinReminder = new Reminder();
-            fiftyMinReminder.Minutes = 5;
-            fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
-            entry.Reminders.Add(fiftyMinReminder);
-
-            Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
-
-            // Send the request and receive the response:
-            AtomEntry insertedEntry = service.Insert(postUri, entry);
-
-//            entry.Update();
-
-            /*
-            // Create a request for the URL. 		
-            WebRequest request = WebRequest.Create("http://www.contoso.com/default.html");
-            // If required by the server, set the credentials.
-            request.Credentials = CredentialCache.DefaultCredentials;
-            // Get the response.
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            // Display the status.
-            Console.WriteLine(response.StatusDescription);
-            // Get the stream containing content returned by the server.
-            Stream dataStream = response.GetResponseStream();
-            // Open the stream using a StreamReader for easy access.
-            StreamReader reader = new StreamReader(dataStream);
-            // Read the content.
-            string responseFromServer = reader.ReadToEnd();
-            // Save old content.
-            older = responseFromServer;
-            // Cleanup the streams and the response.
-            reader.Close();
-            dataStream.Close();
-            response.Close();
+                // Create a request for the URL. 		
+                WebRequest request1 = WebRequest.Create("http://lockerzchecker.ismywebsite.com/index.php");
+                // If required by the server, set the credentials.
+                request1.Credentials = CredentialCache.DefaultCredentials;
+                // Get the response.
+                HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();
+                // Display the status.
+                Console.WriteLine(response1.StatusDescription);
+                // Get the stream containing content returned by the server.
+                Stream dataStream1 = response1.GetResponseStream();
+                // Open the stream using a StreamReader for easy access.
+                StreamReader reader1 = new StreamReader(dataStream1);
+                // Read the content.
+                string responseFromServer1 = reader1.ReadToEnd();
+                // Save to newer.
+                older1 = responseFromServer1;
+                // Cleanup the streams and the response.
+                reader1.Close();
+                dataStream1.Close();
+                response1.Close();
+                older1 = older1.Substring(0, 262);
+            
             //Start Check
             timer50.Start();
-             */ 
+             
         }
 
         private void timer50_Tick(object sender, EventArgs e)
         {
             try
             {
+                //////////////////////////
+                //Check 0 original Lockerz
+
                 // Create a request for the URL. 		
-                WebRequest request = WebRequest.Create("http://www.contoso.com/default.html");
+                WebRequest request = WebRequest.Create("http://ptzplace.lockerz.com/");
                 // If required by the server, set the credentials.
                 request.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
@@ -452,8 +522,34 @@ namespace SampleApp
                 reader.Close();
                 dataStream.Close();
                 response.Close();
+
+                //////////////////////////
+                //Check 1 Lockerznews
+
+                // Create a request for the URL. 		
+                WebRequest request1 = WebRequest.Create("http://lockerzchecker.ismywebsite.com/index.php");
+                // If required by the server, set the credentials.
+                request1.Credentials = CredentialCache.DefaultCredentials;
+                // Get the response.
+                HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();
+                // Display the status.
+                Console.WriteLine(response1.StatusDescription);
+                // Get the stream containing content returned by the server.
+                Stream dataStream1 = response1.GetResponseStream();
+                // Open the stream using a StreamReader for easy access.
+                StreamReader reader1 = new StreamReader(dataStream1);
+                // Read the content.
+                string responseFromServer1 = reader1.ReadToEnd();
+                // Save to newer.
+                older1 = responseFromServer1;
+                // Cleanup the streams and the response.
+                reader1.Close();
+                dataStream1.Close();
+                response1.Close();
+                older1 = newer1.Substring(0, 262);
+
                 // Compare String
-                if (older == newer)
+                if (older == newer || older1 == newer1)
                 { }
                 else
                 {
@@ -464,35 +560,112 @@ namespace SampleApp
 
                     // Set the title and content of the entry.
                     entry.Title.Text = "Lockerz";
-                    entry.Content.Content = "Redemption begins.";
-
+                    if (older1 != newer1)
+                    {
+                        entry.Content.Content = "Redemption begins LockerzNews.";
+                    }
+                    else
+                    {
+                        entry.Content.Content = "Redemption begins Lockerz Original.";
+                    }
                     // Set a location for the event.
                     Where eventLocation = new Where();
                     eventLocation.ValueString = "PC";
                     entry.Locations.Add(eventLocation);
 
-                    When eventTime = new When(DateTime.Now.AddMinutes(15), DateTime.Now.AddHours(2));
+                    When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
                     entry.Times.Add(eventTime);
 
                     //Add SMS Reminder
-                    Reminder fifteenMinReminder = new Reminder();
-                    fifteenMinReminder.Minutes = 5;
-                    fifteenMinReminder.Method = Reminder.ReminderMethod.email;
-                    entry.Reminders.Add(fifteenMinReminder);
-                    entry.Update();
+                    Reminder fiftyMinReminder = new Reminder();
+                    fiftyMinReminder.Minutes = 1;
+                    fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
+                    entry.Reminders.Add(fiftyMinReminder);
 
                     Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
 
                     // Send the request and receive the response:
                     AtomEntry insertedEntry = service.Insert(postUri, entry);
+
+                    // Save to older.
+                    older = newer;
+                    older1 = newer1;
+                    
+                    labelRedeem.Text = "Reedem started";
+                    labelRedeem.ForeColor = Color.Green;
                 }
-                // Save to older.
-                older = newer;
+
             }
             catch (Exception)
             {
-                MessageBox.Show("There was a problem downloading the file");
+               // MessageBox.Show("There was a problem downloading the file");
             }
+            labelLastCheck.Text = "Last Check" +  DateTime.Now;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CalendarService service = new CalendarService("exampleCo-exampleApp-1");
+            service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
+
+            EventEntry entry = new EventEntry();
+
+            // Set the title and content of the entry.
+            entry.Title.Text = "Lockerz";
+            entry.Content.Content = "Redemption begins.";
+
+            // Set a location for the event.
+            Where eventLocation = new Where();
+            eventLocation.ValueString = "PC";
+            entry.Locations.Add(eventLocation);
+
+            When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
+            entry.Times.Add(eventTime);
+
+            //Add SMS Reminder
+            Reminder fiftyMinReminder = new Reminder();
+            fiftyMinReminder.Minutes = 1;
+            fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
+            entry.Reminders.Add(fiftyMinReminder);
+
+            Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
+
+            // Send the request and receive the response:
+            AtomEntry insertedEntry = service.Insert(postUri, entry);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            labelLastCheck.Text = "Last Check" + DateTime.Now;
+            
+            // Create a request for the URL. 		
+            WebRequest request1 = WebRequest.Create("http://lockerzchecker.ismywebsite.com/index.php");
+            // If required by the server, set the credentials.
+            request1.Credentials = CredentialCache.DefaultCredentials;
+            // Get the response.
+            HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();
+            // Display the status.
+            Console.WriteLine(response1.StatusDescription);
+            // Get the stream containing content returned by the server.
+            Stream dataStream1 = response1.GetResponseStream();
+            // Open the stream using a StreamReader for easy access.
+            StreamReader reader1 = new StreamReader(dataStream1);
+            // Read the content.
+            string responseFromServer1 = reader1.ReadToEnd();
+            // Save to newer.
+            newer1 = responseFromServer1;
+            // Cleanup the streams and the response.
+            reader1.Close();
+            dataStream1.Close();
+            response1.Close();
+            newer1 = newer1.Substring(0, 262);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button4.Enabled = false;
+            button1.Enabled = true;
+            timer50.Stop();
         }
 
 
