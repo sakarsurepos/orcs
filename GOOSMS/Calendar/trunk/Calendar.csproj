@@ -192,6 +192,12 @@
   <ItemGroup>
     <None Include="Calendar_TemporaryKey.pfx" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sms21.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sms31.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

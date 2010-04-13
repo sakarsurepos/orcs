@@ -59,5 +59,19 @@ namespace Calendar {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap sms2 {
+            get {
+                object obj = ResourceManager.GetObject("sms2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap sms3 {
+            get {
+                object obj = ResourceManager.GetObject("sms3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
