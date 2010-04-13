@@ -315,7 +315,7 @@ namespace SampleApp
             this.Controls.Add(this.calendarControl);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Calendar";
-            this.Text = "GooSMS Page Checker";
+            this.Text = "GooSMS Page Checker RC1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,7 +445,7 @@ namespace SampleApp
                 //Check 0 original Lockerz
 
                 // Create a request for the URL. 		
-                WebRequest request = WebRequest.Create("http://ptzplace.lockerz.com/");
+                WebRequest request = WebRequest.Create("http://ptzplace.lockerz.com/"); //http://ptzplace.lockerz.com/
                 // If required by the server, set the credentials.
                 request.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
@@ -497,61 +497,57 @@ namespace SampleApp
 
         private void timer50_Tick(object sender, EventArgs e)
         {
-            try
-            {
                 //////////////////////////
                 //Check 0 original Lockerz
 
                 // Create a request for the URL. 		
-                WebRequest request = WebRequest.Create("http://ptzplace.lockerz.com/");
+            WebRequest request3 = WebRequest.Create("http://ptzplace.lockerz.com/"); //http://ptzplace.lockerz.com/
                 // If required by the server, set the credentials.
-                request.Credentials = CredentialCache.DefaultCredentials;
+                request3.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                HttpWebResponse response3 = (HttpWebResponse)request3.GetResponse();
                 // Display the status.
-                Console.WriteLine(response.StatusDescription);
+                Console.WriteLine(response3.StatusDescription);
                 // Get the stream containing content returned by the server.
-                Stream dataStream = response.GetResponseStream();
+                Stream dataStream3 = response3.GetResponseStream();
                 // Open the stream using a StreamReader for easy access.
-                StreamReader reader = new StreamReader(dataStream);
+                StreamReader reader3 = new StreamReader(dataStream3);
                 // Read the content.
-                string responseFromServer = reader.ReadToEnd();
+                string responseFromServer3 = reader3.ReadToEnd();
                 // Save to newer.
-                newer = responseFromServer;
+                newer = responseFromServer3;
                 // Cleanup the streams and the response.
-                reader.Close();
-                dataStream.Close();
-                response.Close();
+                reader3.Close();
+                dataStream3.Close();
+                response3.Close();
 
                 //////////////////////////
                 //Check 1 Lockerznews
 
                 // Create a request for the URL. 		
-                WebRequest request1 = WebRequest.Create("http://lockerzchecker.ismywebsite.com/index.php");
+                WebRequest request4 = WebRequest.Create("http://lockerzchecker.ismywebsite.com/index.php");
                 // If required by the server, set the credentials.
-                request1.Credentials = CredentialCache.DefaultCredentials;
+                request4.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
-                HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();
+                HttpWebResponse response4 = (HttpWebResponse)request4.GetResponse();
                 // Display the status.
-                Console.WriteLine(response1.StatusDescription);
+                Console.WriteLine(response4.StatusDescription);
                 // Get the stream containing content returned by the server.
-                Stream dataStream1 = response1.GetResponseStream();
+                Stream dataStream4 = response4.GetResponseStream();
                 // Open the stream using a StreamReader for easy access.
-                StreamReader reader1 = new StreamReader(dataStream1);
+                StreamReader reader4 = new StreamReader(dataStream4);
                 // Read the content.
-                string responseFromServer1 = reader1.ReadToEnd();
+                string responseFromServer4 = reader4.ReadToEnd();
                 // Save to newer.
-                older1 = responseFromServer1;
+                newer1 = responseFromServer4;
                 // Cleanup the streams and the response.
-                reader1.Close();
-                dataStream1.Close();
-                response1.Close();
-                older1 = newer1.Substring(0, 262);
+                reader4.Close();
+                dataStream4.Close();
+                response4.Close();
+                newer1 = newer1.Substring(0, 262);
 
                 // Compare String
-                if (older == newer || older1 == newer1)
-                { }
-                else
+                if (older != newer || older1 != newer1)
                 {
                     CalendarService service = new CalendarService("exampleCo-exampleApp-1");
                     service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
@@ -590,17 +586,16 @@ namespace SampleApp
                     // Save to older.
                     older = newer;
                     older1 = newer1;
-                    
+
                     labelRedeem.Text = "Reedem started";
                     labelRedeem.ForeColor = Color.Green;
                 }
+                else
+                {
+                    
+                }
 
-            }
-            catch (Exception)
-            {
-               // MessageBox.Show("There was a problem downloading the file");
-            }
-            labelLastCheck.Text = "Last Check" +  DateTime.Now;
+           labelLastCheck.Text = "Last Check" +  DateTime.Now;
         }
 
         private void button2_Click(object sender, EventArgs e)
