@@ -855,7 +855,7 @@ namespace Robot
         private string Sensors(string sensors)
         {
             char[] sens = sensors.ToCharArray();
-            int intsens = (Convert.ToInt16(sens[6]))/2;
+            int intsens = (Convert.ToInt16(sens[6]))*2;
             UltraSonic = intsens;
             //Texbox Export
             return (intsens.ToString("f1"));
