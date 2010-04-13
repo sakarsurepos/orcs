@@ -8,6 +8,8 @@ using System.IO;
 using Google.GData.Client;
 using Google.GData.Extensions;
 using Google.GData.Calendar;
+using System.Resources;
+
 
 namespace SampleApp
 {
@@ -49,6 +51,7 @@ namespace SampleApp
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem2;
+        private PictureBox pictureBox1;
         public string newer1;
 
         public Calendar()
@@ -123,7 +126,9 @@ namespace SampleApp
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // calendarControl
@@ -136,15 +141,15 @@ namespace SampleApp
             // 
             // CalendarURI
             // 
-            this.CalendarURI.Location = new System.Drawing.Point(260, 20);
+            this.CalendarURI.Location = new System.Drawing.Point(244, 20);
             this.CalendarURI.Name = "CalendarURI";
-            this.CalendarURI.Size = new System.Drawing.Size(296, 20);
+            this.CalendarURI.Size = new System.Drawing.Size(312, 20);
             this.CalendarURI.TabIndex = 1;
             this.CalendarURI.Text = "http://www.google.com/calendar/feeds/default/private/full";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(180, 20);
+            this.label1.Location = new System.Drawing.Point(180, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 2;
@@ -160,7 +165,7 @@ namespace SampleApp
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(180, 100);
+            this.label3.Location = new System.Drawing.Point(180, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 4;
@@ -168,15 +173,15 @@ namespace SampleApp
             // 
             // UserName
             // 
-            this.UserName.Location = new System.Drawing.Point(260, 56);
+            this.UserName.Location = new System.Drawing.Point(244, 56);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(296, 20);
+            this.UserName.Size = new System.Drawing.Size(312, 20);
             this.UserName.TabIndex = 5;
             this.UserName.Text = "kamil.zidek@gmail.com";
             // 
             // Password
             // 
-            this.Password.Location = new System.Drawing.Point(260, 92);
+            this.Password.Location = new System.Drawing.Point(244, 92);
             this.Password.Name = "Password";
             this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(128, 20);
@@ -267,7 +272,7 @@ namespace SampleApp
             // labelLastCheck
             // 
             this.labelLastCheck.AutoSize = true;
-            this.labelLastCheck.Location = new System.Drawing.Point(417, 95);
+            this.labelLastCheck.Location = new System.Drawing.Point(374, 95);
             this.labelLastCheck.Name = "labelLastCheck";
             this.labelLastCheck.Size = new System.Drawing.Size(58, 13);
             this.labelLastCheck.TabIndex = 11;
@@ -334,6 +339,15 @@ namespace SampleApp
             this.toolStripMenuItem2.Text = "Exit";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Calendar.Resource1.sms3;
+            this.pictureBox1.Location = new System.Drawing.Point(507, 82);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 45);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -342,6 +356,7 @@ namespace SampleApp
             this.Controls.Add(this.labelRedeem);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.labelLastCheck);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DayEvents);
@@ -361,6 +376,7 @@ namespace SampleApp
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Resize += new System.EventHandler(this.Calendar_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -634,6 +650,14 @@ namespace SampleApp
 
                     labelRedeem.Text = "Reedem started";
                     labelRedeem.ForeColor = Color.Green;
+
+                    //Notify Icon Change
+                    notifyIcon1.Icon = SystemIcons.Exclamation;
+                    notifyIcon1.BalloonTipTitle = "Lockerz";
+                    notifyIcon1.BalloonTipText = "Redemption Start.";
+                    notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
+                    //this.Click += new EventHandler(Form1_Click);
+                    notifyIcon1.ShowBalloonTip(30);
                 }
                 else
                 {
