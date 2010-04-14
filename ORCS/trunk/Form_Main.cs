@@ -353,6 +353,13 @@ namespace Robot
         /////////////
 
         /////////////
+        //Infra
+        int InfraFront;
+        int InfraBack;
+        //Infra
+        /////////////
+
+        /////////////
         //CONSOLE
         char[] test2;
         Thread ThreadCheckStat;
@@ -709,25 +716,25 @@ namespace Robot
                 else if (CTR_MSG == "$MSG3F")
                 {
                     string infrafront = new string(USART_data, 0, 7);
-                    textInfraFront.Text = Sensors(infrafront);
+                    textInfraFront.Text = SensorsF(infrafront);
                 }
 
                 else if (CTR_MSG == "$MSG3B")
                 {
                     string infraback = new string(USART_data, 0, 7);
-                    textInfraBack.Text = Sensors(infraback);
+                    textInfraBack.Text = SensorsB(infraback);
                 }
 
                 else if (CTR_MSG == "$MSG4L")
                 {
                     string micleft = new string(USART_data, 0, 7);
-                    textMicLeft.Text = Sensors(micleft);
+                    //textMicLeft.Text = Sensors(micleft);
                 }
 
                 else if (CTR_MSG == "$MSG4R")
                 {
                     string micright = new string(USART_data, 0, 7);
-                    textMicRight.Text = Sensors(micright);
+                    //textMicRight.Text = Sensors(micright);
                 }
 
                 else if (CTR_MSG == "$GPGSV")
@@ -851,12 +858,30 @@ namespace Robot
             batt.aktualne_nap = (float)voltage; //Test battery             
             return (" " + voltage.ToString("f1") + " V");
         }
-
+        //Ultrasonic
         private string Sensors(string sensors)
         {
             char[] sens = sensors.ToCharArray();
             int intsens = (Convert.ToInt16(sens[6]))*2;
             UltraSonic = intsens;
+            //Texbox Export
+            return (intsens.ToString("f1"));
+        }
+        //Infra Front
+        private string SensorsF(string sensors)
+        {
+            char[] sens = sensors.ToCharArray();
+            int intsens = (Convert.ToInt16(sens[6]));
+            InfraFront = intsens;
+            //Texbox Export
+            return (intsens.ToString("f1"));
+        }
+        //Infra Back
+        private string SensorsB(string sensors)
+        {
+            char[] sens = sensors.ToCharArray();
+            int intsens = (Convert.ToInt16(sens[6]));
+            InfraBack = intsens;
             //Texbox Export
             return (intsens.ToString("f1"));
         }
