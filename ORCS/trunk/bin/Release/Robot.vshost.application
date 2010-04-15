@@ -11,14 +11,14 @@
     <deploymentProvider codebase="http://orcs.sebsoft.com/firmware/orcs_desktop/Robot.application" />
   </deployment>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Robot.exe.manifest" size="43632">
+    <dependentAssembly dependencyType="install" codebase="Robot.exe.manifest" size="141420">
       <assemblyIdentity name="Robot.exe" version="4.0.0.19" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>UzeR4cUrNLjQltEEbkghnYJArow=</dsig:DigestValue>
+        <dsig:DigestValue>2P475vHp9MpywU4h5o3OKJggKq0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
