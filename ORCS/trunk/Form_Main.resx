@@ -5433,11 +5433,65 @@
   <data name="&gt;&gt;groupBox26.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="button92.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 88</value>
+  </data>
+  <data name="button92.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 23</value>
+  </data>
+  <data name="button92.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="button92.Text" xml:space="preserve">
+    <value>button92</value>
+  </data>
+  <data name="&gt;&gt;button92.Name" xml:space="preserve">
+    <value>button92</value>
+  </data>
+  <data name="&gt;&gt;button92.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button92.Parent" xml:space="preserve">
+    <value>groupBox25</value>
+  </data>
+  <data name="&gt;&gt;button92.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button91.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button91.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 119</value>
+  </data>
+  <data name="button91.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button91.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="button91.Text" xml:space="preserve">
+    <value>Vyčistiť</value>
+  </data>
+  <data name="&gt;&gt;button91.Name" xml:space="preserve">
+    <value>button91</value>
+  </data>
+  <data name="&gt;&gt;button91.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button91.Parent" xml:space="preserve">
+    <value>groupBox25</value>
+  </data>
+  <data name="&gt;&gt;button91.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonUltraSonicScan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="buttonUltraSonicScan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 87</value>
+    <value>160, 87</value>
   </data>
   <data name="buttonUltraSonicScan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 56</value>
+    <value>46, 23</value>
   </data>
   <data name="buttonUltraSonicScan.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -5455,7 +5509,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;buttonUltraSonicScan.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="label137.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5485,7 +5539,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label137.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="textBox32.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 87</value>
@@ -5509,7 +5563,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textBox32.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="textInfraBack.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 187</value>
@@ -5530,7 +5584,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textInfraBack.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="label131.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5560,7 +5614,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label131.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="label125.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5590,7 +5644,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label125.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="textInfraFront.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 163</value>
@@ -5611,7 +5665,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textInfraFront.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="label130.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5641,7 +5695,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label130.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="label126.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5671,7 +5725,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label126.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="textBox29.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 46</value>
@@ -5692,7 +5746,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textBox29.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="label129.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5722,7 +5776,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label129.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="label128.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5752,7 +5806,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label128.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="textSonarValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 22</value>
@@ -5773,7 +5827,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;textSonarValue.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="label127.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5803,7 +5857,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;label127.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="pictureBoxUltraSonicScan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5827,7 +5881,7 @@
     <value>groupBox25</value>
   </data>
   <data name="&gt;&gt;pictureBoxUltraSonicScan.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="groupBox25.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 258</value>
@@ -9077,30 +9131,6 @@ Mouse y:
   </data>
   <data name="&gt;&gt;fpsPanel.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="cameraWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 13</value>
-  </data>
-  <data name="cameraWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 391</value>
-  </data>
-  <data name="cameraWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cameraWindow.Text" xml:space="preserve">
-    <value>fgdgdf</value>
-  </data>
-  <data name="&gt;&gt;cameraWindow.Name" xml:space="preserve">
-    <value>cameraWindow</value>
-  </data>
-  <data name="&gt;&gt;cameraWindow.Type" xml:space="preserve">
-    <value>Robot.CameraWindow, Robot, Version=3.0.0.2, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cameraWindow.Parent" xml:space="preserve">
-    <value>groupCameraView</value>
-  </data>
-  <data name="&gt;&gt;cameraWindow.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;button83.Name" xml:space="preserve">
     <value>button83</value>
@@ -27897,11 +27927,38 @@ Mouse y:
   <metadata name="timerMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>891, 8</value>
   </metadata>
+  <data name="cameraWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 13</value>
+  </data>
+  <data name="cameraWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 391</value>
+  </data>
+  <data name="cameraWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cameraWindow.Text" xml:space="preserve">
+    <value>fgdgdf</value>
+  </data>
+  <data name="&gt;&gt;cameraWindow.Name" xml:space="preserve">
+    <value>cameraWindow</value>
+  </data>
+  <data name="&gt;&gt;cameraWindow.Type" xml:space="preserve">
+    <value>Robot.CameraWindow, Robot, Version=3.0.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cameraWindow.Parent" xml:space="preserve">
+    <value>groupCameraView</value>
+  </data>
+  <data name="&gt;&gt;cameraWindow.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="timer5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>751, 47</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>50</value>
+    <value>94</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -32674,6 +32731,9 @@ Mouse y:
         AACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAMADAADgBwAA8A8AAA==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1024, 768</value>
   </data>
@@ -32912,6 +32972,12 @@ Mouse y:
     <value>timerMain</value>
   </data>
   <data name="&gt;&gt;timerMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timer5.Name" xml:space="preserve">
+    <value>timer5</value>
+  </data>
+  <data name="&gt;&gt;timer5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
