@@ -1,42 +1,63 @@
-04-14-2010 12:52:23 | --------------------------------------------
-04-14-2010 12:52:24 | Truevision3D Debug/Log File
-04-14-2010 12:52:24 | --------------------------------------------
-04-14-2010 12:52:24 | Engine Version : 6.5
-04-14-2010 12:52:24 | ENGINE INFO : DLL Compilation time Sep 24 2007 12:45:04
-04-14-2010 12:52:24 | DEVICE INIT : Initialize Depth
-04-14-2010 12:52:24 | DEVICE INIT : Using Antialiasing with 2 samples
-04-14-2010 12:52:24 | DEVICE INIT : Initializing the device in windowed mode, with a render surface size of 412x461, format 22, depthbuffer 75
-04-14-2010 12:52:24 | VIEWPORT MANAGER : Main viewport initialization
-04-14-2010 12:52:24 | VIEWPORT MANAGER : Main viewport initialized (412x461)
-04-14-2010 12:52:24 | DEVICE INIT : Initialization successful !
-04-14-2010 12:52:24 | DEVICE INFO :  3D Card : ATI Radeon HD 3600 Series    | Card ID : 38289 | Driver ID : 656076
-04-14-2010 12:52:24 | DEVICE INFO : Available texture memory : -1928 MB
-04-14-2010 12:52:24 | DEVICE INFO : Vertex Shaders 3.0 supported in hardware.
-04-14-2010 12:52:24 | Debug info : vs fffe0300  ps ffff0300 
-04-14-2010 12:52:24 | DEVICE INFO : Pixel Shaders 3.0 supported in hardware.
-04-14-2010 12:52:24 | DEVICE INFO : Driver used is a DirectX9-level driver 'atiumdag.dll'. Excellent
-04-14-2010 12:52:24 | DEVICE INFO : Card Type Geforce6xxx/7xxx/8xxx/ATIRadeonX1xxx  Level card, third generation of programmable card
-04-14-2010 12:52:24 | TEXTURE MANAGER : Creation of texture 'TintedWindows' succeeded, format 21, size (1x1)
-04-14-2010 12:52:24 | TEXTURE MANAGER : Loading of 'Textures\pk9tex.bmp' successful 'pk9tex' on index 3 
-04-14-2010 12:52:24 | TEXTURE MANAGER : Loading of 'Textures\Windows.bmp' successful 'Windows' on index 4 
-04-14-2010 12:52:24 | TEXTURE MANAGER : Loading of 'Textures\UnderCarriage.bmp' successful 'UnderCarriage' on index 5 
-04-14-2010 12:52:24 | TEXTURE MANAGER : Loading of 'Textures\ChassisSTI.bmp' successful 'ChassisSTI' on index 6 
-04-14-2010 12:52:24 | TEXTURE MANAGER : Loading of 'Textures\Wheel.bmp' successful 'Wheel' on index 7 
-04-14-2010 12:52:25 | TEXTURE MANAGER : Loading of 'Textures\grass.jpg' successful 'Grass' on index 8 
-04-14-2010 12:52:25 | TEXTURE MANAGER : Loading of 'Textures\skyup.jpg' successful 'SkyTop' on index 9 
-04-14-2010 12:52:25 | TEXTURE MANAGER : Loading of 'Textures\skydown.jpg' successful 'SkyBottom' on index 10 
-04-14-2010 12:52:25 | TEXTURE MANAGER : Loading of 'Textures\skyleft.jpg' successful 'SkyLeft' on index 11 
-04-14-2010 12:52:25 | TEXTURE MANAGER : Loading of 'Textures\skyright.jpg' successful 'SkyRight' on index 12 
-04-14-2010 12:52:25 | TEXTURE MANAGER : Loading of 'Textures\skyfront.jpg' successful 'SkyFront' on index 13 
-04-14-2010 12:52:25 | TEXTURE MANAGER : Loading of 'Textures\skyback.jpg' successful 'SkyBack' on index 14 
-04-14-2010 12:52:25 | LANDSCAPE : Landscape object #0 has been initialized
-04-14-2010 12:52:25 | LANDSCAPE : Generating landscape #0 from heightmap Heightmaps\heightmap.bmp
-04-14-2010 12:52:25 | LANDSCAPE : 1x1 Landscape successfully generated with 1089 vertices and 6534 indices in 94 milliseconds.
-04-14-2010 12:52:25 | LANDSCAPE : Quadtree created for the landscape in 0 milliseconds.
-04-14-2010 12:52:25 | MESH TVM LOADER : Mesh 'pk' successfully loaded in 0 ms. 12 faces, 26 vertices, 1 groups 
-04-14-2010 12:52:25 | MESH TVM LOADER : Mesh 'mChassis' successfully loaded in 0 ms. 2375 faces, 3757 vertices, 14 groups 
-04-14-2010 12:52:25 | MESH TVM LOADER : Mesh 'mfl' successfully loaded in 15 ms. 1016 faces, 2253 vertices, 4 groups 
-04-14-2010 12:52:25 | MESH TVM LOADER : Mesh 'mrl' successfully loaded in 0 ms. 1016 faces, 2253 vertices, 4 groups 
-04-14-2010 12:52:26 | MESH TVM LOADER : Mesh 'mfr' successfully loaded in 0 ms. 1016 faces, 2262 vertices, 4 groups 
-04-14-2010 12:52:26 | MESH TVM LOADER : Mesh 'mrr' successfully loaded in 16 ms. 1016 faces, 2262 vertices, 4 groups 
-04-14-2010 12:52:26 | PHYSICS MANAGER : Static friction must be greater or equal to the kinetic friction
+04-16-2010 11:56:53 | --------------------------------------------
+04-16-2010 11:56:53 | Truevision3D Debug/Log File
+04-16-2010 11:56:53 | --------------------------------------------
+04-16-2010 11:56:53 | Engine Version : 6.5
+04-16-2010 11:56:53 | ENGINE INFO : DLL Compilation time Sep 24 2007 12:45:04
+04-16-2010 11:56:53 | DEVICE INIT : Initialize Depth
+04-16-2010 11:56:53 | DEVICE INIT : Using Antialiasing with 2 samples
+04-16-2010 11:56:53 | DEVICE INIT : Initializing the device in windowed mode, with a render surface size of 412x461, format 22, depthbuffer 75
+04-16-2010 11:56:53 | TEXTURE MANAGER : Loading of 'Textures\skyleft.jpg' successful 'SkyLeft' on index 11 
+04-16-2010 11:56:54 | TEXTURE MANAGER : Loading of 'Textures\skyright.jpg' successful 'SkyRight' on index 12 
+04-16-2010 11:56:54 | VIEWPORT MANAGER : Main viewport initialization
+04-16-2010 11:56:54 | VIEWPORT MANAGER : Main viewport initialized (412x461)
+04-16-2010 11:56:54 | TEXTURE MANAGER : Loading of 'Textures\skyfront.jpg' successful 'SkyFront' on index 13 
+04-16-2010 11:56:54 | DEVICE INIT : Initialization successful !
+04-16-2010 11:56:54 | DEVICE INFO :  3D Card : ATI Radeon HD 3600 Series    | Card ID : 38289 | Driver ID : 656076
+04-16-2010 11:56:54 | DEVICE INFO : Available texture memory : -1928 MB
+04-16-2010 11:56:54 | DEVICE INFO : Vertex Shaders 3.0 supported in hardware.
+04-16-2010 11:56:55 | Debug info : vs fffe0300  ps ffff0300 
+04-16-2010 11:56:55 | DEVICE INFO : Pixel Shaders 3.0 supported in hardware.
+04-16-2010 11:56:55 | DEVICE INFO : Driver used is a DirectX9-level driver 'atiumdag.dll'. Excellent
+04-16-2010 11:56:55 | DEVICE INFO : Card Type Geforce6xxx/7xxx/8xxx/ATIRadeonX1xxx  Level card, third generation of programmable card
+04-16-2010 11:56:55 | TEXTURE MANAGER : Loading of 'Textures\skyback.jpg' successful 'SkyBack' on index 14 
+04-16-2010 11:56:55 | TEXTURE MANAGER : Creation of texture 'TintedWindows' succeeded, format 21, size (1x1)
+04-16-2010 11:56:55 | LANDSCAPE : Landscape object #0 has been initialized
+04-16-2010 11:56:55 | LANDSCAPE : Generating landscape #0 from heightmap Heightmaps\heightmap.bmp
+04-16-2010 11:56:55 | TEXTURE MANAGER : Loading of 'Textures\pk9tex.bmp' successful 'pk9tex' on index 3 
+04-16-2010 11:56:55 | TEXTURE MANAGER : Loading of 'Textures\Windows.bmp' successful 'Windows' on index 4 
+04-16-2010 11:56:55 | TEXTURE MANAGER : Loading of 'Textures\UnderCarriage.bmp' successful 'UnderCarriage' on index 5 
+04-16-2010 11:56:56 | TEXTURE MANAGER : Loading of 'Textures\ChassisSTI.bmp' successful 'ChassisSTI' on index 6 
+04-16-2010 11:56:56 | TEXTURE MANAGER : Loading of 'Textures\Wheel.bmp' successful 'Wheel' on index 7 
+04-16-2010 11:56:56 | LANDSCAPE : 1x1 Landscape successfully generated with 1089 vertices and 6534 indices in 842 milliseconds.
+04-16-2010 11:56:56 | LANDSCAPE : Quadtree created for the landscape in 0 milliseconds.
+04-16-2010 11:56:56 | MESH TVM LOADER : Mesh 'pk' successfully loaded in 265 ms. 12 faces, 26 vertices, 1 groups 
+04-16-2010 11:56:56 | MESH TVM LOADER : Mesh 'mChassis' successfully loaded in 16 ms. 2375 faces, 3757 vertices, 14 groups 
+04-16-2010 11:56:56 | MESH TVM LOADER : Mesh 'mfl' successfully loaded in 0 ms. 1016 faces, 2253 vertices, 4 groups 
+04-16-2010 11:56:57 | MESH TVM LOADER : Mesh 'mrl' successfully loaded in 16 ms. 1016 faces, 2253 vertices, 4 groups 
+04-16-2010 11:56:57 | MESH TVM LOADER : Mesh 'mfr' successfully loaded in 0 ms. 1016 faces, 2262 vertices, 4 groups 
+04-16-2010 11:56:57 | MESH TVM LOADER : Mesh 'mrr' successfully loaded in 62 ms. 1016 faces, 2262 vertices, 4 groups 
+04-16-2010 11:56:57 | PHYSICS MANAGER : Static friction must be greater or equal to the kinetic friction
+04-16-2010 11:56:58 | TEXTURE MANAGER : Loading of 'Textures\grass.jpg' successful 'Grass' on index 8 
+04-16-2010 11:56:58 | TEXTURE MANAGER : Loading of 'Textures\skyup.jpg' successful 'SkyTop' on index 9 
+04-16-2010 11:56:58 | TEXTURE MANAGER : Loading of 'Textures\skydown.jpg' successful 'SkyBottom' on index 10 
+04-16-2010 11:56:58 | TEXTURE MANAGER : Loading of 'Textures\skyleft.jpg' successful 'SkyLeft' on index 11 
+04-16-2010 11:56:58 | TEXTURE MANAGER : Loading of 'Textures\skyright.jpg' successful 'SkyRight' on index 12 
+04-16-2010 11:56:59 | TEXTURE MANAGER : Loading of 'Textures\skyfront.jpg' successful 'SkyFront' on index 13 
+04-16-2010 11:56:59 | TEXTURE MANAGER : Loading of 'Textures\skyback.jpg' successful 'SkyBack' on index 14 
+04-16-2010 11:56:59 | LANDSCAPE : Landscape object #0 has been initialized
+04-16-2010 11:56:59 | LANDSCAPE : Generating landscape #0 from heightmap Heightmaps\heightmap.bmp
+04-16-2010 11:57:00 | LANDSCAPE : 1x1 Landscape successfully generated with 1089 vertices and 6534 indices in 687 milliseconds.
+04-16-2010 11:57:00 | LANDSCAPE : Quadtree created for the landscape in 0 milliseconds.
+04-16-2010 11:57:00 | MESH TVM LOADER : Mesh 'pk' successfully loaded in 62 ms. 12 faces, 26 vertices, 1 groups 
+04-16-2010 11:57:00 | MESH TVM LOADER : Mesh 'mChassis' successfully loaded in 31 ms. 2375 faces, 3757 vertices, 14 groups 
+04-16-2010 11:57:00 | MESH TVM LOADER : Mesh 'mfl' successfully loaded in 0 ms. 1016 faces, 2253 vertices, 4 groups 
+04-16-2010 11:57:00 | MESH TVM LOADER : Mesh 'mrl' successfully loaded in 0 ms. 1016 faces, 2253 vertices, 4 groups 
+04-16-2010 11:57:00 | MESH TVM LOADER : Mesh 'mfr' successfully loaded in 0 ms. 1016 faces, 2262 vertices, 4 groups 
+04-16-2010 11:57:00 | MESH TVM LOADER : Mesh 'mrr' successfully loaded in 16 ms. 1016 faces, 2262 vertices, 4 groups 
+04-16-2010 11:57:00 | PHYSICS MANAGER : Static friction must be greater or equal to the kinetic friction
+04-16-2010 11:57:05 | START UNLOAD
+04-16-2010 11:57:05 | RESSOURCE MANAGER : Engine successfully unloaded
+04-16-2010 11:57:25 | START UNLOAD
+04-16-2010 11:57:25 | RESSOURCE MANAGER : Engine successfully unloaded
+04-16-2010 11:57:30 | START UNLOAD
+04-16-2010 11:57:30 | RESSOURCE MANAGER : Engine successfully unloaded

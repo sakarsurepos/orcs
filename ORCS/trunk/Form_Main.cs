@@ -874,7 +874,7 @@ namespace Robot
         private string SensorsF(string sensors)
         {
             char[] sens = sensors.ToCharArray();
-            int intsens = (Convert.ToInt16(sens[6]));
+            int intsens = (Convert.ToInt16(sens[6]))-48;
             InfraFront = intsens;
             //Texbox Export
             return (intsens.ToString("f1"));
@@ -883,7 +883,7 @@ namespace Robot
         private string SensorsB(string sensors)
         {
             char[] sens = sensors.ToCharArray();
-            int intsens = (Convert.ToInt16(sens[6]));
+            int intsens = (Convert.ToInt16(sens[6]))-48;
             InfraBack = intsens;
             //Texbox Export
             return (intsens.ToString("f1"));
@@ -4684,7 +4684,7 @@ namespace Robot
             while (a <= 240)
             {
 
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
                 xultra = Math.Sin(a * (Math.PI / 180));
                 yultra = Math.Cos(a * (Math.PI / 180));
 
