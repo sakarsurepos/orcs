@@ -40,7 +40,7 @@ namespace SampleApp
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private Button button1;
         private Timer timer50;
-        public int i = 1;
+        public int ip = 1;
 
 
         private ArrayList entryList;
@@ -69,6 +69,7 @@ namespace SampleApp
         IMAP_Client imap = new IMAP_Client();
         public IMAP_Client_FetchHandler fetchHandler = new IMAP_Client_FetchHandler();
         private ColumnHeader collumnNumber;
+        private Label LabelMail;
         public ListViewItem item;
 
         public Calendar()
@@ -147,10 +148,11 @@ namespace SampleApp
             this.button5 = new System.Windows.Forms.Button();
             this.m_pTabPageMail_Messages = new System.Windows.Forms.ListView();
             this.collumnNumber = new System.Windows.Forms.ColumnHeader();
-            this.collumnSubject = new System.Windows.Forms.ColumnHeader();
-            this.collumnFrom = new System.Windows.Forms.ColumnHeader();
-            this.collumnReceive = new System.Windows.Forms.ColumnHeader();
             this.collumnSize = new System.Windows.Forms.ColumnHeader();
+            this.collumnReceive = new System.Windows.Forms.ColumnHeader();
+            this.collumnFrom = new System.Windows.Forms.ColumnHeader();
+            this.collumnSubject = new System.Windows.Forms.ColumnHeader();
+            this.LabelMail = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -388,8 +390,8 @@ namespace SampleApp
             this.collumnNumber,
             this.collumnSize,
             this.collumnReceive,
-            this.collumnFrom,
-            this.collumnSubject});
+            this.collumnSubject,
+            this.collumnFrom});
             this.m_pTabPageMail_Messages.FullRowSelect = true;
             this.m_pTabPageMail_Messages.GridLines = true;
             this.m_pTabPageMail_Messages.Location = new System.Drawing.Point(11, 305);
@@ -402,24 +404,7 @@ namespace SampleApp
             // collumnNumber
             // 
             this.collumnNumber.Text = "Number";
-            this.collumnNumber.Width = 48;
-            // 
-            // collumnSubject
-            // 
-            this.collumnSubject.DisplayIndex = 2;
-            this.collumnSubject.Text = "Subject";
-            this.collumnSubject.Width = 335;
-            // 
-            // collumnFrom
-            // 
-            this.collumnFrom.DisplayIndex = 1;
-            this.collumnFrom.Text = "From";
-            this.collumnFrom.Width = 291;
-            // 
-            // collumnReceive
-            // 
-            this.collumnReceive.Text = "Receive";
-            this.collumnReceive.Width = 75;
+            this.collumnNumber.Width = 56;
             // 
             // collumnSize
             // 
@@ -427,10 +412,38 @@ namespace SampleApp
             this.collumnSize.Text = "Size";
             this.collumnSize.Width = 73;
             // 
+            // collumnReceive
+            // 
+            this.collumnReceive.DisplayIndex = 3;
+            this.collumnReceive.Text = "Receive";
+            this.collumnReceive.Width = 75;
+            // 
+            // collumnFrom
+            // 
+            this.collumnFrom.DisplayIndex = 1;
+            this.collumnFrom.Text = "From";
+            this.collumnFrom.Width = 291;
+            // 
+            // collumnSubject
+            // 
+            this.collumnSubject.DisplayIndex = 2;
+            this.collumnSubject.Text = "Subject";
+            this.collumnSubject.Width = 335;
+            // 
+            // LabelMail
+            // 
+            this.LabelMail.AutoSize = true;
+            this.LabelMail.Location = new System.Drawing.Point(637, 166);
+            this.LabelMail.Name = "LabelMail";
+            this.LabelMail.Size = new System.Drawing.Size(59, 13);
+            this.LabelMail.TabIndex = 19;
+            this.LabelMail.Text = "Actual Mail";
+            // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(801, 459);
+            this.Controls.Add(this.LabelMail);
             this.Controls.Add(this.m_pTabPageMail_Messages);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -843,11 +856,13 @@ namespace SampleApp
             imap.Login("kamil.zidek@gmail.com", "joneson55");
             imap.SelectFolder("INBOX");
             LoadMessages();
+           //LabelMail.Text = m_pTabPageMail_Messages.Items[ip-2].SubItems[1].Text;
         }
  
         public void LoadMessages()
         {
             //item = m_pTabPageMail_Messages;
+            
             
             fetchHandler.Envelope += new EventHandler<EventArgs<IMAP_Envelope>>(delegate(object s, EventArgs<IMAP_Envelope> e)
             {
@@ -894,7 +909,7 @@ namespace SampleApp
 
             fetchHandler.Rfc822Size += new EventHandler<EventArgs<int>>(delegate(object s, EventArgs<int> e)
             {
-                item = m_pTabPageMail_Messages.Items.Add((i++).ToString());
+                item = m_pTabPageMail_Messages.Items.Add((ip++).ToString());
                 //item = m_pTabPageMail_Messages.Items.Add("x1");
                 item.SubItems.Add(((decimal)(e.Value / (decimal)1000)).ToString("f2") + " kb");
                 //m_pTabPageMail_Messages.Items[3].Text = ((decimal)(e.Value / (decimal)1000)).ToString("f2") + " kb";
