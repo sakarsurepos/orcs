@@ -9,6 +9,12 @@ using Google.GData.Client;
 using Google.GData.Extensions;
 using Google.GData.Calendar;
 using System.Resources;
+using LumiSoft.Net;
+using LumiSoft.Net.Log;
+using LumiSoft.Net.MIME;
+using LumiSoft.Net.Mail;
+using LumiSoft.Net.IMAP;
+using LumiSoft.Net.IMAP.Client;
 
 
 namespace SampleApp
@@ -34,6 +40,7 @@ namespace SampleApp
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private Button button1;
         private Timer timer50;
+        public int i = 1;
 
 
         private ArrayList entryList;
@@ -52,7 +59,17 @@ namespace SampleApp
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem2;
         private PictureBox pictureBox1;
+        private Button button5;
         public string newer1;
+        private ListView m_pTabPageMail_Messages;
+        private ColumnHeader collumnSubject;
+        private ColumnHeader collumnFrom;
+        private ColumnHeader collumnReceive;
+        private ColumnHeader collumnSize;
+        IMAP_Client imap = new IMAP_Client();
+        public IMAP_Client_FetchHandler fetchHandler = new IMAP_Client_FetchHandler();
+        private ColumnHeader collumnNumber;
+        public ListViewItem item;
 
         public Calendar()
         {
@@ -127,6 +144,13 @@ namespace SampleApp
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.m_pTabPageMail_Messages = new System.Windows.Forms.ListView();
+            this.collumnNumber = new System.Windows.Forms.ColumnHeader();
+            this.collumnSubject = new System.Windows.Forms.ColumnHeader();
+            this.collumnFrom = new System.Windows.Forms.ColumnHeader();
+            this.collumnReceive = new System.Windows.Forms.ColumnHeader();
+            this.collumnSize = new System.Windows.Forms.ColumnHeader();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -213,7 +237,7 @@ namespace SampleApp
             this.DayEvents.LabelWrap = false;
             this.DayEvents.Location = new System.Drawing.Point(11, 182);
             this.DayEvents.Name = "DayEvents";
-            this.DayEvents.Size = new System.Drawing.Size(568, 128);
+            this.DayEvents.Size = new System.Drawing.Size(778, 114);
             this.DayEvents.TabIndex = 8;
             this.DayEvents.UseCompatibleStateImageBehavior = false;
             this.DayEvents.View = System.Windows.Forms.View.Details;
@@ -328,14 +352,14 @@ namespace SampleApp
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
             this.toolStripMenuItem1.Text = "Restore";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 22);
             this.toolStripMenuItem2.Text = "Exit";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -348,10 +372,67 @@ namespace SampleApp
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(193, 156);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Gmail";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // m_pTabPageMail_Messages
+            // 
+            this.m_pTabPageMail_Messages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.collumnNumber,
+            this.collumnSize,
+            this.collumnReceive,
+            this.collumnFrom,
+            this.collumnSubject});
+            this.m_pTabPageMail_Messages.FullRowSelect = true;
+            this.m_pTabPageMail_Messages.GridLines = true;
+            this.m_pTabPageMail_Messages.Location = new System.Drawing.Point(11, 305);
+            this.m_pTabPageMail_Messages.Name = "m_pTabPageMail_Messages";
+            this.m_pTabPageMail_Messages.Size = new System.Drawing.Size(778, 145);
+            this.m_pTabPageMail_Messages.TabIndex = 18;
+            this.m_pTabPageMail_Messages.UseCompatibleStateImageBehavior = false;
+            this.m_pTabPageMail_Messages.View = System.Windows.Forms.View.Details;
+            // 
+            // collumnNumber
+            // 
+            this.collumnNumber.Text = "Number";
+            this.collumnNumber.Width = 48;
+            // 
+            // collumnSubject
+            // 
+            this.collumnSubject.DisplayIndex = 2;
+            this.collumnSubject.Text = "Subject";
+            this.collumnSubject.Width = 335;
+            // 
+            // collumnFrom
+            // 
+            this.collumnFrom.DisplayIndex = 1;
+            this.collumnFrom.Text = "From";
+            this.collumnFrom.Width = 291;
+            // 
+            // collumnReceive
+            // 
+            this.collumnReceive.Text = "Receive";
+            this.collumnReceive.Width = 75;
+            // 
+            // collumnSize
+            // 
+            this.collumnSize.DisplayIndex = 4;
+            this.collumnSize.Text = "Size";
+            this.collumnSize.Width = 73;
+            // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(592, 322);
+            this.ClientSize = new System.Drawing.Size(801, 459);
+            this.Controls.Add(this.m_pTabPageMail_Messages);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.labelRedeem);
             this.Controls.Add(this.button3);
@@ -374,6 +455,7 @@ namespace SampleApp
             this.Name = "Calendar";
             this.Text = "GooSMS Page Checker RC1";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.Calendar_Load);
             this.Resize += new System.EventHandler(this.Calendar_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -753,6 +835,92 @@ namespace SampleApp
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             ActiveForm.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            imap.Connect("imap.gmail.com", 993, true);
+            imap.Login("kamil.zidek@gmail.com", "joneson55");
+            imap.SelectFolder("INBOX");
+            LoadMessages();
+        }
+ 
+        public void LoadMessages()
+        {
+            //item = m_pTabPageMail_Messages;
+            
+            fetchHandler.Envelope += new EventHandler<EventArgs<IMAP_Envelope>>(delegate(object s, EventArgs<IMAP_Envelope> e)
+            {
+                IMAP_Envelope envelope = e.Value;
+
+                string from = "";
+                if (envelope.From != null)
+                {
+                    for (int i = 0; i < envelope.From.Length; i++)
+                    {
+                        // Don't add ; for last item
+                        if (i == envelope.From.Length - 1)
+                        {
+                            from += envelope.From[i].ToString();
+                        }
+                        else
+                        {
+                            from += envelope.From[i].ToString() + ";";
+                        }
+                    }
+                }
+                else
+                {
+                    from = "<none>";
+                }
+                
+                item.SubItems.Add(from);
+                item.SubItems.Add(envelope.Subject != null ? envelope.Subject : "<none>");
+                //m_pTabPageMail_Messages.Items[0].Text = from;
+                //m_pTabPageMail_Messages.Items[1].Text = envelope.Subject != null ? envelope.Subject : "<none>";
+            });
+
+            fetchHandler.Flags += new EventHandler<EventArgs<string[]>>(delegate(object s, EventArgs<string[]> e)
+            {
+            });
+
+            fetchHandler.InternalDate += new EventHandler<EventArgs<DateTime>>(delegate(object s, EventArgs<DateTime> e)
+            {
+
+                //item = m_pTabPageMail_Messages.Items.Add("x");
+                item.SubItems.Add(e.Value.ToString());
+                //m_pTabPageMail_Messages.Items[2].Text = e.Value.ToString();
+            });
+
+            fetchHandler.Rfc822Size += new EventHandler<EventArgs<int>>(delegate(object s, EventArgs<int> e)
+            {
+                item = m_pTabPageMail_Messages.Items.Add((i++).ToString());
+                //item = m_pTabPageMail_Messages.Items.Add("x1");
+                item.SubItems.Add(((decimal)(e.Value / (decimal)1000)).ToString("f2") + " kb");
+                //m_pTabPageMail_Messages.Items[3].Text = ((decimal)(e.Value / (decimal)1000)).ToString("f2") + " kb";
+            });
+
+            fetchHandler.UID += new EventHandler<EventArgs<long>>(delegate(object s, EventArgs<long> e)
+            {
+                m_pTabPageMail_Messages.Tag = e.Value;
+            });
+
+            IMAP_SequenceSet seqSet = new IMAP_SequenceSet();
+            seqSet.Parse("5:*");
+            imap.Fetch(false, seqSet, new IMAP_Fetch_DataItem[]{
+                        new IMAP_Fetch_DataItem_Envelope(),
+                        new IMAP_Fetch_DataItem_Flags(),
+                        new IMAP_Fetch_DataItem_InternalDate(),
+                        new IMAP_Fetch_DataItem_Rfc822Size(),
+                        new IMAP_Fetch_DataItem_Uid()
+                    },
+                fetchHandler
+            );
+        }
+
+        private void Calendar_Load(object sender, EventArgs e)
+        {
+
         }
 
 
