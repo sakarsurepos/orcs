@@ -133,6 +133,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Release\Google.GData.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="LumiSoft.Net, Version=2.0.3741.23199, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\LumiSoft.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
