@@ -41,6 +41,8 @@ namespace SampleApp
         private Button button1;
         private Timer timer50;
         public int ip = 1;
+        public int sub1 = 0;
+        public int sub2 = 10;
 
 
         private ArrayList entryList;
@@ -70,6 +72,31 @@ namespace SampleApp
         public IMAP_Client_FetchHandler fetchHandler = new IMAP_Client_FetchHandler();
         private ColumnHeader collumnNumber;
         private Label LabelMail;
+        private GroupBox groupBox1;
+        private Button button6;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private TextBox textBoxPage2;
+        private TextBox textBoxPage1;
+        private Label label5;
+        private Label label4;
+        private GroupBox groupBox4;
+        private Button button7;
+        private Label label7;
+        private Label label6;
+        private TextBox textBoxStrEnd;
+        private TextBox textBoxStrStart;
+        private Label label8;
+        private TextBox textBoxGmailCheckStr;
+        private GroupBox groupBox5;
+        private CheckBox checkBox1;
+        private ComboBox comboBox1;
+        private TextBox textBoxSMS;
+        private TextBox textBoxPass;
+        private TextBox textBoxOUT2;
+        private TextBox textBoxOUT1;
+        private TextBox textBoxTime;
+        private Label label9;
         public ListViewItem item;
 
         public Calendar()
@@ -150,16 +177,46 @@ namespace SampleApp
             this.collumnNumber = new System.Windows.Forms.ColumnHeader();
             this.collumnSize = new System.Windows.Forms.ColumnHeader();
             this.collumnReceive = new System.Windows.Forms.ColumnHeader();
-            this.collumnFrom = new System.Windows.Forms.ColumnHeader();
             this.collumnSubject = new System.Windows.Forms.ColumnHeader();
+            this.collumnFrom = new System.Windows.Forms.ColumnHeader();
             this.LabelMail = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxPage2 = new System.Windows.Forms.TextBox();
+            this.textBoxPage1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBoxStrStart = new System.Windows.Forms.TextBox();
+            this.textBoxStrEnd = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBoxGmailCheckStr = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxSMS = new System.Windows.Forms.TextBox();
+            this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.textBoxOUT1 = new System.Windows.Forms.TextBox();
+            this.textBoxOUT2 = new System.Windows.Forms.TextBox();
+            this.textBoxTime = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // calendarControl
             // 
-            this.calendarControl.Location = new System.Drawing.Point(0, 8);
+            this.calendarControl.Location = new System.Drawing.Point(9, 16);
             this.calendarControl.Name = "calendarControl";
             this.calendarControl.ShowTodayCircle = false;
             this.calendarControl.TabIndex = 0;
@@ -167,61 +224,63 @@ namespace SampleApp
             // 
             // CalendarURI
             // 
-            this.CalendarURI.Location = new System.Drawing.Point(244, 20);
+            this.CalendarURI.Location = new System.Drawing.Point(216, 16);
             this.CalendarURI.Name = "CalendarURI";
-            this.CalendarURI.Size = new System.Drawing.Size(312, 20);
+            this.CalendarURI.Size = new System.Drawing.Size(494, 20);
             this.CalendarURI.TabIndex = 1;
             this.CalendarURI.Text = "http://www.google.com/calendar/feeds/default/private/full";
+            this.CalendarURI.Visible = false;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(180, 21);
+            this.label1.Location = new System.Drawing.Point(178, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.Size = new System.Drawing.Size(32, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "URL:";
+            this.label1.Visible = false;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(180, 56);
+            this.label2.Location = new System.Drawing.Point(178, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 24);
+            this.label2.Size = new System.Drawing.Size(32, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "User:";
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(180, 94);
+            this.label3.Location = new System.Drawing.Point(404, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Password";
+            this.label3.Text = "Password:";
             // 
             // UserName
             // 
-            this.UserName.Location = new System.Drawing.Point(244, 56);
+            this.UserName.Location = new System.Drawing.Point(216, 38);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(312, 20);
+            this.UserName.Size = new System.Drawing.Size(175, 20);
             this.UserName.TabIndex = 5;
             this.UserName.Text = "kamil.zidek@gmail.com";
             // 
             // Password
             // 
-            this.Password.Location = new System.Drawing.Point(244, 92);
+            this.Password.Location = new System.Drawing.Point(461, 38);
             this.Password.Name = "Password";
             this.Password.PasswordChar = '*';
-            this.Password.Size = new System.Drawing.Size(128, 20);
+            this.Password.Size = new System.Drawing.Size(89, 20);
             this.Password.TabIndex = 6;
             this.Password.Text = "joneson55";
             // 
             // Go
             // 
             this.Go.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Go.Location = new System.Drawing.Point(183, 132);
+            this.Go.Location = new System.Drawing.Point(573, 38);
             this.Go.Name = "Go";
-            this.Go.Size = new System.Drawing.Size(96, 24);
+            this.Go.Size = new System.Drawing.Size(137, 20);
             this.Go.TabIndex = 7;
-            this.Go.Text = "&Read Data";
+            this.Go.Text = "&Read Calendar Data";
             this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
             // DayEvents
@@ -237,9 +296,9 @@ namespace SampleApp
             this.DayEvents.GridLines = true;
             this.DayEvents.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.DayEvents.LabelWrap = false;
-            this.DayEvents.Location = new System.Drawing.Point(11, 182);
+            this.DayEvents.Location = new System.Drawing.Point(181, 63);
             this.DayEvents.Name = "DayEvents";
-            this.DayEvents.Size = new System.Drawing.Size(778, 114);
+            this.DayEvents.Size = new System.Drawing.Size(529, 109);
             this.DayEvents.TabIndex = 8;
             this.DayEvents.UseCompatibleStateImageBehavior = false;
             this.DayEvents.View = System.Windows.Forms.View.Details;
@@ -247,20 +306,22 @@ namespace SampleApp
             // columnHeader1
             // 
             this.columnHeader1.Text = "Event";
-            this.columnHeader1.Width = 200;
+            this.columnHeader1.Width = 148;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Author";
-            this.columnHeader2.Width = 100;
+            this.columnHeader2.Width = 65;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Start";
+            this.columnHeader3.Width = 53;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "End";
+            this.columnHeader4.Width = 58;
             // 
             // columnHeader5
             // 
@@ -269,14 +330,15 @@ namespace SampleApp
             // columnHeader6
             // 
             this.columnHeader6.Text = "Type";
+            this.columnHeader6.Width = 39;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(285, 132);
+            this.button1.Location = new System.Drawing.Point(9, 65);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 23);
+            this.button1.Size = new System.Drawing.Size(108, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Auto Check";
+            this.button1.Text = "Run Auto Check";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -287,9 +349,9 @@ namespace SampleApp
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(481, 133);
+            this.button2.Location = new System.Drawing.Point(166, 13);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(64, 20);
             this.button2.TabIndex = 10;
             this.button2.Text = "Fast SMS";
             this.button2.UseVisualStyleBackColor = true;
@@ -298,36 +360,37 @@ namespace SampleApp
             // labelLastCheck
             // 
             this.labelLastCheck.AutoSize = true;
-            this.labelLastCheck.Location = new System.Drawing.Point(374, 95);
+            this.labelLastCheck.Location = new System.Drawing.Point(232, 70);
             this.labelLastCheck.Name = "labelLastCheck";
-            this.labelLastCheck.Size = new System.Drawing.Size(58, 13);
+            this.labelLastCheck.Size = new System.Drawing.Size(46, 13);
             this.labelLastCheck.TabIndex = 11;
-            this.labelLastCheck.Text = "LastCheck";
+            this.labelLastCheck.Text = "LastChk";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(426, 133);
+            this.button3.Location = new System.Drawing.Point(7, 103);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(49, 23);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Test";
+            this.button3.Text = "Test Button";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // labelRedeem
             // 
             this.labelRedeem.AutoSize = true;
+            this.labelRedeem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelRedeem.ForeColor = System.Drawing.Color.Red;
-            this.labelRedeem.Location = new System.Drawing.Point(307, 166);
+            this.labelRedeem.Location = new System.Drawing.Point(5, 37);
             this.labelRedeem.Name = "labelRedeem";
-            this.labelRedeem.Size = new System.Drawing.Size(81, 13);
+            this.labelRedeem.Size = new System.Drawing.Size(54, 12);
             this.labelRedeem.TabIndex = 13;
-            this.labelRedeem.Text = "No Redemption";
+            this.labelRedeem.Text = "No Redeem";
             // 
             // button4
             // 
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(364, 132);
+            this.button4.Location = new System.Drawing.Point(123, 65);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(56, 23);
             this.button4.TabIndex = 14;
@@ -368,19 +431,20 @@ namespace SampleApp
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Calendar.Resource1.sms3;
-            this.pictureBox1.Location = new System.Drawing.Point(507, 82);
+            this.pictureBox1.Location = new System.Drawing.Point(732, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(193, 156);
+            this.button5.Location = new System.Drawing.Point(9, 19);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(170, 23);
             this.button5.TabIndex = 17;
-            this.button5.Text = "Gmail";
+            this.button5.Text = "Gmail Check Mail";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -394,86 +458,345 @@ namespace SampleApp
             this.collumnFrom});
             this.m_pTabPageMail_Messages.FullRowSelect = true;
             this.m_pTabPageMail_Messages.GridLines = true;
-            this.m_pTabPageMail_Messages.Location = new System.Drawing.Point(11, 305);
+            this.m_pTabPageMail_Messages.Location = new System.Drawing.Point(9, 46);
             this.m_pTabPageMail_Messages.Name = "m_pTabPageMail_Messages";
-            this.m_pTabPageMail_Messages.Size = new System.Drawing.Size(778, 145);
+            this.m_pTabPageMail_Messages.Size = new System.Drawing.Size(773, 95);
             this.m_pTabPageMail_Messages.TabIndex = 18;
             this.m_pTabPageMail_Messages.UseCompatibleStateImageBehavior = false;
             this.m_pTabPageMail_Messages.View = System.Windows.Forms.View.Details;
             // 
             // collumnNumber
             // 
-            this.collumnNumber.Text = "Number";
-            this.collumnNumber.Width = 56;
+            this.collumnNumber.Text = "#";
+            this.collumnNumber.Width = 25;
             // 
             // collumnSize
             // 
             this.collumnSize.DisplayIndex = 4;
             this.collumnSize.Text = "Size";
-            this.collumnSize.Width = 73;
             // 
             // collumnReceive
             // 
             this.collumnReceive.DisplayIndex = 3;
             this.collumnReceive.Text = "Receive";
-            this.collumnReceive.Width = 75;
-            // 
-            // collumnFrom
-            // 
-            this.collumnFrom.DisplayIndex = 1;
-            this.collumnFrom.Text = "From";
-            this.collumnFrom.Width = 291;
+            this.collumnReceive.Width = 116;
             // 
             // collumnSubject
             // 
-            this.collumnSubject.DisplayIndex = 2;
-            this.collumnSubject.Text = "Subject";
-            this.collumnSubject.Width = 335;
+            this.collumnSubject.DisplayIndex = 1;
+            this.collumnSubject.Text = "From";
+            this.collumnSubject.Width = 250;
+            // 
+            // collumnFrom
+            // 
+            this.collumnFrom.DisplayIndex = 2;
+            this.collumnFrom.Text = "Subject";
+            this.collumnFrom.Width = 300;
             // 
             // LabelMail
             // 
             this.LabelMail.AutoSize = true;
-            this.LabelMail.Location = new System.Drawing.Point(637, 166);
+            this.LabelMail.Location = new System.Drawing.Point(194, 24);
             this.LabelMail.Name = "LabelMail";
-            this.LabelMail.Size = new System.Drawing.Size(59, 13);
+            this.LabelMail.Size = new System.Drawing.Size(72, 13);
             this.LabelMail.TabIndex = 19;
-            this.LabelMail.Text = "Actual Mail";
+            this.LabelMail.Text = "From+Subject";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.UserName);
+            this.groupBox1.Controls.Add(this.Go);
+            this.groupBox1.Controls.Add(this.Password);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.CalendarURI);
+            this.groupBox1.Controls.Add(this.calendarControl);
+            this.groupBox1.Controls.Add(this.DayEvents);
+            this.groupBox1.Location = new System.Drawing.Point(7, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(719, 181);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "SMS History";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(8, 50);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(49, 27);
+            this.button6.TabIndex = 21;
+            this.button6.Text = "Unlock";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.textBoxTime);
+            this.groupBox2.Controls.Add(this.textBoxOUT2);
+            this.groupBox2.Controls.Add(this.textBoxOUT1);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.textBoxStrEnd);
+            this.groupBox2.Controls.Add(this.textBoxStrStart);
+            this.groupBox2.Controls.Add(this.textBoxPage2);
+            this.groupBox2.Controls.Add(this.textBoxPage1);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.labelLastCheck);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Location = new System.Drawing.Point(7, 184);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(547, 100);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "WebPageChecker";
+            // 
+            // textBoxPage2
+            // 
+            this.textBoxPage2.Location = new System.Drawing.Point(79, 38);
+            this.textBoxPage2.Name = "textBoxPage2";
+            this.textBoxPage2.Size = new System.Drawing.Size(276, 20);
+            this.textBoxPage2.TabIndex = 18;
+            this.textBoxPage2.Text = "http://lockerzchecker.ismywebsite.com/index.php";
+            // 
+            // textBoxPage1
+            // 
+            this.textBoxPage1.Location = new System.Drawing.Point(79, 17);
+            this.textBoxPage1.Name = "textBoxPage1";
+            this.textBoxPage1.Size = new System.Drawing.Size(276, 20);
+            this.textBoxPage1.TabIndex = 17;
+            this.textBoxPage1.Text = "http://www.kaar.sebsoft.com/";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "WebPage2:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "WebPage1:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.textBoxGmailCheckStr);
+            this.groupBox3.Controls.Add(this.m_pTabPageMail_Messages);
+            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.LabelMail);
+            this.groupBox3.Location = new System.Drawing.Point(7, 285);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(789, 147);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Gmail check with SMS Notification";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBoxPass);
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Controls.Add(this.labelRedeem);
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Location = new System.Drawing.Point(732, 52);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(64, 131);
+            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Lockerz";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(6, 13);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(54, 23);
+            this.button7.TabIndex = 14;
+            this.button7.Text = "Lockerz";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // textBoxStrStart
+            // 
+            this.textBoxStrStart.Location = new System.Drawing.Point(413, 67);
+            this.textBoxStrStart.Name = "textBoxStrStart";
+            this.textBoxStrStart.Size = new System.Drawing.Size(45, 20);
+            this.textBoxStrStart.TabIndex = 19;
+            this.textBoxStrStart.Text = "0";
+            // 
+            // textBoxStrEnd
+            // 
+            this.textBoxStrEnd.Location = new System.Drawing.Point(498, 67);
+            this.textBoxStrEnd.Name = "textBoxStrEnd";
+            this.textBoxStrEnd.Size = new System.Drawing.Size(39, 20);
+            this.textBoxStrEnd.TabIndex = 20;
+            this.textBoxStrEnd.Text = "262";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(369, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "StrStart";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(459, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "StrEnd";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBoxSMS);
+            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.checkBox1);
+            this.groupBox5.Controls.Add(this.button2);
+            this.groupBox5.Location = new System.Drawing.Point(560, 184);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(236, 100);
+            this.groupBox5.TabIndex = 25;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "SMS";
+            // 
+            // textBoxGmailCheckStr
+            // 
+            this.textBoxGmailCheckStr.Location = new System.Drawing.Point(682, 19);
+            this.textBoxGmailCheckStr.Name = "textBoxGmailCheckStr";
+            this.textBoxGmailCheckStr.Size = new System.Drawing.Size(100, 20);
+            this.textBoxGmailCheckStr.TabIndex = 20;
+            this.textBoxGmailCheckStr.Text = "Lockerz";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(570, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Subject Check String";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(6, 16);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(68, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "SMS ON";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Hedka",
+            "Marek",
+            "Oco",
+            "Mamka",
+            "Denka",
+            "Matka",
+            "Fodor",
+            "Zupa",
+            "Feriancik"});
+            this.comboBox1.Location = new System.Drawing.Point(73, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(91, 21);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // textBoxSMS
+            // 
+            this.textBoxSMS.Location = new System.Drawing.Point(6, 38);
+            this.textBoxSMS.Multiline = true;
+            this.textBoxSMS.Name = "textBoxSMS";
+            this.textBoxSMS.Size = new System.Drawing.Size(223, 56);
+            this.textBoxSMS.TabIndex = 12;
+            // 
+            // textBoxPass
+            // 
+            this.textBoxPass.Location = new System.Drawing.Point(5, 80);
+            this.textBoxPass.Name = "textBoxPass";
+            this.textBoxPass.Size = new System.Drawing.Size(53, 20);
+            this.textBoxPass.TabIndex = 22;
+            // 
+            // textBoxOUT1
+            // 
+            this.textBoxOUT1.Location = new System.Drawing.Point(362, 17);
+            this.textBoxOUT1.Name = "textBoxOUT1";
+            this.textBoxOUT1.Size = new System.Drawing.Size(177, 20);
+            this.textBoxOUT1.TabIndex = 23;
+            // 
+            // textBoxOUT2
+            // 
+            this.textBoxOUT2.Location = new System.Drawing.Point(362, 38);
+            this.textBoxOUT2.Name = "textBoxOUT2";
+            this.textBoxOUT2.Size = new System.Drawing.Size(177, 20);
+            this.textBoxOUT2.TabIndex = 24;
+            // 
+            // textBoxTime
+            // 
+            this.textBoxTime.Location = new System.Drawing.Point(208, 67);
+            this.textBoxTime.Name = "textBoxTime";
+            this.textBoxTime.Size = new System.Drawing.Size(25, 20);
+            this.textBoxTime.TabIndex = 25;
+            this.textBoxTime.Text = "5";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(180, 70);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Time";
             // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(801, 459);
-            this.Controls.Add(this.LabelMail);
-            this.Controls.Add(this.m_pTabPageMail_Messages);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.labelRedeem);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.labelLastCheck);
+            this.ClientSize = new System.Drawing.Size(801, 438);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.DayEvents);
-            this.Controls.Add(this.Go);
-            this.Controls.Add(this.Password);
-            this.Controls.Add(this.UserName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.CalendarURI);
-            this.Controls.Add(this.calendarControl);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Calendar";
             this.Text = "GooSMS Page Checker RC1";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            this.Load += new System.EventHandler(this.Calendar_Load);
             this.Resize += new System.EventHandler(this.Calendar_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 #endregion
@@ -595,69 +918,80 @@ namespace SampleApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+                timer50.Interval = int.Parse(textBoxTime.Text) * 1000 * 60;
                 button4.Enabled = true;
                 button1.Enabled = false;
                 //////////////////////////
                 //Check 0 original Lockerz
+                try
+                {
+                    // Create a request for the URL. 	PAGE1	
+                    WebRequest request = WebRequest.Create(textBoxPage1.Text); //http://ptzplace.lockerz.com/
+                    // If required by the server, set the credentials.
+                    request.Credentials = CredentialCache.DefaultCredentials;
+                    // Get the response.
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                    // Display the status.
+                    Console.WriteLine(response.StatusDescription);
+                    // Get the stream containing content returned by the server.
+                    Stream dataStream = response.GetResponseStream();
+                    // Open the stream using a StreamReader for easy access.
+                    StreamReader reader = new StreamReader(dataStream);
+                    // Read the content.
+                    string responseFromServer = reader.ReadToEnd();
+                    // Save to newer.
+                    older = responseFromServer;
+                    // Cleanup the streams and the response.
+                    reader.Close();
+                    dataStream.Close();
+                    response.Close();
+                    textBoxOUT1.Text = older;
 
-                // Create a request for the URL. 		
-                WebRequest request = WebRequest.Create("http://www.kaar.sebsoft.com/"); //http://ptzplace.lockerz.com/
-                // If required by the server, set the credentials.
-                request.Credentials = CredentialCache.DefaultCredentials;
-                // Get the response.
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                // Display the status.
-                Console.WriteLine(response.StatusDescription);
-                // Get the stream containing content returned by the server.
-                Stream dataStream = response.GetResponseStream();
-                // Open the stream using a StreamReader for easy access.
-                StreamReader reader = new StreamReader(dataStream);
-                // Read the content.
-                string responseFromServer = reader.ReadToEnd();
-                // Save to newer.
-                older = responseFromServer;
-                // Cleanup the streams and the response.
-                reader.Close();
-                dataStream.Close();
-                response.Close();
+                    //////////////////////////
+                    //Check 1 LockerzNews PAGE2
 
-                //////////////////////////
-                //Check 1 LockerzNews
-
-                // Create a request for the URL. 		
-                WebRequest request1 = WebRequest.Create("http://lockerzchecker.ismywebsite.com/index.php");
-                // If required by the server, set the credentials.
-                request1.Credentials = CredentialCache.DefaultCredentials;
-                // Get the response.
-                HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();
-                // Display the status.
-                Console.WriteLine(response1.StatusDescription);
-                // Get the stream containing content returned by the server.
-                Stream dataStream1 = response1.GetResponseStream();
-                // Open the stream using a StreamReader for easy access.
-                StreamReader reader1 = new StreamReader(dataStream1);
-                // Read the content.
-                string responseFromServer1 = reader1.ReadToEnd();
-                // Save to newer.
-                older1 = responseFromServer1;
-                // Cleanup the streams and the response.
-                reader1.Close();
-                dataStream1.Close();
-                response1.Close();
-                older1 = older1.Substring(0, 262);
+                    // Create a request for the URL. 		
+                    WebRequest request1 = WebRequest.Create(textBoxPage2.Text);
+                    // If required by the server, set the credentials.
+                    request1.Credentials = CredentialCache.DefaultCredentials;
+                    // Get the response.
+                    HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();
+                    // Display the status.
+                    Console.WriteLine(response1.StatusDescription);
+                    // Get the stream containing content returned by the server.
+                    Stream dataStream1 = response1.GetResponseStream();
+                    // Open the stream using a StreamReader for easy access.
+                    StreamReader reader1 = new StreamReader(dataStream1);
+                    // Read the content.
+                    string responseFromServer1 = reader1.ReadToEnd();
+                    // Save to newer.
+                    older1 = responseFromServer1;
+                    // Cleanup the streams and the response.
+                    reader1.Close();
+                    dataStream1.Close();
+                    response1.Close();
+                    older1 = older1.Substring(int.Parse(textBoxStrStart.Text), int.Parse(textBoxStrEnd.Text));
+                    textBoxOUT2.Text = older1;
+                    //Start Check
+                    timer50.Start();
+                }
+                catch
+                {
+                    MessageBox.Show("WebPage NotExist or No connection");
+                    timer50.Stop();
+                    button4.Enabled = false;
+                    button1.Enabled = true;
+                }
             
-            //Start Check
-            timer50.Start();
-             
         }
 
         private void timer50_Tick(object sender, EventArgs e)
         {
                 //////////////////////////
-                //Check 0 original Lockerz
+                //Check 0 original Lockerz PAGE1
 
                 // Create a request for the URL. 		
-            WebRequest request3 = WebRequest.Create("http://www.kaar.sebsoft.com/"); //http://ptzplace.lockerz.com/
+            WebRequest request3 = WebRequest.Create(textBoxPage1.Text); //http://ptzplace.lockerz.com/
                 // If required by the server, set the credentials.
                 request3.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
@@ -678,10 +1012,10 @@ namespace SampleApp
                 response3.Close();
 
                 //////////////////////////
-                //Check 1 Lockerznews
+                //Check 1 Lockerznews PAGE2
 
                 // Create a request for the URL. 		
-                WebRequest request4 = WebRequest.Create("http://lockerzchecker.ismywebsite.com/index.php");
+                WebRequest request4 = WebRequest.Create(textBoxPage2.Text);
                 // If required by the server, set the credentials.
                 request4.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
@@ -700,7 +1034,7 @@ namespace SampleApp
                 reader4.Close();
                 dataStream4.Close();
                 response4.Close();
-                newer1 = newer1.Substring(0, 262);
+                newer1 = newer1.Substring(int.Parse(textBoxStrStart.Text), int.Parse(textBoxStrEnd.Text));
 
                 // Compare String
                 if (older != newer || older1 != newer1)
@@ -728,11 +1062,17 @@ namespace SampleApp
                     When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
                     entry.Times.Add(eventTime);
 
-                    //Add SMS Reminder
-                    Reminder fiftyMinReminder = new Reminder();
-                    fiftyMinReminder.Minutes = 1;
-                    fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
-                    entry.Reminders.Add(fiftyMinReminder);
+                    if (checkBox1.Checked == true)  //Reminder ON/OFF
+                    {
+                        //Add SMS Reminder
+                        Reminder fiftyMinReminder = new Reminder();
+                        fiftyMinReminder.Minutes = 1;
+                        fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
+                        entry.Reminders.Add(fiftyMinReminder);
+                    }
+                    else
+                    {
+                    }
 
                     Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
 
@@ -759,7 +1099,7 @@ namespace SampleApp
                     
                 }
 
-           labelLastCheck.Text = "Last Check" +  DateTime.Now;
+           labelLastCheck.Text = "Last" +  DateTime.Now;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -770,54 +1110,39 @@ namespace SampleApp
             EventEntry entry = new EventEntry();
 
             // Set the title and content of the entry.
-            entry.Title.Text = "Lockerz";
-            entry.Content.Content = "Redemption begins.";
+            entry.Title.Text = textBoxSMS.Text;
+            entry.Content.Content = "TestSMS";
 
             // Set a location for the event.
             Where eventLocation = new Where();
-            eventLocation.ValueString = "PC";
+            eventLocation.ValueString = "GooSMS";
             entry.Locations.Add(eventLocation);
 
             When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
             entry.Times.Add(eventTime);
 
+            if(checkBox1.Checked == true)  //Reminder ON/OFF
+            {
             //Add SMS Reminder
             Reminder fiftyMinReminder = new Reminder();
             fiftyMinReminder.Minutes = 1;
             fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
             entry.Reminders.Add(fiftyMinReminder);
+            }
+            else
+            {
+            }
 
             Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
 
             // Send the request and receive the response:
             AtomEntry insertedEntry = service.Insert(postUri, entry);
+            MessageBox.Show("SMS will be send in 3 Minutes");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            labelLastCheck.Text = "Last Check" + DateTime.Now;
-            
-            // Create a request for the URL. 		
-            WebRequest request1 = WebRequest.Create("http://lockerzchecker.ismywebsite.com/index.php");
-            // If required by the server, set the credentials.
-            request1.Credentials = CredentialCache.DefaultCredentials;
-            // Get the response.
-            HttpWebResponse response1 = (HttpWebResponse)request1.GetResponse();
-            // Display the status.
-            Console.WriteLine(response1.StatusDescription);
-            // Get the stream containing content returned by the server.
-            Stream dataStream1 = response1.GetResponseStream();
-            // Open the stream using a StreamReader for easy access.
-            StreamReader reader1 = new StreamReader(dataStream1);
-            // Read the content.
-            string responseFromServer1 = reader1.ReadToEnd();
-            // Save to newer.
-            newer1 = responseFromServer1;
-            // Cleanup the streams and the response.
-            reader1.Close();
-            dataStream1.Close();
-            response1.Close();
-            newer1 = newer1.Substring(0, 262);
+            textBoxPage1.Text = "http://www.kaar.sebsoft.com/";
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -852,11 +1177,20 @@ namespace SampleApp
 
         private void button5_Click(object sender, EventArgs e)
         {
-            imap.Connect("imap.gmail.com", 993, true);
-            imap.Login("kamil.zidek@gmail.com", "joneson55");
-            imap.SelectFolder("INBOX");
-            LoadMessages();
-            LabelMail.Text = m_pTabPageMail_Messages.Items[ip-2].SubItems[1].Text;
+            try
+            {
+                imap.Connect("imap.gmail.com", 993, true);
+                imap.Login("kamil.zidek@gmail.com", "joneson55");
+                imap.SelectFolder("INBOX");
+                LoadMessages();
+                LabelMail.Text = m_pTabPageMail_Messages.Items[ip - 2].SubItems[3].Text + m_pTabPageMail_Messages.Items[ip - 2].SubItems[4].Text;
+                imap.CloseFolder();
+                imap.Disconnect();
+            }
+            catch
+            {
+                MessageBox.Show("No internet Connection");
+            }
         }
  
         public void LoadMessages()
@@ -933,9 +1267,23 @@ namespace SampleApp
             );
         }
 
-        private void Calendar_Load(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBoxPage1.Text = "http://ptzplace.lockerz.com/"; 
+            textBoxPage2.Text = "http://lockerzchecker.ismywebsite.com/index.php";
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(textBoxPass.Text == "joneson55")
+            {
+            checkBox1.Enabled = true;
+            }
         }
 
 
