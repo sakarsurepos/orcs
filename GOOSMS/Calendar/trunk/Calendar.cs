@@ -701,7 +701,7 @@ namespace SampleApp
             this.textBoxGmailCheckStr.Name = "textBoxGmailCheckStr";
             this.textBoxGmailCheckStr.Size = new System.Drawing.Size(100, 20);
             this.textBoxGmailCheckStr.TabIndex = 20;
-            this.textBoxGmailCheckStr.Text = "Lockerz";
+            this.textBoxGmailCheckStr.Text = "ockerz";
             // 
             // groupBox4
             // 
@@ -965,6 +965,10 @@ namespace SampleApp
                 timer50.Interval = int.Parse(textBoxTime.Text) * 1000 * 60;
                 button4.Enabled = true;
                 button1.Enabled = false;
+                //Start Check
+                timer50.Start();
+                    try
+                    {
 
                 if (checkBoxGmail.Checked == true)
                 {
@@ -977,8 +981,7 @@ namespace SampleApp
 
                     //////////////////////////
                     //Check 0 original Lockerz
-                    try
-                    {
+
                         // Create a request for the URL. 	PAGE1	
                         WebRequest request = WebRequest.Create(textBoxPage1.Text); //http://ptzplace.lockerz.com/
                         // If required by the server, set the credentials.
@@ -1026,9 +1029,9 @@ namespace SampleApp
                         response1.Close();
                         older1 = older1.Substring(int.Parse(textBoxStrStart.Text), int.Parse(textBoxStrEnd.Text));
                         textBoxOUT2.Text = older1;
-                        //Start Check
-                        timer50.Start();
                     }
+                    
+                }
                     catch
                     {
                         MessageBox.Show("WebPage NotExist or No connection");
@@ -1036,7 +1039,6 @@ namespace SampleApp
                         button4.Enabled = false;
                         button1.Enabled = true;
                     }
-                }
             
         }
 
@@ -1046,7 +1048,45 @@ namespace SampleApp
             if (checkBoxGmail.Checked == true)
             {
                 button5_Click(sender, e);
+                if (mainstring != oldmainstring && stringresult != -1)
+                {
 
+                    CalendarService service = new CalendarService("exampleCo-exampleApp-1");
+                    service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
+
+                    EventEntry entry = new EventEntry();
+
+                    // Set the title and content of the entry.
+                    entry.Title.Text = "Lockerz Gmail";
+                    entry.Content.Content = "Lockers Gmail Info.";
+                    // Set a location for the event.
+                    Where eventLocation = new Where();
+                    eventLocation.ValueString = "PC";
+                    entry.Locations.Add(eventLocation);
+
+                    When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
+                    entry.Times.Add(eventTime);
+
+                    if (checkBox1.Checked == true)  //Reminder ON/OFF
+                    {
+                        //Add SMS Reminder
+                        Reminder fiftyMinReminder = new Reminder();
+                        fiftyMinReminder.Minutes = 1;
+                        fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
+                        entry.Reminders.Add(fiftyMinReminder);
+                    }
+                    else
+                    {
+                    }
+
+                    Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
+
+                    // Send the request and receive the response:
+                    AtomEntry insertedEntry = service.Insert(postUri, entry);
+
+                oldmainstring = mainstring;
+                }
+                
             }
 
             //WebPage Check
@@ -1164,7 +1204,7 @@ namespace SampleApp
 
                 }
            }
-           labelLastCheck.Text = "Last" +  DateTime.Now;
+           labelLastCheck.Text = DateTime.Now.TimeOfDay.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
