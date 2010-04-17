@@ -660,7 +660,7 @@ namespace SampleApp
             this.textBoxTime.Name = "textBoxTime";
             this.textBoxTime.Size = new System.Drawing.Size(25, 20);
             this.textBoxTime.TabIndex = 25;
-            this.textBoxTime.Text = "5";
+            this.textBoxTime.Text = "1";
             // 
             // groupBox3
             // 
@@ -825,7 +825,7 @@ namespace SampleApp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Calendar";
-            this.Text = "GooSMS Page Checker RC1";
+            this.Text = "FreelifeSMS WebPage and Gmail Checker RC2";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Resize += new System.EventHandler(this.Calendar_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -1057,11 +1057,11 @@ namespace SampleApp
                     EventEntry entry = new EventEntry();
 
                     // Set the title and content of the entry.
-                    entry.Title.Text = "Lockerz Gmail";
+                    entry.Title.Text = m_pTabPageMail_Messages.Items[ip - 2].SubItems[4].Text;
                     entry.Content.Content = "Lockers Gmail Info.";
                     // Set a location for the event.
                     Where eventLocation = new Where();
-                    eventLocation.ValueString = "PC";
+                    eventLocation.ValueString = "Lockerz Gmail";
                     entry.Locations.Add(eventLocation);
 
                     When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
