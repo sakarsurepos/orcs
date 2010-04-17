@@ -856,7 +856,7 @@ namespace SampleApp
             imap.Login("kamil.zidek@gmail.com", "joneson55");
             imap.SelectFolder("INBOX");
             LoadMessages();
-           //LabelMail.Text = m_pTabPageMail_Messages.Items[ip-2].SubItems[1].Text;
+            LabelMail.Text = m_pTabPageMail_Messages.Items[ip-2].SubItems[1].Text;
         }
  
         public void LoadMessages()
