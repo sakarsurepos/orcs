@@ -1289,7 +1289,7 @@ namespace SampleApp
             {
                 m_pTabPageMail_Messages.Items.Clear();
                 imap.Connect("imap.gmail.com", 993, true);
-                imap.Login("kamil.zidek@gmail.com", "joneson55");
+                imap.Login(UserName.Text, Password);
                 imap.SelectFolder("INBOX");
                 LoadMessages();
                 LabelMail.Text = m_pTabPageMail_Messages.Items[ip - 2].SubItems[3].Text + m_pTabPageMail_Messages.Items[ip - 2].SubItems[4].Text;
