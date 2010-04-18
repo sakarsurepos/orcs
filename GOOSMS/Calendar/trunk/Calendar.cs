@@ -48,7 +48,9 @@ namespace SampleApp
         public string oldmainstring;
         public string substring;
         public int stringresult;
-
+        string pageSource;
+        string oldpageSource;
+        mshtml.HTMLDocument objHtmlDoc;
 
         private ArrayList entryList;
         public string older;
@@ -123,8 +125,8 @@ namespace SampleApp
         private TextBox textBox7;
         private Label label12;
         private Label label13;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox textBoxBrowserEd;
+        private TextBox textBoxBrowserSt;
         private TextBox textBoxBrowserLogin;
         private TextBox textBoxBrowserPassword;
         private Label label19;
@@ -146,6 +148,9 @@ namespace SampleApp
         private TextBox textBoxJSSubmit;
         private Label label26;
         private TextBox textBoxJSForm;
+        private Timer timer2;
+        private Label labelBrowser;
+        private CheckBox checkBoxWebPage4;
         public ListViewItem item;
 
         public Calendar()
@@ -251,8 +256,8 @@ namespace SampleApp
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxBrowserEd = new System.Windows.Forms.TextBox();
+            this.textBoxBrowserSt = new System.Windows.Forms.TextBox();
             this.textBoxBrowserLogin = new System.Windows.Forms.TextBox();
             this.textBoxBrowerPage = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -295,6 +300,9 @@ namespace SampleApp
             this.textBoxJSForm = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.textBoxJSSubmit = new System.Windows.Forms.TextBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.labelBrowser = new System.Windows.Forms.Label();
+            this.checkBoxWebPage4 = new System.Windows.Forms.CheckBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -640,8 +648,8 @@ namespace SampleApp
             this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.textBoxBrowserEd);
+            this.groupBox2.Controls.Add(this.textBoxBrowserSt);
             this.groupBox2.Controls.Add(this.textBoxBrowserLogin);
             this.groupBox2.Controls.Add(this.textBoxBrowerPage);
             this.groupBox2.Controls.Add(this.textBox1);
@@ -672,7 +680,7 @@ namespace SampleApp
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(24, 23);
             this.button8.TabIndex = 55;
-            this.button8.Text = "G";
+            this.button8.Text = "R";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
@@ -840,21 +848,21 @@ namespace SampleApp
             this.label13.TabIndex = 36;
             this.label13.Text = "St";
             // 
-            // textBox4
+            // textBoxBrowserEd
             // 
-            this.textBox4.Location = new System.Drawing.Point(427, 77);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(30, 20);
-            this.textBox4.TabIndex = 35;
-            this.textBox4.Text = "262";
+            this.textBoxBrowserEd.Location = new System.Drawing.Point(427, 77);
+            this.textBoxBrowserEd.Name = "textBoxBrowserEd";
+            this.textBoxBrowserEd.Size = new System.Drawing.Size(30, 20);
+            this.textBoxBrowserEd.TabIndex = 35;
+            this.textBoxBrowserEd.Text = "262";
             // 
-            // textBox5
+            // textBoxBrowserSt
             // 
-            this.textBox5.Location = new System.Drawing.Point(377, 77);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(30, 20);
-            this.textBox5.TabIndex = 34;
-            this.textBox5.Text = "0";
+            this.textBoxBrowserSt.Location = new System.Drawing.Point(377, 77);
+            this.textBoxBrowserSt.Name = "textBoxBrowserSt";
+            this.textBoxBrowserSt.Size = new System.Drawing.Size(30, 20);
+            this.textBoxBrowserSt.TabIndex = 34;
+            this.textBoxBrowserSt.Text = "500";
             // 
             // textBoxBrowserLogin
             // 
@@ -1069,6 +1077,7 @@ namespace SampleApp
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.checkBoxWebPage4);
             this.groupBox4.Controls.Add(this.checkBoxGmail);
             this.groupBox4.Controls.Add(this.checkBoxWebPage);
             this.groupBox4.Controls.Add(this.label9);
@@ -1090,7 +1099,7 @@ namespace SampleApp
             // checkBoxGmail
             // 
             this.checkBoxGmail.AutoSize = true;
-            this.checkBoxGmail.Location = new System.Drawing.Point(5, 127);
+            this.checkBoxGmail.Location = new System.Drawing.Point(70, 112);
             this.checkBoxGmail.Name = "checkBoxGmail";
             this.checkBoxGmail.Size = new System.Drawing.Size(52, 17);
             this.checkBoxGmail.TabIndex = 28;
@@ -1102,9 +1111,9 @@ namespace SampleApp
             this.checkBoxWebPage.AutoSize = true;
             this.checkBoxWebPage.Location = new System.Drawing.Point(5, 112);
             this.checkBoxWebPage.Name = "checkBoxWebPage";
-            this.checkBoxWebPage.Size = new System.Drawing.Size(74, 17);
+            this.checkBoxWebPage.Size = new System.Drawing.Size(66, 17);
             this.checkBoxWebPage.TabIndex = 27;
-            this.checkBoxWebPage.Text = "WebPage";
+            this.checkBoxWebPage.Text = "Page1,2";
             this.checkBoxWebPage.UseVisualStyleBackColor = true;
             // 
             // textBoxPass
@@ -1249,10 +1258,35 @@ namespace SampleApp
             this.textBoxJSSubmit.TabIndex = 62;
             this.textBoxJSSubmit.Text = "submit";
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 10000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // labelBrowser
+            // 
+            this.labelBrowser.AutoSize = true;
+            this.labelBrowser.Location = new System.Drawing.Point(563, 287);
+            this.labelBrowser.Name = "labelBrowser";
+            this.labelBrowser.Size = new System.Drawing.Size(62, 13);
+            this.labelBrowser.TabIndex = 28;
+            this.labelBrowser.Text = "CompareStr";
+            // 
+            // checkBoxWebPage4
+            // 
+            this.checkBoxWebPage4.AutoSize = true;
+            this.checkBoxWebPage4.Location = new System.Drawing.Point(5, 128);
+            this.checkBoxWebPage4.Name = "checkBoxWebPage4";
+            this.checkBoxWebPage4.Size = new System.Drawing.Size(57, 17);
+            this.checkBoxWebPage4.TabIndex = 29;
+            this.checkBoxWebPage4.Text = "Page4";
+            this.checkBoxWebPage4.UseVisualStyleBackColor = true;
+            // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(802, 817);
+            this.Controls.Add(this.labelBrowser);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.webBrowser1);
@@ -1280,6 +1314,7 @@ namespace SampleApp
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 #endregion
@@ -1408,13 +1443,19 @@ namespace SampleApp
                 timer50.Start();
                     try
                     {
-
-                if (checkBoxGmail.Checked == true)
+                //GMAIL
+                if (checkBoxGmail.Checked == true) 
                 {
                     button5_Click(sender, e);
                     oldmainstring = mainstring;
                 }
+                //PAGE4
+                if (checkBoxWebPage4.Checked == true)
+                {
+                    button9_Click(sender, e);
+                }
 
+                //PAGE1,2
                 if (checkBoxWebPage.Checked == true)
                 {
 
@@ -1483,6 +1524,51 @@ namespace SampleApp
 
         private void timer50_Tick(object sender, EventArgs e)
         {
+            
+            //Page4 Check
+            if (checkBoxWebPage4.Checked == true)
+            {
+                button8_Click_1(sender, e);
+                if (oldpageSource != pageSource)
+                {
+
+                    CalendarService service = new CalendarService("exampleCo-exampleApp-1");
+                    service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
+
+                    EventEntry entry = new EventEntry();
+
+                    // Set the title and content of the entry.
+                    entry.Title.Text = "Lockerz Login Check";
+                    entry.Content.Content = "Lockerz Login Page Check.";
+                    // Set a location for the event.
+                    Where eventLocation = new Where();
+                    eventLocation.ValueString = "Lockerz Login";
+                    entry.Locations.Add(eventLocation);
+
+                    When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
+                    entry.Times.Add(eventTime);
+
+                    if (checkBox1.Checked == true)  //Reminder ON/OFF
+                    {
+                        //Add SMS Reminder
+                        Reminder fiftyMinReminder = new Reminder();
+                        fiftyMinReminder.Minutes = 1;
+                        fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
+                        entry.Reminders.Add(fiftyMinReminder);
+                    }
+                    else
+                    {
+                    }
+
+                    Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
+
+                    // Send the request and receive the response:
+                    AtomEntry insertedEntry = service.Insert(postUri, entry);
+
+                    oldpageSource = pageSource;
+                }
+            }
+
             //Gmail Check
             if (checkBoxGmail.Checked == true)
             {
@@ -1528,7 +1614,7 @@ namespace SampleApp
                 
             }
 
-            //WebPage Check
+            //WebPage Check 1,2
             if (checkBoxWebPage.Checked == true)
             {
                 //////////////////////////
@@ -1945,15 +2031,31 @@ namespace SampleApp
             hElement3 = webBrowser1.Document.GetElementById(textBoxJSForm.Text);
             hElement3.InvokeMember(textBoxJSSubmit.Text);
             timer1.Stop();
+            timer2.Start();
         }
 
         private void button8_Click_1(object sender, EventArgs e)
         {
-            mshtml.HTMLDocument objHtmlDoc = (mshtml.HTMLDocument)webBrowser1.Document.DomDocument;
+            objHtmlDoc = (mshtml.HTMLDocument)webBrowser1.Document.DomDocument;
             /*webBrowser1 is the WebBrowser Control showing your page*/
-            string pageSource = objHtmlDoc.documentElement.innerHTML;
+            pageSource = objHtmlDoc.documentElement.innerHTML;
             textBoxWebBrowserStr.Text = pageSource;
+            pageSource = pageSource.Substring(int.Parse(textBoxBrowserSt.Text), int.Parse(textBoxBrowserEd.Text));
+            labelBrowser.Text = pageSource;
+            webBrowser1.Refresh();
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            objHtmlDoc = (mshtml.HTMLDocument)webBrowser1.Document.DomDocument;
+            /*webBrowser1 is the WebBrowser Control showing your page*/
+            oldpageSource = objHtmlDoc.documentElement.innerHTML;
+            textBoxWebBrowserStr.Text = oldpageSource;
+            oldpageSource = oldpageSource.Substring(int.Parse(textBoxBrowserSt.Text),int.Parse(textBoxBrowserEd.Text));
+            labelBrowser.Text = oldpageSource;
+            timer2.Stop();
+        }
+        
 
 
 
