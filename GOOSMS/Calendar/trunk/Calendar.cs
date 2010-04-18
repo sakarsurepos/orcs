@@ -854,7 +854,7 @@ namespace SampleApp
             this.textBoxBrowserEd.Name = "textBoxBrowserEd";
             this.textBoxBrowserEd.Size = new System.Drawing.Size(30, 20);
             this.textBoxBrowserEd.TabIndex = 35;
-            this.textBoxBrowserEd.Text = "262";
+            this.textBoxBrowserEd.Text = "200";
             // 
             // textBoxBrowserSt
             // 
@@ -862,7 +862,7 @@ namespace SampleApp
             this.textBoxBrowserSt.Name = "textBoxBrowserSt";
             this.textBoxBrowserSt.Size = new System.Drawing.Size(30, 20);
             this.textBoxBrowserSt.TabIndex = 34;
-            this.textBoxBrowserSt.Text = "500";
+            this.textBoxBrowserSt.Text = "2196";
             // 
             // textBoxBrowserLogin
             // 
