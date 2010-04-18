@@ -17,6 +17,7 @@ using LumiSoft.Net.IMAP;
 using LumiSoft.Net.IMAP.Client;
 
 
+
 namespace SampleApp
 {
     /// <summary>
@@ -104,9 +105,39 @@ namespace SampleApp
         private TextBox textBoxTime;
         private Label label9;
         private Label labelRes;
-        private Button button8;
         private CheckBox checkBoxGmail;
         private CheckBox checkBoxWebPage;
+        private Button button3;
+        private Button button9;
+        public WebBrowser webBrowser1;
+        private Timer timer1;
+        private Label label11;
+        private Label label10;
+        private TextBox textBox1;
+        private TextBox textBoxBrowerPage;
+        private TextBox textBox9;
+        private TextBox textBoxWebBrowserStr;
+        private Label label14;
+        private Label label15;
+        private TextBox textBox6;
+        private TextBox textBox7;
+        private Label label12;
+        private Label label13;
+        private TextBox textBox4;
+        private TextBox textBox5;
+        private TextBox textBoxBrowserLogin;
+        private TextBox textBoxBrowserPassword;
+        private Label label19;
+        private Label label18;
+        private Label label17;
+        private Label label16;
+        private Label label22;
+        private Label label23;
+        private TextBox textBox11;
+        private Label label20;
+        private Label label21;
+        private TextBox textBox12;
+        private Button button8;
         public ListViewItem item;
 
         public Calendar()
@@ -192,7 +223,8 @@ namespace SampleApp
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.textBoxOUT2 = new System.Windows.Forms.TextBox();
             this.textBoxOUT1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -203,6 +235,7 @@ namespace SampleApp
             this.textBoxPage1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxTime = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -218,6 +251,34 @@ namespace SampleApp
             this.textBoxSMS = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxBrowerPage = new System.Windows.Forms.TextBox();
+            this.textBoxBrowserLogin = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxWebBrowserStr = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBoxBrowserPassword = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -293,7 +354,7 @@ namespace SampleApp
             this.Go.Name = "Go";
             this.Go.Size = new System.Drawing.Size(118, 20);
             this.Go.TabIndex = 7;
-            this.Go.Text = "&Read Calendar Data";
+            this.Go.Text = "&Read Data";
             this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
             // DayEvents
@@ -405,7 +466,7 @@ namespace SampleApp
             // 
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "GooSMS";
+            this.notifyIcon1.Text = "FreeLifeSMS";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
@@ -536,6 +597,34 @@ namespace SampleApp
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.textBox11);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.textBoxBrowserPassword);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.textBoxWebBrowserStr);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.textBoxBrowserLogin);
+            this.groupBox2.Controls.Add(this.textBoxBrowerPage);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.button9);
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.textBoxOUT2);
             this.groupBox2.Controls.Add(this.textBoxOUT1);
             this.groupBox2.Controls.Add(this.label7);
@@ -551,99 +640,118 @@ namespace SampleApp
             this.groupBox2.Size = new System.Drawing.Size(547, 100);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "WebPageChecker";
+            this.groupBox2.Text = "WebCheck";
             // 
-            // button8
+            // button9
             // 
-            this.button8.Location = new System.Drawing.Point(9, 65);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(114, 23);
-            this.button8.TabIndex = 25;
-            this.button8.Text = "Check Web Page";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button9.Location = new System.Drawing.Point(458, 75);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(58, 23);
+            this.button9.TabIndex = 28;
+            this.button9.Text = "Browser";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(458, 53);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(81, 23);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Webrequest ";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_2);
             // 
             // textBoxOUT2
             // 
-            this.textBoxOUT2.Location = new System.Drawing.Point(362, 38);
+            this.textBoxOUT2.Location = new System.Drawing.Point(314, 33);
             this.textBoxOUT2.Name = "textBoxOUT2";
-            this.textBoxOUT2.Size = new System.Drawing.Size(177, 20);
+            this.textBoxOUT2.Size = new System.Drawing.Size(127, 20);
             this.textBoxOUT2.TabIndex = 24;
             // 
             // textBoxOUT1
             // 
-            this.textBoxOUT1.Location = new System.Drawing.Point(362, 17);
+            this.textBoxOUT1.Location = new System.Drawing.Point(313, 11);
             this.textBoxOUT1.Name = "textBoxOUT1";
-            this.textBoxOUT1.Size = new System.Drawing.Size(177, 20);
+            this.textBoxOUT1.Size = new System.Drawing.Size(226, 20);
             this.textBoxOUT1.TabIndex = 23;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(459, 70);
+            this.label7.Location = new System.Drawing.Point(488, 37);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.Size = new System.Drawing.Size(20, 13);
             this.label7.TabIndex = 22;
-            this.label7.Text = "StrEnd";
+            this.label7.Text = "Ed";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(369, 70);
+            this.label6.Location = new System.Drawing.Point(441, 37);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(17, 13);
             this.label6.TabIndex = 21;
-            this.label6.Text = "StrStart";
+            this.label6.Text = "St";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBoxStrEnd
             // 
-            this.textBoxStrEnd.Location = new System.Drawing.Point(498, 67);
+            this.textBoxStrEnd.Location = new System.Drawing.Point(509, 34);
             this.textBoxStrEnd.Name = "textBoxStrEnd";
-            this.textBoxStrEnd.Size = new System.Drawing.Size(39, 20);
+            this.textBoxStrEnd.Size = new System.Drawing.Size(30, 20);
             this.textBoxStrEnd.TabIndex = 20;
             this.textBoxStrEnd.Text = "262";
             // 
             // textBoxStrStart
             // 
-            this.textBoxStrStart.Location = new System.Drawing.Point(413, 67);
+            this.textBoxStrStart.Location = new System.Drawing.Point(458, 34);
             this.textBoxStrStart.Name = "textBoxStrStart";
-            this.textBoxStrStart.Size = new System.Drawing.Size(45, 20);
+            this.textBoxStrStart.Size = new System.Drawing.Size(30, 20);
             this.textBoxStrStart.TabIndex = 19;
             this.textBoxStrStart.Text = "0";
             // 
             // textBoxPage2
             // 
-            this.textBoxPage2.Location = new System.Drawing.Point(79, 38);
+            this.textBoxPage2.Location = new System.Drawing.Point(47, 33);
             this.textBoxPage2.Name = "textBoxPage2";
-            this.textBoxPage2.Size = new System.Drawing.Size(276, 20);
+            this.textBoxPage2.Size = new System.Drawing.Size(247, 20);
             this.textBoxPage2.TabIndex = 18;
             this.textBoxPage2.Text = "http://lockerzchecker.ismywebsite.com/index.php";
             // 
             // textBoxPage1
             // 
-            this.textBoxPage1.Location = new System.Drawing.Point(79, 17);
+            this.textBoxPage1.Location = new System.Drawing.Point(46, 11);
             this.textBoxPage1.Name = "textBoxPage1";
-            this.textBoxPage1.Size = new System.Drawing.Size(276, 20);
+            this.textBoxPage1.Size = new System.Drawing.Size(248, 20);
             this.textBoxPage1.TabIndex = 17;
             this.textBoxPage1.Text = "http://www.kaar.sebsoft.com/";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 41);
+            this.label5.Location = new System.Drawing.Point(11, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 16;
-            this.label5.Text = "WebPage2:";
+            this.label5.Text = "Web2:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 20);
+            this.label4.Location = new System.Drawing.Point(10, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "WebPage1:";
+            this.label4.Text = "Web1:";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(16, 438);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(780, 374);
+            this.webBrowser1.TabIndex = 27;
             // 
             // label9
             // 
@@ -747,6 +855,7 @@ namespace SampleApp
             // 
             this.textBoxPass.Location = new System.Drawing.Point(58, 41);
             this.textBoxPass.Name = "textBoxPass";
+            this.textBoxPass.PasswordChar = '?';
             this.textBoxPass.Size = new System.Drawing.Size(64, 20);
             this.textBoxPass.TabIndex = 22;
             // 
@@ -811,13 +920,251 @@ namespace SampleApp
             this.checkBox1.Text = "SMS ON";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 6000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 58);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Web3:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(11, 80);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 13);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Web4:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(48, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 31;
+            this.textBox1.Text = "http://lockerz.com";
+            // 
+            // textBoxBrowerPage
+            // 
+            this.textBoxBrowerPage.Location = new System.Drawing.Point(48, 77);
+            this.textBoxBrowerPage.Name = "textBoxBrowerPage";
+            this.textBoxBrowerPage.Size = new System.Drawing.Size(100, 20);
+            this.textBoxBrowerPage.TabIndex = 32;
+            this.textBoxBrowerPage.Text = "http://lockerz.com";
+            // 
+            // textBoxBrowserLogin
+            // 
+            this.textBoxBrowserLogin.Location = new System.Drawing.Point(162, 77);
+            this.textBoxBrowserLogin.Name = "textBoxBrowserLogin";
+            this.textBoxBrowserLogin.Size = new System.Drawing.Size(70, 20);
+            this.textBoxBrowserLogin.TabIndex = 33;
+            this.textBoxBrowserLogin.Text = "kamil.zidek@gmail.com";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(407, 80);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(20, 13);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Ed";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(361, 80);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(17, 13);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "St";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(427, 77);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(30, 20);
+            this.textBox4.TabIndex = 35;
+            this.textBox4.Text = "262";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(377, 77);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(30, 20);
+            this.textBox5.TabIndex = 34;
+            this.textBox5.Text = "0";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(407, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(20, 13);
+            this.label14.TabIndex = 41;
+            this.label14.Text = "Ed";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(361, 58);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(17, 13);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "St";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(427, 55);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(30, 20);
+            this.textBox6.TabIndex = 39;
+            this.textBox6.Text = "262";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(377, 55);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(30, 20);
+            this.textBox7.TabIndex = 38;
+            this.textBox7.Text = "0";
+            // 
+            // textBoxWebBrowserStr
+            // 
+            this.textBoxWebBrowserStr.Location = new System.Drawing.Point(314, 77);
+            this.textBoxWebBrowserStr.Name = "textBoxWebBrowserStr";
+            this.textBoxWebBrowserStr.Size = new System.Drawing.Size(46, 20);
+            this.textBoxWebBrowserStr.TabIndex = 42;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(314, 55);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(46, 20);
+            this.textBox9.TabIndex = 43;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(294, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 13);
+            this.label16.TabIndex = 44;
+            this.label16.Text = "Str";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(294, 36);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(20, 13);
+            this.label17.TabIndex = 45;
+            this.label17.Text = "Str";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(147, 80);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(16, 13);
+            this.label18.TabIndex = 46;
+            this.label18.Text = "L:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(234, 80);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(17, 13);
+            this.label19.TabIndex = 47;
+            this.label19.Text = "P:";
+            // 
+            // textBoxBrowserPassword
+            // 
+            this.textBoxBrowserPassword.Location = new System.Drawing.Point(249, 77);
+            this.textBoxBrowserPassword.Name = "textBoxBrowserPassword";
+            this.textBoxBrowserPassword.PasswordChar = '*';
+            this.textBoxBrowserPassword.Size = new System.Drawing.Size(45, 20);
+            this.textBoxBrowserPassword.TabIndex = 48;
+            this.textBoxBrowserPassword.Text = "indiana";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(249, 55);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.PasswordChar = '*';
+            this.textBox11.Size = new System.Drawing.Size(45, 20);
+            this.textBox11.TabIndex = 52;
+            this.textBox11.Text = "indiana";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(234, 58);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(17, 13);
+            this.label20.TabIndex = 51;
+            this.label20.Text = "P:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(147, 58);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(16, 13);
+            this.label21.TabIndex = 50;
+            this.label21.Text = "L:";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(162, 55);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(70, 20);
+            this.textBox12.TabIndex = 49;
+            this.textBox12.Text = "kamil.zidek@gmail.com";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(294, 80);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(20, 13);
+            this.label22.TabIndex = 54;
+            this.label22.Text = "Str";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(294, 58);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(20, 13);
+            this.label23.TabIndex = 53;
+            this.label23.Text = "Str";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(515, 75);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(24, 23);
+            this.button8.TabIndex = 55;
+            this.button8.Text = "G";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(801, 438);
+            this.ClientSize = new System.Drawing.Size(802, 817);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
@@ -825,7 +1172,7 @@ namespace SampleApp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Calendar";
-            this.Text = "FreelifeSMS WebPage and Gmail Checker RC2";
+            this.Text = "FreeLifeSMS WebPage and Gmail Checker RC2";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Resize += new System.EventHandler(this.Calendar_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -1289,7 +1636,7 @@ namespace SampleApp
             {
                 m_pTabPageMail_Messages.Items.Clear();
                 imap.Connect("imap.gmail.com", 993, true);
-                imap.Login(UserName.Text, Password);
+                imap.Login(UserName.Text, Password.Text);
                 imap.SelectFolder("INBOX");
                 LoadMessages();
                 LabelMail.Text = m_pTabPageMail_Messages.Items[ip - 2].SubItems[3].Text + m_pTabPageMail_Messages.Items[ip - 2].SubItems[4].Text;
@@ -1403,8 +1750,9 @@ namespace SampleApp
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if(textBoxPass.Text == "joneson55")
+            if(textBoxPass.Text == "joneson56")
             {
+            textBoxPass.Text = "";
             checkBox1.Enabled = true;
             }
         }
@@ -1417,6 +1765,104 @@ namespace SampleApp
             m_pTabPageMail_Messages.Items.Clear();
             LoadMessages();
         }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            string strLoginName = "kamil.zidek@gmail.com";
+            string strPassword = "indiana";
+            
+            try
+            {
+            string strURL = "http://lockerz.com";
+            string strPostData = String.Format("email-email={0}@password-password={1}",
+            strLoginName.Trim(), strPassword.Trim());
+
+            // Setup the http request.
+            HttpWebRequest webReq = WebRequest.Create(strURL) as HttpWebRequest;
+            webReq.Method = "POST";
+            webReq.KeepAlive = true;
+            //webReq.AllowAutoRedirect = true;
+            //webReq.CookieContainer = cookie;
+            //webReq.ContentType = "multipart/form-data; boundary=" + boundary;
+            //webReq.ContentLength = buffer.Length;
+            webReq.UserAgent = "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)";
+            webReq.Headers.Set("Accept-Language", "en-us");
+            webReq.ContentLength = strPostData.Length;
+            webReq.ContentType = "application/x-www-form-urlencoded";
+            webReq.AllowAutoRedirect = true;
+            webReq.CookieContainer = new CookieContainer();
+
+            // Post to the login form.
+            StreamWriter streamRequestWriter = new StreamWriter(webReq.GetRequestStream());
+            streamRequestWriter.Write(strPostData);
+            streamRequestWriter.Close();
+
+            // Get the response.
+            HttpWebResponse webResp = (HttpWebResponse)webReq.GetResponse();
+
+            // Have some cookies.
+            CookieCollection cookieCollection = webResp.Cookies;
+
+            // Read the response
+
+            Stream datastream = webResp.GetResponseStream();
+            StreamReader reader = new StreamReader(datastream);
+            String strResponseFromServer = reader.ReadToEnd();
+            int x;
+            x =3;
+                x=x;
+            //Console.WriteLine(strResponseFromServer);
+            //Console.ReadLine();
+            }
+            catch
+            {
+            //Console.WriteLine("\nMain 1 Exception raised!");
+            //Console.WriteLine("\nMessage 1:{0}", e.Message);
+            //Console.WriteLine("\nStatus 1:{0}", e.Status);
+            //Console.WriteLine("Press any key to continue..........");
+            //Console.ReadLine();
+            }
+            //catch (Exception e)
+            //{
+            //Console.WriteLine("\nMain 2 Exception raised!");
+            //Console.WriteLine("Source 2:{0} ", e.Source);
+            //Console.WriteLine("Message 2:{0} ", e.Message);
+            //Console.WriteLine("Press key to continue..........");
+            //Console.ReadLine();
+            //}
+            
+            
+            
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(textBoxBrowerPage.Text);
+            timer1.Start();
+        }
+
+        public void timer1_Tick(object sender, EventArgs e)
+        {
+            HtmlElement hElement1;
+            HtmlElement hElement2;
+            HtmlElement hElement3;
+            hElement1 = webBrowser1.Document.GetElementById("email-email");
+            hElement1.SetAttribute("value", textBoxBrowserLogin.Text);
+            hElement2 = webBrowser1.Document.GetElementById("password-password");
+            hElement2.SetAttribute("value", textBoxBrowserPassword.Text);
+            hElement3 = webBrowser1.Document.GetElementById("login-form");
+            hElement3.InvokeMember("submit");
+            timer1.Stop();
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            mshtml.HTMLDocument objHtmlDoc = (mshtml.HTMLDocument)webBrowser1.Document.DomDocument;
+            /*webBrowser1 is the WebBrowser Control showing your page*/
+            string pageSource = objHtmlDoc.documentElement.innerHTML;
+            textBoxWebBrowserStr.Text = pageSource;
+        }
+
 
 
     }
