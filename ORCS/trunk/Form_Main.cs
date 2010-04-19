@@ -353,7 +353,7 @@ namespace Robot
         int lop;
         double xultrasonic;
         double yultrasonic;
-        int servoinc;
+        int servoinc = 126;
         Graphics Obj1;
         //ultra sonic
         /////////////
@@ -4632,21 +4632,13 @@ namespace Robot
         {
             int a = 120;
             //int d = 0;
-
-            
-
-
             Pen p2 = new Pen(Brushes.Red, 2);
-
             //kresli os
             Obj1.DrawLine(p2, 20, 20, 20, 170);
-
             //kresli os
             Obj1.DrawLine(p2, 20, 160, 300, 160);
-
             //kreslios
             Obj1.DrawLine(p2, 300, 20, 300, 170);
-
 
             float h = 20;
             float jk = 140;
@@ -4655,17 +4647,10 @@ namespace Robot
             while (h < 160)
             {
                 Pen p4 = new Pen(Brushes.Red, 2);
-
-                
                 Obj1.DrawLine(p4, 10, h, 30, h);
-
                 Obj1.DrawString(jk.ToString(), new Font("Verdana", 5), new SolidBrush(Color.Red), 300, h);
-
-                
                 Obj1.DrawLine(p4, 290, h, 310, h);
-
                 Obj1.DrawString(jk.ToString(), new Font("Verdana", 5), new SolidBrush(Color.Red), 0, h);
-
                 h = (h + 20);
                 jk = (jk - 20);
             }
@@ -4677,23 +4662,20 @@ namespace Robot
             while (s < 300)
             {
                 Pen p5 = new Pen(Brushes.Red, 2);
-
-               
                 Obj1.DrawLine(p5, s, 150, s, 170);
                 Obj1.DrawString(kl.ToString(), new Font("Verdana", 4), new SolidBrush(Color.Red), s, 160);
-
                 s = (s + 20);
                 kl = (kl + 20);
             }
 
             while (a <= 240)
             {
-                if (checkBoxSim.Checked == false)
-                {
-                    SendData(SendMessage.CameraHorizontal(servoinc + 10));
-                }
-                Thread.Sleep(1000);
-                
+                //if (checkBoxSim.Checked == false)
+                //{
+                //SendData(Moves.CAM_Left_Right(servoinc - 5));
+                //}
+                Thread.Sleep(2000);
+
                 //vypocet sinusu prepona a protilahla strana
                 xultra = Math.Sin(a * (Math.PI / 180));
                 yultra = Math.Cos(a * (Math.PI / 180));
@@ -4722,35 +4704,25 @@ namespace Robot
                 float y11 = (float)(160 + yultrasonic);
 
                 Pen p3 = new Pen(Brushes.Black, 2);
-
                 Pen p4 = new Pen(Brushes.White, 2);
-
                 Pen p = new Pen(Color.Blue, 1);
 
                 // set the Arrow
-                //p.StartCap = LineCap.RoundAnchor;
                 p.EndCap = LineCap.RoundAnchor;
 
-                //kresli ciaru
-                
+                //kresli ciaru                
                 Obj1.DrawLine(p3, x1, y1, 160, 160);
-                
                 //vykresluje bod samotny
                 Obj1.DrawLine(p, x1+2, y1+2, x1-2, y1-2);
-
                 //kresli ciaru bielu
                 Thread.Sleep(400);
                 Obj1.DrawLine(p4, x11, y11, 160, 160);
-
                 //kresli stredovy bod
-                
                 Obj1.DrawLine(p2, 160, 165 + 5, 160, 165 + 1);
-
-                
                 a = (a + 5);
 
             }
-            servoinc = 0;
+            servoinc = 126;
 
         }
         /////Tlacitko na scanovanie
@@ -4760,6 +4732,7 @@ namespace Robot
             Obj1 = pictureBoxUltraSonicScan.CreateGraphics();
             Thread tr1 = new Thread(ultra);
             tr1.Start();
+            button61_Click_1(sender, e);
         }
 
         private void groupBox25_Enter(object sender, EventArgs e)
