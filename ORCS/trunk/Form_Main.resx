@@ -7188,6 +7188,9 @@ Mouse y:
   <data name="checkBoxSim.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="checkBoxSim.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="checkBoxSim.Location" type="System.Drawing.Point, System.Drawing">
     <value>119, 140</value>
   </data>
@@ -7211,6 +7214,9 @@ Mouse y:
   </data>
   <data name="&gt;&gt;checkBoxSim.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="button92.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="button92.Location" type="System.Drawing.Point, System.Drawing">
     <value>117, 88</value>
@@ -25218,6 +25224,9 @@ Mouse y:
         AAAAAAAA9/33C6nbqWFlt2WlRKVExkOrQ8ZktmSlqNuoYvf89wwAAAAAAAAAAAAAAAAAAAAA8A8AAMAD
         AACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAMADAADgBwAA8A8AAA==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1024, 768</value>
