@@ -4,6 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
@@ -347,8 +348,12 @@ namespace Robot
         double xultra;
         double yultra;
         int[] bultr = new int[25] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 140, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+        int ultrainc = 0;
         int UltraSonic;
         int lop;
+        double xultrasonic;
+        double yultrasonic;
+        int servoinc;
         Graphics Obj1;
         //ultra sonic
         /////////////
@@ -4683,26 +4688,59 @@ namespace Robot
 
             while (a <= 240)
             {
-
+                if (checkBoxSim.Checked == false)
+                {
+                    SendData(SendMessage.CameraHorizontal(servoinc + 10));
+                }
                 Thread.Sleep(1000);
+                
+                //vypocet sinusu prepona a protilahla strana
                 xultra = Math.Sin(a * (Math.PI / 180));
                 yultra = Math.Cos(a * (Math.PI / 180));
 
-                yultra = (yultra * UltraSonic);
-                xultra = (xultra * UltraSonic);
-
+                if (checkBoxSim.Checked == false)
+                {
+                    yultra = (yultra * UltraSonic);
+                    xultra = (xultra * UltraSonic);
+                }
+                else
+                {
+                    yultra = (yultra * bultr[ultrainc]);
+                    xultra = (xultra * bultr[ultrainc]);
+                    ultrainc = ultrainc + 1;
+                }
+                
+                //pomocne premenne k mayaniu predoslej ciary
+                xultrasonic = xultra;
+                yultrasonic = yultra;
 
                 float x1 = (float)(160 - xultra);
 
                 float y1 = (float)(160 + yultra);
 
+                float x11 = (float)(160 - xultrasonic);
+                float y11 = (float)(160 + yultrasonic);
+
                 Pen p3 = new Pen(Brushes.Black, 2);
 
+                Pen p4 = new Pen(Brushes.White, 2);
 
+                Pen p = new Pen(Color.Blue, 1);
+
+                // set the Arrow
+                //p.StartCap = LineCap.RoundAnchor;
+                p.EndCap = LineCap.RoundAnchor;
 
                 //kresli ciaru
                 
                 Obj1.DrawLine(p3, x1, y1, 160, 160);
+                
+                //vykresluje bod samotny
+                Obj1.DrawLine(p, x1+2, y1+2, x1-2, y1-2);
+
+                //kresli ciaru bielu
+                Thread.Sleep(400);
+                Obj1.DrawLine(p4, x11, y11, 160, 160);
 
                 //kresli stredovy bod
                 
@@ -4712,6 +4750,7 @@ namespace Robot
                 a = (a + 5);
 
             }
+            servoinc = 0;
 
         }
         /////Tlacitko na scanovanie
