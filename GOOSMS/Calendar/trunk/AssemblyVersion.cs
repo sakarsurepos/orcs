@@ -24,7 +24,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyCompany("Google Corporation")]
+//[assembly: AssemblyCompany("Google Corporation")]
 [assembly: AssemblyProduct("Google GData Client Libraries")]
 //
 // General Information about an assembly is controlled through the following
@@ -40,7 +40,7 @@ using System.Runtime.InteropServices;
 #if WindowsCE || PocketPC
 #else
 [assembly:AllowPartiallyTrustedCallers]
-[assembly: AssemblyDescription("Release Build: This assembly is marked as partially trustable. Use on your webserver at your own risk")]
+//[assembly: AssemblyDescription("Release Build: This assembly is marked as partially trustable. Use on your webserver at your own risk")]
 #endif
 
 //

@@ -44,3 +44,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyFile("")]
 [assembly: AssemblyKeyName("")]
+[assembly: AssemblyTitleAttribute("FreeLifeSMS")]
+[assembly: AssemblyDescriptionAttribute("FreeLifeSMS")]
+[assembly: AssemblyCompanyAttribute("Elite Robot")]

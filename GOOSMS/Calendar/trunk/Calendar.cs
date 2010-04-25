@@ -296,6 +296,7 @@ namespace SampleApp
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxGmailCheckStr = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBoxTime2 = new System.Windows.Forms.TextBox();
             this.checkBoxWebPage4 = new System.Windows.Forms.CheckBox();
             this.checkBoxGmail = new System.Windows.Forms.CheckBox();
             this.checkBoxWebPage = new System.Windows.Forms.CheckBox();
@@ -306,7 +307,6 @@ namespace SampleApp
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelBrowser = new System.Windows.Forms.Label();
-            this.textBoxTime2 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -1163,6 +1163,14 @@ namespace SampleApp
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lockerz";
             // 
+            // textBoxTime2
+            // 
+            this.textBoxTime2.Location = new System.Drawing.Point(46, 91);
+            this.textBoxTime2.Name = "textBoxTime2";
+            this.textBoxTime2.Size = new System.Drawing.Size(24, 20);
+            this.textBoxTime2.TabIndex = 29;
+            this.textBoxTime2.Text = "15";
+            // 
             // checkBoxWebPage4
             // 
             this.checkBoxWebPage4.AutoSize = true;
@@ -1275,14 +1283,6 @@ namespace SampleApp
             this.labelBrowser.TabIndex = 28;
             this.labelBrowser.Text = "CompareStr";
             // 
-            // textBoxTime2
-            // 
-            this.textBoxTime2.Location = new System.Drawing.Point(46, 91);
-            this.textBoxTime2.Name = "textBoxTime2";
-            this.textBoxTime2.Size = new System.Drawing.Size(24, 20);
-            this.textBoxTime2.TabIndex = 29;
-            this.textBoxTime2.Text = "15";
-            // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -1299,8 +1299,9 @@ namespace SampleApp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Calendar";
-            this.Text = "FreeLifeSMS WebPage and Gmail Checker RC2";
+            this.Text = "FreeLifeSMS WebPage and Gmail Checker RC3";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calendar_FormClosing);
             this.Resize += new System.EventHandler(this.Calendar_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1716,6 +1717,7 @@ namespace SampleApp
         {
             button4.Enabled = false;
             button1.Enabled = true;
+            vl1.Abort();
             vl2.Abort();         
         }
 
@@ -1986,6 +1988,12 @@ namespace SampleApp
             pageSource = pageSource.Substring(int.Parse(textBoxBrowserSt.Text), int.Parse(textBoxBrowserEd.Text));
             //int x = pageSource.IndexOf("Featured Episodes");
             labelBrowser.Text = pageSource;
+        }
+
+        private void Calendar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            vl1.Abort();
+            vl2.Abort();   
         }
     }
 }
