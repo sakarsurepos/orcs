@@ -15,8 +15,8 @@ using LumiSoft.Net.MIME;
 using LumiSoft.Net.Mail;
 using LumiSoft.Net.IMAP;
 using LumiSoft.Net.IMAP.Client;
-
-
+using System.Threading;
+using System.Timers;
 
 namespace SampleApp
 {
@@ -40,7 +40,6 @@ namespace SampleApp
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private Button button1;
-        private Timer timer50;
         public int ip = 1;
         public int sub1 = 0;
         public int sub2 = 10;
@@ -50,8 +49,15 @@ namespace SampleApp
         public int stringresult;
         string pageSource;
         string oldpageSource;
-        mshtml.HTMLDocument objHtmlDoc;
-
+        string newpageSource;
+        public mshtml.HTMLDocument objHtmlDoc;
+        public HtmlElement hElement1;
+        public HtmlElement hElement2;
+        public HtmlElement hElement3;
+        Thread vl1;
+        Thread vl2;
+        delegate void vl1d();
+        delegate void vl1d2();
         private ArrayList entryList;
         public string older;
         public string older1;
@@ -112,7 +118,6 @@ namespace SampleApp
         private Button button3;
         private Button button9;
         public WebBrowser webBrowser1;
-        private Timer timer1;
         private Label label11;
         private Label label10;
         private TextBox textBox1;
@@ -148,9 +153,9 @@ namespace SampleApp
         private TextBox textBoxJSSubmit;
         private Label label26;
         private TextBox textBoxJSForm;
-        private Timer timer2;
         private Label labelBrowser;
         private CheckBox checkBoxWebPage4;
+        private TextBox textBoxTime2;
         public ListViewItem item;
 
         public Calendar()
@@ -159,6 +164,7 @@ namespace SampleApp
             // Required for Windows Form Designer support
             //
             InitializeComponent();
+            Calendar.CheckForIllegalCrossThreadCalls = false;
 
             //
             // TODO: Add any constructor code after InitializeComponent call
@@ -215,7 +221,6 @@ namespace SampleApp
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.button1 = new System.Windows.Forms.Button();
-            this.timer50 = new System.Windows.Forms.Timer(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.labelLastCheck = new System.Windows.Forms.Label();
             this.labelRedeem = new System.Windows.Forms.Label();
@@ -300,9 +305,8 @@ namespace SampleApp
             this.textBoxSMS = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.labelBrowser = new System.Windows.Forms.Label();
+            this.textBoxTime2 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -440,11 +444,6 @@ namespace SampleApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // timer50
-            // 
-            this.timer50.Interval = 300000;
-            this.timer50.Tick += new System.EventHandler(this.timer50_Tick);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(166, 13);
@@ -458,7 +457,7 @@ namespace SampleApp
             // labelLastCheck
             // 
             this.labelLastCheck.AutoSize = true;
-            this.labelLastCheck.Location = new System.Drawing.Point(65, 94);
+            this.labelLastCheck.Location = new System.Drawing.Point(70, 94);
             this.labelLastCheck.Name = "labelLastCheck";
             this.labelLastCheck.Size = new System.Drawing.Size(46, 13);
             this.labelLastCheck.TabIndex = 11;
@@ -1025,7 +1024,6 @@ namespace SampleApp
             this.label6.Size = new System.Drawing.Size(17, 13);
             this.label6.TabIndex = 21;
             this.label6.Text = "St";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBoxStrEnd
             // 
@@ -1088,7 +1086,7 @@ namespace SampleApp
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 94);
+            this.label9.Location = new System.Drawing.Point(3, 94);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 13);
             this.label9.TabIndex = 26;
@@ -1096,9 +1094,9 @@ namespace SampleApp
             // 
             // textBoxTime
             // 
-            this.textBoxTime.Location = new System.Drawing.Point(34, 91);
+            this.textBoxTime.Location = new System.Drawing.Point(31, 91);
             this.textBoxTime.Name = "textBoxTime";
-            this.textBoxTime.Size = new System.Drawing.Size(25, 20);
+            this.textBoxTime.Size = new System.Drawing.Size(14, 20);
             this.textBoxTime.TabIndex = 25;
             this.textBoxTime.Text = "1";
             // 
@@ -1145,6 +1143,7 @@ namespace SampleApp
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.textBoxTime2);
             this.groupBox4.Controls.Add(this.checkBoxWebPage4);
             this.groupBox4.Controls.Add(this.checkBoxGmail);
             this.groupBox4.Controls.Add(this.checkBoxWebPage);
@@ -1167,6 +1166,8 @@ namespace SampleApp
             // checkBoxWebPage4
             // 
             this.checkBoxWebPage4.AutoSize = true;
+            this.checkBoxWebPage4.Checked = true;
+            this.checkBoxWebPage4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxWebPage4.Location = new System.Drawing.Point(5, 128);
             this.checkBoxWebPage4.Name = "checkBoxWebPage4";
             this.checkBoxWebPage4.Size = new System.Drawing.Size(57, 17);
@@ -1177,6 +1178,8 @@ namespace SampleApp
             // checkBoxGmail
             // 
             this.checkBoxGmail.AutoSize = true;
+            this.checkBoxGmail.Checked = true;
+            this.checkBoxGmail.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxGmail.Location = new System.Drawing.Point(70, 112);
             this.checkBoxGmail.Name = "checkBoxGmail";
             this.checkBoxGmail.Size = new System.Drawing.Size(52, 17);
@@ -1263,16 +1266,6 @@ namespace SampleApp
             this.checkBox1.Text = "SMS ON";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 6000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 10000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // labelBrowser
             // 
             this.labelBrowser.AutoSize = true;
@@ -1281,6 +1274,14 @@ namespace SampleApp
             this.labelBrowser.Size = new System.Drawing.Size(62, 13);
             this.labelBrowser.TabIndex = 28;
             this.labelBrowser.Text = "CompareStr";
+            // 
+            // textBoxTime2
+            // 
+            this.textBoxTime2.Location = new System.Drawing.Point(46, 91);
+            this.textBoxTime2.Name = "textBoxTime2";
+            this.textBoxTime2.Size = new System.Drawing.Size(24, 20);
+            this.textBoxTime2.TabIndex = 29;
+            this.textBoxTime2.Text = "15";
             // 
             // Calendar
             // 
@@ -1318,11 +1319,6 @@ namespace SampleApp
 
         }
 #endregion
-
-        private void textBox1_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
 
         private void Go_Click(object sender, System.EventArgs e)
         {
@@ -1436,23 +1432,22 @@ namespace SampleApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-                timer50.Interval = int.Parse(textBoxTime.Text) * 1000 * 60;
                 button4.Enabled = true;
                 button1.Enabled = false;
                 //Start Check
-                timer50.Start();
                     try
                     {
                 //GMAIL
                 if (checkBoxGmail.Checked == true) 
                 {
-                    button5_Click(sender, e);
+                    gmailcheck();
                     oldmainstring = mainstring;
                 }
                 //PAGE4
                 if (checkBoxWebPage4.Checked == true)
                 {
-                    button9_Click(sender, e);
+                    Page4checkfcn();
+                    oldpageSource = pageSource;
                 }
 
                 //PAGE1,2
@@ -1515,225 +1510,15 @@ namespace SampleApp
                     catch
                     {
                         MessageBox.Show("WebPage NotExist or No connection");
-                        timer50.Stop();
+                        //timer50.Stop();
                         button4.Enabled = false;
                         button1.Enabled = true;
                     }
-            
+        vl2 = new Thread(vl2fcn);
+        vl2.Start();    
         }
 
-        private void timer50_Tick(object sender, EventArgs e)
-        {
-            
-            //Page4 Check
-            if (checkBoxWebPage4.Checked == true)
-            {
-                button8_Click_1(sender, e);
-
-                if (oldpageSource != pageSource)
-                {
-
-                    CalendarService service = new CalendarService("exampleCo-exampleApp-1");
-                    service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
-
-                    EventEntry entry = new EventEntry();
-
-                    // Set the title and content of the entry.
-                    entry.Title.Text = "Lockerz Login Check";
-                    entry.Content.Content = "Lockerz Login Page Check.";
-                    // Set a location for the event.
-                    Where eventLocation = new Where();
-                    eventLocation.ValueString = "Lockerz Login";
-                    entry.Locations.Add(eventLocation);
-
-                    When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
-                    entry.Times.Add(eventTime);
-
-                    if (checkBox1.Checked == true)  //Reminder ON/OFF
-                    {
-                        //Add SMS Reminder
-                        Reminder fiftyMinReminder = new Reminder();
-                        fiftyMinReminder.Minutes = 1;
-                        fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
-                        entry.Reminders.Add(fiftyMinReminder);
-                    }
-                    else
-                    {
-                    }
-
-                    Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
-
-                    // Send the request and receive the response:
-                    AtomEntry insertedEntry = service.Insert(postUri, entry);
-
-                    oldpageSource = pageSource;
-                }
-            }
-
-            //Gmail Check
-            if (checkBoxGmail.Checked == true)
-            {
-                button5_Click(sender, e);
-                if (mainstring != oldmainstring && stringresult != -1)
-                {
-
-                    CalendarService service = new CalendarService("exampleCo-exampleApp-1");
-                    service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
-
-                    EventEntry entry = new EventEntry();
-
-                    // Set the title and content of the entry.
-                    entry.Title.Text = m_pTabPageMail_Messages.Items[ip - 2].SubItems[4].Text;
-                    entry.Content.Content = "Lockers Gmail Info.";
-                    // Set a location for the event.
-                    Where eventLocation = new Where();
-                    eventLocation.ValueString = "Lockerz Gmail";
-                    entry.Locations.Add(eventLocation);
-
-                    When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
-                    entry.Times.Add(eventTime);
-
-                    if (checkBox1.Checked == true)  //Reminder ON/OFF
-                    {
-                        //Add SMS Reminder
-                        Reminder fiftyMinReminder = new Reminder();
-                        fiftyMinReminder.Minutes = 1;
-                        fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
-                        entry.Reminders.Add(fiftyMinReminder);
-                    }
-                    else
-                    {
-                    }
-
-                    Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
-
-                    // Send the request and receive the response:
-                    AtomEntry insertedEntry = service.Insert(postUri, entry);
-
-                oldmainstring = mainstring;
-                }
-                
-            }
-
-            //WebPage Check 1,2
-            if (checkBoxWebPage.Checked == true)
-            {
-                //////////////////////////
-                //Check 0 original Lockerz PAGE1
-
-                // Create a request for the URL. 		
-                WebRequest request3 = WebRequest.Create(textBoxPage1.Text); //http://ptzplace.lockerz.com/
-                // If required by the server, set the credentials.
-                request3.Credentials = CredentialCache.DefaultCredentials;
-                // Get the response.
-                HttpWebResponse response3 = (HttpWebResponse)request3.GetResponse();
-                // Display the status.
-                Console.WriteLine(response3.StatusDescription);
-                // Get the stream containing content returned by the server.
-                Stream dataStream3 = response3.GetResponseStream();
-                // Open the stream using a StreamReader for easy access.
-                StreamReader reader3 = new StreamReader(dataStream3);
-                // Read the content.
-                string responseFromServer3 = reader3.ReadToEnd();
-                // Save to newer.
-                newer = responseFromServer3;
-                // Cleanup the streams and the response.
-                reader3.Close();
-                dataStream3.Close();
-                response3.Close();
-
-                //////////////////////////
-                //Check 1 Lockerznews PAGE2
-
-                // Create a request for the URL. 		
-                WebRequest request4 = WebRequest.Create(textBoxPage2.Text);
-                // If required by the server, set the credentials.
-                request4.Credentials = CredentialCache.DefaultCredentials;
-                // Get the response.
-                HttpWebResponse response4 = (HttpWebResponse)request4.GetResponse();
-                // Display the status.
-                Console.WriteLine(response4.StatusDescription);
-                // Get the stream containing content returned by the server.
-                Stream dataStream4 = response4.GetResponseStream();
-                // Open the stream using a StreamReader for easy access.
-                StreamReader reader4 = new StreamReader(dataStream4);
-                // Read the content.
-                string responseFromServer4 = reader4.ReadToEnd();
-                // Save to newer.
-                newer1 = responseFromServer4;
-                // Cleanup the streams and the response.
-                reader4.Close();
-                dataStream4.Close();
-                response4.Close();
-                newer1 = newer1.Substring(int.Parse(textBoxStrStart.Text), int.Parse(textBoxStrEnd.Text));
-
-                // Compare String
-                if (older != newer || older1 != newer1)
-                {
-                    CalendarService service = new CalendarService("exampleCo-exampleApp-1");
-                    service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
-
-                    EventEntry entry = new EventEntry();
-
-                    // Set the title and content of the entry.
-                    entry.Title.Text = "Lockerz";
-                    if (older1 != newer1)
-                    {
-                        entry.Content.Content = "Redemption begins LockerzNews.";
-                    }
-                    else
-                    {
-                        entry.Content.Content = "Redemption begins Lockerz Original.";
-                    }
-                    // Set a location for the event.
-                    Where eventLocation = new Where();
-                    eventLocation.ValueString = "PC";
-                    entry.Locations.Add(eventLocation);
-
-                    When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
-                    entry.Times.Add(eventTime);
-
-                    if (checkBox1.Checked == true)  //Reminder ON/OFF
-                    {
-                        //Add SMS Reminder
-                        Reminder fiftyMinReminder = new Reminder();
-                        fiftyMinReminder.Minutes = 1;
-                        fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
-                        entry.Reminders.Add(fiftyMinReminder);
-                    }
-                    else
-                    {
-                    }
-
-                    Uri postUri = new Uri("http://www.google.com/calendar/feeds/default/private/full");
-
-                    // Send the request and receive the response:
-                    AtomEntry insertedEntry = service.Insert(postUri, entry);
-
-                    // Save to older.
-                    older = newer;
-                    older1 = newer1;
-
-                    labelRedeem.Text = "Reedem started";
-                    labelRedeem.ForeColor = Color.Green;
-
-                    //Notify Icon Change
-                    notifyIcon1.Icon = SystemIcons.Exclamation;
-                    notifyIcon1.BalloonTipTitle = "Lockerz";
-                    notifyIcon1.BalloonTipText = "Redemption Start.";
-                    notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
-                    //this.Click += new EventHandler(Form1_Click);
-                    notifyIcon1.ShowBalloonTip(30);
-                }
-                else
-                {
-
-                }
-           }
-           labelLastCheck.Text = DateTime.Now.TimeOfDay.ToString();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        public void googlecalendarSMSreminder(string sendstring)
         {
             CalendarService service = new CalendarService("exampleCo-exampleApp-1");
             service.setUserCredentials("kamil.zidek@gmail.com", "joneson55");
@@ -1741,24 +1526,23 @@ namespace SampleApp
             EventEntry entry = new EventEntry();
 
             // Set the title and content of the entry.
-            entry.Title.Text = textBoxSMS.Text;
-            entry.Content.Content = "TestSMS";
-
+            entry.Title.Text = sendstring;
+            entry.Content.Content = "Lockerz Login Page Check.";
             // Set a location for the event.
             Where eventLocation = new Where();
-            eventLocation.ValueString = "GooSMS";
+            eventLocation.ValueString = "Lockerz Login";
             entry.Locations.Add(eventLocation);
 
             When eventTime = new When(DateTime.Now.AddMinutes(3), DateTime.Now.AddHours(1));
             entry.Times.Add(eventTime);
 
-            if(checkBox1.Checked == true)  //Reminder ON/OFF
+            if (checkBox1.Checked == true)  //Reminder ON/OFF
             {
-            //Add SMS Reminder
-            Reminder fiftyMinReminder = new Reminder();
-            fiftyMinReminder.Minutes = 1;
-            fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
-            entry.Reminders.Add(fiftyMinReminder);
+                //Add SMS Reminder
+                Reminder fiftyMinReminder = new Reminder();
+                fiftyMinReminder.Minutes = 1;
+                fiftyMinReminder.Method = Reminder.ReminderMethod.sms;
+                entry.Reminders.Add(fiftyMinReminder);
             }
             else
             {
@@ -1768,6 +1552,158 @@ namespace SampleApp
 
             // Send the request and receive the response:
             AtomEntry insertedEntry = service.Insert(postUri, entry);
+        }
+
+        public void vl2fcn()
+        {
+            int incr = 0;
+            while (true)
+            {
+                incr = incr + 1;
+                Thread.Sleep(int.Parse(textBoxTime.Text) * 1000 * 60);
+                //Page4 Check
+                if (checkBoxWebPage4.Checked == true)
+                {
+                    if (incr == int.Parse(textBoxTime2.Text))
+                    {
+                        Page4checkfcn();
+                        //int x = pageSource.IndexOf("Featured Episodes");
+                        newpageSource = pageSource;
+                        labelBrowser.Text = newpageSource;
+
+                        if (oldpageSource != newpageSource)
+                        {
+                            googlecalendarSMSreminder(newpageSource);
+                            oldpageSource = newpageSource;
+                        }
+                        incr = 0;
+                    }
+                 }
+
+                    //Gmail Check
+                    if (checkBoxGmail.Checked == true)
+                    {
+                        //button5_Click(sender, e);
+                        ip = 1;
+                        imap = new IMAP_Client();
+                        fetchHandler = new IMAP_Client_FetchHandler();
+                        try
+                        {
+                            m_pTabPageMail_Messages.Items.Clear();
+                            imap.Connect("imap.gmail.com", 993, true);
+                            imap.Login(UserName.Text, Password.Text);
+                            imap.SelectFolder("INBOX");
+                            LoadMessages();
+                            LabelMail.Text = m_pTabPageMail_Messages.Items[ip - 2].SubItems[3].Text + m_pTabPageMail_Messages.Items[ip - 2].SubItems[4].Text;
+                            mainstring = m_pTabPageMail_Messages.Items[ip - 2].SubItems[3].Text + m_pTabPageMail_Messages.Items[ip - 2].SubItems[4].Text;
+                            substring = textBoxGmailCheckStr.Text;
+                            stringresult = mainstring.IndexOf(substring);
+                            imap.CloseFolder();
+                            imap.UnsubscribeFolder("INBOX");
+                            imap.Disconnect();
+                            imap.Dispose();
+
+                            if (stringresult != -1)
+                            {
+                                labelRes.Text = "Found";
+                            }
+                            else
+                            {
+                                labelRes.Text = "None";
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("No internet Connection");
+                        }
+
+                        if (mainstring != oldmainstring && stringresult != -1)
+                        {
+                            googlecalendarSMSreminder(m_pTabPageMail_Messages.Items[ip - 2].SubItems[4].Text);       
+                            oldmainstring = mainstring;
+                        }
+
+                    }
+
+                    //WebPage Check 1,2
+                    if (checkBoxWebPage.Checked == true)
+                    {
+                        //////////////////////////
+                        //Check 0 original Lockerz PAGE1
+
+                        // Create a request for the URL. 		
+                        WebRequest request3 = WebRequest.Create(textBoxPage1.Text); //http://ptzplace.lockerz.com/
+                        // If required by the server, set the credentials.
+                        request3.Credentials = CredentialCache.DefaultCredentials;
+                        // Get the response.
+                        HttpWebResponse response3 = (HttpWebResponse)request3.GetResponse();
+                        // Display the status.
+                        Console.WriteLine(response3.StatusDescription);
+                        // Get the stream containing content returned by the server.
+                        Stream dataStream3 = response3.GetResponseStream();
+                        // Open the stream using a StreamReader for easy access.
+                        StreamReader reader3 = new StreamReader(dataStream3);
+                        // Read the content.
+                        string responseFromServer3 = reader3.ReadToEnd();
+                        // Save to newer.
+                        newer = responseFromServer3;
+                        // Cleanup the streams and the response.
+                        reader3.Close();
+                        dataStream3.Close();
+                        response3.Close();
+
+                        //////////////////////////
+                        //Check 1 Lockerznews PAGE2
+
+                        // Create a request for the URL. 		
+                        WebRequest request4 = WebRequest.Create(textBoxPage2.Text);
+                        // If required by the server, set the credentials.
+                        request4.Credentials = CredentialCache.DefaultCredentials;
+                        // Get the response.
+                        HttpWebResponse response4 = (HttpWebResponse)request4.GetResponse();
+                        // Display the status.
+                        Console.WriteLine(response4.StatusDescription);
+                        // Get the stream containing content returned by the server.
+                        Stream dataStream4 = response4.GetResponseStream();
+                        // Open the stream using a StreamReader for easy access.
+                        StreamReader reader4 = new StreamReader(dataStream4);
+                        // Read the content.
+                        string responseFromServer4 = reader4.ReadToEnd();
+                        // Save to newer.
+                        newer1 = responseFromServer4;
+                        // Cleanup the streams and the response.
+                        reader4.Close();
+                        dataStream4.Close();
+                        response4.Close();
+                        newer1 = newer1.Substring(int.Parse(textBoxStrStart.Text), int.Parse(textBoxStrEnd.Text));
+
+                        // Compare String
+                        if (older != newer || older1 != newer1)
+                        {
+                            googlecalendarSMSreminder("Redemption begins");
+                            // Save to older.
+                            older = newer;
+                            older1 = newer1;
+
+                            labelRedeem.Text = "Reedem started";
+                            labelRedeem.ForeColor = Color.Green;
+
+                            //Notify Icon Change
+                            notifyIcon1.Icon = SystemIcons.Exclamation;
+                            notifyIcon1.BalloonTipTitle = "Lockerz";
+                            notifyIcon1.BalloonTipText = "Redemption Start.";
+                            notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
+                            //this.Click += new EventHandler(Form1_Click);
+                            notifyIcon1.ShowBalloonTip(30);
+                        }
+                    }
+                labelLastCheck.Text = DateTime.Now.TimeOfDay.ToString();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            googlecalendarSMSreminder("TestSMS");
             MessageBox.Show("SMS will be send in 3 Minutes");
         }
 
@@ -1780,7 +1716,7 @@ namespace SampleApp
         {
             button4.Enabled = false;
             button1.Enabled = true;
-            timer50.Stop();
+            vl2.Abort();         
         }
 
         private void Calendar_Resize(object sender, EventArgs e)
@@ -1806,7 +1742,8 @@ namespace SampleApp
             ActiveForm.Close();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        //GMail Check fcn
+        void gmailcheck()
         {
             ip = 1;
             imap = new IMAP_Client();
@@ -1840,6 +1777,11 @@ namespace SampleApp
             {
                 MessageBox.Show("No internet Connection");
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            gmailcheck();
         }
  
         public void LoadMessages()
@@ -1922,11 +1864,6 @@ namespace SampleApp
             textBoxPage2.Text = "http://lockerzchecker.ismywebsite.com/index.php";
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             if(textBoxPass.Text == "joneson56")
@@ -1987,54 +1924,56 @@ namespace SampleApp
             Stream datastream = webResp.GetResponseStream();
             StreamReader reader = new StreamReader(datastream);
             String strResponseFromServer = reader.ReadToEnd();
-            int x;
-            x =3;
-                x=x;
-            //Console.WriteLine(strResponseFromServer);
-            //Console.ReadLine();
+            //int x;
+            //x =3;
+            //    x=x;
             }
             catch
             {
-            //Console.WriteLine("\nMain 1 Exception raised!");
-            //Console.WriteLine("\nMessage 1:{0}", e.Message);
-            //Console.WriteLine("\nStatus 1:{0}", e.Status);
-            //Console.WriteLine("Press any key to continue..........");
-            //Console.ReadLine();
             }
-            //catch (Exception e)
-            //{
-            //Console.WriteLine("\nMain 2 Exception raised!");
-            //Console.WriteLine("Source 2:{0} ", e.Source);
-            //Console.WriteLine("Message 2:{0} ", e.Message);
-            //Console.WriteLine("Press key to continue..........");
-            //Console.ReadLine();
-            //}
-            
-            
-            
+        }
+
+        //Start Page4 Check Thread
+        public void Page4checkfcn()
+        {
+            webBrowser1.Navigate(textBoxBrowerPage.Text);
+            vl1 = new Thread(vl1fcn);
+            vl1.IsBackground = false;
+            vl1.Start();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(textBoxBrowerPage.Text);
-            timer1.Start();
+            Page4checkfcn();
         }
 
-        public void timer1_Tick(object sender, EventArgs e)
+        public void vl1fcn()
         {
-            HtmlElement hElement1;
-            HtmlElement hElement2;
-            HtmlElement hElement3;
+            Thread.Sleep(6000);
+            this.Invoke(new vl1d(vl1f));
+            Thread.Sleep(10000);
+            this.Invoke(new vl1d2(vl1f2));
+        }
+
+        public void vl1f() //Insert values
+        {
             hElement1 = webBrowser1.Document.GetElementById(textBoxJSLogin.Text);
             hElement1.SetAttribute("value", textBoxBrowserLogin.Text);
             hElement2 = webBrowser1.Document.GetElementById(textBoxJSPass.Text);
             hElement2.SetAttribute("value", textBoxBrowserPassword.Text);
             hElement3 = webBrowser1.Document.GetElementById(textBoxJSForm.Text);
             hElement3.InvokeMember(textBoxJSSubmit.Text);
-            timer1.Stop();
-            timer2.Start();
         }
-
+        public void vl1f2() //Get string
+        {
+            objHtmlDoc = (mshtml.HTMLDocument)webBrowser1.Document.DomDocument;
+            /*webBrowser1 is the WebBrowser Control showing your page*/
+            pageSource = objHtmlDoc.documentElement.innerHTML;
+            textBoxWebBrowserStr.Text = pageSource;
+            pageSource = pageSource.Substring(int.Parse(textBoxBrowserSt.Text), int.Parse(textBoxBrowserEd.Text));
+            labelBrowser.Text = pageSource;
+        }
+       
         private void button8_Click_1(object sender, EventArgs e)
         {
             //webBrowser1.Refresh();
@@ -2047,17 +1986,6 @@ namespace SampleApp
             pageSource = pageSource.Substring(int.Parse(textBoxBrowserSt.Text), int.Parse(textBoxBrowserEd.Text));
             //int x = pageSource.IndexOf("Featured Episodes");
             labelBrowser.Text = pageSource;
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            objHtmlDoc = (mshtml.HTMLDocument)webBrowser1.Document.DomDocument;
-            /*webBrowser1 is the WebBrowser Control showing your page*/
-            oldpageSource = objHtmlDoc.documentElement.innerHTML;
-            textBoxWebBrowserStr.Text = oldpageSource;
-            oldpageSource = oldpageSource.Substring(int.Parse(textBoxBrowserSt.Text),int.Parse(textBoxBrowserEd.Text));
-            labelBrowser.Text = oldpageSource;
-            timer2.Stop();
         }
     }
 }
