@@ -236,6 +236,14 @@ namespace SampleApp
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBoxJSSubmit = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBoxJSForm = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBoxJSPass = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBoxJSLogin = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -283,6 +291,7 @@ namespace SampleApp
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxGmailCheckStr = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBoxWebPage4 = new System.Windows.Forms.CheckBox();
             this.checkBoxGmail = new System.Windows.Forms.CheckBox();
             this.checkBoxWebPage = new System.Windows.Forms.CheckBox();
             this.textBoxPass = new System.Windows.Forms.TextBox();
@@ -292,17 +301,8 @@ namespace SampleApp
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBoxJSLogin = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBoxJSPass = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBoxJSForm = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBoxJSSubmit = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.labelBrowser = new System.Windows.Forms.Label();
-            this.checkBoxWebPage4 = new System.Windows.Forms.CheckBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -674,6 +674,74 @@ namespace SampleApp
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "WebCheck";
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(398, 102);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(42, 13);
+            this.label27.TabIndex = 63;
+            this.label27.Text = "Submit:";
+            // 
+            // textBoxJSSubmit
+            // 
+            this.textBoxJSSubmit.Location = new System.Drawing.Point(441, 99);
+            this.textBoxJSSubmit.Name = "textBoxJSSubmit";
+            this.textBoxJSSubmit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxJSSubmit.TabIndex = 62;
+            this.textBoxJSSubmit.Text = "submit";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(264, 102);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(33, 13);
+            this.label26.TabIndex = 61;
+            this.label26.Text = "Form:";
+            // 
+            // textBoxJSForm
+            // 
+            this.textBoxJSForm.Location = new System.Drawing.Point(297, 99);
+            this.textBoxJSForm.Name = "textBoxJSForm";
+            this.textBoxJSForm.Size = new System.Drawing.Size(100, 20);
+            this.textBoxJSForm.TabIndex = 60;
+            this.textBoxJSForm.Text = "login-form";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(109, 102);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(56, 13);
+            this.label25.TabIndex = 59;
+            this.label25.Text = "Password:";
+            // 
+            // textBoxJSPass
+            // 
+            this.textBoxJSPass.Location = new System.Drawing.Point(163, 99);
+            this.textBoxJSPass.Name = "textBoxJSPass";
+            this.textBoxJSPass.Size = new System.Drawing.Size(100, 20);
+            this.textBoxJSPass.TabIndex = 58;
+            this.textBoxJSPass.Text = "password-password";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(11, 102);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(36, 13);
+            this.label24.TabIndex = 57;
+            this.label24.Text = "Login:";
+            // 
+            // textBoxJSLogin
+            // 
+            this.textBoxJSLogin.Location = new System.Drawing.Point(48, 99);
+            this.textBoxJSLogin.Name = "textBoxJSLogin";
+            this.textBoxJSLogin.Size = new System.Drawing.Size(61, 20);
+            this.textBoxJSLogin.TabIndex = 56;
+            this.textBoxJSLogin.Text = "email-email";
+            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(515, 75);
@@ -854,7 +922,7 @@ namespace SampleApp
             this.textBoxBrowserEd.Name = "textBoxBrowserEd";
             this.textBoxBrowserEd.Size = new System.Drawing.Size(30, 20);
             this.textBoxBrowserEd.TabIndex = 35;
-            this.textBoxBrowserEd.Text = "200";
+            this.textBoxBrowserEd.Text = "50";
             // 
             // textBoxBrowserSt
             // 
@@ -862,7 +930,7 @@ namespace SampleApp
             this.textBoxBrowserSt.Name = "textBoxBrowserSt";
             this.textBoxBrowserSt.Size = new System.Drawing.Size(30, 20);
             this.textBoxBrowserSt.TabIndex = 34;
-            this.textBoxBrowserSt.Text = "2196";
+            this.textBoxBrowserSt.Text = "2412";
             // 
             // textBoxBrowserLogin
             // 
@@ -1096,6 +1164,16 @@ namespace SampleApp
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lockerz";
             // 
+            // checkBoxWebPage4
+            // 
+            this.checkBoxWebPage4.AutoSize = true;
+            this.checkBoxWebPage4.Location = new System.Drawing.Point(5, 128);
+            this.checkBoxWebPage4.Name = "checkBoxWebPage4";
+            this.checkBoxWebPage4.Size = new System.Drawing.Size(57, 17);
+            this.checkBoxWebPage4.TabIndex = 29;
+            this.checkBoxWebPage4.Text = "Page4";
+            this.checkBoxWebPage4.UseVisualStyleBackColor = true;
+            // 
             // checkBoxGmail
             // 
             this.checkBoxGmail.AutoSize = true;
@@ -1190,74 +1268,6 @@ namespace SampleApp
             this.timer1.Interval = 6000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // textBoxJSLogin
-            // 
-            this.textBoxJSLogin.Location = new System.Drawing.Point(48, 99);
-            this.textBoxJSLogin.Name = "textBoxJSLogin";
-            this.textBoxJSLogin.Size = new System.Drawing.Size(61, 20);
-            this.textBoxJSLogin.TabIndex = 56;
-            this.textBoxJSLogin.Text = "email-email";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(11, 102);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(36, 13);
-            this.label24.TabIndex = 57;
-            this.label24.Text = "Login:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(109, 102);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(56, 13);
-            this.label25.TabIndex = 59;
-            this.label25.Text = "Password:";
-            // 
-            // textBoxJSPass
-            // 
-            this.textBoxJSPass.Location = new System.Drawing.Point(163, 99);
-            this.textBoxJSPass.Name = "textBoxJSPass";
-            this.textBoxJSPass.Size = new System.Drawing.Size(100, 20);
-            this.textBoxJSPass.TabIndex = 58;
-            this.textBoxJSPass.Text = "password-password";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(264, 102);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(33, 13);
-            this.label26.TabIndex = 61;
-            this.label26.Text = "Form:";
-            // 
-            // textBoxJSForm
-            // 
-            this.textBoxJSForm.Location = new System.Drawing.Point(297, 99);
-            this.textBoxJSForm.Name = "textBoxJSForm";
-            this.textBoxJSForm.Size = new System.Drawing.Size(100, 20);
-            this.textBoxJSForm.TabIndex = 60;
-            this.textBoxJSForm.Text = "login-form";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(398, 102);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(42, 13);
-            this.label27.TabIndex = 63;
-            this.label27.Text = "Submit:";
-            // 
-            // textBoxJSSubmit
-            // 
-            this.textBoxJSSubmit.Location = new System.Drawing.Point(441, 99);
-            this.textBoxJSSubmit.Name = "textBoxJSSubmit";
-            this.textBoxJSSubmit.Size = new System.Drawing.Size(100, 20);
-            this.textBoxJSSubmit.TabIndex = 62;
-            this.textBoxJSSubmit.Text = "submit";
-            // 
             // timer2
             // 
             this.timer2.Interval = 10000;
@@ -1271,16 +1281,6 @@ namespace SampleApp
             this.labelBrowser.Size = new System.Drawing.Size(62, 13);
             this.labelBrowser.TabIndex = 28;
             this.labelBrowser.Text = "CompareStr";
-            // 
-            // checkBoxWebPage4
-            // 
-            this.checkBoxWebPage4.AutoSize = true;
-            this.checkBoxWebPage4.Location = new System.Drawing.Point(5, 128);
-            this.checkBoxWebPage4.Name = "checkBoxWebPage4";
-            this.checkBoxWebPage4.Size = new System.Drawing.Size(57, 17);
-            this.checkBoxWebPage4.TabIndex = 29;
-            this.checkBoxWebPage4.Text = "Page4";
-            this.checkBoxWebPage4.UseVisualStyleBackColor = true;
             // 
             // Calendar
             // 
@@ -1529,6 +1529,7 @@ namespace SampleApp
             if (checkBoxWebPage4.Checked == true)
             {
                 button8_Click_1(sender, e);
+
                 if (oldpageSource != pageSource)
                 {
 
@@ -2036,13 +2037,16 @@ namespace SampleApp
 
         private void button8_Click_1(object sender, EventArgs e)
         {
+            //webBrowser1.Refresh();
+            webBrowser1.Navigate("http://www.lockerz.com/myLocker");
             objHtmlDoc = (mshtml.HTMLDocument)webBrowser1.Document.DomDocument;
             /*webBrowser1 is the WebBrowser Control showing your page*/
             pageSource = objHtmlDoc.documentElement.innerHTML;
             textBoxWebBrowserStr.Text = pageSource;
+            //pageSource = pageSource.Substring(int.Parse(textBoxBrowserSt.Text), int.Parse(textBoxBrowserEd.Text));
             pageSource = pageSource.Substring(int.Parse(textBoxBrowserSt.Text), int.Parse(textBoxBrowserEd.Text));
+            //int x = pageSource.IndexOf("Featured Episodes");
             labelBrowser.Text = pageSource;
-            webBrowser1.Refresh();
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -2055,9 +2059,5 @@ namespace SampleApp
             labelBrowser.Text = oldpageSource;
             timer2.Stop();
         }
-        
-
-
-
     }
 }
