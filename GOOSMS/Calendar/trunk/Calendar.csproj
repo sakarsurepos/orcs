@@ -48,7 +48,7 @@
     <PublisherName>EliteRobot</PublisherName>
     <MinimumRequiredVersion>1.0.0.25</MinimumRequiredVersion>
     <WebPage>www.eliterobot.info</WebPage>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
