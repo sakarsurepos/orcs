@@ -17,6 +17,8 @@ using LumiSoft.Net.IMAP;
 using LumiSoft.Net.IMAP.Client;
 using System.Threading;
 using System.Timers;
+using System.Deployment;
+using System.Deployment.Application;
 
 namespace SampleApp
 {
@@ -156,6 +158,7 @@ namespace SampleApp
         private Label labelBrowser;
         private CheckBox checkBoxWebPage4;
         private TextBox textBoxTime2;
+        private Button button10;
         public ListViewItem item;
 
         public Calendar()
@@ -164,8 +167,29 @@ namespace SampleApp
             // Required for Windows Form Designer support
             //
             InitializeComponent();
-            Calendar.CheckForIllegalCrossThreadCalls = false;
 
+            //System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed = false;
+            //Version version = Application.ProductVersion;
+            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) 
+            //{
+            // System.Deployment.Application.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
+            // version = ad.CurrentVersion;
+            //}
+            Version version2 = new Version();
+
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) 
+            {
+            System.Deployment.Application.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
+            version2 = ad.CurrentVersion;
+            // blah...
+            }
+            //string ourVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            //System.Deployment.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
+            //version = ad.CurrentVersion;
+            Calendar.CheckForIllegalCrossThreadCalls = false;
+            //System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            //Version vrs = new Version(Application.ProductVersion);
+            this.Text = "FreeLifeSMS WebPage and Gmail Checker AssemblyBuid " + PublishVersion().ToString() + " ClickOnce RC" + version2.Revision.ToString(); //String.Format("ClickOnce Version {0}.{1}.{2}.{3}", version.Major, version.Minor, version.Revision, version.Build);
             //
             // TODO: Add any constructor code after InitializeComponent call
             //
@@ -307,6 +331,7 @@ namespace SampleApp
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelBrowser = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -520,7 +545,7 @@ namespace SampleApp
             this.pictureBox1.Image = global::Calendar.Resource1.sms3;
             this.pictureBox1.Location = new System.Drawing.Point(668, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 22);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 22);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -1283,10 +1308,21 @@ namespace SampleApp
             this.labelBrowser.TabIndex = 28;
             this.labelBrowser.Text = "CompareStr";
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(741, 6);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(55, 23);
+            this.button10.TabIndex = 23;
+            this.button10.Text = "Update";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Calendar
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(802, 817);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.labelBrowser);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1299,7 +1335,7 @@ namespace SampleApp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Calendar";
-            this.Text = "FreeLifeSMS WebPage and Gmail Checker RC3";
+            this.Text = "FreeLifeSMS WebPage and Gmail Checker";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calendar_FormClosing);
             this.Resize += new System.EventHandler(this.Calendar_Resize);
@@ -1449,6 +1485,7 @@ namespace SampleApp
                 {
                     Page4checkfcn();
                     oldpageSource = pageSource;
+                    newpageSource = pageSource;
                 }
 
                 //PAGE1,2
@@ -1951,9 +1988,9 @@ namespace SampleApp
 
         public void vl1fcn()
         {
-            Thread.Sleep(6000);
+            Thread.Sleep(9000);
             this.Invoke(new vl1d(vl1f));
-            Thread.Sleep(10000);
+            Thread.Sleep(13000);
             this.Invoke(new vl1d2(vl1f2));
         }
 
@@ -1995,5 +2032,41 @@ namespace SampleApp
             vl1.Abort();
             vl2.Abort();   
         }
+
+        public string PublishVersion()
+        {
+
+            System.Reflection.Assembly _assemblyInfo = System.Reflection.Assembly.GetExecutingAssembly();
+            string ourVersion = string.Empty;
+
+            //if running the deployed application, you can get the version
+            //  from the ApplicationDeployment information. If you try
+            //  to access this when you are running in Visual Studio, it will not work.
+            if(System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            {
+                ourVersion = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            }
+            else
+            {
+                if (_assemblyInfo != null)
+                {
+                    ourVersion = _assemblyInfo.GetName().Version.ToString();
+                }
+            }
+            return ourVersion;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ApplicationDeployment deploy = ApplicationDeployment.CurrentDeployment;
+            UpdateCheckInfo update = deploy.CheckForDetailedUpdate();
+            if (deploy.CheckForUpdate())
+            {
+                MessageBox.Show("You can update to version: " + update.AvailableVersion.ToString());
+                deploy.Update();
+                Application.Restart();
+            }
+        }
+
     }
 }

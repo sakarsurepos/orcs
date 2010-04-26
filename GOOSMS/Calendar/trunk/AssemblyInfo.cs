@@ -14,6 +14,7 @@
 */
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Resources;
 
 
 //
@@ -47,3 +48,4 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitleAttribute("FreeLifeSMS")]
 [assembly: AssemblyDescriptionAttribute("FreeLifeSMS")]
 [assembly: AssemblyCompanyAttribute("Elite Robot")]
+[assembly: NeutralResourcesLanguageAttribute("en")]
