@@ -167,29 +167,20 @@ namespace SampleApp
             // Required for Windows Form Designer support
             //
             InitializeComponent();
-
-            //System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed = false;
-            //Version version = Application.ProductVersion;
-            //if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) 
-            //{
-            // System.Deployment.Application.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
-            // version = ad.CurrentVersion;
-            //}
+            Calendar.CheckForIllegalCrossThreadCalls = false;
+            
+            //Version Check
             Version version2 = new Version();
-
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) 
             {
             System.Deployment.Application.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
             version2 = ad.CurrentVersion;
-            // blah...
             }
-            //string ourVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
-            //System.Deployment.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
-            //version = ad.CurrentVersion;
-            Calendar.CheckForIllegalCrossThreadCalls = false;
-            //System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-            //Version vrs = new Version(Application.ProductVersion);
-            this.Text = "FreeLifeSMS WebPage and Gmail Checker AssemblyBuid " + PublishVersion().ToString() + " ClickOnce RC" + version2.Revision.ToString(); //String.Format("ClickOnce Version {0}.{1}.{2}.{3}", version.Major, version.Minor, version.Revision, version.Build);
+
+            //Assembly Check
+            Version vrs = new Version(Application.ProductVersion);
+
+            this.Text = "FreeLifeSMS WebPage and Gmail Checker / AssemblyBuid " + vrs.Major + "." + vrs.Minor + "." + vrs.Build + "." + vrs.Revision +" Publish Version  " + PublishVersion().ToString() + " ClickOnce RC" + version2.Revision.ToString(); //String.Format("ClickOnce Version {0}.{1}.{2}.{3}", version.Major, version.Minor, version.Revision, version.Build);
             //
             // TODO: Add any constructor code after InitializeComponent call
             //
@@ -1599,24 +1590,25 @@ namespace SampleApp
             {
                 incr = incr + 1;
                 Thread.Sleep(int.Parse(textBoxTime.Text) * 1000 * 60);
-                //Page4 Check
-                if (checkBoxWebPage4.Checked == true)
-                {
-                    if (incr == int.Parse(textBoxTime2.Text))
+                    
+                    //Page4 Check
+                    if (checkBoxWebPage4.Checked == true)
                     {
-                        Page4checkfcn();
-                        //int x = pageSource.IndexOf("Featured Episodes");
-                        newpageSource = pageSource;
-                        labelBrowser.Text = newpageSource;
-
-                        if (oldpageSource != newpageSource)
+                        if (incr == int.Parse(textBoxTime2.Text))
                         {
-                            oldpageSource = newpageSource;
-                            googlecalendarSMSreminder(newpageSource);
+                            Page4checkfcn();
+                            //int x = pageSource.IndexOf("Featured Episodes");
+                            newpageSource = pageSource;
+                            labelBrowser.Text = newpageSource;
+
+                            if (oldpageSource != newpageSource && pageSource.IndexOf("download") != -1 && oldpageSource != null)
+                            {
+                                oldpageSource = newpageSource;
+                                googlecalendarSMSreminder(newpageSource);
+                            }
+                            incr = 0;
                         }
-                        incr = 0;
                     }
-                 }
 
                     //Gmail Check
                     if (checkBoxGmail.Checked == true)
@@ -1988,10 +1980,14 @@ namespace SampleApp
 
         public void vl1fcn()
         {
-            Thread.Sleep(9000);
-            this.Invoke(new vl1d(vl1f));
-            Thread.Sleep(13000);
-            this.Invoke(new vl1d2(vl1f2));
+            try
+            {
+                Thread.Sleep(9000);
+                this.Invoke(new vl1d(vl1f));
+                Thread.Sleep(13000);
+                this.Invoke(new vl1d2(vl1f2));
+            }
+            catch { }
         }
 
         public void vl1f() //Insert values
@@ -2002,6 +1998,7 @@ namespace SampleApp
             hElement2.SetAttribute("value", textBoxBrowserPassword.Text);
             hElement3 = webBrowser1.Document.GetElementById(textBoxJSForm.Text);
             hElement3.InvokeMember(textBoxJSSubmit.Text);
+
         }
         public void vl1f2() //Get string
         {
@@ -2029,8 +2026,8 @@ namespace SampleApp
 
         private void Calendar_FormClosing(object sender, FormClosingEventArgs e)
         {
-            vl1.Abort();
-            vl2.Abort();   
+            //vl1.Abort();
+            //vl2.Abort();   
         }
 
         public string PublishVersion()
@@ -2065,6 +2062,10 @@ namespace SampleApp
                 MessageBox.Show("You can update to version: " + update.AvailableVersion.ToString());
                 deploy.Update();
                 Application.Restart();
+            }
+            else
+            {
+                MessageBox.Show("No update avaliable");
             }
         }
 
