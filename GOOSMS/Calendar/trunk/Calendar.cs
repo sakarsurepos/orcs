@@ -1574,8 +1574,8 @@ namespace SampleApp
 
                         if (oldpageSource != newpageSource)
                         {
-                            googlecalendarSMSreminder(newpageSource);
                             oldpageSource = newpageSource;
+                            googlecalendarSMSreminder(newpageSource);
                         }
                         incr = 0;
                     }

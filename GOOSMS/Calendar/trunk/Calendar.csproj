@@ -42,11 +42,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>http://orcs.sebsoft.com/FreeLifeSMS/</UpdateUrl>
+    <UpdateUrl>http://orcs.sebsoft.com/firmware/FreeLifeSMS/</UpdateUrl>
     <ProductName>FreeLifeSMS</ProductName>
     <PublisherName>EliteRobot</PublisherName>
     <WebPage>www.eliterobot.info</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
