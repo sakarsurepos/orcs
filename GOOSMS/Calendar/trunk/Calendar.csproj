@@ -40,13 +40,15 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://orcs.sebsoft.com/firmware/FreeLifeSMS/</UpdateUrl>
+    <TargetCulture>en</TargetCulture>
     <ProductName>FreeLifeSMS</ProductName>
     <PublisherName>EliteRobot</PublisherName>
+    <MinimumRequiredVersion>1.0.0.25</MinimumRequiredVersion>
     <WebPage>www.eliterobot.info</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -147,6 +149,7 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
