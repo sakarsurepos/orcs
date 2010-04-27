@@ -49,9 +49,9 @@ namespace SampleApp
         public string oldmainstring;
         public string substring;
         public int stringresult;
-        string pageSource;
-        string oldpageSource;
-        string newpageSource;
+        public static string pageSource;
+        public static string oldpageSource;
+        public static string newpageSource;
         public mshtml.HTMLDocument objHtmlDoc;
         public HtmlElement hElement1;
         public HtmlElement hElement2;
@@ -63,6 +63,8 @@ namespace SampleApp
         private ArrayList entryList;
         public string older;
         public string older1;
+        public bool first = true;
+
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private Button button2;
@@ -1460,6 +1462,7 @@ namespace SampleApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+                first = true;
                 button4.Enabled = true;
                 button1.Enabled = false;
                 //Start Check
@@ -1475,8 +1478,6 @@ namespace SampleApp
                 if (checkBoxWebPage4.Checked == true)
                 {
                     Page4checkfcn();
-                    oldpageSource = pageSource;
-                    newpageSource = pageSource;
                 }
 
                 //PAGE1,2
@@ -1597,11 +1598,13 @@ namespace SampleApp
                         if (incr == int.Parse(textBoxTime2.Text))
                         {
                             Page4checkfcn();
+                            Thread.Sleep(10000);
                             //int x = pageSource.IndexOf("Featured Episodes");
-                            newpageSource = pageSource;
+                            //newpageSource = pageSource;
                             labelBrowser.Text = newpageSource;
+                            int fail = pageSource.IndexOf("download");
 
-                            if (oldpageSource != newpageSource && pageSource.IndexOf("download") != -1 && oldpageSource != null)
+                            if (oldpageSource != newpageSource && fail == -1) // && oldpageSource != null)
                             {
                                 oldpageSource = newpageSource;
                                 googlecalendarSMSreminder(newpageSource);
@@ -2008,6 +2011,16 @@ namespace SampleApp
             textBoxWebBrowserStr.Text = pageSource;
             pageSource = pageSource.Substring(int.Parse(textBoxBrowserSt.Text), int.Parse(textBoxBrowserEd.Text));
             labelBrowser.Text = pageSource;
+            if (first == true)
+            {
+                oldpageSource = pageSource;
+                newpageSource = pageSource;
+            }
+            else
+            {
+                newpageSource = pageSource;
+            }
+            first = false;
         }
        
         private void button8_Click_1(object sender, EventArgs e)
