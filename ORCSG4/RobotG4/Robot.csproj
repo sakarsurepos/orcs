@@ -45,7 +45,7 @@
     <PublisherName>Elite Robot</PublisherName>
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
     <WebPage>www.orcs.sebsoft.com</WebPage>
-    <ApplicationRevision>62</ApplicationRevision>
+    <ApplicationRevision>63</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -644,15 +644,6 @@
       </TargetPath>
       <PublishState>Include</PublishState>
       <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\chassis.TVM">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="Models\chassis_old.TVM">
       <Visible>False</Visible>
@@ -1347,6 +1338,33 @@
       <PublishState>Include</PublishState>
       <FileType>Satellite</FileType>
     </PublishFile>
+    <PublishFile Include="Sounds\ding.wav">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Sounds\Windows Shutdown.wav">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Sounds\Windows Startup.wav">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
     <PublishFile Include="stdole">
       <Visible>False</Visible>
       <Group>
@@ -1384,6 +1402,15 @@
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="Textures\grass3.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\grass_old.jpg">
       <Visible>False</Visible>
       <Group>
       </Group>
