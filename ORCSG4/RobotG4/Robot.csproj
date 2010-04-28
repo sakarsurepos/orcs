@@ -393,6 +393,8 @@
     <Content Include="Resources\usb.png" />
     <Content Include="Resources\webcam.png" />
     <None Include="Resources\wifi2.gif" />
+    <Content Include="Resources\wifi2r.gif" />
+    <Content Include="Resources\wifi2y.gif" />
     <Content Include="Robot.csproj.vspscc" />
     <Content Include="Robot.ico" />
     <Content Include="Robot.vssscc" />
