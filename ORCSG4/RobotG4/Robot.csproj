@@ -45,7 +45,7 @@
     <PublisherName>Elite Robot</PublisherName>
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
     <WebPage>www.orcs.sebsoft.com</WebPage>
-    <ApplicationRevision>64</ApplicationRevision>
+    <ApplicationRevision>65</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -276,24 +276,24 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="Models\chassis.TVM" />
-    <None Include="Models\chassisx.TVM" />
-    <None Include="Models\chassisxxx.TVM" />
-    <None Include="Models\chassis_old.TVM" />
-    <None Include="Models\chassis_old2.TVM" />
-    <None Include="Models\pk.TVM" />
-    <None Include="Models\pk8.TVM" />
-    <None Include="Models\PK9.3DS" />
-    <None Include="Models\pk9.tvm" />
-    <None Include="Models\pk92.3DS" />
-    <None Include="Models\pk92.max" />
-    <None Include="Models\pk92.X" />
-    <None Include="Models\ship.tvm" />
-    <None Include="Models\wheel_l.TVM" />
-    <None Include="Models\wheel_l0.TVM" />
-    <None Include="Models\wheel_r.TVM" />
-    <None Include="Models\wheel_r0.TVM" />
-    <None Include="Models\w_left.TVM" />
+    <None Include="Models2\chassis.tvm" />
+    <None Include="Models2\chassisx.tvm" />
+    <None Include="Models2\chassisxxx.tvm" />
+    <None Include="Models2\chassis_old.tvm" />
+    <None Include="Models2\chassis_old2.tvm" />
+    <None Include="Models2\pk.tvm" />
+    <None Include="Models2\pk8.tvm" />
+    <None Include="Models2\PK9.3ds" />
+    <None Include="Models2\pk9.tvm" />
+    <None Include="Models2\pk92.3ds" />
+    <None Include="Models2\pk92.max" />
+    <None Include="Models2\pk92.x" />
+    <None Include="Models2\ship.tvm" />
+    <None Include="Models2\wheel_l.tvm" />
+    <None Include="Models2\wheel_l0.tvm" />
+    <None Include="Models2\wheel_r.tvm" />
+    <None Include="Models2\wheel_r0.tvm" />
+    <None Include="Models2\w_left.tvm" />
     <None Include="Package1.pkgxml" />
     <None Include="Package2.pkgxml" />
     <None Include="Properties\app.manifest" />
