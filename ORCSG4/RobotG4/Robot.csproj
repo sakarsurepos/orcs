@@ -287,6 +287,11 @@
     <Content Include="Models\ship.tvm" />
     <Content Include="Models\wheel_l.TVM" />
     <Content Include="Models\wheel_r.TVM" />
+    <None Include="Models\chassisx.TVM" />
+    <None Include="Models\chassisxxx.TVM" />
+    <None Include="Models\wheel_l0.TVM" />
+    <None Include="Models\wheel_r0.TVM" />
+    <None Include="Models\w_left.TVM" />
     <None Include="Package1.pkgxml" />
     <None Include="Package2.pkgxml" />
     <None Include="Properties\app.manifest" />
