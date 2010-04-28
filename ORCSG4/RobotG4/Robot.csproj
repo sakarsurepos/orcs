@@ -489,6 +489,15 @@
       <PublishState>Include</PublishState>
       <FileType>Assembly</FileType>
     </PublishFile>
+    <PublishFile Include="LumiSoft.Net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
     <PublishFile Include="Microsoft.DirectX">
       <Visible>False</Visible>
       <Group>
