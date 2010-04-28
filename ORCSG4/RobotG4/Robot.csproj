@@ -46,7 +46,7 @@
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
     <WebPage>www.orcs.sebsoft.com</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>71</ApplicationRevision>
+    <ApplicationRevision>74</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -124,10 +124,7 @@
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>False</Private>
     </Reference>
-    <Reference Include="MTV3D65, Version=6.5.2823.21213, Culture=neutral">
-      <HintPath>Resources\MTV3D65.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="MTV3D65, Version=6.5.2823.21213, Culture=neutral" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -157,6 +154,7 @@
     </Compile>
     <Compile Include="Commands.cs" />
     <Compile Include="Communication.cs" />
+    <Compile Include="cengine3D.cs" />
     <Compile Include="Devices.cs" />
     <Compile Include="AboutForm.cs">
       <SubType>Form</SubType>
