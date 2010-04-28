@@ -369,6 +369,7 @@
     <None Include="Resources\logo_TU.jpg" />
     <None Include="Resources\logo_Kaar.jpg" />
     <None Include="Resources\logo_sjf.jpg" />
+    <Content Include="Resources\LumiSoft.Net.dll" />
     <Content Include="Resources\mapa.bmp" />
     <Content Include="Resources\mapa_areal_tuke.bmp" />
     <Content Include="Resources\mapa_areal_tuke_old.bmp" />
@@ -379,6 +380,7 @@
     <Content Include="Resources\Microsoft.DirectX.DirectInput.dll" />
     <Content Include="Resources\Microsoft.DirectX.dll" />
     <None Include="Resources\mw_joomla_logo.png" />
+    <Content Include="Resources\MTV3D65.dll" />
     <Content Include="Resources\OFF.png" />
     <None Include="Resources\Openwrt_logo_small.jpg" />
     <None Include="Resources\ON.gif" />
