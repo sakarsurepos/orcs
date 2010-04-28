@@ -102,7 +102,6 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="LumiSoft.Net, Version=2.0.3396.16260, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\LumiSoft.Net.dll</HintPath>
       <Private>False</Private>
     </Reference>
@@ -112,7 +111,6 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="MTV3D65, Version=6.5.2823.21213, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\MTV3D65.dll</HintPath>
       <Private>False</Private>
     </Reference>
