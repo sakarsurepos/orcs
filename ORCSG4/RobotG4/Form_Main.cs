@@ -387,7 +387,7 @@ namespace Robot
             //this.tabPage19.Controls.Add(this.usrCtrlAxis2D);
                         
             InitializeComponent();
-            /*
+            
             //VERSION UPDATE PUBLISH
             Version version2 = new Version();
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
@@ -399,7 +399,7 @@ namespace Robot
             //VERSION UPDATE BUILD
             Version vrs = new Version(Application.ProductVersion);
             this.Text = "CONTROL APPLICATION  ORCS ROBOT G4 (SECURITY GUARD ROBOT) / AssemblyBuid " + vrs.Major + "." + vrs.Minor + "." + vrs.Build + "." + vrs.Revision + " Publish Version  " + PublishVersion().ToString() + " ClickOnce RC" + version2.Revision.ToString(); //String.Format("ClickOnce Version {0}.{1}.{2}.{3}", version.Major, version.Minor, version.Revision, version.Build);
-            */
+            
             //BATTERY
             batt.aktualne_nap = 0.1f; //initial value for battery monitor
             SetMap();
