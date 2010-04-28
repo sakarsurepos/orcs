@@ -399,6 +399,7 @@
     <Content Include="Resources\stop1.png" />
     <Content Include="Resources\Tiger.Video.VFW.dll" />
     <None Include="Resources\tu3.png" />
+    <Content Include="Resources\tux.gif" />
     <Content Include="Resources\usb.png" />
     <Content Include="Resources\webcam.png" />
     <None Include="Resources\wifi2.gif" />
