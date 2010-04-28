@@ -45,7 +45,7 @@
     <PublisherName>Elite Robot</PublisherName>
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
     <WebPage>www.orcs.sebsoft.com</WebPage>
-    <ApplicationRevision>55</ApplicationRevision>
+    <ApplicationRevision>62</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -275,7 +275,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <Content Include="Models\chassis.TVM" />
     <Content Include="Models\chassis_old.TVM" />
     <Content Include="Models\pk.TVM" />
     <Content Include="Models\pk8.TVM" />
@@ -287,6 +286,7 @@
     <Content Include="Models\ship.tvm" />
     <Content Include="Models\wheel_l.TVM" />
     <Content Include="Models\wheel_r.TVM" />
+    <None Include="Models\chassis.TVM" />
     <None Include="Models\chassisx.TVM" />
     <None Include="Models\chassisxxx.TVM" />
     <None Include="Models\wheel_l0.TVM" />
