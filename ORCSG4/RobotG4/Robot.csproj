@@ -363,6 +363,7 @@
     <Content Include="Resources\imager.jpg" />
     <Content Include="Resources\input_devices_settings.png" />
     <Content Include="Resources\kcmpci.png" />
+    <Content Include="Resources\letecka_2.bmp" />
     <Content Include="Resources\linux.jpg" />
     <None Include="Resources\linux2.png" />
     <None Include="Resources\mic4.png" />
