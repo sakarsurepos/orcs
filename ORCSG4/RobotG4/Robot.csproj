@@ -275,6 +275,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Models\chassis.TVM" />
     <None Include="Models\chassisx.TVM" />
     <None Include="Models\chassisxxx.TVM" />
@@ -643,105 +644,6 @@
       </TargetPath>
       <PublishState>Include</PublishState>
       <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\chassis_old.TVM">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\pk.TVM">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\pk8.TVM">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\PK9.3DS">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\pk9.tvm">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\pk92.3DS">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\pk92.max">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\pk92.X">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\ship.tvm">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\wheel_l.TVM">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="Models\wheel_r.TVM">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="MTV3D65">
       <Visible>False</Visible>
