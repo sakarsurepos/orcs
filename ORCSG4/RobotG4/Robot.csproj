@@ -476,7 +476,6 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models2\" />
     <Folder Include="Particles\" />
     <Folder Include="Shaders\" />
   </ItemGroup>
