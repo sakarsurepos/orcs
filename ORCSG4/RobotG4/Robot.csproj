@@ -46,7 +46,7 @@
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
     <WebPage>www.orcs.sebsoft.com</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>74</ApplicationRevision>
+    <ApplicationRevision>75</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -69,6 +69,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -278,24 +279,60 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="RobotClass.cd" />
-    <Content Include="Models\chassis.tvm" />
-    <Content Include="Models\chassisx.tvm" />
-    <Content Include="Models\chassisxxx.tvm" />
-    <Content Include="Models\chassis_old.tvm" />
-    <Content Include="Models\chassis_old2.tvm" />
-    <Content Include="Models\pk.tvm" />
-    <Content Include="Models\pk8.tvm" />
-    <Content Include="Models\PK9.3ds" />
-    <Content Include="Models\pk9.tvm" />
-    <Content Include="Models\pk92.3ds" />
-    <Content Include="Models\pk92.max" />
-    <Content Include="Models\pk92.x" />
-    <Content Include="Models\ship.tvm" />
-    <Content Include="Models\wheel_l.tvm" />
-    <Content Include="Models\wheel_l0.tvm" />
-    <Content Include="Models\wheel_r.tvm" />
-    <Content Include="Models\wheel_r0.tvm" />
-    <Content Include="Models\w_left.tvm" />
+    <Content Include="Models\chassis.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\chassisx.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\chassisxxx.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\chassis_old.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\chassis_old2.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\pk.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\pk8.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\PK9.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\pk9.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\pk92.3ds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\pk92.max">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\pk92.x">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\ship.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\wheel_l.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\wheel_l0.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\wheel_r.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\wheel_r0.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\w_left.tvm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Package1.pkgxml" />
     <None Include="Package2.pkgxml" />
     <None Include="Properties\app.manifest" />
@@ -312,140 +349,394 @@
       <DependentUpon>HelpForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\1.gif" />
-    <Content Include="Heightmaps\heightmap.bmp" />
-    <Content Include="Maps\letecka_2.bmp" />
-    <Content Include="Maps\letecka_2_source.bmp" />
-    <Content Include="Maps\mapa_areal_tuke.bmp" />
-    <Content Include="Maps\mapa_areal_tuke_old.bmp" />
-    <Content Include="Maps\mapa_areal_tuke_old2.bmp" />
-    <Content Include="Maps\mapa_areal_tuke_old3.bmp" />
-    <Content Include="Maps\mapa_kosice.bmp" />
-    <Content Include="Maps\mapa_kosice_okolie.bmp" />
-    <Content Include="Maps\mapa_slovensko.bmp" />
-    <Content Include="Maps\mapa_zlin.bmp" />
-    <Content Include="Resources\1downarrow1.png" />
-    <None Include="Resources\1gps3.png" />
-    <Content Include="Resources\1leftarrow1.png" />
-    <Content Include="Resources\1rightarrow1.png" />
-    <Content Include="Resources\1uparrow1.png" />
-    <EmbeddedResource Include="Resources\2.gif" />
-    <Content Include="Resources\2dowarrow1.png" />
-    <Content Include="Resources\2downarrow.png" />
-    <Content Include="Resources\2leftarrow1.png" />
-    <Content Include="Resources\2rightarrow1.png" />
-    <Content Include="Resources\2uparrow.png" />
-    <Content Include="Resources\2uparrow1.png" />
-    <EmbeddedResource Include="Resources\3.gif" />
-    <EmbeddedResource Include="Resources\4.gif" />
-    <EmbeddedResource Include="Resources\5.gif" />
-    <EmbeddedResource Include="Resources\6.gif" />
-    <EmbeddedResource Include="Resources\7.gif" />
-    <EmbeddedResource Include="Resources\8.gif" />
-    <EmbeddedResource Include="Resources\9.gif" />
+    <EmbeddedResource Include="Resources\1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Heightmaps\heightmap.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\letecka_2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\letecka_2_source.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\mapa_areal_tuke.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\mapa_areal_tuke_old.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\mapa_areal_tuke_old2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\mapa_areal_tuke_old3.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\mapa_kosice.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\mapa_kosice_okolie.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\mapa_slovensko.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\mapa_zlin.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\1downarrow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\1gps3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Resources\1leftarrow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\1rightarrow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\1uparrow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Resources\2dowarrow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\2downarrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\2leftarrow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\2rightarrow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\2uparrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\2uparrow1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\3.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\4.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\5.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\6.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\7.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\8.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\9.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsrCtrlAxis2D.resx">
       <DependentUpon>UsrCtrlAxis2D.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Resources\AForge.dll" />
-    <Content Include="Resources\AForge.Imaging.dll" />
-    <Content Include="Resources\AForge.Math.dll" />
-    <Content Include="Resources\apply.png" />
-    <Content Include="Resources\Battery.jpg" />
-    <Content Include="Resources\Battery2.png" />
-    <Content Include="Resources\blank.png" />
-    <Content Include="Resources\Batterysmall.png" />
-    <Content Include="Resources\Batterysmall2.png" />
-    <Content Include="Resources\back.png" />
-    <Content Include="Resources\CAMERA_activeX.htm" />
-    <Content Include="Resources\CAMERA_activeX2.htm" />
-    <Content Include="Resources\chip5.png" />
-    <Content Include="Resources\compass.png" />
-    <Content Include="Resources\compass1.png" />
-    <Content Include="Resources\compass2.png" />
-    <Content Include="Resources\connect.gif" />
-    <Content Include="Resources\cpustat.gif" />
-    <Content Include="Resources\Dossier Fichier.png" />
-    <Content Include="Resources\Dossier Fichier1.png" />
-    <Content Include="Resources\dshow.dll" />
-    <Content Include="Resources\energy.png" />
-    <Content Include="Resources\folder.png" />
-    <Content Include="Resources\folder1.png" />
-    <Content Include="Resources\folder2.png" />
-    <Content Include="Resources\folder_slin_open.png" />
-    <Content Include="Resources\Globe1.png" />
-    <Content Include="Resources\GPS.jpg" />
-    <Content Include="Resources\Image1.bmp" />
-    <Content Include="Resources\image1.jpg" />
-    <Content Include="Resources\imager.jpg" />
-    <Content Include="Resources\input_devices_settings.png" />
-    <Content Include="Resources\kcmpci.png" />
-    <Content Include="Resources\letecka_2.bmp" />
-    <Content Include="Resources\linux.jpg" />
-    <Content Include="Resources\linux2.png" />
-    <Content Include="Resources\mic4.png" />
-    <Content Include="Resources\math7.png" />
-    <Content Include="Resources\logo_TU.jpg" />
-    <Content Include="Resources\logo_Kaar.jpg" />
-    <Content Include="Resources\logo_sjf.jpg" />
-    <Content Include="Resources\LumiSoft.Net.dll" />
-    <Content Include="Resources\mapa.bmp" />
-    <Content Include="Resources\mapa_areal_tuke.bmp" />
-    <Content Include="Resources\mapa_areal_tuke_old.bmp" />
-    <Content Include="Resources\mapa_kosice.bmp" />
-    <Content Include="Resources\mapa_kosice_okolie.bmp" />
-    <Content Include="Resources\mapa_slovensko.bmp" />
-    <Content Include="Resources\mapa_zlin.bmp" />
-    <Content Include="Resources\Microsoft.DirectX.DirectInput.dll" />
-    <Content Include="Resources\Microsoft.DirectX.dll" />
-    <Content Include="Resources\mw_joomla_logo.png" />
-    <Content Include="Resources\MTV3D65.dll" />
-    <Content Include="Resources\OFF.png" />
-    <Content Include="Resources\Openwrt_logo_small.jpg" />
-    <Content Include="Resources\ON.gif" />
-    <Content Include="Resources\ON2.gif" />
-    <Content Include="Resources\ON3.gif" />
-    <Content Include="Resources\ON4.gif" />
-    <Content Include="Resources\ON5.gif" />
-    <Content Include="Resources\ON9.gif" />
-    <Content Include="Resources\ON0.gif" />
-    <Content Include="Resources\reload.png" />
-    <Content Include="Resources\robot_logo.jpg" />
-    <Content Include="Resources\sebsoft_logo.jpg" />
-    <Content Include="Resources\robot_logo1.jpg" />
-    <Content Include="Resources\Service Manager.png" />
-    <Content Include="Resources\Services.png" />
-    <Content Include="Resources\stop1.png" />
-    <Content Include="Resources\TerminalControl.dll" />
-    <Content Include="Resources\Tiger.Video.VFW.dll" />
-    <Content Include="Resources\tu3.png" />
-    <Content Include="Resources\tux.gif" />
-    <Content Include="Resources\usb.png" />
-    <Content Include="Resources\webcam.png" />
-    <Content Include="Resources\wifi2.gif" />
-    <Content Include="Resources\wifi2r.gif" />
-    <Content Include="Resources\wifi2y.gif" />
+    <Content Include="Resources\AForge.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AForge.Imaging.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AForge.Math.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\apply.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Battery.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Battery2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\blank.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Batterysmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Batterysmall2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CAMERA_activeX.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CAMERA_activeX2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\chip5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\compass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\compass1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\compass2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\connect.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\cpustat.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Dossier Fichier.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Dossier Fichier1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\dshow.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\energy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\folder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\folder1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\folder2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\folder_slin_open.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Globe1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GPS.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Image1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\image1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\imager.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\input_devices_settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\kcmpci.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\letecka_2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\linux.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\linux2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mic4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\math7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\logo_TU.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\logo_Kaar.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\logo_sjf.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\LumiSoft.Net.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mapa.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mapa_areal_tuke.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mapa_areal_tuke_old.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mapa_kosice.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mapa_kosice_okolie.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mapa_slovensko.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mapa_zlin.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Microsoft.DirectX.DirectInput.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Microsoft.DirectX.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mw_joomla_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MTV3D65.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OFF.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Openwrt_logo_small.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ON.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ON2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ON3.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ON4.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ON5.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ON9.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ON0.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\reload.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\robot_logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sebsoft_logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\robot_logo1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Service Manager.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Services.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\stop1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TerminalControl.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Tiger.Video.VFW.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tu3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tux.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\usb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\webcam.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wifi2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wifi2r.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wifi2y.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Robot.csproj.vspscc" />
     <Content Include="Robot.ico" />
     <Content Include="Robot.vssscc" />
-    <Content Include="Sounds\ding.wav" />
-    <Content Include="Sounds\Windows Shutdown.wav" />
-    <Content Include="Sounds\Windows Startup.wav" />
-    <Content Include="Textures\ChassisSTi.bmp" />
-    <Content Include="Textures\grass.jpg" />
-    <Content Include="Textures\grass3.jpg" />
-    <Content Include="Textures\grass_old.jpg" />
-    <Content Include="Textures\letecka_2.bmp" />
-    <Content Include="Textures\pk9tex.bmp" />
-    <Content Include="Textures\skyback.jpg" />
-    <Content Include="Textures\skydown.jpg" />
-    <Content Include="Textures\skyfront.jpg" />
-    <Content Include="Textures\skyleft.jpg" />
-    <Content Include="Textures\skyright.jpg" />
-    <Content Include="Textures\skyup.jpg" />
-    <Content Include="Textures\Undercarriage.bmp" />
-    <Content Include="Textures\Wheel.bmp" />
-    <Content Include="Textures\Windows.bmp" />
+    <Content Include="Sounds\ding.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Windows Shutdown.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Windows Startup.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\ChassisSTi.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\grass.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\grass3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\grass_old.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\letecka_2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\pk9tex.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\skyback.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\skydown.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\skyfront.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\skyleft.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\skyright.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\skyup.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Undercarriage.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Wheel.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Windows.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="UpgradeLog.XML" />
   </ItemGroup>
   <ItemGroup>
