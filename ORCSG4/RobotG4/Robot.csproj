@@ -346,6 +346,7 @@
     <Content Include="Resources\compass.png" />
     <Content Include="Resources\compass1.png" />
     <Content Include="Resources\compass2.png" />
+    <Content Include="Resources\connect.gif" />
     <Content Include="Resources\Dossier Fichier.png" />
     <Content Include="Resources\Dossier Fichier1.png" />
     <Content Include="Resources\dshow.dll" />
