@@ -93,26 +93,36 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge.Imaging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=38eb47741dd0492e, processorArchitecture=MSIL">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="AForge.Math, Version=1.2.0.0, Culture=neutral, PublicKeyToken=e12ceb15b47eb5cc, processorArchitecture=MSIL">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="dshow, Version=1.0.3227.14695, Culture=neutral, processorArchitecture=MSIL">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="LumiSoft.Net, Version=2.0.3396.16260, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>Resources\LumiSoft.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-    <Reference Include="Microsoft.JScript" />
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.JScript">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="MTV3D65, Version=6.5.2823.21213, Culture=neutral">
       <HintPath>Resources\MTV3D65.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -126,10 +136,10 @@
     <Reference Include="TerminalControl, Version=1.0.3439.32834, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\TerminalControl.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Tiger.Video.VFW, Version=1.0.3227.14696, Culture=neutral, processorArchitecture=MSIL">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
