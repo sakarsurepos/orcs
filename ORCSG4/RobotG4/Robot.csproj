@@ -287,8 +287,10 @@
     <Content Include="Models\wheel_l.TVM" />
     <Content Include="Models\wheel_r.TVM" />
     <None Include="Models\chassis.TVM" />
+    <None Include="Models\chassis.TVM.AnkhSVN.0.tmp" />
     <None Include="Models\chassisx.TVM" />
     <None Include="Models\chassisxxx.TVM" />
+    <None Include="Models\chassis_old2.TVM" />
     <None Include="Models\wheel_l0.TVM" />
     <None Include="Models\wheel_r0.TVM" />
     <None Include="Models\w_left.TVM" />
@@ -424,9 +426,13 @@
     <Content Include="Robot.csproj.vspscc" />
     <Content Include="Robot.ico" />
     <Content Include="Robot.vssscc" />
+    <Content Include="Sounds\ding.wav" />
+    <Content Include="Sounds\Windows Shutdown.wav" />
+    <Content Include="Sounds\Windows Startup.wav" />
     <Content Include="Textures\ChassisSTi.bmp" />
     <Content Include="Textures\grass.jpg" />
     <Content Include="Textures\grass3.jpg" />
+    <Content Include="Textures\grass_old.jpg" />
     <Content Include="Textures\letecka_2.bmp" />
     <Content Include="Textures\pk9tex.bmp" />
     <Content Include="Textures\skyback.jpg" />
@@ -1498,7 +1504,6 @@
   <ItemGroup>
     <Folder Include="Particles\" />
     <Folder Include="Shaders\" />
-    <Folder Include="Sounds\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
