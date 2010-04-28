@@ -397,6 +397,7 @@
     <Content Include="Resources\Service Manager.png" />
     <Content Include="Resources\Services.png" />
     <Content Include="Resources\stop1.png" />
+    <Content Include="Resources\TerminalControl.dll" />
     <Content Include="Resources\Tiger.Video.VFW.dll" />
     <None Include="Resources\tu3.png" />
     <Content Include="Resources\tux.gif" />
