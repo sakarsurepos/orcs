@@ -2456,7 +2456,7 @@ namespace Robot
             //Building PK9
             pk_9 = scene.CreateMeshBuilder("pk");
             // load the object from an x file
-            pk_9.LoadTVM(@"Models2\pk8.tvm", false, false);
+            pk_9.LoadTVM(@"Models\pk8.tvm", false, false);
             // set its position
             pk_9.SetPosition(5.0f, 0.0f, 50.0f);
             // make the table 3x larger
@@ -2469,7 +2469,7 @@ namespace Robot
 
             //Chassis
             m_chassis = scene.CreateMeshBuilder("mChassis");
-            m_chassis.LoadTVM(@"Models2\chassis.tvm", false, false);
+            m_chassis.LoadTVM(@"Models\chassis.tvm", false, false);
             m_chassis.SetShadowCast(true, true);
             m_chassis.SetTexture(globals.GetTex("ChassisSTI"), 0);
             //m_chassis.SetTextureEx(0, globals.GetTex("ChassisSTI"), 1);
@@ -2484,7 +2484,7 @@ namespace Robot
             //Front Left Wheel
             float scale = 1f;
             m_fl = scene.CreateMeshBuilder("mfl");
-            m_fl.LoadTVM(@"Models2\wheel_l.tvm", true, true);
+            m_fl.LoadTVM(@"Models\wheel_l.tvm", true, true);
             m_fl.SetScale(scale, scale, scale);
             m_fl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
             m_fl.SetMaterial(matWheels);
@@ -2494,7 +2494,7 @@ namespace Robot
 
             //Front Right Wheel
             m_rl = scene.CreateMeshBuilder("mrl");
-            m_rl.LoadTVM(@"Models2\wheel_l.tvm", true, true);
+            m_rl.LoadTVM(@"Models\wheel_l.tvm", true, true);
             m_rl.SetScale(scale, scale, scale);
             m_rl.SetMaterial(matWheels);
             m_rl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
@@ -2505,7 +2505,7 @@ namespace Robot
 
             //Rear Left Wheel
             m_fr = scene.CreateMeshBuilder("mfr");
-            m_fr.LoadTVM(@"Models2\wheel_r.tvm", true, true);
+            m_fr.LoadTVM(@"Models\wheel_r.tvm", true, true);
             m_fr.SetScale(scale, scale, scale);
             m_fr.SetMaterial(matWheels);
             m_fr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
@@ -2515,7 +2515,7 @@ namespace Robot
 
             //Rear Right Wheel
             m_rr = scene.CreateMeshBuilder("mrr");
-            m_rr.LoadTVM(@"Models2\wheel_r.tvm", true, true);
+            m_rr.LoadTVM(@"Models\wheel_r.tvm", true, true);
             m_rr.SetScale(scale, scale, scale);
             m_rr.SetMaterial(matWheels);
             m_rr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
