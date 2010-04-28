@@ -112,6 +112,7 @@ namespace Robot
 
         //////////
         //3D MODEL
+        public cengine3D engine3D = new cengine3D();
         public TVEngine tv;
         public TVScene scene;
         public TVInputEngine input;
@@ -981,87 +982,27 @@ namespace Robot
             toolStripconnect.Enabled                = true;
         }
 
+        private void Robot_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ////3D
+            bDoLoop = false;
+            //// /3D
+        }
+
         private void Robot_Load(object sender, EventArgs e)
         {
-            //Tracking
-            //pictureBox27.Load(Application.StartupPath + "\\Resources\\image1.jpg");
-            /////3D
-            lights = new TVLightEngine();
-            globals = new TVGlobals();
-            atmosphere = new TVAtmosphere();
-            maths = new TVMathLibrary();
-            materialfactory = new TVMaterialFactory();
-            texturefactory = new TVTextureFactory();
-            tv = new TVEngine();
-            physics = new TVPhysics();
-
-            //Setup TV
-            tv.SetDebugMode(true, true);
-            tv.SetDebugFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\debugfile.txt");
-            tv.SetAntialiasing(true, CONST_TV_MULTISAMPLE_TYPE.TV_MULTISAMPLE_2_SAMPLES);
-
-            //Enter Your Beta Username And Password Here
-            //tv.SetBetaKey("", "");
-
-            tv.SetAngleSystem(CONST_TV_ANGLE.TV_ANGLE_DEGREE);
-            //tv.Init3DWindowed(this.Handle, true);
-            tv.Init3DWindowed(this.pictureBox3D.Handle, true);
-            tv.GetViewport().SetAutoResize(true);
-            tv.DisplayFPS(true);
-            tv.SetVSync(true);
-
-            scene = new TVScene();
-
-            input = new TVInputEngine();
-            input.Initialize(true, true);
-
-            camera = new TVCamera();
-            camera = scene.GetCamera();
-            camera.SetViewFrustum(45, 1000, 0.1f);
-            camera.SetPosition(0, 5, -20);
-            camera.SetLookAt(0, 3, 0);
-
-            viewport = new TVViewport();
-            viewport = tv.CreateViewport(this.Handle, "viewport");
-            viewport.SetCamera(camera);
-            viewport.SetBackgroundColor(Color.Blue.ToArgb());
-            bDoLoop = true;
-
-            InitSound();
-            InitMaterials();
-            InitTextures();
-            InitFonts();
-            InitShaders();
-            InitEnvironment();
-            InitPhysics();
-            InitLandscape();
-            InitObjects();
-            InitLights();
-            InitPhysicsMaterials();
-            Init2DText();
-
-            this.Show();
-            this.Focus();
-
-            GameLoop();
-
-            tv = null;
-
-            this.Close();
-            //// /3D
-
-            groupComPortDefault.Enabled             = false;
-            groupComPortSettings.Enabled            = false;
-            groupTcpClientServerSettings.Enabled    = false;
-            groupTcpClientServerDefault.Enabled     = false;
-            groupDirectionAndMotion.Enabled         = false;
-            groupCameraRotation.Enabled             = false;
-            groupCameraRot2.Enabled                 = false;
-            groupAdvencedSuppDevices.Enabled        = false;
-            groupJoystickInit.Enabled               = false;
-            labelCommunicationType.Text             = null;
-            labelConnectingStatus.Text              = null;
-            labelJoystickName.Text                  = null;
+            groupComPortDefault.Enabled = false;
+            groupComPortSettings.Enabled = false;
+            groupTcpClientServerSettings.Enabled = false;
+            groupTcpClientServerDefault.Enabled = false;
+            groupDirectionAndMotion.Enabled = false;
+            groupCameraRotation.Enabled = false;
+            groupCameraRot2.Enabled = false;
+            groupAdvencedSuppDevices.Enabled = false;
+            groupJoystickInit.Enabled = false;
+            labelCommunicationType.Text = null;
+            labelConnectingStatus.Text = null;
+            labelJoystickName.Text = null;
             SetMap();
             Maps.SelectedItem = "TUKE";
 
@@ -1072,7 +1013,6 @@ namespace Robot
             this.combo_streams.SelectedIndex = op.Streams;
             this.textBox1.Text = op.Text;
             //this.lbl_foreColor.BackColor = ColorTranslator.FromHtml(op.ForeColor);
-
         }
 
         private void SerialPort_Click(object sender, EventArgs e)
@@ -2401,612 +2341,7 @@ namespace Robot
             detectorType = 5;
             SetMotionDetector();
         }
-
-        ////3D
-        private void InitSound()
-        {
-            //Add code here
-        }
-
-        private void InitGame2DText()
-        {
-            //Add code here
-        }
-
-        private void InitEnvironment()
-        {
-            //SkyBox
-            atmosphere.SkyBox_SetTexture(globals.GetTex("SkyFront"), globals.GetTex("SkyBack"), globals.GetTex("SkyLeft"), globals.GetTex("SkyRight"), globals.GetTex("SkyTop"), globals.GetTex("SkyBottom"));
-            atmosphere.SkyBox_Enable(true);
-        }
-
-        private void InitFonts()
-        {
-            //Add code here
-        }
-
-        private void InitShaders()
-        {
-            //Add code here
-        }
-
-        private void Init2DText()
-        {
-            //Add code here
-        }
-
-        private void InitLights()
-        {
-            lights.CreateDirectionalLight(new TV_3DVECTOR(1, -1, -1), 1, 1, 1, "Sun", 1);
-            lights.SetLightProperties(globals.GetLight("Sun"), true, true, true);
-            lights.SetSpecularLighting(true);
-        }
-
-        private void InitPhysics()
-        {
-            physics.Initialize();
-            physics.SetSolverModel(CONST_TV_PHYSICS_SOLVER.TV_SOLVER_EXACT);
-            physics.SetFrictionModel(CONST_TV_PHYSICS_FRICTION.TV_FRICTION_EXACT);
-            physics.SetGlobalGravity(new TV_3DVECTOR(0, -9.8f, 0));
-        }
-
-        private void InitObjects()
-        {
-            #region Car
-            //Building PK9
-            pk_9 = scene.CreateMeshBuilder("pk");
-            // load the object from an x file
-            pk_9.LoadTVM(@"Models\pk8.tvm", false, false);
-            // set its position
-            pk_9.SetPosition(5.0f, 0.0f, 50.0f);
-            // make the table 3x larger
-            pk_9.SetScale(3, 3, 3);
-            // rotate it 25 degrees around the Y 3D Axis
-            pk_9.RotateY(25, true);
-            // set the tables texture
-            pk_9.SetShadowCast(true, true);
-            pk_9.SetTexture(globals.GetTex("pk9tex"), 0);
-
-            //Chassis
-            m_chassis = scene.CreateMeshBuilder("mChassis");
-            m_chassis.LoadTVM(@"Models\chassis.tvm", false, false);
-            m_chassis.SetShadowCast(true, true);
-            m_chassis.SetTexture(globals.GetTex("ChassisSTI"), 0);
-            //m_chassis.SetTextureEx(0, globals.GetTex("ChassisSTI"), 1);
-            //m_chassis.SetTextureEx(1, globals.GetTex("ChassisSTI"), 1);
-            m_chassis.SetTexture(globals.GetTex("UnderCarriage"), 2);
-            m_chassis.SetMaterial(matWindow, 1);
-            m_chassis.SetAlphaTest(true, 0, true, 1);
-            m_chassis.SetBlendingMode(CONST_TV_BLENDINGMODE.TV_BLEND_ADD, 1);
-            m_chassis.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_chassis.SetShadowCast(true, true);
-
-            //Front Left Wheel
-            float scale = 1f;
-            m_fl = scene.CreateMeshBuilder("mfl");
-            m_fl.LoadTVM(@"Models\wheel_l.tvm", true, true);
-            m_fl.SetScale(scale, scale, scale);
-            m_fl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_fl.SetMaterial(matWheels);
-            m_fl.SetTexture(globals.GetTex("Wheel"));
-            m_fl.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_fl.SetShadowCast(true, true);
-
-            //Front Right Wheel
-            m_rl = scene.CreateMeshBuilder("mrl");
-            m_rl.LoadTVM(@"Models\wheel_l.tvm", true, true);
-            m_rl.SetScale(scale, scale, scale);
-            m_rl.SetMaterial(matWheels);
-            m_rl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_rl.SetTexture(globals.GetTex("Wheel"));
-            m_rl.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_rl.SetShadowCast(true, false);
-            m_rl.SetShadowCast(true, true);
-
-            //Rear Left Wheel
-            m_fr = scene.CreateMeshBuilder("mfr");
-            m_fr.LoadTVM(@"Models\wheel_r.tvm", true, true);
-            m_fr.SetScale(scale, scale, scale);
-            m_fr.SetMaterial(matWheels);
-            m_fr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_fr.SetTexture(globals.GetTex("Wheel"));
-            m_fr.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_fr.SetShadowCast(true, false);
-
-            //Rear Right Wheel
-            m_rr = scene.CreateMeshBuilder("mrr");
-            m_rr.LoadTVM(@"Models\wheel_r.tvm", true, true);
-            m_rr.SetScale(scale, scale, scale);
-            m_rr.SetMaterial(matWheels);
-            m_rr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_rr.SetTexture(globals.GetTex("Wheel"));
-            m_rr.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_rr.SetShadowCast(true, false);
-            m_rr.SetShadowCast(true, true);
-
-            m_chassis.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_chassis.SetMaterial(matVehicleBody);
-            m_chassis.ComputeNormals();
-            m_chassis.ComputeBoundings();
-            m_chassis.SetScale(scale, scale, scale);
-            #endregion
-
-            //Add The Physics to the chassis
-            pbi_chassis = physics.CreateMeshBody(1500, m_chassis, CONST_TV_PHYSICSBODY_BOUNDING.TV_BODY_CONVEXHULL); //1500
-            physics.SetAutoFreeze(pbi_chassis, false);
-            physics.SetBodyPosition(pbi_chassis, 0f, 15, 0f);
-            physics.SetBodyRotation(pbi_chassis, 0f, 0f, 0f);
-
-            //Create The Vehicle
-            car_ID = physics.CreateVehicle(pbi_chassis);
-
-            //Do Suspention Settings
-            float susheight = 1.5f; //distance from chassis to wheel 0.5f
-            float susplen = 1.5f; // 10
-            float susshock = 40f; //Springiness of suspension 10
-            float susspring = 300f; //Stiffness of suspension 400
-            flw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale+0.1f, new TV_3DVECTOR(1, 0, 0), -0.8f * scale, -susheight * scale - 0.1f, 1.25f * scale + 0.5f, 1, 0, 0, susplen, susshock, susspring, m_fl); //fl
-            frw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale+0.1f, new TV_3DVECTOR(1, 0, 0), 0.8f * scale, -susheight * scale - 0.1f, 1.25f * scale + 0.5f, 1, 0, 0, susplen, susshock, susspring, m_fr); //fr
-            rlw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale+0.1f, new TV_3DVECTOR(1, 0, 0), -0.8f * scale, -susheight * scale - 0.1f, -1.425f * scale + 0.2f, 1, 0, 0, susplen, susshock, susspring, m_rl); //rl
-            rrw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale+0.1f, new TV_3DVECTOR(1, 0, 0), 0.8f * scale, -susheight * scale - 0.1f, -1.425f * scale + 0.2f, 1, 0, 0, susplen, susshock, susspring, m_rr); //rr
-
-            //Change the car's center of mass / make it drive better
-            physics.SetBodyCenterOfMass(car_ID, new TV_3DVECTOR(0, -1.0f, 10f));
-
-            //Add wheel frictions
-            //Note that this code will also stop sliding on slopes
-            float sideslip = 0.1f;
-            float sideslipcoef = 0f;
-            float maxlongslide = 10000f;
-            float maxlongslidecoef = 0f;
-            physics.SetVehicleWheelParameters(car_ID, flw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
-            physics.SetVehicleWheelParameters(car_ID, frw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
-            physics.SetVehicleWheelParameters(car_ID, rlw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
-            physics.SetVehicleWheelParameters(car_ID, rrw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
-        }
-
-
-        private void InitPhysicsMaterials()
-        {
-            //TerrainLandscape
-            pmatTerrain = physics.CreateMaterialGroup("Terrain");
-            physics.SetMaterialInteractionFriction(0, pmatTerrain, 0.9f, 1f);
-            physics.SetMaterialInteractionSoftness(0, pmatTerrain, 1f);
-            physics.SetMaterialInteractionBounciness(0, pmatTerrain, 0.1f);
-            physics.SetBodyMaterialGroup(pbLand, pmatTerrain);
-
-            //Chassis   
-            pmatChassis = physics.CreateMaterialGroup("Chassis");
-            physics.SetMaterialInteractionFriction(pmatChassis, pmatTerrain, 0.3f, 0.17f);
-            physics.SetMaterialInteractionBounciness(pmatChassis, pmatTerrain, 0.1f);
-            physics.SetMaterialInteractionSoftness(pmatChassis, pmatTerrain, 1000f);
-            physics.SetBodyMaterialGroup(pbi_chassis, pmatChassis);
-        }
-
-        private void InitMaterials()
-        {
-            //Create Materials
-            matLand = materialfactory.CreateMaterial("land");
-            matWindow = materialfactory.CreateMaterial("CarWindows");
-            matVehicleBody = materialfactory.CreateMaterial("matVehicleBody");
-            matWheels = materialfactory.CreateMaterial("matWheels");
-
-            //Land
-            materialfactory.SetSpecular(matLand, 0.1f, 0.1f, 0.1f, 1f);
-
-            //Car Windows
-            materialfactory.SetAmbient(matWindow, 1, 1, 1, 1);
-            materialfactory.SetDiffuse(matWindow, 1, 1, 1, 1);
-            materialfactory.SetSpecular(matWindow, 0.8f, 0.8f, 0.8f, 1);
-            materialfactory.SetPower(matWindow, 10);
-            materialfactory.SetOpacity(matWindow, 1f);
-
-            //Vehicle Body
-            materialfactory.SetAmbient(matVehicleBody, 0.2f, 0.2f, 0.2f, 1);
-            materialfactory.SetDiffuse(matVehicleBody, 0.9f, 0.9f, 0.9f, 1f);
-            materialfactory.SetSpecular(matVehicleBody, 1f, 1f, 1f, 1);
-            materialfactory.SetPower(matVehicleBody, 100);
-            materialfactory.SetEmissive(matVehicleBody, 0, 0, 0.1f, 1);
-
-            //Wheels
-            materialfactory.SetAmbient(matWheels, 0.8f, 0.8f, 0.8f, 1);
-            materialfactory.SetDiffuse(matWheels, 0.2f, 0.2f, 0.2f, 1f);
-            materialfactory.SetSpecular(matWheels, 0.2f, 0.2f, 0.2f, 1);
-            materialfactory.SetPower(matWheels, 200);
-            materialfactory.SetEmissive(matWheels, 0f, 0f, 0, 1);
-        }
-
-        private void InitTextures()
-        {
-            #region Car
-            //Create Very Small Colored Texture For Windows
-            int i = texturefactory.CreateTexture(1, 1, true, "TintedWindows");
-            texturefactory.SetPixel(i, 0, 0, Color.DarkGray.ToArgb()); //Color.DarkGray.ToArgb()
-
-            //Buildings texture
-            texturefactory.LoadTexture(@"Textures\pk9tex.bmp", "pk9tex");
-
-            //Vehicle
-            texturefactory.LoadTexture(@"Textures\Windows.bmp", "Windows");
-            texturefactory.LoadTexture(@"Textures\UnderCarriage.bmp", "UnderCarriage");
-            texturefactory.LoadTexture(@"Textures\ChassisSTI.bmp", "ChassisSTI");
-            texturefactory.LoadTexture(@"Textures\Wheel.bmp", "Wheel");
-            #endregion
-
-            //Land
-            texturefactory.LoadTexture(@"Textures\grass.jpg", "Grass");
-
-            //Sky Box
-            texturefactory.LoadTexture(@"Textures\skyup.jpg", "SkyTop");
-            texturefactory.LoadTexture(@"Textures\skydown.jpg", "SkyBottom");
-            texturefactory.LoadTexture(@"Textures\skyleft.jpg", "SkyLeft");
-            texturefactory.LoadTexture(@"Textures\skyright.jpg", "SkyRight");
-            texturefactory.LoadTexture(@"Textures\skyfront.jpg", "SkyFront");
-            texturefactory.LoadTexture(@"Textures\skyback.jpg", "SkyBack");
-        }
-
-        private void InitLandscape()
-        {
-            Land = scene.CreateLandscape("Land");
-
-            Land.SetAffineLevel(CONST_TV_LANDSCAPE_AFFINE.TV_AFFINE_LOW);
-            int twidth = (64 * 8) / 256;
-            int theight = (64 * 8) / 256;
-
-            Land.GenerateTerrain(@"Heightmaps\heightmap.bmp", CONST_TV_LANDSCAPE_PRECISION.TV_PRECISION_HIGH, twidth/2, theight/2, 0, 0, 0, true);
-
-            Land.SetTexture(globals.GetTex("Grass"));
-            Land.SetMaterial(matLand);
-            Land.SetTextureScale(0.3f, 0.3f);
-            Land.SetPosition(-((twidth * 256) / 2) + 120, 0, -((theight * 256) / 2) + 120);
-            pbLand = physics.CreateStaticTerrainBody(Land);
-        }
-
-        private void GameLoop()
-        {
-
-                while (bDoLoop)
-                {
-                    if (GameFlag == true)
-                    {
-                    //if (this.Focused)
-                    //{
-                    physics.Simulate(tv.TimeElapsed() * 0.0025f);
-                    CheckInput();
-
-                    //My Code
-                    MTV3D65.TV_3DVECTOR carpos = physics.GetBodyPosition(pbi_chassis);//           .ToString();
-                    MTV3D65.TV_3DVECTOR carang = physics.GetBodyRotation(pbi_chassis);
-                    label81.Text = carpos.x.ToString("f1");
-                    label80.Text = carpos.y.ToString("f1");
-                    label79.Text = carpos.z.ToString("f1");
-                    label78.Text = (((carang.y) * 180) / (Math.PI)).ToString("f2");
-
-                    tv.Clear(false);
-
-                    //Render Atmosphere
-                    atmosphere.SkyBox_Render();
-
-                    //Render Objets
-                    pk_9.Render();
-                    Land.Render();
-                    m_chassis.Render();
-                    m_fl.Render();
-                    m_fr.Render();
-                    m_rl.Render();
-                    m_rr.Render();
-                    //Render Transparent Objects
-
-                    scene.FinalizeShadows();
-
-                    //Lastly Render 2DText or Interface
-                    DrawInterface();
-
-                    tv.RenderToScreen();
-
-                    //}
-                    //else
-                    //{
-                    //    System.Threading.Thread.Sleep(100);
-                    //}
-                    }
-                    Application.DoEvents();
-                    
-                }
-        }
-
-
-        private void DrawInterface()
-        {
-
-            try
-            {
-                //Add Code Here
-            }
-            catch { }
-        }
-
-        private void CheckInput()
-        {
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_ESCAPE))
-            {
-                bDoLoop = false;
-            }
-            float speed = 0.4f;
-            float mousespeed = 0.3f;
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_W))
-            {
-                camera.MoveRelative(speed, 0, 0, true);
-            }
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_S))
-            {
-                camera.MoveRelative(-speed, 0, 0, true);
-            }
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_A))
-            {
-                camera.MoveRelative(0, 0, -speed, true);
-            }
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_D))
-            {
-                camera.MoveRelative(0, 0, speed, true);
-            }
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_E))
-            {
-                camera.MoveRelative(0, speed / 2, 0, true);
-            }
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_Q))
-            {
-                camera.MoveRelative(0, -(speed / 2), 0, true);
-            }
-            if (camfol == true)
-            {
-                camera.SetPosition(physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 10, physics.GetBodyPosition(pbi_chassis).z - 30);
-                camera.SetRotation(10, 0, 0);
-            }
-            if (camtop == true)
-            {
-                camera.SetPosition(physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 60, physics.GetBodyPosition(pbi_chassis).z);
-            }
-
-
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_H))
-            {
-                //
-            }
-
-            //Accelerate and Brake
-            CarPower = 800; //3000
-
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_I)) //Accellerate
-            {
-                physics.SetVehicleWheelTorque(car_ID, rlw, CarPower, -1000);
-                physics.SetVehicleWheelTorque(car_ID, rrw, CarPower, -1000);
-            }
-            else
-            {
-                if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_K))
-                {
-                    physics.SetVehicleWheelTorque(car_ID, rlw, -CarPower, -1000);
-                    physics.SetVehicleWheelTorque(car_ID, rrw, -CarPower, -1000);
-                }
-                else
-                {
-                    if (autrst == true)
-                    {
-                        physics.SetVehicleWheelTorque(car_ID, flw, 0, -10000);
-                        physics.SetVehicleWheelTorque(car_ID, frw, 0, -10000);
-                        physics.SetVehicleWheelTorque(car_ID, rlw, 0, -10000);
-                        physics.SetVehicleWheelTorque(car_ID, rrw, 0, -10000);
-                    }
-                }
-            }
-
-            //Steering
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_J))
-            {
-                steerAngle -= 5;
-                if (steerAngle < -45)
-                    steerAngle = -45;
-
-                physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
-                physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
-            }
-            else
-            {
-                if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_L))
-                {
-                    steerAngle += 5;
-                    if (steerAngle > 45)
-                        steerAngle = 45;
-
-                    physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
-                    physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
-                }
-                else
-                {
-                    if (autrst == true)
-                    {
-                        steerAngle = 0;
-
-                        physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
-                        physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
-                    }
-                }
-            }
-
-            //Car Handbrake
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_RIGHTCONTROL))
-            {
-                physics.VehicleWheelHandBrake(car_ID, rlw, 1, 2000);
-                physics.VehicleWheelHandBrake(car_ID, rrw, 1, 2000);
-            }
-
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_P))
-            {
-                physics.VehicleReset(car_ID);
-                physics.SetBodyRotation(pbi_chassis, 0, 0, 0);
-                physics.SetBodyPosition(pbi_chassis, physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 0.2f, physics.GetBodyPosition(pbi_chassis).z);
-            }
-
-            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_O))
-            {
-                physics.VehicleReset(car_ID);
-                physics.SetBodyPosition(pbi_chassis, 0f, 5, 0f);
-                physics.SetBodyRotation(pbi_chassis, 0f, 0f, 0f);
-            }
-
-            //Mouse
-            int tmpMouseX = 0;
-            int tmpMouseY = 0;
-            //int tmpMouseScrollNew = 0;
-            //bool tmpMouseB1 = false;
-            //bool tmpMouseB2 = false;
-            //bool tmpMouseB3 = false;
-            //bool tmpMouseB4 = false;
-
-            //Mouse Rotation
-            //input.GetMouseState(ref tmpMouseX, ref tmpMouseY, ref tmpMouseB1, ref tmpMouseB2, ref tmpMouseB3, ref tmpMouseB4, ref tmpMouseScrollNew);
-            camera.RotateY(tmpMouseX * (mousespeed * 2));
-            camera.SetLookAt(camera.GetLookAt().x, camera.GetLookAt().y - (tmpMouseY * ((mousespeed * 2) / 100)), camera.GetLookAt().z);
-
-        }
-
-        private void Robot_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ////3D
-            bDoLoop = false;
-            //// /3D
-
-
-        }
-
-        private void button46_Click(object sender, EventArgs e)
-        {
-            camera.RotateX(-10);
-        }
-
-        private void button45_Click(object sender, EventArgs e)
-        {
-            camera.RotateX(5);
-        }
-
-        private void button44_Click(object sender, EventArgs e)
-        {
-            camera.RotateY(-10);
-        }
-
-        private void button43_Click(object sender, EventArgs e)
-        {
-            camera.RotateY(10);
-        }
-
-        private void button42_Click(object sender, EventArgs e)
-        {
-            camera.SetPosition(0, 15, -50);
-        }
-
-        private void On_Click(object sender, EventArgs e)
-        {
-            camfol = true;
-            camtop = false;
-        }
-
-        private void button40_Click(object sender, EventArgs e)
-        {
-            camfol = false;
-            camtop = false;
-        }
-
-        private void button41_Click(object sender, EventArgs e)
-        {
-            camfol = false;
-            camtop = true;
-            camera.SetRotation(89, 0, 0);
-            camera.SetPosition(0, 100, 0);
-        }
-
-        private void button39_Click(object sender, EventArgs e)
-        {
-            physics.VehicleReset(car_ID);
-            physics.SetBodyRotation(pbi_chassis, 0, 0, 0);
-            physics.SetBodyPosition(pbi_chassis, physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 0.2f, physics.GetBodyPosition(pbi_chassis).z);
-        }
-
-        private void button38_Click(object sender, EventArgs e)
-        {
-            physics.VehicleReset(car_ID);
-            physics.SetBodyPosition(pbi_chassis, 0f, 5, 0f);
-            physics.SetBodyRotation(pbi_chassis, 0f, 0f, 0f);
-        }
-
-        private void button35_Click(object sender, EventArgs e)
-        {
-            steerAngle -= 5;
-            if (steerAngle < -45)
-            {
-                steerAngle = -45;
-            }
-            physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
-            physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
-        }
-
-        private void button34_Click(object sender, EventArgs e)
-        {
-            steerAngle += 5;
-            if (steerAngle > 45)
-            {
-                steerAngle = 45;
-            }
-            physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
-            physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
-        }
-
-        private void button37_Click(object sender, EventArgs e)
-        {
-            physics.SetVehicleWheelTorque(car_ID, rlw, CarPower, -1000);
-            physics.SetVehicleWheelTorque(car_ID, rrw, CarPower, -1000);
-        }
-
-        private void button36_Click(object sender, EventArgs e)
-        {
-            physics.SetVehicleWheelTorque(car_ID, rlw, -CarPower, -1000);
-            physics.SetVehicleWheelTorque(car_ID, rrw, -CarPower, -1000);
-        }
-
-        private void button33_Click(object sender, EventArgs e)
-        {
-            autrst = true;
-        }
-
-        private void button32_Click(object sender, EventArgs e)
-        {
-            autrst = false;
-        }
-
-        private void button31_Click(object sender, EventArgs e)
-        {
-            if (float.Parse(label5.Text) > 10 && float.Parse(label7.Text) > 10)
-            {
-                timer3D.Enabled = false;
-                MessageBox.Show("Game Finish");
-            }
-        }
-
-        private void timer3D_Tick(object sender, EventArgs e)
-        {
-            if (float.Parse(label81.Text) > 10 && float.Parse(label80.Text) > 10)
-            {
-                timer1.Enabled = false;
-                MessageBox.Show("Game Finish");
-            }
-        }
-
-        private void button47_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //// /3D
+        ///Motion Jpeg      
 
         int seltex_speed()
         {
@@ -4794,6 +4129,666 @@ namespace Robot
                 MessageBox.Show("No update avaliable");
             }
         }
+
+        private void button93_Click(object sender, EventArgs e)
+        {
+            //Tracking
+            //pictureBox27.Load(Application.StartupPath + "\\Resources\\image1.jpg");
+            /////3D
+            lights = new TVLightEngine();
+            globals = new TVGlobals();
+            atmosphere = new TVAtmosphere();
+            maths = new TVMathLibrary();
+            materialfactory = new TVMaterialFactory();
+            texturefactory = new TVTextureFactory();
+            tv = new TVEngine();
+            physics = new TVPhysics();
+
+            //Setup TV
+            tv.SetDebugMode(true, true);
+            tv.SetDebugFile(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\debugfile.txt");
+            tv.SetAntialiasing(true, CONST_TV_MULTISAMPLE_TYPE.TV_MULTISAMPLE_2_SAMPLES);
+
+            //Enter Your Beta Username And Password Here
+            //tv.SetBetaKey("", "");
+
+            tv.SetAngleSystem(CONST_TV_ANGLE.TV_ANGLE_DEGREE);
+            //tv.Init3DWindowed(this.Handle, true);
+            tv.Init3DWindowed(this.pictureBox3D.Handle, true);
+            tv.GetViewport().SetAutoResize(true);
+            tv.DisplayFPS(true);
+            tv.SetVSync(true);
+
+            scene = new TVScene();
+
+            input = new TVInputEngine();
+            input.Initialize(true, true);
+
+            camera = new TVCamera();
+            camera = scene.GetCamera();
+            camera.SetViewFrustum(45, 1000, 0.1f);
+            camera.SetPosition(0, 5, -20);
+            camera.SetLookAt(0, 3, 0);
+
+            viewport = new TVViewport();
+            viewport = tv.CreateViewport(this.Handle, "viewport");
+            viewport.SetCamera(camera);
+            viewport.SetBackgroundColor(Color.Blue.ToArgb());
+            bDoLoop = true;
+
+            InitSound();
+            InitMaterials();
+            InitTextures();
+            InitFonts();
+            InitShaders();
+            InitEnvironment();
+            InitPhysics();
+            InitLandscape();
+            InitObjects();
+            InitLights();
+            InitPhysicsMaterials();
+            Init2DText();
+
+            this.Show();
+            this.Focus();
+
+            GameLoop();
+
+            //tv = null;
+
+            //this.Close();
+            //// /3D
+        }
+
+        ////3D
+        private void InitSound()
+        {
+            //Add code here
+        }
+
+        private void InitGame2DText()
+        {
+            //Add code here
+        }
+
+        private void InitEnvironment()
+        {
+            //SkyBox
+            atmosphere.SkyBox_SetTexture(globals.GetTex("SkyFront"), globals.GetTex("SkyBack"), globals.GetTex("SkyLeft"), globals.GetTex("SkyRight"), globals.GetTex("SkyTop"), globals.GetTex("SkyBottom"));
+            atmosphere.SkyBox_Enable(true);
+        }
+
+        private void InitFonts()
+        {
+            //Add code here
+        }
+
+        private void InitShaders()
+        {
+            //Add code here
+        }
+
+        private void Init2DText()
+        {
+            //Add code here
+        }
+
+        private void InitLights()
+        {
+            lights.CreateDirectionalLight(new TV_3DVECTOR(1, -1, -1), 1, 1, 1, "Sun", 1);
+            lights.SetLightProperties(globals.GetLight("Sun"), true, true, true);
+            lights.SetSpecularLighting(true);
+        }
+
+        private void InitPhysics()
+        {
+            physics.Initialize();
+            physics.SetSolverModel(CONST_TV_PHYSICS_SOLVER.TV_SOLVER_EXACT);
+            physics.SetFrictionModel(CONST_TV_PHYSICS_FRICTION.TV_FRICTION_EXACT);
+            physics.SetGlobalGravity(new TV_3DVECTOR(0, -9.8f, 0));
+        }
+
+        private void InitObjects()
+        {
+            #region Car
+            //Building PK9
+            pk_9 = scene.CreateMeshBuilder("pk");
+            // load the object from an x file
+            pk_9.LoadTVM(@"Models\pk8.tvm", false, false);
+            // set its position
+            pk_9.SetPosition(5.0f, 0.0f, 50.0f);
+            // make the table 3x larger
+            pk_9.SetScale(3, 3, 3);
+            // rotate it 25 degrees around the Y 3D Axis
+            pk_9.RotateY(25, true);
+            // set the tables texture
+            pk_9.SetShadowCast(true, true);
+            pk_9.SetTexture(globals.GetTex("pk9tex"), 0);
+
+            //Chassis
+            m_chassis = scene.CreateMeshBuilder("mChassis");
+            m_chassis.LoadTVM(@"Models\chassis.tvm", false, false);
+            m_chassis.SetShadowCast(true, true);
+            m_chassis.SetTexture(globals.GetTex("ChassisSTI"), 0);
+            //m_chassis.SetTextureEx(0, globals.GetTex("ChassisSTI"), 1);
+            //m_chassis.SetTextureEx(1, globals.GetTex("ChassisSTI"), 1);
+            m_chassis.SetTexture(globals.GetTex("UnderCarriage"), 2);
+            m_chassis.SetMaterial(matWindow, 1);
+            m_chassis.SetAlphaTest(true, 0, true, 1);
+            m_chassis.SetBlendingMode(CONST_TV_BLENDINGMODE.TV_BLEND_ADD, 1);
+            m_chassis.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_chassis.SetShadowCast(true, true);
+
+            //Front Left Wheel
+            float scale = 1f;
+            m_fl = scene.CreateMeshBuilder("mfl");
+            m_fl.LoadTVM(@"Models\wheel_l.tvm", true, true);
+            m_fl.SetScale(scale, scale, scale);
+            m_fl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_fl.SetMaterial(matWheels);
+            m_fl.SetTexture(globals.GetTex("Wheel"));
+            m_fl.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_fl.SetShadowCast(true, true);
+
+            //Front Right Wheel
+            m_rl = scene.CreateMeshBuilder("mrl");
+            m_rl.LoadTVM(@"Models\wheel_l.tvm", true, true);
+            m_rl.SetScale(scale, scale, scale);
+            m_rl.SetMaterial(matWheels);
+            m_rl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_rl.SetTexture(globals.GetTex("Wheel"));
+            m_rl.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_rl.SetShadowCast(true, false);
+            m_rl.SetShadowCast(true, true);
+
+            //Rear Left Wheel
+            m_fr = scene.CreateMeshBuilder("mfr");
+            m_fr.LoadTVM(@"Models\wheel_r.tvm", true, true);
+            m_fr.SetScale(scale, scale, scale);
+            m_fr.SetMaterial(matWheels);
+            m_fr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_fr.SetTexture(globals.GetTex("Wheel"));
+            m_fr.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_fr.SetShadowCast(true, false);
+
+            //Rear Right Wheel
+            m_rr = scene.CreateMeshBuilder("mrr");
+            m_rr.LoadTVM(@"Models\wheel_r.tvm", true, true);
+            m_rr.SetScale(scale, scale, scale);
+            m_rr.SetMaterial(matWheels);
+            m_rr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_rr.SetTexture(globals.GetTex("Wheel"));
+            m_rr.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_rr.SetShadowCast(true, false);
+            m_rr.SetShadowCast(true, true);
+
+            m_chassis.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_chassis.SetMaterial(matVehicleBody);
+            m_chassis.ComputeNormals();
+            m_chassis.ComputeBoundings();
+            m_chassis.SetScale(scale, scale, scale);
+            #endregion
+
+            //Add The Physics to the chassis
+            pbi_chassis = physics.CreateMeshBody(1500, m_chassis, CONST_TV_PHYSICSBODY_BOUNDING.TV_BODY_CONVEXHULL); //1500
+            physics.SetAutoFreeze(pbi_chassis, false);
+            physics.SetBodyPosition(pbi_chassis, 0f, 15, 0f);
+            physics.SetBodyRotation(pbi_chassis, 0f, 0f, 0f);
+
+            //Create The Vehicle
+            car_ID = physics.CreateVehicle(pbi_chassis);
+
+            //Do Suspention Settings
+            float susheight = 1.5f; //distance from chassis to wheel 0.5f
+            float susplen = 1.5f; // 10
+            float susshock = 40f; //Springiness of suspension 10
+            float susspring = 300f; //Stiffness of suspension 400
+            flw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), -0.8f * scale, -susheight * scale - 0.1f, 1.25f * scale + 0.5f, 1, 0, 0, susplen, susshock, susspring, m_fl); //fl
+            frw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), 0.8f * scale, -susheight * scale - 0.1f, 1.25f * scale + 0.5f, 1, 0, 0, susplen, susshock, susspring, m_fr); //fr
+            rlw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), -0.8f * scale, -susheight * scale - 0.1f, -1.425f * scale + 0.2f, 1, 0, 0, susplen, susshock, susspring, m_rl); //rl
+            rrw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), 0.8f * scale, -susheight * scale - 0.1f, -1.425f * scale + 0.2f, 1, 0, 0, susplen, susshock, susspring, m_rr); //rr
+
+            //Change the car's center of mass / make it drive better
+            physics.SetBodyCenterOfMass(car_ID, new TV_3DVECTOR(0, -1.0f, 10f));
+
+            //Add wheel frictions
+            //Note that this code will also stop sliding on slopes
+            float sideslip = 0.1f;
+            float sideslipcoef = 0f;
+            float maxlongslide = 10000f;
+            float maxlongslidecoef = 0f;
+            physics.SetVehicleWheelParameters(car_ID, flw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
+            physics.SetVehicleWheelParameters(car_ID, frw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
+            physics.SetVehicleWheelParameters(car_ID, rlw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
+            physics.SetVehicleWheelParameters(car_ID, rrw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
+        }
+
+        private void InitPhysicsMaterials()
+        {
+            //TerrainLandscape
+            pmatTerrain = physics.CreateMaterialGroup("Terrain");
+            physics.SetMaterialInteractionFriction(0, pmatTerrain, 0.9f, 1f);
+            physics.SetMaterialInteractionSoftness(0, pmatTerrain, 1f);
+            physics.SetMaterialInteractionBounciness(0, pmatTerrain, 0.1f);
+            physics.SetBodyMaterialGroup(pbLand, pmatTerrain);
+
+            //Chassis   
+            pmatChassis = physics.CreateMaterialGroup("Chassis");
+            physics.SetMaterialInteractionFriction(pmatChassis, pmatTerrain, 0.3f, 0.17f);
+            physics.SetMaterialInteractionBounciness(pmatChassis, pmatTerrain, 0.1f);
+            physics.SetMaterialInteractionSoftness(pmatChassis, pmatTerrain, 1000f);
+            physics.SetBodyMaterialGroup(pbi_chassis, pmatChassis);
+        }
+
+        private void InitMaterials()
+        {
+            //Create Materials
+            matLand = materialfactory.CreateMaterial("land");
+            matWindow = materialfactory.CreateMaterial("CarWindows");
+            matVehicleBody = materialfactory.CreateMaterial("matVehicleBody");
+            matWheels = materialfactory.CreateMaterial("matWheels");
+
+            //Land
+            materialfactory.SetSpecular(matLand, 0.1f, 0.1f, 0.1f, 1f);
+
+            //Car Windows
+            materialfactory.SetAmbient(matWindow, 1, 1, 1, 1);
+            materialfactory.SetDiffuse(matWindow, 1, 1, 1, 1);
+            materialfactory.SetSpecular(matWindow, 0.8f, 0.8f, 0.8f, 1);
+            materialfactory.SetPower(matWindow, 10);
+            materialfactory.SetOpacity(matWindow, 1f);
+
+            //Vehicle Body
+            materialfactory.SetAmbient(matVehicleBody, 0.2f, 0.2f, 0.2f, 1);
+            materialfactory.SetDiffuse(matVehicleBody, 0.9f, 0.9f, 0.9f, 1f);
+            materialfactory.SetSpecular(matVehicleBody, 1f, 1f, 1f, 1);
+            materialfactory.SetPower(matVehicleBody, 100);
+            materialfactory.SetEmissive(matVehicleBody, 0, 0, 0.1f, 1);
+
+            //Wheels
+            materialfactory.SetAmbient(matWheels, 0.8f, 0.8f, 0.8f, 1);
+            materialfactory.SetDiffuse(matWheels, 0.2f, 0.2f, 0.2f, 1f);
+            materialfactory.SetSpecular(matWheels, 0.2f, 0.2f, 0.2f, 1);
+            materialfactory.SetPower(matWheels, 200);
+            materialfactory.SetEmissive(matWheels, 0f, 0f, 0, 1);
+        }
+
+        private void InitTextures()
+        {
+            #region Car
+            //Create Very Small Colored Texture For Windows
+            int i = texturefactory.CreateTexture(1, 1, true, "TintedWindows");
+            texturefactory.SetPixel(i, 0, 0, Color.DarkGray.ToArgb()); //Color.DarkGray.ToArgb()
+
+            //Buildings texture
+            texturefactory.LoadTexture(@"Textures\pk9tex.bmp", "pk9tex");
+
+            //Vehicle
+            texturefactory.LoadTexture(@"Textures\Windows.bmp", "Windows");
+            texturefactory.LoadTexture(@"Textures\UnderCarriage.bmp", "UnderCarriage");
+            texturefactory.LoadTexture(@"Textures\ChassisSTI.bmp", "ChassisSTI");
+            texturefactory.LoadTexture(@"Textures\Wheel.bmp", "Wheel");
+            #endregion
+
+            //Land
+            texturefactory.LoadTexture(@"Textures\grass.jpg", "Grass");
+
+            //Sky Box
+            texturefactory.LoadTexture(@"Textures\skyup.jpg", "SkyTop");
+            texturefactory.LoadTexture(@"Textures\skydown.jpg", "SkyBottom");
+            texturefactory.LoadTexture(@"Textures\skyleft.jpg", "SkyLeft");
+            texturefactory.LoadTexture(@"Textures\skyright.jpg", "SkyRight");
+            texturefactory.LoadTexture(@"Textures\skyfront.jpg", "SkyFront");
+            texturefactory.LoadTexture(@"Textures\skyback.jpg", "SkyBack");
+        }
+
+        private void InitLandscape()
+        {
+            Land = scene.CreateLandscape("Land");
+
+            Land.SetAffineLevel(CONST_TV_LANDSCAPE_AFFINE.TV_AFFINE_LOW);
+            int twidth = (64 * 8) / 256;
+            int theight = (64 * 8) / 256;
+
+            Land.GenerateTerrain(@"Heightmaps\heightmap.bmp", CONST_TV_LANDSCAPE_PRECISION.TV_PRECISION_HIGH, twidth / 2, theight / 2, 0, 0, 0, true);
+
+            Land.SetTexture(globals.GetTex("Grass"));
+            Land.SetMaterial(matLand);
+            Land.SetTextureScale(0.3f, 0.3f);
+            Land.SetPosition(-((twidth * 256) / 2) + 120, 0, -((theight * 256) / 2) + 120);
+            pbLand = physics.CreateStaticTerrainBody(Land);
+        }
+
+        private void GameLoop()
+        {
+
+            while (bDoLoop)
+            {
+                if (GameFlag == false)
+                {
+                    //if (this.Focused)
+                    //{
+                    physics.Simulate(tv.TimeElapsed() * 0.0025f);
+                    CheckInput();
+
+                    //My Code
+                    MTV3D65.TV_3DVECTOR carpos = physics.GetBodyPosition(pbi_chassis);//           .ToString();
+                    MTV3D65.TV_3DVECTOR carang = physics.GetBodyRotation(pbi_chassis);
+                    label81.Text = carpos.x.ToString("f1");
+                    label80.Text = carpos.y.ToString("f1");
+                    label79.Text = carpos.z.ToString("f1");
+                    label78.Text = (((carang.y) * 180) / (Math.PI)).ToString("f2");
+
+                    tv.Clear(false);
+
+                    //Render Atmosphere
+                    atmosphere.SkyBox_Render();
+
+                    //Render Objets
+                    pk_9.Render();
+                    Land.Render();
+                    m_chassis.Render();
+                    m_fl.Render();
+                    m_fr.Render();
+                    m_rl.Render();
+                    m_rr.Render();
+                    //Render Transparent Objects
+
+                    scene.FinalizeShadows();
+
+                    //Lastly Render 2DText or Interface
+                    DrawInterface();
+
+                    tv.RenderToScreen();
+
+                    //}
+                    //else
+                    //{
+                    //    System.Threading.Thread.Sleep(100);
+                    //}
+                }
+                Application.DoEvents();
+
+            }
+        }
+
+
+        private void DrawInterface()
+        {
+
+            try
+            {
+                //Add Code Here
+            }
+            catch { }
+        }
+
+        private void CheckInput()
+        {
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_ESCAPE))
+            {
+                bDoLoop = false;
+            }
+            float speed = 0.4f;
+            float mousespeed = 0.3f;
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_W))
+            {
+                camera.MoveRelative(speed, 0, 0, true);
+            }
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_S))
+            {
+                camera.MoveRelative(-speed, 0, 0, true);
+            }
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_A))
+            {
+                camera.MoveRelative(0, 0, -speed, true);
+            }
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_D))
+            {
+                camera.MoveRelative(0, 0, speed, true);
+            }
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_E))
+            {
+                camera.MoveRelative(0, speed / 2, 0, true);
+            }
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_Q))
+            {
+                camera.MoveRelative(0, -(speed / 2), 0, true);
+            }
+            if (camfol == true)
+            {
+                camera.SetPosition(physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 10, physics.GetBodyPosition(pbi_chassis).z - 30);
+                camera.SetRotation(10, 0, 0);
+            }
+            if (camtop == true)
+            {
+                camera.SetPosition(physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 60, physics.GetBodyPosition(pbi_chassis).z);
+            }
+
+
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_H))
+            {
+                //
+            }
+
+            //Accelerate and Brake
+            CarPower = 800; //3000
+
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_I)) //Accellerate
+            {
+                physics.SetVehicleWheelTorque(car_ID, rlw, CarPower, -1000);
+                physics.SetVehicleWheelTorque(car_ID, rrw, CarPower, -1000);
+            }
+            else
+            {
+                if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_K))
+                {
+                    physics.SetVehicleWheelTorque(car_ID, rlw, -CarPower, -1000);
+                    physics.SetVehicleWheelTorque(car_ID, rrw, -CarPower, -1000);
+                }
+                else
+                {
+                    if (autrst == true)
+                    {
+                        physics.SetVehicleWheelTorque(car_ID, flw, 0, -10000);
+                        physics.SetVehicleWheelTorque(car_ID, frw, 0, -10000);
+                        physics.SetVehicleWheelTorque(car_ID, rlw, 0, -10000);
+                        physics.SetVehicleWheelTorque(car_ID, rrw, 0, -10000);
+                    }
+                }
+            }
+
+            //Steering
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_J))
+            {
+                steerAngle -= 5;
+                if (steerAngle < -45)
+                    steerAngle = -45;
+
+                physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
+                physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
+            }
+            else
+            {
+                if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_L))
+                {
+                    steerAngle += 5;
+                    if (steerAngle > 45)
+                        steerAngle = 45;
+
+                    physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
+                    physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
+                }
+                else
+                {
+                    if (autrst == true)
+                    {
+                        steerAngle = 0;
+
+                        physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
+                        physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
+                    }
+                }
+            }
+
+            //Car Handbrake
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_RIGHTCONTROL))
+            {
+                physics.VehicleWheelHandBrake(car_ID, rlw, 1, 2000);
+                physics.VehicleWheelHandBrake(car_ID, rrw, 1, 2000);
+            }
+
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_P))
+            {
+                physics.VehicleReset(car_ID);
+                physics.SetBodyRotation(pbi_chassis, 0, 0, 0);
+                physics.SetBodyPosition(pbi_chassis, physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 0.2f, physics.GetBodyPosition(pbi_chassis).z);
+            }
+
+            if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_O))
+            {
+                physics.VehicleReset(car_ID);
+                physics.SetBodyPosition(pbi_chassis, 0f, 5, 0f);
+                physics.SetBodyRotation(pbi_chassis, 0f, 0f, 0f);
+            }
+
+            //Mouse
+            int tmpMouseX = 0;
+            int tmpMouseY = 0;
+            //int tmpMouseScrollNew = 0;
+            //bool tmpMouseB1 = false;
+            //bool tmpMouseB2 = false;
+            //bool tmpMouseB3 = false;
+            //bool tmpMouseB4 = false;
+
+            //Mouse Rotation
+            //input.GetMouseState(ref tmpMouseX, ref tmpMouseY, ref tmpMouseB1, ref tmpMouseB2, ref tmpMouseB3, ref tmpMouseB4, ref tmpMouseScrollNew);
+            camera.RotateY(tmpMouseX * (mousespeed * 2));
+            camera.SetLookAt(camera.GetLookAt().x, camera.GetLookAt().y - (tmpMouseY * ((mousespeed * 2) / 100)), camera.GetLookAt().z);
+
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+            camera.RotateX(-10);
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            camera.RotateX(5);
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            camera.RotateY(-10);
+        }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+            camera.RotateY(10);
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            camera.SetPosition(0, 15, -50);
+        }
+
+        private void On_Click(object sender, EventArgs e)
+        {
+            camfol = true;
+            camtop = false;
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            camfol = false;
+            camtop = false;
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            camfol = false;
+            camtop = true;
+            camera.SetRotation(89, 0, 0);
+            camera.SetPosition(0, 100, 0);
+        }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+            physics.VehicleReset(car_ID);
+            physics.SetBodyRotation(pbi_chassis, 0, 0, 0);
+            physics.SetBodyPosition(pbi_chassis, physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 0.2f, physics.GetBodyPosition(pbi_chassis).z);
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            physics.VehicleReset(car_ID);
+            physics.SetBodyPosition(pbi_chassis, 0f, 5, 0f);
+            physics.SetBodyRotation(pbi_chassis, 0f, 0f, 0f);
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            steerAngle -= 5;
+            if (steerAngle < -45)
+            {
+                steerAngle = -45;
+            }
+            physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
+            physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            steerAngle += 5;
+            if (steerAngle > 45)
+            {
+                steerAngle = 45;
+            }
+            physics.SetVehicleWheelSteering(car_ID, flw, steerAngle);
+            physics.SetVehicleWheelSteering(car_ID, frw, steerAngle);
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            physics.SetVehicleWheelTorque(car_ID, rlw, CarPower, -1000);
+            physics.SetVehicleWheelTorque(car_ID, rrw, CarPower, -1000);
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            physics.SetVehicleWheelTorque(car_ID, rlw, -CarPower, -1000);
+            physics.SetVehicleWheelTorque(car_ID, rrw, -CarPower, -1000);
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            autrst = true;
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            autrst = false;
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            if (float.Parse(label5.Text) > 10 && float.Parse(label7.Text) > 10)
+            {
+                timer3D.Enabled = false;
+                MessageBox.Show("Game Finish");
+            }
+        }
+
+        private void timer3D_Tick(object sender, EventArgs e)
+        {
+            if (float.Parse(label81.Text) > 10 && float.Parse(label80.Text) > 10)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("Game Finish");
+            }
+        }
+        /////3D
 
 
    }
