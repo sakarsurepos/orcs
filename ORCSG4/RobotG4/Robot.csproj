@@ -45,7 +45,7 @@
     <PublisherName>Elite Robot</PublisherName>
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
     <WebPage>www.orcs.sebsoft.com</WebPage>
-    <ApplicationRevision>53</ApplicationRevision>
+    <ApplicationRevision>54</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -481,15 +481,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="dshow">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="LumiSoft.Net">
       <Visible>False</Visible>
       <Group>
       </Group>
