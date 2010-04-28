@@ -141,14 +141,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Robot.exe" size="9092608">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Robot.exe" size="9094144">
       <assemblyIdentity name="Robot" version="3.0.0.2" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Z6X1l7bAG8rWRrmAEvmJlcvhATw=</dsig:DigestValue>
+        <dsig:DigestValue>0D53MhrEZESs92d+Qf8pVuDwUG4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -881,13 +881,13 @@
       <dsig:DigestValue>OUvlSkvMZj9NKTaFhXBfGZTDC0w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Release\debugfile.txt" size="4073">
+  <file name="bin\Release\debugfile.txt" size="4074">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>BxfnaO++ktdxOhYG+si7zNRTugw=</dsig:DigestValue>
+      <dsig:DigestValue>pGyccEarrNoStuEtfyiPloT5NSo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bin\Release\ding.wav" size="353836">
@@ -1061,13 +1061,13 @@
       <dsig:DigestValue>y3rVZ7ZNF+wvO8DlCCFJNC8pR2k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Release\Robot.exe" size="9092608">
+  <file name="bin\Release\Robot.exe" size="9094656">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PNawJEVndJv56Phm2qzZtjF9hKM=</dsig:DigestValue>
+      <dsig:DigestValue>ANeWoMecq/AgsiY3RDvTEGAVsjI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bin\Release\Robot.exe.mdb" size="113376" writeableType="applicationData">
@@ -1088,13 +1088,13 @@
       <dsig:DigestValue>LW9pq1yQBGgFd7J+3mzHH7Iubjc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="bin\Release\Robot.pdb" size="505344">
+  <file name="bin\Release\Robot.pdb" size="507392">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>fwBG805RvsspEGO1TO/yw94RqmU=</dsig:DigestValue>
+      <dsig:DigestValue>Rv3SUVSA/RHYEXuOSd4jZCHW+KI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bin\Release\Robot.vshost.exe" size="14328">
@@ -1112,7 +1112,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>WgPLMqfEVgSenIshU5+kG9RzJgQ=</dsig:DigestValue>
+      <dsig:DigestValue>nfgLa21DAPT13uMbg/RYvKzLt04=</dsig:DigestValue>
     </hash>
   </file>
   <file name="bin\Release\Sounds\ding.wav" size="70060">

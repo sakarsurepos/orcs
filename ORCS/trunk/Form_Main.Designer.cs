@@ -207,6 +207,7 @@ namespace Robot
             this.label77 = new System.Windows.Forms.Label();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.groupBox27 = new System.Windows.Forms.GroupBox();
             this.button83 = new System.Windows.Forms.Button();
@@ -786,7 +787,7 @@ namespace Robot
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.cameraWindow = new Robot.CameraWindow();
+            this.button93 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
@@ -2259,6 +2260,7 @@ namespace Robot
             resources.ApplyResources(this.Camcontype, "Camcontype");
             this.Camcontype.Name = "Camcontype";
             this.Camcontype.TabStop = false;
+            this.Camcontype.Enter += new System.EventHandler(this.Camcontype_Enter);
             // 
             // label159
             // 
@@ -2412,6 +2414,16 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cameraWindow.Camera = null;
+            this.cameraWindow.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.cameraWindow.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
+            this.cameraWindow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cameraWindow_MouseMove);
             // 
             // tabPage17
             // 
@@ -3007,6 +3019,7 @@ namespace Robot
             // 
             // groupBox25
             // 
+            this.groupBox25.Controls.Add(this.button93);
             this.groupBox25.Controls.Add(this.checkBoxSim);
             this.groupBox25.Controls.Add(this.button92);
             this.groupBox25.Controls.Add(this.button91);
@@ -6861,15 +6874,12 @@ namespace Robot
             this.timer5.Interval = 500;
             this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
             // 
-            // cameraWindow
+            // button93
             // 
-            this.cameraWindow.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.cameraWindow.Camera = null;
-            this.cameraWindow.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.cameraWindow.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
-            this.cameraWindow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cameraWindow_MouseMove);
+            resources.ApplyResources(this.button93, "button93");
+            this.button93.Name = "button93";
+            this.button93.UseVisualStyleBackColor = true;
+            this.button93.Click += new System.EventHandler(this.button93_Click);
             // 
             // Robot1
             // 
@@ -7899,6 +7909,7 @@ namespace Robot
         private System.Windows.Forms.Timer timer5;
         private System.Windows.Forms.Button button92;
         private System.Windows.Forms.CheckBox checkBoxSim;
+        private System.Windows.Forms.Button button93;
 
 
     }
