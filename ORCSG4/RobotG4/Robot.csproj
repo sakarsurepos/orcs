@@ -347,6 +347,7 @@
     <Content Include="Resources\compass1.png" />
     <Content Include="Resources\compass2.png" />
     <Content Include="Resources\connect.gif" />
+    <Content Include="Resources\cpustat.gif" />
     <Content Include="Resources\Dossier Fichier.png" />
     <Content Include="Resources\Dossier Fichier1.png" />
     <Content Include="Resources\dshow.dll" />
@@ -369,6 +370,13 @@
     <None Include="Resources\logo_TU.jpg" />
     <None Include="Resources\logo_Kaar.jpg" />
     <None Include="Resources\logo_sjf.jpg" />
+    <Content Include="Resources\mapa.bmp" />
+    <Content Include="Resources\mapa_areal_tuke.bmp" />
+    <Content Include="Resources\mapa_areal_tuke_old.bmp" />
+    <Content Include="Resources\mapa_kosice.bmp" />
+    <Content Include="Resources\mapa_kosice_okolie.bmp" />
+    <Content Include="Resources\mapa_slovensko.bmp" />
+    <Content Include="Resources\mapa_zlin.bmp" />
     <Content Include="Resources\Microsoft.DirectX.DirectInput.dll" />
     <Content Include="Resources\Microsoft.DirectX.dll" />
     <None Include="Resources\mw_joomla_logo.png" />
