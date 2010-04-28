@@ -1,42 +1,44 @@
-04-19-2010 12:13:54 | --------------------------------------------
-04-19-2010 12:13:54 | Truevision3D Debug/Log File
-04-19-2010 12:13:54 | --------------------------------------------
-04-19-2010 12:13:54 | Engine Version : 6.5
-04-19-2010 12:13:54 | ENGINE INFO : DLL Compilation time Sep 24 2007 12:45:04
-04-19-2010 12:13:54 | DEVICE INIT : Initialize Depth
-04-19-2010 12:13:54 | DEVICE INIT : Using Antialiasing with 2 samples
-04-19-2010 12:13:54 | DEVICE INIT : Initializing the device in windowed mode, with a render surface size of 412x461, format 22, depthbuffer 75
-04-19-2010 12:13:54 | VIEWPORT MANAGER : Main viewport initialization
-04-19-2010 12:13:54 | VIEWPORT MANAGER : Main viewport initialized (412x461)
-04-19-2010 12:13:54 | DEVICE INIT : Initialization successful !
-04-19-2010 12:13:54 | DEVICE INFO :  3D Card : ATI Mobility Radeon HD 4530 Series  | Card ID : 38227 | Driver ID : 656038
-04-19-2010 12:13:54 | DEVICE INFO : Available texture memory : 1784 MB
-04-19-2010 12:13:54 | DEVICE INFO : Vertex Shaders 3.0 supported in hardware.
-04-19-2010 12:13:54 | Debug info : vs fffe0300  ps ffff0300 
-04-19-2010 12:13:54 | DEVICE INFO : Pixel Shaders 3.0 supported in hardware.
-04-19-2010 12:13:54 | DEVICE INFO : Driver used is a DirectX9-level driver 'atiumdag.dll'. Excellent
-04-19-2010 12:13:54 | DEVICE INFO : Card Type Geforce6xxx/7xxx/8xxx/ATIRadeonX1xxx  Level card, third generation of programmable card
-04-19-2010 12:13:54 | TEXTURE MANAGER : Creation of texture 'TintedWindows' succeeded, format 21, size (1x1)
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\pk9tex.bmp' successful 'pk9tex' on index 3 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\Windows.bmp' successful 'Windows' on index 4 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\UnderCarriage.bmp' successful 'UnderCarriage' on index 5 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\ChassisSTI.bmp' successful 'ChassisSTI' on index 6 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\Wheel.bmp' successful 'Wheel' on index 7 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\grass.jpg' successful 'Grass' on index 8 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\skyup.jpg' successful 'SkyTop' on index 9 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\skydown.jpg' successful 'SkyBottom' on index 10 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\skyleft.jpg' successful 'SkyLeft' on index 11 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\skyright.jpg' successful 'SkyRight' on index 12 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\skyfront.jpg' successful 'SkyFront' on index 13 
-04-19-2010 12:13:54 | TEXTURE MANAGER : Loading of 'Textures\skyback.jpg' successful 'SkyBack' on index 14 
-04-19-2010 12:13:54 | LANDSCAPE : Landscape object #0 has been initialized
-04-19-2010 12:13:54 | LANDSCAPE : Generating landscape #0 from heightmap Heightmaps\heightmap.bmp
-04-19-2010 12:13:54 | LANDSCAPE : 1x1 Landscape successfully generated with 1089 vertices and 6534 indices in 63 milliseconds.
-04-19-2010 12:13:54 | LANDSCAPE : Quadtree created for the landscape in 0 milliseconds.
-04-19-2010 12:13:54 | MESH TVM LOADER : Mesh 'pk' successfully loaded in 0 ms. 12 faces, 26 vertices, 1 groups 
-04-19-2010 12:13:54 | MESH TVM LOADER : Mesh 'mChassis' successfully loaded in 0 ms. 2375 faces, 3757 vertices, 14 groups 
-04-19-2010 12:13:54 | MESH TVM LOADER : Mesh 'mfl' successfully loaded in 0 ms. 1016 faces, 2253 vertices, 4 groups 
-04-19-2010 12:13:54 | MESH TVM LOADER : Mesh 'mrl' successfully loaded in 0 ms. 1016 faces, 2253 vertices, 4 groups 
-04-19-2010 12:13:54 | MESH TVM LOADER : Mesh 'mfr' successfully loaded in 16 ms. 1016 faces, 2262 vertices, 4 groups 
-04-19-2010 12:13:54 | MESH TVM LOADER : Mesh 'mrr' successfully loaded in 0 ms. 1016 faces, 2262 vertices, 4 groups 
-04-19-2010 12:13:54 | PHYSICS MANAGER : Static friction must be greater or equal to the kinetic friction
+04-27-2010 13:41:16 | --------------------------------------------
+04-27-2010 13:41:16 | Truevision3D Debug/Log File
+04-27-2010 13:41:16 | --------------------------------------------
+04-27-2010 13:41:16 | Engine Version : 6.5
+04-27-2010 13:41:16 | ENGINE INFO : DLL Compilation time Sep 24 2007 12:45:04
+04-27-2010 13:41:16 | DEVICE INIT : Initialize Depth
+04-27-2010 13:41:16 | DEVICE INIT : Using Antialiasing with 2 samples
+04-27-2010 13:41:16 | DEVICE INIT : Initializing the device in windowed mode, with a render surface size of 412x461, format 22, depthbuffer 75
+04-27-2010 13:41:16 | VIEWPORT MANAGER : Main viewport initialization
+04-27-2010 13:41:16 | VIEWPORT MANAGER : Main viewport initialized (412x461)
+04-27-2010 13:41:17 | DEVICE INIT : Initialization successful !
+04-27-2010 13:41:17 | DEVICE INFO :  3D Card : ATI Mobility Radeon HD 4530 Series  | Card ID : 38227 | Driver ID : 656038
+04-27-2010 13:41:17 | DEVICE INFO : Available texture memory : 1784 MB
+04-27-2010 13:41:17 | DEVICE INFO : Vertex Shaders 3.0 supported in hardware.
+04-27-2010 13:41:17 | Debug info : vs fffe0300  ps ffff0300 
+04-27-2010 13:41:17 | DEVICE INFO : Pixel Shaders 3.0 supported in hardware.
+04-27-2010 13:41:17 | DEVICE INFO : Driver used is a DirectX9-level driver 'atiumdag.dll'. Excellent
+04-27-2010 13:41:17 | DEVICE INFO : Card Type Geforce6xxx/7xxx/8xxx/ATIRadeonX1xxx  Level card, third generation of programmable card
+04-27-2010 13:41:17 | TEXTURE MANAGER : Creation of texture 'TintedWindows' succeeded, format 21, size (1x1)
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\pk9tex.bmp' successful 'pk9tex' on index 3 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\Windows.bmp' successful 'Windows' on index 4 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\UnderCarriage.bmp' successful 'UnderCarriage' on index 5 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\ChassisSTI.bmp' successful 'ChassisSTI' on index 6 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\Wheel.bmp' successful 'Wheel' on index 7 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\grass.jpg' successful 'Grass' on index 8 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\skyup.jpg' successful 'SkyTop' on index 9 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\skydown.jpg' successful 'SkyBottom' on index 10 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\skyleft.jpg' successful 'SkyLeft' on index 11 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\skyright.jpg' successful 'SkyRight' on index 12 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\skyfront.jpg' successful 'SkyFront' on index 13 
+04-27-2010 13:41:17 | TEXTURE MANAGER : Loading of 'Textures\skyback.jpg' successful 'SkyBack' on index 14 
+04-27-2010 13:41:17 | LANDSCAPE : Landscape object #0 has been initialized
+04-27-2010 13:41:17 | LANDSCAPE : Generating landscape #0 from heightmap Heightmaps\heightmap.bmp
+04-27-2010 13:41:18 | LANDSCAPE : 1x1 Landscape successfully generated with 1089 vertices and 6534 indices in 62 milliseconds.
+04-27-2010 13:41:18 | LANDSCAPE : Quadtree created for the landscape in 0 milliseconds.
+04-27-2010 13:41:18 | MESH TVM LOADER : Mesh 'pk' successfully loaded in 0 ms. 12 faces, 26 vertices, 1 groups 
+04-27-2010 13:41:18 | MESH TVM LOADER : Mesh 'mChassis' successfully loaded in 0 ms. 2375 faces, 3757 vertices, 14 groups 
+04-27-2010 13:41:18 | MESH TVM LOADER : Mesh 'mfl' successfully loaded in 0 ms. 1016 faces, 2253 vertices, 4 groups 
+04-27-2010 13:41:18 | MESH TVM LOADER : Mesh 'mrl' successfully loaded in 0 ms. 1016 faces, 2253 vertices, 4 groups 
+04-27-2010 13:41:18 | MESH TVM LOADER : Mesh 'mfr' successfully loaded in 0 ms. 1016 faces, 2262 vertices, 4 groups 
+04-27-2010 13:41:18 | MESH TVM LOADER : Mesh 'mrr' successfully loaded in 0 ms. 1016 faces, 2262 vertices, 4 groups 
+04-27-2010 13:41:18 | PHYSICS MANAGER : Static friction must be greater or equal to the kinetic friction
+04-27-2010 13:58:49 | START UNLOAD
+04-27-2010 13:58:49 | RESSOURCE MANAGER : Engine successfully unloaded

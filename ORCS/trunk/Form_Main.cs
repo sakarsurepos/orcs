@@ -348,12 +348,19 @@ namespace Robot
         double xultra;
         double yultra;
         int[] bultr = new int[25] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 140, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
+        double[] ultraXsur = new double[2000] ;
+        double[] ultraYsur = new double[2000] ;
         int ultrainc = 0;
         int UltraSonic;
+        int incrmem = 0;
         int lop;
         double xultrasonic;
         double yultrasonic;
         int servoinc = 126;
+        float xxx2 = 160;
+        float yyy2 = 160;
+        float xxx1;
+        float yyy1;
         Graphics Obj1;
         //ultra sonic
         /////////////
@@ -4630,6 +4637,7 @@ namespace Robot
         //ultra funkcia
         public void ultra()
         {
+            
             int a = 120;
             //int d = 0;
             Pen p2 = new Pen(Brushes.Red, 2);
@@ -4684,6 +4692,18 @@ namespace Robot
                 {
                     yultra = (yultra * UltraSonic);
                     xultra = (xultra * UltraSonic);
+
+
+                    //incrmem = incrmem + 1;                            //dorobene na nacitavanie do pola
+                    //ultraXsur[incrmem] = xultra;                       //
+                    //ultraYsur[incrmem] = yultra;                       //
+                    //float xxx1 = (float)(160 - ultraXsur[incrmem]);    //
+                    //float yyy1 = (float)(160 + ultraYsur[incrmem]);    //
+                    //xxx2 = xxx1;                                       //
+                    //yyy2 = yyy1;                                       //
+                    //Pen p30 = new Pen(Brushes.Red, 2);                  //
+                    //kresli ciaru                                      
+                    //Obj1.DrawLine(p30, xxx1, yyy1, xxx2, yyy2);         //
                 }
                 else
                 {
@@ -4732,7 +4752,12 @@ namespace Robot
             Obj1 = pictureBoxUltraSonicScan.CreateGraphics();
             Thread tr1 = new Thread(ultra);
             tr1.Start();
-            button61_Click_1(sender, e);
+            
+            if (checkBoxSim.Checked == false)
+                {
+                button61_Click_1(sender, e);
+                }
+            
         }
 
         private void groupBox25_Enter(object sender, EventArgs e)
@@ -4747,7 +4772,8 @@ namespace Robot
 
         private void button91_Click_1(object sender, EventArgs e)
         {
-            
+            Obj1.Clear(Color.White);
+            pictureBoxUltraSonicScan.BackColor = Color.White;
         }
 
         private void timer5_Tick(object sender, EventArgs e)
@@ -4757,7 +4783,68 @@ namespace Robot
 
         private void button92_Click(object sender, EventArgs e)
         {
-            timer5.Start();
+            //int a = 120;
+            //int d = 0;
+            
+            
+            
+
+            //while (a <= 240)
+            //{
+                //Thread.Sleep(200);
+
+                //xultra = Math.Sin(a * (Math.PI / 180));
+                //yultra = Math.Cos(a * (Math.PI / 180));
+
+                //yultra = (yultra * UltraSonic);
+                //xultra = (xultra * UltraSonic);
+                
+                //incrmem = incrmem + 1;
+                //ultraXsur[incrmem] = xultra;
+                //ultraYsur[incrmem] = yultra;
+
+
+                
+
+                //float xxx1 = (float)(160 - ultraXsur[incrmem]);
+
+                //float yyy1 = (float)(160 + ultraYsur[incrmem]);
+
+
+
+               Pen p3 = new Pen(Brushes.Red, 2);
+
+
+                //kresli ciaru
+                
+                Obj1.DrawLine(p3, xxx1, yyy1, xxx2, yyy2);
+
+
+
+
+                //zvysuje premennu
+                //d = (d + 1);
+                //a = (a + 5);
+                //xxx2 = xxx1;
+                //yyy2 = yyy1;
+            //}
+
+            //float h = 20;
+        }
+
+        private void Camcontype_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button93_Click(object sender, EventArgs e)
+        {
+            Pen p3 = new Pen(Brushes.Red, 2);
+
+
+            //kresli ciaru
+            Graphics Obj2 = pictureBoxUltraSonicScan.CreateGraphics();
+            Obj2.DrawLine(p3, xxx1, yyy1, xxx2, yyy2);
         }
 
         //Check Status
