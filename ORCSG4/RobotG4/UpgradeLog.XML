@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Robot">
+</Property><Property Name="Solution File" Value="D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Robot.sln">
+</Property><Property Name="Date" Value="2. mája 2008">
+</Property><Property Name="Time" Value="9:44:52">
+</Property></Properties><Event ErrorLevel="0" Project="Robot" Source="Robot.csproj" Description="Project file successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Robot.csproj">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Robot.csproj.user" Description="Project user file successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Robot.csproj.user">
+</Event><Event ErrorLevel="0" Project="Robot" Source="AboutBox1.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\AboutBox1.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="AboutBox1.Designer.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\AboutBox1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Commands.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Commands.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Communication.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Communication.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Devices.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Devices.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Form_Main.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Form_Main.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Form_Main.Designer.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Form_Main.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="GPS.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\GPS.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="JoystickDevice.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\JoystickDevice.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Messages.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Messages.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Movement.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Movement.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Program.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Properties\Resources.Designer.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Properties\Settings.Designer.cs" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Properties\Settings.settings" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Robot" Source="app.config" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\app.config">
+</Event><Event ErrorLevel="0" Project="Robot" Source="ClassDiagram1.cd" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\ClassDiagram1.cd">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\Globe1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\Globe1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\kcmpci.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\kcmpci.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\energy.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\energy.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\2downarrow.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\2downarrow.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\webcam.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\webcam.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\compass1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\compass1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\1leftarrow1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\1leftarrow1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\1rightarrow1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\1rightarrow1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\1uparrow1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\1uparrow1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\1downarrow1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\1downarrow1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\2leftarrow1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\2leftarrow1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\2rightarrow1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\2rightarrow1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\2uparrow1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\2uparrow1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\Service Manager.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\Service Manager.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\apply.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\apply.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\compass2.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\compass2.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\2dowarrow1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\2dowarrow1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\folder.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\folder.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\folder1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\folder1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\folder2.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\folder2.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\reload.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\reload.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\Services.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\Services.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\GPS.jpg" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\GPS.jpg">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\OFF.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\OFF.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\stop1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\stop1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\input_devices_settings.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\input_devices_settings.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\usb.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\usb.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\folder_slin_open.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\folder_slin_open.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\Dossier Fichier.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\Dossier Fichier.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Resources\Dossier Fichier1.png" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Resources\Dossier Fichier1.png">
+</Event><Event ErrorLevel="0" Project="Robot" Source="mapa_kosice_okolie.bmp" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\mapa_kosice_okolie.bmp">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Robot KAAR.ico" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Robot KAAR.ico">
+</Event><Event ErrorLevel="0" Project="Robot" Source="AboutBox1.resx" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\AboutBox1.resx">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Form_Main.resx" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Form_Main.resx">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Properties\Resources.resx" Description="File successfully backed up as D:\__GPS_ROBOT_NEW\Net_comunication\Stano_new\Robot\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Robot.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Robot" Source="Robot.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Robot" Source="Robot.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

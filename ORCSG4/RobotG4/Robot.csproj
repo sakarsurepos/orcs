@@ -1,0 +1,1239 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{522786CB-EDE7-4585-BECF-00F646BF7557}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Robot</RootNamespace>
+    <AssemblyName>Robot</AssemblyName>
+    <Win32Resource>
+    </Win32Resource>
+    <ApplicationIcon>Robot.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <ManifestCertificateThumbprint>F2C62164F395D14FA6F45A127D703CCA3A1092BF</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Robot_1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>true</SignManifests>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <PublishUrl>c:\_GPS_ROBOT\Publish_folder_robotG4\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>1</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://orcs.sebsoft.com/firmware/orcs_desktop/</UpdateUrl>
+    <SupportUrl>http://eliterobot.info</SupportUrl>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>ORCS G4 Security Guard Robot</ProductName>
+    <PublisherName>Elite Robot</PublisherName>
+    <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
+    <WebPage>www.orcs.sebsoft.com</WebPage>
+    <ApplicationRevision>53</ApplicationRevision>
+    <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Imaging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=38eb47741dd0492e, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AForge.Math, Version=1.2.0.0, Culture=neutral, PublicKeyToken=e12ceb15b47eb5cc, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="dshow, Version=1.0.3227.14695, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LumiSoft.Net, Version=2.0.3396.16260, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\LumiSoft.Net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="MTV3D65, Version=6.5.2823.21213, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\MTV3D65.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TerminalControl, Version=1.0.3439.32834, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\TerminalControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Tiger.Video.VFW, Version=1.0.3227.14696, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="battery.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="CameraWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CaptureDeviceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Communication.cs" />
+    <Compile Include="Devices.cs" />
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_main.sk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Form_main.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GPS.cs" />
+    <Compile Include="Media\Wave\native\MMSYSERR.cs" />
+    <Compile Include="Media\Wave\native\WavConstants.cs" />
+    <Compile Include="Media\Wave\native\WAVEFORMATEX.cs" />
+    <Compile Include="Media\Wave\native\WAVEHDR.cs" />
+    <Compile Include="Media\Wave\native\WAVEOUTCAPS.cs" />
+    <Compile Include="Media\Wave\native\WavFormat.cs" />
+    <Compile Include="Media\Wave\native\WavMethods.cs" />
+    <Compile Include="Media\Wave\WaveIn.cs" />
+    <Compile Include="Media\Wave\WaveOut.cs" />
+    <Compile Include="Media\Wave\WavInDevice.cs" />
+    <Compile Include="Media\Wave\WavOutDevice.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UsrCtrlAxis2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <Compile Include="wfrm_Receive2.cs">
+    </Compile>
+    <Compile Include="IMotionDetector.cs" />
+    <Compile Include="JoystickDevice.cs" />
+    <Compile Include="kinematics.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Mjpegsmallcam.cs">
+    </Compile>
+    <Compile Include="MjpegStream.cs" />
+    <Compile Include="MotionDetector1.cs" />
+    <Compile Include="MotionDetector2.cs" />
+    <Compile Include="MotionDetector3.cs" />
+    <Compile Include="MotionDetector3Optimized.cs" />
+    <Compile Include="MotionDetector4.cs" />
+    <Compile Include="Movement.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CameraWindow.resx">
+      <DependentUpon>CameraWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaptureDeviceForm.resx">
+      <DependentUpon>CaptureDeviceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Main.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_main.sk.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form_main.sk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="VideoSource\ByteArrayUtils.cs" />
+    <Compile Include="VideoSource\CameraEvents.cs" />
+    <Compile Include="VideoSource\CaptureDevice.cs" />
+    <Compile Include="VideoSource\IVideoSource.cs" />
+    <Compile Include="VideoSource\JPEGStream.cs" />
+    <Compile Include="VideoSource\MJPEGStream.cs" />
+    <Compile Include="VideoSource\VideoFileSource.cs" />
+    <Compile Include="VideoSource\VideoStream.cs" />
+    <Compile Include="wfrm_Receive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfrm_RTP_Debug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfrm_SendAudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfrm_SendMic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wfrm_SendMic2.cs">
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="Models\chassis.TVM" />
+    <Content Include="Models\chassis_old.TVM" />
+    <Content Include="Models\pk.TVM" />
+    <Content Include="Models\pk8.TVM" />
+    <Content Include="Models\PK9.3DS" />
+    <Content Include="Models\pk9.tvm" />
+    <Content Include="Models\pk92.3DS" />
+    <Content Include="Models\pk92.max" />
+    <Content Include="Models\pk92.X" />
+    <Content Include="Models\ship.tvm" />
+    <Content Include="Models\wheel_l.TVM" />
+    <Content Include="Models\wheel_r.TVM" />
+    <None Include="Package1.pkgxml" />
+    <None Include="Package2.pkgxml" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Robot_1_TemporaryKey.pfx" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\1.gif" />
+    <Content Include="Heightmaps\heightmap.bmp" />
+    <Content Include="Maps\letecka_2.bmp" />
+    <Content Include="Maps\letecka_2_source.bmp" />
+    <Content Include="Maps\mapa_areal_tuke.bmp" />
+    <Content Include="Maps\mapa_areal_tuke_old.bmp" />
+    <Content Include="Maps\mapa_areal_tuke_old2.bmp" />
+    <Content Include="Maps\mapa_areal_tuke_old3.bmp" />
+    <Content Include="Maps\mapa_kosice.bmp" />
+    <Content Include="Maps\mapa_kosice_okolie.bmp" />
+    <Content Include="Maps\mapa_slovensko.bmp" />
+    <Content Include="Maps\mapa_zlin.bmp" />
+    <Content Include="Resources\1downarrow1.png" />
+    <None Include="Resources\1gps3.png" />
+    <Content Include="Resources\1leftarrow1.png" />
+    <Content Include="Resources\1rightarrow1.png" />
+    <Content Include="Resources\1uparrow1.png" />
+    <EmbeddedResource Include="Resources\2.gif" />
+    <Content Include="Resources\2dowarrow1.png" />
+    <Content Include="Resources\2downarrow.png" />
+    <Content Include="Resources\2leftarrow1.png" />
+    <Content Include="Resources\2rightarrow1.png" />
+    <Content Include="Resources\2uparrow.png" />
+    <Content Include="Resources\2uparrow1.png" />
+    <EmbeddedResource Include="Resources\3.gif" />
+    <EmbeddedResource Include="Resources\4.gif" />
+    <EmbeddedResource Include="Resources\5.gif" />
+    <EmbeddedResource Include="Resources\6.gif" />
+    <EmbeddedResource Include="Resources\7.gif" />
+    <EmbeddedResource Include="Resources\8.gif" />
+    <EmbeddedResource Include="Resources\9.gif" />
+    <EmbeddedResource Include="UsrCtrlAxis2D.resx">
+      <DependentUpon>UsrCtrlAxis2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Resources\AForge.dll" />
+    <Content Include="Resources\AForge.Imaging.dll" />
+    <Content Include="Resources\AForge.Math.dll" />
+    <Content Include="Resources\apply.png" />
+    <None Include="Resources\Battery.jpg" />
+    <None Include="Resources\Battery2.png" />
+    <None Include="Resources\blank.png" />
+    <None Include="Resources\Batterysmall.png" />
+    <None Include="Resources\Batterysmall2.png" />
+    <None Include="Resources\back.png" />
+    <Content Include="Resources\CAMERA_activeX.htm" />
+    <Content Include="Resources\CAMERA_activeX2.htm" />
+    <None Include="Resources\chip5.png" />
+    <Content Include="Resources\compass.png" />
+    <Content Include="Resources\compass1.png" />
+    <Content Include="Resources\compass2.png" />
+    <Content Include="Resources\Dossier Fichier.png" />
+    <Content Include="Resources\Dossier Fichier1.png" />
+    <Content Include="Resources\dshow.dll" />
+    <Content Include="Resources\energy.png" />
+    <Content Include="Resources\folder.png" />
+    <Content Include="Resources\folder1.png" />
+    <Content Include="Resources\folder2.png" />
+    <Content Include="Resources\folder_slin_open.png" />
+    <Content Include="Resources\Globe1.png" />
+    <Content Include="Resources\GPS.jpg" />
+    <Content Include="Resources\Image1.bmp" />
+    <Content Include="Resources\image1.jpg" />
+    <Content Include="Resources\imager.jpg" />
+    <Content Include="Resources\input_devices_settings.png" />
+    <Content Include="Resources\kcmpci.png" />
+    <Content Include="Resources\linux.jpg" />
+    <None Include="Resources\linux2.png" />
+    <None Include="Resources\mic4.png" />
+    <None Include="Resources\math7.png" />
+    <None Include="Resources\logo_TU.jpg" />
+    <None Include="Resources\logo_Kaar.jpg" />
+    <None Include="Resources\logo_sjf.jpg" />
+    <Content Include="Resources\Microsoft.DirectX.DirectInput.dll" />
+    <Content Include="Resources\Microsoft.DirectX.dll" />
+    <None Include="Resources\mw_joomla_logo.png" />
+    <Content Include="Resources\OFF.png" />
+    <None Include="Resources\Openwrt_logo_small.jpg" />
+    <None Include="Resources\ON.gif" />
+    <None Include="Resources\ON2.gif" />
+    <None Include="Resources\ON3.gif" />
+    <None Include="Resources\ON4.gif" />
+    <None Include="Resources\ON5.gif" />
+    <None Include="Resources\ON9.gif" />
+    <None Include="Resources\ON0.gif" />
+    <Content Include="Resources\reload.png" />
+    <None Include="Resources\robot_logo.jpg" />
+    <None Include="Resources\sebsoft_logo.jpg" />
+    <None Include="Resources\robot_logo1.jpg" />
+    <Content Include="Resources\Service Manager.png" />
+    <Content Include="Resources\Services.png" />
+    <Content Include="Resources\stop1.png" />
+    <Content Include="Resources\Tiger.Video.VFW.dll" />
+    <None Include="Resources\tu3.png" />
+    <Content Include="Resources\usb.png" />
+    <Content Include="Resources\webcam.png" />
+    <None Include="Resources\wifi2.gif" />
+    <Content Include="Robot.csproj.vspscc" />
+    <Content Include="Robot.ico" />
+    <Content Include="Robot.vssscc" />
+    <Content Include="Textures\ChassisSTi.bmp" />
+    <Content Include="Textures\grass.jpg" />
+    <Content Include="Textures\grass3.jpg" />
+    <Content Include="Textures\letecka_2.bmp" />
+    <Content Include="Textures\pk9tex.bmp" />
+    <Content Include="Textures\skyback.jpg" />
+    <Content Include="Textures\skydown.jpg" />
+    <Content Include="Textures\skyfront.jpg" />
+    <Content Include="Textures\skyleft.jpg" />
+    <Content Include="Textures\skyright.jpg" />
+    <Content Include="Textures\skyup.jpg" />
+    <Content Include="Textures\Undercarriage.bmp" />
+    <Content Include="Textures\Wheel.bmp" />
+    <Content Include="Textures\Windows.bmp" />
+    <Content Include="UpgradeLog.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="AForge">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="AForge.Imaging">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="AForge.Math">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="dshow">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="LumiSoft.Net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.DirectX">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.DirectX.DirectInput">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\chassis.TVM">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\chassis_old.TVM">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\pk.TVM">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\pk8.TVM">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\PK9.3DS">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\pk9.tvm">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\pk92.3DS">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\pk92.max">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\pk92.X">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\ship.tvm">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\wheel_l.TVM">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Models\wheel_r.TVM">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="MTV3D65">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\1downarrow1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\1leftarrow1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\1rightarrow1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\1uparrow1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\2dowarrow1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\2downarrow.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\2leftarrow1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\2rightarrow1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\2uparrow.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\2uparrow1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\AForge.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\AForge.Imaging.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\AForge.Math.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\apply.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\CAMERA_activeX.htm">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\CAMERA_activeX2.htm">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\compass.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\compass1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\compass2.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Dossier Fichier.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Dossier Fichier1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\dshow.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\energy.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\folder.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\folder1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\folder2.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\folder_slin_open.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Globe1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\GPS.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Image1.bmp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\image1.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\imager.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\input_devices_settings.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\kcmpci.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\linux.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Microsoft.DirectX.DirectInput.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Microsoft.DirectX.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\OFF.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\reload.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Service Manager.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Services.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\stop1.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Tiger.Video.VFW.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\usb.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\webcam.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Robot.csproj.vspscc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Robot.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Robot.vssscc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="sk\Robot.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TerminalControl">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\ChassisSTi.bmp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\grass.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\grass3.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\letecka_2.bmp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\pk9tex.bmp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\skyback.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\skydown.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\skyfront.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\skyleft.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\skyright.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\skyup.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\Undercarriage.bmp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\Wheel.bmp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Textures\Windows.bmp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Tiger.Video.VFW">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Particles\" />
+    <Folder Include="Shaders\" />
+    <Folder Include="Sounds\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
