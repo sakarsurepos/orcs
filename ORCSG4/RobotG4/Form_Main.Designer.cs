@@ -4614,7 +4614,6 @@ namespace Robot
             resources.ApplyResources(this.button63, "button63");
             this.button63.Name = "button63";
             this.button63.UseVisualStyleBackColor = false;
-            this.button63.Click += new System.EventHandler(this.button63_Click);
             // 
             // button62
             // 
@@ -6349,7 +6348,6 @@ namespace Robot
             resources.GetString("comboBox1.Items3"),
             resources.GetString("comboBox1.Items4")});
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label65
             // 
