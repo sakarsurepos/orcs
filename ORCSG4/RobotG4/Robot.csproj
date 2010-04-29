@@ -45,7 +45,7 @@
     <PublisherName>Elite Robot</PublisherName>
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
     <WebPage>www.orcs.sebsoft.com</WebPage>
-    <ApplicationRevision>77</ApplicationRevision>
+    <ApplicationRevision>78</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -768,6 +768,15 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
     <PublishFile Include="sk\Robot.resources">
       <Visible>False</Visible>
       <Group>
