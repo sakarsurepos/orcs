@@ -387,10 +387,6 @@ namespace Robot
             groupDirectionAndMotion.Enabled = false;
             groupCameraRotation.Enabled = false;
             groupCameraRot2.Enabled = false;
-            groupComPortSettings.Enabled = false;
-            groupComPortDefault.Enabled = false;
-            groupTcpClientServerSettings.Enabled = true;
-            groupTcpClientServerDefault.Enabled = true;
             textTCPClientServerIPAddress.ReadOnly = false;
             textTCPCommunicationType.Text = "CLIENT";
             labelCommunicationType.Text = "TCP Client";
@@ -888,10 +884,6 @@ namespace Robot
             groupDirectionAndMotion.Enabled         = false;
             groupCameraRotation.Enabled             = false;
             groupCameraRot2.Enabled                 = false;
-            groupComPortSettings.Enabled            = false;
-            groupComPortDefault.Enabled             = false;
-            groupTcpClientServerSettings.Enabled    = true;
-            groupTcpClientServerDefault.Enabled     = true;
             textTCPClientServerIPAddress.ReadOnly   = false;
             textTCPCommunicationType.Text           = "CLIENT";
             labelCommunicationType.Text             = "TCP Client";
@@ -906,10 +898,6 @@ namespace Robot
             groupDirectionAndMotion.Enabled         = false;
             groupCameraRotation.Enabled             = false;
             groupCameraRot2.Enabled                 = false;
-            groupComPortSettings.Enabled            = false;
-            groupComPortDefault.Enabled             = false;
-            groupTcpClientServerSettings.Enabled    = true;
-            groupTcpClientServerDefault.Enabled     = true;
             //IPHostEntry ihe                         = Dns.GetHostByName(Dns.GetHostName());
             //IPAddress localIpAddress                = ihe.AddressList[0];
             //textTCPClientServerIPAddress.Text       = localIpAddress.ToString();  //Local IP Address
@@ -928,16 +916,9 @@ namespace Robot
 
         private void Robot_Load(object sender, EventArgs e)
         {
-            
-            groupComPortDefault.Enabled = false;
-            groupComPortSettings.Enabled = false;
-            groupTcpClientServerSettings.Enabled = false;
-            groupTcpClientServerDefault.Enabled = false;
             groupDirectionAndMotion.Enabled = false;
             groupCameraRotation.Enabled = false;
             groupCameraRot2.Enabled = false;
-            groupAdvencedSuppDevices.Enabled = false;
-            groupJoystickInit.Enabled = false;
             labelCommunicationType.Text = null;
             labelConnectingStatus.Text = null;
             labelJoystickName.Text = null;
@@ -958,10 +939,6 @@ namespace Robot
             TCPClient.Image = Properties.Resources.blank;
             SerialPort.Image = Properties.Resources.apply;
             TCPServer.Image = Properties.Resources.blank;
-            groupTcpClientServerSettings.Enabled    = false;
-            groupTcpClientServerDefault.Enabled     = false;
-            groupComPortDefault.Enabled             = true;
-            groupComPortSettings.Enabled            = true;
             textTCPClientServerIPAddress.ReadOnly   = false;
             labelCommunicationType.Text             = "RS232";
             toolStripconnect.Enabled                = true;
@@ -1059,15 +1036,9 @@ namespace Robot
                 toolStripdisconnect.Enabled = true;
                 toolStripconnect.Enabled = false;
                 settings.Enabled = false;
-                groupComPortDefault.Enabled = false;
-                groupComPortSettings.Enabled = false;
-                groupTcpClientServerSettings.Enabled = false;
-                groupTcpClientServerDefault.Enabled = false;
                 groupDirectionAndMotion.Enabled = true;
                 groupCameraRotation.Enabled = true;
                 groupCameraRot2.Enabled = true;
-                groupAdvencedSuppDevices.Enabled = true;
-                groupJoystickInit.Enabled = true;
                 Connecting_status_1.Clear();
                 labelConnectingStatus.ResetText();
                 textConnectingStatus.Clear();
@@ -1092,22 +1063,13 @@ namespace Robot
             groupDirectionAndMotion.Enabled     = false;
             groupCameraRotation.Enabled         = false;
             groupCameraRot2.Enabled             = false;
-            groupAdvencedSuppDevices.Enabled    = false;
-            groupJoystickInit.Enabled           = false;
             
             if (labelCommunicationType.Text == "TCP Client" || labelCommunicationType.Text == "TCP Server")
             {
-                groupComPortDefault.Enabled             = false;
-                groupComPortSettings.Enabled            = false;
-                groupTcpClientServerSettings.Enabled    = true;
-                groupTcpClientServerDefault.Enabled     = true;
+
             }
             else if (labelCommunicationType.Text == "RS232")
             {
-                groupComPortDefault.Enabled             = true;
-                groupComPortSettings.Enabled            = true;
-                groupTcpClientServerSettings.Enabled    = false;
-                groupTcpClientServerDefault.Enabled     = false;
                 
             }
         }
@@ -3330,15 +3292,9 @@ namespace Robot
                 toolStripdisconnect.Enabled = true;
                 toolStripconnect.Enabled = false;
                 settings.Enabled = false;
-                groupComPortDefault.Enabled = false;
-                groupComPortSettings.Enabled = false;
-                groupTcpClientServerSettings.Enabled = false;
-                groupTcpClientServerDefault.Enabled = false;
                 groupDirectionAndMotion.Enabled = true;
                 groupCameraRotation.Enabled = true;
                 groupCameraRot2.Enabled = true;
-                groupAdvencedSuppDevices.Enabled = true;
-                groupJoystickInit.Enabled = true;
                 Connecting_status_1.Clear();
                 labelConnectingStatus.ResetText();
                 textConnectingStatus.Clear();
