@@ -107,9 +107,7 @@ namespace Robot
         public static int radio = 1;
 
         Thread trd;
-
-
-
+        
         //////////
         //3D MODEL
         public cengine3D engine3D = new cengine3D();
@@ -326,7 +324,6 @@ namespace Robot
         // delegate is used to communicate with UI Thread from a non-UI thread
         public DelegateAddString m_DelegateAddString; //AUDIO DELEGATE
         public DelegateAddString1 m_DelegateAddString1; //AUDIO DELEGATE
-
         //AUDIO STREAMER
         ////////////////
 
@@ -374,8 +371,6 @@ namespace Robot
         Thread ThreadCheckStat;
         //CONSOLE
         /////////////
-
-
 
         public Robot1()
         {
@@ -457,7 +452,6 @@ namespace Robot
             m_DelegateAddString = new DelegateAddString(this.AddString);
             m_DelegateAddString1 = new DelegateAddString1(this.AddString1);
 
-
             //ACCELEROMETER
             //this.usrCtrlAxis3D = new UsrCtrlAxis3D();
             //this.usrCtrlAxis3D.Size = new Size(350, 350);
@@ -477,7 +471,6 @@ namespace Robot
         Messages        SendMessage = new Messages();
         Movement        Moves       = new Movement();
         static Commands Command     = new Commands();
-
         Mjpegsmallcam mjpegsmall    = new Mjpegsmallcam();
 
         //Components
@@ -493,7 +486,6 @@ namespace Robot
 
         double longm1;
         double lattm1;
-                
         double          mapSizeXmax;
         double          mapSizeXmin;
         double          mapSizeYmax;
@@ -538,8 +530,6 @@ namespace Robot
 
         //Resources
         ResourceManager myManager = new ResourceManager("Robot.Properties.Resources", Assembly.GetExecutingAssembly());
-
-        
 
         private void direction_Scroll(object sender, EventArgs e)
         {
@@ -854,9 +844,7 @@ namespace Robot
                                 }
                             }
                         }
-                        catch
-                        {
-                        }
+                        catch {}
                     }
                 }
 
@@ -864,15 +852,11 @@ namespace Robot
                 {
                     serialPort1.DiscardInBuffer();
                 }
-        }
-                        
-            catch
-            {
-
             }
+            catch {}
 
-                    }
-
+        }
+        //Batery String
         private string Battery(string battery)
         {
             char[] bat              = battery.ToCharArray();
@@ -882,7 +866,7 @@ namespace Robot
             batt.aktualne_nap = (float)voltage; //Test battery             
             return (" " + voltage.ToString("f1") + " V");
         }
-        //Ultrasonic
+        //Ultrasonic String
         private string Sensors(string sensors)
         {
             char[] sens = sensors.ToCharArray();
@@ -891,7 +875,7 @@ namespace Robot
             //Texbox Export
             return (intsens.ToString("f1"));
         }
-        //Infra Front
+        //Infra Front String
         private string SensorsF(string sensors)
         {
             char[] sens = sensors.ToCharArray();
@@ -900,7 +884,7 @@ namespace Robot
             //Texbox Export
             return (intsens.ToString("f1"));
         }
-        //Infra Back
+        //Infra Back String
         private string SensorsB(string sensors)
         {
             char[] sens = sensors.ToCharArray();
@@ -1108,10 +1092,7 @@ namespace Robot
                     JoystickOFF();
                 }
             }   
-            catch
-            {
-            }
-                        
+            catch {}
         }
         
         private void toolStripconnect_Click(object sender, EventArgs e)
@@ -1264,9 +1245,7 @@ namespace Robot
                 serialPort1.DataReceived    += new System.IO.Ports.SerialDataReceivedEventHandler(SerialPort_DataReceived);
                 serialPort1.Open();
             }
-            catch
-            {
-            }
+            catch {}
         }
         void InWorkerThread()
         {
@@ -1373,7 +1352,6 @@ namespace Robot
                     mapSizeYmin = 48.73055; //48.730430;
                     break;
             }
-            
         }
 
         private void map_MouseMove(object sender, MouseEventArgs e)
@@ -1508,11 +1486,6 @@ namespace Robot
                 timerright.Interval = x;
                 timerright.Enabled = true;
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -1853,11 +1826,8 @@ namespace Robot
                 if (detector != null)
                     detector.Reset();
             }
-
             intervalsToSave = 0;
         }
-
-
 
         // Remove any motion detectors
         private void noneMotionItem_Click(object sender, System.EventArgs e)
@@ -1972,7 +1942,6 @@ namespace Robot
                 textBox22.Text = vysledok3;
                 fpsPanel.Text = fps.ToString("F0") + " fps";
             }
-
             // descrease save counter
         }
 
@@ -2211,7 +2180,6 @@ namespace Robot
             }
             else
             {
-
                 count = count + 1;
                 int left = ((63 - (seltex_speed()) + 63) * seltex_time()) / 250;
                 Kin.left(pictureBoxkinematics.CreateGraphics(), textBoxrstartx1.Text, textBoxrstarty1.Text, textBoxrtravel.Text, textBoxrangle.Text, textBoxrendx.Text, textBoxrendy.Text, textBoxrlenght.Text, seltex_angle().ToString(), left.ToString(), out Rout, out Angleout);
@@ -2487,7 +2455,6 @@ namespace Robot
             Bitmap bmpgmaps = BitmapFromWeb(gps_string);
             pictureBox27.Image = bmpgmaps;
             //bmpgmaps.Save("image1.jpg");
-
         }
 
         public static Bitmap BitmapFromWeb(string URL)
@@ -2527,7 +2494,6 @@ namespace Robot
             //RobotMove
             GraphicsGmaps.DrawEllipse(penPointOnMap, (int)x - 5, (int)y - 5, 10, 10);
             GraphicsGmaps.DrawLine(penPointOnMap, (int)x, (int)y, (int)x + (int)xc1, (int)y - (int)yc1);
-            
         }
 
         private void pictureBox27_MouseMove(object sender, MouseEventArgs e)
@@ -2546,7 +2512,6 @@ namespace Robot
           double mouse_gmgpsy = latcent + (-250 + mouse_gmy) * 0.000005354166f; //float.Parse(textBox19.Text);//0.000005354166f;
           label94.Text = (mouse_gmgpsx.ToString("f6")).Replace(',','.');
           label95.Text = (mouse_gmgpsy.ToString("f6")).Replace(',', '.');
-
         }
 
         private void button48_Click(object sender, EventArgs e)
@@ -2667,7 +2632,6 @@ namespace Robot
 
             //Graphics clear
             //GraphicsGmaps.Clear(Color.Transparent);
-            
         }
 
         private void button57_Click(object sender, EventArgs e)
@@ -2678,9 +2642,7 @@ namespace Robot
         private void button55_Click(object sender, EventArgs e)
         {
             //Faith//
-
             //Save data to text file//
-
             string Saved_File = "";
             saveFD2.InitialDirectory = (@"C:\");
             saveFD2.Title = "Save a text file";
@@ -2698,9 +2660,7 @@ namespace Robot
         private void button54_Click(object sender, EventArgs e)
         {
             //Faith//
-
             //Load data from text file//
-
             string Loaded_File = "";
             openFD2.InitialDirectory = (@"C:\");
             openFD2.Title = "Save a text file";
@@ -3201,11 +3161,6 @@ namespace Robot
             }));
         }
 
-        private void button63_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutForm aboutf = new AboutForm();
@@ -3223,7 +3178,6 @@ namespace Robot
         }
 
         //Audio stream
-
         //Sound
         private void button79_Click(object sender, EventArgs e)
         {
@@ -3383,7 +3337,6 @@ namespace Robot
                         }
                     }
                 }
-
                 Thread.Sleep(100);
             }
         }
@@ -3815,8 +3768,6 @@ namespace Robot
                 return;
             }
 
-
-
             if (dataReceivedEventArgs.EventType == SerialData.Chars)
             {
                 Int32 nBytes = this.mySerialPort.Read(this.buffer, 0, this.mySerialPort.BytesToRead);
@@ -3825,16 +3776,10 @@ namespace Robot
                 {
                     for (int i = 0; i < nBytes; i++)
                         this.byteQueue.Enqueue(this.buffer[i]);
-
                     ProcessData();
                 }
-
                 //refresh 0
-
             }
-
-            
-
             //if (dataReceivedEventArgs.EventType == SerialData.Eof)
             //{
             //    this.txtBytesRead.Text = "EOF"; //EOF = 0x1A
@@ -3856,12 +3801,8 @@ namespace Robot
             byte06 = (Byte)this.byteQueue.Dequeue(); //10
 
             //refresh  11
-
-
             //this.txtByte05.Text = String.Format("{0:x2}", byte05);
             //this.txtByte06.Text = String.Format("{0:x2}", byte06);
-
-
             // PWM % based on documentation formula
             //float fXaxis = (256 * this.buffer[0] + this.buffer[1]) / 100;
             //float fYaxis = (256 * this.buffer[2] + this.buffer[3]) / 100;
@@ -3976,7 +3917,6 @@ namespace Robot
             this.panel1.Controls.Add(this.usrCtrlAxis2D);
         }
 
-
         //ultra funkcia
         public void ultra()
         {
@@ -4073,8 +4013,8 @@ namespace Robot
 
             }
             servoinc = 126;
-
         }
+
         /////Tlacitko na scanovanie
         private void button91_Click(object sender, EventArgs e)
         {
@@ -4093,10 +4033,8 @@ namespace Robot
         //Check Version
         public string PublishVersion()
         {
-
             System.Reflection.Assembly _assemblyInfo = System.Reflection.Assembly.GetExecutingAssembly();
             string ourVersion = string.Empty;
-
             //if running the deployed application, you can get the version
             //  from the ApplicationDeployment information. If you try
             //  to access this when you are running in Visual Studio, it will not work.
@@ -4512,7 +4450,6 @@ namespace Robot
             }
         }
 
-
         private void DrawInterface()
         {
 
@@ -4564,7 +4501,6 @@ namespace Robot
             {
                 camera.SetPosition(physics.GetBodyPosition(pbi_chassis).x, physics.GetBodyPosition(pbi_chassis).y + 60, physics.GetBodyPosition(pbi_chassis).z);
             }
-
 
             if (input.IsKeyPressed(CONST_TV_KEY.TV_KEY_H))
             {
@@ -4789,7 +4725,6 @@ namespace Robot
             }
         }
         /////3D
-
 
    }
 }
