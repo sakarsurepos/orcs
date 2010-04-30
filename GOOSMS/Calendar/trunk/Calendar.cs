@@ -1603,8 +1603,9 @@ namespace SampleApp
                             //newpageSource = pageSource;
                             labelBrowser.Text = newpageSource;
                             int fail = pageSource.IndexOf("download");
+                            int fail2 = pageSource.IndexOf("Chrome");
 
-                            if (oldpageSource != newpageSource && fail == -1) // && oldpageSource != null)
+                            if (oldpageSource != newpageSource && fail == -1 && fail2 == -1) // && oldpageSource != null)
                             {
                                 oldpageSource = newpageSource;
                                 googlecalendarSMSreminder(newpageSource);
