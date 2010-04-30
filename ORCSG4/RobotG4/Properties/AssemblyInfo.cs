@@ -6,13 +6,13 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Robot ORCS")]
+[assembly: AssemblyTitle("Robot ORCS G4")]
 [assembly: AssemblyDescription("Open Robotics Control System")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sebsoft")]
+[assembly: AssemblyCompany("Elite Robot")]
 [assembly: AssemblyProduct("ORCS")]
-[assembly: AssemblyCopyright("Copyright © Sebsoft 2008")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © Elite Robot 2010")]
+[assembly: AssemblyTrademark("Elite Robot")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

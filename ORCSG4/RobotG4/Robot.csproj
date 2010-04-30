@@ -11,7 +11,7 @@
     <AssemblyName>Robot</AssemblyName>
     <Win32Resource>
     </Win32Resource>
-    <ApplicationIcon>Robot.ico</ApplicationIcon>
+    <ApplicationIcon>ORCS4.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -44,8 +44,9 @@
     <ProductName>ORCS G4 Security Guard Robot</ProductName>
     <PublisherName>Elite Robot</PublisherName>
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
-    <WebPage>www.orcs.sebsoft.com</WebPage>
-    <ApplicationRevision>80</ApplicationRevision>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>85</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -384,6 +385,9 @@
     <Content Include="Maps\mapa_zlin.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="ORCS1.ico" />
+    <Content Include="ORCS3.ico" />
+    <Content Include="ORCS4.ico" />
     <Content Include="Resources\1downarrow1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -785,6 +789,15 @@
       </TargetPath>
       <PublishState>Include</PublishState>
       <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
