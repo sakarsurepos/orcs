@@ -31,29 +31,58 @@ namespace Robot
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Robot1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.labelTcpClientServer = new System.Windows.Forms.Label();
-            this.textConnectingStatus = new System.Windows.Forms.TextBox();
-            this.textTCPCommunicationType = new System.Windows.Forms.TextBox();
-            this.labelTCPCommunicationType = new System.Windows.Forms.Label();
+            this.groupBox57 = new System.Windows.Forms.GroupBox();
+            this.textTCPClientServerPortNumber = new System.Windows.Forms.TextBox();
+            this.button20 = new System.Windows.Forms.Button();
+            this.textTCPClientServerIPAddress = new System.Windows.Forms.TextBox();
+            this.labelTcpPortNumber = new System.Windows.Forms.Label();
+            this.labelIPAddress = new System.Windows.Forms.Label();
+            this.groupBox56 = new System.Windows.Forms.GroupBox();
             this.label154 = new System.Windows.Forms.Label();
             this.button47 = new System.Windows.Forms.Button();
             this.label44 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
             this.TCP_ClientServer_Default = new System.Windows.Forms.Button();
+            this.textConnectingStatus = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.button20 = new System.Windows.Forms.Button();
-            this.textTCPClientServerPortNumber = new System.Windows.Forms.TextBox();
-            this.textTCPClientServerIPAddress = new System.Windows.Forms.TextBox();
-            this.labelTcpPortNumber = new System.Windows.Forms.Label();
-            this.labelIPAddress = new System.Windows.Forms.Label();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.labelTcpClientServer = new System.Windows.Forms.Label();
+            this.textTCPCommunicationType = new System.Windows.Forms.TextBox();
+            this.labelTCPCommunicationType = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.labelComPort = new System.Windows.Forms.Label();
+            this.groupBox55 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.COM_Port_Default = new System.Windows.Forms.Button();
+            this.groupBox54 = new System.Windows.Forms.GroupBox();
+            this.comboComPortStopBits = new System.Windows.Forms.ComboBox();
+            this.comboComPortDataBits = new System.Windows.Forms.ComboBox();
+            this.comboComPortParity = new System.Windows.Forms.ComboBox();
+            this.comboComPortBaudrate = new System.Windows.Forms.ComboBox();
+            this.comboComPortName = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Connecting_status_1 = new System.Windows.Forms.TextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.labelComPort = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox53 = new System.Windows.Forms.GroupBox();
+            this.labelJoystickName = new System.Windows.Forms.Label();
+            this.labelJoystickStatus = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.Joystick_Initialization = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.groupBox52 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.CAM_Servo2 = new System.Windows.Forms.CheckBox();
+            this.Supply_Direction_Servo = new System.Windows.Forms.CheckBox();
+            this.Supply_Camera = new System.Windows.Forms.CheckBox();
+            this.Supply_GPS = new System.Windows.Forms.CheckBox();
+            this.Supply_Lights = new System.Windows.Forms.CheckBox();
             this.labelAdvenced = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -128,6 +157,7 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -758,42 +788,18 @@ namespace Robot
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.comboComPortStopBits = new System.Windows.Forms.ComboBox();
-            this.comboComPortDataBits = new System.Windows.Forms.ComboBox();
-            this.comboComPortParity = new System.Windows.Forms.ComboBox();
-            this.comboComPortBaudrate = new System.Windows.Forms.ComboBox();
-            this.comboComPortName = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.COM_Port_Default = new System.Windows.Forms.Button();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.CAM_Servo2 = new System.Windows.Forms.CheckBox();
-            this.Supply_Direction_Servo = new System.Windows.Forms.CheckBox();
-            this.Supply_Camera = new System.Windows.Forms.CheckBox();
-            this.Supply_GPS = new System.Windows.Forms.CheckBox();
-            this.Supply_Lights = new System.Windows.Forms.CheckBox();
-            this.labelJoystickName = new System.Windows.Forms.Label();
-            this.labelJoystickStatus = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.Joystick_Initialization = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cameraWindow = new Robot.CameraWindow();
-            this.groupBox52 = new System.Windows.Forms.GroupBox();
-            this.groupBox53 = new System.Windows.Forms.GroupBox();
-            this.groupBox54 = new System.Windows.Forms.GroupBox();
-            this.groupBox55 = new System.Windows.Forms.GroupBox();
-            this.groupBox56 = new System.Windows.Forms.GroupBox();
-            this.groupBox57 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.groupBox57.SuspendLayout();
+            this.groupBox56.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.groupBox55.SuspendLayout();
+            this.groupBox54.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox53.SuspendLayout();
+            this.groupBox52.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox36.SuspendLayout();
@@ -935,12 +941,6 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
-            this.groupBox52.SuspendLayout();
-            this.groupBox53.SuspendLayout();
-            this.groupBox54.SuspendLayout();
-            this.groupBox55.SuspendLayout();
-            this.groupBox56.SuspendLayout();
-            this.groupBox57.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -969,38 +969,64 @@ namespace Robot
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // pictureBox24
+            // groupBox57
             // 
-            resources.ApplyResources(this.pictureBox24, "pictureBox24");
-            this.pictureBox24.Image = global::Robot.Properties.Resources.kcmpci;
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.TabStop = false;
+            this.groupBox57.Controls.Add(this.textTCPClientServerPortNumber);
+            this.groupBox57.Controls.Add(this.button20);
+            this.groupBox57.Controls.Add(this.textTCPClientServerIPAddress);
+            this.groupBox57.Controls.Add(this.labelTcpPortNumber);
+            this.groupBox57.Controls.Add(this.labelIPAddress);
+            this.groupBox57.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox57, "groupBox57");
+            this.groupBox57.Name = "groupBox57";
+            this.groupBox57.TabStop = false;
             // 
-            // labelTcpClientServer
+            // textTCPClientServerPortNumber
             // 
-            resources.ApplyResources(this.labelTcpClientServer, "labelTcpClientServer");
-            this.labelTcpClientServer.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelTcpClientServer.Name = "labelTcpClientServer";
+            resources.ApplyResources(this.textTCPClientServerPortNumber, "textTCPClientServerPortNumber");
+            this.textTCPClientServerPortNumber.Name = "textTCPClientServerPortNumber";
             // 
-            // textConnectingStatus
+            // button20
             // 
-            resources.ApplyResources(this.textConnectingStatus, "textConnectingStatus");
-            this.textConnectingStatus.ForeColor = System.Drawing.Color.Red;
-            this.textConnectingStatus.Name = "textConnectingStatus";
-            this.textConnectingStatus.ReadOnly = true;
+            this.button20.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.button20, "button20");
+            this.button20.Name = "button20";
+            this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
-            // textTCPCommunicationType
+            // textTCPClientServerIPAddress
             // 
-            resources.ApplyResources(this.textTCPCommunicationType, "textTCPCommunicationType");
-            this.textTCPCommunicationType.Name = "textTCPCommunicationType";
-            this.textTCPCommunicationType.ReadOnly = true;
+            resources.ApplyResources(this.textTCPClientServerIPAddress, "textTCPClientServerIPAddress");
+            this.textTCPClientServerIPAddress.Name = "textTCPClientServerIPAddress";
             // 
-            // labelTCPCommunicationType
+            // labelTcpPortNumber
             // 
-            resources.ApplyResources(this.labelTCPCommunicationType, "labelTCPCommunicationType");
-            this.labelTCPCommunicationType.BackColor = System.Drawing.Color.Lavender;
-            this.labelTCPCommunicationType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelTCPCommunicationType.Name = "labelTCPCommunicationType";
+            resources.ApplyResources(this.labelTcpPortNumber, "labelTcpPortNumber");
+            this.labelTcpPortNumber.BackColor = System.Drawing.Color.Lavender;
+            this.labelTcpPortNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelTcpPortNumber.Name = "labelTcpPortNumber";
+            // 
+            // labelIPAddress
+            // 
+            resources.ApplyResources(this.labelIPAddress, "labelIPAddress");
+            this.labelIPAddress.BackColor = System.Drawing.Color.Lavender;
+            this.labelIPAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelIPAddress.Name = "labelIPAddress";
+            // 
+            // groupBox56
+            // 
+            this.groupBox56.Controls.Add(this.label154);
+            this.groupBox56.Controls.Add(this.button47);
+            this.groupBox56.Controls.Add(this.label44);
+            this.groupBox56.Controls.Add(this.button7);
+            this.groupBox56.Controls.Add(this.label39);
+            this.groupBox56.Controls.Add(this.TCP_ClientServer_Default);
+            this.groupBox56.Controls.Add(this.textConnectingStatus);
+            this.groupBox56.Controls.Add(this.label27);
+            this.groupBox56.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox56, "groupBox56");
+            this.groupBox56.Name = "groupBox56";
+            this.groupBox56.TabStop = false;
             // 
             // label154
             // 
@@ -1049,6 +1075,13 @@ namespace Robot
             this.TCP_ClientServer_Default.UseVisualStyleBackColor = false;
             this.TCP_ClientServer_Default.Click += new System.EventHandler(this.TCP_ClientServer_Default_Click);
             // 
+            // textConnectingStatus
+            // 
+            resources.ApplyResources(this.textConnectingStatus, "textConnectingStatus");
+            this.textConnectingStatus.ForeColor = System.Drawing.Color.Red;
+            this.textConnectingStatus.Name = "textConnectingStatus";
+            this.textConnectingStatus.ReadOnly = true;
+            // 
             // label27
             // 
             resources.ApplyResources(this.label27, "label27");
@@ -1056,37 +1089,31 @@ namespace Robot
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label27.Name = "label27";
             // 
-            // button20
+            // pictureBox24
             // 
-            this.button20.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.button20, "button20");
-            this.button20.Name = "button20";
-            this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            resources.ApplyResources(this.pictureBox24, "pictureBox24");
+            this.pictureBox24.Image = global::Robot.Properties.Resources.kcmpci;
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.TabStop = false;
             // 
-            // textTCPClientServerPortNumber
+            // labelTcpClientServer
             // 
-            resources.ApplyResources(this.textTCPClientServerPortNumber, "textTCPClientServerPortNumber");
-            this.textTCPClientServerPortNumber.Name = "textTCPClientServerPortNumber";
+            resources.ApplyResources(this.labelTcpClientServer, "labelTcpClientServer");
+            this.labelTcpClientServer.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelTcpClientServer.Name = "labelTcpClientServer";
             // 
-            // textTCPClientServerIPAddress
+            // textTCPCommunicationType
             // 
-            resources.ApplyResources(this.textTCPClientServerIPAddress, "textTCPClientServerIPAddress");
-            this.textTCPClientServerIPAddress.Name = "textTCPClientServerIPAddress";
+            resources.ApplyResources(this.textTCPCommunicationType, "textTCPCommunicationType");
+            this.textTCPCommunicationType.Name = "textTCPCommunicationType";
+            this.textTCPCommunicationType.ReadOnly = true;
             // 
-            // labelTcpPortNumber
+            // labelTCPCommunicationType
             // 
-            resources.ApplyResources(this.labelTcpPortNumber, "labelTcpPortNumber");
-            this.labelTcpPortNumber.BackColor = System.Drawing.Color.Lavender;
-            this.labelTcpPortNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelTcpPortNumber.Name = "labelTcpPortNumber";
-            // 
-            // labelIPAddress
-            // 
-            resources.ApplyResources(this.labelIPAddress, "labelIPAddress");
-            this.labelIPAddress.BackColor = System.Drawing.Color.Lavender;
-            this.labelIPAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelIPAddress.Name = "labelIPAddress";
+            resources.ApplyResources(this.labelTCPCommunicationType, "labelTCPCommunicationType");
+            this.labelTCPCommunicationType.BackColor = System.Drawing.Color.Lavender;
+            this.labelTCPCommunicationType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelTCPCommunicationType.Name = "labelTCPCommunicationType";
             // 
             // tabPage1
             // 
@@ -1100,11 +1127,148 @@ namespace Robot
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // labelComPort
+            // groupBox55
             // 
-            resources.ApplyResources(this.labelComPort, "labelComPort");
-            this.labelComPort.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelComPort.Name = "labelComPort";
+            this.groupBox55.Controls.Add(this.label7);
+            this.groupBox55.Controls.Add(this.COM_Port_Default);
+            this.groupBox55.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox55, "groupBox55");
+            this.groupBox55.Name = "groupBox55";
+            this.groupBox55.TabStop = false;
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Name = "label7";
+            // 
+            // COM_Port_Default
+            // 
+            this.COM_Port_Default.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.COM_Port_Default.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.COM_Port_Default.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.COM_Port_Default, "COM_Port_Default");
+            this.COM_Port_Default.Name = "COM_Port_Default";
+            this.COM_Port_Default.UseVisualStyleBackColor = false;
+            // 
+            // groupBox54
+            // 
+            this.groupBox54.Controls.Add(this.comboComPortStopBits);
+            this.groupBox54.Controls.Add(this.comboComPortDataBits);
+            this.groupBox54.Controls.Add(this.comboComPortParity);
+            this.groupBox54.Controls.Add(this.comboComPortBaudrate);
+            this.groupBox54.Controls.Add(this.comboComPortName);
+            this.groupBox54.Controls.Add(this.label5);
+            this.groupBox54.Controls.Add(this.label4);
+            this.groupBox54.Controls.Add(this.label3);
+            this.groupBox54.Controls.Add(this.label2);
+            this.groupBox54.Controls.Add(this.label1);
+            this.groupBox54.Controls.Add(this.Connecting_status_1);
+            this.groupBox54.Controls.Add(this.label6);
+            this.groupBox54.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox54, "groupBox54");
+            this.groupBox54.Name = "groupBox54";
+            this.groupBox54.TabStop = false;
+            // 
+            // comboComPortStopBits
+            // 
+            this.comboComPortStopBits.Items.AddRange(new object[] {
+            resources.GetString("comboComPortStopBits.Items"),
+            resources.GetString("comboComPortStopBits.Items1"),
+            resources.GetString("comboComPortStopBits.Items2")});
+            resources.ApplyResources(this.comboComPortStopBits, "comboComPortStopBits");
+            this.comboComPortStopBits.Name = "comboComPortStopBits";
+            // 
+            // comboComPortDataBits
+            // 
+            this.comboComPortDataBits.Items.AddRange(new object[] {
+            resources.GetString("comboComPortDataBits.Items"),
+            resources.GetString("comboComPortDataBits.Items1"),
+            resources.GetString("comboComPortDataBits.Items2"),
+            resources.GetString("comboComPortDataBits.Items3")});
+            resources.ApplyResources(this.comboComPortDataBits, "comboComPortDataBits");
+            this.comboComPortDataBits.Name = "comboComPortDataBits";
+            // 
+            // comboComPortParity
+            // 
+            this.comboComPortParity.Items.AddRange(new object[] {
+            resources.GetString("comboComPortParity.Items"),
+            resources.GetString("comboComPortParity.Items1"),
+            resources.GetString("comboComPortParity.Items2"),
+            resources.GetString("comboComPortParity.Items3"),
+            resources.GetString("comboComPortParity.Items4")});
+            resources.ApplyResources(this.comboComPortParity, "comboComPortParity");
+            this.comboComPortParity.Name = "comboComPortParity";
+            // 
+            // comboComPortBaudrate
+            // 
+            this.comboComPortBaudrate.Items.AddRange(new object[] {
+            resources.GetString("comboComPortBaudrate.Items"),
+            resources.GetString("comboComPortBaudrate.Items1"),
+            resources.GetString("comboComPortBaudrate.Items2"),
+            resources.GetString("comboComPortBaudrate.Items3"),
+            resources.GetString("comboComPortBaudrate.Items4"),
+            resources.GetString("comboComPortBaudrate.Items5"),
+            resources.GetString("comboComPortBaudrate.Items6"),
+            resources.GetString("comboComPortBaudrate.Items7"),
+            resources.GetString("comboComPortBaudrate.Items8"),
+            resources.GetString("comboComPortBaudrate.Items9"),
+            resources.GetString("comboComPortBaudrate.Items10")});
+            resources.ApplyResources(this.comboComPortBaudrate, "comboComPortBaudrate");
+            this.comboComPortBaudrate.Name = "comboComPortBaudrate";
+            // 
+            // comboComPortName
+            // 
+            this.comboComPortName.Items.AddRange(new object[] {
+            resources.GetString("comboComPortName.Items"),
+            resources.GetString("comboComPortName.Items1"),
+            resources.GetString("comboComPortName.Items2"),
+            resources.GetString("comboComPortName.Items3"),
+            resources.GetString("comboComPortName.Items4"),
+            resources.GetString("comboComPortName.Items5"),
+            resources.GetString("comboComPortName.Items6"),
+            resources.GetString("comboComPortName.Items7"),
+            resources.GetString("comboComPortName.Items8"),
+            resources.GetString("comboComPortName.Items9"),
+            resources.GetString("comboComPortName.Items10"),
+            resources.GetString("comboComPortName.Items11")});
+            resources.ApplyResources(this.comboComPortName, "comboComPortName");
+            this.comboComPortName.Name = "comboComPortName";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Lavender;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Name = "label5";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.Color.Lavender;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Name = "label4";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Lavender;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Name = "label3";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Lavender;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Lavender;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Name = "label1";
             // 
             // Connecting_status_1
             // 
@@ -1113,19 +1277,25 @@ namespace Robot
             this.Connecting_status_1.Name = "Connecting_status_1";
             this.Connecting_status_1.ReadOnly = true;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Robot.Properties.Resources.input_devices_settings;
-            resources.ApplyResources(this.pictureBox6, "pictureBox6");
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.TabStop = false;
-            // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.BackColor = System.Drawing.Color.Lavender;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Name = "label6";
+            // 
+            // labelComPort
+            // 
+            resources.ApplyResources(this.labelComPort, "labelComPort");
+            this.labelComPort.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelComPort.Name = "labelComPort";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Robot.Properties.Resources.input_devices_settings;
+            resources.ApplyResources(this.pictureBox6, "pictureBox6");
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.TabStop = false;
             // 
             // tabPage2
             // 
@@ -1139,6 +1309,120 @@ namespace Robot
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox53
+            // 
+            this.groupBox53.Controls.Add(this.labelJoystickName);
+            this.groupBox53.Controls.Add(this.labelJoystickStatus);
+            this.groupBox53.Controls.Add(this.label19);
+            this.groupBox53.Controls.Add(this.Joystick_Initialization);
+            this.groupBox53.Controls.Add(this.label20);
+            this.groupBox53.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox53, "groupBox53");
+            this.groupBox53.Name = "groupBox53";
+            this.groupBox53.TabStop = false;
+            // 
+            // labelJoystickName
+            // 
+            resources.ApplyResources(this.labelJoystickName, "labelJoystickName");
+            this.labelJoystickName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelJoystickName.Name = "labelJoystickName";
+            // 
+            // labelJoystickStatus
+            // 
+            resources.ApplyResources(this.labelJoystickStatus, "labelJoystickStatus");
+            this.labelJoystickStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelJoystickStatus.Name = "labelJoystickStatus";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label19.Name = "label19";
+            // 
+            // Joystick_Initialization
+            // 
+            this.Joystick_Initialization.BackColor = System.Drawing.SystemColors.Control;
+            this.Joystick_Initialization.BackgroundImage = global::Robot.Properties.Resources.usb;
+            resources.ApplyResources(this.Joystick_Initialization, "Joystick_Initialization");
+            this.Joystick_Initialization.ForeColor = System.Drawing.Color.Black;
+            this.Joystick_Initialization.Name = "Joystick_Initialization";
+            this.Joystick_Initialization.UseVisualStyleBackColor = false;
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label20.Name = "label20";
+            // 
+            // groupBox52
+            // 
+            this.groupBox52.Controls.Add(this.checkBox3);
+            this.groupBox52.Controls.Add(this.CAM_Servo2);
+            this.groupBox52.Controls.Add(this.Supply_Direction_Servo);
+            this.groupBox52.Controls.Add(this.Supply_Camera);
+            this.groupBox52.Controls.Add(this.Supply_GPS);
+            this.groupBox52.Controls.Add(this.Supply_Lights);
+            this.groupBox52.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox52, "groupBox52");
+            this.groupBox52.Name = "groupBox52";
+            this.groupBox52.TabStop = false;
+            // 
+            // checkBox3
+            // 
+            resources.ApplyResources(this.checkBox3, "checkBox3");
+            this.checkBox3.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.UseVisualStyleBackColor = false;
+            // 
+            // CAM_Servo2
+            // 
+            resources.ApplyResources(this.CAM_Servo2, "CAM_Servo2");
+            this.CAM_Servo2.BackColor = System.Drawing.Color.Transparent;
+            this.CAM_Servo2.Checked = true;
+            this.CAM_Servo2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CAM_Servo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CAM_Servo2.Name = "CAM_Servo2";
+            this.CAM_Servo2.UseVisualStyleBackColor = false;
+            // 
+            // Supply_Direction_Servo
+            // 
+            resources.ApplyResources(this.Supply_Direction_Servo, "Supply_Direction_Servo");
+            this.Supply_Direction_Servo.BackColor = System.Drawing.Color.Transparent;
+            this.Supply_Direction_Servo.Checked = true;
+            this.Supply_Direction_Servo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Supply_Direction_Servo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Supply_Direction_Servo.Name = "Supply_Direction_Servo";
+            this.Supply_Direction_Servo.UseVisualStyleBackColor = false;
+            // 
+            // Supply_Camera
+            // 
+            resources.ApplyResources(this.Supply_Camera, "Supply_Camera");
+            this.Supply_Camera.BackColor = System.Drawing.Color.Transparent;
+            this.Supply_Camera.Checked = true;
+            this.Supply_Camera.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Supply_Camera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Supply_Camera.Name = "Supply_Camera";
+            this.Supply_Camera.UseVisualStyleBackColor = false;
+            // 
+            // Supply_GPS
+            // 
+            resources.ApplyResources(this.Supply_GPS, "Supply_GPS");
+            this.Supply_GPS.BackColor = System.Drawing.Color.Transparent;
+            this.Supply_GPS.Checked = true;
+            this.Supply_GPS.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Supply_GPS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Supply_GPS.Name = "Supply_GPS";
+            this.Supply_GPS.UseVisualStyleBackColor = false;
+            // 
+            // Supply_Lights
+            // 
+            resources.ApplyResources(this.Supply_Lights, "Supply_Lights");
+            this.Supply_Lights.BackColor = System.Drawing.Color.Transparent;
+            this.Supply_Lights.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Supply_Lights.Name = "Supply_Lights";
+            this.Supply_Lights.UseVisualStyleBackColor = false;
             // 
             // labelAdvenced
             // 
@@ -1728,6 +2012,12 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -6576,296 +6866,6 @@ namespace Robot
             // 
             this.timer5.Interval = 500;
             // 
-            // comboComPortStopBits
-            // 
-            this.comboComPortStopBits.Items.AddRange(new object[] {
-            resources.GetString("comboComPortStopBits.Items"),
-            resources.GetString("comboComPortStopBits.Items1"),
-            resources.GetString("comboComPortStopBits.Items2")});
-            resources.ApplyResources(this.comboComPortStopBits, "comboComPortStopBits");
-            this.comboComPortStopBits.Name = "comboComPortStopBits";
-            // 
-            // comboComPortDataBits
-            // 
-            this.comboComPortDataBits.Items.AddRange(new object[] {
-            resources.GetString("comboComPortDataBits.Items"),
-            resources.GetString("comboComPortDataBits.Items1"),
-            resources.GetString("comboComPortDataBits.Items2"),
-            resources.GetString("comboComPortDataBits.Items3")});
-            resources.ApplyResources(this.comboComPortDataBits, "comboComPortDataBits");
-            this.comboComPortDataBits.Name = "comboComPortDataBits";
-            // 
-            // comboComPortParity
-            // 
-            this.comboComPortParity.Items.AddRange(new object[] {
-            resources.GetString("comboComPortParity.Items"),
-            resources.GetString("comboComPortParity.Items1"),
-            resources.GetString("comboComPortParity.Items2"),
-            resources.GetString("comboComPortParity.Items3"),
-            resources.GetString("comboComPortParity.Items4")});
-            resources.ApplyResources(this.comboComPortParity, "comboComPortParity");
-            this.comboComPortParity.Name = "comboComPortParity";
-            // 
-            // comboComPortBaudrate
-            // 
-            this.comboComPortBaudrate.Items.AddRange(new object[] {
-            resources.GetString("comboComPortBaudrate.Items"),
-            resources.GetString("comboComPortBaudrate.Items1"),
-            resources.GetString("comboComPortBaudrate.Items2"),
-            resources.GetString("comboComPortBaudrate.Items3"),
-            resources.GetString("comboComPortBaudrate.Items4"),
-            resources.GetString("comboComPortBaudrate.Items5"),
-            resources.GetString("comboComPortBaudrate.Items6"),
-            resources.GetString("comboComPortBaudrate.Items7"),
-            resources.GetString("comboComPortBaudrate.Items8"),
-            resources.GetString("comboComPortBaudrate.Items9"),
-            resources.GetString("comboComPortBaudrate.Items10")});
-            resources.ApplyResources(this.comboComPortBaudrate, "comboComPortBaudrate");
-            this.comboComPortBaudrate.Name = "comboComPortBaudrate";
-            // 
-            // comboComPortName
-            // 
-            this.comboComPortName.Items.AddRange(new object[] {
-            resources.GetString("comboComPortName.Items"),
-            resources.GetString("comboComPortName.Items1"),
-            resources.GetString("comboComPortName.Items2"),
-            resources.GetString("comboComPortName.Items3"),
-            resources.GetString("comboComPortName.Items4"),
-            resources.GetString("comboComPortName.Items5"),
-            resources.GetString("comboComPortName.Items6"),
-            resources.GetString("comboComPortName.Items7"),
-            resources.GetString("comboComPortName.Items8"),
-            resources.GetString("comboComPortName.Items9"),
-            resources.GetString("comboComPortName.Items10"),
-            resources.GetString("comboComPortName.Items11")});
-            resources.ApplyResources(this.comboComPortName, "comboComPortName");
-            this.comboComPortName.Name = "comboComPortName";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.Color.Lavender;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Name = "label5";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.BackColor = System.Drawing.Color.Lavender;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Name = "label4";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.BackColor = System.Drawing.Color.Lavender;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Name = "label3";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.Lavender;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Name = "label2";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Lavender;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Name = "label1";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Name = "label7";
-            // 
-            // COM_Port_Default
-            // 
-            this.COM_Port_Default.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.COM_Port_Default.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.COM_Port_Default.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.COM_Port_Default, "COM_Port_Default");
-            this.COM_Port_Default.Name = "COM_Port_Default";
-            this.COM_Port_Default.UseVisualStyleBackColor = false;
-            // 
-            // checkBox3
-            // 
-            resources.ApplyResources(this.checkBox3, "checkBox3");
-            this.checkBox3.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = false;
-            // 
-            // CAM_Servo2
-            // 
-            resources.ApplyResources(this.CAM_Servo2, "CAM_Servo2");
-            this.CAM_Servo2.BackColor = System.Drawing.Color.Transparent;
-            this.CAM_Servo2.Checked = true;
-            this.CAM_Servo2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CAM_Servo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CAM_Servo2.Name = "CAM_Servo2";
-            this.CAM_Servo2.UseVisualStyleBackColor = false;
-            // 
-            // Supply_Direction_Servo
-            // 
-            resources.ApplyResources(this.Supply_Direction_Servo, "Supply_Direction_Servo");
-            this.Supply_Direction_Servo.BackColor = System.Drawing.Color.Transparent;
-            this.Supply_Direction_Servo.Checked = true;
-            this.Supply_Direction_Servo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Supply_Direction_Servo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Supply_Direction_Servo.Name = "Supply_Direction_Servo";
-            this.Supply_Direction_Servo.UseVisualStyleBackColor = false;
-            // 
-            // Supply_Camera
-            // 
-            resources.ApplyResources(this.Supply_Camera, "Supply_Camera");
-            this.Supply_Camera.BackColor = System.Drawing.Color.Transparent;
-            this.Supply_Camera.Checked = true;
-            this.Supply_Camera.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Supply_Camera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Supply_Camera.Name = "Supply_Camera";
-            this.Supply_Camera.UseVisualStyleBackColor = false;
-            // 
-            // Supply_GPS
-            // 
-            resources.ApplyResources(this.Supply_GPS, "Supply_GPS");
-            this.Supply_GPS.BackColor = System.Drawing.Color.Transparent;
-            this.Supply_GPS.Checked = true;
-            this.Supply_GPS.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Supply_GPS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Supply_GPS.Name = "Supply_GPS";
-            this.Supply_GPS.UseVisualStyleBackColor = false;
-            // 
-            // Supply_Lights
-            // 
-            resources.ApplyResources(this.Supply_Lights, "Supply_Lights");
-            this.Supply_Lights.BackColor = System.Drawing.Color.Transparent;
-            this.Supply_Lights.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Supply_Lights.Name = "Supply_Lights";
-            this.Supply_Lights.UseVisualStyleBackColor = false;
-            // 
-            // labelJoystickName
-            // 
-            resources.ApplyResources(this.labelJoystickName, "labelJoystickName");
-            this.labelJoystickName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelJoystickName.Name = "labelJoystickName";
-            // 
-            // labelJoystickStatus
-            // 
-            resources.ApplyResources(this.labelJoystickStatus, "labelJoystickStatus");
-            this.labelJoystickStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelJoystickStatus.Name = "labelJoystickStatus";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label19.Name = "label19";
-            // 
-            // Joystick_Initialization
-            // 
-            this.Joystick_Initialization.BackColor = System.Drawing.SystemColors.Control;
-            this.Joystick_Initialization.BackgroundImage = global::Robot.Properties.Resources.usb;
-            resources.ApplyResources(this.Joystick_Initialization, "Joystick_Initialization");
-            this.Joystick_Initialization.ForeColor = System.Drawing.Color.Black;
-            this.Joystick_Initialization.Name = "Joystick_Initialization";
-            this.Joystick_Initialization.UseVisualStyleBackColor = false;
-            // 
-            // label20
-            // 
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Name = "label20";
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
-            // 
-            // groupBox52
-            // 
-            this.groupBox52.Controls.Add(this.checkBox3);
-            this.groupBox52.Controls.Add(this.CAM_Servo2);
-            this.groupBox52.Controls.Add(this.Supply_Direction_Servo);
-            this.groupBox52.Controls.Add(this.Supply_Camera);
-            this.groupBox52.Controls.Add(this.Supply_GPS);
-            this.groupBox52.Controls.Add(this.Supply_Lights);
-            this.groupBox52.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.groupBox52, "groupBox52");
-            this.groupBox52.Name = "groupBox52";
-            this.groupBox52.TabStop = false;
-            // 
-            // groupBox53
-            // 
-            this.groupBox53.Controls.Add(this.labelJoystickName);
-            this.groupBox53.Controls.Add(this.labelJoystickStatus);
-            this.groupBox53.Controls.Add(this.label19);
-            this.groupBox53.Controls.Add(this.Joystick_Initialization);
-            this.groupBox53.Controls.Add(this.label20);
-            this.groupBox53.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.groupBox53, "groupBox53");
-            this.groupBox53.Name = "groupBox53";
-            this.groupBox53.TabStop = false;
-            // 
-            // groupBox54
-            // 
-            this.groupBox54.Controls.Add(this.comboComPortStopBits);
-            this.groupBox54.Controls.Add(this.comboComPortDataBits);
-            this.groupBox54.Controls.Add(this.comboComPortParity);
-            this.groupBox54.Controls.Add(this.comboComPortBaudrate);
-            this.groupBox54.Controls.Add(this.comboComPortName);
-            this.groupBox54.Controls.Add(this.label5);
-            this.groupBox54.Controls.Add(this.label4);
-            this.groupBox54.Controls.Add(this.label3);
-            this.groupBox54.Controls.Add(this.label2);
-            this.groupBox54.Controls.Add(this.label1);
-            this.groupBox54.Controls.Add(this.Connecting_status_1);
-            this.groupBox54.Controls.Add(this.label6);
-            this.groupBox54.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.groupBox54, "groupBox54");
-            this.groupBox54.Name = "groupBox54";
-            this.groupBox54.TabStop = false;
-            // 
-            // groupBox55
-            // 
-            this.groupBox55.Controls.Add(this.label7);
-            this.groupBox55.Controls.Add(this.COM_Port_Default);
-            this.groupBox55.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.groupBox55, "groupBox55");
-            this.groupBox55.Name = "groupBox55";
-            this.groupBox55.TabStop = false;
-            // 
-            // groupBox56
-            // 
-            this.groupBox56.Controls.Add(this.label154);
-            this.groupBox56.Controls.Add(this.button47);
-            this.groupBox56.Controls.Add(this.label44);
-            this.groupBox56.Controls.Add(this.button7);
-            this.groupBox56.Controls.Add(this.label39);
-            this.groupBox56.Controls.Add(this.TCP_ClientServer_Default);
-            this.groupBox56.Controls.Add(this.textConnectingStatus);
-            this.groupBox56.Controls.Add(this.label27);
-            this.groupBox56.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.groupBox56, "groupBox56");
-            this.groupBox56.Name = "groupBox56";
-            this.groupBox56.TabStop = false;
-            // 
-            // groupBox57
-            // 
-            this.groupBox57.Controls.Add(this.textTCPClientServerPortNumber);
-            this.groupBox57.Controls.Add(this.button20);
-            this.groupBox57.Controls.Add(this.textTCPClientServerIPAddress);
-            this.groupBox57.Controls.Add(this.labelTcpPortNumber);
-            this.groupBox57.Controls.Add(this.labelIPAddress);
-            this.groupBox57.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.groupBox57, "groupBox57");
-            this.groupBox57.Name = "groupBox57";
-            this.groupBox57.TabStop = false;
-            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -6916,12 +6916,24 @@ namespace Robot
             this.tabControl1.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.groupBox57.ResumeLayout(false);
+            this.groupBox57.PerformLayout();
+            this.groupBox56.ResumeLayout(false);
+            this.groupBox56.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox55.ResumeLayout(false);
+            this.groupBox55.PerformLayout();
+            this.groupBox54.ResumeLayout(false);
+            this.groupBox54.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox53.ResumeLayout(false);
+            this.groupBox53.PerformLayout();
+            this.groupBox52.ResumeLayout(false);
+            this.groupBox52.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -7117,18 +7129,6 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
-            this.groupBox52.ResumeLayout(false);
-            this.groupBox52.PerformLayout();
-            this.groupBox53.ResumeLayout(false);
-            this.groupBox53.PerformLayout();
-            this.groupBox54.ResumeLayout(false);
-            this.groupBox54.PerformLayout();
-            this.groupBox55.ResumeLayout(false);
-            this.groupBox55.PerformLayout();
-            this.groupBox56.ResumeLayout(false);
-            this.groupBox56.PerformLayout();
-            this.groupBox57.ResumeLayout(false);
-            this.groupBox57.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
