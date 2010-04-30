@@ -916,11 +916,12 @@ namespace Robot
 
         private void Robot_Load(object sender, EventArgs e)
         {
+            labelCommunicationType.Text = "TCP Client";
+            labelConnectingStatus.Text = "Closed";
+            label122.Text = "Not";
             groupDirectionAndMotion.Enabled = false;
             groupCameraRotation.Enabled = false;
             groupCameraRot2.Enabled = false;
-            labelCommunicationType.Text = null;
-            labelConnectingStatus.Text = null;
             labelJoystickName.Text = null;
             SetMap();
             Maps.SelectedItem = "TUKE";
