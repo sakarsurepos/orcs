@@ -46,7 +46,7 @@
     <MinimumRequiredVersion>4.0.0.17</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>89</ApplicationRevision>
+    <ApplicationRevision>90</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -780,6 +780,24 @@
       </TargetPath>
       <PublishState>Include</PublishState>
       <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Microsoft.DirectX.DirectInput.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Microsoft.DirectX.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="sk\Robot.resources">
       <Visible>False</Visible>
