@@ -788,6 +788,7 @@ namespace Robot
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.textBox27 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -5473,6 +5474,7 @@ namespace Robot
             // 
             // groupRobotLogs
             // 
+            this.groupRobotLogs.Controls.Add(this.textBox27);
             this.groupRobotLogs.Controls.Add(this.textLogs);
             this.groupRobotLogs.Controls.Add(this.buttonClearLogs);
             resources.ApplyResources(this.groupRobotLogs, "groupRobotLogs");
@@ -6871,6 +6873,14 @@ namespace Robot
             // 
             this.timer5.Interval = 500;
             // 
+            // textBox27
+            // 
+            this.textBox27.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.textBox27, "textBox27");
+            this.textBox27.ForeColor = System.Drawing.Color.Black;
+            this.textBox27.Name = "textBox27";
+            this.textBox27.ReadOnly = true;
+            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -7901,6 +7911,7 @@ namespace Robot
         private System.Windows.Forms.GroupBox groupBox52;
         private System.Windows.Forms.GroupBox groupBox57;
         private System.Windows.Forms.GroupBox groupBox56;
+        public System.Windows.Forms.TextBox textBox27;
 
 
     }
