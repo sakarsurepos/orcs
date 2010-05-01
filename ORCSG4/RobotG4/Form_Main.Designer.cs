@@ -1150,6 +1150,7 @@ namespace Robot
             resources.ApplyResources(this.COM_Port_Default, "COM_Port_Default");
             this.COM_Port_Default.Name = "COM_Port_Default";
             this.COM_Port_Default.UseVisualStyleBackColor = false;
+            this.COM_Port_Default.Click += new System.EventHandler(this.COM_Port_Default_Click_1);
             // 
             // groupBox54
             // 
@@ -1348,6 +1349,7 @@ namespace Robot
             this.Joystick_Initialization.ForeColor = System.Drawing.Color.Black;
             this.Joystick_Initialization.Name = "Joystick_Initialization";
             this.Joystick_Initialization.UseVisualStyleBackColor = false;
+            this.Joystick_Initialization.Click += new System.EventHandler(this.Joystick_Initialization_Click_1);
             // 
             // label20
             // 
@@ -1766,6 +1768,7 @@ namespace Robot
             // 
             // pictureBoxsmallcam
             // 
+            this.pictureBoxsmallcam.BackColor = System.Drawing.Color.SlateGray;
             resources.ApplyResources(this.pictureBoxsmallcam, "pictureBoxsmallcam");
             this.pictureBoxsmallcam.Name = "pictureBoxsmallcam";
             this.pictureBoxsmallcam.TabStop = false;
@@ -2015,6 +2018,7 @@ namespace Robot
             // 
             // cameraWindow
             // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
             this.cameraWindow.Camera = null;
             resources.ApplyResources(this.cameraWindow, "cameraWindow");
             this.cameraWindow.Name = "cameraWindow";
@@ -5540,6 +5544,7 @@ namespace Robot
             this.disconnectAllToolStripMenuItem.Image = global::Robot.Properties.Resources.OFF;
             this.disconnectAllToolStripMenuItem.Name = "disconnectAllToolStripMenuItem";
             resources.ApplyResources(this.disconnectAllToolStripMenuItem, "disconnectAllToolStripMenuItem");
+            this.disconnectAllToolStripMenuItem.Click += new System.EventHandler(this.disconnectAllToolStripMenuItem_Click);
             // 
             // settings
             // 

@@ -305,7 +305,7 @@ namespace Robot
         int lop;
         double xultrasonic;
         double yultrasonic;
-        int servoinc = 126;
+        int servoinc = 0;
         Graphics Obj1;
         //ultra sonic
         /////////////
@@ -498,11 +498,10 @@ namespace Robot
             {
                 SendData(SendMessage.GPS_OFF());
             }
-        }  
-  
-        private void Joystick_Initialization_Click(object sender, EventArgs e)
+        }
+
+        private void Joystick_Initialization_Click_1(object sender, EventArgs e)
         {
-            
             if (labelJoystickStatus.Text == "OFF")
             {
                 labelJoystickStatus.Text = "ON";
@@ -945,7 +944,7 @@ namespace Robot
             toolStripconnect.Enabled                = true;
         }
 
-        private void COM_Port_Default_Click(object sender, EventArgs e)
+        private void COM_Port_Default_Click_1(object sender, EventArgs e)
         {
             comboComPortName.Text       = "COM3";
             comboComPortBaudrate.Text   = "19200";
@@ -3871,10 +3870,10 @@ namespace Robot
 
             while (a <= 240)
             {
-                //if (checkBoxSim.Checked == false)
-                //{
-                //SendData(Moves.CAM_Left_Right(servoinc - 5));
-                //}
+                if (checkBoxSim.Checked == false)
+                {
+                    SendData(Moves.CAM_Left_Right(servoinc + 1));
+                }
                 Thread.Sleep(2000);
 
                 //vypocet sinusu prepona a protilahla strana
@@ -3923,7 +3922,7 @@ namespace Robot
                 a = (a + 5);
 
             }
-            servoinc = 126;
+            servoinc = 0;
         }
 
         /////Tlacitko na scanovanie
@@ -3933,7 +3932,7 @@ namespace Robot
             Obj1 = pictureBoxUltraSonicScan.CreateGraphics();
             Thread tr1 = new Thread(ultra);
             tr1.Start();
-            button61_Click_1(sender, e);
+            //button61_Click_1(sender, e);
         }
 
         private void button92_Click(object sender, EventArgs e)
@@ -4321,7 +4320,11 @@ namespace Robot
                 MessageBox.Show("Game Finish");
             }
         }
-        /////3D
+
+        private void disconnectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
 
    }
 }
