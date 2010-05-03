@@ -3874,7 +3874,7 @@ namespace Robot
 
             while (a <= 240)
             {
-                servoinc = servoinc + 5;
+                servoinc = servoinc + 2;
                 if (checkBoxSim.Checked == false)
                 {
                     SendData(Moves.CAM_Left_Right(servoinc));
