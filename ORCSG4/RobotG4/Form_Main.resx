@@ -14004,29 +14004,8 @@ Mouse y:
   <data name="&gt;&gt;tabPage13.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="textBoxSignalLevel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 156</value>
-  </data>
-  <data name="textBoxSignalLevel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="textBoxSignalLevel.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;textBoxSignalLevel.Name" xml:space="preserve">
-    <value>textBoxSignalLevel</value>
-  </data>
-  <data name="&gt;&gt;textBoxSignalLevel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxSignalLevel.Parent" xml:space="preserve">
-    <value>tabPage15</value>
-  </data>
-  <data name="&gt;&gt;textBoxSignalLevel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="terminalControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 156</value>
+    <value>12, 18</value>
   </data>
   <data name="terminalControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>449, 21</value>
@@ -14044,10 +14023,55 @@ Mouse y:
     <value>WalburySoftware.TerminalControl, TerminalControl, Version=1.0.3439.32834, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;terminalControl1.Parent" xml:space="preserve">
-    <value>tabPage15</value>
+    <value>groupBox58</value>
   </data>
   <data name="&gt;&gt;terminalControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBoxSignalLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>462, 18</value>
+  </data>
+  <data name="textBoxSignalLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="textBoxSignalLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;textBoxSignalLevel.Name" xml:space="preserve">
+    <value>textBoxSignalLevel</value>
+  </data>
+  <data name="&gt;&gt;textBoxSignalLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxSignalLevel.Parent" xml:space="preserve">
+    <value>groupBox58</value>
+  </data>
+  <data name="&gt;&gt;textBoxSignalLevel.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="groupBox58.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 151</value>
+  </data>
+  <data name="groupBox58.Size" type="System.Drawing.Size, System.Drawing">
+    <value>568, 45</value>
+  </data>
+  <data name="groupBox58.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="groupBox58.Text" xml:space="preserve">
+    <value>Linux Status Console</value>
+  </data>
+  <data name="&gt;&gt;groupBox58.Name" xml:space="preserve">
+    <value>groupBox58</value>
+  </data>
+  <data name="&gt;&gt;groupBox58.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox58.Parent" xml:space="preserve">
+    <value>tabPage15</value>
+  </data>
+  <data name="&gt;&gt;groupBox58.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="checkBoxStatUp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -14320,7 +14344,7 @@ Mouse y:
     <value>tabPage15</value>
   </data>
   <data name="&gt;&gt;groupBox23.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="button68.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -14425,7 +14449,7 @@ Mouse y:
     <value>tabPage15</value>
   </data>
   <data name="&gt;&gt;groupBox22.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="pictureBox28.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -14452,7 +14476,7 @@ Mouse y:
     <value>tabPage15</value>
   </data>
   <data name="&gt;&gt;pictureBox28.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="terminalControl2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 20</value>
@@ -14479,7 +14503,7 @@ Mouse y:
     <value>0</value>
   </data>
   <data name="groupBox40.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 177</value>
+    <value>17, 194</value>
   </data>
   <data name="groupBox40.Size" type="System.Drawing.Size, System.Drawing">
     <value>568, 411</value>
@@ -14488,7 +14512,7 @@ Mouse y:
     <value>27</value>
   </data>
   <data name="groupBox40.Text" xml:space="preserve">
-    <value>Linux Console to ORCS-OS</value>
+    <value>Linux Command Console</value>
   </data>
   <data name="&gt;&gt;groupBox40.Name" xml:space="preserve">
     <value>groupBox40</value>
@@ -14500,7 +14524,7 @@ Mouse y:
     <value>tabPage15</value>
   </data>
   <data name="&gt;&gt;groupBox40.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="tabPage15.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

@@ -790,6 +790,7 @@ namespace Robot
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.terminalControl2 = new WalburySoftware.TerminalControl();
             this.cameraWindow = new Robot.CameraWindow();
+            this.groupBox58 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -944,6 +945,7 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
+            this.groupBox58.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -4935,8 +4937,7 @@ namespace Robot
             // 
             this.tabPage15.BackColor = System.Drawing.Color.Lavender;
             this.tabPage15.BackgroundImage = global::Robot.Properties.Resources.back;
-            this.tabPage15.Controls.Add(this.textBoxSignalLevel);
-            this.tabPage15.Controls.Add(this.terminalControl1);
+            this.tabPage15.Controls.Add(this.groupBox58);
             this.tabPage15.Controls.Add(this.groupBox23);
             this.tabPage15.Controls.Add(this.groupBox22);
             this.tabPage15.Controls.Add(this.pictureBox28);
@@ -6895,6 +6896,15 @@ namespace Robot
             resources.ApplyResources(this.cameraWindow, "cameraWindow");
             this.cameraWindow.Name = "cameraWindow";
             // 
+            // groupBox58
+            // 
+            this.groupBox58.Controls.Add(this.terminalControl1);
+            this.groupBox58.Controls.Add(this.textBoxSignalLevel);
+            this.groupBox58.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox58, "groupBox58");
+            this.groupBox58.Name = "groupBox58";
+            this.groupBox58.TabStop = false;
+            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -7089,7 +7099,6 @@ namespace Robot
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             this.tabPage15.ResumeLayout(false);
-            this.tabPage15.PerformLayout();
             this.groupBox23.ResumeLayout(false);
             this.groupBox23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
@@ -7159,6 +7168,8 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
+            this.groupBox58.ResumeLayout(false);
+            this.groupBox58.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7928,6 +7939,7 @@ namespace Robot
         private System.Windows.Forms.GroupBox groupBox56;
         public System.Windows.Forms.TextBox textLogsOutput;
         private WalburySoftware.TerminalControl terminalControl2;
+        private System.Windows.Forms.GroupBox groupBox58;
 
 
     }
