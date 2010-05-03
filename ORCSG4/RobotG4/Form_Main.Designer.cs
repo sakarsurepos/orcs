@@ -157,7 +157,6 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
-            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -599,6 +598,7 @@ namespace Robot
             this.label149 = new System.Windows.Forms.Label();
             this.ConsoleStat = new System.Windows.Forms.Label();
             this.groupRobotLogs = new System.Windows.Forms.GroupBox();
+            this.textLogsOutput = new System.Windows.Forms.TextBox();
             this.buttonClearLogs = new System.Windows.Forms.Button();
             this.ItemsMenu = new System.Windows.Forms.MenuStrip();
             this.plugIn = new System.Windows.Forms.ToolStripMenuItem();
@@ -788,7 +788,7 @@ namespace Robot
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.cameraWindow = new Robot.CameraWindow();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -2016,13 +2016,6 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -5474,13 +5467,21 @@ namespace Robot
             // 
             // groupRobotLogs
             // 
-            this.groupRobotLogs.Controls.Add(this.textBox27);
+            this.groupRobotLogs.Controls.Add(this.textLogsOutput);
             this.groupRobotLogs.Controls.Add(this.textLogs);
             this.groupRobotLogs.Controls.Add(this.buttonClearLogs);
             resources.ApplyResources(this.groupRobotLogs, "groupRobotLogs");
             this.groupRobotLogs.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupRobotLogs.Name = "groupRobotLogs";
             this.groupRobotLogs.TabStop = false;
+            // 
+            // textLogsOutput
+            // 
+            this.textLogsOutput.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.textLogsOutput, "textLogsOutput");
+            this.textLogsOutput.ForeColor = System.Drawing.Color.Black;
+            this.textLogsOutput.Name = "textLogsOutput";
+            this.textLogsOutput.ReadOnly = true;
             // 
             // buttonClearLogs
             // 
@@ -6873,13 +6874,12 @@ namespace Robot
             // 
             this.timer5.Interval = 500;
             // 
-            // textBox27
+            // cameraWindow
             // 
-            this.textBox27.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.textBox27, "textBox27");
-            this.textBox27.ForeColor = System.Drawing.Color.Black;
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ReadOnly = true;
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // Robot1
             // 
@@ -7911,7 +7911,7 @@ namespace Robot
         private System.Windows.Forms.GroupBox groupBox52;
         private System.Windows.Forms.GroupBox groupBox57;
         private System.Windows.Forms.GroupBox groupBox56;
-        public System.Windows.Forms.TextBox textBox27;
+        public System.Windows.Forms.TextBox textLogsOutput;
 
 
     }
