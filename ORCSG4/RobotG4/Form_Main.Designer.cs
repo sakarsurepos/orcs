@@ -157,6 +157,7 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -788,7 +789,7 @@ namespace Robot
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.cameraWindow = new Robot.CameraWindow();
+            this.terminalControl2 = new WalburySoftware.TerminalControl();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -2016,6 +2017,13 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -4933,6 +4941,7 @@ namespace Robot
             // 
             this.tabPage15.BackColor = System.Drawing.Color.Lavender;
             this.tabPage15.BackgroundImage = global::Robot.Properties.Resources.back;
+            this.tabPage15.Controls.Add(this.terminalControl2);
             this.tabPage15.Controls.Add(this.textBoxSignalLevel);
             this.tabPage15.Controls.Add(this.groupBox23);
             this.tabPage15.Controls.Add(this.groupBox22);
@@ -6874,12 +6883,16 @@ namespace Robot
             // 
             this.timer5.Interval = 500;
             // 
-            // cameraWindow
+            // terminalControl2
             // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
+            this.terminalControl2.AuthType = Poderosa.ConnectionParam.AuthType.Password;
+            this.terminalControl2.Host = "";
+            this.terminalControl2.IdentifyFile = "";
+            resources.ApplyResources(this.terminalControl2, "terminalControl2");
+            this.terminalControl2.Method = WalburySoftware.ConnectionMethod.Telnet;
+            this.terminalControl2.Name = "terminalControl2";
+            this.terminalControl2.Password = "";
+            this.terminalControl2.UserName = "";
             // 
             // Robot1
             // 
@@ -7912,6 +7925,7 @@ namespace Robot
         private System.Windows.Forms.GroupBox groupBox57;
         private System.Windows.Forms.GroupBox groupBox56;
         public System.Windows.Forms.TextBox textLogsOutput;
+        private WalburySoftware.TerminalControl terminalControl2;
 
 
     }
