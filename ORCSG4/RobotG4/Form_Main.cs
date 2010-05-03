@@ -579,6 +579,7 @@ namespace Robot
         private void buttClearLogs_Click(object sender, EventArgs e)
         {
             textLogs.Clear();
+            textLogsOutput.Clear();
         }
         
         private void endApplicationToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -3873,11 +3874,12 @@ namespace Robot
 
             while (a <= 240)
             {
+                servoinc = servoinc + 5;
                 if (checkBoxSim.Checked == false)
                 {
-                    SendData(Moves.CAM_Left_Right(servoinc + 1));
+                    SendData(Moves.CAM_Left_Right(servoinc));
                 }
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
 
                 //vypocet sinusu prepona a protilahla strana
                 xultra = Math.Sin(a * (Math.PI / 180));
