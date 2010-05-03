@@ -2710,11 +2710,18 @@ namespace Robot
                 this.terminalControl1.Password = this.passtextBox2.Text;
                 this.terminalControl1.Host = this.textTCPClientServerIPAddress.Text;
                 this.terminalControl1.Method = WalburySoftware.ConnectionMethod.SSH2;
-
                 this.terminalControl1.Connect();
-
                 this.terminalControl1.SetPaneColors(Color.White, Color.Black);
                 this.terminalControl1.Focus();
+
+                this.terminalControl2.UserName = this.usertextBox3.Text;
+                this.terminalControl2.Password = this.passtextBox2.Text;
+                this.terminalControl2.Host = this.textTCPClientServerIPAddress.Text;
+                this.terminalControl2.Method = WalburySoftware.ConnectionMethod.SSH2;
+                this.terminalControl2.Connect();
+                this.terminalControl2.SetPaneColors(Color.White, Color.Black);
+                this.terminalControl2.Focus();
+
                 ConsoleStat.Text = "Opened";
             }
             catch

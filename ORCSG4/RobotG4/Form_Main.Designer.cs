@@ -157,7 +157,6 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
-            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -790,6 +789,7 @@ namespace Robot
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.terminalControl2 = new WalburySoftware.TerminalControl();
+            this.cameraWindow = new Robot.CameraWindow();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -896,6 +896,7 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             this.groupBox22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            this.groupBox40.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.groupBox30.SuspendLayout();
             this.groupBox37.SuspendLayout();
@@ -2017,13 +2018,6 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -4941,12 +4935,11 @@ namespace Robot
             // 
             this.tabPage15.BackColor = System.Drawing.Color.Lavender;
             this.tabPage15.BackgroundImage = global::Robot.Properties.Resources.back;
-            this.tabPage15.Controls.Add(this.terminalControl2);
             this.tabPage15.Controls.Add(this.textBoxSignalLevel);
+            this.tabPage15.Controls.Add(this.terminalControl1);
             this.tabPage15.Controls.Add(this.groupBox23);
             this.tabPage15.Controls.Add(this.groupBox22);
             this.tabPage15.Controls.Add(this.pictureBox28);
-            this.tabPage15.Controls.Add(this.terminalControl1);
             this.tabPage15.Controls.Add(this.groupBox40);
             resources.ApplyResources(this.tabPage15, "tabPage15");
             this.tabPage15.Name = "tabPage15";
@@ -5095,6 +5088,7 @@ namespace Robot
             // 
             // groupBox40
             // 
+            this.groupBox40.Controls.Add(this.terminalControl2);
             this.groupBox40.ForeColor = System.Drawing.Color.RoyalBlue;
             resources.ApplyResources(this.groupBox40, "groupBox40");
             this.groupBox40.Name = "groupBox40";
@@ -6894,6 +6888,13 @@ namespace Robot
             this.terminalControl2.Password = "";
             this.terminalControl2.UserName = "";
             // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
+            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -7094,6 +7095,7 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
             this.groupBox22.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            this.groupBox40.ResumeLayout(false);
             this.tabPage16.ResumeLayout(false);
             this.groupBox30.ResumeLayout(false);
             this.groupBox30.PerformLayout();
