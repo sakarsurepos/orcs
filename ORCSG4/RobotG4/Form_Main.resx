@@ -14050,7 +14050,7 @@ Mouse y:
     <value>1</value>
   </data>
   <data name="groupBox58.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 151</value>
+    <value>17, 144</value>
   </data>
   <data name="groupBox58.Size" type="System.Drawing.Size, System.Drawing">
     <value>568, 45</value>
@@ -14323,7 +14323,7 @@ Mouse y:
     <value>8</value>
   </data>
   <data name="groupBox23.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 23</value>
+    <value>16, 14</value>
   </data>
   <data name="groupBox23.Size" type="System.Drawing.Size, System.Drawing">
     <value>311, 126</value>
@@ -14428,7 +14428,7 @@ Mouse y:
     <value>2</value>
   </data>
   <data name="groupBox22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 23</value>
+    <value>334, 14</value>
   </data>
   <data name="groupBox22.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 126</value>
@@ -14455,7 +14455,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="pictureBox28.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 27</value>
+    <value>484, 18</value>
   </data>
   <data name="pictureBox28.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 121</value>
@@ -21423,6 +21423,9 @@ Mouse y:
         ////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////w==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1024, 768</value>
