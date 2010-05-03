@@ -528,7 +528,9 @@ namespace Robot
             slidDirection.Value             = Joystick.directionValue;
             slidMotion.Value                = Joystick.motionValue;
             slidCameraLeftRight.Value       = Joystick.cameraHorizontalValue;
+            trackBar2.Value                 = Joystick.cameraHorizontalValue;
             slidCameraUpDown.Value          = Joystick.cameraVerticalValue;
+            trackBar1.Value                 = Joystick.cameraVerticalValue;
         }
         
         private void Supply_Direction_Servo_CheckedChanged(object sender, EventArgs e)

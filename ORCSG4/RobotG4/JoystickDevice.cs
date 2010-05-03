@@ -10,7 +10,7 @@ namespace Robot
 {
     class JoystickDevice
     {
-        Device              Joystick;
+        Device                  Joystick;
         Thread                  JoystickThread;
         
         public delegate void    JoystickDelagate();
