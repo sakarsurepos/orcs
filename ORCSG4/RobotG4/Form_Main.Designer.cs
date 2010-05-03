@@ -789,8 +789,8 @@ namespace Robot
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.terminalControl2 = new WalburySoftware.TerminalControl();
-            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox58 = new System.Windows.Forms.GroupBox();
+            this.cameraWindow = new Robot.CameraWindow();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -6889,13 +6889,6 @@ namespace Robot
             this.terminalControl2.Password = "";
             this.terminalControl2.UserName = "";
             // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
-            // 
             // groupBox58
             // 
             this.groupBox58.Controls.Add(this.terminalControl1);
@@ -6904,6 +6897,13 @@ namespace Robot
             resources.ApplyResources(this.groupBox58, "groupBox58");
             this.groupBox58.Name = "groupBox58";
             this.groupBox58.TabStop = false;
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // Robot1
             // 
