@@ -1172,15 +1172,18 @@ namespace Robot
         {
             if (labelCommunicationType.Text == "RS232")
             {
-                serialPort1.WriteLine(dataForSend);               
+                serialPort1.WriteLine(dataForSend);
+                textLogsOutput.AppendText(dataForSend);
             }
             else if (labelCommunicationType.Text == "TCP Client")
             {
-                TcpClnt.Send_Data_By_Client(dataForSend);                
+                TcpClnt.Send_Data_By_Client(dataForSend);
+                textLogsOutput.AppendText(dataForSend);
             }
             else if (labelCommunicationType.Text == "TCP Server")
             {
                 TcpSrvr.Send_Data_By_Server(dataForSend);
+                textLogsOutput.AppendText(dataForSend);
             }
 
         }
