@@ -6701,7 +6701,6 @@ namespace Robot
             this.label150.BackColor = System.Drawing.SystemColors.Control;
             this.label150.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label150.Name = "label150";
-            this.label150.Click += new System.EventHandler(this.label150_Click);
             // 
             // labelPingDelay
             // 
@@ -6709,7 +6708,6 @@ namespace Robot
             this.labelPingDelay.BackColor = System.Drawing.SystemColors.Control;
             this.labelPingDelay.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelPingDelay.Name = "labelPingDelay";
-            this.labelPingDelay.Click += new System.EventHandler(this.labelPingDelay_Click);
             // 
             // label153
             // 
@@ -6717,7 +6715,6 @@ namespace Robot
             this.label153.BackColor = System.Drawing.SystemColors.Control;
             this.label153.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label153.Name = "label153";
-            this.label153.Click += new System.EventHandler(this.label153_Click);
             // 
             // labelQuality
             // 
@@ -6725,7 +6722,6 @@ namespace Robot
             this.labelQuality.BackColor = System.Drawing.SystemColors.Control;
             this.labelQuality.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelQuality.Name = "labelQuality";
-            this.labelQuality.Click += new System.EventHandler(this.labelQuality_Click);
             // 
             // labelSignal
             // 
@@ -6733,7 +6729,6 @@ namespace Robot
             this.labelSignal.BackColor = System.Drawing.SystemColors.Control;
             this.labelSignal.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelSignal.Name = "labelSignal";
-            this.labelSignal.Click += new System.EventHandler(this.labelSignal_Click);
             // 
             // label156
             // 
@@ -6741,7 +6736,6 @@ namespace Robot
             this.label156.BackColor = System.Drawing.SystemColors.Control;
             this.label156.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label156.Name = "label156";
-            this.label156.Click += new System.EventHandler(this.label156_Click);
             // 
             // pictureBox39
             // 
@@ -6750,7 +6744,6 @@ namespace Robot
             this.pictureBox39.BackgroundImage = global::Robot.Properties.Resources.wifi2r;
             this.pictureBox39.Name = "pictureBox39";
             this.pictureBox39.TabStop = false;
-            this.pictureBox39.Click += new System.EventHandler(this.pictureBox39_Click);
             // 
             // labelBitrate
             // 
@@ -6758,7 +6751,6 @@ namespace Robot
             this.labelBitrate.BackColor = System.Drawing.SystemColors.Control;
             this.labelBitrate.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelBitrate.Name = "labelBitrate";
-            this.labelBitrate.Click += new System.EventHandler(this.labelBitrate_Click);
             // 
             // label158
             // 
@@ -6766,7 +6758,6 @@ namespace Robot
             this.label158.BackColor = System.Drawing.SystemColors.Control;
             this.label158.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label158.Name = "label158";
-            this.label158.Click += new System.EventHandler(this.label158_Click);
             // 
             // label152
             // 
@@ -6782,7 +6773,6 @@ namespace Robot
             this.pictureBox40.BackgroundImage = global::Robot.Properties.Resources.connect;
             this.pictureBox40.Name = "pictureBox40";
             this.pictureBox40.TabStop = false;
-            this.pictureBox40.Click += new System.EventHandler(this.pictureBox40_Click);
             // 
             // labelCPU
             // 
