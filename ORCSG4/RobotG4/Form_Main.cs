@@ -4340,5 +4340,55 @@ namespace Robot
 
         }
 
+        private void pictureBox39_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label153_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSignal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label156_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelQuality_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label158_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelBitrate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label150_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPingDelay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox40_Click(object sender, EventArgs e)
+        {
+
+        }
+
    }
 }
