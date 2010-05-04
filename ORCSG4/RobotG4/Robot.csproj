@@ -280,6 +280,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="RobotClass.cd" />
+    <Content Include="favicon.ico" />
     <Content Include="Models\chassis.tvm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
