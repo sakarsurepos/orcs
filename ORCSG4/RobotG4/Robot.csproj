@@ -200,6 +200,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UltraSonic.cs" />
     <Compile Include="UsrCtrlAxis2D.cs">
       <SubType>UserControl</SubType>
     </Compile>
