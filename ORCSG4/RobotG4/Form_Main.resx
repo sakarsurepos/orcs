@@ -3298,7 +3298,7 @@
     <value>1</value>
   </data>
   <data name="batteryStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="batteryStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -15676,7 +15676,7 @@ Mouse y:
     <value>0</value>
   </data>
   <data name="labelCommunicationType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="labelCommunicationType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -15712,7 +15712,7 @@ Mouse y:
     <value>27</value>
   </data>
   <data name="label26.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label26.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -15748,7 +15748,7 @@ Mouse y:
     <value>23</value>
   </data>
   <data name="labelConnectingStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="labelConnectingStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -15868,7 +15868,7 @@ Mouse y:
     <value>29</value>
   </data>
   <data name="label149.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label149.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -15904,7 +15904,7 @@ Mouse y:
     <value>17</value>
   </data>
   <data name="ConsoleStat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="ConsoleStat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -16234,7 +16234,7 @@ Mouse y:
     <value>97, 4</value>
   </metadata>
   <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -19426,7 +19426,7 @@ Mouse y:
     <value>26</value>
   </data>
   <data name="textBatteryVoltage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="textBatteryVoltage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 6pt</value>
@@ -19594,7 +19594,7 @@ Mouse y:
     <value>33</value>
   </data>
   <data name="label150.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label150.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19630,7 +19630,7 @@ Mouse y:
     <value>16</value>
   </data>
   <data name="labelPingDelay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="labelPingDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19666,7 +19666,7 @@ Mouse y:
     <value>15</value>
   </data>
   <data name="label153.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label153.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19702,7 +19702,7 @@ Mouse y:
     <value>14</value>
   </data>
   <data name="labelQuality.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="labelQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19738,7 +19738,7 @@ Mouse y:
     <value>10</value>
   </data>
   <data name="labelSignal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="labelSignal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19774,7 +19774,7 @@ Mouse y:
     <value>13</value>
   </data>
   <data name="label156.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label156.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19840,7 +19840,7 @@ Mouse y:
     <value>11</value>
   </data>
   <data name="labelBitrate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="labelBitrate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19876,7 +19876,7 @@ Mouse y:
     <value>9</value>
   </data>
   <data name="label158.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label158.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19912,7 +19912,7 @@ Mouse y:
     <value>8</value>
   </data>
   <data name="label152.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label152.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19978,7 +19978,7 @@ Mouse y:
     <value>6</value>
   </data>
   <data name="labelCPU.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="labelCPU.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -20074,7 +20074,7 @@ Mouse y:
     <value>3</value>
   </data>
   <data name="label43.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label43.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -20110,7 +20110,7 @@ Mouse y:
     <value>2</value>
   </data>
   <data name="label122.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="label122.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -21423,9 +21423,6 @@ Mouse y:
         ////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////w==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1024, 768</value>

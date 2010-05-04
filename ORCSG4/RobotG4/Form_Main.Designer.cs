@@ -157,6 +157,7 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -533,6 +534,8 @@ namespace Robot
             this.label85 = new System.Windows.Forms.Label();
             this.groupBox44 = new System.Windows.Forms.GroupBox();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.groupBox58 = new System.Windows.Forms.GroupBox();
+            this.terminalControl1 = new WalburySoftware.TerminalControl();
             this.textBoxSignalLevel = new System.Windows.Forms.TextBox();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.checkBoxStatUp = new System.Windows.Forms.CheckBox();
@@ -549,8 +552,8 @@ namespace Robot
             this.button73 = new System.Windows.Forms.Button();
             this.button72 = new System.Windows.Forms.Button();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.terminalControl1 = new WalburySoftware.TerminalControl();
             this.groupBox40 = new System.Windows.Forms.GroupBox();
+            this.terminalControl2 = new WalburySoftware.TerminalControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.groupBox37 = new System.Windows.Forms.GroupBox();
@@ -788,9 +791,6 @@ namespace Robot
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.terminalControl2 = new WalburySoftware.TerminalControl();
-            this.groupBox58 = new System.Windows.Forms.GroupBox();
-            this.cameraWindow = new Robot.CameraWindow();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -893,6 +893,7 @@ namespace Robot
             this.groupBox18.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.tabPage15.SuspendLayout();
+            this.groupBox58.SuspendLayout();
             this.groupBox23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             this.groupBox22.SuspendLayout();
@@ -945,7 +946,6 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
-            this.groupBox58.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -2020,6 +2020,13 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -4946,6 +4953,26 @@ namespace Robot
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // groupBox58
+            // 
+            this.groupBox58.Controls.Add(this.terminalControl1);
+            this.groupBox58.Controls.Add(this.textBoxSignalLevel);
+            this.groupBox58.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox58, "groupBox58");
+            this.groupBox58.Name = "groupBox58";
+            this.groupBox58.TabStop = false;
+            // 
+            // terminalControl1
+            // 
+            this.terminalControl1.AuthType = Poderosa.ConnectionParam.AuthType.Password;
+            this.terminalControl1.Host = "";
+            this.terminalControl1.IdentifyFile = "";
+            resources.ApplyResources(this.terminalControl1, "terminalControl1");
+            this.terminalControl1.Method = WalburySoftware.ConnectionMethod.Telnet;
+            this.terminalControl1.Name = "terminalControl1";
+            this.terminalControl1.Password = "";
+            this.terminalControl1.UserName = "";
+            // 
             // textBoxSignalLevel
             // 
             resources.ApplyResources(this.textBoxSignalLevel, "textBoxSignalLevel");
@@ -5076,17 +5103,6 @@ namespace Robot
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.TabStop = false;
             // 
-            // terminalControl1
-            // 
-            this.terminalControl1.AuthType = Poderosa.ConnectionParam.AuthType.Password;
-            this.terminalControl1.Host = "";
-            this.terminalControl1.IdentifyFile = "";
-            resources.ApplyResources(this.terminalControl1, "terminalControl1");
-            this.terminalControl1.Method = WalburySoftware.ConnectionMethod.Telnet;
-            this.terminalControl1.Name = "terminalControl1";
-            this.terminalControl1.Password = "";
-            this.terminalControl1.UserName = "";
-            // 
             // groupBox40
             // 
             this.groupBox40.Controls.Add(this.terminalControl2);
@@ -5094,6 +5110,17 @@ namespace Robot
             resources.ApplyResources(this.groupBox40, "groupBox40");
             this.groupBox40.Name = "groupBox40";
             this.groupBox40.TabStop = false;
+            // 
+            // terminalControl2
+            // 
+            this.terminalControl2.AuthType = Poderosa.ConnectionParam.AuthType.Password;
+            this.terminalControl2.Host = "";
+            this.terminalControl2.IdentifyFile = "";
+            resources.ApplyResources(this.terminalControl2, "terminalControl2");
+            this.terminalControl2.Method = WalburySoftware.ConnectionMethod.Telnet;
+            this.terminalControl2.Name = "terminalControl2";
+            this.terminalControl2.Password = "";
+            this.terminalControl2.UserName = "";
             // 
             // tabPage16
             // 
@@ -6674,6 +6701,7 @@ namespace Robot
             this.label150.BackColor = System.Drawing.SystemColors.Control;
             this.label150.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label150.Name = "label150";
+            this.label150.Click += new System.EventHandler(this.label150_Click);
             // 
             // labelPingDelay
             // 
@@ -6681,6 +6709,7 @@ namespace Robot
             this.labelPingDelay.BackColor = System.Drawing.SystemColors.Control;
             this.labelPingDelay.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelPingDelay.Name = "labelPingDelay";
+            this.labelPingDelay.Click += new System.EventHandler(this.labelPingDelay_Click);
             // 
             // label153
             // 
@@ -6688,6 +6717,7 @@ namespace Robot
             this.label153.BackColor = System.Drawing.SystemColors.Control;
             this.label153.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label153.Name = "label153";
+            this.label153.Click += new System.EventHandler(this.label153_Click);
             // 
             // labelQuality
             // 
@@ -6695,6 +6725,7 @@ namespace Robot
             this.labelQuality.BackColor = System.Drawing.SystemColors.Control;
             this.labelQuality.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelQuality.Name = "labelQuality";
+            this.labelQuality.Click += new System.EventHandler(this.labelQuality_Click);
             // 
             // labelSignal
             // 
@@ -6702,6 +6733,7 @@ namespace Robot
             this.labelSignal.BackColor = System.Drawing.SystemColors.Control;
             this.labelSignal.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelSignal.Name = "labelSignal";
+            this.labelSignal.Click += new System.EventHandler(this.labelSignal_Click);
             // 
             // label156
             // 
@@ -6709,6 +6741,7 @@ namespace Robot
             this.label156.BackColor = System.Drawing.SystemColors.Control;
             this.label156.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label156.Name = "label156";
+            this.label156.Click += new System.EventHandler(this.label156_Click);
             // 
             // pictureBox39
             // 
@@ -6717,6 +6750,7 @@ namespace Robot
             this.pictureBox39.BackgroundImage = global::Robot.Properties.Resources.wifi2r;
             this.pictureBox39.Name = "pictureBox39";
             this.pictureBox39.TabStop = false;
+            this.pictureBox39.Click += new System.EventHandler(this.pictureBox39_Click);
             // 
             // labelBitrate
             // 
@@ -6724,6 +6758,7 @@ namespace Robot
             this.labelBitrate.BackColor = System.Drawing.SystemColors.Control;
             this.labelBitrate.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelBitrate.Name = "labelBitrate";
+            this.labelBitrate.Click += new System.EventHandler(this.labelBitrate_Click);
             // 
             // label158
             // 
@@ -6731,6 +6766,7 @@ namespace Robot
             this.label158.BackColor = System.Drawing.SystemColors.Control;
             this.label158.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label158.Name = "label158";
+            this.label158.Click += new System.EventHandler(this.label158_Click);
             // 
             // label152
             // 
@@ -6746,6 +6782,7 @@ namespace Robot
             this.pictureBox40.BackgroundImage = global::Robot.Properties.Resources.connect;
             this.pictureBox40.Name = "pictureBox40";
             this.pictureBox40.TabStop = false;
+            this.pictureBox40.Click += new System.EventHandler(this.pictureBox40_Click);
             // 
             // labelCPU
             // 
@@ -6877,33 +6914,6 @@ namespace Robot
             // timer5
             // 
             this.timer5.Interval = 500;
-            // 
-            // terminalControl2
-            // 
-            this.terminalControl2.AuthType = Poderosa.ConnectionParam.AuthType.Password;
-            this.terminalControl2.Host = "";
-            this.terminalControl2.IdentifyFile = "";
-            resources.ApplyResources(this.terminalControl2, "terminalControl2");
-            this.terminalControl2.Method = WalburySoftware.ConnectionMethod.Telnet;
-            this.terminalControl2.Name = "terminalControl2";
-            this.terminalControl2.Password = "";
-            this.terminalControl2.UserName = "";
-            // 
-            // groupBox58
-            // 
-            this.groupBox58.Controls.Add(this.terminalControl1);
-            this.groupBox58.Controls.Add(this.textBoxSignalLevel);
-            this.groupBox58.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.groupBox58, "groupBox58");
-            this.groupBox58.Name = "groupBox58";
-            this.groupBox58.TabStop = false;
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
             // 
             // Robot1
             // 
@@ -7099,6 +7109,8 @@ namespace Robot
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             this.tabPage15.ResumeLayout(false);
+            this.groupBox58.ResumeLayout(false);
+            this.groupBox58.PerformLayout();
             this.groupBox23.ResumeLayout(false);
             this.groupBox23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
@@ -7168,8 +7180,6 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
-            this.groupBox58.ResumeLayout(false);
-            this.groupBox58.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
