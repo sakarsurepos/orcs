@@ -157,7 +157,6 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
-            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -285,7 +284,7 @@ namespace Robot
             this.label133 = new System.Windows.Forms.Label();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
             this.checkBoxSim = new System.Windows.Forms.CheckBox();
-            this.button92 = new System.Windows.Forms.Button();
+            this.buttonUltraSonicStop = new System.Windows.Forms.Button();
             this.button91 = new System.Windows.Forms.Button();
             this.buttonUltraSonicScan = new System.Windows.Forms.Button();
             this.label137 = new System.Windows.Forms.Label();
@@ -790,7 +789,7 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
-            this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.cameraWindow = new Robot.CameraWindow();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -2021,13 +2020,6 @@ namespace Robot
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
             // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
-            // 
             // groupBox20
             // 
             this.groupBox20.Controls.Add(this.label121);
@@ -3015,7 +3007,7 @@ namespace Robot
             // groupBox25
             // 
             this.groupBox25.Controls.Add(this.checkBoxSim);
-            this.groupBox25.Controls.Add(this.button92);
+            this.groupBox25.Controls.Add(this.buttonUltraSonicStop);
             this.groupBox25.Controls.Add(this.button91);
             this.groupBox25.Controls.Add(this.buttonUltraSonicScan);
             this.groupBox25.Controls.Add(this.label137);
@@ -3040,24 +3032,29 @@ namespace Robot
             // checkBoxSim
             // 
             resources.ApplyResources(this.checkBoxSim, "checkBoxSim");
+            this.checkBoxSim.ForeColor = System.Drawing.Color.Black;
             this.checkBoxSim.Name = "checkBoxSim";
             this.checkBoxSim.UseVisualStyleBackColor = true;
             // 
-            // button92
+            // buttonUltraSonicStop
             // 
-            resources.ApplyResources(this.button92, "button92");
-            this.button92.Name = "button92";
-            this.button92.UseVisualStyleBackColor = true;
-            this.button92.Click += new System.EventHandler(this.button92_Click);
+            resources.ApplyResources(this.buttonUltraSonicStop, "buttonUltraSonicStop");
+            this.buttonUltraSonicStop.ForeColor = System.Drawing.Color.Black;
+            this.buttonUltraSonicStop.Name = "buttonUltraSonicStop";
+            this.buttonUltraSonicStop.UseVisualStyleBackColor = true;
+            this.buttonUltraSonicStop.Click += new System.EventHandler(this.button92_Click);
             // 
             // button91
             // 
+            this.button91.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.button91, "button91");
             this.button91.Name = "button91";
             this.button91.UseVisualStyleBackColor = true;
+            this.button91.Click += new System.EventHandler(this.button91_Click_1);
             // 
             // buttonUltraSonicScan
             // 
+            this.buttonUltraSonicScan.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.buttonUltraSonicScan, "buttonUltraSonicScan");
             this.buttonUltraSonicScan.Name = "buttonUltraSonicScan";
             this.buttonUltraSonicScan.UseVisualStyleBackColor = true;
@@ -6901,9 +6898,12 @@ namespace Robot
             this.timerMain.Interval = 40;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
             // 
-            // timer5
+            // cameraWindow
             // 
-            this.timer5.Interval = 500;
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // Robot1
             // 
@@ -7903,8 +7903,7 @@ namespace Robot
         private System.Windows.Forms.ToolStripMenuItem disconnectAllToolStripMenuItem;
         private System.Windows.Forms.Button buttonUltraSonicScan;
         private System.Windows.Forms.Button button91;
-        private System.Windows.Forms.Timer timer5;
-        private System.Windows.Forms.Button button92;
+        private System.Windows.Forms.Button buttonUltraSonicStop;
         private System.Windows.Forms.CheckBox checkBoxSim;
         private CameraWindow cameraWindow;
         private System.Windows.Forms.Button button93;

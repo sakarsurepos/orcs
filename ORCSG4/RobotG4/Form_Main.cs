@@ -302,11 +302,15 @@ namespace Robot
         int[] bultr = new int[25] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 140, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100 };
         int ultrainc = 0;
         int UltraSonic;
+        int[] UltraSonicArray = new int[1000];
+        bool scanflag = false;
+        int entity =0;
         int lop;
         double xultrasonic;
         double yultrasonic;
         int servoinc = 0;
         Graphics Obj1;
+        Thread tr1;
         //ultra sonic
         /////////////
 
@@ -826,6 +830,11 @@ namespace Robot
             char[] sens = sensors.ToCharArray();
             int intsens = (Convert.ToInt16(sens[6]))*2;
             UltraSonic = intsens;
+            if (scanflag == true)
+            {
+                entity = entity + 1;
+                UltraSonicArray[entity] = intsens;
+            }
             //Texbox Export
             return (intsens.ToString("f1"));
         }
@@ -2750,7 +2759,7 @@ namespace Robot
 
         private void button68_Click(object sender, EventArgs e)
         {
-            this.terminalControl1.SendText("mc\n");
+            this.terminalControl2.SendText("mc\n");
         }
 
         private void button71_Click(object sender, EventArgs e)
@@ -2775,7 +2784,7 @@ namespace Robot
 
         private void button72_Click(object sender, EventArgs e)
         {
-            this.terminalControl1.SendText("mc\n");
+            this.terminalControl2.SendText("alsamixer\n");
         }
         //SSH Client for linux connect
 
@@ -3200,18 +3209,17 @@ namespace Robot
         //Console
         private void button73_Click(object sender, EventArgs e)
         {
-            this.terminalControl1.SendText("iwconfig | grep Link \n");
             
+            
+            this.terminalControl2.SendText("pkill ser2net \n");
+            this.terminalControl2.SendText("ser2net \n");
+            /*
             test2 = terminalControl1.TerminalPane.ConnectionTag.Document.LastLine.PrevLine.Text;         
             String consoleout = new String(test2);
             textBoxSignalLevel.Text = consoleout;
             labelSignal.Text = consoleout.Substring(43,3) + "dBm";
             labelQuality.Text = consoleout.Substring(23, 5);
-
-            //this.terminalControl1.SendText("iwconfig \n");
-            //test2 = terminalControl1.TerminalPane.ConnectionTag.Document.LastLine.PrevLine.Text;
-            //consoleout = new String(test2);
-            //labelBitrate.Text = consoleout.Substring(19, 2) + "Mb/s";
+             */
         }
         //Console
         
@@ -3235,27 +3243,30 @@ namespace Robot
 
                 if (ConsoleStat.Text == "Opened" && checkBoxStatUp.Checked == true )
                 {
-                    this.terminalControl1.SendText("iwconfig | grep Link \n");
-                    Thread.Sleep(400);
-                    test2 = terminalControl1.TerminalPane.ConnectionTag.Document.LastLine.PrevLine.Text;
-                    String consoleout = new String(test2);
-                    textBoxSignalLevel.Text = consoleout;
-                    labelSignal.Text = consoleout.Substring(43, 3) + "dBm"; //Signal
-                    labelQuality.Text = consoleout.Substring(23, 5);        //Quality
-                    int quality = int.Parse(consoleout.Substring(23, 2));
-                    Thread.Sleep(400);
-                    this.terminalControl1.SendText("iwconfig | grep Bit \n");
-                    Thread.Sleep(400);
-                    test2 = terminalControl1.TerminalPane.ConnectionTag.Document.LastLine.PrevLine.Text;
-                    consoleout = new String(test2);
-                    labelBitrate.Text = consoleout.Substring(19, 2) + "Mb/s"; //BitRate
+                    try
+                    {
+                        this.terminalControl1.SendText("iwconfig | grep Link \n");
+                        Thread.Sleep(400);
+                        test2 = terminalControl1.TerminalPane.ConnectionTag.Document.LastLine.PrevLine.Text;
+                        String consoleout = new String(test2);
+                        textBoxSignalLevel.Text = consoleout;
+                        labelSignal.Text = consoleout.Substring(43, 3) + "dBm"; //Signal
+                        labelQuality.Text = consoleout.Substring(23, 5);        //Quality
+                        int quality = int.Parse(consoleout.Substring(23, 2));
+                        Thread.Sleep(400);
+                        this.terminalControl1.SendText("iwconfig | grep Bit \n");
+                        Thread.Sleep(400);
+                        test2 = terminalControl1.TerminalPane.ConnectionTag.Document.LastLine.PrevLine.Text;
+                        consoleout = new String(test2);
+                        labelBitrate.Text = consoleout.Substring(19, 2) + "Mb/s"; //BitRate
 
-                    this.terminalControl1.SendText("top -n1 | grep CPU \n");
-                    Thread.Sleep(400);
-                    test2 = terminalControl1.TerminalPane.ConnectionTag.Document.LastLine.PrevLine.PrevLine.PrevLine.Text;
-                    consoleout = new String(test2);
-                    labelCPU.Text = consoleout.Substring(7, 3); //CPU
+                        this.terminalControl1.SendText("top -n1 | grep CPU \n");
+                        Thread.Sleep(400);
+                        test2 = terminalControl1.TerminalPane.ConnectionTag.Document.LastLine.PrevLine.PrevLine.PrevLine.Text;
+                        consoleout = new String(test2);
+                        labelCPU.Text = consoleout.Substring(7, 3); //CPU
                     
+
                     if (quality < 20) //lower than 20
                     {
                         pictureBox39.Image = Properties.Resources.wifi2r;
@@ -3271,6 +3282,10 @@ namespace Robot
                             pictureBox39.Image = Properties.Resources.wifi2;
                         }
                     }
+
+                    }
+                    catch { }
+
                 }
                 Thread.Sleep(100);
             }
@@ -3278,9 +3293,8 @@ namespace Robot
 
         private void buttonFlite_Click(object sender, EventArgs e) //Flite
         {
-            checkBoxStatUp.Checked = false;
-            this.terminalControl1.SendText("iwconfig | grep Link \n");
-            checkBoxStatUp.Checked = true;
+            this.terminalControl2.SendText("echo " + textBoxFlite.Text + " | flite \n");
+
         }
 
         private void button86_Click(object sender, EventArgs e)
@@ -3847,12 +3861,16 @@ namespace Robot
             this.panel1.Controls.Add(this.usrCtrlAxis3D);
         }
 
-        //ultra funkcia
+        //UltraSonic Sensor Function
         public void ultra()
         {
+            Obj1.Clear(Color.White);
             int a = 120;
-            //int d = 0;
+            Pen p = new Pen(Color.Blue, 1);
             Pen p2 = new Pen(Brushes.Red, 2);
+            Pen p3 = new Pen(Brushes.Black, 2);
+            Pen p7 = new Pen(Brushes.White, 2);
+
             //kresli os
             Obj1.DrawLine(p2, 20, 20, 20, 170);
             //kresli os
@@ -3866,10 +3884,9 @@ namespace Robot
             //ciachovanie na osi
             while (h < 160)
             {
-                Pen p4 = new Pen(Brushes.Red, 2);
-                Obj1.DrawLine(p4, 10, h, 30, h);
+                Obj1.DrawLine(p2, 10, h, 30, h);
                 Obj1.DrawString(jk.ToString(), new Font("Verdana", 5), new SolidBrush(Color.Red), 300, h);
-                Obj1.DrawLine(p4, 290, h, 310, h);
+                Obj1.DrawLine(p2, 290, h, 310, h);
                 Obj1.DrawString(jk.ToString(), new Font("Verdana", 5), new SolidBrush(Color.Red), 0, h);
                 h = (h + 20);
                 jk = (jk - 20);
@@ -3881,15 +3898,33 @@ namespace Robot
 
             while (s < 300)
             {
-                Pen p5 = new Pen(Brushes.Red, 2);
-                Obj1.DrawLine(p5, s, 150, s, 170);
+                Obj1.DrawLine(p2, s, 150, s, 170);
                 Obj1.DrawString(kl.ToString(), new Font("Verdana", 4), new SolidBrush(Color.Red), s, 160);
                 s = (s + 20);
                 kl = (kl + 20);
             }
+            int iter = 0;
+            int older = 0;
+            int res = 0;
+            int value = 0;
 
             while (a <= 240)
             {
+                try
+                {
+                    older = iter;
+                    while (iter < entity)
+                    {
+                        value = value + UltraSonicArray[(iter)];
+                        iter = iter + 1;
+                    }
+                    res = entity - older;
+                    value = value / res;
+                }
+                catch { }
+                textBox32.AppendText(value.ToString());
+                textBox32.AppendText(Environment.NewLine);
+
                 servoinc = servoinc + 2;
                 if (checkBoxSim.Checked == false)
                 {
@@ -3918,15 +3953,10 @@ namespace Robot
                 yultrasonic = yultra;
 
                 float x1 = (float)(160 - xultra);
-
                 float y1 = (float)(160 + yultra);
 
                 float x11 = (float)(160 - xultrasonic);
                 float y11 = (float)(160 + yultrasonic);
-
-                Pen p3 = new Pen(Brushes.Black, 2);
-                Pen p4 = new Pen(Brushes.White, 2);
-                Pen p = new Pen(Color.Blue, 1);
 
                 // set the Arrow
                 p.EndCap = LineCap.RoundAnchor;
@@ -3937,28 +3967,49 @@ namespace Robot
                 Obj1.DrawLine(p, x1+2, y1+2, x1-2, y1-2);
                 //kresli ciaru bielu
                 Thread.Sleep(400);
-                Obj1.DrawLine(p4, x11, y11, 160, 160);
+                Obj1.DrawLine(p7, x11, y11, 160, 160);
                 //kresli stredovy bod
                 Obj1.DrawLine(p2, 160, 165 + 5, 160, 165 + 1);
                 a = (a + 5);
 
             }
+            buttonUltraSonicScan.Enabled = true;
+            buttonUltraSonicStop.Enabled = false;
             servoinc = 0;
+            ultrainc = 0;
+            entity = 0;
         }
 
-        /////Tlacitko na scanovanie
+        //Ultra Sonic Start Scan
         private void button91_Click(object sender, EventArgs e)
         {
-            //ultrasonic
-            Obj1 = pictureBoxUltraSonicScan.CreateGraphics();
-            Thread tr1 = new Thread(ultra);
-            tr1.Start();
-            //button61_Click_1(sender, e);
+            if (checkBoxSim.Checked == true || labelConnectingStatus.Text == "Connected")
+            {
+                buttonUltraSonicScan.Enabled = false;
+                buttonUltraSonicStop.Enabled = true;
+                //ultrasonic
+                Obj1 = pictureBoxUltraSonicScan.CreateGraphics();
+                tr1 = new Thread(ultra);
+                tr1.Start();
+                if (labelConnectingStatus.Text == "Connected")
+                {
+                    scanflag = true;
+                }
+            }
+            else
+            { MessageBox.Show("Robot is not connected or Simulation checked"); } 
         }
 
+        //Ultra Sonic Stop Scan
         private void button92_Click(object sender, EventArgs e)
         {
-            timer5.Start();
+            scanflag = false;
+            tr1.Abort();
+            buttonUltraSonicStop.Enabled = false;
+            servoinc = 0;
+            ultrainc = 0;
+            entity = 0;
+            UltraSonicArray.Initialize();
         }
 
         //Check Version
@@ -4346,6 +4397,12 @@ namespace Robot
         {
 
         }
+
+        private void button91_Click_1(object sender, EventArgs e)
+        {
+            Obj1.Clear(Color.White);
+        }
+
 
    }
 }
