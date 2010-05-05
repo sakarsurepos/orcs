@@ -4401,6 +4401,7 @@ namespace Robot
         private void button91_Click_1(object sender, EventArgs e)
         {
             Obj1.Clear(Color.White);
+            textBox032.Clear();
         }
 
 
