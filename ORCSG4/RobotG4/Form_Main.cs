@@ -58,7 +58,7 @@ namespace Robot
 
         private bool b3dMode = false;
         public UsrCtrlAxis2D usrCtrlAxis2D = null;
-        //private UsrCtrlAxis3D usrCtrlAxis3D = null;
+        public UsrCtrlAxis3D usrCtrlAxis3D = null;
 
         private bool bUseSmoothing = false;
         private int nSmoothingDelta = 5;
@@ -332,6 +332,9 @@ namespace Robot
             this.usrCtrlAxis2D.Location = new Point(0, 0);
             this.usrCtrlAxis2D.BackColor = Color.AliceBlue;
             //this.tabPage19.Controls.Add(this.usrCtrlAxis2D);
+            this.usrCtrlAxis3D = new UsrCtrlAxis3D();
+            this.usrCtrlAxis3D.Size = new Size(350, 350);
+            this.usrCtrlAxis3D.Location = new Point(0, 0);
                         
             InitializeComponent();
             
@@ -2765,6 +2768,9 @@ namespace Robot
             this.terminalControl1.ResetText();
             this.terminalControl1.Close();
             ConsoleStat.Text = "Closed";
+            this.terminalControl2.SendText("clear\n");
+            this.terminalControl2.ResetText();
+            this.terminalControl2.Close();
         }
 
         private void button72_Click(object sender, EventArgs e)
@@ -3584,13 +3590,13 @@ namespace Robot
                 this.btnMode.Text = "Use 2D";
 
                 this.usrCtrlAxis2D.Visible = false;
-                ///this.usrCtrlAxis3D.Visible = true;
+                this.usrCtrlAxis3D.Visible = true;
             }
             else
             {
                 this.btnMode.Text = "Use 3D";
                 this.usrCtrlAxis2D.Visible = true;
-                ///this.usrCtrlAxis3D.Visible = false;
+                this.usrCtrlAxis3D.Visible = false;
             }
         }
 
@@ -3777,7 +3783,7 @@ namespace Robot
                     nZaxis = this.nPrevZ;
 
                 if (this.b3dMode == true)
-                    testval =1;/////this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);  //dorobit z
+                    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis); //testval =1;/////this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);  //dorobit z
                 else
                     this.usrCtrlAxis2D.SetCurrentValue(selAxis);
 
@@ -3811,10 +3817,10 @@ namespace Robot
 
                 inkr = 0;
             }
-            int sdssss;
+            //int sdssss;
             // Default
             if (this.b3dMode == true)
-                sdssss=1;   //    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);
+                this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis); //sdssss=1;   //    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);
             else
             {
                 if (radio == 1)
@@ -3838,6 +3844,7 @@ namespace Robot
         private void button90_Click(object sender, EventArgs e)
         {
             this.panel1.Controls.Add(this.usrCtrlAxis2D);
+            this.panel1.Controls.Add(this.usrCtrlAxis3D);
         }
 
         //ultra funkcia
