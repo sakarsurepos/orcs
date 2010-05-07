@@ -3983,6 +3983,14 @@ namespace Robot
         //Ultra Sonic Start Scan
         private void button91_Click(object sender, EventArgs e)
         {
+            //SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
+            //simpleSound.Play();
+            
+
+            SoundPlayer mp = new SoundPlayer();
+            mp.SoundLocation = Application.StartupPath + "\\Resources\\image1.jpg";
+            mp.Play();
+
             if (checkBoxSim.Checked == true || labelConnectingStatus.Text == "Connected")
             {
                 buttonUltraSonicScan.Enabled = false;
