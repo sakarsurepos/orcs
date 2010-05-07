@@ -311,6 +311,7 @@ namespace Robot
         int servoinc = 0;
         Graphics Obj1;
         Thread tr1;
+        SoundPlayer mp = new SoundPlayer();
         //ultra sonic
         /////////////
 
@@ -3910,6 +3911,7 @@ namespace Robot
 
             while (a <= 240)
             {
+                mp.Play();
                 try
                 {
                     older = iter;
@@ -3984,12 +3986,9 @@ namespace Robot
         private void button91_Click(object sender, EventArgs e)
         {
             //SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
-            //simpleSound.Play();
+            //simpleSound.Play();            
+            mp.SoundLocation = Application.StartupPath + "\\Resources\\sonar.wav";
             
-
-            SoundPlayer mp = new SoundPlayer();
-            mp.SoundLocation = Application.StartupPath + "\\Resources\\image1.jpg";
-            mp.Play();
 
             if (checkBoxSim.Checked == true || labelConnectingStatus.Text == "Connected")
             {
