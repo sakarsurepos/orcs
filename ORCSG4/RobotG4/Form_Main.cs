@@ -329,6 +329,12 @@ namespace Robot
         //CONSOLE
         /////////////
 
+        /////
+        //3D
+        public static bool dflag = false;
+        ////
+
+
         public Robot1()
         {
             //ACCELEROMETER
@@ -4060,6 +4066,21 @@ namespace Robot
         //3D
         private void button93_Click(object sender, EventArgs e)
         {
+            string model;
+            string strwheell;
+            string strwheelr;
+            if (checkBoxIntCar.Checked == false)
+            {
+                model = "chassis.tvm";
+                strwheell = "wheel_l.tvm";
+                strwheelr = "wheel_r.tvm";                
+            }
+            else
+            {
+                model = "chassisxxx.tvm";
+                strwheell = "wheel_l0.tvm";
+                strwheelr = "wheel_r0.tvm"; 
+            }
             //Tracking
             //pictureBox27.Load(Application.StartupPath + "\\Resources\\image1.jpg");
             /////3D
@@ -4067,7 +4088,7 @@ namespace Robot
             engine3D.tv.Init3DWindowed(this.pictureBox3D.Handle, true);
             engine3D.Init3D2();
             engine3D.viewport = engine3D.tv.CreateViewport(this.Handle, "viewport");
-            engine3D.Init3D3();
+            engine3D.Init3D3(model, strwheell, strwheelr);
             this.Show();
             this.Focus();
             GameLoop();
@@ -4410,7 +4431,5 @@ namespace Robot
             Obj1.Clear(Color.White);
             textBox032.Clear();
         }
-
-
    }
 }

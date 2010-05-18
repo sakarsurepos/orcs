@@ -157,6 +157,7 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -789,7 +790,7 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
-            this.cameraWindow = new Robot.CameraWindow();
+            this.checkBoxIntCar = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -2019,6 +2020,13 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -4564,7 +4572,9 @@ namespace Robot
             this.groupBox21.Controls.Add(this.button67);
             this.groupBox21.Controls.Add(this.button66);
             this.groupBox21.Controls.Add(this.button65);
+            this.groupBox21.Controls.Add(this.button24);
             this.groupBox21.Controls.Add(this.button64);
+            this.groupBox21.Controls.Add(this.button31);
             this.groupBox21.Controls.Add(this.button63);
             this.groupBox21.Controls.Add(this.button62);
             this.groupBox21.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -4629,11 +4639,10 @@ namespace Robot
             // 
             // groupBox16
             // 
+            this.groupBox16.Controls.Add(this.checkBoxIntCar);
             this.groupBox16.Controls.Add(this.button93);
             this.groupBox16.Controls.Add(this.button76);
             this.groupBox16.Controls.Add(this.button75);
-            this.groupBox16.Controls.Add(this.button24);
-            this.groupBox16.Controls.Add(this.button31);
             this.groupBox16.ForeColor = System.Drawing.Color.RoyalBlue;
             resources.ApplyResources(this.groupBox16, "groupBox16");
             this.groupBox16.Name = "groupBox16";
@@ -6898,12 +6907,14 @@ namespace Robot
             this.timerMain.Interval = 40;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
             // 
-            // cameraWindow
+            // checkBoxIntCar
             // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
+            resources.ApplyResources(this.checkBoxIntCar, "checkBoxIntCar");
+            this.checkBoxIntCar.Checked = true;
+            this.checkBoxIntCar.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxIntCar.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxIntCar.Name = "checkBoxIntCar";
+            this.checkBoxIntCar.UseVisualStyleBackColor = true;
             // 
             // Robot1
             // 
@@ -7091,6 +7102,7 @@ namespace Robot
             this.groupBox21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3D)).EndInit();
             this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
@@ -7939,6 +7951,7 @@ namespace Robot
         public System.Windows.Forms.TextBox textLogsOutput;
         private WalburySoftware.TerminalControl terminalControl2;
         private System.Windows.Forms.GroupBox groupBox58;
+        private System.Windows.Forms.CheckBox checkBoxIntCar;
 
 
     }

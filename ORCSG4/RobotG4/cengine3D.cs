@@ -102,7 +102,7 @@ namespace Robot
             viewport = new TVViewport();
         }
         
-        public void Init3D3()
+        public void Init3D3(string strchassis1,string strwheelL,string strwheelR)
         {
             viewport.SetCamera(camera);
             viewport.SetBackgroundColor(Color.Blue.ToArgb());
@@ -116,7 +116,121 @@ namespace Robot
             InitEnvironment();
             InitPhysics();
             InitLandscape();
-            InitObjects();
+            
+            //Init objects
+            #region Car
+            //Building PK9
+            pk_9 = scene.CreateMeshBuilder("pk");
+            // load the object from an x file
+            pk_9.LoadTVM(@"Models\pk8.tvm", false, false);
+            // set its position
+            pk_9.SetPosition(5.0f, 0.0f, 50.0f);
+            // make the table 3x larger
+            pk_9.SetScale(3, 3, 3);
+            // rotate it 25 degrees around the Y 3D Axis
+            pk_9.RotateY(25, true);
+            // set the tables texture
+            pk_9.SetShadowCast(true, true);
+            pk_9.SetTexture(globals.GetTex("pk9tex"), 0);
+
+            //Chassis
+            m_chassis = scene.CreateMeshBuilder("mChassis");
+            m_chassis.LoadTVM(@"Models\" + strchassis1, false, false); //chassis.tvm
+            m_chassis.SetShadowCast(true, true);
+            m_chassis.SetTexture(globals.GetTex("ChassisSTI"), 0);
+            //m_chassis.SetTextureEx(0, globals.GetTex("ChassisSTI"), 1);
+            //m_chassis.SetTextureEx(1, globals.GetTex("ChassisSTI"), 1);
+            m_chassis.SetTexture(globals.GetTex("UnderCarriage"), 2);
+            m_chassis.SetMaterial(matWindow, 1);
+            m_chassis.SetAlphaTest(true, 0, true, 1);
+            m_chassis.SetBlendingMode(CONST_TV_BLENDINGMODE.TV_BLEND_ADD, 1);
+            m_chassis.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_chassis.SetShadowCast(true, true);
+
+            //Front Left Wheel
+            float scale = 1f;
+            m_fl = scene.CreateMeshBuilder("mfl");
+            m_fl.LoadTVM(@"Models\" + strwheelL, true, true); //wheel_l.tvm
+            m_fl.SetScale(scale, scale, scale);
+            m_fl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_fl.SetMaterial(matWheels);
+            m_fl.SetTexture(globals.GetTex("Wheel"));
+            m_fl.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_fl.SetShadowCast(true, true);
+
+            //Front Right Wheel
+            m_rl = scene.CreateMeshBuilder("mrl");
+            m_rl.LoadTVM(@"Models\" + strwheelL, true, true); //wheel_l.tvm
+            m_rl.SetScale(scale, scale, scale);
+            m_rl.SetMaterial(matWheels);
+            m_rl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_rl.SetTexture(globals.GetTex("Wheel"));
+            m_rl.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_rl.SetShadowCast(true, false);
+            m_rl.SetShadowCast(true, true);
+
+            //Rear Left Wheel
+            m_fr = scene.CreateMeshBuilder("mfr");
+            m_fr.LoadTVM(@"Models\" + strwheelR, true, true); //wheel_r.tvm
+            m_fr.SetScale(scale, scale, scale);
+            m_fr.SetMaterial(matWheels);
+            m_fr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_fr.SetTexture(globals.GetTex("Wheel"));
+            m_fr.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_fr.SetShadowCast(true, false);
+
+            //Rear Right Wheel
+            m_rr = scene.CreateMeshBuilder("mrr");
+            m_rr.LoadTVM(@"Models\" + strwheelR, true, true); //wheel_r.tvm
+            m_rr.SetScale(scale, scale, scale);
+            m_rr.SetMaterial(matWheels);
+            m_rr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_rr.SetTexture(globals.GetTex("Wheel"));
+            m_rr.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
+            m_rr.SetShadowCast(true, false);
+            m_rr.SetShadowCast(true, true);
+
+            m_chassis.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
+            m_chassis.SetMaterial(matVehicleBody);
+            m_chassis.ComputeNormals();
+            m_chassis.ComputeBoundings();
+            m_chassis.SetScale(scale, scale, scale);
+            #endregion
+
+            //Add The Physics to the chassis
+            pbi_chassis = physics.CreateMeshBody(1500, m_chassis, CONST_TV_PHYSICSBODY_BOUNDING.TV_BODY_CONVEXHULL); //1500
+            physics.SetAutoFreeze(pbi_chassis, false);
+            physics.SetBodyPosition(pbi_chassis, 0f, 15, 0f);
+            physics.SetBodyRotation(pbi_chassis, 0f, 0f, 0f);
+
+            //Create The Vehicle
+            car_ID = physics.CreateVehicle(pbi_chassis);
+
+            //Do Suspention Settings
+            float susheight = 1.5f; //distance from chassis to wheel 0.5f
+            float susplen = 1.5f; // 10
+            float susshock = 40f; //Springiness of suspension 10
+            float susspring = 300f; //Stiffness of suspension 400
+            flw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), -0.8f * scale, -susheight * scale - 0.1f, 1.25f * scale + 0.5f, 1, 0, 0, susplen, susshock, susspring, m_fl); //fl
+            frw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), 0.8f * scale, -susheight * scale - 0.1f, 1.25f * scale + 0.5f, 1, 0, 0, susplen, susshock, susspring, m_fr); //fr
+            rlw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), -0.8f * scale, -susheight * scale - 0.1f, -1.425f * scale + 0.2f, 1, 0, 0, susplen, susshock, susspring, m_rl); //rl
+            rrw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), 0.8f * scale, -susheight * scale - 0.1f, -1.425f * scale + 0.2f, 1, 0, 0, susplen, susshock, susspring, m_rr); //rr
+
+            //Change the car's center of mass / make it drive better
+            physics.SetBodyCenterOfMass(car_ID, new TV_3DVECTOR(0, -1.0f, 10f));
+
+            //Add wheel frictions
+            //Note that this code will also stop sliding on slopes
+            float sideslip = 0.1f;
+            float sideslipcoef = 0f;
+            float maxlongslide = 10000f;
+            float maxlongslidecoef = 0f;
+            physics.SetVehicleWheelParameters(car_ID, flw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
+            physics.SetVehicleWheelParameters(car_ID, frw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
+            physics.SetVehicleWheelParameters(car_ID, rlw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
+            physics.SetVehicleWheelParameters(car_ID, rrw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
+            //Init objects
+            
             InitLights();
             InitPhysicsMaterials();
             Init2DText();
@@ -177,117 +291,7 @@ namespace Robot
 
         public void InitObjects()
         {
-            #region Car
-            //Building PK9
-            pk_9 = scene.CreateMeshBuilder("pk");
-            // load the object from an x file
-            pk_9.LoadTVM(@"Models\pk8.tvm", false, false);
-            // set its position
-            pk_9.SetPosition(5.0f, 0.0f, 50.0f);
-            // make the table 3x larger
-            pk_9.SetScale(3, 3, 3);
-            // rotate it 25 degrees around the Y 3D Axis
-            pk_9.RotateY(25, true);
-            // set the tables texture
-            pk_9.SetShadowCast(true, true);
-            pk_9.SetTexture(globals.GetTex("pk9tex"), 0);
 
-            //Chassis
-            m_chassis = scene.CreateMeshBuilder("mChassis");
-            m_chassis.LoadTVM(@"Models\chassis.tvm", false, false);
-            m_chassis.SetShadowCast(true, true);
-            m_chassis.SetTexture(globals.GetTex("ChassisSTI"), 0);
-            //m_chassis.SetTextureEx(0, globals.GetTex("ChassisSTI"), 1);
-            //m_chassis.SetTextureEx(1, globals.GetTex("ChassisSTI"), 1);
-            m_chassis.SetTexture(globals.GetTex("UnderCarriage"), 2);
-            m_chassis.SetMaterial(matWindow, 1);
-            m_chassis.SetAlphaTest(true, 0, true, 1);
-            m_chassis.SetBlendingMode(CONST_TV_BLENDINGMODE.TV_BLEND_ADD, 1);
-            m_chassis.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_chassis.SetShadowCast(true, true);
-
-            //Front Left Wheel
-            float scale = 1f;
-            m_fl = scene.CreateMeshBuilder("mfl");
-            m_fl.LoadTVM(@"Models\wheel_l.tvm", true, true);
-            m_fl.SetScale(scale, scale, scale);
-            m_fl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_fl.SetMaterial(matWheels);
-            m_fl.SetTexture(globals.GetTex("Wheel"));
-            m_fl.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_fl.SetShadowCast(true, true);
-
-            //Front Right Wheel
-            m_rl = scene.CreateMeshBuilder("mrl");
-            m_rl.LoadTVM(@"Models\wheel_l.tvm", true, true);
-            m_rl.SetScale(scale, scale, scale);
-            m_rl.SetMaterial(matWheels);
-            m_rl.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_rl.SetTexture(globals.GetTex("Wheel"));
-            m_rl.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_rl.SetShadowCast(true, false);
-            m_rl.SetShadowCast(true, true);
-
-            //Rear Left Wheel
-            m_fr = scene.CreateMeshBuilder("mfr");
-            m_fr.LoadTVM(@"Models\wheel_r.tvm", true, true);
-            m_fr.SetScale(scale, scale, scale);
-            m_fr.SetMaterial(matWheels);
-            m_fr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_fr.SetTexture(globals.GetTex("Wheel"));
-            m_fr.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_fr.SetShadowCast(true, false);
-
-            //Rear Right Wheel
-            m_rr = scene.CreateMeshBuilder("mrr");
-            m_rr.LoadTVM(@"Models\wheel_r.tvm", true, true);
-            m_rr.SetScale(scale, scale, scale);
-            m_rr.SetMaterial(matWheels);
-            m_rr.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_rr.SetTexture(globals.GetTex("Wheel"));
-            m_rr.SetCullMode(CONST_TV_CULLING.TV_DOUBLESIDED);
-            m_rr.SetShadowCast(true, false);
-            m_rr.SetShadowCast(true, true);
-
-            m_chassis.SetLightingMode(CONST_TV_LIGHTINGMODE.TV_LIGHTING_MANAGED);
-            m_chassis.SetMaterial(matVehicleBody);
-            m_chassis.ComputeNormals();
-            m_chassis.ComputeBoundings();
-            m_chassis.SetScale(scale, scale, scale);
-            #endregion
-
-            //Add The Physics to the chassis
-            pbi_chassis = physics.CreateMeshBody(1500, m_chassis, CONST_TV_PHYSICSBODY_BOUNDING.TV_BODY_CONVEXHULL); //1500
-            physics.SetAutoFreeze(pbi_chassis, false);
-            physics.SetBodyPosition(pbi_chassis, 0f, 15, 0f);
-            physics.SetBodyRotation(pbi_chassis, 0f, 0f, 0f);
-
-            //Create The Vehicle
-            car_ID = physics.CreateVehicle(pbi_chassis);
-
-            //Do Suspention Settings
-            float susheight = 1.5f; //distance from chassis to wheel 0.5f
-            float susplen = 1.5f; // 10
-            float susshock = 40f; //Springiness of suspension 10
-            float susspring = 300f; //Stiffness of suspension 400
-            flw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), -0.8f * scale, -susheight * scale - 0.1f, 1.25f * scale + 0.5f, 1, 0, 0, susplen, susshock, susspring, m_fl); //fl
-            frw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), 0.8f * scale, -susheight * scale - 0.1f, 1.25f * scale + 0.5f, 1, 0, 0, susplen, susshock, susspring, m_fr); //fr
-            rlw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), -0.8f * scale, -susheight * scale - 0.1f, -1.425f * scale + 0.2f, 1, 0, 0, susplen, susshock, susspring, m_rl); //rl
-            rrw = physics.AddVehicleWheelEx(car_ID, 25f, 0.5f * scale, 0.372f * scale + 0.1f, new TV_3DVECTOR(1, 0, 0), 0.8f * scale, -susheight * scale - 0.1f, -1.425f * scale + 0.2f, 1, 0, 0, susplen, susshock, susspring, m_rr); //rr
-
-            //Change the car's center of mass / make it drive better
-            physics.SetBodyCenterOfMass(car_ID, new TV_3DVECTOR(0, -1.0f, 10f));
-
-            //Add wheel frictions
-            //Note that this code will also stop sliding on slopes
-            float sideslip = 0.1f;
-            float sideslipcoef = 0f;
-            float maxlongslide = 10000f;
-            float maxlongslidecoef = 0f;
-            physics.SetVehicleWheelParameters(car_ID, flw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
-            physics.SetVehicleWheelParameters(car_ID, frw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
-            physics.SetVehicleWheelParameters(car_ID, rlw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
-            physics.SetVehicleWheelParameters(car_ID, rrw, sideslip, sideslipcoef, maxlongslide, maxlongslidecoef);
         }
 
         public void InitPhysicsMaterials()
