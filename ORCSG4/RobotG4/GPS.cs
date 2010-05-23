@@ -1,13 +1,26 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace Robot
 {
     class GPS
     {
-        public GPS()
+        public static FileStream fsgps;
+        public static TextWriter writegps;        
+        
+        public static void GPSFileLogCreate()
         {
+            try
+            {
+                fsgps = new FileStream("gpslog.txt", FileMode.Append);  //zapis do suboru
+            }
+            catch
+            {
+                fsgps = new FileStream("gpslog.txt", FileMode.CreateNew);
+            }
+            writegps = new StreamWriter(fsgps);
         }
 
         public static string GPS_UTC_Time(string GPS_RMC_Data)
