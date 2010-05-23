@@ -334,7 +334,6 @@ namespace Robot
         public static bool dflag = false;
         ////
 
-
         public Robot1()
         {
             //ACCELEROMETER
@@ -424,6 +423,8 @@ namespace Robot
             this.mySerialPort.RtsEnable = true;
             this.mySerialPort.DataReceived += new SerialDataReceivedEventHandler(MySerialPort_DataReceived);
 
+            //GPS
+            GPS.GPSFileLogCreate();
         }
          
         //Classes
@@ -435,9 +436,13 @@ namespace Robot
         static Commands Command     = new Commands();
         Mjpegsmallcam   mjpegsmall  = new Mjpegsmallcam();
         cengine3D       engine3D    = new cengine3D();
+        Communication   TcpClntMEMS = new Communication();
+        Communication   TcpSrvrSim  = new Communication();
 
         //Components
         Thread          WorkerThread;
+        Thread          WorkerThreadMEMS; //MEMS
+        Thread          WorkerThreadSim; //Sim
         SolidBrush      ColorSatellite;
         Graphics        Graph;
         Graphics        GraphicsOnMap;
@@ -460,6 +465,8 @@ namespace Robot
         string[]    GPGSV_Data = new string[4];
         int         scriptCor1;
         string      data = null;
+        string      dataMEMS = null; //MEMS
+        string      dataSim = null;  //Sim
         
         float[] PointX = new float[100];
         float[] PointY = new float[100];
@@ -609,7 +616,42 @@ namespace Robot
         {
 
         }
-        
+
+        void Analyse_DataMEMS(string dataForAnalyseMEMS) //MEMS
+        {
+            try
+            {
+
+                if (dataForAnalyseMEMS == null) //MEMS
+                {
+                    dataForAnalyseMEMS = "123456678901234567890"; //MEMS
+                }
+                textLogs.Paste(dataForAnalyseMEMS);
+                char[] USART_dataMEMS = dataForAnalyseMEMS.ToCharArray();
+                string MEMS_MSG = new string(USART_dataMEMS, 1, 3);
+                //SetMap();
+            }
+            catch { }
+        }
+
+        void Analyse_DataSim(string dataForAnalyseSim) //Sim
+        {
+            try
+            {
+
+                if (dataForAnalyseSim == null) //Sim
+                {
+                    dataForAnalyseSim = "123456678901234567890"; //Sim
+                }
+                textLogs.Paste(dataForAnalyseSim);
+                char[] USART_dataSim = dataForAnalyseSim.ToCharArray();
+                string Sim_MSG = new string(USART_dataSim, 0, 6);
+                //SetMap();
+                SimDataLog.Text = Sim_MSG;
+            }
+            catch { }
+        }
+
         void Analyse_Data(string dataForAnalyse)
         {
             try
@@ -652,6 +694,10 @@ namespace Robot
                         GraphicsOnMap               = map.CreateGraphics();
                         lat                   = float.Parse(GPS.GPS_Latitude(GPS_RMC_Data, "number"));
                         lon                   = float.Parse(GPS.GPS_Longitude(GPS_RMC_Data, "number"));
+                        if (LogGPS.Checked == true)
+                        {
+                            GPS.writegps.WriteLine((lat.ToString()) + "_" + lon.ToString());
+                        }
                         x                       = Convert.ToInt16(map.Size.Width / (mapSizeXmax - mapSizeXmin) * (lon - mapSizeXmin));
                         y                       = Convert.ToInt16(map.Size.Height / (mapSizeYmax - mapSizeYmin) * (mapSizeYmax - lat));
                         //Unlock Trajectory
@@ -987,7 +1033,7 @@ namespace Robot
         {
             WorkerThread = new Thread(new ThreadStart(InWorkerThread));
             WorkerThread.Start();
-            
+
             if (labelCommunicationType.Text == "RS232")
             {
                 SetSerialPort();
@@ -1101,6 +1147,11 @@ namespace Robot
             HandlingData(TcpClnt.data_from_client);            
         }
 
+        private void TcpClnt_ClientDataReceivedMEMS()  //MEMS
+        {
+            HandlingDataMEMS(TcpClntMEMS.data_from_client); //MEMS
+        }
+
         private void SerialPort_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             HandlingData(serialPort1.ReadLine());
@@ -1111,11 +1162,38 @@ namespace Robot
             HandlingData(TcpSrvr.data_from_server);
         }
 
+        private void TcpSrvr_ServerDataReceivedSim()
+        {
+            HandlingDataSim(TcpSrvrSim.data_from_server);
+        }
+
+        private void HandlingDataMEMS(string IncomingDataMEMS) //MEMS
+        {
+            dataMEMS = null;
+            //IncomingData = null;
+            dataMEMS = IncomingDataMEMS;
+            if (IncomingDataMEMS != null)
+            {
+                InWorkerThreadMEMS();
+            }
+        }
+
+        private void HandlingDataSim(string IncomingDataSim) //TcpSrvSim
+        {
+            dataSim = null;
+            //IncomingData = null;
+            dataSim = IncomingDataSim;
+            if (IncomingDataSim != null)
+            {
+                InWorkerThreadSim();
+            }
+        }
+
         private void HandlingData(string IncomingData)
         {
             data = null;
             //IncomingData = null;
-
+            
             if (labelCommunicationType.Text == "RS232")
             {
                 data = IncomingData + "\n";
@@ -1189,7 +1267,17 @@ namespace Robot
         {
             Analyse_Data(data);
         }
-                
+
+        void InWorkerThreadMEMS() //MEMS
+        {
+            Analyse_DataMEMS(dataMEMS); //MEMS
+        }
+
+        void InWorkerThreadSim() //Sim
+        {
+            Analyse_DataSim(dataSim); //Sim
+        }
+
         private void SendData(string dataForSend)
         {
             if (labelCommunicationType.Text == "RS232")
@@ -1206,6 +1294,10 @@ namespace Robot
             {
                 TcpSrvr.Send_Data_By_Server(dataForSend);
                 textLogsOutput.AppendText(dataForSend);
+            }
+            else
+            {
+                TcpSrvrSim.Send_Data_By_Server(dataForSend); //Sim
             }
 
         }
@@ -4430,6 +4522,22 @@ namespace Robot
         {
             Obj1.Clear(Color.White);
             textBox032.Clear();
+        }
+
+        private void button92_Click_1(object sender, EventArgs e) //TCPClient MEMS enable port 2001
+        {
+            WorkerThreadMEMS = new Thread(new ThreadStart(InWorkerThreadMEMS)); //MEMS
+            WorkerThreadMEMS.Start(); //MEMS
+            TcpClnt.TCP_Client_Start(textTCPClientServerIPAddress.Text, 2001);
+            TcpClnt.ClientDataReceived += new Communication.ClientDelegate(TcpClnt_ClientDataReceivedMEMS);
+        }
+
+        private void button94_Click(object sender, EventArgs e)
+        {
+            WorkerThreadSim = new Thread(new ThreadStart(InWorkerThreadSim)); //Sim
+            WorkerThreadSim.Start(); //Sim
+            TcpSrvrSim.TCP_Server_Start(textTCPClientServerIPAddress.Text, Convert.ToInt16(textTCPClientServerPortNumber.Text));
+            TcpSrvrSim.ServerDataReceived += new Communication.ServerDelegate(TcpSrvr_ServerDataReceivedSim);
         }
    }
 }

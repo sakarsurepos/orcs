@@ -1782,6 +1782,36 @@
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="LogGPS.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LogGPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LogGPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 285</value>
+  </data>
+  <data name="LogGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="LogGPS.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="LogGPS.Text" xml:space="preserve">
+    <value>Log GPS data</value>
+  </data>
+  <data name="&gt;&gt;LogGPS.Name" xml:space="preserve">
+    <value>LogGPS</value>
+  </data>
+  <data name="&gt;&gt;LogGPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogGPS.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;LogGPS.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1897,7 +1927,7 @@
     <value>3</value>
   </data>
   <data name="groupBox36.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 38</value>
+    <value>20, 35</value>
   </data>
   <data name="groupBox36.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 75</value>
@@ -1918,7 +1948,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;groupBox36.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label21.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1951,7 +1981,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2068,7 +2098,7 @@
     <value>3</value>
   </data>
   <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 126</value>
+    <value>20, 115</value>
   </data>
   <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
     <value>315, 84</value>
@@ -2089,7 +2119,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2266,7 +2296,7 @@
     <value>5</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 220</value>
+    <value>21, 204</value>
   </data>
   <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
     <value>314, 75</value>
@@ -2287,7 +2317,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="pictureBox2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -2317,7 +2347,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -8121,14 +8151,41 @@ Mouse y:
   <data name="&gt;&gt;tabPage6.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="button92.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button92.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 372</value>
+  </data>
+  <data name="button92.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 23</value>
+  </data>
+  <data name="button92.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="button92.Text" xml:space="preserve">
+    <value>TCP Connect</value>
+  </data>
+  <data name="&gt;&gt;button92.Name" xml:space="preserve">
+    <value>button92</value>
+  </data>
+  <data name="&gt;&gt;button92.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button92.Parent" xml:space="preserve">
+    <value>groupBox31</value>
+  </data>
+  <data name="&gt;&gt;button92.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button90.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button90.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 373</value>
+    <value>145, 372</value>
   </data>
   <data name="button90.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 23</value>
+    <value>106, 23</value>
   </data>
   <data name="button90.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
@@ -8146,7 +8203,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;button90.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtOutput.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -8176,7 +8233,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;txtOutput.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="radioButton3a.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8731,7 +8788,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBox51.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label172.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8863,7 +8920,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBox50.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label174.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9103,7 +9160,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBox49.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="pictureBox34.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9130,7 +9187,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;pictureBox34.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 23</value>
@@ -9151,7 +9208,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="button88.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9178,7 +9235,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;button88.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="button89.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9205,7 +9262,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;button89.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="btnMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9232,7 +9289,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;btnMode.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="chkBoxSmoothing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9241,7 +9298,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="chkBoxSmoothing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 379</value>
+    <value>257, 376</value>
   </data>
   <data name="chkBoxSmoothing.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 17</value>
@@ -9262,7 +9319,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;chkBoxSmoothing.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="groupBox31.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 14</value>
@@ -12780,6 +12837,51 @@ Mouse y:
   <data name="&gt;&gt;pictureBox35.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="SimDataLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 70</value>
+  </data>
+  <data name="SimDataLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="SimDataLog.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;SimDataLog.Name" xml:space="preserve">
+    <value>SimDataLog</value>
+  </data>
+  <data name="&gt;&gt;SimDataLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SimDataLog.Parent" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;SimDataLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button94.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 68</value>
+  </data>
+  <data name="button94.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="button94.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="button94.Text" xml:space="preserve">
+    <value>Start TCP Server Sim</value>
+  </data>
+  <data name="&gt;&gt;button94.Name" xml:space="preserve">
+    <value>button94</value>
+  </data>
+  <data name="&gt;&gt;button94.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button94.Parent" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;button94.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="button67.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -12805,7 +12907,7 @@ Mouse y:
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;button67.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="button66.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -12832,7 +12934,7 @@ Mouse y:
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;button66.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="button65.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -12859,7 +12961,7 @@ Mouse y:
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;button65.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="button24.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -12886,7 +12988,7 @@ Mouse y:
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;button24.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="button64.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -12913,7 +13015,7 @@ Mouse y:
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;button64.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="button31.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -12940,7 +13042,7 @@ Mouse y:
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;button31.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="button63.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -12967,7 +13069,7 @@ Mouse y:
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;button63.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="button62.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -12994,7 +13096,7 @@ Mouse y:
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;button62.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="groupBox21.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 496</value>
@@ -13046,6 +13148,9 @@ Mouse y:
   </data>
   <data name="checkBoxIntCar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="checkBoxIntCar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="checkBoxIntCar.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 40</value>
@@ -13111,7 +13216,7 @@ Mouse y:
     <value>3</value>
   </data>
   <data name="button76.Text" xml:space="preserve">
-    <value>Stop3D</value>
+    <value>Start3D</value>
   </data>
   <data name="&gt;&gt;button76.Name" xml:space="preserve">
     <value>button76</value>
@@ -13138,7 +13243,7 @@ Mouse y:
     <value>2</value>
   </data>
   <data name="button75.Text" xml:space="preserve">
-    <value>Start3D</value>
+    <value>Stop3D</value>
   </data>
   <data name="&gt;&gt;button75.Name" xml:space="preserve">
     <value>button75</value>
