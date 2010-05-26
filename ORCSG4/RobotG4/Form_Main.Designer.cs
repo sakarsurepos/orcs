@@ -77,15 +77,14 @@ namespace Robot
             this.Joystick_Initialization = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox52 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.CAM_Servo2 = new System.Windows.Forms.CheckBox();
             this.Supply_Direction_Servo = new System.Windows.Forms.CheckBox();
             this.Supply_Camera = new System.Windows.Forms.CheckBox();
             this.Supply_GPS = new System.Windows.Forms.CheckBox();
-            this.Supply_Lights = new System.Windows.Forms.CheckBox();
             this.labelAdvenced = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.LogGPS = new System.Windows.Forms.CheckBox();
             this.groupBox36 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.GPS_Position_Speed = new System.Windows.Forms.TextBox();
@@ -157,6 +156,7 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -318,6 +318,8 @@ namespace Robot
             this.ViewSatellites = new System.Windows.Forms.PictureBox();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.button95 = new System.Windows.Forms.Button();
+            this.button92 = new System.Windows.Forms.Button();
             this.button90 = new System.Windows.Forms.Button();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.groupBox51 = new System.Windows.Forms.GroupBox();
@@ -489,6 +491,8 @@ namespace Robot
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.SimDataLog = new System.Windows.Forms.TextBox();
+            this.button94 = new System.Windows.Forms.Button();
             this.button67 = new System.Windows.Forms.Button();
             this.button66 = new System.Windows.Forms.Button();
             this.button65 = new System.Windows.Forms.Button();
@@ -790,11 +794,8 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
-            this.LogGPS = new System.Windows.Forms.CheckBox();
-            this.button92 = new System.Windows.Forms.Button();
-            this.cameraWindow = new Robot.CameraWindow();
-            this.button94 = new System.Windows.Forms.Button();
-            this.SimDataLog = new System.Windows.Forms.TextBox();
+            this.Supply_Lights = new System.Windows.Forms.CheckBox();
+            this.Supply_Laser = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -1368,24 +1369,16 @@ namespace Robot
             // 
             // groupBox52
             // 
-            this.groupBox52.Controls.Add(this.checkBox3);
+            this.groupBox52.Controls.Add(this.Supply_Laser);
+            this.groupBox52.Controls.Add(this.Supply_Lights);
             this.groupBox52.Controls.Add(this.CAM_Servo2);
             this.groupBox52.Controls.Add(this.Supply_Direction_Servo);
             this.groupBox52.Controls.Add(this.Supply_Camera);
             this.groupBox52.Controls.Add(this.Supply_GPS);
-            this.groupBox52.Controls.Add(this.Supply_Lights);
             this.groupBox52.ForeColor = System.Drawing.Color.RoyalBlue;
             resources.ApplyResources(this.groupBox52, "groupBox52");
             this.groupBox52.Name = "groupBox52";
             this.groupBox52.TabStop = false;
-            // 
-            // checkBox3
-            // 
-            resources.ApplyResources(this.checkBox3, "checkBox3");
-            this.checkBox3.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = false;
             // 
             // CAM_Servo2
             // 
@@ -1396,6 +1389,7 @@ namespace Robot
             this.CAM_Servo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CAM_Servo2.Name = "CAM_Servo2";
             this.CAM_Servo2.UseVisualStyleBackColor = false;
+            this.CAM_Servo2.CheckedChanged += new System.EventHandler(this.CAM_Servo2_CheckedChanged_1);
             // 
             // Supply_Direction_Servo
             // 
@@ -1406,6 +1400,7 @@ namespace Robot
             this.Supply_Direction_Servo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Supply_Direction_Servo.Name = "Supply_Direction_Servo";
             this.Supply_Direction_Servo.UseVisualStyleBackColor = false;
+            this.Supply_Direction_Servo.CheckedChanged += new System.EventHandler(this.Supply_Direction_Servo_CheckedChanged_1);
             // 
             // Supply_Camera
             // 
@@ -1416,6 +1411,7 @@ namespace Robot
             this.Supply_Camera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Supply_Camera.Name = "Supply_Camera";
             this.Supply_Camera.UseVisualStyleBackColor = false;
+            this.Supply_Camera.CheckedChanged += new System.EventHandler(this.Supply_Camera_CheckedChanged_1);
             // 
             // Supply_GPS
             // 
@@ -1426,14 +1422,7 @@ namespace Robot
             this.Supply_GPS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Supply_GPS.Name = "Supply_GPS";
             this.Supply_GPS.UseVisualStyleBackColor = false;
-            // 
-            // Supply_Lights
-            // 
-            resources.ApplyResources(this.Supply_Lights, "Supply_Lights");
-            this.Supply_Lights.BackColor = System.Drawing.Color.Transparent;
-            this.Supply_Lights.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Supply_Lights.Name = "Supply_Lights";
-            this.Supply_Lights.UseVisualStyleBackColor = false;
+            this.Supply_GPS.CheckedChanged += new System.EventHandler(this.Supply_GPS_CheckedChanged_1);
             // 
             // labelAdvenced
             // 
@@ -1462,6 +1451,12 @@ namespace Robot
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // LogGPS
+            // 
+            resources.ApplyResources(this.LogGPS, "LogGPS");
+            this.LogGPS.Name = "LogGPS";
+            this.LogGPS.UseVisualStyleBackColor = true;
             // 
             // groupBox36
             // 
@@ -2025,6 +2020,13 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -3270,6 +3272,7 @@ namespace Robot
             // 
             // groupBox31
             // 
+            this.groupBox31.Controls.Add(this.button95);
             this.groupBox31.Controls.Add(this.button92);
             this.groupBox31.Controls.Add(this.button90);
             this.groupBox31.Controls.Add(this.txtOutput);
@@ -3286,6 +3289,22 @@ namespace Robot
             resources.ApplyResources(this.groupBox31, "groupBox31");
             this.groupBox31.Name = "groupBox31";
             this.groupBox31.TabStop = false;
+            // 
+            // button95
+            // 
+            this.button95.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.button95, "button95");
+            this.button95.Name = "button95";
+            this.button95.UseVisualStyleBackColor = true;
+            this.button95.Click += new System.EventHandler(this.button95_Click);
+            // 
+            // button92
+            // 
+            this.button92.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.button92, "button92");
+            this.button92.Name = "button92";
+            this.button92.UseVisualStyleBackColor = true;
+            this.button92.Click += new System.EventHandler(this.button92_Click_1);
             // 
             // button90
             // 
@@ -4582,6 +4601,19 @@ namespace Robot
             resources.ApplyResources(this.groupBox21, "groupBox21");
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.TabStop = false;
+            // 
+            // SimDataLog
+            // 
+            resources.ApplyResources(this.SimDataLog, "SimDataLog");
+            this.SimDataLog.Name = "SimDataLog";
+            // 
+            // button94
+            // 
+            this.button94.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.button94, "button94");
+            this.button94.Name = "button94";
+            this.button94.UseVisualStyleBackColor = true;
+            this.button94.Click += new System.EventHandler(this.button94_Click);
             // 
             // button67
             // 
@@ -6917,39 +6949,23 @@ namespace Robot
             this.timerMain.Interval = 40;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
             // 
-            // LogGPS
+            // Supply_Lights
             // 
-            resources.ApplyResources(this.LogGPS, "LogGPS");
-            this.LogGPS.Name = "LogGPS";
-            this.LogGPS.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.Supply_Lights, "Supply_Lights");
+            this.Supply_Lights.BackColor = System.Drawing.Color.Transparent;
+            this.Supply_Lights.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Supply_Lights.Name = "Supply_Lights";
+            this.Supply_Lights.UseVisualStyleBackColor = false;
+            this.Supply_Lights.CheckedChanged += new System.EventHandler(this.Supply_Lights_CheckedChanged_2);
             // 
-            // button92
+            // Supply_Laser
             // 
-            this.button92.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.button92, "button92");
-            this.button92.Name = "button92";
-            this.button92.UseVisualStyleBackColor = true;
-            this.button92.Click += new System.EventHandler(this.button92_Click_1);
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
-            // 
-            // button94
-            // 
-            this.button94.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.button94, "button94");
-            this.button94.Name = "button94";
-            this.button94.UseVisualStyleBackColor = true;
-            this.button94.Click += new System.EventHandler(this.button94_Click);
-            // 
-            // SimDataLog
-            // 
-            resources.ApplyResources(this.SimDataLog, "SimDataLog");
-            this.SimDataLog.Name = "SimDataLog";
+            resources.ApplyResources(this.Supply_Laser, "Supply_Laser");
+            this.Supply_Laser.BackColor = System.Drawing.Color.Transparent;
+            this.Supply_Laser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Supply_Laser.Name = "Supply_Laser";
+            this.Supply_Laser.UseVisualStyleBackColor = false;
+            this.Supply_Laser.CheckedChanged += new System.EventHandler(this.Supply_Laser_CheckedChanged);
             // 
             // Robot1
             // 
@@ -7972,12 +7988,10 @@ namespace Robot
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button Joystick_Initialization;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox CAM_Servo2;
         private System.Windows.Forms.CheckBox Supply_Direction_Servo;
         private System.Windows.Forms.CheckBox Supply_Camera;
         private System.Windows.Forms.CheckBox Supply_GPS;
-        private System.Windows.Forms.CheckBox Supply_Lights;
         private System.Windows.Forms.GroupBox groupBox55;
         private System.Windows.Forms.GroupBox groupBox54;
         private System.Windows.Forms.GroupBox groupBox53;
@@ -7992,6 +8006,9 @@ namespace Robot
         private System.Windows.Forms.Button button92;
         private System.Windows.Forms.Button button94;
         private System.Windows.Forms.TextBox SimDataLog;
+        private System.Windows.Forms.Button button95;
+        private System.Windows.Forms.CheckBox Supply_Lights;
+        private System.Windows.Forms.CheckBox Supply_Laser;
 
 
     }

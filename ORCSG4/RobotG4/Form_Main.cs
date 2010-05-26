@@ -418,7 +418,7 @@ namespace Robot
             //this.usrCtrlAxis3D.Size = new Size(350, 350);
             //this.usrCtrlAxis3D.Location = new Point(0, 0);
             //this.Controls.Add(this.usrCtrlAxis3D);
-            this.mySerialPort = new SerialPort("COM4", 9600, Parity.None, 8, StopBits.One);
+            this.mySerialPort = new SerialPort("COM5", 9600, Parity.None, 8, StopBits.One);
             this.mySerialPort.Handshake = Handshake.None;
             this.mySerialPort.RtsEnable = true;
             this.mySerialPort.DataReceived += new SerialDataReceivedEventHandler(MySerialPort_DataReceived);
@@ -629,6 +629,10 @@ namespace Robot
                 textLogs.Paste(dataForAnalyseMEMS);
                 char[] USART_dataMEMS = dataForAnalyseMEMS.ToCharArray();
                 string MEMS_MSG = new string(USART_dataMEMS, 1, 3);
+                nXaxis = Convert.ToInt32(USART_dataMEMS[1]);
+                nYaxis = Convert.ToInt32(USART_dataMEMS[2]);
+                nZaxis = Convert.ToInt32(USART_dataMEMS[3]);
+                ProcessDataMEMS();
                 //SetMap();
             }
             catch { }
@@ -3791,14 +3795,89 @@ namespace Robot
             }
         }
 
+        private void drawvalueTCP()
+        {
+            while (inkr < 5000)
+            {
+                Thread.Sleep(200);
+
+                this.txtByte01.Text = String.Format("{0:x2}", byte010); //$
+                this.txtByte02.Text = String.Format("{0:x2}", byte020); //x
+                this.txtByte03.Text = String.Format("{0:x2}", byte030); //y
+                this.txtByte04.Text = String.Format("{0:x2}", byte040); //z
+
+                this.txtXaxis.Text = String.Format("{0}", nXaxis0);
+                this.txtYaxis.Text = String.Format("{0}", nYaxis0);
+                this.txtZaxis.Text = String.Format("{0}", nYaxis0);
+
+                this.txtMinX.Text = this.nMinX0.ToString();
+                this.txtMaxX.Text = this.nMaxX0.ToString();
+
+                this.txtMinY.Text = this.nMinY0.ToString();
+                this.txtMaxY.Text = this.nMaxY0.ToString();
+
+                this.txtMinZ.Text = this.nMinZ0.ToString();
+                this.txtMaxZ.Text = this.nMaxZ0.ToString();
+
+                this.txtRefreshRate.Text = String.Format("{0:f4}", Utility.Timer(DirectXTimer.GetElapsedTime));
+                //this.txtBytesRead.Text = nBytes.ToString();
+
+                this.txtAngleX.Text = fAnglex0.ToString();
+                this.txtAngleY.Text = fAngley0.ToString();
+                this.txtAngleZ.Text = fAnglez0.ToString();
+
+                if (fAnglex0 < 50 || fAnglex0 > 130)  //WARNING X
+                {
+                    num = num + 1;
+                    txtAngleX.BackColor = Color.Red;
+                    txtOutput.AppendText(num.ToString() + ". X axis warning dangerous tilt");
+                    txtOutput.AppendText("\n");
+                }
+                else
+                {
+                    txtAngleX.BackColor = Color.White;
+                }
+
+                if (fAnglez0 < 50 || fAnglez0 > 130) //WARNING Z(Y)
+                {
+                    num = num + 1;
+                    txtAngleZ.BackColor = Color.Red;
+                    txtOutput.AppendText(num.ToString() + ". Y axis warning dangerous tilt");
+                    txtOutput.AppendText("\n");
+                }
+                else
+                {
+                    txtAngleZ.BackColor = Color.White;
+                }
+
+                if (radioButton1.Checked == true)
+                {
+                    radio = 1;
+                    selAxis = nXaxis;
+                }
+                if (radioButton2.Checked == true)
+                {
+                    radio = 2;
+                    selAxis = nYaxis;
+                }
+                if (radioButton3.Checked == true)
+                {
+                    radio = 3;
+                    selAxis = nZaxis;
+                }
+            }
+        }
+
         private void TimerMain_Tick(object sender, EventArgs e)
         {
+            /*
             if (this.mySerialPort.IsOpen == false)
                 this.txtOutput.Text = "Serial port is not opened.";
             else
             {
                 //                this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
             }
+             */
         }
 
         void MySerialPort_DataReceived(object objSender, SerialDataReceivedEventArgs dataReceivedEventArgs)
@@ -3951,6 +4030,136 @@ namespace Robot
             }
 
         } // End of ProcessData method
+
+
+        private void ProcessDataMEMS()
+        {
+            //if (this.byteQueue.Count < 6)
+            //    return;
+
+            /*
+            byte01 = (Byte)this.byteQueue.Dequeue(); //$
+            if (byte01 != 36)
+                return;
+            byte02 = (Byte)this.byteQueue.Dequeue(); //X
+            byte03 = (Byte)this.byteQueue.Dequeue(); //Y
+            byte04 = (Byte)this.byteQueue.Dequeue(); //Z     ///NEW CHANGE
+            byte05 = (Byte)this.byteQueue.Dequeue(); //13
+            byte06 = (Byte)this.byteQueue.Dequeue(); //10
+            */ 
+             
+            //refresh  11
+            //this.txtByte05.Text = String.Format("{0:x2}", byte05);
+            //this.txtByte06.Text = String.Format("{0:x2}", byte06);
+            // PWM % based on documentation formula
+            //float fXaxis = (256 * this.buffer[0] + this.buffer[1]) / 100;
+            //float fYaxis = (256 * this.buffer[2] + this.buffer[3]) / 100;
+            //this.txtXaxis.Text = String.Format("{0:f4}", fXaxis);
+            //this.txtYaxis.Text = String.Format("{0:f4}", fYaxis);
+
+            /*
+            nXaxis = Convert.ToInt32(byte02);
+            nYaxis = Convert.ToInt32(byte03);  ///NEW CHANGE
+            nZaxis = Convert.ToInt32(byte04);
+            */
+            
+            //refresh 2
+
+            if (nXaxis < this.nMinX)
+                this.nMinX = nXaxis;
+
+            if (nXaxis > this.nMaxX)
+                this.nMaxX = nXaxis;
+
+            if (nYaxis < this.nMinY)
+                this.nMinY = nYaxis;
+
+            if (nYaxis > this.nMaxY)
+                this.nMaxY = nYaxis;
+
+            if (nZaxis < this.nMinZ)
+                this.nMinZ = nZaxis;
+
+            if (nZaxis > this.nMaxZ)
+                this.nMaxZ = nZaxis;
+
+            ///refresh 3
+
+            if (this.bUseSmoothing == true)
+            {
+                int nDeltaX = Math.Abs(nXaxis - this.nPrevX);
+                int nDeltaY = Math.Abs(nYaxis - this.nPrevY);
+                int nDeltaZ = Math.Abs(nZaxis - this.nPrevZ);
+
+                if (nDeltaX < this.nSmoothingDelta)
+                    nXaxis = this.nPrevX;
+
+                if (nYaxis <= 0)
+                    nYaxis = this.nPrevY;
+
+                if (nDeltaY < this.nSmoothingDelta)
+                    nYaxis = this.nPrevY;
+
+                if (nDeltaZ < this.nSmoothingDelta)
+                    nZaxis = this.nPrevZ;
+
+                if (this.b3dMode == true)
+                    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis); //testval =1;/////this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);  //dorobit z
+                else
+                    this.usrCtrlAxis2D.SetCurrentValue(selAxis);
+
+                this.nPrevX = nXaxis;
+                this.nPrevY = nYaxis;
+                this.nPrevZ = nZaxis;
+
+                return;
+            }
+
+            //delayed write
+            inkr = inkr + 1;
+
+            if (inkr >= 1)
+            {
+                byte010 = 127; //byte01; //
+                byte020 = (byte)nXaxis; //byte02; //X
+                byte030 = (byte)nYaxis; //byte03; //Y
+                byte040 = (byte)nZaxis; //byte04; //Z
+
+                nXaxis0 = nXaxis;
+                nYaxis0 = nYaxis;
+                nYaxis0 = nZaxis;
+
+                nMinX0  = nMinX;//10000;
+                nMaxX0 = nMaxX;//-10000;
+                nMinY0 = nMinY;//10000;
+                nMaxY0 = nMaxY;//-10000;
+                nMinZ0 = nMinZ;//10000;
+                nMaxZ0 = nMaxZ;//-10000;
+
+                inkr = 0;
+            }
+            //int sdssss;
+            // Default
+            if (this.b3dMode == true)
+                this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis); //sdssss=1;   //    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);
+            else
+            {
+                if (radio == 1)
+                {
+                    this.usrCtrlAxis2D.SetCurrentValue(nXaxis);
+                }
+                if (radio == 2)
+                {
+                    this.usrCtrlAxis2D.SetCurrentValue(nYaxis);
+                }
+                if (radio == 3)
+                {
+                    this.usrCtrlAxis2D.SetCurrentValue(nZaxis);
+                }
+            }
+
+        } // End of ProcessData method MEMS
+
 
         public delegate void UpdateSerialData(Object objSender, SerialDataReceivedEventArgs dataReceivedEventArgs);
 
@@ -4526,10 +4735,29 @@ namespace Robot
 
         private void button92_Click_1(object sender, EventArgs e) //TCPClient MEMS enable port 2001
         {
+            this.panel1.Controls.Add(this.usrCtrlAxis2D);
+            this.panel1.Controls.Add(this.usrCtrlAxis3D);
+            
             WorkerThreadMEMS = new Thread(new ThreadStart(InWorkerThreadMEMS)); //MEMS
             WorkerThreadMEMS.Start(); //MEMS
             TcpClnt.TCP_Client_Start(textTCPClientServerIPAddress.Text, 2001);
             TcpClnt.ClientDataReceived += new Communication.ClientDelegate(TcpClnt_ClientDataReceivedMEMS);
+
+            try
+            {
+                Utility.Timer(DirectXTimer.Start);
+
+                this.timerMain.Interval = 75;
+                this.timerMain.Enabled = true;
+
+                this.txtOutput.Text += "TCP Client port opened...\r\n";
+            }
+            catch (Exception ex)
+            {
+                this.txtOutput.Text += String.Format("{0}\r\n", ex.Message);
+            }
+            trd = new Thread(new ThreadStart(this.drawvalueTCP));
+            trd.Start();
         }
 
         private void button94_Click(object sender, EventArgs e)
@@ -4538,6 +4766,97 @@ namespace Robot
             WorkerThreadSim.Start(); //Sim
             TcpSrvrSim.TCP_Server_Start(textTCPClientServerIPAddress.Text, Convert.ToInt16(textTCPClientServerPortNumber.Text));
             TcpSrvrSim.ServerDataReceived += new Communication.ServerDelegate(TcpSrvr_ServerDataReceivedSim);
+        }
+
+        private void button95_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Utility.Timer(DirectXTimer.Start);
+
+                this.timerMain.Interval = 75;
+                this.timerMain.Enabled = true;
+
+                this.txtOutput.Text += "TCP Client port opened...\r\n";
+            }
+            catch (Exception ex)
+            {
+                this.txtOutput.Text += String.Format("{0}\r\n", ex.Message);
+            }
+            trd = new Thread(new ThreadStart(this.drawvalueTCP));
+            trd.Start();
+        }
+
+        private void Supply_Direction_Servo_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (Supply_Direction_Servo.Checked == true)
+                SendData(SendMessage.DirectionServo_ON());
+            else if (Supply_Direction_Servo.Checked == false)
+                SendData(SendMessage.DirectionServo_OFF());
+        }
+
+        private void CAM_Servo2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (CAM_Servo2.Checked == true)
+                SendData(SendMessage.CameraServos_ON());
+            else if (CAM_Servo2.Checked == false)
+                SendData(SendMessage.CameraServos_OFF());
+        }
+
+        private void Supply_Lights_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (Supply_Lights.Checked == true)
+            {
+                SendData(SendMessage.LIGHTS_ON());
+            }
+            else if (Supply_Lights.Checked == false)
+            {
+                SendData(SendMessage.LIGHTS_OFF());
+            }
+        }
+
+        private void Supply_Lights_CheckedChanged_2(object sender, EventArgs e)
+        {
+            if (Supply_Lights.Checked == true)
+            {
+                SendData(SendMessage.LIGHTS_ON());
+            }
+            else if (Supply_Lights.Checked == false)
+            {
+                SendData(SendMessage.LIGHTS_OFF());
+            }
+        }
+
+        private void Supply_Laser_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Supply_Laser.Checked == true)
+            {
+                SendData(SendMessage.LASER_ON());
+            }
+            else if (Supply_Laser.Checked == false)
+            {
+                SendData(SendMessage.LASER_OFF());
+            }
+        }
+
+        private void Supply_GPS_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (Supply_GPS.Checked == true)
+            {
+                SendData(SendMessage.GPS_ON());
+            }
+            else if (Supply_GPS.Checked == false)
+            {
+                SendData(SendMessage.GPS_OFF());
+            }
+        }
+
+        private void Supply_Camera_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (Supply_Camera.Checked == true)
+                SendData(SendMessage.CAMERA_ON());
+            if (Supply_Camera.Checked == false)
+                SendData(SendMessage.CAMERA_OFF());
         }
    }
 }
