@@ -3777,17 +3777,17 @@ namespace Robot
                     txtAngleZ.BackColor = Color.White;
                 }
 
-                if (radioButton1.Checked == true)
+                if (radioButton1a.Checked == true)
                 {
                     radio = 1;
                     selAxis = nXaxis;
                 }
-                if (radioButton2.Checked == true)
+                if (radioButton2a.Checked == true)
                 {
                     radio = 2;
                     selAxis = nYaxis;
                 }
-                if (radioButton3.Checked == true)
+                if (radioButton3a.Checked == true)
                 {
                     radio = 3;
                     selAxis = nZaxis;
