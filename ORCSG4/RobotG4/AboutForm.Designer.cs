@@ -145,7 +145,7 @@
             this.textBoxLog.ReadOnly = true;
             this.textBoxLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxLog.ShortcutsEnabled = false;
-            this.textBoxLog.Size = new System.Drawing.Size(228, 110);
+            this.textBoxLog.Size = new System.Drawing.Size(228, 114);
             this.textBoxLog.TabIndex = 6;
             this.textBoxLog.TabStop = false;
             this.textBoxLog.Text = resources.GetString("textBoxLog.Text");
@@ -275,7 +275,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(308, 88);
+            this.label8.Location = new System.Drawing.Point(307, 88);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(240, 26);
             this.label8.TabIndex = 5;
@@ -285,11 +285,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(308, 37);
+            this.label7.Location = new System.Drawing.Point(307, 35);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 13);
+            this.label7.Size = new System.Drawing.Size(238, 26);
             this.label7.TabIndex = 4;
-            this.label7.Text = "Roman Faith (TUKE, Sjf) Kinematics";
+            this.label7.Text = "Roman Faith (TUKE, Sjf) Kinematics\r\nLubomir Simsik (TUKE, Sjf) Environment mappin" +
+                "g\r\n";
             // 
             // label6
             // 

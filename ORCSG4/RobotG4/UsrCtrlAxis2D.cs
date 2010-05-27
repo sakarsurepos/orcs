@@ -234,7 +234,6 @@ namespace Robot
                 Robot1.fAnglez0 = fAngle;
             }
 
-
             // Create a matrix and scale it.
             Matrix myMatrix = new Matrix();
             myMatrix.RotateAt(this.fAngle, new PointF(this.fOriginX, this.fOriginY));

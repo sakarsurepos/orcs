@@ -77,6 +77,8 @@ namespace Robot
             this.Joystick_Initialization = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox52 = new System.Windows.Forms.GroupBox();
+            this.Supply_Laser = new System.Windows.Forms.CheckBox();
+            this.Supply_Lights = new System.Windows.Forms.CheckBox();
             this.CAM_Servo2 = new System.Windows.Forms.CheckBox();
             this.Supply_Direction_Servo = new System.Windows.Forms.CheckBox();
             this.Supply_Camera = new System.Windows.Forms.CheckBox();
@@ -794,8 +796,6 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
-            this.Supply_Lights = new System.Windows.Forms.CheckBox();
-            this.Supply_Laser = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -1379,6 +1379,24 @@ namespace Robot
             resources.ApplyResources(this.groupBox52, "groupBox52");
             this.groupBox52.Name = "groupBox52";
             this.groupBox52.TabStop = false;
+            // 
+            // Supply_Laser
+            // 
+            resources.ApplyResources(this.Supply_Laser, "Supply_Laser");
+            this.Supply_Laser.BackColor = System.Drawing.Color.Transparent;
+            this.Supply_Laser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Supply_Laser.Name = "Supply_Laser";
+            this.Supply_Laser.UseVisualStyleBackColor = false;
+            this.Supply_Laser.CheckedChanged += new System.EventHandler(this.Supply_Laser_CheckedChanged);
+            // 
+            // Supply_Lights
+            // 
+            resources.ApplyResources(this.Supply_Lights, "Supply_Lights");
+            this.Supply_Lights.BackColor = System.Drawing.Color.Transparent;
+            this.Supply_Lights.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Supply_Lights.Name = "Supply_Lights";
+            this.Supply_Lights.UseVisualStyleBackColor = false;
+            this.Supply_Lights.CheckedChanged += new System.EventHandler(this.Supply_Lights_CheckedChanged_2);
             // 
             // CAM_Servo2
             // 
@@ -6948,24 +6966,6 @@ namespace Robot
             // 
             this.timerMain.Interval = 40;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
-            // 
-            // Supply_Lights
-            // 
-            resources.ApplyResources(this.Supply_Lights, "Supply_Lights");
-            this.Supply_Lights.BackColor = System.Drawing.Color.Transparent;
-            this.Supply_Lights.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Supply_Lights.Name = "Supply_Lights";
-            this.Supply_Lights.UseVisualStyleBackColor = false;
-            this.Supply_Lights.CheckedChanged += new System.EventHandler(this.Supply_Lights_CheckedChanged_2);
-            // 
-            // Supply_Laser
-            // 
-            resources.ApplyResources(this.Supply_Laser, "Supply_Laser");
-            this.Supply_Laser.BackColor = System.Drawing.Color.Transparent;
-            this.Supply_Laser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Supply_Laser.Name = "Supply_Laser";
-            this.Supply_Laser.UseVisualStyleBackColor = false;
-            this.Supply_Laser.CheckedChanged += new System.EventHandler(this.Supply_Laser_CheckedChanged);
             // 
             // Robot1
             // 
