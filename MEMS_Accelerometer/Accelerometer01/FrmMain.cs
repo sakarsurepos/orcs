@@ -79,6 +79,9 @@ namespace Accelerometer01
         Byte byte020 = 127; //X
         Byte byte030 = 127; //Z //CHANGE
         Byte byte040 = 127; //Y
+        //NEW
+        public static float Ztran = 0;
+        //NEW
 
         Int32 nXaxis0 = 127;
         Int32 nYaxis0 = 127;
@@ -148,6 +151,7 @@ namespace Accelerometer01
         private TextBox txtMinY;
         private TextBox txtYaxis;
         private Label label7;
+        private CheckBox checkBoxZtran;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -248,6 +252,7 @@ namespace Accelerometer01
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBoxZtran = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -596,7 +601,7 @@ namespace Accelerometer01
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(21, 15);
+            this.radioButton3.Location = new System.Drawing.Point(430, 219);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(54, 17);
             this.radioButton3.TabIndex = 39;
@@ -643,7 +648,7 @@ namespace Accelerometer01
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.radioButton3);
+            this.groupBox4.Controls.Add(this.checkBoxZtran);
             this.groupBox4.Controls.Add(this.txtZaxis);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.txtMinZ);
@@ -665,11 +670,22 @@ namespace Accelerometer01
             this.label7.TabIndex = 44;
             this.label7.Text = "Fall";
             // 
+            // checkBoxZtran
+            // 
+            this.checkBoxZtran.AutoSize = true;
+            this.checkBoxZtran.Location = new System.Drawing.Point(20, 16);
+            this.checkBoxZtran.Name = "checkBoxZtran";
+            this.checkBoxZtran.Size = new System.Drawing.Size(58, 17);
+            this.checkBoxZtran.TabIndex = 45;
+            this.checkBoxZtran.Text = " Z Axis";
+            this.checkBoxZtran.UseVisualStyleBackColor = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 407);
+            this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
@@ -791,11 +807,11 @@ namespace Accelerometer01
                     radio = 2;
                     selAxis = nYaxis;
                 }
-                if (radioButton3.Checked == true)
-                {
-                    radio = 3;
-                    selAxis = nZaxis;
-                }
+                //if (radioButton3.Checked == true)
+                //{
+                //    radio = 3;
+                //    selAxis = nZaxis;
+                //}
             }
         }
 
@@ -996,10 +1012,13 @@ namespace Accelerometer01
                 {
                     this.usrCtrlAxis2D.SetCurrentValue(nYaxis);
                 }
-                if (radio == 3)
+                if (checkBoxZtran.Checked == true)
                 {
-                    this.usrCtrlAxis2D.SetCurrentValue(nZaxis);
+                    //NEW
+                    Ztran = nZaxis-188;
+                    //NEW
                 }
+
             }
 
         } // End of ProcessData method

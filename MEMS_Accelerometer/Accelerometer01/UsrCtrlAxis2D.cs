@@ -46,9 +46,7 @@ namespace Accelerometer01
         private float fMinZ = 70; // Close to experimental values
         private float fMaxZ = 215;
         private float fAngle = 0;
-        //NEW
-        private float Ztran = 0;
-        //NEW
+
 
         private PointF[] ptsObject = new PointF[5];
         private PointF[] ptsModObject = new PointF[5];
@@ -174,7 +172,7 @@ namespace Accelerometer01
         public void SetCurrentValue(float fCurrent)
         {
             
-            if(FrmMain.radio == 1) ///XXXXX (REAL X)
+            if(FrmMain.radio == 1) ///XXXXX 
             {
             if (fCurrent < fMinX)
                 fMinX = fCurrent;
@@ -197,7 +195,7 @@ namespace Accelerometer01
             FrmMain.fAnglex0 = fAngle;
             }
 
-            if (FrmMain.radio == 2) //YYYY (REAL ZZZZ)
+            if (FrmMain.radio == 2) //YYYY 
             {
                 if (fCurrent < this.fMinY)
                     this.fMinY = fCurrent;
@@ -219,33 +217,11 @@ namespace Accelerometer01
                 FrmMain.fAngley0 = fAngle;
             }
 
-            if (FrmMain.radio == 3) ///Z (REAL Y)
-            {
-                if (fCurrent < this.fMinZ)
-                    this.fMinZ = fCurrent;
-
-                if (fCurrent > this.fMaxZ)
-                    this.fMaxZ = fCurrent;
-
-                // Copy original points
-                for (int i = 0; i < 5; i++)
-                    this.ptsModObject[i] = this.ptsObject[i];
-
-                // Do some calculations
-                // Minimum value will be 0 degrees
-                // Maximum value will be 180 degrees
-
-
-                float fUnitZ = 180 / (this.fMaxZ - this.fMinZ);
-                this.fAngle = ((fCurrent - this.fMinZ) * fUnitZ);
-                FrmMain.fAnglez0 = fAngle;
-            }
-
-
             // Create a matrix and scale it.
             Matrix myMatrix = new Matrix();
             //NEW
-            myMatrix.RotateAt(this.fAngle, new PointF(this.fOriginX, this.fOriginY-Ztran));
+            myMatrix.RotateAt( this.fAngle, new PointF(this.fOriginX, this.fOriginY));
+            myMatrix.Translate(FrmMain.Ztran/2, 0);
             //NEW
             myMatrix.TransformPoints(this.ptsModObject);
 
