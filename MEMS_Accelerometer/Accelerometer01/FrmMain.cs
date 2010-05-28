@@ -242,12 +242,12 @@ namespace Accelerometer01
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.txtAngleY = new System.Windows.Forms.TextBox();
             this.txtMaxY = new System.Windows.Forms.TextBox();
             this.txtMinY = new System.Windows.Forms.TextBox();
             this.txtYaxis = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -597,9 +597,9 @@ namespace Accelerometer01
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 355);
+            this.panel1.Size = new System.Drawing.Size(351, 355);
             this.panel1.TabIndex = 39;
             // 
             // groupBox4
@@ -616,6 +616,15 @@ namespace Accelerometer01
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MEMS Free Fall";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 13);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "Fall";
             // 
             // radioButton2
             // 
@@ -655,15 +664,6 @@ namespace Accelerometer01
             this.txtYaxis.Name = "txtYaxis";
             this.txtYaxis.Size = new System.Drawing.Size(57, 20);
             this.txtYaxis.TabIndex = 39;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 121);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 13);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "Fall";
             // 
             // FrmMain
             // 
