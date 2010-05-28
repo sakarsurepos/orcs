@@ -725,7 +725,7 @@ namespace Accelerometer01
 
                 this.txtXaxis.Text = String.Format("{0}", nXaxis0);
                 this.txtYaxis.Text = String.Format("{0}", nYaxis0);
-                this.txtZaxis.Text = String.Format("{0}", nYaxis0);
+                this.txtZaxis.Text = String.Format("{0}", nZaxis0); //NEW fail
 
                 this.txtMinX.Text = this.nMinX0.ToString();
                 this.txtMaxX.Text = this.nMaxX0.ToString();
@@ -971,7 +971,7 @@ namespace Accelerometer01
 
                 nXaxis0 = nXaxis;
                 nYaxis0 = nYaxis;
-                nYaxis0 = nZaxis;
+                nZaxis0 = nZaxis;  //NEW repair
 
                 nMinX0 = nMinX;//10000;
                 nMaxX0 = nMaxX;//-10000;
@@ -1075,9 +1075,9 @@ namespace Accelerometer01
         {
             //Utility.Timer(DirectXTimer.Stop);
             this.mySerialPort.Close();
-            trd.Suspend();
-            trd.Abort();
-            this.Dispose();
+            //trd.Suspend();
+            //trd.Abort();
+            //this.Dispose();
         }
     } // End of FrmMain class
 

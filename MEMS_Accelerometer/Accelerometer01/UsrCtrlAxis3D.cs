@@ -193,8 +193,8 @@ namespace Accelerometer01
 
             this.dxDevice.BeginScene();
 
-            this.dxDevice.Transform.World = Matrix.RotationX(this.fAngleY) * Matrix.RotationZ(this.fAngleX);
-            this.dxDevice.Transform.World = Matrix.Translation(0, 0, 5); //test translate matrix
+            this.dxDevice.Transform.World = Matrix.RotationX(this.fAngleY) * Matrix.RotationZ(this.fAngleX) * Matrix.Translation(0, 0, 5);
+            //this.dxDevice.Transform.World = Matrix.Translation(0, 0, 5); //test translate matrix
             this.dxDevice.Material = this.boxMaterial;
             this.boxMesh.DrawSubset(0);
 
