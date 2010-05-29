@@ -80,7 +80,13 @@ namespace Accelerometer01
         Byte byte030 = 127; //Z //CHANGE
         Byte byte040 = 127; //Y
         //NEW
+        public static float Xtran = 0;
+        public static float Ytran = 0;
         public static float Ztran = 0;
+        public static bool lockX = false;
+        public static bool lockY = false;
+        public static bool lockZ = false;
+
         //NEW
 
         Int32 nXaxis0 = 127;
@@ -141,7 +147,6 @@ namespace Accelerometer01
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private Panel panel1;
-        private RadioButton radioButton3;
         private RadioButton radioButton1;
         private Label label14;
         private GroupBox groupBox4;
@@ -150,8 +155,20 @@ namespace Accelerometer01
         private TextBox txtMaxY;
         private TextBox txtMinY;
         private TextBox txtYaxis;
-        private Label label7;
         private CheckBox checkBoxZtran;
+        private TextBox textBoxSpeedM;
+        private Label label8;
+        private CheckBox checkBoxXtran;
+        private CheckBox checkBoxYtran;
+        private CheckBox checkBoxAll;
+        private CheckBox checkBoxAngleLock;
+        private CheckBox checkBoxTransXY;
+        private TextBox textBox2;
+        private TextBox textBox;
+        private GroupBox groupBox5;
+        private Button button5;
+        private Button button4;
+        private Button button3;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -239,6 +256,9 @@ namespace Accelerometer01
             this.txtAngleX = new System.Windows.Forms.TextBox();
             this.txtAngleZ = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxAll = new System.Windows.Forms.CheckBox();
+            this.checkBoxYtran = new System.Windows.Forms.CheckBox();
+            this.checkBoxXtran = new System.Windows.Forms.CheckBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.txtAngleY = new System.Windows.Forms.TextBox();
@@ -246,17 +266,26 @@ namespace Accelerometer01
             this.txtMaxY = new System.Windows.Forms.TextBox();
             this.txtMinY = new System.Windows.Forms.TextBox();
             this.txtYaxis = new System.Windows.Forms.TextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxSpeedM = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.checkBoxZtran = new System.Windows.Forms.CheckBox();
+            this.checkBoxAngleLock = new System.Windows.Forms.CheckBox();
+            this.checkBoxTransXY = new System.Windows.Forms.CheckBox();
+            this.textBox = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtOutput
@@ -278,28 +307,28 @@ namespace Accelerometer01
             // 
             // txtByte01
             // 
-            this.txtByte01.Location = new System.Drawing.Point(82, 13);
+            this.txtByte01.Location = new System.Drawing.Point(41, 13);
             this.txtByte01.Name = "txtByte01";
             this.txtByte01.Size = new System.Drawing.Size(57, 20);
             this.txtByte01.TabIndex = 1;
             // 
             // txtByte02
             // 
-            this.txtByte02.Location = new System.Drawing.Point(82, 39);
+            this.txtByte02.Location = new System.Drawing.Point(41, 39);
             this.txtByte02.Name = "txtByte02";
             this.txtByte02.Size = new System.Drawing.Size(57, 20);
             this.txtByte02.TabIndex = 2;
             // 
             // txtByte03
             // 
-            this.txtByte03.Location = new System.Drawing.Point(82, 93);
+            this.txtByte03.Location = new System.Drawing.Point(41, 93);
             this.txtByte03.Name = "txtByte03";
             this.txtByte03.Size = new System.Drawing.Size(57, 20);
             this.txtByte03.TabIndex = 3;
             // 
             // txtByte04
             // 
-            this.txtByte04.Location = new System.Drawing.Point(82, 65);
+            this.txtByte04.Location = new System.Drawing.Point(41, 65);
             this.txtByte04.Name = "txtByte04";
             this.txtByte04.Size = new System.Drawing.Size(57, 20);
             this.txtByte04.TabIndex = 4;
@@ -321,7 +350,7 @@ namespace Accelerometer01
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 16);
+            this.label1.Location = new System.Drawing.Point(13, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 7;
@@ -331,7 +360,7 @@ namespace Accelerometer01
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 96);
+            this.label2.Location = new System.Drawing.Point(13, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 8;
@@ -341,7 +370,7 @@ namespace Accelerometer01
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 42);
+            this.label3.Location = new System.Drawing.Point(13, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 9;
@@ -351,7 +380,7 @@ namespace Accelerometer01
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 68);
+            this.label4.Location = new System.Drawing.Point(13, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 13);
             this.label4.TabIndex = 10;
@@ -431,9 +460,9 @@ namespace Accelerometer01
             // 
             // btnMode
             // 
-            this.btnMode.Location = new System.Drawing.Point(378, 115);
+            this.btnMode.Location = new System.Drawing.Point(371, 107);
             this.btnMode.Name = "btnMode";
-            this.btnMode.Size = new System.Drawing.Size(122, 29);
+            this.btnMode.Size = new System.Drawing.Size(99, 29);
             this.btnMode.TabIndex = 24;
             this.btnMode.Text = "Switch to 3D";
             this.btnMode.UseVisualStyleBackColor = true;
@@ -442,7 +471,7 @@ namespace Accelerometer01
             // chkBoxSmoothing
             // 
             this.chkBoxSmoothing.AutoSize = true;
-            this.chkBoxSmoothing.Location = new System.Drawing.Point(389, 194);
+            this.chkBoxSmoothing.Location = new System.Drawing.Point(374, 144);
             this.chkBoxSmoothing.Name = "chkBoxSmoothing";
             this.chkBoxSmoothing.Size = new System.Drawing.Size(85, 17);
             this.chkBoxSmoothing.TabIndex = 25;
@@ -452,30 +481,30 @@ namespace Accelerometer01
             // 
             // txtZaxis
             // 
-            this.txtZaxis.Location = new System.Drawing.Point(18, 35);
+            this.txtZaxis.Location = new System.Drawing.Point(13, 35);
             this.txtZaxis.Name = "txtZaxis";
-            this.txtZaxis.Size = new System.Drawing.Size(64, 20);
+            this.txtZaxis.Size = new System.Drawing.Size(72, 20);
             this.txtZaxis.TabIndex = 26;
             // 
             // txtMinZ
             // 
-            this.txtMinZ.Location = new System.Drawing.Point(18, 61);
+            this.txtMinZ.Location = new System.Drawing.Point(14, 61);
             this.txtMinZ.Name = "txtMinZ";
-            this.txtMinZ.Size = new System.Drawing.Size(64, 20);
+            this.txtMinZ.Size = new System.Drawing.Size(71, 20);
             this.txtMinZ.TabIndex = 27;
             // 
             // txtMaxZ
             // 
-            this.txtMaxZ.Location = new System.Drawing.Point(18, 87);
+            this.txtMaxZ.Location = new System.Drawing.Point(14, 86);
             this.txtMaxZ.Name = "txtMaxZ";
-            this.txtMaxZ.Size = new System.Drawing.Size(64, 20);
+            this.txtMaxZ.Size = new System.Drawing.Size(71, 20);
             this.txtMaxZ.TabIndex = 28;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(378, 28);
+            this.button1.Location = new System.Drawing.Point(371, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 32);
+            this.button1.Size = new System.Drawing.Size(99, 32);
             this.button1.TabIndex = 30;
             this.button1.Text = "Open Serial Port";
             this.button1.UseVisualStyleBackColor = true;
@@ -483,9 +512,9 @@ namespace Accelerometer01
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(378, 69);
+            this.button2.Location = new System.Drawing.Point(371, 61);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 33);
+            this.button2.Size = new System.Drawing.Size(99, 33);
             this.button2.TabIndex = 31;
             this.button2.Text = "Close Serial Port";
             this.button2.UseVisualStyleBackColor = true;
@@ -504,18 +533,23 @@ namespace Accelerometer01
             // 
             this.txtAngleX.Location = new System.Drawing.Point(55, 117);
             this.txtAngleX.Name = "txtAngleX";
-            this.txtAngleX.Size = new System.Drawing.Size(57, 20);
+            this.txtAngleX.Size = new System.Drawing.Size(30, 20);
             this.txtAngleX.TabIndex = 33;
             // 
             // txtAngleZ
             // 
-            this.txtAngleZ.Location = new System.Drawing.Point(41, 115);
+            this.txtAngleZ.Location = new System.Drawing.Point(41, 113);
             this.txtAngleZ.Name = "txtAngleZ";
-            this.txtAngleZ.Size = new System.Drawing.Size(41, 20);
+            this.txtAngleZ.Size = new System.Drawing.Size(23, 20);
             this.txtAngleZ.TabIndex = 35;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox);
+            this.groupBox1.Controls.Add(this.checkBoxAll);
+            this.groupBox1.Controls.Add(this.checkBoxYtran);
+            this.groupBox1.Controls.Add(this.checkBoxXtran);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.txtAngleY);
@@ -531,12 +565,43 @@ namespace Accelerometer01
             this.groupBox1.Controls.Add(this.txtMaxX);
             this.groupBox1.Controls.Add(this.txtMinX);
             this.groupBox1.Controls.Add(this.txtXaxis);
-            this.groupBox1.Location = new System.Drawing.Point(372, 251);
+            this.groupBox1.Location = new System.Drawing.Point(365, 215);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(199, 144);
+            this.groupBox1.Size = new System.Drawing.Size(199, 172);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "MEMS Angle Values";
+            this.groupBox1.Text = "MEMS Angle/Speed Values";
+            // 
+            // checkBoxAll
+            // 
+            this.checkBoxAll.AutoSize = true;
+            this.checkBoxAll.Location = new System.Drawing.Point(20, 145);
+            this.checkBoxAll.Name = "checkBoxAll";
+            this.checkBoxAll.Size = new System.Drawing.Size(37, 17);
+            this.checkBoxAll.TabIndex = 46;
+            this.checkBoxAll.Text = "All";
+            this.checkBoxAll.UseVisualStyleBackColor = true;
+            this.checkBoxAll.CheckedChanged += new System.EventHandler(this.checkBoxAll_CheckedChanged);
+            // 
+            // checkBoxYtran
+            // 
+            this.checkBoxYtran.AutoSize = true;
+            this.checkBoxYtran.Location = new System.Drawing.Point(131, 145);
+            this.checkBoxYtran.Name = "checkBoxYtran";
+            this.checkBoxYtran.Size = new System.Drawing.Size(55, 17);
+            this.checkBoxYtran.TabIndex = 45;
+            this.checkBoxYtran.Text = "Y Axis";
+            this.checkBoxYtran.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxXtran
+            // 
+            this.checkBoxXtran.AutoSize = true;
+            this.checkBoxXtran.Location = new System.Drawing.Point(61, 145);
+            this.checkBoxXtran.Name = "checkBoxXtran";
+            this.checkBoxXtran.Size = new System.Drawing.Size(55, 17);
+            this.checkBoxXtran.TabIndex = 44;
+            this.checkBoxXtran.Text = "X Axis";
+            this.checkBoxXtran.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -565,7 +630,7 @@ namespace Accelerometer01
             // 
             this.txtAngleY.Location = new System.Drawing.Point(124, 117);
             this.txtAngleY.Name = "txtAngleY";
-            this.txtAngleY.Size = new System.Drawing.Size(57, 20);
+            this.txtAngleY.Size = new System.Drawing.Size(29, 20);
             this.txtAngleY.TabIndex = 42;
             // 
             // label14
@@ -598,24 +663,13 @@ namespace Accelerometer01
             this.txtYaxis.Size = new System.Drawing.Size(57, 20);
             this.txtYaxis.TabIndex = 39;
             // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(430, 219);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(54, 17);
-            this.radioButton3.TabIndex = 39;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Z Axis";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtRefreshRate);
             this.groupBox2.Controls.Add(this.txtBytesRead);
-            this.groupBox2.Location = new System.Drawing.Point(512, 164);
+            this.groupBox2.Location = new System.Drawing.Point(505, 137);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(160, 72);
             this.groupBox2.TabIndex = 37;
@@ -632,9 +686,9 @@ namespace Accelerometer01
             this.groupBox3.Controls.Add(this.txtByte03);
             this.groupBox3.Controls.Add(this.txtByte02);
             this.groupBox3.Controls.Add(this.txtByte01);
-            this.groupBox3.Location = new System.Drawing.Point(515, 22);
+            this.groupBox3.Location = new System.Drawing.Point(554, 16);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(157, 120);
+            this.groupBox3.Size = new System.Drawing.Size(111, 120);
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Raw Data";
@@ -648,44 +702,127 @@ namespace Accelerometer01
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.textBoxSpeedM);
+            this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.checkBoxZtran);
             this.groupBox4.Controls.Add(this.txtZaxis);
-            this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.txtMinZ);
             this.groupBox4.Controls.Add(this.txtMaxZ);
             this.groupBox4.Controls.Add(this.txtAngleZ);
-            this.groupBox4.Location = new System.Drawing.Point(572, 251);
+            this.groupBox4.Location = new System.Drawing.Point(565, 215);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(100, 144);
+            this.groupBox4.Size = new System.Drawing.Size(100, 172);
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MEMS Free Fall";
             // 
-            // label7
+            // textBoxSpeedM
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 13);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "Fall";
+            this.textBoxSpeedM.Location = new System.Drawing.Point(64, 113);
+            this.textBoxSpeedM.Name = "textBoxSpeedM";
+            this.textBoxSpeedM.Size = new System.Drawing.Size(23, 20);
+            this.textBoxSpeedM.TabIndex = 47;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 116);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Speed";
             // 
             // checkBoxZtran
             // 
             this.checkBoxZtran.AutoSize = true;
-            this.checkBoxZtran.Location = new System.Drawing.Point(20, 16);
+            this.checkBoxZtran.Location = new System.Drawing.Point(24, 145);
             this.checkBoxZtran.Name = "checkBoxZtran";
             this.checkBoxZtran.Size = new System.Drawing.Size(58, 17);
             this.checkBoxZtran.TabIndex = 45;
             this.checkBoxZtran.Text = " Z Axis";
             this.checkBoxZtran.UseVisualStyleBackColor = true;
             // 
+            // checkBoxAngleLock
+            // 
+            this.checkBoxAngleLock.AutoSize = true;
+            this.checkBoxAngleLock.Location = new System.Drawing.Point(374, 167);
+            this.checkBoxAngleLock.Name = "checkBoxAngleLock";
+            this.checkBoxAngleLock.Size = new System.Drawing.Size(80, 17);
+            this.checkBoxAngleLock.TabIndex = 48;
+            this.checkBoxAngleLock.Text = "Angle Lock";
+            this.checkBoxAngleLock.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTransXY
+            // 
+            this.checkBoxTransXY.AutoSize = true;
+            this.checkBoxTransXY.Location = new System.Drawing.Point(374, 190);
+            this.checkBoxTransXY.Name = "checkBoxTransXY";
+            this.checkBoxTransXY.Size = new System.Drawing.Size(98, 17);
+            this.checkBoxTransXY.TabIndex = 49;
+            this.checkBoxTransXY.Text = "Translation X,Y";
+            this.checkBoxTransXY.UseVisualStyleBackColor = true;
+            // 
+            // textBox
+            // 
+            this.textBox.Location = new System.Drawing.Point(86, 117);
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(26, 20);
+            this.textBox.TabIndex = 47;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(154, 117);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(27, 20);
+            this.textBox2.TabIndex = 48;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.Controls.Add(this.button4);
+            this.groupBox5.Controls.Add(this.button3);
+            this.groupBox5.Location = new System.Drawing.Point(476, 23);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(75, 113);
+            this.groupBox5.TabIndex = 50;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Setup";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(10, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(59, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "2G";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(10, 48);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(59, 23);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "5G";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(10, 77);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(59, 23);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Test";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 407);
-            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.checkBoxTransXY);
+            this.Controls.Add(this.checkBoxAngleLock);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
@@ -700,7 +837,7 @@ namespace Accelerometer01
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Robot Tilt Accelerometer";
+            this.Text = "Robot Tilt Accelerometer ADXL";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -710,6 +847,7 @@ namespace Accelerometer01
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -807,6 +945,24 @@ namespace Accelerometer01
                     radio = 2;
                     selAxis = nYaxis;
                 }
+                
+                if (checkBoxXtran.Checked == true)
+                {
+                    lockX = true;
+                }
+                else { lockX = false; }
+                
+                if (checkBoxYtran.Checked == true)
+                {
+                    lockY = true;
+                }
+                else { lockY = false; }
+
+                if (checkBoxAngleLock.Checked == true)
+                {
+                    lockZ = true;
+                }
+                else { lockZ = false; }
                 //if (radioButton3.Checked == true)
                 //{
                 //    radio = 3;
@@ -1019,6 +1175,14 @@ namespace Accelerometer01
                     //NEW
                 }
 
+                if (checkBoxXtran.Checked == true && radioButton1.Checked == true)
+                {
+                    Xtran = nXaxis - 145;
+                }
+                if (checkBoxYtran.Checked == true && radioButton2.Checked == true)
+                {
+                    Ytran = nYaxis - 145;
+                }
             }
 
         } // End of ProcessData method
@@ -1097,6 +1261,23 @@ namespace Accelerometer01
             //trd.Suspend();
             //trd.Abort();
             //this.Dispose();
+        }
+
+        private void checkBoxAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAll.Checked == false)
+            {
+                checkBoxXtran.Checked = false;
+                checkBoxYtran.Checked = false;
+                checkBoxZtran.Checked = false;
+            }
+            else
+            {
+                checkBoxXtran.Checked = true;
+                checkBoxYtran.Checked = true;
+                checkBoxZtran.Checked = true;
+            }
+
         }
 
     } // End of FrmMain class

@@ -172,7 +172,7 @@ namespace Accelerometer01
         public void SetCurrentValue(float fCurrent)
         {
             
-            if(FrmMain.radio == 1) ///XXXXX 
+            if(FrmMain.radio == 1 ) ///XXXXX && FrmMain.lockA == false
             {
             if (fCurrent < fMinX)
                 fMinX = fCurrent;
@@ -195,7 +195,7 @@ namespace Accelerometer01
             FrmMain.fAnglex0 = fAngle;
             }
 
-            if (FrmMain.radio == 2) //YYYY 
+            if (FrmMain.radio == 2 ) //YYYY && FrmMain.lockA == false
             {
                 if (fCurrent < this.fMinY)
                     this.fMinY = fCurrent;
@@ -220,8 +220,28 @@ namespace Accelerometer01
             // Create a matrix and scale it.
             Matrix myMatrix = new Matrix();
             //NEW
-            myMatrix.RotateAt( this.fAngle, new PointF(this.fOriginX, this.fOriginY));
-            myMatrix.Translate(FrmMain.Ztran/2, 0);
+            if (FrmMain.lockX == true || FrmMain.lockY == true || FrmMain.lockZ == true)
+            {
+                myMatrix.RotateAt(90, new PointF(this.fOriginX, this.fOriginY));
+                if (FrmMain.lockX == true)
+                {
+                    myMatrix.Translate(0, FrmMain.Xtran);
+                }
+                if (FrmMain.lockY == true)
+                {
+                    myMatrix.Translate(0, FrmMain.Ytran);
+                }
+                if (FrmMain.lockZ == true)
+                {
+                    myMatrix.Translate(FrmMain.Ztran, 0);
+                }
+
+            }
+            else
+            {
+                myMatrix.RotateAt(this.fAngle, new PointF(this.fOriginX, this.fOriginY));
+            }
+
             //NEW
             myMatrix.TransformPoints(this.ptsModObject);
 
