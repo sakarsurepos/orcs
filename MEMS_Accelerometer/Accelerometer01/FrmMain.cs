@@ -43,7 +43,7 @@ namespace Accelerometer01
         #region Fields
         private SerialPort mySerialPort = null;
         private Byte[] buffer = new Byte[5000];
-        //private Char[] sendChars = new Char[] { 'G' };
+        private Char[] sendChars = new Char[] { 'G' };
         private Int32 nMinX = 70; //10000;
         private Int32 nMaxX = 215;//-10000;
         private Int32 nMinY = 70;//10000;
@@ -86,7 +86,10 @@ namespace Accelerometer01
         public static bool lockX = false;
         public static bool lockY = false;
         public static bool lockZ = false;
-
+        public static float Gsel = 1.5f;
+        public static float GX = 0;
+        public static float GY = 0;
+        public static float GZ = 0;
         //NEW
 
         Int32 nXaxis0 = 127;
@@ -114,7 +117,6 @@ namespace Accelerometer01
         Thread trd;
 
         private TextBox txtOutput;
-        private System.Windows.Forms.Timer timerMain;
         private TextBox txtByte01;
         private TextBox txtByte02;
         private TextBox txtByte03;
@@ -156,19 +158,23 @@ namespace Accelerometer01
         private TextBox txtMinY;
         private TextBox txtYaxis;
         private CheckBox checkBoxZtran;
-        private TextBox textBoxSpeedM;
+        private TextBox textBoxZg;
         private Label label8;
         private CheckBox checkBoxXtran;
         private CheckBox checkBoxYtran;
         private CheckBox checkBoxAll;
         private CheckBox checkBoxAngleLock;
         private CheckBox checkBoxTransXY;
-        private TextBox textBox2;
-        private TextBox textBox;
+        private TextBox textBoxYg;
+        private TextBox textBoxXg;
         private GroupBox groupBox5;
-        private Button button5;
-        private Button button4;
-        private Button button3;
+        private Button buttonGTest;
+        private Button button6G;
+        private Button button4G;
+        private Button button1G;
+        private Button button2G;
+        private Label labelSel;
+        private Label labelSelG;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -224,9 +230,7 @@ namespace Accelerometer01
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtOutput = new System.Windows.Forms.TextBox();
-            this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.txtByte01 = new System.Windows.Forms.TextBox();
             this.txtByte02 = new System.Windows.Forms.TextBox();
             this.txtByte03 = new System.Windows.Forms.TextBox();
@@ -256,6 +260,8 @@ namespace Accelerometer01
             this.txtAngleX = new System.Windows.Forms.TextBox();
             this.txtAngleZ = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxYg = new System.Windows.Forms.TextBox();
+            this.textBoxXg = new System.Windows.Forms.TextBox();
             this.checkBoxAll = new System.Windows.Forms.CheckBox();
             this.checkBoxYtran = new System.Windows.Forms.CheckBox();
             this.checkBoxXtran = new System.Windows.Forms.CheckBox();
@@ -270,17 +276,19 @@ namespace Accelerometer01
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBoxSpeedM = new System.Windows.Forms.TextBox();
+            this.textBoxZg = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.checkBoxZtran = new System.Windows.Forms.CheckBox();
             this.checkBoxAngleLock = new System.Windows.Forms.CheckBox();
             this.checkBoxTransXY = new System.Windows.Forms.CheckBox();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button1G = new System.Windows.Forms.Button();
+            this.button2G = new System.Windows.Forms.Button();
+            this.buttonGTest = new System.Windows.Forms.Button();
+            this.button6G = new System.Windows.Forms.Button();
+            this.button4G = new System.Windows.Forms.Button();
+            this.labelSel = new System.Windows.Forms.Label();
+            this.labelSelG = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -299,11 +307,6 @@ namespace Accelerometer01
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtOutput.Size = new System.Drawing.Size(352, 59);
             this.txtOutput.TabIndex = 0;
-            // 
-            // timerMain
-            // 
-            this.timerMain.Interval = 40;
-            this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
             // 
             // txtByte01
             // 
@@ -411,27 +414,27 @@ namespace Accelerometer01
             // 
             this.txtXaxis.Location = new System.Drawing.Point(55, 36);
             this.txtXaxis.Name = "txtXaxis";
-            this.txtXaxis.Size = new System.Drawing.Size(57, 20);
+            this.txtXaxis.Size = new System.Drawing.Size(69, 20);
             this.txtXaxis.TabIndex = 13;
             // 
             // txtMinX
             // 
             this.txtMinX.Location = new System.Drawing.Point(55, 62);
             this.txtMinX.Name = "txtMinX";
-            this.txtMinX.Size = new System.Drawing.Size(57, 20);
+            this.txtMinX.Size = new System.Drawing.Size(69, 20);
             this.txtMinX.TabIndex = 17;
             // 
             // txtMaxX
             // 
             this.txtMaxX.Location = new System.Drawing.Point(55, 88);
             this.txtMaxX.Name = "txtMaxX";
-            this.txtMaxX.Size = new System.Drawing.Size(57, 20);
+            this.txtMaxX.Size = new System.Drawing.Size(69, 20);
             this.txtMaxX.TabIndex = 18;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 39);
+            this.label9.Location = new System.Drawing.Point(13, 39);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 21;
@@ -441,7 +444,7 @@ namespace Accelerometer01
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 65);
+            this.label10.Location = new System.Drawing.Point(13, 65);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(24, 13);
             this.label10.TabIndex = 22;
@@ -451,7 +454,7 @@ namespace Accelerometer01
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 91);
+            this.label11.Location = new System.Drawing.Point(13, 91);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 13);
             this.label11.TabIndex = 23;
@@ -460,9 +463,9 @@ namespace Accelerometer01
             // 
             // btnMode
             // 
-            this.btnMode.Location = new System.Drawing.Point(371, 107);
+            this.btnMode.Location = new System.Drawing.Point(371, 81);
             this.btnMode.Name = "btnMode";
-            this.btnMode.Size = new System.Drawing.Size(99, 29);
+            this.btnMode.Size = new System.Drawing.Size(99, 20);
             this.btnMode.TabIndex = 24;
             this.btnMode.Text = "Switch to 3D";
             this.btnMode.UseVisualStyleBackColor = true;
@@ -481,30 +484,30 @@ namespace Accelerometer01
             // 
             // txtZaxis
             // 
-            this.txtZaxis.Location = new System.Drawing.Point(13, 35);
+            this.txtZaxis.Location = new System.Drawing.Point(18, 35);
             this.txtZaxis.Name = "txtZaxis";
-            this.txtZaxis.Size = new System.Drawing.Size(72, 20);
+            this.txtZaxis.Size = new System.Drawing.Size(69, 20);
             this.txtZaxis.TabIndex = 26;
             // 
             // txtMinZ
             // 
-            this.txtMinZ.Location = new System.Drawing.Point(14, 61);
+            this.txtMinZ.Location = new System.Drawing.Point(18, 61);
             this.txtMinZ.Name = "txtMinZ";
-            this.txtMinZ.Size = new System.Drawing.Size(71, 20);
+            this.txtMinZ.Size = new System.Drawing.Size(69, 20);
             this.txtMinZ.TabIndex = 27;
             // 
             // txtMaxZ
             // 
-            this.txtMaxZ.Location = new System.Drawing.Point(14, 86);
+            this.txtMaxZ.Location = new System.Drawing.Point(18, 86);
             this.txtMaxZ.Name = "txtMaxZ";
-            this.txtMaxZ.Size = new System.Drawing.Size(71, 20);
+            this.txtMaxZ.Size = new System.Drawing.Size(69, 20);
             this.txtMaxZ.TabIndex = 28;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(371, 20);
+            this.button1.Location = new System.Drawing.Point(371, 22);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 32);
+            this.button1.Size = new System.Drawing.Size(99, 25);
             this.button1.TabIndex = 30;
             this.button1.Text = "Open Serial Port";
             this.button1.UseVisualStyleBackColor = true;
@@ -512,9 +515,9 @@ namespace Accelerometer01
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(371, 61);
+            this.button2.Location = new System.Drawing.Point(371, 52);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 33);
+            this.button2.Size = new System.Drawing.Size(99, 23);
             this.button2.TabIndex = 31;
             this.button2.Text = "Close Serial Port";
             this.button2.UseVisualStyleBackColor = true;
@@ -523,11 +526,11 @@ namespace Accelerometer01
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 120);
+            this.label13.Location = new System.Drawing.Point(13, 113);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 13);
+            this.label13.Size = new System.Drawing.Size(39, 26);
             this.label13.TabIndex = 32;
-            this.label13.Text = "Angle";
+            this.label13.Text = "Angle/\r\nSpeed";
             // 
             // txtAngleX
             // 
@@ -545,8 +548,8 @@ namespace Accelerometer01
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox);
+            this.groupBox1.Controls.Add(this.textBoxYg);
+            this.groupBox1.Controls.Add(this.textBoxXg);
             this.groupBox1.Controls.Add(this.checkBoxAll);
             this.groupBox1.Controls.Add(this.checkBoxYtran);
             this.groupBox1.Controls.Add(this.checkBoxXtran);
@@ -571,6 +574,20 @@ namespace Accelerometer01
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MEMS Angle/Speed Values";
+            // 
+            // textBoxYg
+            // 
+            this.textBoxYg.Location = new System.Drawing.Point(154, 117);
+            this.textBoxYg.Name = "textBoxYg";
+            this.textBoxYg.Size = new System.Drawing.Size(39, 20);
+            this.textBoxYg.TabIndex = 48;
+            // 
+            // textBoxXg
+            // 
+            this.textBoxXg.Location = new System.Drawing.Point(86, 117);
+            this.textBoxXg.Name = "textBoxXg";
+            this.textBoxXg.Size = new System.Drawing.Size(38, 20);
+            this.textBoxXg.TabIndex = 47;
             // 
             // checkBoxAll
             // 
@@ -646,21 +663,21 @@ namespace Accelerometer01
             // 
             this.txtMaxY.Location = new System.Drawing.Point(124, 88);
             this.txtMaxY.Name = "txtMaxY";
-            this.txtMaxY.Size = new System.Drawing.Size(57, 20);
+            this.txtMaxY.Size = new System.Drawing.Size(69, 20);
             this.txtMaxY.TabIndex = 41;
             // 
             // txtMinY
             // 
             this.txtMinY.Location = new System.Drawing.Point(124, 62);
             this.txtMinY.Name = "txtMinY";
-            this.txtMinY.Size = new System.Drawing.Size(57, 20);
+            this.txtMinY.Size = new System.Drawing.Size(69, 20);
             this.txtMinY.TabIndex = 40;
             // 
             // txtYaxis
             // 
             this.txtYaxis.Location = new System.Drawing.Point(124, 36);
             this.txtYaxis.Name = "txtYaxis";
-            this.txtYaxis.Size = new System.Drawing.Size(57, 20);
+            this.txtYaxis.Size = new System.Drawing.Size(69, 20);
             this.txtYaxis.TabIndex = 39;
             // 
             // groupBox2
@@ -669,7 +686,7 @@ namespace Accelerometer01
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtRefreshRate);
             this.groupBox2.Controls.Add(this.txtBytesRead);
-            this.groupBox2.Location = new System.Drawing.Point(505, 137);
+            this.groupBox2.Location = new System.Drawing.Point(505, 138);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(160, 72);
             this.groupBox2.TabIndex = 37;
@@ -702,7 +719,7 @@ namespace Accelerometer01
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBoxSpeedM);
+            this.groupBox4.Controls.Add(this.textBoxZg);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.checkBoxZtran);
             this.groupBox4.Controls.Add(this.txtZaxis);
@@ -716,12 +733,12 @@ namespace Accelerometer01
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MEMS Free Fall";
             // 
-            // textBoxSpeedM
+            // textBoxZg
             // 
-            this.textBoxSpeedM.Location = new System.Drawing.Point(64, 113);
-            this.textBoxSpeedM.Name = "textBoxSpeedM";
-            this.textBoxSpeedM.Size = new System.Drawing.Size(23, 20);
-            this.textBoxSpeedM.TabIndex = 47;
+            this.textBoxZg.Location = new System.Drawing.Point(64, 113);
+            this.textBoxZg.Name = "textBoxZg";
+            this.textBoxZg.Size = new System.Drawing.Size(23, 20);
+            this.textBoxZg.TabIndex = 47;
             // 
             // label8
             // 
@@ -762,64 +779,96 @@ namespace Accelerometer01
             this.checkBoxTransXY.Text = "Translation X,Y";
             this.checkBoxTransXY.UseVisualStyleBackColor = true;
             // 
-            // textBox
-            // 
-            this.textBox.Location = new System.Drawing.Point(86, 117);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(26, 20);
-            this.textBox.TabIndex = 47;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(154, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(27, 20);
-            this.textBox2.TabIndex = 48;
-            // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Controls.Add(this.button4);
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Location = new System.Drawing.Point(476, 23);
+            this.groupBox5.Controls.Add(this.button1G);
+            this.groupBox5.Controls.Add(this.button2G);
+            this.groupBox5.Controls.Add(this.buttonGTest);
+            this.groupBox5.Controls.Add(this.button6G);
+            this.groupBox5.Controls.Add(this.button4G);
+            this.groupBox5.Location = new System.Drawing.Point(476, 16);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(75, 113);
+            this.groupBox5.Size = new System.Drawing.Size(75, 120);
             this.groupBox5.TabIndex = 50;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Setup";
             // 
-            // button3
+            // button1G
             // 
-            this.button3.Location = new System.Drawing.Point(10, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(59, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "2G";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button1G.Location = new System.Drawing.Point(8, 17);
+            this.button1G.Name = "button1G";
+            this.button1G.Size = new System.Drawing.Size(59, 20);
+            this.button1G.TabIndex = 4;
+            this.button1G.Text = "1,5G";
+            this.button1G.UseVisualStyleBackColor = true;
+            this.button1G.Click += new System.EventHandler(this.button1G_Click);
             // 
-            // button4
+            // button2G
             // 
-            this.button4.Location = new System.Drawing.Point(10, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(59, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "5G";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button2G.Location = new System.Drawing.Point(8, 36);
+            this.button2G.Name = "button2G";
+            this.button2G.Size = new System.Drawing.Size(59, 20);
+            this.button2G.TabIndex = 3;
+            this.button2G.Text = "2G";
+            this.button2G.UseVisualStyleBackColor = true;
+            this.button2G.Click += new System.EventHandler(this.button2G_Click);
             // 
-            // button5
+            // buttonGTest
             // 
-            this.button5.Location = new System.Drawing.Point(10, 77);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(59, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Test";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonGTest.Location = new System.Drawing.Point(8, 93);
+            this.buttonGTest.Name = "buttonGTest";
+            this.buttonGTest.Size = new System.Drawing.Size(59, 20);
+            this.buttonGTest.TabIndex = 2;
+            this.buttonGTest.Text = "Test";
+            this.buttonGTest.UseVisualStyleBackColor = true;
+            this.buttonGTest.Click += new System.EventHandler(this.buttonGTest_Click);
+            // 
+            // button6G
+            // 
+            this.button6G.Location = new System.Drawing.Point(8, 74);
+            this.button6G.Name = "button6G";
+            this.button6G.Size = new System.Drawing.Size(59, 20);
+            this.button6G.TabIndex = 1;
+            this.button6G.Text = "6G";
+            this.button6G.UseVisualStyleBackColor = true;
+            this.button6G.Click += new System.EventHandler(this.button6G_Click);
+            // 
+            // button4G
+            // 
+            this.button4G.Location = new System.Drawing.Point(8, 55);
+            this.button4G.Name = "button4G";
+            this.button4G.Size = new System.Drawing.Size(59, 20);
+            this.button4G.TabIndex = 0;
+            this.button4G.Text = "4G";
+            this.button4G.UseVisualStyleBackColor = true;
+            this.button4G.Click += new System.EventHandler(this.button4G_Click);
+            // 
+            // labelSel
+            // 
+            this.labelSel.AutoSize = true;
+            this.labelSel.Location = new System.Drawing.Point(373, 116);
+            this.labelSel.Name = "labelSel";
+            this.labelSel.Size = new System.Drawing.Size(53, 13);
+            this.labelSel.TabIndex = 51;
+            this.labelSel.Text = "SeleledG:";
+            // 
+            // labelSelG
+            // 
+            this.labelSelG.AutoSize = true;
+            this.labelSelG.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSelG.Location = new System.Drawing.Point(424, 116);
+            this.labelSelG.Name = "labelSelG";
+            this.labelSelG.Size = new System.Drawing.Size(34, 13);
+            this.labelSelG.TabIndex = 52;
+            this.labelSelG.Text = "1,5G";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 407);
+            this.Controls.Add(this.labelSelG);
+            this.Controls.Add(this.labelSel);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.checkBoxTransXY);
             this.Controls.Add(this.checkBoxAngleLock);
@@ -837,7 +886,7 @@ namespace Accelerometer01
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Robot Tilt Accelerometer ADXL";
+            this.Text = "Robot Tilt 3 Axis Accelerometer MMA7260QT";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -880,6 +929,9 @@ namespace Accelerometer01
                 this.txtXaxis.Text = String.Format("{0}", nXaxis0);
                 this.txtYaxis.Text = String.Format("{0}", nYaxis0);
                 this.txtZaxis.Text = String.Format("{0}", nZaxis0); //NEW fail
+                textBoxXg.Text = GX.ToString();
+                textBoxYg.Text = GY.ToString();
+                textBoxZg.Text = GZ.ToString();
 
                 this.txtMinX.Text = this.nMinX0.ToString();
                 this.txtMaxX.Text = this.nMaxX0.ToString();
@@ -978,27 +1030,9 @@ namespace Accelerometer01
         /// <param name="cancelEventArgs"></param>
         protected override void OnClosing(CancelEventArgs cancelEventArgs)
         {
-            this.timerMain.Enabled = false;
             this.mySerialPort.Close();
 
             base.OnClosing(cancelEventArgs);
-        }
-        #endregion
-
-        #region TimerMain_Tick Method
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="eventArgs"></param>
-        private void TimerMain_Tick(object sender, EventArgs eventArgs)
-        {
-            if (this.mySerialPort.IsOpen == false)
-                this.txtOutput.Text = "Serial port is not opened.";
-            else
-            {
-//                this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
-            }
         }
         #endregion
 
@@ -1168,20 +1202,20 @@ namespace Accelerometer01
                 {
                     this.usrCtrlAxis2D.SetCurrentValue(nYaxis);
                 }
-                if (checkBoxZtran.Checked == true)
-                {
-                    //NEW
-                    Ztran = nZaxis-188;
-                    //NEW
-                }
-
                 if (checkBoxXtran.Checked == true && radioButton1.Checked == true)
                 {
                     Xtran = nXaxis - 145;
+                    GX = (nXaxis * ((Gsel * Gsel) / 255) - Gsel);
                 }
                 if (checkBoxYtran.Checked == true && radioButton2.Checked == true)
                 {
                     Ytran = nYaxis - 145;
+                    GY = (nYaxis * ((Gsel * Gsel) / 255) - Gsel);
+                }
+                if (checkBoxZtran.Checked == true)
+                {
+                    Ztran = nZaxis - 145;
+                    GZ = (nZaxis * ((Gsel * Gsel) / 255) - Gsel);
                 }
             }
 
@@ -1229,6 +1263,7 @@ namespace Accelerometer01
         private void button2_Click(object sender, EventArgs e)
         {
             this.mySerialPort.Close();
+            trd.Abort();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1240,9 +1275,6 @@ namespace Accelerometer01
                 Thread.Sleep(2000);
 
                 Utility.Timer(DirectXTimer.Start);
-
-                this.timerMain.Interval = 75;
-                this.timerMain.Enabled = true;
 
                 this.txtOutput.Text += "Serial port opened...\r\n";
             }
@@ -1278,6 +1310,41 @@ namespace Accelerometer01
                 checkBoxZtran.Checked = true;
             }
 
+        }
+
+        private void button1G_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "1,5G";
+            Gsel = 1.5f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void button2G_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "2G";
+            Gsel = 2f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void button4G_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "4G";
+            Gsel = 4f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void button6G_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "6G";
+            Gsel = 6f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void buttonGTest_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "Test";
+            Gsel = 0f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
         }
 
     } // End of FrmMain class

@@ -148,8 +148,8 @@ namespace Accelerometer01
         /// <param name="eventArgs"></param>
         protected override void OnSizeChanged(EventArgs eventArgs) //Draw Objects
         {
-            float fSpaceX = 20;
-            float fSpaceY = 20;
+            float fSpaceX = 5;
+            float fSpaceY = 50;
 
             this.fOriginX = this.ClientSize.Width / 2;
             this.fOriginY = this.ClientSize.Height / 2;
