@@ -39,12 +39,12 @@ namespace Accelerometer01
         private Pen objectPen = new Pen(Color.Green, 2.0f);
         private float fOriginX = 0;
         private float fOriginY = 0;
-        private float fMinX = 70; // Close to experimental values
-        private float fMaxX = 215;
-        private float fMinY = 70; // Close to experimental values
-        private float fMaxY = 215;
-        private float fMinZ = 70; // Close to experimental values
-        private float fMaxZ = 215;
+        private float fMinX = 320; // Close to experimental values
+        private float fMaxX = 820;
+        private float fMinY = 340; // Close to experimental values
+        private float fMaxY = 840;
+        private float fMinZ = 260; // Close to experimental values
+        private float fMaxZ = 760;
         private float fAngle = 0;
 
 
