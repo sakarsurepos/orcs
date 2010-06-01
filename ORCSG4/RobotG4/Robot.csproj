@@ -145,6 +145,7 @@
     <Reference Include="Tiger.Video.VFW, Version=1.0.3227.14696, Culture=neutral, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="battery.cs" />
@@ -695,6 +696,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\wifi2y.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ZedGraph.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Robot.csproj.vspscc" />

@@ -8151,8 +8151,56 @@ Mouse y:
   <data name="&gt;&gt;tabPage6.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="zg1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 359</value>
+  </data>
+  <data name="zg1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 216</value>
+  </data>
+  <data name="zg1.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;zg1.Name" xml:space="preserve">
+    <value>zg1</value>
+  </data>
+  <data name="&gt;&gt;zg1.Type" xml:space="preserve">
+    <value>ZedGraph.ZedGraphControl, ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60</value>
+  </data>
+  <data name="&gt;&gt;zg1.Parent" xml:space="preserve">
+    <value>groupBox31</value>
+  </data>
+  <data name="&gt;&gt;zg1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonMEMSGraph.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 402</value>
+  </data>
+  <data name="buttonMEMSGraph.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 23</value>
+  </data>
+  <data name="buttonMEMSGraph.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="buttonMEMSGraph.Text" xml:space="preserve">
+    <value>MEMS Graph</value>
+  </data>
+  <data name="&gt;&gt;buttonMEMSGraph.Name" xml:space="preserve">
+    <value>buttonMEMSGraph</value>
+  </data>
+  <data name="&gt;&gt;buttonMEMSGraph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonMEMSGraph.Parent" xml:space="preserve">
+    <value>groupBox31</value>
+  </data>
+  <data name="&gt;&gt;buttonMEMSGraph.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button95.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="button95.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 372</value>
+    <value>481, 372</value>
   </data>
   <data name="button95.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 23</value>
@@ -8173,13 +8221,13 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;button95.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="button92.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button92.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 372</value>
+    <value>392, 373</value>
   </data>
   <data name="button92.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 23</value>
@@ -8200,13 +8248,13 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;button92.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="button90.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button90.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 372</value>
+    <value>438, 402</value>
   </data>
   <data name="button90.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 23</value>
@@ -8227,7 +8275,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;button90.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="txtOutput.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -8242,7 +8290,7 @@ Mouse y:
     <value>Both</value>
   </data>
   <data name="txtOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 238</value>
+    <value>169, 62</value>
   </data>
   <data name="txtOutput.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
@@ -8257,7 +8305,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;txtOutput.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="radioButton3a.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8266,7 +8314,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="radioButton3a.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 14</value>
+    <value>115, 12</value>
   </data>
   <data name="radioButton3a.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 17</value>
@@ -8289,9 +8337,6 @@ Mouse y:
   <data name="&gt;&gt;radioButton3a.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="radioButton2a.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="radioButton2a.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8302,7 +8347,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="radioButton2a.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 14</value>
+    <value>181, 13</value>
   </data>
   <data name="radioButton2a.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 17</value>
@@ -8332,7 +8377,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="radioButton1a.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 14</value>
+    <value>53, 14</value>
   </data>
   <data name="radioButton1a.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 17</value>
@@ -8362,7 +8407,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label178.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 16</value>
+    <value>6, 16</value>
   </data>
   <data name="label178.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -8386,7 +8431,7 @@ Mouse y:
     <value>3</value>
   </data>
   <data name="txtAngleZ.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 119</value>
+    <value>113, 117</value>
   </data>
   <data name="txtAngleZ.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 20</value>
@@ -8406,14 +8451,11 @@ Mouse y:
   <data name="&gt;&gt;txtAngleZ.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="txtAngleY.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="txtAngleY.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="txtAngleY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 117</value>
+    <value>178, 116</value>
   </data>
   <data name="txtAngleY.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8434,7 +8476,7 @@ Mouse y:
     <value>5</value>
   </data>
   <data name="txtAngleX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 117</value>
+    <value>53, 117</value>
   </data>
   <data name="txtAngleX.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8461,7 +8503,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label179.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 120</value>
+    <value>16, 120</value>
   </data>
   <data name="label179.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -8491,7 +8533,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label180.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 91</value>
+    <value>23, 91</value>
   </data>
   <data name="label180.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 13</value>
@@ -8524,7 +8566,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label181.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 65</value>
+    <value>23, 65</value>
   </data>
   <data name="label181.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 13</value>
@@ -8551,7 +8593,7 @@ Mouse y:
     <value>9</value>
   </data>
   <data name="txtMaxZ.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 90</value>
+    <value>112, 88</value>
   </data>
   <data name="txtMaxZ.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -8578,7 +8620,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label182.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 39</value>
+    <value>6, 39</value>
   </data>
   <data name="label182.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -8604,14 +8646,11 @@ Mouse y:
   <data name="&gt;&gt;label182.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <metadata name="txtMaxY.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="txtMaxY.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="txtMaxY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 88</value>
+    <value>178, 87</value>
   </data>
   <data name="txtMaxY.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8632,7 +8671,7 @@ Mouse y:
     <value>12</value>
   </data>
   <data name="txtMinZ.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 64</value>
+    <value>112, 62</value>
   </data>
   <data name="txtMinZ.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -8652,14 +8691,11 @@ Mouse y:
   <data name="&gt;&gt;txtMinZ.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <metadata name="txtMinY.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="txtMinY.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="txtMinY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 62</value>
+    <value>178, 61</value>
   </data>
   <data name="txtMinY.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8680,7 +8716,7 @@ Mouse y:
     <value>14</value>
   </data>
   <data name="txtMaxX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 88</value>
+    <value>53, 88</value>
   </data>
   <data name="txtMaxX.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8701,7 +8737,7 @@ Mouse y:
     <value>15</value>
   </data>
   <data name="txtZaxis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 38</value>
+    <value>112, 36</value>
   </data>
   <data name="txtZaxis.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -8722,7 +8758,7 @@ Mouse y:
     <value>16</value>
   </data>
   <data name="txtMinX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 62</value>
+    <value>53, 62</value>
   </data>
   <data name="txtMinX.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8742,14 +8778,11 @@ Mouse y:
   <data name="&gt;&gt;txtMinX.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <metadata name="txtYaxis.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="txtYaxis.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="txtYaxis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 36</value>
+    <value>178, 35</value>
   </data>
   <data name="txtYaxis.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8770,7 +8803,7 @@ Mouse y:
     <value>18</value>
   </data>
   <data name="txtXaxis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 36</value>
+    <value>53, 36</value>
   </data>
   <data name="txtXaxis.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8791,10 +8824,10 @@ Mouse y:
     <value>19</value>
   </data>
   <data name="groupBox51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 408</value>
+    <value>309, 431</value>
   </data>
   <data name="groupBox51.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 144</value>
+    <value>245, 144</value>
   </data>
   <data name="groupBox51.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -8812,7 +8845,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBox51.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="label172.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8821,7 +8854,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label172.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 47</value>
+    <value>14, 40</value>
   </data>
   <data name="label172.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -8854,7 +8887,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label173.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 21</value>
+    <value>23, 19</value>
   </data>
   <data name="label173.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -8881,7 +8914,7 @@ Mouse y:
     <value>1</value>
   </data>
   <data name="txtRefreshRate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 44</value>
+    <value>88, 37</value>
   </data>
   <data name="txtRefreshRate.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8902,7 +8935,7 @@ Mouse y:
     <value>2</value>
   </data>
   <data name="txtBytesRead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 18</value>
+    <value>88, 16</value>
   </data>
   <data name="txtBytesRead.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -8923,10 +8956,10 @@ Mouse y:
     <value>3</value>
   </data>
   <data name="groupBox50.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 480</value>
+    <value>382, 271</value>
   </data>
   <data name="groupBox50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 72</value>
+    <value>157, 65</value>
   </data>
   <data name="groupBox50.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -8944,7 +8977,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBox50.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="label174.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8953,7 +8986,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label174.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 94</value>
+    <value>54, 79</value>
   </data>
   <data name="label174.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 13</value>
@@ -8986,7 +9019,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label175.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 42</value>
+    <value>54, 37</value>
   </data>
   <data name="label175.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 13</value>
@@ -9019,7 +9052,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="label176.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 68</value>
+    <value>54, 59</value>
   </data>
   <data name="label176.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 13</value>
@@ -9079,7 +9112,7 @@ Mouse y:
     <value>3</value>
   </data>
   <data name="txtByte04.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 91</value>
+    <value>82, 76</value>
   </data>
   <data name="txtByte04.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -9100,7 +9133,7 @@ Mouse y:
     <value>4</value>
   </data>
   <data name="txtByte03.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 65</value>
+    <value>82, 55</value>
   </data>
   <data name="txtByte03.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -9121,7 +9154,7 @@ Mouse y:
     <value>5</value>
   </data>
   <data name="txtByte02.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 39</value>
+    <value>82, 34</value>
   </data>
   <data name="txtByte02.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -9163,10 +9196,10 @@ Mouse y:
     <value>7</value>
   </data>
   <data name="groupBox49.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 350</value>
+    <value>382, 170</value>
   </data>
   <data name="groupBox49.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 120</value>
+    <value>157, 101</value>
   </data>
   <data name="groupBox49.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
@@ -9184,7 +9217,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBox49.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="pictureBox34.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9211,10 +9244,10 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;pictureBox34.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 23</value>
+    <value>6, 17</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>356, 337</value>
@@ -9232,7 +9265,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="button88.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9259,7 +9292,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;button88.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="button89.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9286,7 +9319,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;button89.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="btnMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9313,7 +9346,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;btnMode.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="chkBoxSmoothing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9322,7 +9355,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="chkBoxSmoothing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 376</value>
+    <value>421, 342</value>
   </data>
   <data name="chkBoxSmoothing.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 17</value>
@@ -9343,7 +9376,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;chkBoxSmoothing.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="groupBox31.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 14</value>
@@ -12881,6 +12914,9 @@ Mouse y:
   </data>
   <data name="&gt;&gt;SimDataLog.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="button94.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="button94.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 68</value>
