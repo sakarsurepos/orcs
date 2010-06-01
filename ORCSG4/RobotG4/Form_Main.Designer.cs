@@ -158,7 +158,6 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
-            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -796,6 +795,9 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
+            this.cameraWindow = new Robot.CameraWindow();
+            this.buttonMEMSGraph = new System.Windows.Forms.Button();
+            this.zg1 = new ZedGraph.ZedGraphControl();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -2038,13 +2040,6 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -3290,6 +3285,8 @@ namespace Robot
             // 
             // groupBox31
             // 
+            this.groupBox31.Controls.Add(this.zg1);
+            this.groupBox31.Controls.Add(this.buttonMEMSGraph);
             this.groupBox31.Controls.Add(this.button95);
             this.groupBox31.Controls.Add(this.button92);
             this.groupBox31.Controls.Add(this.button90);
@@ -6967,6 +6964,33 @@ namespace Robot
             this.timerMain.Interval = 40;
             this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
             // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
+            // 
+            // buttonMEMSGraph
+            // 
+            this.buttonMEMSGraph.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttonMEMSGraph, "buttonMEMSGraph");
+            this.buttonMEMSGraph.Name = "buttonMEMSGraph";
+            this.buttonMEMSGraph.UseVisualStyleBackColor = true;
+            this.buttonMEMSGraph.Click += new System.EventHandler(this.buttonMEMSGraph_Click);
+            // 
+            // zg1
+            // 
+            resources.ApplyResources(this.zg1, "zg1");
+            this.zg1.Name = "zg1";
+            this.zg1.ScrollGrace = 0;
+            this.zg1.ScrollMaxX = 0;
+            this.zg1.ScrollMaxY = 0;
+            this.zg1.ScrollMaxY2 = 0;
+            this.zg1.ScrollMinX = 0;
+            this.zg1.ScrollMinY = 0;
+            this.zg1.ScrollMinY2 = 0;
+            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -8009,6 +8033,8 @@ namespace Robot
         private System.Windows.Forms.Button button95;
         private System.Windows.Forms.CheckBox Supply_Lights;
         private System.Windows.Forms.CheckBox Supply_Laser;
+        private System.Windows.Forms.Button buttonMEMSGraph;
+        private ZedGraph.ZedGraphControl zg1;
 
 
     }
