@@ -5,7 +5,7 @@
 //  Date:     05/12/2006 11:30:36
 //  CLR ver:  2.0.50727.42
 //  Project:  Accelerometer01
-//  Modified: Kamil Zidek
+//  Modified: Kamil Zidek 10bit ADC MMA7260QT
 //
 //  Copyright © 2006 Feirtech Inc.  All rights reserved.
 // 
@@ -46,12 +46,12 @@ namespace Accelerometer01
         private SerialPort mySerialPort = null;
         private Byte[] buffer = new Byte[5000];
         private Char[] sendChars = new Char[] { 'G' };
-        private Int32 nMinX = 70 * ADCset; //10000;
-        private Int32 nMaxX = 215 * ADCset;//-10000;
-        private Int32 nMinY = 70 * ADCset;//10000;
-        private Int32 nMaxY = 215 * ADCset;//-10000;
-        private Int32 nMinZ = 70 * ADCset;//10000;
-        private Int32 nMaxZ = 215 * ADCset;//-10000;
+        private Int32 nMinX = 320; //10000; max-min = cca 500
+        private Int32 nMaxX = 820;//-10000;
+        private Int32 nMinY = 340;//10000; max-min = cca 500
+        private Int32 nMaxY = 840;//-10000;
+        private Int32 nMinZ = 260;//10000; max-min = cca 500
+        private Int32 nMaxZ = 760;//-10000;
         private Queue byteQueue = new Queue();
 
         private bool b3dMode = false;
@@ -64,20 +64,20 @@ namespace Accelerometer01
         private int nPrevY = 0;
         private int nPrevZ = 0;
 
-        Byte byte01 = 127; //$
-        Byte byte02 = 127; //X
-        Byte byte03 = 127; //X1
-        Byte byte04 = 127; //Z //CHANGE
-        Byte byte05 = 127; //Z1
-        Byte byte06 = 127; //Y
-        Byte byte07 = 127; //Y1
-        Byte byte08 = 127; //13
-        Byte byte09 = 127; //10
+        Byte byte01;// $
+        Byte byte02;// X
+        Byte byte03;// X1
+        Byte byte04;// Z //CHANGE
+        Byte byte05;// Z1
+        Byte byte06;// Y
+        Byte byte07;// Y1
+        Byte byte08;// 13
+        Byte byte09;// 10
 
-        Int32 nXaxis = 127 * ADCset;
-        Int32 nYaxis = 127 * ADCset;
-        Int32 nZaxis = 127 * ADCset;
-        Int32 selAxis = 127 * ADCset;
+        Int32 nXaxis = 512;
+        Int32 nYaxis = 512;
+        Int32 nZaxis = 512;
+        Int32 selAxis = 512;
       
         //NEW
         public static float Xtran = 0;
@@ -952,7 +952,9 @@ namespace Accelerometer01
 
         private void drawvalue()
         {
-                 Thread.Sleep(200);
+            while (true)
+            {
+                Thread.Sleep(200);
 
                 this.txtByte01.Text = byte01.ToString(); //$ String.Format("{0:x2}", byte01);
                 this.txtByte02.Text = byte02.ToString(); //x
@@ -1031,13 +1033,13 @@ namespace Accelerometer01
                     radio = 2;
                     selAxis = nYaxis;
                 }
-                
+
                 if (checkBoxXtran.Checked == true)
                 {
                     lockX = true;
                 }
                 else { lockX = false; }
-                
+
                 if (checkBoxYtran.Checked == true)
                 {
                     lockY = true;
@@ -1054,6 +1056,7 @@ namespace Accelerometer01
                 //    radio = 3;
                 //    selAxis = nZaxis;
                 //}
+            }
             
         }
 
