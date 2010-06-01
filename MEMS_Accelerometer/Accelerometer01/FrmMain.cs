@@ -90,6 +90,7 @@ namespace Accelerometer01
         public static float GX = 0;
         public static float GY = 0;
         public static float GZ = 0;
+        public static int incdel = 255; //how many increment
         //NEW
 
         Int32 nXaxis0 = 127;
@@ -463,9 +464,9 @@ namespace Accelerometer01
             // 
             // btnMode
             // 
-            this.btnMode.Location = new System.Drawing.Point(371, 81);
+            this.btnMode.Location = new System.Drawing.Point(371, 87);
             this.btnMode.Name = "btnMode";
-            this.btnMode.Size = new System.Drawing.Size(99, 20);
+            this.btnMode.Size = new System.Drawing.Size(99, 25);
             this.btnMode.TabIndex = 24;
             this.btnMode.Text = "Switch to 3D";
             this.btnMode.UseVisualStyleBackColor = true;
@@ -505,7 +506,7 @@ namespace Accelerometer01
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(371, 22);
+            this.button1.Location = new System.Drawing.Point(371, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 25);
             this.button1.TabIndex = 30;
@@ -515,9 +516,9 @@ namespace Accelerometer01
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(371, 52);
+            this.button2.Location = new System.Drawing.Point(371, 58);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 23);
+            this.button2.Size = new System.Drawing.Size(99, 25);
             this.button2.TabIndex = 31;
             this.button2.Text = "Close Serial Port";
             this.button2.UseVisualStyleBackColor = true;
@@ -846,7 +847,7 @@ namespace Accelerometer01
             // labelSel
             // 
             this.labelSel.AutoSize = true;
-            this.labelSel.Location = new System.Drawing.Point(373, 116);
+            this.labelSel.Location = new System.Drawing.Point(372, 120);
             this.labelSel.Name = "labelSel";
             this.labelSel.Size = new System.Drawing.Size(53, 13);
             this.labelSel.TabIndex = 51;
@@ -856,7 +857,7 @@ namespace Accelerometer01
             // 
             this.labelSelG.AutoSize = true;
             this.labelSelG.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSelG.Location = new System.Drawing.Point(424, 116);
+            this.labelSelG.Location = new System.Drawing.Point(423, 120);
             this.labelSelG.Name = "labelSelG";
             this.labelSelG.Size = new System.Drawing.Size(34, 13);
             this.labelSelG.TabIndex = 52;
@@ -1205,17 +1206,17 @@ namespace Accelerometer01
                 if (checkBoxXtran.Checked == true && radioButton1.Checked == true)
                 {
                     Xtran = nXaxis - 145;
-                    GX = (nXaxis * ((Gsel * Gsel) / 255) - Gsel);
+                    GX = (nXaxis * ((Gsel * Gsel) / incdel) - Gsel+0.24f)*1.942f;
                 }
                 if (checkBoxYtran.Checked == true && radioButton2.Checked == true)
                 {
                     Ytran = nYaxis - 145;
-                    GY = (nYaxis * ((Gsel * Gsel) / 255) - Gsel);
+                    GY = (nYaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.215f)*1.938f;
                 }
                 if (checkBoxZtran.Checked == true)
                 {
                     Ztran = nZaxis - 145;
-                    GZ = (nZaxis * ((Gsel * Gsel) / 255) - Gsel);
+                    GZ = (nZaxis * ((Gsel * Gsel) / incdel) - Gsel);
                 }
             }
 

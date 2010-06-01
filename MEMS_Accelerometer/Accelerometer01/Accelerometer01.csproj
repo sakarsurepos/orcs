@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MEMSGraph.cs" />
     <Compile Include="UsrCtrlAxis2D.cs">
       <SubType>UserControl</SubType>
     </Compile>
