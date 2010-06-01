@@ -90,7 +90,7 @@ namespace Accelerometer01
         public static float GX = 0;
         public static float GY = 0;
         public static float GZ = 0;
-        public static int incdel = 255 * ADCset; //how many increment
+        public static int incdel = 1024; //how many increment
         //NEW
 
         public static float fAnglex0 = 90;
@@ -1210,15 +1210,15 @@ namespace Accelerometer01
                 {
                     this.usrCtrlAxis2D.SetCurrentValue(nYaxis);
                 }
-                if (checkBoxXtran.Checked == true && radioButtonXmems.Checked == true)
+                if (checkBoxXtran.Checked == true ) //&& radioButtonXmems.Checked == true
                 {
-                    Xtran = nXaxis - 145 * ADCset;
-                    GX = (nXaxis * ((Gsel * Gsel) / incdel) - Gsel+0.24f)*1.942f;
+                    Xtran = nXaxis - 585;
+                    GX = ((nXaxis * ((Gsel * Gsel) / incdel) - Gsel+0.24f)*1.942f)*100;
                 }
-                if (checkBoxYtran.Checked == true && radioButtonYmems.Checked == true)
+                if (checkBoxYtran.Checked == true ) //&& radioButtonYmems.Checked == true
                 {
-                    Ytran = nYaxis - 145 * ADCset;
-                    GY = (nYaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.215f)*1.938f;
+                    Ytran = nYaxis - 595;
+                    GY = ((nYaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.215f)*1.938f)*100;
                 }
                 if (checkBoxZtran.Checked == true)
                 {
