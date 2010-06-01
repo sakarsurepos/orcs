@@ -76,17 +76,8 @@ namespace Accelerometer01
         Int32 nXaxis = 127 * ADCset;
         Int32 nYaxis = 127 * ADCset;
         Int32 nZaxis = 127 * ADCset;
-
-        //delayed values
-
-        Byte byte010 = 127; //$
-        Byte byte020 = 127; //X
-        Byte byte030 = 127; //X1
-        Byte byte040 = 127; //Z //CHANGE
-        Byte byte050 = 127; //Z1
-        Byte byte060 = 127; //Y
-        Byte byte070 = 127; //Y1
-        
+        Int32 selAxis = 127 * ADCset;
+      
         //NEW
         public static float Xtran = 0;
         public static float Ytran = 0;
@@ -100,20 +91,6 @@ namespace Accelerometer01
         public static float GZ = 0;
         public static int incdel = 255 * ADCset; //how many increment
         //NEW
-
-        Int32 nXaxis0 = 127 * ADCset;
-        Int32 nYaxis0 = 127 * ADCset;
-        Int32 nZaxis0 = 127 * ADCset;
-        Int32 selAxis = 127 * ADCset;
-
-        private Int32 nMinX0 = 70 * ADCset;// 10; //10000;
-        private Int32 nMaxX0 = 215 * ADCset;// 245;//-10000;
-        private Int32 nMinY0 = 70 * ADCset;// 10;//10000;
-        private Int32 nMaxY0 = 215 * ADCset;// 245;//-10000;
-        private Int32 nMinZ0 = 70 * ADCset;// 10;//10000;
-        private Int32 nMaxZ0 = 215 * ADCset;// 245;//-10000;
-
-        public int inkr = 0;
 
         public static float fAnglex0 = 90;
         public static float fAngley0 = 90;
@@ -316,11 +293,11 @@ namespace Accelerometer01
             this.txtOutput.AcceptsReturn = true;
             this.txtOutput.AcceptsTab = true;
             this.txtOutput.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtOutput.Location = new System.Drawing.Point(-1, 350);
+            this.txtOutput.Location = new System.Drawing.Point(366, 322);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOutput.Size = new System.Drawing.Size(352, 59);
+            this.txtOutput.Size = new System.Drawing.Size(306, 38);
             this.txtOutput.TabIndex = 0;
             // 
             // txtByte01
@@ -374,14 +351,14 @@ namespace Accelerometer01
             // 
             // txtBytesRead
             // 
-            this.txtBytesRead.Location = new System.Drawing.Point(88, 18);
+            this.txtBytesRead.Location = new System.Drawing.Point(88, 15);
             this.txtBytesRead.Name = "txtBytesRead";
             this.txtBytesRead.Size = new System.Drawing.Size(57, 20);
             this.txtBytesRead.TabIndex = 5;
             // 
             // txtRefreshRate
             // 
-            this.txtRefreshRate.Location = new System.Drawing.Point(88, 44);
+            this.txtRefreshRate.Location = new System.Drawing.Point(88, 37);
             this.txtRefreshRate.Name = "txtRefreshRate";
             this.txtRefreshRate.Size = new System.Drawing.Size(57, 20);
             this.txtRefreshRate.TabIndex = 6;
@@ -429,7 +406,7 @@ namespace Accelerometer01
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 21);
+            this.label5.Location = new System.Drawing.Point(23, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 11;
@@ -439,7 +416,7 @@ namespace Accelerometer01
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 47);
+            this.label6.Location = new System.Drawing.Point(14, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 12;
@@ -448,21 +425,21 @@ namespace Accelerometer01
             // 
             // txtXaxis
             // 
-            this.txtXaxis.Location = new System.Drawing.Point(55, 36);
+            this.txtXaxis.Location = new System.Drawing.Point(55, 33);
             this.txtXaxis.Name = "txtXaxis";
             this.txtXaxis.Size = new System.Drawing.Size(69, 20);
             this.txtXaxis.TabIndex = 13;
             // 
             // txtMinX
             // 
-            this.txtMinX.Location = new System.Drawing.Point(55, 62);
+            this.txtMinX.Location = new System.Drawing.Point(55, 54);
             this.txtMinX.Name = "txtMinX";
             this.txtMinX.Size = new System.Drawing.Size(69, 20);
             this.txtMinX.TabIndex = 17;
             // 
             // txtMaxX
             // 
-            this.txtMaxX.Location = new System.Drawing.Point(55, 88);
+            this.txtMaxX.Location = new System.Drawing.Point(55, 75);
             this.txtMaxX.Name = "txtMaxX";
             this.txtMaxX.Size = new System.Drawing.Size(69, 20);
             this.txtMaxX.TabIndex = 18;
@@ -470,7 +447,7 @@ namespace Accelerometer01
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 39);
+            this.label9.Location = new System.Drawing.Point(13, 36);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 21;
@@ -480,7 +457,7 @@ namespace Accelerometer01
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 65);
+            this.label10.Location = new System.Drawing.Point(13, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(24, 13);
             this.label10.TabIndex = 22;
@@ -490,7 +467,7 @@ namespace Accelerometer01
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 91);
+            this.label11.Location = new System.Drawing.Point(13, 78);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 13);
             this.label11.TabIndex = 23;
@@ -499,7 +476,7 @@ namespace Accelerometer01
             // 
             // btnMode
             // 
-            this.btnMode.Location = new System.Drawing.Point(371, 82);
+            this.btnMode.Location = new System.Drawing.Point(371, 65);
             this.btnMode.Name = "btnMode";
             this.btnMode.Size = new System.Drawing.Size(99, 25);
             this.btnMode.TabIndex = 24;
@@ -510,7 +487,7 @@ namespace Accelerometer01
             // chkBoxSmoothing
             // 
             this.chkBoxSmoothing.AutoSize = true;
-            this.chkBoxSmoothing.Location = new System.Drawing.Point(374, 144);
+            this.chkBoxSmoothing.Location = new System.Drawing.Point(374, 115);
             this.chkBoxSmoothing.Name = "chkBoxSmoothing";
             this.chkBoxSmoothing.Size = new System.Drawing.Size(85, 17);
             this.chkBoxSmoothing.TabIndex = 25;
@@ -520,28 +497,28 @@ namespace Accelerometer01
             // 
             // txtZaxis
             // 
-            this.txtZaxis.Location = new System.Drawing.Point(18, 35);
+            this.txtZaxis.Location = new System.Drawing.Point(18, 34);
             this.txtZaxis.Name = "txtZaxis";
             this.txtZaxis.Size = new System.Drawing.Size(69, 20);
             this.txtZaxis.TabIndex = 26;
             // 
             // txtMinZ
             // 
-            this.txtMinZ.Location = new System.Drawing.Point(18, 61);
+            this.txtMinZ.Location = new System.Drawing.Point(18, 55);
             this.txtMinZ.Name = "txtMinZ";
             this.txtMinZ.Size = new System.Drawing.Size(69, 20);
             this.txtMinZ.TabIndex = 27;
             // 
             // txtMaxZ
             // 
-            this.txtMaxZ.Location = new System.Drawing.Point(18, 86);
+            this.txtMaxZ.Location = new System.Drawing.Point(18, 76);
             this.txtMaxZ.Name = "txtMaxZ";
             this.txtMaxZ.Size = new System.Drawing.Size(69, 20);
             this.txtMaxZ.TabIndex = 28;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(371, 22);
+            this.button1.Location = new System.Drawing.Point(371, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 25);
             this.button1.TabIndex = 30;
@@ -551,7 +528,7 @@ namespace Accelerometer01
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(371, 52);
+            this.button2.Location = new System.Drawing.Point(371, 35);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 25);
             this.button2.TabIndex = 31;
@@ -562,7 +539,7 @@ namespace Accelerometer01
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 113);
+            this.label13.Location = new System.Drawing.Point(13, 92);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 26);
             this.label13.TabIndex = 32;
@@ -570,14 +547,14 @@ namespace Accelerometer01
             // 
             // txtAngleX
             // 
-            this.txtAngleX.Location = new System.Drawing.Point(55, 117);
+            this.txtAngleX.Location = new System.Drawing.Point(55, 96);
             this.txtAngleX.Name = "txtAngleX";
             this.txtAngleX.Size = new System.Drawing.Size(30, 20);
             this.txtAngleX.TabIndex = 33;
             // 
             // txtAngleZ
             // 
-            this.txtAngleZ.Location = new System.Drawing.Point(41, 113);
+            this.txtAngleZ.Location = new System.Drawing.Point(41, 96);
             this.txtAngleZ.Name = "txtAngleZ";
             this.txtAngleZ.Size = new System.Drawing.Size(23, 20);
             this.txtAngleZ.TabIndex = 35;
@@ -604,23 +581,23 @@ namespace Accelerometer01
             this.groupBox1.Controls.Add(this.txtMaxX);
             this.groupBox1.Controls.Add(this.txtMinX);
             this.groupBox1.Controls.Add(this.txtXaxis);
-            this.groupBox1.Location = new System.Drawing.Point(365, 215);
+            this.groupBox1.Location = new System.Drawing.Point(366, 175);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(199, 172);
+            this.groupBox1.Size = new System.Drawing.Size(199, 141);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MEMS Angle/Speed Values";
             // 
             // textBoxYg
             // 
-            this.textBoxYg.Location = new System.Drawing.Point(154, 117);
+            this.textBoxYg.Location = new System.Drawing.Point(154, 96);
             this.textBoxYg.Name = "textBoxYg";
             this.textBoxYg.Size = new System.Drawing.Size(39, 20);
             this.textBoxYg.TabIndex = 48;
             // 
             // textBoxXg
             // 
-            this.textBoxXg.Location = new System.Drawing.Point(86, 117);
+            this.textBoxXg.Location = new System.Drawing.Point(86, 96);
             this.textBoxXg.Name = "textBoxXg";
             this.textBoxXg.Size = new System.Drawing.Size(38, 20);
             this.textBoxXg.TabIndex = 47;
@@ -628,7 +605,7 @@ namespace Accelerometer01
             // checkBoxAll
             // 
             this.checkBoxAll.AutoSize = true;
-            this.checkBoxAll.Location = new System.Drawing.Point(20, 145);
+            this.checkBoxAll.Location = new System.Drawing.Point(20, 118);
             this.checkBoxAll.Name = "checkBoxAll";
             this.checkBoxAll.Size = new System.Drawing.Size(37, 17);
             this.checkBoxAll.TabIndex = 46;
@@ -639,7 +616,7 @@ namespace Accelerometer01
             // checkBoxYtran
             // 
             this.checkBoxYtran.AutoSize = true;
-            this.checkBoxYtran.Location = new System.Drawing.Point(131, 145);
+            this.checkBoxYtran.Location = new System.Drawing.Point(131, 118);
             this.checkBoxYtran.Name = "checkBoxYtran";
             this.checkBoxYtran.Size = new System.Drawing.Size(55, 17);
             this.checkBoxYtran.TabIndex = 45;
@@ -649,7 +626,7 @@ namespace Accelerometer01
             // checkBoxXtran
             // 
             this.checkBoxXtran.AutoSize = true;
-            this.checkBoxXtran.Location = new System.Drawing.Point(61, 145);
+            this.checkBoxXtran.Location = new System.Drawing.Point(61, 118);
             this.checkBoxXtran.Name = "checkBoxXtran";
             this.checkBoxXtran.Size = new System.Drawing.Size(55, 17);
             this.checkBoxXtran.TabIndex = 44;
@@ -681,7 +658,7 @@ namespace Accelerometer01
             // 
             // txtAngleY
             // 
-            this.txtAngleY.Location = new System.Drawing.Point(124, 117);
+            this.txtAngleY.Location = new System.Drawing.Point(124, 96);
             this.txtAngleY.Name = "txtAngleY";
             this.txtAngleY.Size = new System.Drawing.Size(29, 20);
             this.txtAngleY.TabIndex = 42;
@@ -697,21 +674,21 @@ namespace Accelerometer01
             // 
             // txtMaxY
             // 
-            this.txtMaxY.Location = new System.Drawing.Point(124, 88);
+            this.txtMaxY.Location = new System.Drawing.Point(124, 75);
             this.txtMaxY.Name = "txtMaxY";
             this.txtMaxY.Size = new System.Drawing.Size(69, 20);
             this.txtMaxY.TabIndex = 41;
             // 
             // txtMinY
             // 
-            this.txtMinY.Location = new System.Drawing.Point(124, 62);
+            this.txtMinY.Location = new System.Drawing.Point(124, 54);
             this.txtMinY.Name = "txtMinY";
             this.txtMinY.Size = new System.Drawing.Size(69, 20);
             this.txtMinY.TabIndex = 40;
             // 
             // txtYaxis
             // 
-            this.txtYaxis.Location = new System.Drawing.Point(124, 36);
+            this.txtYaxis.Location = new System.Drawing.Point(124, 33);
             this.txtYaxis.Name = "txtYaxis";
             this.txtYaxis.Size = new System.Drawing.Size(69, 20);
             this.txtYaxis.TabIndex = 39;
@@ -722,9 +699,9 @@ namespace Accelerometer01
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtRefreshRate);
             this.groupBox2.Controls.Add(this.txtBytesRead);
-            this.groupBox2.Location = new System.Drawing.Point(512, 132);
+            this.groupBox2.Location = new System.Drawing.Point(512, 112);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(160, 72);
+            this.groupBox2.Size = new System.Drawing.Size(160, 63);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Info";
@@ -742,7 +719,7 @@ namespace Accelerometer01
             this.groupBox3.Controls.Add(this.txtByte03);
             this.groupBox3.Controls.Add(this.txtByte02);
             this.groupBox3.Controls.Add(this.txtByte01);
-            this.groupBox3.Location = new System.Drawing.Point(554, 16);
+            this.groupBox3.Location = new System.Drawing.Point(554, -1);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(118, 113);
             this.groupBox3.TabIndex = 38;
@@ -765,16 +742,16 @@ namespace Accelerometer01
             this.groupBox4.Controls.Add(this.txtMinZ);
             this.groupBox4.Controls.Add(this.txtMaxZ);
             this.groupBox4.Controls.Add(this.txtAngleZ);
-            this.groupBox4.Location = new System.Drawing.Point(565, 215);
+            this.groupBox4.Location = new System.Drawing.Point(566, 175);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(100, 172);
+            this.groupBox4.Size = new System.Drawing.Size(106, 141);
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MEMS Free Fall";
             // 
             // textBoxZg
             // 
-            this.textBoxZg.Location = new System.Drawing.Point(64, 113);
+            this.textBoxZg.Location = new System.Drawing.Point(64, 96);
             this.textBoxZg.Name = "textBoxZg";
             this.textBoxZg.Size = new System.Drawing.Size(23, 20);
             this.textBoxZg.TabIndex = 47;
@@ -782,7 +759,7 @@ namespace Accelerometer01
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 116);
+            this.label8.Location = new System.Drawing.Point(3, 99);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 13);
             this.label8.TabIndex = 46;
@@ -791,7 +768,7 @@ namespace Accelerometer01
             // checkBoxZtran
             // 
             this.checkBoxZtran.AutoSize = true;
-            this.checkBoxZtran.Location = new System.Drawing.Point(24, 145);
+            this.checkBoxZtran.Location = new System.Drawing.Point(24, 118);
             this.checkBoxZtran.Name = "checkBoxZtran";
             this.checkBoxZtran.Size = new System.Drawing.Size(58, 17);
             this.checkBoxZtran.TabIndex = 45;
@@ -801,7 +778,7 @@ namespace Accelerometer01
             // checkBoxAngleLock
             // 
             this.checkBoxAngleLock.AutoSize = true;
-            this.checkBoxAngleLock.Location = new System.Drawing.Point(374, 167);
+            this.checkBoxAngleLock.Location = new System.Drawing.Point(374, 132);
             this.checkBoxAngleLock.Name = "checkBoxAngleLock";
             this.checkBoxAngleLock.Size = new System.Drawing.Size(80, 17);
             this.checkBoxAngleLock.TabIndex = 48;
@@ -811,7 +788,7 @@ namespace Accelerometer01
             // checkBoxTransXY
             // 
             this.checkBoxTransXY.AutoSize = true;
-            this.checkBoxTransXY.Location = new System.Drawing.Point(374, 190);
+            this.checkBoxTransXY.Location = new System.Drawing.Point(374, 149);
             this.checkBoxTransXY.Name = "checkBoxTransXY";
             this.checkBoxTransXY.Size = new System.Drawing.Size(98, 17);
             this.checkBoxTransXY.TabIndex = 49;
@@ -825,7 +802,7 @@ namespace Accelerometer01
             this.groupBox5.Controls.Add(this.buttonGTest);
             this.groupBox5.Controls.Add(this.button6G);
             this.groupBox5.Controls.Add(this.button4G);
-            this.groupBox5.Location = new System.Drawing.Point(476, 16);
+            this.groupBox5.Location = new System.Drawing.Point(476, -1);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(75, 113);
             this.groupBox5.TabIndex = 50;
@@ -885,7 +862,7 @@ namespace Accelerometer01
             // labelSel
             // 
             this.labelSel.AutoSize = true;
-            this.labelSel.Location = new System.Drawing.Point(379, 112);
+            this.labelSel.Location = new System.Drawing.Point(379, 95);
             this.labelSel.Name = "labelSel";
             this.labelSel.Size = new System.Drawing.Size(53, 13);
             this.labelSel.TabIndex = 51;
@@ -895,7 +872,7 @@ namespace Accelerometer01
             // 
             this.labelSelG.AutoSize = true;
             this.labelSelG.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSelG.Location = new System.Drawing.Point(430, 112);
+            this.labelSelG.Location = new System.Drawing.Point(430, 95);
             this.labelSelG.Name = "labelSelG";
             this.labelSelG.Size = new System.Drawing.Size(34, 13);
             this.labelSelG.TabIndex = 52;
@@ -905,7 +882,7 @@ namespace Accelerometer01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 407);
+            this.ClientSize = new System.Drawing.Size(684, 602);
             this.Controls.Add(this.labelSelG);
             this.Controls.Add(this.labelSel);
             this.Controls.Add(this.groupBox5);
@@ -925,7 +902,7 @@ namespace Accelerometer01
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Robot Tilt 3 Axis Accelerometer MMA7260QT";
+            this.Text = "Robot Tilt 3 Axis Accelerometer MMA7260QT SVN2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -956,33 +933,31 @@ namespace Accelerometer01
 
         private void drawvalue()
         {
-            while (inkr < 5000)
-            {
-                Thread.Sleep(200);
+                 Thread.Sleep(200);
 
-                this.txtByte01.Text = String.Format("{0:x2}", byte010); //$
-                this.txtByte02.Text = String.Format("{0:x2}", byte020); //x
-                this.txtByte03.Text = String.Format("{0:x2}", byte030); //x1
-                this.txtByte04.Text = String.Format("{0:x2}", byte030); //z  //CHANGE
-                this.txtByte05.Text = String.Format("{0:x2}", byte030); //z1
-                this.txtByte06.Text = String.Format("{0:x2}", byte040); //y
-                this.txtByte07.Text = String.Format("{0:x2}", byte030); //y1
+                this.txtByte01.Text = String.Format("{0:x2}", byte01); //$
+                this.txtByte02.Text = String.Format("{0:x2}", byte02); //x
+                this.txtByte03.Text = String.Format("{0:x2}", byte03); //x1
+                this.txtByte04.Text = String.Format("{0:x2}", byte04); //z  //CHANGE
+                this.txtByte05.Text = String.Format("{0:x2}", byte05); //z1
+                this.txtByte06.Text = String.Format("{0:x2}", byte06); //y
+                this.txtByte07.Text = String.Format("{0:x2}", byte07); //y1
 
-                this.txtXaxis.Text = String.Format("{0}", nXaxis0);
-                this.txtYaxis.Text = String.Format("{0}", nYaxis0);
-                this.txtZaxis.Text = String.Format("{0}", nZaxis0); //NEW fail
+                this.txtXaxis.Text = String.Format("{0}", nXaxis);
+                this.txtYaxis.Text = String.Format("{0}", nYaxis);
+                this.txtZaxis.Text = String.Format("{0}", nZaxis); //NEW fail
                 textBoxXg.Text = GX.ToString();
                 textBoxYg.Text = GY.ToString();
                 textBoxZg.Text = GZ.ToString();
 
-                this.txtMinX.Text = this.nMinX0.ToString();
-                this.txtMaxX.Text = this.nMaxX0.ToString();
+                this.txtMinX.Text = this.nMinX.ToString();
+                this.txtMaxX.Text = this.nMaxX.ToString();
 
-                this.txtMinY.Text = this.nMinY0.ToString();
-                this.txtMaxY.Text = this.nMaxY0.ToString();
+                this.txtMinY.Text = this.nMinY.ToString();
+                this.txtMaxY.Text = this.nMaxY.ToString();
 
-                this.txtMinZ.Text = this.nMinZ0.ToString();
-                this.txtMaxZ.Text = this.nMaxZ0.ToString();
+                this.txtMinZ.Text = this.nMinZ.ToString();
+                this.txtMaxZ.Text = this.nMaxZ.ToString();
 
                 this.txtRefreshRate.Text = String.Format("{0:f4}", Utility.Timer(DirectXTimer.GetElapsedTime));
                 //this.txtBytesRead.Text = nBytes.ToString();
@@ -1060,7 +1035,7 @@ namespace Accelerometer01
                 //    radio = 3;
                 //    selAxis = nZaxis;
                 //}
-            }
+            
         }
 
         #region OnClosing Method
@@ -1106,11 +1081,7 @@ namespace Accelerometer01
                     }
 
                     //refresh 0
-
                 }
-            
-            
-
             //if (dataReceivedEventArgs.EventType == SerialData.Eof)
             //{
             //    this.txtBytesRead.Text = "EOF"; //EOF = 0x1A
@@ -1141,23 +1112,20 @@ namespace Accelerometer01
             
             //refresh  11
 
-
             //this.txtByte05.Text = String.Format("{0:x2}", byte05);
             //this.txtByte06.Text = String.Format("{0:x2}", byte06);
-
 
             // PWM % based on documentation formula
             //float fXaxis = (256 * this.buffer[0] + this.buffer[1]) / 100;
             //float fYaxis = (256 * this.buffer[2] + this.buffer[3]) / 100;
             //this.txtXaxis.Text = String.Format("{0:f4}", fXaxis);
             //this.txtYaxis.Text = String.Format("{0:f4}", fYaxis);
-
-            nXaxis = Convert.ToInt32(byte02);
-            nYaxis = Convert.ToInt32(byte04); //CHANGE SUPER
-            nZaxis = Convert.ToInt32(byte03);
+            
+            nXaxis = Convert.ToInt32(byte02) << 8 | Convert.ToInt32(byte03);  //Convert.ToInt32(byte02);
+            nYaxis = Convert.ToInt32(byte06) << 8 | Convert.ToInt32(byte07);  //Convert.ToInt32(byte04); //CHANGE SUPER
+            nZaxis = Convert.ToInt32(byte04) << 8 | Convert.ToInt32(byte05);  //Convert.ToInt32(byte03);
 
             //refresh 2
-
             if (nXaxis < this.nMinX)
                 this.nMinX = nXaxis;
 
@@ -1176,8 +1144,7 @@ namespace Accelerometer01
             if (nZaxis > this.nMaxZ)
                 this.nMaxZ = nZaxis;
             
-            ///refresh 3
-            
+            ///refresh 3          
             if (this.bUseSmoothing == true)
             {
                 int nDeltaX = Math.Abs(nXaxis - this.nPrevX);
@@ -1208,30 +1175,6 @@ namespace Accelerometer01
                 return;
             }
 
-            //delayed write
-            inkr = inkr + 1;
-
-            if (inkr >= 1)
-            {
-                byte010 = byte01; //
-                byte020 = byte02; //X
-                byte030 = byte03; //Z //CHANGE
-                byte040 = byte04; //Y
-
-                nXaxis0 = nXaxis;
-                nYaxis0 = nYaxis;
-                nZaxis0 = nZaxis;  //NEW repair
-
-                nMinX0 = nMinX;//10000;
-                nMaxX0 = nMaxX;//-10000;
-                nMinY0 = nMinY;//10000;
-                nMaxY0 = nMaxY;//-10000;
-                nMinZ0 = nMinZ;//10000;
-                nMaxZ0 = nMaxZ;//-10000;
-
-                inkr = 0;
-            }
-
             // Default
             if (this.b3dMode == true)
                 this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);
@@ -1247,17 +1190,17 @@ namespace Accelerometer01
                 }
                 if (checkBoxXtran.Checked == true && radioButton1.Checked == true)
                 {
-                    Xtran = nXaxis - 145;
+                    Xtran = nXaxis - 145 * ADCset;
                     GX = (nXaxis * ((Gsel * Gsel) / incdel) - Gsel+0.24f)*1.942f;
                 }
                 if (checkBoxYtran.Checked == true && radioButton2.Checked == true)
                 {
-                    Ytran = nYaxis - 145;
+                    Ytran = nYaxis - 145 * ADCset;
                     GY = (nYaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.215f)*1.938f;
                 }
                 if (checkBoxZtran.Checked == true)
                 {
-                    Ztran = nZaxis - 145;
+                    Ztran = nZaxis - 145 * ADCset;
                     GZ = (nZaxis * ((Gsel * Gsel) / incdel) - Gsel);
                 }
             }
