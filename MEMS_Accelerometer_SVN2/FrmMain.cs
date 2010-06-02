@@ -46,10 +46,10 @@ namespace Accelerometer01
         private SerialPort mySerialPort = null;
         private Byte[] buffer = new Byte[5000];
         private Char[] sendChars = new Char[] { 'G' };
-        private Int32 nMinX = 320; //10000; max-min = cca 500
-        private Int32 nMaxX = 820;//-10000;
-        private Int32 nMinY = 340;//10000; max-min = cca 500
-        private Int32 nMaxY = 840;//-10000;
+        private Int32 nMinX = 310; //10000; max-min = cca 500
+        private Int32 nMaxX = 830;//-10000;
+        private Int32 nMinY = 330;//10000; max-min = cca 500
+        private Int32 nMaxY = 830;//-10000;
         private Int32 nMinZ = 260;//10000; max-min = cca 500
         private Int32 nMaxZ = 760;//-10000;
         private Queue byteQueue = new Queue();
@@ -1212,13 +1212,13 @@ namespace Accelerometer01
                 }
                 if (checkBoxXtran.Checked == true ) //&& radioButtonXmems.Checked == true
                 {
-                    Xtran = nXaxis - 585;
-                    GX = ((nXaxis * ((Gsel * Gsel) / incdel) - Gsel+0.24f)*1.942f)*100;
+                    Xtran = nXaxis - 575;
+                    GX = ((nXaxis * ((Gsel * Gsel) / incdel) - Gsel+0.24f)*1.942f)*100; //
                 }
                 if (checkBoxYtran.Checked == true ) //&& radioButtonYmems.Checked == true
                 {
-                    Ytran = nYaxis - 595;
-                    GY = ((nYaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.215f)*1.938f)*100;
+                    Ytran = nYaxis - 580;
+                    GY = ((nYaxis * ((Gsel * Gsel) / incdel) - Gsel+0.215f)*1.938f)*100; //
                 }
                 if (checkBoxZtran.Checked == true)
                 {
