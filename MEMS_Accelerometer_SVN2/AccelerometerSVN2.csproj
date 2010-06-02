@@ -155,6 +155,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="equations.txt" />
     <Content Include="Resources\ZedGraph.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

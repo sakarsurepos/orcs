@@ -108,17 +108,17 @@ namespace Accelerometer01
         public int graphvaly = 0;
         RollingPointPairList listX;
         RollingPointPairList listY;
+        RollingPointPairList listXs;
+        RollingPointPairList listYs;
         LineItem curveX;
         LineItem curveY;
+        LineItem curveXs;
+        LineItem curveYs;
         int GraphXScmin = 0;
         int GraphXScmax = 50;
-        /*
-        //Graph
-        PointPairList list;
-        LineItem myCurve;
-        GraphPane myPane;
-        //ZedGraphControl zgc;
-        */
+        int TrajX = 0;
+        int TrajY = 0;
+
         private TextBox txtOutput;
         private TextBox txtByte01;
         private TextBox txtByte02;
@@ -182,8 +182,6 @@ namespace Accelerometer01
         private TextBox txtByte06;
         private TextBox txtByte07;
         private ZedGraphControl zedGraphControl1;
-        private Button buttonMEMSGraph;
-        private Button button3;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -303,8 +301,6 @@ namespace Accelerometer01
             this.labelSel = new System.Windows.Forms.Label();
             this.labelSelG = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
-            this.buttonMEMSGraph = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -916,33 +912,11 @@ namespace Accelerometer01
             this.zedGraphControl1.Size = new System.Drawing.Size(665, 223);
             this.zedGraphControl1.TabIndex = 53;
             // 
-            // buttonMEMSGraph
-            // 
-            this.buttonMEMSGraph.Location = new System.Drawing.Point(460, 118);
-            this.buttonMEMSGraph.Name = "buttonMEMSGraph";
-            this.buttonMEMSGraph.Size = new System.Drawing.Size(48, 23);
-            this.buttonMEMSGraph.TabIndex = 54;
-            this.buttonMEMSGraph.Text = "Graph";
-            this.buttonMEMSGraph.UseVisualStyleBackColor = true;
-            this.buttonMEMSGraph.Click += new System.EventHandler(this.buttonMEMSGraph_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(468, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(38, 23);
-            this.button3.TabIndex = 55;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 602);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.buttonMEMSGraph);
             this.Controls.Add(this.zedGraphControl1);
             this.Controls.Add(this.labelSelG);
             this.Controls.Add(this.labelSel);
@@ -989,6 +963,7 @@ namespace Accelerometer01
         protected override void OnLoad(EventArgs eventArgs)
         {
             Control.CheckForIllegalCrossThreadCalls = false;
+            CreateGraph(); //create Graph
         }
         #endregion
 
@@ -1130,8 +1105,6 @@ namespace Accelerometer01
                 return;
             }
 
-            
-            
                 if (dataReceivedEventArgs.EventType == SerialData.Chars)
                 {
                     Int32 nBytes = this.mySerialPort.Read(this.buffer, 0, this.mySerialPort.BytesToRead);
@@ -1199,8 +1172,21 @@ namespace Accelerometer01
 
             curveY = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
             //IPointListEdit listY = curveY.Points as IPointListEdit;
-            listY.Add(graphvalx++, nYaxis);
-                
+            listY.Add(graphvalx, nYaxis);
+                        
+            //Trajectory
+            int Trajxacc = (int)(((nXaxis - 575) * (19.62 / 485) * (0.2 * 0.2))*1000);
+            curveXs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listX = curveX.Points as IPointListEdit;
+            TrajX = TrajX + Trajxacc;
+            listXs.Add(graphvalx, TrajX);
+
+            int Trajyacc = (int)(((nYaxis - 585) * (19.62 / 500) * (0.2 * 0.2))*1000);
+            curveYs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listY = curveY.Points as IPointListEdit;
+            TrajY = TrajY + Trajyacc;
+            listYs.Add(graphvalx++, TrajY);
+
             //Scale xScale = zedGraphControl1.GraphPane.XAxis.Scale;
             //xScale.
             if (graphvalx > 30)
@@ -1424,8 +1410,13 @@ namespace Accelerometer01
 
         private void buttonMEMSGraph_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void CreateGraph()
+        {
             myPane = zedGraphControl1.GraphPane;
-            myPane.Title.Text = "Test of Dynamic Data Update with ZedGraph\n" + "(After 25 seconds the graph scrolls)";
+            myPane.Title.Text = "Dynamic Data Update\n" + "(MEMS Accelerometer)";
             myPane.XAxis.Title.Text = "Time, Seconds";
             myPane.YAxis.Title.Text = "MEMS, Value";
 
@@ -1434,85 +1425,30 @@ namespace Accelerometer01
             // keeps a rolling set of point data without needing to shift any data values
             listX = new RollingPointPairList(1200);
             listY = new RollingPointPairList(1200);
+            listXs = new RollingPointPairList(1200);
+            listYs = new RollingPointPairList(1200);
+
             // Initially, a curve is added with no data points (list is empty)
             // Color is blue, and there will be no symbols
             curveX = myPane.AddCurve("MEMS X axis", listX, Color.Blue, SymbolType.Circle);
             curveY = myPane.AddCurve("MEMS Y axis", listY, Color.Red, SymbolType.Circle);
-            // Sample at 50ms intervals
-            //////timer1.Interval = 50;
-            //////timer1.Enabled = true;
-            //////timer1.Start();
-
+            curveXs = myPane.AddCurve("MEMS X trajectory axis", listXs, Color.Green, SymbolType.Triangle);
+            curveYs = myPane.AddCurve("MEMS Y trajectory axis", listYs, Color.Pink, SymbolType.Triangle);
             // Just manually control the X axis range so it scrolls continuously
             // instead of discrete step-sized jumps
-            
+
             myPane.XAxis.Scale.Min = 0;
             myPane.XAxis.Scale.Max = 50;
             myPane.XAxis.Scale.MinorStep = 1;
             myPane.XAxis.Scale.MajorStep = 5;
-            
 
             // Scale the axes
             zedGraphControl1.AxisChange();
             zedGraphControl1.Invalidate();
-            // Save the beginning time for reference
-            /////////tickStart = Environment.TickCount;
-
-
-            //zgc = zg1;
-            //zg1.Hide();
-            //zg1.Show();
-        }
-
-        private void CreateGraph()
-        {
-            /*
-            myPane = zgc.GraphPane;
-
-            // Set the titles and axis labels
-            myPane.Title.Text = "My Test Date Graph";
-            myPane.XAxis.Title.Text = "X Value";
-            myPane.YAxis.Title.Text = "My Y Axis";
-
-            // Make up some data points from the Sine function
-            list = new PointPairList();
-            //for (double x = 0; x < 36; x++)
-            //{
-            //    double y = Math.Sin(x * Math.PI / 15.0);
-            //    list.Add(x, y);
-            //}
-
-            // Generate a blue curve with circle symbols, and "My Curve 2" in the legend
-            myCurve = myPane.AddCurve("My Curve", list, Color.Blue, SymbolType.Circle);
-            // Fill the area under the curve with a white-red gradient at 45 degrees
-            //myCurve.Line.Fill = new Fill(Color.White, Color.Red, 45F);
-            // Make the symbols opaque by filling them with white
-            //myCurve.Symbol.Fill = new Fill(Color.White);
-
-            // Fill the axis background with a color gradient
-            //myPane.Chart.Fill = new Fill(Color.White, Color.LightGoldenrodYellow, 45F);
-
-            // Fill the pane background with a color gradient
-            //myPane.Fill = new Fill(Color.White, Color.FromArgb(220, 220, 255), 45F);
-
-            // Calculate the Axis Scale Ranges
-            zgc.AxisChange();
-             */
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Get the first CurveItem in the graph
-            LineItem curve = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
-            // Get the PointPairList
-            IPointListEdit list = curve.Points as IPointListEdit;
-            // Add value
-            list.Add(graphvalx++,graphvaly++);
-            //Scale xScale = zedGraphControl1.GraphPane.XAxis.Scale;
-            //xScale.
-            zedGraphControl1.AxisChange();
-            // Force a redraw
-            zedGraphControl1.Invalidate();
         }
 
     } // End of FrmMain class
