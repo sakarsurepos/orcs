@@ -103,8 +103,15 @@ namespace Accelerometer01
 
         Thread trd;
 
+        GraphPane myPane;
         public int graphvalx = 0;
         public int graphvaly = 0;
+        RollingPointPairList listX;
+        RollingPointPairList listY;
+        LineItem curveX;
+        LineItem curveY;
+        int GraphXScmin = 0;
+        int GraphXScmax = 50;
         /*
         //Graph
         PointPairList list;
@@ -1184,13 +1191,24 @@ namespace Accelerometer01
 
             //Graph
             // Get the first CurveItem in the graph
-            LineItem curve = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
             // Get the PointPairList
-            IPointListEdit list = curve.Points as IPointListEdit;
             // Add value
-            list.Add(graphvalx++, nXaxis);
+            curveX = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listX = curveX.Points as IPointListEdit;
+            listX.Add(graphvalx, nXaxis);
+
+            curveY = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listY = curveY.Points as IPointListEdit;
+            listY.Add(graphvalx++, nYaxis);
+                
             //Scale xScale = zedGraphControl1.GraphPane.XAxis.Scale;
             //xScale.
+            if (graphvalx > 30)
+            {
+                myPane.XAxis.Scale.Min = GraphXScmin++;
+                myPane.XAxis.Scale.Max = GraphXScmax++;
+            }
+
             zedGraphControl1.AxisChange();
             // Force a redraw
             zedGraphControl1.Invalidate();
@@ -1406,21 +1424,20 @@ namespace Accelerometer01
 
         private void buttonMEMSGraph_Click(object sender, EventArgs e)
         {
-            GraphPane myPane = zedGraphControl1.GraphPane;
-            myPane.Title.Text = "Test of Dynamic Data Update with ZedGraph\n" +
-                  "(After 25 seconds the graph scrolls)";
+            myPane = zedGraphControl1.GraphPane;
+            myPane.Title.Text = "Test of Dynamic Data Update with ZedGraph\n" + "(After 25 seconds the graph scrolls)";
             myPane.XAxis.Title.Text = "Time, Seconds";
-            myPane.YAxis.Title.Text = "Sample Potential, Volts";
+            myPane.YAxis.Title.Text = "MEMS, Value";
 
             // Save 1200 points.  At 50 ms sample rate, this is one minute
             // The RollingPointPairList is an efficient storage class that always
             // keeps a rolling set of point data without needing to shift any data values
-            RollingPointPairList list = new RollingPointPairList(1200);
-
+            listX = new RollingPointPairList(1200);
+            listY = new RollingPointPairList(1200);
             // Initially, a curve is added with no data points (list is empty)
             // Color is blue, and there will be no symbols
-            LineItem curve = myPane.AddCurve("Voltage", list, Color.Blue, SymbolType.Circle);
-
+            curveX = myPane.AddCurve("MEMS X axis", listX, Color.Blue, SymbolType.Circle);
+            curveY = myPane.AddCurve("MEMS Y axis", listY, Color.Red, SymbolType.Circle);
             // Sample at 50ms intervals
             //////timer1.Interval = 50;
             //////timer1.Enabled = true;
@@ -1428,10 +1445,12 @@ namespace Accelerometer01
 
             // Just manually control the X axis range so it scrolls continuously
             // instead of discrete step-sized jumps
+            
             myPane.XAxis.Scale.Min = 0;
-            myPane.XAxis.Scale.Max = 400;
+            myPane.XAxis.Scale.Max = 50;
             myPane.XAxis.Scale.MinorStep = 1;
             myPane.XAxis.Scale.MajorStep = 5;
+            
 
             // Scale the axes
             zedGraphControl1.AxisChange();
