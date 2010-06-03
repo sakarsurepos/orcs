@@ -508,10 +508,15 @@ namespace Robot
             this.label86 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.groupBox49 = new System.Windows.Forms.GroupBox();
+            this.textBoxSendSimData = new System.Windows.Forms.TextBox();
+            this.labelRXSimData = new System.Windows.Forms.Label();
+            this.buttonTCPSimStop = new System.Windows.Forms.Button();
+            this.buttonSendSimData = new System.Windows.Forms.Button();
+            this.buttonTCPSimStart = new System.Windows.Forms.Button();
+            this.SimDataLog = new System.Windows.Forms.TextBox();
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
-            this.SimDataLog = new System.Windows.Forms.TextBox();
-            this.buttonTCPSimStart = new System.Windows.Forms.Button();
             this.button67 = new System.Windows.Forms.Button();
             this.button66 = new System.Windows.Forms.Button();
             this.button65 = new System.Windows.Forms.Button();
@@ -812,11 +817,6 @@ namespace Robot
             this.label169 = new System.Windows.Forms.Label();
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
-            this.groupBox49 = new System.Windows.Forms.GroupBox();
-            this.buttonSendSimData = new System.Windows.Forms.Button();
-            this.buttonTCPSimStop = new System.Windows.Forms.Button();
-            this.labelRXSimData = new System.Windows.Forms.Label();
-            this.textBoxSendSimData = new System.Windows.Forms.TextBox();
             this.cameraWindow = new Robot.CameraWindow();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -913,6 +913,7 @@ namespace Robot
             this.groupBox_control.SuspendLayout();
             this.groupBox46.SuspendLayout();
             this.tabPage13.SuspendLayout();
+            this.groupBox49.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3D)).BeginInit();
@@ -976,7 +977,6 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
-            this.groupBox49.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -3454,7 +3454,6 @@ namespace Robot
             resources.ApplyResources(this.labelreadi, "labelreadi");
             this.labelreadi.ForeColor = System.Drawing.Color.Black;
             this.labelreadi.Name = "labelreadi";
-            this.labelreadi.Click += new System.EventHandler(this.labelreadi_Click);
             // 
             // txtRefreshRate
             // 
@@ -3500,7 +3499,6 @@ namespace Robot
             resources.ApplyResources(this.groupBoxZ, "groupBoxZ");
             this.groupBoxZ.Name = "groupBoxZ";
             this.groupBoxZ.TabStop = false;
-            this.groupBoxZ.Enter += new System.EventHandler(this.groupBoxZ_Enter);
             // 
             // textBoxZg
             // 
@@ -4751,6 +4749,58 @@ namespace Robot
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
+            // groupBox49
+            // 
+            this.groupBox49.Controls.Add(this.textBoxSendSimData);
+            this.groupBox49.Controls.Add(this.labelRXSimData);
+            this.groupBox49.Controls.Add(this.buttonTCPSimStop);
+            this.groupBox49.Controls.Add(this.buttonSendSimData);
+            this.groupBox49.Controls.Add(this.buttonTCPSimStart);
+            this.groupBox49.Controls.Add(this.SimDataLog);
+            this.groupBox49.ForeColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.groupBox49, "groupBox49");
+            this.groupBox49.Name = "groupBox49";
+            this.groupBox49.TabStop = false;
+            // 
+            // textBoxSendSimData
+            // 
+            resources.ApplyResources(this.textBoxSendSimData, "textBoxSendSimData");
+            this.textBoxSendSimData.Name = "textBoxSendSimData";
+            // 
+            // labelRXSimData
+            // 
+            resources.ApplyResources(this.labelRXSimData, "labelRXSimData");
+            this.labelRXSimData.ForeColor = System.Drawing.Color.Black;
+            this.labelRXSimData.Name = "labelRXSimData";
+            // 
+            // buttonTCPSimStop
+            // 
+            this.buttonTCPSimStop.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttonTCPSimStop, "buttonTCPSimStop");
+            this.buttonTCPSimStop.Name = "buttonTCPSimStop";
+            this.buttonTCPSimStop.UseVisualStyleBackColor = true;
+            // 
+            // buttonSendSimData
+            // 
+            this.buttonSendSimData.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttonSendSimData, "buttonSendSimData");
+            this.buttonSendSimData.Name = "buttonSendSimData";
+            this.buttonSendSimData.UseVisualStyleBackColor = true;
+            this.buttonSendSimData.Click += new System.EventHandler(this.buttonSendSimData_Click);
+            // 
+            // buttonTCPSimStart
+            // 
+            this.buttonTCPSimStart.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttonTCPSimStart, "buttonTCPSimStart");
+            this.buttonTCPSimStart.Name = "buttonTCPSimStart";
+            this.buttonTCPSimStart.UseVisualStyleBackColor = true;
+            this.buttonTCPSimStart.Click += new System.EventHandler(this.button94_Click);
+            // 
+            // SimDataLog
+            // 
+            resources.ApplyResources(this.SimDataLog, "SimDataLog");
+            this.SimDataLog.Name = "SimDataLog";
+            // 
             // pictureBox35
             // 
             this.pictureBox35.Image = global::Robot.Properties.Resources.robot_logo;
@@ -4772,19 +4822,6 @@ namespace Robot
             resources.ApplyResources(this.groupBox21, "groupBox21");
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.TabStop = false;
-            // 
-            // SimDataLog
-            // 
-            resources.ApplyResources(this.SimDataLog, "SimDataLog");
-            this.SimDataLog.Name = "SimDataLog";
-            // 
-            // buttonTCPSimStart
-            // 
-            this.buttonTCPSimStart.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.buttonTCPSimStart, "buttonTCPSimStart");
-            this.buttonTCPSimStart.Name = "buttonTCPSimStart";
-            this.buttonTCPSimStart.UseVisualStyleBackColor = true;
-            this.buttonTCPSimStart.Click += new System.EventHandler(this.button94_Click);
             // 
             // button67
             // 
@@ -7115,45 +7152,6 @@ namespace Robot
             resources.ApplyResources(this.label171, "label171");
             this.label171.Name = "label171";
             // 
-            // groupBox49
-            // 
-            this.groupBox49.Controls.Add(this.textBoxSendSimData);
-            this.groupBox49.Controls.Add(this.labelRXSimData);
-            this.groupBox49.Controls.Add(this.buttonTCPSimStop);
-            this.groupBox49.Controls.Add(this.buttonSendSimData);
-            this.groupBox49.Controls.Add(this.buttonTCPSimStart);
-            this.groupBox49.Controls.Add(this.SimDataLog);
-            this.groupBox49.ForeColor = System.Drawing.Color.RoyalBlue;
-            resources.ApplyResources(this.groupBox49, "groupBox49");
-            this.groupBox49.Name = "groupBox49";
-            this.groupBox49.TabStop = false;
-            // 
-            // buttonSendSimData
-            // 
-            this.buttonSendSimData.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.buttonSendSimData, "buttonSendSimData");
-            this.buttonSendSimData.Name = "buttonSendSimData";
-            this.buttonSendSimData.UseVisualStyleBackColor = true;
-            this.buttonSendSimData.Click += new System.EventHandler(this.buttonSendSimData_Click);
-            // 
-            // buttonTCPSimStop
-            // 
-            this.buttonTCPSimStop.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.buttonTCPSimStop, "buttonTCPSimStop");
-            this.buttonTCPSimStop.Name = "buttonTCPSimStop";
-            this.buttonTCPSimStop.UseVisualStyleBackColor = true;
-            // 
-            // labelRXSimData
-            // 
-            resources.ApplyResources(this.labelRXSimData, "labelRXSimData");
-            this.labelRXSimData.ForeColor = System.Drawing.Color.Black;
-            this.labelRXSimData.Name = "labelRXSimData";
-            // 
-            // textBoxSendSimData
-            // 
-            resources.ApplyResources(this.textBoxSendSimData, "textBoxSendSimData");
-            this.textBoxSendSimData.Name = "textBoxSendSimData";
-            // 
             // cameraWindow
             // 
             this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
@@ -7347,6 +7345,8 @@ namespace Robot
             this.groupBox46.ResumeLayout(false);
             this.groupBox46.PerformLayout();
             this.tabPage13.ResumeLayout(false);
+            this.groupBox49.ResumeLayout(false);
+            this.groupBox49.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
             this.groupBox21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3D)).EndInit();
@@ -7431,8 +7431,6 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
-            this.groupBox49.ResumeLayout(false);
-            this.groupBox49.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

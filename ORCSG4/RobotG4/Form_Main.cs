@@ -646,11 +646,20 @@ namespace Robot
                 }
                 textLogs.Paste(dataForAnalyseMEMS);
                 char[] USART_dataMEMS = dataForAnalyseMEMS.ToCharArray();
-                string MEMS_MSG = new string(USART_dataMEMS, 1, 6);
+                string MEMS_MSG = new string(USART_dataMEMS, 0, 6);
+
+                this.txtByte01.Text = ((byte)USART_dataMEMS[0]).ToString(); //$ String.Format("{0:x2}", byte01);
+                this.txtByte02.Text = ((byte)USART_dataMEMS[1]).ToString(); //x
+                this.txtByte03.Text = ((byte)USART_dataMEMS[2]).ToString(); //x1
+                this.txtByte04.Text = ((byte)USART_dataMEMS[3]).ToString(); //z  //CHANGE
+                this.txtByte05.Text = ((byte)USART_dataMEMS[4]).ToString(); //z1
+                this.txtByte06.Text = ((byte)USART_dataMEMS[5]).ToString(); //y
+                this.txtByte07.Text = ((byte)USART_dataMEMS[6]).ToString(); //y1
+
                 nXaxis = Convert.ToInt32((byte)USART_dataMEMS[1]) << 8 | Convert.ToInt32((byte)USART_dataMEMS[2]);  //Convert.ToInt32(byte02);
                 nYaxis = Convert.ToInt32((byte)USART_dataMEMS[3]) << 8 | Convert.ToInt32((byte)USART_dataMEMS[4]);  //Convert.ToInt32(byte04); //CHANGE SUPER
                 nZaxis = Convert.ToInt32((byte)USART_dataMEMS[5]) << 8 | Convert.ToInt32((byte)USART_dataMEMS[6]);  //Convert.ToInt32(byte03);
-
+                
                 ProcessDataMEMS();
                 //SetMap();
             }
@@ -1452,7 +1461,7 @@ namespace Robot
         private void button7_Click(object sender, EventArgs e)
         {//Default tcp client
             textTCPClientServerIPAddress.Text = "127.0.0.1";
-            textTCPClientServerPortNumber.Text = "1001";
+            textTCPClientServerPortNumber.Text = "2000";
             textBox26.Text = "http://127.0.0.1:8080/cam_1.cgi";
         }
 
@@ -3809,14 +3818,6 @@ namespace Robot
             {
                 Thread.Sleep(200);
 
-                ////this.txtByte01.Text = byte01.ToString(); //$ String.Format("{0:x2}", byte01);
-                ////this.txtByte02.Text = byte02.ToString(); //x
-                ////this.txtByte03.Text = byte03.ToString(); //x1
-                ////this.txtByte04.Text = byte04.ToString(); //z  //CHANGE
-                ////this.txtByte05.Text = byte05.ToString(); //z1
-                ////this.txtByte06.Text = byte06.ToString(); //y
-                ////this.txtByte07.Text = byte07.ToString(); //y1
-
                 this.txtXaxis.Text = String.Format("{0}", nXaxis);
                 this.txtYaxis.Text = String.Format("{0}", nYaxis);
                 this.txtZaxis.Text = String.Format("{0}", nZaxis); //NEW fail
@@ -4100,29 +4101,6 @@ namespace Robot
             //byte01 = (Byte)this.byteQueue.Dequeue(); //$
             //if (byte01 != 36)
             //    return;
-            //byte02 = (Byte)this.byteQueue.Dequeue(); //X
-            //byte03 = (Byte)this.byteQueue.Dequeue(); //X1
-            //byte04 = (Byte)this.byteQueue.Dequeue(); //Z //CHANGE
-            //byte05 = (Byte)this.byteQueue.Dequeue(); //Z1
-            //byte06 = (Byte)this.byteQueue.Dequeue(); //Y
-            //byte07 = (Byte)this.byteQueue.Dequeue(); //Y1
-            //byte08 = (Byte)this.byteQueue.Dequeue(); //13
-            //byte09 = (Byte)this.byteQueue.Dequeue(); //10
-
-            //refresh  11
-
-            //this.txtByte05.Text = String.Format("{0:x2}", byte05);
-            //this.txtByte06.Text = String.Format("{0:x2}", byte06);
-
-            // PWM % based on documentation formula
-            //float fXaxis = (256 * this.buffer[0] + this.buffer[1]) / 100;
-            //float fYaxis = (256 * this.buffer[2] + this.buffer[3]) / 100;
-            //this.txtXaxis.Text = String.Format("{0:f4}", fXaxis);
-            //this.txtYaxis.Text = String.Format("{0:f4}", fYaxis);
-
-            /////nXaxis = Convert.ToInt32(byte02) << 8 | Convert.ToInt32(byte03);  //Convert.ToInt32(byte02);
-            /////nYaxis = Convert.ToInt32(byte04) << 8 | Convert.ToInt32(byte05);  //Convert.ToInt32(byte04); //CHANGE SUPER
-            /////nZaxis = Convert.ToInt32(byte06) << 8 | Convert.ToInt32(byte07);  //Convert.ToInt32(byte03);
 
             //Graph
             // Get the first CurveItem in the graph
@@ -4911,51 +4889,6 @@ namespace Robot
                 SendData(SendMessage.CAMERA_OFF());
         }
 
-        private void CreateGraph(ZedGraphControl zgc)
-        {
-            GraphPane myPane = zgc.GraphPane;
-
-            // Set the titles and axis labels
-            myPane.Title.Text = "My Test Date Graph";
-            myPane.XAxis.Title.Text = "X Value";
-            myPane.YAxis.Title.Text = "My Y Axis";
-
-            // Make up some data points from the Sine function
-            PointPairList list = new PointPairList();
-            for (double x = 0; x < 36; x++)
-            {
-                double y = Math.Sin(x * Math.PI / 15.0);
-                list.Add(x, y);
-            }
-
-            // Generate a blue curve with circle symbols, and "My Curve 2" in the legend
-            LineItem myCurve = myPane.AddCurve("My Curve", list, Color.Blue,
-                              SymbolType.Circle);
-            // Fill the area under the curve with a white-red gradient at 45 degrees
-            myCurve.Line.Fill = new Fill(Color.White, Color.Red, 45F);
-            // Make the symbols opaque by filling them with white
-            myCurve.Symbol.Fill = new Fill(Color.White);
-
-            // Fill the axis background with a color gradient
-            myPane.Chart.Fill = new Fill(Color.White, Color.LightGoldenrodYellow, 45F);
-
-            // Fill the pane background with a color gradient
-            myPane.Fill = new Fill(Color.White, Color.FromArgb(220, 220, 255), 45F);
-
-            // Calculate the Axis Scale Ranges
-            zgc.AxisChange();
-        }
-
-        private void labelreadi_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBoxZ_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSPopen_Click(object sender, EventArgs e)
         {
             try
@@ -5093,9 +5026,9 @@ namespace Robot
 
         private void buttonSendSimData_Click(object sender, EventArgs e) ///TCP Server Sim Send Data
         {
-            string dataForSend = "$GMDFF";
+            string dataForSend = textBoxSendSimData.Text + "\r\n";
+            //string dataForSend = "$" + (byte)2 + "5" + (byte)2 + "5" + (byte)2 + "5" + "\r\n";
             TcpSrvrSim.Send_Data_By_Server(dataForSend);
-            //TcpSrvrSim.Send_Data_Server("xxxxx");
         }
 
    }
