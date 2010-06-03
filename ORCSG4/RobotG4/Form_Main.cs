@@ -349,6 +349,11 @@ namespace Robot
         public static bool dflag = false;
         ////
 
+        //SPACE FOR FILTER Butterworth low-pass filter
+        double a1 = 0.57; //0.57 is just an example value.
+        double lastY = 0.0;
+        double xfac, yf;
+
         public Robot1()
         {
             //ACCELEROMETER
@@ -3972,6 +3977,15 @@ namespace Robot
             nYaxis = Convert.ToInt32(byte04) << 8 | Convert.ToInt32(byte05);  //Convert.ToInt32(byte04); //CHANGE SUPER
             nZaxis = Convert.ToInt32(byte06) << 8 | Convert.ToInt32(byte07);  //Convert.ToInt32(byte03);
 
+            //SPACE FOR FILTER Butterworth low-pass filter
+            /*
+            xfac = nXaxis;
+            yf = xfac - a1 * lastY;
+            nXaxis = (int)yf;
+            lastY = yf;   
+            */
+            //SPACE FOR FILTER Butterworth low-pass filter
+
             //Graph
             // Get the first CurveItem in the graph
             // Get the PointPairList
@@ -4972,7 +4986,7 @@ namespace Robot
         private void CreateGraph()
         {
             myPane = zedGraphControl1.GraphPane;
-            myPane.Title.Text = "Dynamic Data Update\n" + "(MEMS Accelerometer)";
+            myPane.Title.Text = "Dynamic Data Update (MEMS Accelerometer)";
             myPane.XAxis.Title.Text = "Time, Seconds";
             myPane.YAxis.Title.Text = "MEMS, Value";
 
