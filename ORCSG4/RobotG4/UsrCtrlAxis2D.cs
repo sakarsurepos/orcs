@@ -32,20 +32,21 @@ namespace Robot
     /// <summary>
     /// 
     /// </summary>
-    public class UsrCtrlAxis2D : UserControl
+    public sealed class UsrCtrlAxis2D : UserControl
     {
         #region Fields
         private Pen axisPen = new Pen(Color.Red, 1.0f);
         private Pen objectPen = new Pen(Color.Green, 2.0f);
         private float fOriginX = 0;
         private float fOriginY = 0;
-        private float fMinX = 70; // Close to experimental values
-        private float fMaxX = 215;
-        private float fMinY = 70; // Close to experimental values
-        private float fMaxY = 215;
-        private float fMinZ = 70; // Close to experimental values
-        private float fMaxZ = 215;
+        private float fMinX = 300; // Close to experimental values 550
+        private float fMaxX = 850;
+        private float fMinY = 300; // Close to experimental values
+        private float fMaxY = 870;
+        private float fMinZ = 260; // Close to experimental values
+        private float fMaxZ = 760;
         private float fAngle = 0;
+
 
         private PointF[] ptsObject = new PointF[5];
         private PointF[] ptsModObject = new PointF[5];
@@ -127,9 +128,13 @@ namespace Robot
             paintEventArgs.Graphics.Clear(this.BackColor);
             paintEventArgs.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
+            //NEW
             // Draw X & Y axes
-            paintEventArgs.Graphics.DrawLine(this.axisPen, this.fOriginX, 0, this.fOriginX, this.ClientSize.Height);
-            paintEventArgs.Graphics.DrawLine(this.axisPen, 0, this.fOriginY, this.ClientSize.Width, this.fOriginY);
+            paintEventArgs.Graphics.DrawLine(this.axisPen, this.fOriginX, this.ClientSize.Height / 6, this.fOriginX, 5 * this.ClientSize.Height / 6); //
+            paintEventArgs.Graphics.DrawLine(this.axisPen, this.ClientSize.Width / 6, this.fOriginY, 5 * this.ClientSize.Width / 6, this.fOriginY);//
+            paintEventArgs.Graphics.DrawString("X=Y", new Font("Verdana", 20), new SolidBrush(Color.Tomato), this.ClientSize.Width - 70, this.ClientSize.Width / 2);
+            paintEventArgs.Graphics.DrawString("Z", new Font("Verdana", 20), new SolidBrush(Color.Tomato), this.ClientSize.Width / 2, 20);
+            //NEW
 
             // Draw object
             paintEventArgs.Graphics.DrawLines(this.objectPen, this.ptsModObject);
@@ -141,10 +146,10 @@ namespace Robot
         /// 
         /// </summary>
         /// <param name="eventArgs"></param>
-        protected override void OnSizeChanged(EventArgs eventArgs)
+        protected override void OnSizeChanged(EventArgs eventArgs) //Draw Objects
         {
-            float fSpaceX = 10;
-            float fSpaceY = 10;
+            float fSpaceX = 5;
+            float fSpaceY = 50;
 
             this.fOriginX = this.ClientSize.Width / 2;
             this.fOriginY = this.ClientSize.Height / 2;
@@ -166,31 +171,31 @@ namespace Robot
         /// <param name="fCurrentX"></param>
         public void SetCurrentValue(float fCurrent)
         {
-            
-            if(Robot1.radio == 1) ///XXXXX
+
+            if (Robot1.radio == 1) ///XXXXX && FrmMain.lockA == false
             {
-            if (fCurrent < fMinX)
-                fMinX = fCurrent;
+                if (fCurrent < fMinX)
+                    fMinX = fCurrent;
 
-            if (fCurrent > this.fMaxX)
-                fMaxX = fCurrent;
+                if (fCurrent > this.fMaxX)
+                    fMaxX = fCurrent;
 
-            // Copy original points
-            for (int i = 0; i < 5; i++)
-                this.ptsModObject[i] = this.ptsObject[i];
+                // Copy original points
+                for (int i = 0; i < 5; i++)
+                    this.ptsModObject[i] = this.ptsObject[i];
 
-            // Do some calculations
-            // Minimum value will be 0 degrees
-            // Maximum value will be 180 degrees
+                // Do some calculations
+                // Minimum value will be 0 degrees
+                // Maximum value will be 180 degrees
 
 
-            float fUnitX = 180 / (fMaxX - fMinX);
-            this.fAngle = ((fCurrent - this.fMinX) * fUnitX);
-            
-            Robot1.fAnglex0 = fAngle;
+                float fUnitX = 180 / (fMaxX - fMinX);
+                this.fAngle = ((fCurrent - this.fMinX) * fUnitX);
+
+                Robot1.fAnglex0 = fAngle;
             }
 
-            if (Robot1.radio == 2) //YYYY
+            if (Robot1.radio == 2) //YYYY && FrmMain.lockA == false
             {
                 if (fCurrent < this.fMinY)
                     this.fMinY = fCurrent;
@@ -206,37 +211,38 @@ namespace Robot
                 // Minimum value will be 0 degrees
                 // Maximum value will be 180 degrees
 
-
+                //NEW MODIFY MIDDLE IS
                 float fUnitY = 180 / (this.fMaxY - this.fMinY);
                 this.fAngle = ((fCurrent - this.fMinY) * fUnitY);
                 Robot1.fAngley0 = fAngle;
             }
 
-            if (Robot1.radio == 3) ///Z
-            {
-                if (fCurrent < this.fMinZ)
-                    this.fMinZ = fCurrent;
-
-                if (fCurrent > this.fMaxZ)
-                    this.fMaxZ = fCurrent;
-
-                // Copy original points
-                for (int i = 0; i < 5; i++)
-                    this.ptsModObject[i] = this.ptsObject[i];
-
-                // Do some calculations
-                // Minimum value will be 0 degrees
-                // Maximum value will be 180 degrees
-
-
-                float fUnitZ = 180 / (this.fMaxZ - this.fMinZ);
-                this.fAngle = ((fCurrent - this.fMinZ) * fUnitZ);
-                Robot1.fAnglez0 = fAngle;
-            }
-
             // Create a matrix and scale it.
             Matrix myMatrix = new Matrix();
-            myMatrix.RotateAt(this.fAngle, new PointF(this.fOriginX, this.fOriginY));
+            //NEW
+            if (Robot1.lockX == true || Robot1.lockY == true || Robot1.lockZ == true)
+            {
+                myMatrix.RotateAt(90, new PointF(this.fOriginX, this.fOriginY));
+                if (Robot1.lockX == true)
+                {
+                    myMatrix.Translate(0, Robot1.Xtran);
+                }
+                if (Robot1.lockY == true)
+                {
+                    myMatrix.Translate(0, Robot1.Ytran);
+                }
+                if (Robot1.lockZ == true)
+                {
+                    myMatrix.Translate(Robot1.Ztran, 0);
+                }
+
+            }
+            else
+            {
+                myMatrix.RotateAt(this.fAngle, new PointF(this.fOriginX, this.fOriginY));
+            }
+
+            //NEW
             myMatrix.TransformPoints(this.ptsModObject);
 
             // Refresh

@@ -107,7 +107,6 @@ namespace Robot
             this.Name = "UsrCtrlAxis3D";
             this.Size = new System.Drawing.Size(350, 350);
             this.ResumeLayout(false);
-
         }
         #endregion
 
@@ -149,7 +148,7 @@ namespace Robot
             this.vtrOrigin[6] = new Vector3(0, 0, -1.0f * this.fOriginBounds);
             this.vtrOrigin[7] = new Vector3(0, 0, this.fOriginBounds);
 
-            this.boxMesh = Mesh.Box(this.dxDevice, 4, 0.7f, 6);
+            this.boxMesh = Mesh.Box(this.dxDevice, 4, 0.7f, 6); //change to robot model :-)
             this.boxMaterial = new Material();
             this.boxMaterial.Emissive = Color.DarkOliveGreen;
             this.boxMaterial.Ambient = Color.WhiteSmoke;
@@ -194,7 +193,8 @@ namespace Robot
 
             this.dxDevice.BeginScene();
 
-            this.dxDevice.Transform.World = Matrix.RotationX(this.fAngleY) * Matrix.RotationZ(this.fAngleX);
+            this.dxDevice.Transform.World = Matrix.RotationX(this.fAngleY) * Matrix.RotationZ(this.fAngleX) * Matrix.Translation(0, 0, 0);
+            //this.dxDevice.Transform.World = Matrix.Translation(0, 0, 5); //test translate matrix
             this.dxDevice.Material = this.boxMaterial;
             this.boxMesh.DrawSubset(0);
 
@@ -264,13 +264,17 @@ namespace Robot
             this.fAngleX = (((fValueX - this.fMinX) * fUnitX) * DEG_TO_RADIANS) - PI_HALF;
             Robot1.fAnglex0 = ((fValueX - this.fMinX) * fUnitX); //add x
 
-            //float fUnitY = 1 * (180 / (this.fMaxY - this.fMinY));
-            //this.fAngleY = (((fValueY - this.fMinY) * fUnitY) * DEG_TO_RADIANS) - PI_HALF;
-            //FrmMain.fAngley0 = ((fValueY - this.fMinY) * fUnitY); //add y
+            float fUnitY = 1 * (180 / (this.fMaxY - this.fMinY));
+            this.fAngleY = (((fValueY - this.fMinY) * fUnitY) * DEG_TO_RADIANS) - PI_HALF;
+            Robot1.fAngley0 = ((fValueY - this.fMinY) * fUnitY); //add y
+            //NEW
+            //this.fAngleY = fValueY;
+            //NEW
 
-            float fUnitZ = 1 * (180 / (this.fMaxZ - this.fMinZ));
-            this.fAngleY = (((fValueZ - this.fMinZ) * fUnitZ) * DEG_TO_RADIANS) - PI_HALF;
-            Robot1.fAnglez0 = ((fValueZ - this.fMinZ) * fUnitZ); //add z
+            //float fUnitZ = 1 * (180 / (this.fMaxZ - this.fMinZ));
+            //this.fAngleY = (((fValueZ - this.fMinZ) * fUnitZ) * DEG_TO_RADIANS) - PI_HALF;
+            //FrmMain.fAnglez0 = ((fValueZ - this.fMinZ) * fUnitZ); //add z
+            this.fAngleZ = fValueZ;
 
             // Refresh
             this.Refresh();

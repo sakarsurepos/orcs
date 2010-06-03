@@ -15,7 +15,7 @@ namespace Robot
         TcpClient                 Client;
         TcpListener               Server;
         NetworkStream             strm_1          ,strm_2;
-        Socket                    soc_1           ,soc_2;
+        Socket                    soc_1;
         Thread                    Client_Thread;
         Thread                    Server_Thread;
         ASCIIEncoding             Encode_1        ,Encode_2;
@@ -144,12 +144,10 @@ namespace Robot
         }
         public void Send_Data_By_Server(string data_for_send_by_Server)
         {
-            byte[] data         = new byte[256];
-            soc_2               = Server.AcceptSocket();
-            
+            byte[] data         = new byte[256];           
             Encode_4            = new ASCIIEncoding();
             data                = Encode_4.GetBytes(data_for_send_by_Server);
-            soc_2.Send(data);
+            soc_1.Send(data);
         }
 
         public void TCP_Server_Stop()
