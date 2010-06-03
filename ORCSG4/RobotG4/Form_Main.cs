@@ -46,21 +46,21 @@ namespace Robot
     {
         //////////
         //ACCELEROMETER
-        public int testval;
+        public static Int32 ADCset = 4; //10 bit ADC
         private SerialPort mySerialPort = null;
         private Byte[] buffer = new Byte[5000];
-        //private Char[] sendChars = new Char[] { 'G' };
-        private Int32 nMinX = 70; //10000;
-        private Int32 nMaxX = 215;//-10000;
-        private Int32 nMinY = 70;//10000;
-        private Int32 nMaxY = 215;//-10000;
-        private Int32 nMinZ = 70;//10000;
-        private Int32 nMaxZ = 215;//-10000;
+        private Char[] sendChars = new Char[] { 'G' };
+        private Int32 nMinX = 310; //10000; max-min = cca 500
+        private Int32 nMaxX = 830;//-10000;
+        private Int32 nMinY = 330;//10000; max-min = cca 500
+        private Int32 nMaxY = 830;//-10000;
+        private Int32 nMinZ = 260;//10000; max-min = cca 500
+        private Int32 nMaxZ = 760;//-10000;
         private Queue byteQueue = new Queue();
 
         private bool b3dMode = false;
-        public UsrCtrlAxis2D usrCtrlAxis2D = null;
-        public UsrCtrlAxis3D usrCtrlAxis3D = null;
+        private UsrCtrlAxis2D usrCtrlAxis2D = null;
+        private UsrCtrlAxis3D usrCtrlAxis3D = null;
 
         private bool bUseSmoothing = false;
         private int nSmoothingDelta = 5;
@@ -68,37 +68,34 @@ namespace Robot
         private int nPrevY = 0;
         private int nPrevZ = 0;
 
-        Byte byte01 = 127; //
-        Byte byte02 = 127; //X
-        Byte byte03 = 127; //Y
-        Byte byte04 = 127; //Z
-        Byte byte05 = 127; //13
-        Byte byte06 = 127; //10
+        Byte byte01;// $
+        Byte byte02;// X
+        Byte byte03;// X1
+        Byte byte04;// Z //CHANGE
+        Byte byte05;// Z1
+        Byte byte06;// Y
+        Byte byte07;// Y1
+        Byte byte08;// 13
+        Byte byte09;// 10
 
-        Int32 nXaxis = 127;
-        Int32 nYaxis = 127;
-        Int32 nZaxis = 127;
+        Int32 nXaxis = 512;
+        Int32 nYaxis = 512;
+        Int32 nZaxis = 512;
+        Int32 selAxis = 512;
 
-        //delayed values
-
-        Byte byte010 = 127; //
-        Byte byte020 = 127; //X
-        Byte byte030 = 127; //Y
-        Byte byte040 = 127; //Z
-
-        Int32 nXaxis0 = 127;
-        Int32 nYaxis0 = 127;
-        Int32 nZaxis0 = 127;
-        Int32 selAxis = 127;
-
-        private Int32 nMinX0 = 70;// 10; //10000;
-        private Int32 nMaxX0 = 215;// 245;//-10000;
-        private Int32 nMinY0 = 70;// 10;//10000;
-        private Int32 nMaxY0 = 215;// 245;//-10000;
-        private Int32 nMinZ0 = 70;// 10;//10000;
-        private Int32 nMaxZ0 = 215;// 245;//-10000;
-
-        public int inkr = 0;
+        //NEW
+        public static float Xtran = 0;
+        public static float Ytran = 0;
+        public static float Ztran = 0;
+        public static bool lockX = false;
+        public static bool lockY = false;
+        public static bool lockZ = false;
+        public static float Gsel = 1.5f;
+        public static float GX = 0;
+        public static float GY = 0;
+        public static float GZ = 0;
+        public static int incdel = 1024; //how many increment
+        //NEW
 
         public static float fAnglex0 = 90;
         public static float fAngley0 = 90;
@@ -109,6 +106,22 @@ namespace Robot
         public static int radio = 1;
 
         Thread trd;
+
+        GraphPane myPane;
+        public int graphvalx = 0;
+        public int graphvaly = 0;
+        RollingPointPairList listX;
+        RollingPointPairList listY;
+        RollingPointPairList listXs;
+        RollingPointPairList listYs;
+        LineItem curveX;
+        LineItem curveY;
+        LineItem curveXs;
+        LineItem curveYs;
+        int GraphXScmin = 0;
+        int GraphXScmax = 50;
+        int TrajX = 0;
+        int TrajY = 0;
         
         ////////
         //CAMERA
@@ -343,7 +356,6 @@ namespace Robot
             this.usrCtrlAxis2D.Size = new Size(350, 350);
             this.usrCtrlAxis2D.Location = new Point(0, 0);
             this.usrCtrlAxis2D.BackColor = Color.AliceBlue;
-            //this.tabPage19.Controls.Add(this.usrCtrlAxis2D);
             this.usrCtrlAxis3D = new UsrCtrlAxis3D();
             this.usrCtrlAxis3D.Size = new Size(350, 350);
             this.usrCtrlAxis3D.Location = new Point(0, 0);
@@ -420,6 +432,10 @@ namespace Robot
             //this.usrCtrlAxis3D.Size = new Size(350, 350);
             //this.usrCtrlAxis3D.Location = new Point(0, 0);
             //this.Controls.Add(this.usrCtrlAxis3D);
+            this.panelMEMS.Controls.Add(this.usrCtrlAxis2D);
+            this.panelMEMS.Controls.Add(this.usrCtrlAxis3D);
+            CreateGraph(); //MEMS Create Graph
+
             this.mySerialPort = new SerialPort("COM5", 9600, Parity.None, 8, StopBits.One);
             this.mySerialPort.Handshake = Handshake.None;
             this.mySerialPort.RtsEnable = true;
@@ -623,17 +639,18 @@ namespace Robot
         {
             try
             {
-
                 if (dataForAnalyseMEMS == null) //MEMS
                 {
                     dataForAnalyseMEMS = "123456678901234567890"; //MEMS
+                    return;
                 }
                 textLogs.Paste(dataForAnalyseMEMS);
                 char[] USART_dataMEMS = dataForAnalyseMEMS.ToCharArray();
-                string MEMS_MSG = new string(USART_dataMEMS, 1, 3);
-                nXaxis = Convert.ToInt32(USART_dataMEMS[1]);
-                nYaxis = Convert.ToInt32(USART_dataMEMS[2]);
-                nZaxis = Convert.ToInt32(USART_dataMEMS[3]);
+                string MEMS_MSG = new string(USART_dataMEMS, 1, 6);
+                nXaxis = Convert.ToInt32((byte)USART_dataMEMS[1]) << 8 | Convert.ToInt32((byte)USART_dataMEMS[2]);  //Convert.ToInt32(byte02);
+                nYaxis = Convert.ToInt32((byte)USART_dataMEMS[3]) << 8 | Convert.ToInt32((byte)USART_dataMEMS[4]);  //Convert.ToInt32(byte04); //CHANGE SUPER
+                nZaxis = Convert.ToInt32((byte)USART_dataMEMS[5]) << 8 | Convert.ToInt32((byte)USART_dataMEMS[6]);  //Convert.ToInt32(byte03);
+
                 ProcessDataMEMS();
                 //SetMap();
             }
@@ -3672,81 +3689,40 @@ namespace Robot
             button85_Click(sender, e);       //receive
         }
 
-        private void button88_Click(object sender, EventArgs e) //OPEN PORT ACCELEROMETER
-        {
-            try
-            {
-                this.mySerialPort.Open();
-
-                Thread.Sleep(2000);
-
-                Utility.Timer(DirectXTimer.Start);
-
-                this.timerMain.Interval = 75;
-                this.timerMain.Enabled = true;
-
-                this.txtOutput.Text += "Serial port opened...\r\n";
-            }
-            catch (Exception ex)
-            {
-                this.txtOutput.Text += String.Format("{0}\r\n", ex.Message);
-            }
-            trd = new Thread(new ThreadStart(this.drawvalue));
-            trd.Start();
-        }
-
-        private void button89_Click(object sender, EventArgs e)
-        {
-            this.mySerialPort.Close();
-        }
-
-        private void btnMode_Click(object sender, EventArgs e)
-        {
-            this.b3dMode = !this.b3dMode;
-
-            if (this.b3dMode == true)
-            {
-                this.btnMode.Text = "Use 2D";
-
-                this.usrCtrlAxis2D.Visible = false;
-                this.usrCtrlAxis3D.Visible = true;
-            }
-            else
-            {
-                this.btnMode.Text = "Use 3D";
-                this.usrCtrlAxis2D.Visible = true;
-                this.usrCtrlAxis3D.Visible = false;
-            }
-        }
-
         private void chkBoxSmoothing_CheckedChanged(object sender, EventArgs e)
         {
             this.bUseSmoothing = this.chkBoxSmoothing.Checked;
         }
 
-        private void drawvalue()
+        private void drawvalue() //repaired
         {
-            while (inkr < 5000)
+            while (true)
             {
                 Thread.Sleep(200);
 
-                this.txtByte01.Text = String.Format("{0:x2}", byte010); //$
-                this.txtByte02.Text = String.Format("{0:x2}", byte020); //x
-                this.txtByte03.Text = String.Format("{0:x2}", byte030); //y
-                this.txtByte04.Text = String.Format("{0:x2}", byte040); //z
+                this.txtByte01.Text = byte01.ToString(); //$ String.Format("{0:x2}", byte01);
+                this.txtByte02.Text = byte02.ToString(); //x
+                this.txtByte03.Text = byte03.ToString(); //x1
+                this.txtByte04.Text = byte04.ToString(); //z  //CHANGE
+                this.txtByte05.Text = byte05.ToString(); //z1
+                this.txtByte06.Text = byte06.ToString(); //y
+                this.txtByte07.Text = byte07.ToString(); //y1
 
-                this.txtXaxis.Text = String.Format("{0}", nXaxis0);
-                this.txtYaxis.Text = String.Format("{0}", nYaxis0);
-                this.txtZaxis.Text = String.Format("{0}", nYaxis0);
+                this.txtXaxis.Text = String.Format("{0}", nXaxis);
+                this.txtYaxis.Text = String.Format("{0}", nYaxis);
+                this.txtZaxis.Text = String.Format("{0}", nZaxis); //NEW fail
+                textBoxXg.Text = GX.ToString();
+                textBoxYg.Text = GY.ToString();
+                textBoxZg.Text = GZ.ToString();
 
-                this.txtMinX.Text = this.nMinX0.ToString();
-                this.txtMaxX.Text = this.nMaxX0.ToString();
+                this.txtMinX.Text = this.nMinX.ToString();
+                this.txtMaxX.Text = this.nMaxX.ToString();
 
-                this.txtMinY.Text = this.nMinY0.ToString();
-                this.txtMaxY.Text = this.nMaxY0.ToString();
+                this.txtMinY.Text = this.nMinY.ToString();
+                this.txtMaxY.Text = this.nMaxY.ToString();
 
-                this.txtMinZ.Text = this.nMinZ0.ToString();
-                this.txtMaxZ.Text = this.nMaxZ0.ToString();
+                this.txtMinZ.Text = this.nMinZ.ToString();
+                this.txtMaxZ.Text = this.nMaxZ.ToString();
 
                 this.txtRefreshRate.Text = String.Format("{0:f4}", Utility.Timer(DirectXTimer.GetElapsedTime));
                 //this.txtBytesRead.Text = nBytes.ToString();
@@ -3767,7 +3743,19 @@ namespace Robot
                     txtAngleX.BackColor = Color.White;
                 }
 
-                if (fAnglez0 < 50 || fAnglez0 > 130) //WARNING Z(Y)
+                if (fAngley0 < 50 || fAngley0 > 130) //WARNING Y
+                {
+                    num = num + 1;
+                    txtAngleY.BackColor = Color.Red;
+                    txtOutput.AppendText(num.ToString() + ". Z axis warning dangerous fall");
+                    txtOutput.AppendText("\n");
+                }
+                else
+                {
+                    txtAngleY.BackColor = Color.White;
+                }
+
+                if (fAnglez0 < 50 || fAnglez0 > 130) //WARNING Z
                 {
                     num = num + 1;
                     txtAngleZ.BackColor = Color.Red;
@@ -3779,47 +3767,71 @@ namespace Robot
                     txtAngleZ.BackColor = Color.White;
                 }
 
-                if (radioButton1a.Checked == true)
+                if (radioButtonXmems.Checked == true)
                 {
                     radio = 1;
                     selAxis = nXaxis;
                 }
-                if (radioButton2a.Checked == true)
+                if (radioButtonYmems.Checked == true)
                 {
                     radio = 2;
                     selAxis = nYaxis;
                 }
-                if (radioButton3a.Checked == true)
+
+                if (checkBoxXtran.Checked == true)
                 {
-                    radio = 3;
-                    selAxis = nZaxis;
+                    lockX = true;
                 }
+                else { lockX = false; }
+
+                if (checkBoxYtran.Checked == true)
+                {
+                    lockY = true;
+                }
+                else { lockY = false; }
+
+                if (checkBoxAngleLock.Checked == true)
+                {
+                    lockZ = true;
+                }
+                else { lockZ = false; }
+                //if (radioButton3.Checked == true)
+                //{
+                //    radio = 3;
+                //    selAxis = nZaxis;
+                //}
             }
         }
 
-        private void drawvalueTCP()
+        private void drawvalueTCP()   //////////repaired
         {
-            while (inkr < 5000)
+            while (true)
             {
                 Thread.Sleep(200);
 
-                this.txtByte01.Text = String.Format("{0:x2}", byte010); //$
-                this.txtByte02.Text = String.Format("{0:x2}", byte020); //x
-                this.txtByte03.Text = String.Format("{0:x2}", byte030); //y
-                this.txtByte04.Text = String.Format("{0:x2}", byte040); //z
+                ////this.txtByte01.Text = byte01.ToString(); //$ String.Format("{0:x2}", byte01);
+                ////this.txtByte02.Text = byte02.ToString(); //x
+                ////this.txtByte03.Text = byte03.ToString(); //x1
+                ////this.txtByte04.Text = byte04.ToString(); //z  //CHANGE
+                ////this.txtByte05.Text = byte05.ToString(); //z1
+                ////this.txtByte06.Text = byte06.ToString(); //y
+                ////this.txtByte07.Text = byte07.ToString(); //y1
 
-                this.txtXaxis.Text = String.Format("{0}", nXaxis0);
-                this.txtYaxis.Text = String.Format("{0}", nYaxis0);
-                this.txtZaxis.Text = String.Format("{0}", nYaxis0);
+                this.txtXaxis.Text = String.Format("{0}", nXaxis);
+                this.txtYaxis.Text = String.Format("{0}", nYaxis);
+                this.txtZaxis.Text = String.Format("{0}", nZaxis); //NEW fail
+                textBoxXg.Text = GX.ToString();
+                textBoxYg.Text = GY.ToString();
+                textBoxZg.Text = GZ.ToString();
 
-                this.txtMinX.Text = this.nMinX0.ToString();
-                this.txtMaxX.Text = this.nMaxX0.ToString();
+                this.txtMinX.Text = this.nMinX.ToString();
+                this.txtMaxX.Text = this.nMaxX.ToString();
 
-                this.txtMinY.Text = this.nMinY0.ToString();
-                this.txtMaxY.Text = this.nMaxY0.ToString();
+                this.txtMinY.Text = this.nMinY.ToString();
+                this.txtMaxY.Text = this.nMaxY.ToString();
 
-                this.txtMinZ.Text = this.nMinZ0.ToString();
-                this.txtMaxZ.Text = this.nMaxZ0.ToString();
+                this.txtMinZ.Text = this.nMinZ.ToString();
+                this.txtMaxZ.Text = this.nMaxZ.ToString();
 
                 this.txtRefreshRate.Text = String.Format("{0:f4}", Utility.Timer(DirectXTimer.GetElapsedTime));
                 //this.txtBytesRead.Text = nBytes.ToString();
@@ -3840,7 +3852,19 @@ namespace Robot
                     txtAngleX.BackColor = Color.White;
                 }
 
-                if (fAnglez0 < 50 || fAnglez0 > 130) //WARNING Z(Y)
+                if (fAngley0 < 50 || fAngley0 > 130) //WARNING Y
+                {
+                    num = num + 1;
+                    txtAngleY.BackColor = Color.Red;
+                    txtOutput.AppendText(num.ToString() + ". Z axis warning dangerous fall");
+                    txtOutput.AppendText("\n");
+                }
+                else
+                {
+                    txtAngleY.BackColor = Color.White;
+                }
+
+                if (fAnglez0 < 50 || fAnglez0 > 130) //WARNING Z
                 {
                     num = num + 1;
                     txtAngleZ.BackColor = Color.Red;
@@ -3852,34 +3876,40 @@ namespace Robot
                     txtAngleZ.BackColor = Color.White;
                 }
 
-                if (radioButton1.Checked == true)
+                if (radioButtonXmems.Checked == true)
                 {
                     radio = 1;
                     selAxis = nXaxis;
                 }
-                if (radioButton2.Checked == true)
+                if (radioButtonYmems.Checked == true)
                 {
                     radio = 2;
                     selAxis = nYaxis;
                 }
-                if (radioButton3.Checked == true)
-                {
-                    radio = 3;
-                    selAxis = nZaxis;
-                }
-            }
-        }
 
-        private void TimerMain_Tick(object sender, EventArgs e)
-        {
-            /*
-            if (this.mySerialPort.IsOpen == false)
-                this.txtOutput.Text = "Serial port is not opened.";
-            else
-            {
-                //                this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+                if (checkBoxXtran.Checked == true)
+                {
+                    lockX = true;
+                }
+                else { lockX = false; }
+
+                if (checkBoxYtran.Checked == true)
+                {
+                    lockY = true;
+                }
+                else { lockY = false; }
+
+                if (checkBoxAngleLock.Checked == true)
+                {
+                    lockZ = true;
+                }
+                else { lockZ = false; }
+                //if (radioButton3.Checked == true)
+                //{
+                //    radio = 3;
+                //    selAxis = nZaxis;
+                //}
             }
-             */
         }
 
         void MySerialPort_DataReceived(object objSender, SerialDataReceivedEventArgs dataReceivedEventArgs)
@@ -3909,35 +3939,77 @@ namespace Robot
             //}
         }
 
-        private void ProcessData()
+        private void ProcessData()  //Repaired
         {
-            if (this.byteQueue.Count < 6)
+            if (this.byteQueue.Count < 9)
                 return;
 
             byte01 = (Byte)this.byteQueue.Dequeue(); //$
             if (byte01 != 36)
                 return;
             byte02 = (Byte)this.byteQueue.Dequeue(); //X
-            byte03 = (Byte)this.byteQueue.Dequeue(); //Y
-            byte04 = (Byte)this.byteQueue.Dequeue(); //Z
-            byte05 = (Byte)this.byteQueue.Dequeue(); //13
-            byte06 = (Byte)this.byteQueue.Dequeue(); //10
+            byte03 = (Byte)this.byteQueue.Dequeue(); //X1
+            byte04 = (Byte)this.byteQueue.Dequeue(); //Z //CHANGE
+            byte05 = (Byte)this.byteQueue.Dequeue(); //Z1
+            byte06 = (Byte)this.byteQueue.Dequeue(); //Y
+            byte07 = (Byte)this.byteQueue.Dequeue(); //Y1
+            byte08 = (Byte)this.byteQueue.Dequeue(); //13
+            byte09 = (Byte)this.byteQueue.Dequeue(); //10
 
             //refresh  11
+
             //this.txtByte05.Text = String.Format("{0:x2}", byte05);
             //this.txtByte06.Text = String.Format("{0:x2}", byte06);
+
             // PWM % based on documentation formula
             //float fXaxis = (256 * this.buffer[0] + this.buffer[1]) / 100;
             //float fYaxis = (256 * this.buffer[2] + this.buffer[3]) / 100;
             //this.txtXaxis.Text = String.Format("{0:f4}", fXaxis);
             //this.txtYaxis.Text = String.Format("{0:f4}", fYaxis);
 
-            nXaxis = Convert.ToInt32(byte02);
-            nYaxis = Convert.ToInt32(byte03);
-            nZaxis = Convert.ToInt32(byte04);
+            nXaxis = Convert.ToInt32(byte02) << 8 | Convert.ToInt32(byte03);  //Convert.ToInt32(byte02);
+            nYaxis = Convert.ToInt32(byte04) << 8 | Convert.ToInt32(byte05);  //Convert.ToInt32(byte04); //CHANGE SUPER
+            nZaxis = Convert.ToInt32(byte06) << 8 | Convert.ToInt32(byte07);  //Convert.ToInt32(byte03);
+
+            //Graph
+            // Get the first CurveItem in the graph
+            // Get the PointPairList
+            // Add value
+            curveX = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listX = curveX.Points as IPointListEdit;
+            listX.Add(graphvalx, nXaxis);
+
+            curveY = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listY = curveY.Points as IPointListEdit;
+            listY.Add(graphvalx, nYaxis);
+
+            //Trajectory
+            int Trajxacc = (int)(((nXaxis - 575) * (19.62 / 485) * (0.2 * 0.2)) * 1000);
+            curveXs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listX = curveX.Points as IPointListEdit;
+            TrajX = TrajX + Trajxacc;
+            listXs.Add(graphvalx, TrajX);
+
+            int Trajyacc = (int)(((nYaxis - 585) * (19.62 / 500) * (0.2 * 0.2)) * 1000);
+            curveYs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listY = curveY.Points as IPointListEdit;
+            TrajY = TrajY + Trajyacc;
+            listYs.Add(graphvalx++, TrajY);
+
+            //Scale xScale = zedGraphControl1.GraphPane.XAxis.Scale;
+            //xScale.
+            if (graphvalx > 30)
+            {
+                myPane.XAxis.Scale.Min = GraphXScmin++;
+                myPane.XAxis.Scale.Max = GraphXScmax++;
+            }
+
+            zedGraphControl1.AxisChange();
+            // Force a redraw
+            zedGraphControl1.Invalidate();
+            //Graph
 
             //refresh 2
-
             if (nXaxis < this.nMinX)
                 this.nMinX = nXaxis;
 
@@ -3956,8 +4028,7 @@ namespace Robot
             if (nZaxis > this.nMaxZ)
                 this.nMaxZ = nZaxis;
 
-            ///refresh 3
-
+            ///refresh 3          
             if (this.bUseSmoothing == true)
             {
                 int nDeltaX = Math.Abs(nXaxis - this.nPrevX);
@@ -3977,7 +4048,7 @@ namespace Robot
                     nZaxis = this.nPrevZ;
 
                 if (this.b3dMode == true)
-                    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis); //testval =1;/////this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);  //dorobit z
+                    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);  //dorobit z
                 else
                     this.usrCtrlAxis2D.SetCurrentValue(selAxis);
 
@@ -3988,33 +4059,9 @@ namespace Robot
                 return;
             }
 
-            //delayed write
-            inkr = inkr + 1;
-
-            if (inkr >= 1)
-            {
-                byte010 = byte01; //
-                byte020 = byte02; //X
-                byte030 = byte03; //Y
-                byte040 = byte04; //Z
-
-                nXaxis0 = nXaxis;
-                nYaxis0 = nYaxis;
-                nYaxis0 = nZaxis;
-
-                nMinX0 = nMinX;//10000;
-                nMaxX0 = nMaxX;//-10000;
-                nMinY0 = nMinY;//10000;
-                nMaxY0 = nMaxY;//-10000;
-                nMinZ0 = nMinZ;//10000;
-                nMaxZ0 = nMaxZ;//-10000;
-
-                inkr = 0;
-            }
-            //int sdssss;
             // Default
             if (this.b3dMode == true)
-                this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis); //sdssss=1;   //    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);
+                this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);
             else
             {
                 if (radio == 1)
@@ -4025,48 +4072,97 @@ namespace Robot
                 {
                     this.usrCtrlAxis2D.SetCurrentValue(nYaxis);
                 }
-                if (radio == 3)
+                if (checkBoxXtran.Checked == true) //&& radioButtonXmems.Checked == true
                 {
-                    this.usrCtrlAxis2D.SetCurrentValue(nZaxis);
+                    Xtran = nXaxis - 575;
+                    GX = ((nXaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.24f) * 1.942f) * 100; //
+                }
+                if (checkBoxYtran.Checked == true) //&& radioButtonYmems.Checked == true
+                {
+                    Ytran = nYaxis - 580;
+                    GY = ((nYaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.215f) * 1.938f) * 100; //
+                }
+                if (checkBoxZtran.Checked == true)
+                {
+                    Ztran = nZaxis - 145 * ADCset;
+                    GZ = (nZaxis * ((Gsel * Gsel) / incdel) - Gsel);
                 }
             }
 
         } // End of ProcessData method
 
 
-        private void ProcessDataMEMS()
+        private void ProcessDataMEMS()  //REPAIRED
         {
-            //if (this.byteQueue.Count < 6)
+            //if (this.byteQueue.Count < 9)
             //    return;
 
-            /*
-            byte01 = (Byte)this.byteQueue.Dequeue(); //$
-            if (byte01 != 36)
-                return;
-            byte02 = (Byte)this.byteQueue.Dequeue(); //X
-            byte03 = (Byte)this.byteQueue.Dequeue(); //Y
-            byte04 = (Byte)this.byteQueue.Dequeue(); //Z     ///NEW CHANGE
-            byte05 = (Byte)this.byteQueue.Dequeue(); //13
-            byte06 = (Byte)this.byteQueue.Dequeue(); //10
-            */ 
-             
+            //byte01 = (Byte)this.byteQueue.Dequeue(); //$
+            //if (byte01 != 36)
+            //    return;
+            //byte02 = (Byte)this.byteQueue.Dequeue(); //X
+            //byte03 = (Byte)this.byteQueue.Dequeue(); //X1
+            //byte04 = (Byte)this.byteQueue.Dequeue(); //Z //CHANGE
+            //byte05 = (Byte)this.byteQueue.Dequeue(); //Z1
+            //byte06 = (Byte)this.byteQueue.Dequeue(); //Y
+            //byte07 = (Byte)this.byteQueue.Dequeue(); //Y1
+            //byte08 = (Byte)this.byteQueue.Dequeue(); //13
+            //byte09 = (Byte)this.byteQueue.Dequeue(); //10
+
             //refresh  11
+
             //this.txtByte05.Text = String.Format("{0:x2}", byte05);
             //this.txtByte06.Text = String.Format("{0:x2}", byte06);
+
             // PWM % based on documentation formula
             //float fXaxis = (256 * this.buffer[0] + this.buffer[1]) / 100;
             //float fYaxis = (256 * this.buffer[2] + this.buffer[3]) / 100;
             //this.txtXaxis.Text = String.Format("{0:f4}", fXaxis);
             //this.txtYaxis.Text = String.Format("{0:f4}", fYaxis);
 
-            /*
-            nXaxis = Convert.ToInt32(byte02);
-            nYaxis = Convert.ToInt32(byte03);  ///NEW CHANGE
-            nZaxis = Convert.ToInt32(byte04);
-            */
-            
-            //refresh 2
+            /////nXaxis = Convert.ToInt32(byte02) << 8 | Convert.ToInt32(byte03);  //Convert.ToInt32(byte02);
+            /////nYaxis = Convert.ToInt32(byte04) << 8 | Convert.ToInt32(byte05);  //Convert.ToInt32(byte04); //CHANGE SUPER
+            /////nZaxis = Convert.ToInt32(byte06) << 8 | Convert.ToInt32(byte07);  //Convert.ToInt32(byte03);
 
+            //Graph
+            // Get the first CurveItem in the graph
+            // Get the PointPairList
+            // Add value
+            curveX = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listX = curveX.Points as IPointListEdit;
+            listX.Add(graphvalx, nXaxis);
+
+            curveY = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listY = curveY.Points as IPointListEdit;
+            listY.Add(graphvalx, nYaxis);
+
+            //Trajectory
+            int Trajxacc = (int)(((nXaxis - 575) * (19.62 / 485) * (0.2 * 0.2)) * 1000);
+            curveXs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listX = curveX.Points as IPointListEdit;
+            TrajX = TrajX + Trajxacc;
+            listXs.Add(graphvalx, TrajX);
+
+            int Trajyacc = (int)(((nYaxis - 585) * (19.62 / 500) * (0.2 * 0.2)) * 1000);
+            curveYs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            //IPointListEdit listY = curveY.Points as IPointListEdit;
+            TrajY = TrajY + Trajyacc;
+            listYs.Add(graphvalx++, TrajY);
+
+            //Scale xScale = zedGraphControl1.GraphPane.XAxis.Scale;
+            //xScale.
+            if (graphvalx > 30)
+            {
+                myPane.XAxis.Scale.Min = GraphXScmin++;
+                myPane.XAxis.Scale.Max = GraphXScmax++;
+            }
+
+            zedGraphControl1.AxisChange();
+            // Force a redraw
+            zedGraphControl1.Invalidate();
+            //Graph
+
+            //refresh 2
             if (nXaxis < this.nMinX)
                 this.nMinX = nXaxis;
 
@@ -4085,8 +4181,7 @@ namespace Robot
             if (nZaxis > this.nMaxZ)
                 this.nMaxZ = nZaxis;
 
-            ///refresh 3
-
+            ///refresh 3          
             if (this.bUseSmoothing == true)
             {
                 int nDeltaX = Math.Abs(nXaxis - this.nPrevX);
@@ -4106,7 +4201,7 @@ namespace Robot
                     nZaxis = this.nPrevZ;
 
                 if (this.b3dMode == true)
-                    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis); //testval =1;/////this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);  //dorobit z
+                    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);  //dorobit z
                 else
                     this.usrCtrlAxis2D.SetCurrentValue(selAxis);
 
@@ -4117,33 +4212,9 @@ namespace Robot
                 return;
             }
 
-            //delayed write
-            inkr = inkr + 1;
-
-            if (inkr >= 1)
-            {
-                byte010 = 127; //byte01; //
-                byte020 = (byte)nXaxis; //byte02; //X
-                byte030 = (byte)nYaxis; //byte03; //Y
-                byte040 = (byte)nZaxis; //byte04; //Z
-
-                nXaxis0 = nXaxis;
-                nYaxis0 = nYaxis;
-                nYaxis0 = nZaxis;
-
-                nMinX0  = nMinX;//10000;
-                nMaxX0 = nMaxX;//-10000;
-                nMinY0 = nMinY;//10000;
-                nMaxY0 = nMaxY;//-10000;
-                nMinZ0 = nMinZ;//10000;
-                nMaxZ0 = nMaxZ;//-10000;
-
-                inkr = 0;
-            }
-            //int sdssss;
             // Default
             if (this.b3dMode == true)
-                this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis); //sdssss=1;   //    this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);
+                this.usrCtrlAxis3D.SetAxesValues(nXaxis, nYaxis, nZaxis);
             else
             {
                 if (radio == 1)
@@ -4154,22 +4225,26 @@ namespace Robot
                 {
                     this.usrCtrlAxis2D.SetCurrentValue(nYaxis);
                 }
-                if (radio == 3)
+                if (checkBoxXtran.Checked == true) //&& radioButtonXmems.Checked == true
                 {
-                    this.usrCtrlAxis2D.SetCurrentValue(nZaxis);
+                    Xtran = nXaxis - 575;
+                    GX = ((nXaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.24f) * 1.942f) * 100; //
+                }
+                if (checkBoxYtran.Checked == true) //&& radioButtonYmems.Checked == true
+                {
+                    Ytran = nYaxis - 580;
+                    GY = ((nYaxis * ((Gsel * Gsel) / incdel) - Gsel + 0.215f) * 1.938f) * 100; //
+                }
+                if (checkBoxZtran.Checked == true)
+                {
+                    Ztran = nZaxis - 145 * ADCset;
+                    GZ = (nZaxis * ((Gsel * Gsel) / incdel) - Gsel);
                 }
             }
-
         } // End of ProcessData method MEMS
 
 
         public delegate void UpdateSerialData(Object objSender, SerialDataReceivedEventArgs dataReceivedEventArgs);
-
-        private void button90_Click(object sender, EventArgs e)
-        {
-            this.panel1.Controls.Add(this.usrCtrlAxis2D);
-            this.panel1.Controls.Add(this.usrCtrlAxis3D);
-        }
 
         //UltraSonic Sensor Function
         public void ultra()
@@ -4736,21 +4811,15 @@ namespace Robot
         }
 
         private void button92_Click_1(object sender, EventArgs e) //TCPClient MEMS enable port 2001
-        {
-            this.panel1.Controls.Add(this.usrCtrlAxis2D);
-            this.panel1.Controls.Add(this.usrCtrlAxis3D);
-            
+        {          
             WorkerThreadMEMS = new Thread(new ThreadStart(InWorkerThreadMEMS)); //MEMS
             WorkerThreadMEMS.Start(); //MEMS
-            TcpClnt.TCP_Client_Start(textTCPClientServerIPAddress.Text, 2001);
-            TcpClnt.ClientDataReceived += new Communication.ClientDelegate(TcpClnt_ClientDataReceivedMEMS);
+            TcpClntMEMS.TCP_Client_Start(textTCPClientServerIPAddress.Text, 2001);
+            TcpClntMEMS.ClientDataReceived += new Communication.ClientDelegate(TcpClnt_ClientDataReceivedMEMS);
 
             try
             {
                 Utility.Timer(DirectXTimer.Start);
-
-                this.timerMain.Interval = 75;
-                this.timerMain.Enabled = true;
 
                 this.txtOutput.Text += "TCP Client port opened...\r\n";
             }
@@ -4768,25 +4837,6 @@ namespace Robot
             WorkerThreadSim.Start(); //Sim
             TcpSrvrSim.TCP_Server_Start(textTCPClientServerIPAddress.Text, Convert.ToInt16(textTCPClientServerPortNumber.Text));
             TcpSrvrSim.ServerDataReceived += new Communication.ServerDelegate(TcpSrvr_ServerDataReceivedSim);
-        }
-
-        private void button95_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Utility.Timer(DirectXTimer.Start);
-
-                this.timerMain.Interval = 75;
-                this.timerMain.Enabled = true;
-
-                this.txtOutput.Text += "TCP Client port opened...\r\n";
-            }
-            catch (Exception ex)
-            {
-                this.txtOutput.Text += String.Format("{0}\r\n", ex.Message);
-            }
-            trd = new Thread(new ThreadStart(this.drawvalueTCP));
-            trd.Start();
         }
 
         private void Supply_Direction_Servo_CheckedChanged_1(object sender, EventArgs e)
@@ -4875,7 +4925,6 @@ namespace Robot
             for (double x = 0; x < 36; x++)
             {
                 double y = Math.Sin(x * Math.PI / 15.0);
-
                 list.Add(x, y);
             }
 
@@ -4897,11 +4946,156 @@ namespace Robot
             zgc.AxisChange();
         }
 
-        private void buttonMEMSGraph_Click(object sender, EventArgs e)
+        private void labelreadi_Click(object sender, EventArgs e)
         {
-            CreateGraph(zg1);
-            zg1.Hide();
-            zg1.Show();
+
+        }
+
+        private void groupBoxZ_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSPopen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.mySerialPort.Open();
+
+                Thread.Sleep(2000);
+
+                Utility.Timer(DirectXTimer.Start);
+
+                this.txtOutput.Text += "Serial port opened...\r\n";
+            }
+            catch (Exception ex)
+            {
+                this.txtOutput.Text += String.Format("{0}\r\n", ex.Message);
+            }
+            trd = new Thread(new ThreadStart(this.drawvalue));
+            trd.Start();
+        }
+
+        private void buttonSPClose_Click(object sender, EventArgs e)
+        {
+            this.mySerialPort.Close();
+            trd.Abort();
+        }
+
+        private void btnMode_Click_1(object sender, EventArgs e)
+        {
+            this.b3dMode = !this.b3dMode;
+
+            if (this.b3dMode == true)
+            {
+                this.btnMode.Text = "Use 2D";
+
+                this.usrCtrlAxis2D.Visible = false;
+                this.usrCtrlAxis3D.Visible = true;
+            }
+            else
+            {
+                this.btnMode.Text = "Use 3D";
+                this.usrCtrlAxis2D.Visible = true;
+                this.usrCtrlAxis3D.Visible = false;
+            }
+        }
+
+        private void button1G_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "1,5G";
+            Gsel = 1.5f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void button2G_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "2G";
+            Gsel = 2f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void button4G_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "4G";
+            Gsel = 4f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void button6G_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "6G";
+            Gsel = 6f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void buttonGTest_Click(object sender, EventArgs e)
+        {
+            labelSelG.Text = "Test";
+            Gsel = 0f;
+            this.mySerialPort.Write(this.sendChars, 0, this.sendChars.Length);
+        }
+
+        private void CreateGraph()
+        {
+            myPane = zedGraphControl1.GraphPane;
+            myPane.Title.Text = "Dynamic Data Update\n" + "(MEMS Accelerometer)";
+            myPane.XAxis.Title.Text = "Time, Seconds";
+            myPane.YAxis.Title.Text = "MEMS, Value";
+
+            // Save 1200 points.  At 50 ms sample rate, this is one minute
+            // The RollingPointPairList is an efficient storage class that always
+            // keeps a rolling set of point data without needing to shift any data values
+            listX = new RollingPointPairList(1200);
+            listY = new RollingPointPairList(1200);
+            listXs = new RollingPointPairList(1200);
+            listYs = new RollingPointPairList(1200);
+
+            // Initially, a curve is added with no data points (list is empty)
+            // Color is blue, and there will be no symbols
+            curveX = myPane.AddCurve("MEMS X axis", listX, Color.Blue, SymbolType.Circle);
+            curveY = myPane.AddCurve("MEMS Y axis", listY, Color.Red, SymbolType.Circle);
+            curveXs = myPane.AddCurve("MEMS X trajectory axis", listXs, Color.Green, SymbolType.Triangle);
+            curveYs = myPane.AddCurve("MEMS Y trajectory axis", listYs, Color.Pink, SymbolType.Triangle);
+            // Just manually control the X axis range so it scrolls continuously
+            // instead of discrete step-sized jumps
+
+            myPane.XAxis.Scale.Min = 0;
+            myPane.XAxis.Scale.Max = 50;
+            myPane.XAxis.Scale.MinorStep = 1;
+            myPane.XAxis.Scale.MajorStep = 5;
+
+            // Scale the axes
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+        }
+
+        private void chkBoxSmoothing_CheckedChanged_1(object sender, EventArgs e)
+        {
+            this.bUseSmoothing = this.chkBoxSmoothing.Checked;
+        }
+
+        private void checkBoxAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAll.Checked == false)
+            {
+                checkBoxXtran.Checked = false;
+                checkBoxYtran.Checked = false;
+                checkBoxZtran.Checked = false;
+            }
+            else
+            {
+                checkBoxXtran.Checked = true;
+                checkBoxYtran.Checked = true;
+                checkBoxZtran.Checked = true;
+            }
+        }
+
+        private void buttonSendSimData_Click(object sender, EventArgs e) ///TCP Server Sim Send Data
+        {
+            string dataForSend = "$GMDFF";
+            TcpSrvrSim.Send_Data_By_Server(dataForSend);
+            //TcpSrvrSim.Send_Data_Server("xxxxx");
         }
 
    }
