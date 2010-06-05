@@ -8151,28 +8151,82 @@ Mouse y:
   <data name="&gt;&gt;tabPage6.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="groupBox51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>489, 329</value>
+  <data name="checkBox3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="groupBox51.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 48</value>
+  <data name="checkBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 11</value>
   </data>
-  <data name="groupBox51.TabIndex" type="System.Int32, mscorlib">
+  <data name="checkBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 17</value>
+  </data>
+  <data name="checkBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="checkBox3.Text" xml:space="preserve">
+    <value>Enable Kalman</value>
+  </data>
+  <data name="&gt;&gt;checkBox3.Name" xml:space="preserve">
+    <value>checkBox3</value>
+  </data>
+  <data name="&gt;&gt;checkBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox3.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;checkBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button88.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button88.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 27</value>
+  </data>
+  <data name="button88.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 19</value>
+  </data>
+  <data name="button88.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="button88.Text" xml:space="preserve">
+    <value>Test Kalman</value>
+  </data>
+  <data name="&gt;&gt;button88.Name" xml:space="preserve">
+    <value>button88</value>
+  </data>
+  <data name="&gt;&gt;button88.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button88.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;button88.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBoxFilterData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>486, 329</value>
+  </data>
+  <data name="groupBoxFilterData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 48</value>
+  </data>
+  <data name="groupBoxFilterData.TabIndex" type="System.Int32, mscorlib">
     <value>72</value>
   </data>
-  <data name="groupBox51.Text" xml:space="preserve">
-    <value>groupBoxFilter</value>
+  <data name="groupBoxFilterData.Text" xml:space="preserve">
+    <value>Filter Data</value>
   </data>
-  <data name="&gt;&gt;groupBox51.Name" xml:space="preserve">
-    <value>groupBox51</value>
+  <data name="&gt;&gt;groupBoxFilterData.Name" xml:space="preserve">
+    <value>groupBoxFilterData</value>
   </data>
-  <data name="&gt;&gt;groupBox51.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxFilterData.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox51.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxFilterData.Parent" xml:space="preserve">
     <value>groupBox31</value>
   </data>
-  <data name="&gt;&gt;groupBox51.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxFilterData.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="checkBoxShowTraj.AutoSize" type="System.Boolean, mscorlib">
@@ -8185,13 +8239,13 @@ Mouse y:
     <value>7, 29</value>
   </data>
   <data name="checkBoxShowTraj.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 17</value>
+    <value>109, 17</value>
   </data>
   <data name="checkBoxShowTraj.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
   </data>
   <data name="checkBoxShowTraj.Text" xml:space="preserve">
-    <value>Show Val</value>
+    <value>Show MEMS Traj</value>
   </data>
   <data name="&gt;&gt;checkBoxShowTraj.Name" xml:space="preserve">
     <value>checkBoxShowTraj</value>
@@ -8208,17 +8262,20 @@ Mouse y:
   <data name="checkBoxShowVal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="checkBoxShowVal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="checkBoxShowVal.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 14</value>
   </data>
   <data name="checkBoxShowVal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 17</value>
+    <value>106, 17</value>
   </data>
   <data name="checkBoxShowVal.TabIndex" type="System.Int32, mscorlib">
     <value>70</value>
   </data>
   <data name="checkBoxShowVal.Text" xml:space="preserve">
-    <value>Show Val</value>
+    <value>Show MEMS Val</value>
   </data>
   <data name="&gt;&gt;checkBoxShowVal.Name" xml:space="preserve">
     <value>checkBoxShowVal</value>
@@ -8236,7 +8293,7 @@ Mouse y:
     <value>364, 329</value>
   </data>
   <data name="groupBoxGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 48</value>
+    <value>119, 48</value>
   </data>
   <data name="groupBoxGraph.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -8283,33 +8340,6 @@ Mouse y:
   <data name="&gt;&gt;txtOutput.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="button88.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button88.Location" type="System.Drawing.Point, System.Drawing">
-    <value>518, 384</value>
-  </data>
-  <data name="button88.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 23</value>
-  </data>
-  <data name="button88.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
-  </data>
-  <data name="button88.Text" xml:space="preserve">
-    <value>button88</value>
-  </data>
-  <data name="&gt;&gt;button88.Name" xml:space="preserve">
-    <value>button88</value>
-  </data>
-  <data name="&gt;&gt;button88.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button88.Parent" xml:space="preserve">
-    <value>groupBox31</value>
-  </data>
-  <data name="&gt;&gt;button88.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="buttonTCPMEMSclose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -8335,7 +8365,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;buttonTCPMEMSclose.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="pictureBox34.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8383,7 +8413,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;panelMEMS.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="buttonTCPMEMSStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8410,7 +8440,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;buttonTCPMEMSStart.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="labelSelG.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8443,7 +8473,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;labelSelG.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="zedGraphControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 384</value>
@@ -8464,7 +8494,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;zedGraphControl1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="labelSel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8494,7 +8524,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;labelSel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="button1G.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8653,7 +8683,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxGset.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="labelrefrate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8785,7 +8815,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxMEMSinfo.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="btnMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8812,7 +8842,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;btnMode.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="checkBoxAngleLock.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8842,7 +8872,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;checkBoxAngleLock.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="chkBoxSmoothing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8872,7 +8902,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;chkBoxSmoothing.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="textBoxZg.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 95</value>
@@ -9031,7 +9061,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxZ.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="buttonSPopen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9058,7 +9088,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;buttonSPopen.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="txtByte05.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 61</value>
@@ -9361,7 +9391,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxRAWDat.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="buttonSPClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9388,7 +9418,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;buttonSPClose.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="textBoxYg.Location" type="System.Drawing.Point, System.Drawing">
     <value>130, 96</value>
@@ -9932,7 +9962,7 @@ Speed</value>
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxXY.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="groupBox31.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 6</value>
@@ -22303,9 +22333,6 @@ Speed</value>
         ////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////w==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1024, 768</value>
