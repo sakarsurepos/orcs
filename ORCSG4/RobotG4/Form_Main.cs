@@ -36,6 +36,8 @@ using System.Deployment;
 using System.Deployment.Application;
 //MEMS
 using ZedGraph;
+//Filters
+using Neodym.Test;
 
 namespace Robot
     {
@@ -44,6 +46,8 @@ namespace Robot
 
     public partial class Robot1 : System.Windows.Forms.Form
     {
+        //Filters
+        Neodym.Test.KalmanFilterTest Kalfilter = new Neodym.Test.KalmanFilterTest();
         //////////
         //ACCELEROMETER
         public static Int32 ADCset = 4; //10 bit ADC
@@ -5043,6 +5047,18 @@ namespace Robot
             string dataForSend = textBoxSendSimData.Text + "\r\n";
             //string dataForSend = "$" + (byte)2 + "5" + (byte)2 + "5" + (byte)2 + "5" + "\r\n";
             TcpSrvrSim.Send_Data_By_Server(dataForSend);
+        }
+
+        private void buttonTCPMEMSclose_Click(object sender, EventArgs e) //TCP Client Stop MEMS
+        {
+            WorkerThreadMEMS.Abort();
+            TcpClntMEMS.TCP_Client_Stop();
+            trd.Abort();
+        }
+
+        private void button88_Click(object sender, EventArgs e)
+        {
+            Kalfilter.TestDiscreteKalmanFilter();
         }
 
    }

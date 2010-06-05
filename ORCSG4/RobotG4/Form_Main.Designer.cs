@@ -319,9 +319,10 @@ namespace Robot
             this.ViewSatellites = new System.Windows.Forms.PictureBox();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.buttonTCPMEMSclose = new System.Windows.Forms.Button();
             this.panelMEMS = new System.Windows.Forms.Panel();
             this.pictureBox34 = new System.Windows.Forms.PictureBox();
-            this.button92 = new System.Windows.Forms.Button();
+            this.buttonTCPMEMSStart = new System.Windows.Forms.Button();
             this.labelSelG = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.labelSel = new System.Windows.Forms.Label();
@@ -334,9 +335,7 @@ namespace Robot
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.groupBoxMEMSinfo = new System.Windows.Forms.GroupBox();
             this.labelrefrate = new System.Windows.Forms.Label();
-            this.labelreadi = new System.Windows.Forms.Label();
             this.txtRefreshRate = new System.Windows.Forms.TextBox();
-            this.txtBytesRead = new System.Windows.Forms.TextBox();
             this.btnMode = new System.Windows.Forms.Button();
             this.checkBoxAngleLock = new System.Windows.Forms.CheckBox();
             this.chkBoxSmoothing = new System.Windows.Forms.CheckBox();
@@ -817,7 +816,14 @@ namespace Robot
             this.label169 = new System.Windows.Forms.Label();
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
+            this.button88 = new System.Windows.Forms.Button();
             this.cameraWindow = new Robot.CameraWindow();
+            this.txtBytesRead = new System.Windows.Forms.TextBox();
+            this.labelreadi = new System.Windows.Forms.Label();
+            this.checkBoxShowVal = new System.Windows.Forms.CheckBox();
+            this.groupBoxGraph = new System.Windows.Forms.GroupBox();
+            this.checkBoxShowTraj = new System.Windows.Forms.CheckBox();
+            this.groupBox51 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -977,6 +983,7 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
+            this.groupBoxGraph.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -3309,13 +3316,17 @@ namespace Robot
             // 
             // groupBox31
             // 
+            this.groupBox31.Controls.Add(this.groupBox51);
+            this.groupBox31.Controls.Add(this.groupBoxGraph);
+            this.groupBox31.Controls.Add(this.txtOutput);
+            this.groupBox31.Controls.Add(this.button88);
+            this.groupBox31.Controls.Add(this.buttonTCPMEMSclose);
             this.groupBox31.Controls.Add(this.panelMEMS);
-            this.groupBox31.Controls.Add(this.button92);
+            this.groupBox31.Controls.Add(this.buttonTCPMEMSStart);
             this.groupBox31.Controls.Add(this.labelSelG);
             this.groupBox31.Controls.Add(this.zedGraphControl1);
             this.groupBox31.Controls.Add(this.labelSel);
             this.groupBox31.Controls.Add(this.groupBoxGset);
-            this.groupBox31.Controls.Add(this.txtOutput);
             this.groupBox31.Controls.Add(this.groupBoxMEMSinfo);
             this.groupBox31.Controls.Add(this.btnMode);
             this.groupBox31.Controls.Add(this.checkBoxAngleLock);
@@ -3330,6 +3341,14 @@ namespace Robot
             this.groupBox31.Name = "groupBox31";
             this.groupBox31.TabStop = false;
             // 
+            // buttonTCPMEMSclose
+            // 
+            this.buttonTCPMEMSclose.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttonTCPMEMSclose, "buttonTCPMEMSclose");
+            this.buttonTCPMEMSclose.Name = "buttonTCPMEMSclose";
+            this.buttonTCPMEMSclose.UseVisualStyleBackColor = true;
+            this.buttonTCPMEMSclose.Click += new System.EventHandler(this.buttonTCPMEMSclose_Click);
+            // 
             // panelMEMS
             // 
             this.panelMEMS.Controls.Add(this.pictureBox34);
@@ -3343,13 +3362,13 @@ namespace Robot
             this.pictureBox34.Name = "pictureBox34";
             this.pictureBox34.TabStop = false;
             // 
-            // button92
+            // buttonTCPMEMSStart
             // 
-            this.button92.ForeColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.button92, "button92");
-            this.button92.Name = "button92";
-            this.button92.UseVisualStyleBackColor = true;
-            this.button92.Click += new System.EventHandler(this.button92_Click_1);
+            this.buttonTCPMEMSStart.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttonTCPMEMSStart, "buttonTCPMEMSStart");
+            this.buttonTCPMEMSStart.Name = "buttonTCPMEMSStart";
+            this.buttonTCPMEMSStart.UseVisualStyleBackColor = true;
+            this.buttonTCPMEMSStart.Click += new System.EventHandler(this.button92_Click_1);
             // 
             // labelSelG
             // 
@@ -3449,21 +3468,10 @@ namespace Robot
             this.labelrefrate.ForeColor = System.Drawing.Color.Black;
             this.labelrefrate.Name = "labelrefrate";
             // 
-            // labelreadi
-            // 
-            resources.ApplyResources(this.labelreadi, "labelreadi");
-            this.labelreadi.ForeColor = System.Drawing.Color.Black;
-            this.labelreadi.Name = "labelreadi";
-            // 
             // txtRefreshRate
             // 
             resources.ApplyResources(this.txtRefreshRate, "txtRefreshRate");
             this.txtRefreshRate.Name = "txtRefreshRate";
-            // 
-            // txtBytesRead
-            // 
-            resources.ApplyResources(this.txtBytesRead, "txtBytesRead");
-            this.txtBytesRead.Name = "txtBytesRead";
             // 
             // btnMode
             // 
@@ -7152,12 +7160,58 @@ namespace Robot
             resources.ApplyResources(this.label171, "label171");
             this.label171.Name = "label171";
             // 
+            // button88
+            // 
+            resources.ApplyResources(this.button88, "button88");
+            this.button88.Name = "button88";
+            this.button88.UseVisualStyleBackColor = true;
+            this.button88.Click += new System.EventHandler(this.button88_Click);
+            // 
             // cameraWindow
             // 
             this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
             this.cameraWindow.Camera = null;
             resources.ApplyResources(this.cameraWindow, "cameraWindow");
             this.cameraWindow.Name = "cameraWindow";
+            // 
+            // txtBytesRead
+            // 
+            resources.ApplyResources(this.txtBytesRead, "txtBytesRead");
+            this.txtBytesRead.Name = "txtBytesRead";
+            // 
+            // labelreadi
+            // 
+            resources.ApplyResources(this.labelreadi, "labelreadi");
+            this.labelreadi.ForeColor = System.Drawing.Color.Black;
+            this.labelreadi.Name = "labelreadi";
+            // 
+            // checkBoxShowVal
+            // 
+            resources.ApplyResources(this.checkBoxShowVal, "checkBoxShowVal");
+            this.checkBoxShowVal.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxShowVal.Name = "checkBoxShowVal";
+            this.checkBoxShowVal.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxGraph
+            // 
+            this.groupBoxGraph.Controls.Add(this.checkBoxShowTraj);
+            this.groupBoxGraph.Controls.Add(this.checkBoxShowVal);
+            resources.ApplyResources(this.groupBoxGraph, "groupBoxGraph");
+            this.groupBoxGraph.Name = "groupBoxGraph";
+            this.groupBoxGraph.TabStop = false;
+            // 
+            // checkBoxShowTraj
+            // 
+            resources.ApplyResources(this.checkBoxShowTraj, "checkBoxShowTraj");
+            this.checkBoxShowTraj.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxShowTraj.Name = "checkBoxShowTraj";
+            this.checkBoxShowTraj.UseVisualStyleBackColor = true;
+            // 
+            // groupBox51
+            // 
+            resources.ApplyResources(this.groupBox51, "groupBox51");
+            this.groupBox51.Name = "groupBox51";
+            this.groupBox51.TabStop = false;
             // 
             // Robot1
             // 
@@ -7431,6 +7485,8 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
+            this.groupBoxGraph.ResumeLayout(false);
+            this.groupBoxGraph.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -8157,7 +8213,7 @@ namespace Robot
         private System.Windows.Forms.GroupBox groupBox58;
         private System.Windows.Forms.CheckBox checkBoxIntCar;
         private System.Windows.Forms.CheckBox LogGPS;
-        private System.Windows.Forms.Button button92;
+        private System.Windows.Forms.Button buttonTCPMEMSStart;
         private System.Windows.Forms.Button buttonTCPSimStart;
         private System.Windows.Forms.TextBox SimDataLog;
         private System.Windows.Forms.CheckBox Supply_Lights;
@@ -8193,9 +8249,7 @@ namespace Robot
         private System.Windows.Forms.TextBox txtByte01;
         private System.Windows.Forms.GroupBox groupBoxMEMSinfo;
         private System.Windows.Forms.Label labelrefrate;
-        private System.Windows.Forms.Label labelreadi;
         private System.Windows.Forms.TextBox txtRefreshRate;
-        private System.Windows.Forms.TextBox txtBytesRead;
         private System.Windows.Forms.GroupBox groupBoxXY;
         private System.Windows.Forms.TextBox textBoxYg;
         private System.Windows.Forms.TextBox textBoxXg;
@@ -8228,6 +8282,14 @@ namespace Robot
         private System.Windows.Forms.Button buttonTCPSimStop;
         private System.Windows.Forms.Label labelRXSimData;
         private System.Windows.Forms.TextBox textBoxSendSimData;
+        private System.Windows.Forms.Button buttonTCPMEMSclose;
+        private System.Windows.Forms.Button button88;
+        private System.Windows.Forms.Label labelreadi;
+        private System.Windows.Forms.TextBox txtBytesRead;
+        private System.Windows.Forms.CheckBox checkBoxShowVal;
+        private System.Windows.Forms.GroupBox groupBoxGraph;
+        private System.Windows.Forms.GroupBox groupBox51;
+        private System.Windows.Forms.CheckBox checkBoxShowTraj;
 
 
     }
