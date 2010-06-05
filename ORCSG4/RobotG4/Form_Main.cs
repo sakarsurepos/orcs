@@ -34,7 +34,7 @@ using System.Diagnostics;
 //Update
 using System.Deployment;
 using System.Deployment.Application;
-//MEMS
+//MEMS Graph
 using ZedGraph;
 //Filters
 using Neodym.Test;
@@ -3994,26 +3994,37 @@ namespace Robot
             // Get the first CurveItem in the graph
             // Get the PointPairList
             // Add value
-            curveX = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
-            //IPointListEdit listX = curveX.Points as IPointListEdit;
-            listX.Add(graphvalx, nXaxis);
+            if (checkBoxShowVal.Checked == true)
+            {
+                curveX = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+                //IPointListEdit listX = curveX.Points as IPointListEdit;
+                listX.Add(graphvalx, nXaxis);
+                
+                curveY = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+                //IPointListEdit listY = curveY.Points as IPointListEdit;
+                listY.Add(graphvalx++, nYaxis);
 
-            curveY = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
-            //IPointListEdit listY = curveY.Points as IPointListEdit;
-            listY.Add(graphvalx, nYaxis);
-
+                System.Console.Write(nXaxis.ToString() + "\n"); //test write to console
+            }
+            if (checkBoxShowVal.Checked == true && checkBoxShowTraj.Checked == true)
+            {
+                graphvalx--;
+            }
             //Trajectory
-            int Trajxacc = (int)(((nXaxis - 575) * (19.62 / 485) * (0.2 * 0.2)) * 1000);
-            curveXs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
-            //IPointListEdit listX = curveX.Points as IPointListEdit;
-            TrajX = TrajX + Trajxacc;
-            listXs.Add(graphvalx, TrajX);
+            if (checkBoxShowTraj.Checked == true)
+            {
+                int Trajxacc = (int)(((nXaxis - 575) * (19.62 / 485) * (0.2 * 0.2)) * 1000);
+                curveXs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+                //IPointListEdit listX = curveX.Points as IPointListEdit;
+                TrajX = TrajX + Trajxacc;
+                listXs.Add(graphvalx, TrajX);
 
-            int Trajyacc = (int)(((nYaxis - 585) * (19.62 / 500) * (0.2 * 0.2)) * 1000);
-            curveYs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
-            //IPointListEdit listY = curveY.Points as IPointListEdit;
-            TrajY = TrajY + Trajyacc;
-            listYs.Add(graphvalx++, TrajY);
+                int Trajyacc = (int)(((nYaxis - 585) * (19.62 / 500) * (0.2 * 0.2)) * 1000);
+                curveYs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+                //IPointListEdit listY = curveY.Points as IPointListEdit;
+                TrajY = TrajY + Trajyacc;
+                listYs.Add(graphvalx++, TrajY);
+            }
 
             //Scale xScale = zedGraphControl1.GraphPane.XAxis.Scale;
             //xScale.
@@ -5004,8 +5015,10 @@ namespace Robot
 
             // Initially, a curve is added with no data points (list is empty)
             // Color is blue, and there will be no symbols
+
             curveX = myPane.AddCurve("MEMS X axis", listX, Color.Blue, SymbolType.Circle);
             curveY = myPane.AddCurve("MEMS Y axis", listY, Color.Red, SymbolType.Circle);
+
             curveXs = myPane.AddCurve("MEMS X trajectory axis", listXs, Color.Green, SymbolType.Triangle);
             curveYs = myPane.AddCurve("MEMS Y trajectory axis", listYs, Color.Pink, SymbolType.Triangle);
             // Just manually control the X axis range so it scrolls continuously
@@ -5059,6 +5072,7 @@ namespace Robot
         private void button88_Click(object sender, EventArgs e)
         {
             Kalfilter.TestDiscreteKalmanFilter();
+            Kalfilter.CreateGraph(zedGraphControl1);
         }
 
    }

@@ -817,13 +817,14 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.button88 = new System.Windows.Forms.Button();
-            this.cameraWindow = new Robot.CameraWindow();
             this.txtBytesRead = new System.Windows.Forms.TextBox();
             this.labelreadi = new System.Windows.Forms.Label();
             this.checkBoxShowVal = new System.Windows.Forms.CheckBox();
             this.groupBoxGraph = new System.Windows.Forms.GroupBox();
             this.checkBoxShowTraj = new System.Windows.Forms.CheckBox();
-            this.groupBox51 = new System.Windows.Forms.GroupBox();
+            this.groupBoxFilterData = new System.Windows.Forms.GroupBox();
+            this.cameraWindow = new Robot.CameraWindow();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -984,6 +985,7 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
             this.groupBoxGraph.SuspendLayout();
+            this.groupBoxFilterData.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -3316,10 +3318,9 @@ namespace Robot
             // 
             // groupBox31
             // 
-            this.groupBox31.Controls.Add(this.groupBox51);
+            this.groupBox31.Controls.Add(this.groupBoxFilterData);
             this.groupBox31.Controls.Add(this.groupBoxGraph);
             this.groupBox31.Controls.Add(this.txtOutput);
-            this.groupBox31.Controls.Add(this.button88);
             this.groupBox31.Controls.Add(this.buttonTCPMEMSclose);
             this.groupBox31.Controls.Add(this.panelMEMS);
             this.groupBox31.Controls.Add(this.buttonTCPMEMSStart);
@@ -7162,17 +7163,11 @@ namespace Robot
             // 
             // button88
             // 
+            this.button88.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.button88, "button88");
             this.button88.Name = "button88";
             this.button88.UseVisualStyleBackColor = true;
             this.button88.Click += new System.EventHandler(this.button88_Click);
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
             // 
             // txtBytesRead
             // 
@@ -7207,11 +7202,27 @@ namespace Robot
             this.checkBoxShowTraj.Name = "checkBoxShowTraj";
             this.checkBoxShowTraj.UseVisualStyleBackColor = true;
             // 
-            // groupBox51
+            // groupBoxFilterData
             // 
-            resources.ApplyResources(this.groupBox51, "groupBox51");
-            this.groupBox51.Name = "groupBox51";
-            this.groupBox51.TabStop = false;
+            this.groupBoxFilterData.Controls.Add(this.checkBox3);
+            this.groupBoxFilterData.Controls.Add(this.button88);
+            resources.ApplyResources(this.groupBoxFilterData, "groupBoxFilterData");
+            this.groupBoxFilterData.Name = "groupBoxFilterData";
+            this.groupBoxFilterData.TabStop = false;
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
+            // 
+            // checkBox3
+            // 
+            resources.ApplyResources(this.checkBox3, "checkBox3");
+            this.checkBox3.ForeColor = System.Drawing.Color.Black;
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // Robot1
             // 
@@ -7487,6 +7498,8 @@ namespace Robot
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
             this.groupBoxGraph.ResumeLayout(false);
             this.groupBoxGraph.PerformLayout();
+            this.groupBoxFilterData.ResumeLayout(false);
+            this.groupBoxFilterData.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -8288,8 +8301,9 @@ namespace Robot
         private System.Windows.Forms.TextBox txtBytesRead;
         private System.Windows.Forms.CheckBox checkBoxShowVal;
         private System.Windows.Forms.GroupBox groupBoxGraph;
-        private System.Windows.Forms.GroupBox groupBox51;
+        private System.Windows.Forms.GroupBox groupBoxFilterData;
         private System.Windows.Forms.CheckBox checkBoxShowTraj;
+        private System.Windows.Forms.CheckBox checkBox3;
 
 
     }
