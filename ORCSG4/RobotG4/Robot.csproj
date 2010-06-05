@@ -110,6 +110,8 @@
       <HintPath>Resources\LumiSoft.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MathNet.Iridium, Version=2008.3.12.405, Culture=neutral, PublicKeyToken=c061a3ec32cc0c6f, processorArchitecture=MSIL" />
+    <Reference Include="MathNet.Neodym, Version=2008.7.3.465, Culture=neutral, PublicKeyToken=c061a3ec32cc0c6f, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <Private>True</Private>
     </Reference>
@@ -128,6 +130,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="MTV3D65, Version=6.5.2823.21213, Culture=neutral" />
+    <Reference Include="nunit.framework, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -187,6 +190,7 @@
       <DependentUpon>Form_main.sk.resx</DependentUpon>
     </Compile>
     <Compile Include="GPS.cs" />
+    <Compile Include="KalmanFilterTest.cs" />
     <Compile Include="Media\Wave\native\MMSYSERR.cs" />
     <Compile Include="Media\Wave\native\WavConstants.cs" />
     <Compile Include="Media\Wave\native\WAVEFORMATEX.cs" />
@@ -461,8 +465,17 @@
       <DependentUpon>UsrCtrlAxis3D.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Content Include="Resources\MathNet.Iridium.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MathNet.Neodym.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Microsoft.DirectX.Direct3D.dll" />
     <Content Include="Resources\Microsoft.DirectX.Direct3DX.dll" />
+    <Content Include="Resources\nunit.framework.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\sonar.mp3" />
     <Content Include="Resources\AForge.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
