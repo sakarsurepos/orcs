@@ -36,10 +36,10 @@ namespace Neodym.Test
 	[TestFixture]
 	public class KalmanFilterTest
 	{
-        double[] zsres = new double[51];
+        double[] zsres = new double[80];
         // MEMS xAxis test data 557, 553, 558, 564, 556, 559, 559
         double[] zs = { 555, 561, 554, 563, 555, 558, 559, 557, 557, 553, 558, 564, 556, 559, 559, 556, 556, 557, 554, 564, 556, 555, 564, 563, 559, 553, 560, 556, 559, 556, 556, 559, 557, 561, 559, 560, 562, 556, 557, 556, 557, 557, 565, 558, 558, 554, 554, 558, 557, 559, 554 };
-        //double[] zs = { 585, 581, 587,588,605,631,663,679,707,724,735,752,757,774,776,784,789,796,814,810,811,810,810,809,813,808,814,810,809,810,808,811,812,808,812,808,769,704,671,616,587,583,577 };
+        //double[] zs = { 585, 581, 587, 588, 605, 631, 663, 679, 707, 724, 735, 752, 757, 774, 776, 784, 789, 796, 814, 810, 811, 810, 810, 809, 813, 808, 814, 810, 809, 810, 808, 811, 812, 808, 812, 808, 769, 704, 671, 616, 587, 583, 577, 565, 558, 558, 554, 554, 558, 557, 559, 554, 558, 558, 554, 554, 558, 557, 559, 554 };
         //double[] zs = { 290.16851039, 654.55633793, 968.97141280, 1325.09197161, 1636.35947675, 1974.39053148, 2260.80770553, 2574.36119750, 2901.32285462, 3259.14709098 };
         // Array of measured ranges from cartesian center for a track (noisy - 0.5 units)
 		double[] rM = {99.9901, 90.2995, 80.0453, 71.5741, 61.7019, 54.0062, 44.4181, 37.3228,
@@ -52,22 +52,36 @@ namespace Neodym.Test
 		double the = 2d * Math.PI / 180d; //2d * Math.PI / 180d;
 		double T = 10d;  //10
 		double q = 0.01; //0.01
+        bool init = false;
 		
 		public static readonly double DefaultTolerance = 1e-8;
+
+        GraphPane myPane;
+        PointPairList list;
+        PointPairList list1;
+        LineItem myCurve;
+        LineItem myCurve2;
 
         [Test]
         public void CreateGraph(ZedGraphControl zgc)
         {
-            GraphPane myPane = zgc.GraphPane;
+            if (init == true)
+            {
+                myCurve.Clear();
+                myCurve2.Clear();
+            }
+            if (init == false)
+            {
+                myPane = zgc.GraphPane;
+                // Set the titles and axis labels
+                myPane.Title.Text = "Filter Test Date Graph";
+                myPane.XAxis.Title.Text = "Time X Value";
+                myPane.YAxis.Title.Text = "MEMS XAxis Value";
 
-            // Set the titles and axis labels
-            myPane.Title.Text = "Filter Test Date Graph";
-            myPane.XAxis.Title.Text = "Time X Value";
-            myPane.YAxis.Title.Text = "MEMS XAxis Value";
-            
-            // Make up some data points from the Sine function
-            PointPairList list = new PointPairList();
-            PointPairList list1 = new PointPairList();
+                // Make up some data points from the Sine function
+                list = new PointPairList();
+                list1 = new PointPairList();
+            }
             for (int x = 0; x < zs.Length ; x++)
             {
                 list.Add(x, zs[x]);
@@ -75,8 +89,11 @@ namespace Neodym.Test
             }
 
             // Generate a blue curve with circle symbols, and "My Curve 2" in the legend
-            LineItem myCurve = myPane.AddCurve("MEMS Basic", list, Color.Cyan, SymbolType.Circle);
-            LineItem myCurve2 = myPane.AddCurve("MEMS Kalman Filter", list1, Color.Black, SymbolType.Triangle);
+            if (init == false)
+            {
+                myCurve = myPane.AddCurve("MEMS Basic", list, Color.Cyan, SymbolType.Circle);
+                myCurve2 = myPane.AddCurve("MEMS Kalman Filter", list1, Color.Black, SymbolType.Triangle);
+            }
             // Fill the area under the curve with a white-red gradient at 45 degrees
             //myCurve.Line.Fill = new Fill(Color.White, Color.Red, 45F);
             // Make the symbols opaque by filling them with white
@@ -89,17 +106,29 @@ namespace Neodym.Test
             //myPane.Fill = new Fill(Color.White, Color.FromArgb(220, 220, 255), 45F);
 
             // Calculate the Axis Scale Ranges
+
             zgc.AxisChange();
             zgc.Invalidate();
+            init = true;
         }
 
 		[Test]
-		public void TestDiscreteKalmanFilter()
+		public void TestDiscreteKalmanFilter(double r, double T, double q, int set)
 		{
-			// Test constants
-            double r = 2;  // Measurement covariance 30.0
-            double T = 0.2;  // Time interval between measurements 20.0
-            double q = 0.1;   // Plant noise constant 0.1
+            if (set == 1) //Stable value
+            {
+                double[] zs1 = { 555, 561, 554, 563, 555, 558, 559, 557, 557, 553, 558, 564, 556, 559, 559, 556, 556, 557, 554, 564, 556, 555, 564, 563, 559, 553, 560, 556, 559, 556, 556, 559, 557, 561, 559, 560, 562, 556, 557, 556, 557, 557, 565, 558, 558, 554, 554, 558, 557, 559, 554 };
+                zs = zs1;
+            }
+            if (set == 2) //Unstable value 774
+            {
+                double[] zs2 = { 585, 581, 587, 588, 605, 631, 663, 679, 707, 724, 735, 752, 757, 774 , 776, 784, 789, 796, 814, 810, 811, 810, 810, 809, 813, 808, 814, 810, 809, 810, 808, 811, 812, 808, 812, 808, 769, 704, 671, 616, 587, 583, 577, 565, 558, 558, 554, 554, 558, 557, 559, 554, 558, 558, 554, 554, 558, 557, 559, 554 };
+                zs = zs2;
+            }
+            // Test constants
+            //double r = 30;  // Measurement covariance 30.0
+            //double T = 5;  // Time interval between measurements 20.0
+            //double q = 0.1;   // Plant noise constant 0.1
             double tol = 0.0001;  // Accuracy tolerance 0.0001
 			
 			// Reference values to test against (generated from a known filter
@@ -124,6 +153,7 @@ namespace Neodym.Test
 			P0[0,0] = r; P0[1,0] = r/T; P0[0,1] = r/T; P0[1,1] = 2 * r / (T * T);
 			// Setup a DiscreteKalmanFilter to filter
 			DiscreteKalmanFilter dkf = new DiscreteKalmanFilter(x0, P0);
+            //SquareRootFilter dkf = new SquareRootFilter(x0, P0);
             zsres[0] = zs[0];
             zsres[1] = (double)(dkf.State[0, 0]);
 			double[] aF = { 1d, 0d, T, 1 };
@@ -152,7 +182,7 @@ namespace Neodym.Test
 				//Assert.IsTrue(Number.AlmostEqual(dkf.State[1,0], velu[i-2], tol), "Covariance Prediction (" + i + ")");
                 //System.Console.WriteLine((dkf.State[0, 0]).ToString("#00.00") + "\t");
                 //System.Console.WriteLine(dkf.State[1, 0]);
-                zsres[i] = (int)(dkf.State[0, 0]);
+                zsres[i] = (int)(dkf.State[0,0]);
 			}
 		}
 		

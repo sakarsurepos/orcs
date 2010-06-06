@@ -48,6 +48,10 @@ namespace Robot
     {
         //Filters
         Neodym.Test.KalmanFilterTest Kalfilter = new Neodym.Test.KalmanFilterTest();
+        public double r0 = 30;
+        public double T0 = 5;
+        public double q0 = 0.1;
+        public int set0 = 1;
         //////////
         //ACCELEROMETER
         public static Int32 ADCset = 4; //10 bit ADC
@@ -5071,8 +5075,13 @@ namespace Robot
 
         private void button88_Click(object sender, EventArgs e)
         {
-            Kalfilter.TestDiscreteKalmanFilter();
+            r0   = double.Parse(textBoxrkal.Text);
+            T0   = double.Parse(textBoxTkal.Text);
+            q0   = double.Parse(textBoxqkal.Text);
+            set0 = int.Parse(domainUpDownSetVal.Text);
+            Kalfilter.TestDiscreteKalmanFilter(r0, T0, q0, set0);
             Kalfilter.CreateGraph(zedGraphControl1);
+            
         }
 
    }
