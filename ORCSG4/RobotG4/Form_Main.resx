@@ -8151,20 +8151,242 @@ Mouse y:
   <data name="&gt;&gt;tabPage6.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="label172.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label172.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 49</value>
+  </data>
+  <data name="label172.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="label172.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="label172.Text" xml:space="preserve">
+    <value>Val set</value>
+  </data>
+  <data name="&gt;&gt;label172.Name" xml:space="preserve">
+    <value>label172</value>
+  </data>
+  <data name="&gt;&gt;label172.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label172.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;label172.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="domainUpDownSetVal.Items" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="domainUpDownSetVal.Items1" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="domainUpDownSetVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 46</value>
+  </data>
+  <data name="domainUpDownSetVal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 20</value>
+  </data>
+  <data name="domainUpDownSetVal.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="domainUpDownSetVal.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;domainUpDownSetVal.Name" xml:space="preserve">
+    <value>domainUpDownSetVal</value>
+  </data>
+  <data name="&gt;&gt;domainUpDownSetVal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DomainUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;domainUpDownSetVal.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;domainUpDownSetVal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelqkal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelqkal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelqkal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 48</value>
+  </data>
+  <data name="labelqkal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="labelqkal.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="labelqkal.Text" xml:space="preserve">
+    <value>q</value>
+  </data>
+  <data name="&gt;&gt;labelqkal.Name" xml:space="preserve">
+    <value>labelqkal</value>
+  </data>
+  <data name="&gt;&gt;labelqkal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelqkal.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;labelqkal.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelTkal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTkal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelTkal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 31</value>
+  </data>
+  <data name="labelTkal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="labelTkal.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="labelTkal.Text" xml:space="preserve">
+    <value>T</value>
+  </data>
+  <data name="&gt;&gt;labelTkal.Name" xml:space="preserve">
+    <value>labelTkal</value>
+  </data>
+  <data name="&gt;&gt;labelTkal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTkal.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;labelTkal.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelrkal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelrkal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelrkal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 14</value>
+  </data>
+  <data name="labelrkal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="labelrkal.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="labelrkal.Text" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="&gt;&gt;labelrkal.Name" xml:space="preserve">
+    <value>labelrkal</value>
+  </data>
+  <data name="&gt;&gt;labelrkal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelrkal.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;labelrkal.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBoxqkal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 45</value>
+  </data>
+  <data name="textBoxqkal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="textBoxqkal.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="textBoxqkal.Text" xml:space="preserve">
+    <value>0.01</value>
+  </data>
+  <data name="&gt;&gt;textBoxqkal.Name" xml:space="preserve">
+    <value>textBoxqkal</value>
+  </data>
+  <data name="&gt;&gt;textBoxqkal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxqkal.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;textBoxqkal.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textBoxTkal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 28</value>
+  </data>
+  <data name="textBoxTkal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="textBoxTkal.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="textBoxTkal.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;textBoxTkal.Name" xml:space="preserve">
+    <value>textBoxTkal</value>
+  </data>
+  <data name="&gt;&gt;textBoxTkal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxTkal.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;textBoxTkal.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="textBoxrkal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 9</value>
+  </data>
+  <data name="textBoxrkal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="textBoxrkal.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="textBoxrkal.Text" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;textBoxrkal.Name" xml:space="preserve">
+    <value>textBoxrkal</value>
+  </data>
+  <data name="&gt;&gt;textBoxrkal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxrkal.Parent" xml:space="preserve">
+    <value>groupBoxFilterData</value>
+  </data>
+  <data name="&gt;&gt;textBoxrkal.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="checkBox3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="checkBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="checkBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 11</value>
   </data>
   <data name="checkBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 17</value>
+    <value>59, 17</value>
   </data>
   <data name="checkBox3.TabIndex" type="System.Int32, mscorlib">
     <value>70</value>
   </data>
   <data name="checkBox3.Text" xml:space="preserve">
-    <value>Enable Kalman</value>
+    <value>Enable</value>
   </data>
   <data name="&gt;&gt;checkBox3.Name" xml:space="preserve">
     <value>checkBox3</value>
@@ -8176,16 +8398,16 @@ Mouse y:
     <value>groupBoxFilterData</value>
   </data>
   <data name="&gt;&gt;checkBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>8</value>
   </data>
   <data name="button88.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button88.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 27</value>
+    <value>5, 27</value>
   </data>
   <data name="button88.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 19</value>
+    <value>78, 19</value>
   </data>
   <data name="button88.TabIndex" type="System.Int32, mscorlib">
     <value>69</value>
@@ -8203,13 +8425,13 @@ Mouse y:
     <value>groupBoxFilterData</value>
   </data>
   <data name="&gt;&gt;button88.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>9</value>
   </data>
   <data name="groupBoxFilterData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 329</value>
+    <value>421, 311</value>
   </data>
   <data name="groupBoxFilterData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 48</value>
+    <value>170, 67</value>
   </data>
   <data name="groupBoxFilterData.TabIndex" type="System.Int32, mscorlib">
     <value>72</value>
@@ -8239,13 +8461,13 @@ Mouse y:
     <value>7, 29</value>
   </data>
   <data name="checkBoxShowTraj.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 17</value>
+    <value>44, 17</value>
   </data>
   <data name="checkBoxShowTraj.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
   </data>
   <data name="checkBoxShowTraj.Text" xml:space="preserve">
-    <value>Show MEMS Traj</value>
+    <value>Traj</value>
   </data>
   <data name="&gt;&gt;checkBoxShowTraj.Name" xml:space="preserve">
     <value>checkBoxShowTraj</value>
@@ -8269,13 +8491,13 @@ Mouse y:
     <value>7, 14</value>
   </data>
   <data name="checkBoxShowVal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
+    <value>41, 17</value>
   </data>
   <data name="checkBoxShowVal.TabIndex" type="System.Int32, mscorlib">
     <value>70</value>
   </data>
   <data name="checkBoxShowVal.Text" xml:space="preserve">
-    <value>Show MEMS Val</value>
+    <value>Val</value>
   </data>
   <data name="&gt;&gt;checkBoxShowVal.Name" xml:space="preserve">
     <value>checkBoxShowVal</value>
@@ -8290,10 +8512,10 @@ Mouse y:
     <value>1</value>
   </data>
   <data name="groupBoxGraph.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 329</value>
+    <value>364, 311</value>
   </data>
   <data name="groupBoxGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 48</value>
+    <value>56, 67</value>
   </data>
   <data name="groupBoxGraph.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -8344,7 +8566,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="buttonTCPMEMSclose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 82</value>
+    <value>364, 78</value>
   </data>
   <data name="buttonTCPMEMSclose.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 23</value>
@@ -8419,7 +8641,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="buttonTCPMEMSStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 60</value>
+    <value>364, 56</value>
   </data>
   <data name="buttonTCPMEMSStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 23</value>
@@ -8442,39 +8664,6 @@ Mouse y:
   <data name="&gt;&gt;buttonTCPMEMSStart.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="labelSelG.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelSelG.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="labelSelG.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelSelG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>397, 133</value>
-  </data>
-  <data name="labelSelG.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
-  <data name="labelSelG.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="labelSelG.Text" xml:space="preserve">
-    <value>1,5G</value>
-  </data>
-  <data name="&gt;&gt;labelSelG.Name" xml:space="preserve">
-    <value>labelSelG</value>
-  </data>
-  <data name="&gt;&gt;labelSelG.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelSelG.Parent" xml:space="preserve">
-    <value>groupBox31</value>
-  </data>
-  <data name="&gt;&gt;labelSelG.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="zedGraphControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 384</value>
   </data>
@@ -8494,37 +8683,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;zedGraphControl1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="labelSel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelSel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelSel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 133</value>
-  </data>
-  <data name="labelSel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 13</value>
-  </data>
-  <data name="labelSel.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
-  </data>
-  <data name="labelSel.Text" xml:space="preserve">
-    <value>SelG:</value>
-  </data>
-  <data name="&gt;&gt;labelSel.Name" xml:space="preserve">
-    <value>labelSel</value>
-  </data>
-  <data name="&gt;&gt;labelSel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelSel.Parent" xml:space="preserve">
-    <value>groupBox31</value>
-  </data>
-  <data name="&gt;&gt;labelSel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="button1G.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8683,7 +8842,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxGset.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="labelrefrate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8692,7 +8851,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="labelrefrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
+    <value>8, 29</value>
   </data>
   <data name="labelrefrate.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -8718,44 +8877,11 @@ Mouse y:
   <data name="&gt;&gt;labelrefrate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="labelreadi.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelreadi.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelreadi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 17</value>
-  </data>
-  <data name="labelreadi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 13</value>
-  </data>
-  <data name="labelreadi.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="labelreadi.Text" xml:space="preserve">
-    <value>Bytes Read</value>
-  </data>
-  <data name="labelreadi.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;labelreadi.Name" xml:space="preserve">
-    <value>labelreadi</value>
-  </data>
-  <data name="&gt;&gt;labelreadi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelreadi.Parent" xml:space="preserve">
-    <value>groupBoxMEMSinfo</value>
-  </data>
-  <data name="&gt;&gt;labelreadi.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="txtRefreshRate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 36</value>
+    <value>52, 26</value>
   </data>
   <data name="txtRefreshRate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 20</value>
+    <value>66, 20</value>
   </data>
   <data name="txtRefreshRate.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -8770,34 +8896,76 @@ Mouse y:
     <value>groupBoxMEMSinfo</value>
   </data>
   <data name="&gt;&gt;txtRefreshRate.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
-  <data name="txtBytesRead.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 14</value>
+  <data name="labelSelG.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="txtBytesRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 20</value>
+  <data name="labelSelG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="txtBytesRead.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="labelSelG.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;txtBytesRead.Name" xml:space="preserve">
-    <value>txtBytesRead</value>
+  <data name="labelSelG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 12</value>
   </data>
-  <data name="&gt;&gt;txtBytesRead.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelSelG.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
   </data>
-  <data name="&gt;&gt;txtBytesRead.Parent" xml:space="preserve">
+  <data name="labelSelG.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="labelSelG.Text" xml:space="preserve">
+    <value>1,5G</value>
+  </data>
+  <data name="&gt;&gt;labelSelG.Name" xml:space="preserve">
+    <value>labelSelG</value>
+  </data>
+  <data name="&gt;&gt;labelSelG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSelG.Parent" xml:space="preserve">
     <value>groupBoxMEMSinfo</value>
   </data>
-  <data name="&gt;&gt;txtBytesRead.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelSelG.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelSel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelSel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 12</value>
+  </data>
+  <data name="labelSel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="labelSel.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="labelSel.Text" xml:space="preserve">
+    <value>SelG:</value>
+  </data>
+  <data name="&gt;&gt;labelSel.Name" xml:space="preserve">
+    <value>labelSel</value>
+  </data>
+  <data name="&gt;&gt;labelSel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSel.Parent" xml:space="preserve">
+    <value>groupBoxMEMSinfo</value>
+  </data>
+  <data name="&gt;&gt;labelSel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="groupBoxMEMSinfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 125</value>
+    <value>469, 123</value>
   </data>
   <data name="groupBoxMEMSinfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 63</value>
+    <value>121, 47</value>
   </data>
   <data name="groupBoxMEMSinfo.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -8815,13 +8983,13 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxMEMSinfo.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="btnMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 104</value>
+    <value>364, 100</value>
   </data>
   <data name="btnMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
@@ -8842,7 +9010,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;btnMode.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="checkBoxAngleLock.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8851,7 +9019,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="checkBoxAngleLock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 167</value>
+    <value>372, 150</value>
   </data>
   <data name="checkBoxAngleLock.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 17</value>
@@ -8872,7 +9040,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;checkBoxAngleLock.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="chkBoxSmoothing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8881,7 +9049,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="chkBoxSmoothing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 150</value>
+    <value>372, 133</value>
   </data>
   <data name="chkBoxSmoothing.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 17</value>
@@ -8902,7 +9070,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;chkBoxSmoothing.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="textBoxZg.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 95</value>
@@ -9040,7 +9208,7 @@ Mouse y:
     <value>5</value>
   </data>
   <data name="groupBoxZ.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 188</value>
+    <value>529, 170</value>
   </data>
   <data name="groupBoxZ.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 141</value>
@@ -9061,13 +9229,13 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxZ.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="buttonSPopen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonSPopen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 16</value>
+    <value>363, 12</value>
   </data>
   <data name="buttonSPopen.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
@@ -9088,7 +9256,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;buttonSPopen.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="txtByte05.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 61</value>
@@ -9391,13 +9559,13 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxRAWDat.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="buttonSPClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonSPClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 38</value>
+    <value>363, 34</value>
   </data>
   <data name="buttonSPClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
@@ -9418,7 +9586,7 @@ Mouse y:
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;buttonSPClose.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>15</value>
   </data>
   <data name="textBoxYg.Location" type="System.Drawing.Point, System.Drawing">
     <value>130, 96</value>
@@ -9941,7 +10109,7 @@ Speed</value>
     <value>19</value>
   </data>
   <data name="groupBoxXY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 188</value>
+    <value>363, 170</value>
   </data>
   <data name="groupBoxXY.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 141</value>
@@ -9962,7 +10130,7 @@ Speed</value>
     <value>groupBox31</value>
   </data>
   <data name="&gt;&gt;groupBoxXY.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>16</value>
   </data>
   <data name="groupBox31.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 6</value>
