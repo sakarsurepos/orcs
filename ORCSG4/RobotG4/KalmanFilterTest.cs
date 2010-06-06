@@ -37,19 +37,21 @@ namespace Neodym.Test
 	public class KalmanFilterTest
 	{
         double[] zsres = new double[51];
-        // MEMS xAxis test data
+        // MEMS xAxis test data 557, 553, 558, 564, 556, 559, 559
         double[] zs = { 555, 561, 554, 563, 555, 558, 559, 557, 557, 553, 558, 564, 556, 559, 559, 556, 556, 557, 554, 564, 556, 555, 564, 563, 559, 553, 560, 556, 559, 556, 556, 559, 557, 561, 559, 560, 562, 556, 557, 556, 557, 557, 565, 558, 558, 554, 554, 558, 557, 559, 554 };
-		// Array of measured ranges from cartesian center for a track (noisy - 0.5 units)
+        //double[] zs = { 585, 581, 587,588,605,631,663,679,707,724,735,752,757,774,776,784,789,796,814,810,811,810,810,809,813,808,814,810,809,810,808,811,812,808,812,808,769,704,671,616,587,583,577 };
+        //double[] zs = { 290.16851039, 654.55633793, 968.97141280, 1325.09197161, 1636.35947675, 1974.39053148, 2260.80770553, 2574.36119750, 2901.32285462, 3259.14709098 };
+        // Array of measured ranges from cartesian center for a track (noisy - 0.5 units)
 		double[] rM = {99.9901, 90.2995, 80.0453, 71.5741, 61.7019, 54.0062, 44.4181, 37.3228,
 			30.8536, 26.2474, 25.0199, 29.1189, 34.3914, 42.5675, 50.7917, 60.1946 };
 		// Array of measured bearings from cartesian center for a track (noisy - 2deg)
 		double[] bM = { 0.7848, 0.7551, 0.7213, 0.6654, 0.6565, 0.4747, 0.4465, 0.3066,
 			0.0720, -0.2540, -0.6531, -0.9779, -1.2390, -1.4442, -1.5699, -1.6535 };
 
-		double re = 0.5;
-		double the = 2d * Math.PI / 180d;
-		double T = 10d;
-		double q = 0.01;
+		double re = 0.5; //0.5
+		double the = 2d * Math.PI / 180d; //2d * Math.PI / 180d;
+		double T = 10d;  //10
+		double q = 0.01; //0.01
 		
 		public static readonly double DefaultTolerance = 1e-8;
 
@@ -95,14 +97,14 @@ namespace Neodym.Test
 		public void TestDiscreteKalmanFilter()
 		{
 			// Test constants
-			double r = 30.0;  // Measurement covariance
-			double T = 20.0;  // Time interval between measurements
-			double q = 0.1;   // Plant noise constant
-			double tol = 0.0001;  // Accuracy tolerance
+            double r = 2;  // Measurement covariance 30.0
+            double T = 0.2;  // Time interval between measurements 20.0
+            double q = 0.1;   // Plant noise constant 0.1
+            double tol = 0.0001;  // Accuracy tolerance 0.0001
 			
 			// Reference values to test against (generated from a known filter
-            // Reference Measurements
-			//double[] zs = { 290.16851039,654.55633793,968.97141280,1325.09197161,1636.35947675,1974.39053148,2260.80770553,2574.36119750,2901.32285462,3259.14709098};
+            // Reference Measurements          
+            //double[] zs = { 290.16851039,654.55633793,968.97141280,1325.09197161,1636.35947675,1974.39053148,2260.80770553,2574.36119750,2901.32285462,3259.14709098};
 			// Expected position estimates (predictions)
 			double[] posp = {1018.94416547,1237.00029618,1754.97092716,1855.62596430,2400.27521403,2446.47067625,2978.94381631,3173.63724675};
 			// Expected velocity estimates (predictions)
