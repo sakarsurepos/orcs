@@ -158,7 +158,6 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
-            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -831,6 +830,8 @@ namespace Robot
             this.label169 = new System.Windows.Forms.Label();
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
+            this.labelMEMSerror = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -2079,13 +2080,6 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -3379,6 +3373,8 @@ namespace Robot
             // 
             this.domainUpDownSetVal.Items.Add(resources.GetString("domainUpDownSetVal.Items"));
             this.domainUpDownSetVal.Items.Add(resources.GetString("domainUpDownSetVal.Items1"));
+            this.domainUpDownSetVal.Items.Add(resources.GetString("domainUpDownSetVal.Items2"));
+            this.domainUpDownSetVal.Items.Add(resources.GetString("domainUpDownSetVal.Items3"));
             resources.ApplyResources(this.domainUpDownSetVal, "domainUpDownSetVal");
             this.domainUpDownSetVal.Name = "domainUpDownSetVal";
             // 
@@ -3553,6 +3549,7 @@ namespace Robot
             // 
             // groupBoxMEMSinfo
             // 
+            this.groupBoxMEMSinfo.Controls.Add(this.labelMEMSerror);
             this.groupBoxMEMSinfo.Controls.Add(this.labelrefrate);
             this.groupBoxMEMSinfo.Controls.Add(this.txtRefreshRate);
             this.groupBoxMEMSinfo.Controls.Add(this.labelSelG);
@@ -7271,6 +7268,19 @@ namespace Robot
             resources.ApplyResources(this.label171, "label171");
             this.label171.Name = "label171";
             // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
+            // 
+            // labelMEMSerror
+            // 
+            resources.ApplyResources(this.labelMEMSerror, "labelMEMSerror");
+            this.labelMEMSerror.ForeColor = System.Drawing.Color.Red;
+            this.labelMEMSerror.Name = "labelMEMSerror";
+            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -8357,6 +8367,7 @@ namespace Robot
         private System.Windows.Forms.Label labelTkal;
         private System.Windows.Forms.Label label172;
         private System.Windows.Forms.DomainUpDown domainUpDownSetVal;
+        private System.Windows.Forms.Label labelMEMSerror;
 
 
     }
