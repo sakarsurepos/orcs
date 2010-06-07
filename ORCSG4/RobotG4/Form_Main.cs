@@ -650,13 +650,14 @@ namespace Robot
             {
                 if (dataForAnalyseMEMS == null) //MEMS
                 {
-                    dataForAnalyseMEMS = "123456678901234567890"; //MEMS
+                    //dataForAnalyseMEMS = "123456678901234567890"; //MEMS
                     return;
                 }
                 textLogs.Paste(dataForAnalyseMEMS);
-                System.Console.Write(dataForAnalyseMEMS.ToString() + ",");
+                System.Console.Write(dataForAnalyseMEMS); ////TEST VALUE TO CONSOLE
                 char[] USART_dataMEMS = dataForAnalyseMEMS.ToCharArray();
                 string MEMS_MSG = new string(USART_dataMEMS, 0, 6);
+                
                 if ((byte)USART_dataMEMS[0] != 36)
                 {
                     labelMEMSerror.Text = MEMSTCPerror++.ToString();
@@ -4145,11 +4146,11 @@ namespace Robot
         private void ProcessDataMEMS()  //REPAIRED
         {
             //Test process 0 TEST
-            if (nXaxis > 545 && nXaxis < 565)
+            if (nXaxis > 540 && nXaxis < 570)
             {
                 nXaxis = 555;
             }
-            if (nYaxis > 550 && nYaxis < 570)
+            if (nYaxis > 545 && nYaxis < 575)
             {
                 nYaxis = 560;
             }
