@@ -85,6 +85,7 @@ namespace Robot
         Byte byte07;// Y1
         Byte byte08;// 13
         Byte byte09;// 10
+        int MEMSTCPerror = 0;
 
         Int32 nXaxis = 512;
         Int32 nYaxis = 512;
@@ -643,11 +644,6 @@ namespace Robot
             this.Close();
         }
 
-        private void Supply_Lights_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         void Analyse_DataMEMS(string dataForAnalyseMEMS) //MEMS
         {
             try
@@ -658,9 +654,15 @@ namespace Robot
                     return;
                 }
                 textLogs.Paste(dataForAnalyseMEMS);
+                System.Console.Write(dataForAnalyseMEMS.ToString() + ",");
                 char[] USART_dataMEMS = dataForAnalyseMEMS.ToCharArray();
                 string MEMS_MSG = new string(USART_dataMEMS, 0, 6);
-
+                if ((byte)USART_dataMEMS[0] != 36)
+                {
+                    labelMEMSerror.Text = MEMSTCPerror++.ToString();
+                    return;
+                }
+                
                 this.txtByte01.Text = ((byte)USART_dataMEMS[0]).ToString(); //$ String.Format("{0:x2}", byte01);
                 this.txtByte02.Text = ((byte)USART_dataMEMS[1]).ToString(); //x
                 this.txtByte03.Text = ((byte)USART_dataMEMS[2]).ToString(); //x1
@@ -3960,7 +3962,11 @@ namespace Robot
 
             byte01 = (Byte)this.byteQueue.Dequeue(); //$
             if (byte01 != 36)
+            {
+                labelMEMSerror.Text = MEMSTCPerror++.ToString();
                 return;
+            }
+
             byte02 = (Byte)this.byteQueue.Dequeue(); //X
             byte03 = (Byte)this.byteQueue.Dequeue(); //X1
             byte04 = (Byte)this.byteQueue.Dequeue(); //Z //CHANGE
@@ -3985,6 +3991,16 @@ namespace Robot
             nYaxis = Convert.ToInt32(byte04) << 8 | Convert.ToInt32(byte05);  //Convert.ToInt32(byte04); //CHANGE SUPER
             nZaxis = Convert.ToInt32(byte06) << 8 | Convert.ToInt32(byte07);  //Convert.ToInt32(byte03);
 
+            //Test process 0 TEST
+            if (nXaxis > 565 && nXaxis < 585)
+            {
+                nXaxis = 575;
+            }
+            if (nYaxis > 573 && nYaxis < 593)
+            {
+                nYaxis = 583;
+            }
+
             //SPACE FOR FILTER Butterworth low-pass filter
             /*
             xfac = nXaxis;
@@ -4008,7 +4024,7 @@ namespace Robot
                 //IPointListEdit listY = curveY.Points as IPointListEdit;
                 listY.Add(graphvalx++, nYaxis);
 
-                System.Console.Write(nXaxis.ToString() + "\n"); //test write to console
+                System.Console.Write(nXaxis.ToString() + ", "); //test write to console
             }
             if (checkBoxShowVal.Checked == true && checkBoxShowTraj.Checked == true)
             {
@@ -4023,7 +4039,7 @@ namespace Robot
                 TrajX = TrajX + Trajxacc;
                 listXs.Add(graphvalx, TrajX);
 
-                int Trajyacc = (int)(((nYaxis - 585) * (19.62 / 500) * (0.2 * 0.2)) * 1000);
+                int Trajyacc = (int)(((nYaxis - 583) * (19.62 / 485) * (0.2 * 0.2)) * 1000);
                 curveYs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
                 //IPointListEdit listY = curveY.Points as IPointListEdit;
                 TrajY = TrajY + Trajyacc;
@@ -4128,6 +4144,16 @@ namespace Robot
 
         private void ProcessDataMEMS()  //REPAIRED
         {
+            //Test process 0 TEST
+            if (nXaxis > 545 && nXaxis < 565)
+            {
+                nXaxis = 555;
+            }
+            if (nYaxis > 550 && nYaxis < 570)
+            {
+                nYaxis = 560;
+            }
+
             //if (this.byteQueue.Count < 9)
             //    return;
 
@@ -4148,13 +4174,13 @@ namespace Robot
             listY.Add(graphvalx, nYaxis);
 
             //Trajectory
-            int Trajxacc = (int)(((nXaxis - 575) * (19.62 / 485) * (0.2 * 0.2)) * 1000);
+            int Trajxacc = (int)(((nXaxis - 555) * (19.62 / 485) * (0.2 * 0.2)) * 1000);
             curveXs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
             //IPointListEdit listX = curveX.Points as IPointListEdit;
             TrajX = TrajX + Trajxacc;
             listXs.Add(graphvalx, TrajX);
 
-            int Trajyacc = (int)(((nYaxis - 585) * (19.62 / 500) * (0.2 * 0.2)) * 1000);
+            int Trajyacc = (int)(((nYaxis - 560) * (19.62 / 485) * (0.2 * 0.2)) * 1000);
             curveYs = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
             //IPointListEdit listY = curveY.Points as IPointListEdit;
             TrajY = TrajY + Trajyacc;
