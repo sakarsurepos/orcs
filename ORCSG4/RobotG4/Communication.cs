@@ -63,7 +63,7 @@ namespace Robot
 
         private void TCP_Client_Loop()
         {
-            byte[] data     = new byte[256];
+            byte[] data = new byte[256];
             Encode_1        = new ASCIIEncoding();
             strm_1          = Client.GetStream();
 
@@ -87,7 +87,7 @@ namespace Robot
         }
         public void Send_Data_By_Client(string data_for_send_by_Client)
         {
-            byte[] data     = new byte[256];
+            byte[] data = new byte[256];
             strm_2          = Client.GetStream();
             Encode_2        = new ASCIIEncoding();
             data            = Encode_2.GetBytes(data_for_send_by_Client);
@@ -121,7 +121,7 @@ namespace Robot
         private void TCP_Server_Loop()
         {
             soc_1           = Server.AcceptSocket();
-            byte[] data     = new byte[256];
+            byte[] data = new byte[256];
             Encode_3        = new ASCIIEncoding();
             
             while (true)
@@ -144,7 +144,7 @@ namespace Robot
         }
         public void Send_Data_By_Server(string data_for_send_by_Server)
         {
-            byte[] data         = new byte[256];           
+            byte[] data = new byte[256];           
             Encode_4            = new ASCIIEncoding();
             data                = Encode_4.GetBytes(data_for_send_by_Server);
             soc_1.Send(data);
