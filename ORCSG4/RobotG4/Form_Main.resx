@@ -8853,11 +8853,44 @@ Mouse y:
   <data name="&gt;&gt;groupBoxGset.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="labelmerr.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelmerr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelmerr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 10</value>
+  </data>
+  <data name="labelmerr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="labelmerr.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="labelmerr.Text" xml:space="preserve">
+    <value>error:</value>
+  </data>
+  <data name="&gt;&gt;labelmerr.Name" xml:space="preserve">
+    <value>labelmerr</value>
+  </data>
+  <data name="&gt;&gt;labelmerr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelmerr.Parent" xml:space="preserve">
+    <value>groupBoxMEMSinfo</value>
+  </data>
+  <data name="&gt;&gt;labelmerr.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="labelMEMSerror.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelMEMSerror.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelMEMSerror.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 11</value>
+    <value>103, 11</value>
   </data>
   <data name="labelMEMSerror.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -8878,7 +8911,7 @@ Mouse y:
     <value>groupBoxMEMSinfo</value>
   </data>
   <data name="&gt;&gt;labelMEMSerror.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="labelrefrate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8887,7 +8920,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="labelrefrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 29</value>
+    <value>3, 29</value>
   </data>
   <data name="labelrefrate.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -8911,7 +8944,7 @@ Mouse y:
     <value>groupBoxMEMSinfo</value>
   </data>
   <data name="&gt;&gt;labelrefrate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtRefreshRate.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 26</value>
@@ -8932,7 +8965,7 @@ Mouse y:
     <value>groupBoxMEMSinfo</value>
   </data>
   <data name="&gt;&gt;txtRefreshRate.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="labelSelG.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8944,7 +8977,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="labelSelG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 12</value>
+    <value>31, 12</value>
   </data>
   <data name="labelSelG.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -8965,7 +8998,7 @@ Mouse y:
     <value>groupBoxMEMSinfo</value>
   </data>
   <data name="&gt;&gt;labelSelG.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="labelSel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8974,7 +9007,7 @@ Mouse y:
     <value>NoControl</value>
   </data>
   <data name="labelSel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 12</value>
+    <value>3, 12</value>
   </data>
   <data name="labelSel.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -8995,7 +9028,7 @@ Mouse y:
     <value>groupBoxMEMSinfo</value>
   </data>
   <data name="&gt;&gt;labelSel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="groupBoxMEMSinfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>469, 123</value>

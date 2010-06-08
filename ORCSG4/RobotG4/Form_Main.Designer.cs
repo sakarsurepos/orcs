@@ -346,6 +346,7 @@ namespace Robot
             this.button6G = new System.Windows.Forms.Button();
             this.button4G = new System.Windows.Forms.Button();
             this.groupBoxMEMSinfo = new System.Windows.Forms.GroupBox();
+            this.labelMEMSerror = new System.Windows.Forms.Label();
             this.labelrefrate = new System.Windows.Forms.Label();
             this.txtRefreshRate = new System.Windows.Forms.TextBox();
             this.labelSelG = new System.Windows.Forms.Label();
@@ -831,7 +832,7 @@ namespace Robot
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
             this.cameraWindow = new Robot.CameraWindow();
-            this.labelMEMSerror = new System.Windows.Forms.Label();
+            this.labelmerr = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -3549,6 +3550,7 @@ namespace Robot
             // 
             // groupBoxMEMSinfo
             // 
+            this.groupBoxMEMSinfo.Controls.Add(this.labelmerr);
             this.groupBoxMEMSinfo.Controls.Add(this.labelMEMSerror);
             this.groupBoxMEMSinfo.Controls.Add(this.labelrefrate);
             this.groupBoxMEMSinfo.Controls.Add(this.txtRefreshRate);
@@ -3557,6 +3559,12 @@ namespace Robot
             resources.ApplyResources(this.groupBoxMEMSinfo, "groupBoxMEMSinfo");
             this.groupBoxMEMSinfo.Name = "groupBoxMEMSinfo";
             this.groupBoxMEMSinfo.TabStop = false;
+            // 
+            // labelMEMSerror
+            // 
+            resources.ApplyResources(this.labelMEMSerror, "labelMEMSerror");
+            this.labelMEMSerror.ForeColor = System.Drawing.Color.Red;
+            this.labelMEMSerror.Name = "labelMEMSerror";
             // 
             // labelrefrate
             // 
@@ -7275,11 +7283,11 @@ namespace Robot
             resources.ApplyResources(this.cameraWindow, "cameraWindow");
             this.cameraWindow.Name = "cameraWindow";
             // 
-            // labelMEMSerror
+            // labelmerr
             // 
-            resources.ApplyResources(this.labelMEMSerror, "labelMEMSerror");
-            this.labelMEMSerror.ForeColor = System.Drawing.Color.Red;
-            this.labelMEMSerror.Name = "labelMEMSerror";
+            resources.ApplyResources(this.labelmerr, "labelmerr");
+            this.labelmerr.ForeColor = System.Drawing.Color.Black;
+            this.labelmerr.Name = "labelmerr";
             // 
             // Robot1
             // 
@@ -8368,6 +8376,7 @@ namespace Robot
         private System.Windows.Forms.Label label172;
         private System.Windows.Forms.DomainUpDown domainUpDownSetVal;
         private System.Windows.Forms.Label labelMEMSerror;
+        private System.Windows.Forms.Label labelmerr;
 
 
     }
