@@ -3260,12 +3260,12 @@ namespace Robot
 
         private void button81_Click(object sender, EventArgs e)
         {
-            this.terminalControl1.SendText("gst-launch-0.10 udpsrc port=10000 ! rtppcmadepay ! audio/x-alaw, channels=1, rate=8000 ! alawdec ! autoaudiosink\n");
+            this.terminalControl2.SendText("gst-launch-0.10 udpsrc port=10000 ! rtppcmadepay ! audio/x-alaw, channels=1, rate=8000 ! alawdec ! autoaudiosink\n");
         }
 
         private void button82_Click(object sender, EventArgs e)
         {
-            this.terminalControl1.SendText("gst-launch-0.10 alsasrc ! queue ! audio/x-raw-int,channels=1,rate=8000 ! alawenc ! rtppcmapay mtu=1438 ! udpsink host=147.232.20.244 port=11000\n");
+            this.terminalControl2.SendText("gst-launch-0.10 alsasrc ! queue ! audio/x-raw-int,channels=1,rate=8000 ! alawenc ! rtppcmapay mtu=1438 ! udpsink host=147.232.20.244 port=11000\n");
         }
 
         //Audio stream
