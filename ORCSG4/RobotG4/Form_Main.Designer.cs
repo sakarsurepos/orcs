@@ -158,6 +158,7 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -346,6 +347,7 @@ namespace Robot
             this.button6G = new System.Windows.Forms.Button();
             this.button4G = new System.Windows.Forms.Button();
             this.groupBoxMEMSinfo = new System.Windows.Forms.GroupBox();
+            this.labelmerr = new System.Windows.Forms.Label();
             this.labelMEMSerror = new System.Windows.Forms.Label();
             this.labelrefrate = new System.Windows.Forms.Label();
             this.txtRefreshRate = new System.Windows.Forms.TextBox();
@@ -831,8 +833,6 @@ namespace Robot
             this.label169 = new System.Windows.Forms.Label();
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
-            this.cameraWindow = new Robot.CameraWindow();
-            this.labelmerr = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -2081,6 +2081,13 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
+            // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -3559,6 +3566,12 @@ namespace Robot
             resources.ApplyResources(this.groupBoxMEMSinfo, "groupBoxMEMSinfo");
             this.groupBoxMEMSinfo.Name = "groupBoxMEMSinfo";
             this.groupBoxMEMSinfo.TabStop = false;
+            // 
+            // labelmerr
+            // 
+            resources.ApplyResources(this.labelmerr, "labelmerr");
+            this.labelmerr.ForeColor = System.Drawing.Color.Black;
+            this.labelmerr.Name = "labelmerr";
             // 
             // labelMEMSerror
             // 
@@ -7275,19 +7288,6 @@ namespace Robot
             // 
             resources.ApplyResources(this.label171, "label171");
             this.label171.Name = "label171";
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
-            // 
-            // labelmerr
-            // 
-            resources.ApplyResources(this.labelmerr, "labelmerr");
-            this.labelmerr.ForeColor = System.Drawing.Color.Black;
-            this.labelmerr.Name = "labelmerr";
             // 
             // Robot1
             // 
