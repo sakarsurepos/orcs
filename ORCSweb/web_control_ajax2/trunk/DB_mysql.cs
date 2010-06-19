@@ -9,12 +9,14 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using System.Data.Odbc;
+////using System.Data.Odbc;
 
 namespace Robot
 {
+    /*
     public static class DB_mysql
     {
+
         //mysql commands
         public static string ConnectionString = @"driver={MySQL ODBC 3.51 Driver};server=localhost;database=web_control;uid=root;pwd=indiana;";
         public static string CommandText = "select * from web_control_table order by notice limit 10"; //Select *from emp where empno=200  //select * from table1; select * from table2
@@ -46,4 +48,5 @@ namespace Robot
 
         //mysql store user
     }
+     */ 
 }

@@ -21,7 +21,7 @@ using System.Timers;
 using System.Text;
 using System.IO;
 //database
-using System.Data.Odbc;
+//using System.Data.Odbc;
 using System.Media;
 //drawings
 using System.Drawing;
@@ -72,6 +72,7 @@ namespace Robot
             }
 
             //DB Connection
+            /*
             if (DB_mysql.myConnection.State == ConnectionState.Open)
             {
                 DB_mysql.myConnection.Close(); // close DB connection
@@ -82,6 +83,7 @@ namespace Robot
             DataGrid1.DataBind();
             
             DB_mysql.myConnection.Close(); // close DB connection
+             */ 
         }
 
         static public class trieda
@@ -469,26 +471,26 @@ namespace Robot
                 Label3.Text = trieda.x;
 
                 //Databaze insert recorded user
-                DB_mysql.myConnection.Open();
-                DB_mysql.myCommand_update_close.ExecuteNonQuery();
-                DB_mysql.myCommand_update_close2.ExecuteNonQuery();
-                DB_mysql.myConnection.Close();
+                ////DB_mysql.myConnection.Open();
+                ////DB_mysql.myCommand_update_close.ExecuteNonQuery();
+                ////DB_mysql.myCommand_update_close2.ExecuteNonQuery();
+                ////DB_mysql.myConnection.Close();
                 //Databaze insert recorded user
 
                 string CommandText_table = "INSERT INTO web_control_table(user,country) values('" + TextBox17.Text + "','" + DropDownList8.Text + "')";
-                OdbcCommand myCommand_update_table = new OdbcCommand(CommandText_table, DB_mysql.myConnection); //command drop
+                ////OdbcCommand myCommand_update_table = new OdbcCommand(CommandText_table, DB_mysql.myConnection); //command drop
 
-                DB_mysql.myConnection.Open();
+                ////DB_mysql.myConnection.Open();
                  try
                  {
-                     myCommand_update_table.ExecuteNonQuery();
+                     ////myCommand_update_table.ExecuteNonQuery();
                  }
                  catch
                  {
                      Label12.BackColor = Color.Red;
                      Label12.Text = "Database problem!";
                  }
-                 DB_mysql.myConnection.Close();
+                 ////DB_mysql.myConnection.Close();
                  //Turn on all devices
                  SendData(SendMessage.CAMERA_ON());
                  SendData(SendMessage.DirectionServo_ON());
