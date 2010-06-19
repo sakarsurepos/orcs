@@ -32,6 +32,7 @@ using System.Drawing.Text;
 using System.Deployment;
 using System.Resources;
 using System.Net.NetworkInformation;
+using System.Data.SqlClient;
 
 namespace Robot
 {
@@ -59,6 +60,22 @@ namespace Robot
         //mouse
         int xf;
         int yf;
+
+        public void InsertRow() 
+        {
+        string connectionString = "server=192.168.1.X;uid=dbXXX;pwd=indiana;database=dbXXX";
+
+        SqlConnection myConnection = new SqlConnection(connectionString);
+        string myInsertQuery = "INSERT INTO Customers (CustomerID, CompanyName) Values('NWIND', 'Northwind Traders')";
+
+        SqlCommand myCommand = new SqlCommand(myInsertQuery);
+        myCommand.Connection = myConnection;
+
+        myConnection.Open();
+        myCommand.ExecuteNonQuery();
+        myCommand.Connection.Close();
+        }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
