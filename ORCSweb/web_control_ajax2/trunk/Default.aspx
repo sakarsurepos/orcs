@@ -194,7 +194,7 @@ function IBrowserSupported()
                                                     <asp:ListItem>1470</asp:ListItem>
                                                 </asp:DropDownList>
                                                 &nbsp; 
-                                                <asp:Button ID="Button18" runat="server" Font-Size="X-Small" Height="16px" 
+                                                <asp:Button ID="Button18" runat="server" Font-Size="7pt" Height="16px" 
                                                     onclick="Button18_Click" Text="CheckIP" />
                                             </td>
                                         </tr>
@@ -219,9 +219,9 @@ function IBrowserSupported()
                                             <tr>
                                                 <td class="style83">
                                                     &nbsp;&nbsp;<asp:Button ID="Button1" runat="server" Height="19px" 
-                                    onclick="Button10_Click" Text="Connect" Width="61px" />
+                                    onclick="Button10_Click" Text="Connect" Width="61px" Font-Size="X-Small" />
                                                     &nbsp;<asp:Button ID="Button2" runat="server" Enabled="False" Height="19px" 
-                                    onclick="Button2_Click" Text="Disconnect" Width="78px" />
+                                    onclick="Button2_Click" Text="Disconnect" Width="78px" Font-Size="X-Small" />
                                                     &nbsp;<b><span class="style73">Timeout:</span></b>
                                                     <asp:Label ID="Label2" runat="server" Text="2 minutes limit"></asp:Label>
                                                 </td>
@@ -275,11 +275,11 @@ function IBrowserSupported()
                                             <br />
                                             &nbsp;
                                             <asp:Button ID="Button13" runat="server" Text="Connect" Width="55px" 
-                                                onclick="Button13_Click" />
+                                                onclick="Button13_Click" Font-Size="7pt" />
                                             <br />
                                             <br />
                                             <asp:Button ID="Button14" runat="server" onclick="Button14_Click" 
-                                                Text="Disconnect" Width="70px" />
+                                                Text="Disconnect" Width="70px" Font-Size="7pt" />
                                         </asp:Panel>
                                     </td>
                                 </tr>
@@ -323,7 +323,7 @@ function IBrowserSupported()
         </tr>
         <tr>
             <td class="style24">
-    <cc1:TabContainer ID="Settings" runat="server" ActiveTabIndex="4" 
+    <cc1:TabContainer ID="Settings" runat="server" ActiveTabIndex="0" 
         Height="188px" Width="280px" Font-Size="Medium">
         <cc1:TabPanel ID="TabPanel2" runat="server" HeaderText="Control"><ContentTemplate><asp:UpdatePanel ID="UpdatePanel3" runat="server" 
                     UpdateMode="Conditional"><ContentTemplate><b class="paneltitle">Robot control panel:</b><br /><br /><table 
@@ -332,15 +332,20 @@ function IBrowserSupported()
                                     Height="142px" HorizontalAlign="Center" style="font-size: xx-small" 
                                     Width="133px"><span class="textnormal">Robot:</span><br /><br />&#160;<asp:Button 
                         ID="Button6" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button6_Click" Text="Forward" Width="75px" /><br /><br /><asp:Button 
+                                        onclick="Button6_Click" Text="Forward" Width="75px" 
+                        Font-Size="8pt" /><br /><br /><asp:Button 
                         ID="Button4" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button4_Click" Text="Left" Width="40px" />&#160;<asp:Button 
+                                        onclick="Button4_Click" Text="Left" Width="40px" 
+                        Font-Size="8pt" />&#160;<asp:Button 
                         ID="Button8" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button8_Click" Text="Stop" Width="35px" />&#160;<asp:Button 
+                                        onclick="Button8_Click" Text="Stop  " Width="35px" 
+                        Font-Size="8pt" />&#160;<asp:Button 
                         ID="Button5" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button5_Click" Text="Right" Width="40px" /><br /><br /><asp:Button 
+                                        onclick="Button5_Click" Text="Right " Width="40px" 
+                        Font-Size="8pt" /><br /><br /><asp:Button 
                         ID="Button7" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button7_Click" Text="Backward" Width="75px" /><br /></asp:Panel></td><td class="style71">&nbsp;</td><td><asp:Panel 
+                                        onclick="Button7_Click" Text="Backward" Width="75px" 
+                        Font-Size="8pt" /><br /></asp:Panel></td><td class="style71">&nbsp;</td><td><asp:Panel 
                         ID="Panel2" runat="server" BorderWidth="1px" ForeColor="#003366" 
                             Height="143px" style="font-size: xx-small" Width="99px"><span class="textnormal">&nbsp; Parameters:</span><br />&#160;<br /><span class="textnormalbold">&#160; Speed: </span><asp:TextBox 
                         ID="ECommand_speed" runat="server" Width="21px">40</asp:TextBox>&#160; &#160;<br /><span class="textnormalbold">&#160;&#160;Angle:&#160; </span><asp:TextBox 
@@ -370,8 +375,8 @@ function IBrowserSupported()
         
         </ContentTemplate></cc1:TabPanel>
         <cc1:TabPanel ID="TabPanel5" runat="server" HeaderText="GPS">
-            <HeaderTemplate>GPS
-        </HeaderTemplate>
+            <HeaderTemplate>
+        GPS</HeaderTemplate>
             
 
 <ContentTemplate><asp:UpdatePanel 
@@ -393,8 +398,8 @@ function IBrowserSupported()
         ControlID="Timer1" EventName="Tick" /></Triggers></asp:UpdatePanel>
         </ContentTemplate></cc1:TabPanel>
         <cc1:TabPanel ID="TabPanel6" runat="server" HeaderText="Camera">
-            <HeaderTemplate>Camera
-        </HeaderTemplate>
+            <HeaderTemplate>
+        Camera</HeaderTemplate>
             
 
 <ContentTemplate><asp:UpdatePanel 
@@ -463,19 +468,14 @@ function IBrowserSupported()
                         class="style1" colspan="3"><asp:TextBox ID="TextBox3s" runat="server" 
                         ontextchanged="TextBox3s_TextChanged" Width="170px">63</asp:TextBox></td></tr></table></asp:Panel></b></td></tr></table></ContentTemplate></asp:UpdatePanel></ContentTemplate></cc1:TabPanel>
         <cc1:TabPanel ID="New" runat="server" HeaderText="P1">
-            <HeaderTemplate>P1
-        </HeaderTemplate>
+            <HeaderTemplate>
+        P1</HeaderTemplate>
             
 
 <ContentTemplate><asp:UpdatePanel ID="UpdatePanel50" runat="server" 
         UpdateMode="Conditional"><ContentTemplate><b style="font-size: x-small">&#160;</b><b><span 
             class="paneltitle">Easy Robot programming Interface:</span><span><br /></span></b><b style="font-size: x-small"><br /><table style="width:49%;"><tr><td >&#160;</td><td><b><asp:Panel ID="Panel10" runat="server" BorderWidth="1px" ForeColor="#003366"><table cellspacing="0" style="width: 91%; height: 140px;"><tr><td >&nbsp;n.</td><td align="center" class="style77" >command</td><td 
-                        >&nbsp;speed</td><td >&nbsp;angle</td><td align="center" class="style77" >time</td></tr><tr><td>&#160;1</td><td class="style77"><asp:DropDownList ID="DropDownList3" runat="server" Height="22px" Width="78px"><asp:ListItem>nothing</asp:ListItem><asp:ListItem>forward</asp:ListItem><asp:ListItem>backward</asp:ListItem><asp:ListItem>left</asp:ListItem><asp:ListItem>right</asp:ListItem></asp:DropDownList></td><td>
-            <b style="font-size: x-small">
-            <asp:TextBox ID="TextBox18" runat="server" Width="21px">0</asp:TextBox>
-            </b></td><td><b style="font-size: x-small">
-                <asp:TextBox ID="TextBox19" runat="server" Width="21px">0</asp:TextBox>
-                </b></td><td><asp:TextBox ID="TextBox4" runat="server" Width="28px">0</asp:TextBox></td></tr><tr><td>&nbsp;2</td><td 
+                        >&nbsp;speed</td><td >&nbsp;angle</td><td align="center" class="style77" >time</td></tr><tr><td>&#160;1</td><td class="style77"><asp:DropDownList ID="DropDownList3" runat="server" Height="22px" Width="78px"><asp:ListItem>nothing</asp:ListItem><asp:ListItem>forward</asp:ListItem><asp:ListItem>backward</asp:ListItem><asp:ListItem>left</asp:ListItem><asp:ListItem>right</asp:ListItem></asp:DropDownList></td><td><b style="font-size: x-small"><asp:TextBox ID="TextBox18" runat="server" Width="21px">0</asp:TextBox></b></td><td><b style="font-size: x-small"><asp:TextBox ID="TextBox19" runat="server" Width="21px">0</asp:TextBox></b></td><td><asp:TextBox ID="TextBox4" runat="server" Width="28px">0</asp:TextBox></td></tr><tr><td>&nbsp;2</td><td 
                         ><asp:DropDownList ID="DropDownList5" runat="server" 
                         Height="22px" Width="78px"><asp:ListItem>nothing</asp:ListItem><asp:ListItem>forward</asp:ListItem><asp:ListItem>backward</asp:ListItem><asp:ListItem>left</asp:ListItem><asp:ListItem>right</asp:ListItem></asp:DropDownList></td><td ><asp:TextBox ID="TextBox5" runat="server" Width="21px">0</asp:TextBox></td><td ><asp:TextBox ID="TextBox6" 
                             runat="server" Width="21px">0</asp:TextBox></td><td ><asp:TextBox ID="TextBox7" runat="server" Width="28px">0</asp:TextBox></td></tr><tr><td>&#160;3</td><td><asp:DropDownList 
@@ -483,18 +483,15 @@ function IBrowserSupported()
                         ID="TextBox10" runat="server" Width="28px">0</asp:TextBox></td></tr><tr><td>&#160;4</td><td><asp:DropDownList 
                         ID="DropDownList7" runat="server" Height="22px" Width="78px"><asp:ListItem>nothing</asp:ListItem><asp:ListItem>forward</asp:ListItem><asp:ListItem>backward</asp:ListItem><asp:ListItem>left</asp:ListItem><asp:ListItem>right</asp:ListItem></asp:DropDownList></td><td><asp:TextBox ID="TextBox11" runat="server" Width="21px">0</asp:TextBox></td><td><asp:TextBox ID="TextBox12" runat="server" Width="21px">0</asp:TextBox></td><td><asp:TextBox 
                         ID="TextBox13" runat="server" Width="28px">0</asp:TextBox></td></tr><tr><td class="style77">&nbsp;5</td><td><asp:DropDownList 
-                        ID="DropDownList6" runat="server" Height="22px" Width="78px"><asp:ListItem>nothing</asp:ListItem><asp:ListItem>forward</asp:ListItem><asp:ListItem>backward</asp:ListItem><asp:ListItem>left</asp:ListItem><asp:ListItem>right</asp:ListItem></asp:DropDownList></td><td><asp:TextBox ID="TextBox14" runat="server" Width="21px">0</asp:TextBox></td><td class="style77"><asp:TextBox ID="TextBox15" runat="server" Width="21px">0</asp:TextBox></td><td>
-                <b style="font-size: x-small">
-                <asp:TextBox ID="TextBox20" runat="server" Width="28px">0</asp:TextBox>
-                </b></td></tr></table></asp:Panel></b></td><td><b style="font-size: x-small"><asp:Panel 
+                        ID="DropDownList6" runat="server" Height="22px" Width="78px"><asp:ListItem>nothing</asp:ListItem><asp:ListItem>forward</asp:ListItem><asp:ListItem>backward</asp:ListItem><asp:ListItem>left</asp:ListItem><asp:ListItem>right</asp:ListItem></asp:DropDownList></td><td><asp:TextBox ID="TextBox14" runat="server" Width="21px">0</asp:TextBox></td><td class="style77"><asp:TextBox ID="TextBox15" runat="server" Width="21px">0</asp:TextBox></td><td><b style="font-size: x-small"><asp:TextBox ID="TextBox20" runat="server" Width="28px">0</asp:TextBox></b></td></tr></table></asp:Panel></b></td><td><b style="font-size: x-small"><asp:Panel 
                 ID="Panel11" runat="server" BorderWidth="1px" ForeColor="#003366" 
                     Height="144px"><table style="width:100%;"><tr><td class="style78" style="font-size: x-small"><br /><asp:Button 
                     ID="Button10" runat="server" Height="22px" Text="&gt;" 
-                                    Width="20px" /><br /><br /></td></tr><tr><td class="style78" style="font-size: x-small"><asp:Button 
+                                    Width="20px" Font-Size="X-Small" /><br /><br /></td></tr><tr><td class="style78" style="font-size: x-small"><asp:Button 
                         ID="Button11" runat="server" Height="21px" Text="1" 
-                                    Width="20px" /><br /><br /></td></tr><tr><td class="style78"><asp:Button 
+                                    Width="20px" Font-Size="X-Small" /><br /><br /></td></tr><tr><td class="style78"><asp:Button 
                         ID="Button12" runat="server" Height="21px" Text="2" 
-                                    Width="21px" /></td></tr></table></asp:Panel></b></td></tr></table></b></ContentTemplate></asp:UpdatePanel>
+                                    Width="21px" Font-Size="X-Small" /></td></tr></table></asp:Panel></b></td></tr></table></b></ContentTemplate></asp:UpdatePanel>
         </ContentTemplate>
         
 </cc1:TabPanel>
@@ -532,7 +529,7 @@ function IBrowserSupported()
                 <td align="center" rowspan="4">
                     &nbsp;</td>
                             <td align="center">
-                     <span class="style11" lang="en-us">Top 10 / Best Robot Operators Table</span>
+                     <span class="style11" lang="en-us">Top 10 / Best Robot Operators Table Table</span>
                     <asp:UpdatePanel ID="UpdatePanel54" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                     <asp:DataGrid ID="DataGrid1" runat="server" 
@@ -557,7 +554,7 @@ function IBrowserSupported()
                         </tr>
             <tr>
                             <td align="center">
-                    <b>Technical University of Kosice, KBIAaM, 2008.</b></td>
+                    <b>Technical University of Kosice, KBIAaM, 2010.</b></td>
             </tr>
         </table>
     </form>
