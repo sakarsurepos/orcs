@@ -548,8 +548,7 @@ function IBrowserSupported()
             <tr>
                             <td align="center">
                                 <asp:Button ID="Button15" runat="server" Text="Refresh Table" />
-                            &nbsp;<asp:Button ID="Button19" runat="server" onclick="Button19_Click" 
-                                    Text="MS SQL DB insert" />
+                            &nbsp;<asp:Button ID="Button19" runat="server" Text="MS SQL DB insert" />
                             </td>
                         </tr>
             <tr>
