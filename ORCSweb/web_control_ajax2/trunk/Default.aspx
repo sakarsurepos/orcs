@@ -183,14 +183,12 @@ function IBrowserSupported()
                                             <td>
                                                 <span class="style73">&nbsp;<b>Robot IP:</b></span>&nbsp;<asp:DropDownList ID="DropDownList1" 
                                                     runat="server" Font-Size="X-Small">
-                                                    <asp:ListItem Value="127.0.0.1">localhost</asp:ListItem>
-                                                    <asp:ListItem Value="147.232.20.70">HiddenIP</asp:ListItem>
-                                                    <asp:ListItem>10.1.10.240</asp:ListItem>
-                                                    <asp:ListItem>147.232.20.241</asp:ListItem>
+                                                    <asp:ListItem Value="147.232.20.70">Robot IP</asp:ListItem>
+                                                    <asp:ListItem Value="147.232.20.241">Old Robot IP</asp:ListItem>
                                                 </asp:DropDownList>
                                                 &nbsp;<span class="style73">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Port:</b></span>
                                                 <asp:DropDownList ID="DropDownList2" runat="server" Font-Size="X-Small">
-                                                    <asp:ListItem>1001</asp:ListItem>
+                                                    <asp:ListItem>2000</asp:ListItem>
                                                     <asp:ListItem>1470</asp:ListItem>
                                                 </asp:DropDownList>
                                                 &nbsp; 
