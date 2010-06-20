@@ -69,8 +69,8 @@ namespace Robot
 
         SqlConnection myConnection = new SqlConnection(connectionString);
         SqlConnection myConnection2 = new SqlConnection(connectionString2);
-        string myInsertQuery = "INSERT INTO Customers (CustomerID, CompanyName) Values('NWIND', 'Northwind Traders')";
-        string myInsertQuery2 = "INSERT INTO Customers (CustomerID, CompanyName) Values('NWIND', 'Northwind Traders')";
+        string myInsertQuery = "INSERT INTO orcs (Name, Country) Values('NWIND', 'Northwind Traders')";
+        string myInsertQuery2 = "INSERT INTO orcs (Name, Country) Values('NWIND2', 'Northwind Traders2')";
 
         SqlCommand myCommand = new SqlCommand(myInsertQuery);
         SqlCommand myCommand2 = new SqlCommand(myInsertQuery2);
