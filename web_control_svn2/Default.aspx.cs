@@ -32,6 +32,7 @@ using System.Drawing.Text;
 using System.Deployment;
 using System.Resources;
 using System.Net.NetworkInformation;
+//Microsoft SQL
 using System.Data.SqlClient;
 
 namespace Robot
@@ -63,17 +64,33 @@ namespace Robot
 
         public void InsertRow() 
         {
-        string connectionString = "server=192.168.1.X;uid=dbXXX;pwd=indiana;database=dbXXX";
+            string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
+            string connectionString2 = "server=localhost;uid=db2861;pwd=indiana;database=db2861";
 
         SqlConnection myConnection = new SqlConnection(connectionString);
+        SqlConnection myConnection2 = new SqlConnection(connectionString2);
         string myInsertQuery = "INSERT INTO Customers (CustomerID, CompanyName) Values('NWIND', 'Northwind Traders')";
+        string myInsertQuery2 = "INSERT INTO Customers (CustomerID, CompanyName) Values('NWIND', 'Northwind Traders')";
 
         SqlCommand myCommand = new SqlCommand(myInsertQuery);
+        SqlCommand myCommand2 = new SqlCommand(myInsertQuery2);
+        
         myCommand.Connection = myConnection;
+        myCommand2.Connection = myConnection2;
 
-        myConnection.Open();
-        myCommand.ExecuteNonQuery();
-        myCommand.Connection.Close();
+        try
+        {
+            myConnection.Open();
+            myCommand.ExecuteNonQuery();
+            myCommand.Connection.Close();
+        }        
+        catch
+        {
+            myConnection2.Open();
+            myCommand2.ExecuteNonQuery();
+            myCommand2.Connection.Close();
+        }
+
         }
 
 
@@ -601,6 +618,11 @@ namespace Robot
             { Label12.Text = string.Format("IP working: {0} ms", reply.RoundtripTime); }
             else { Label12.Text = "IP not working"; }
 
+        }
+
+        protected void Button19_Click(object sender, EventArgs e)
+        {
+            InsertRow();
         }
     }
 }
