@@ -273,11 +273,11 @@ function IBrowserSupported()
                                             <br />
                                             &nbsp;
                                             <asp:Button ID="Button13" runat="server" Text="Connect" Width="55px" 
-                                                onclick="Button13_Click" Font-Size="7pt" />
+                                                onclick="Button13_Click" Font-Size="6pt" />
                                             <br />
                                             <br />
                                             <asp:Button ID="Button14" runat="server" onclick="Button14_Click" 
-                                                Text="Disconnect" Width="70px" Font-Size="7pt" />
+                                                Text="Disconnect" Width="70px" Font-Size="6pt" />
                                         </asp:Panel>
                                     </td>
                                 </tr>
