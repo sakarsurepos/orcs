@@ -545,6 +545,7 @@ function IBrowserSupported()
                                     <Triggers>
                                         <asp:AsyncPostBackTrigger ControlID="Button15" EventName="Click" />
                                         <asp:AsyncPostBackTrigger ControlID="Button20" EventName="Click" />
+                                        <asp:AsyncPostBackTrigger ControlID="Button21" EventName="Click" />
                                     </Triggers>
                                 </asp:UpdatePanel>
                                     </td>
@@ -555,6 +556,8 @@ function IBrowserSupported()
                                     onclick="Button15_Click" />
                             &nbsp;<asp:Button ID="Button20" runat="server" onclick="Button20_Click" 
                                     Text="Remove Data" />
+                            &nbsp;<asp:Button ID="Button21" runat="server" onclick="Button21_Click" 
+                                    Text="localhost" />
                             </td>
                         </tr>
             <tr>
