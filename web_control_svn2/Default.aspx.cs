@@ -66,15 +66,42 @@ namespace Robot
         {
         string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
         SqlConnection myConnection = new SqlConnection(connectionString);
-        string xxx = TextBox17.Text;
-        string x1 = "1234";
-        x1 = TextBox17.Text;
-        string myInsertQuery = "INSERT INTO dbo.orcs (Name, Country) Values('" + x1 + "o" + "', 'Northwind')"; //'" + TextBox17.Text + "','" + DropDownList8.Text + "'
+        string x1 = TextBox17.Text;
+        string x2 = DropDownList8.Text.ToString();
+        string myInsertQuery = "INSERT INTO dbo.orcs (Name, Country) Values('" + x1 + "', '" + x2 + "')"; //'" + TextBox17.Text + "','" + DropDownList8.Text + "'
         SqlCommand myCommand = new SqlCommand(myInsertQuery);
         myCommand.Connection = myConnection;
         myConnection.Open();
         myCommand.ExecuteNonQuery();
         myCommand.Connection.Close();
+        }
+
+        public void RemoveAll()
+        {
+            string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            string myInsertQuery = "DELETE FROM dbo.orcs"; //'" + TextBox17.Text + "','" + DropDownList8.Text + "'
+            SqlCommand myCommand = new SqlCommand(myInsertQuery);
+            myCommand.Connection = myConnection;
+            myConnection.Open();
+            myCommand.ExecuteNonQuery();
+            myCommand.Connection.Close();
+        }
+
+        public void ReadDataMSSQL()
+        {
+            string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
+            SqlConnection myConnection2 = new SqlConnection(connectionString);
+            string myReadQuery = "SELECT TOP 5 * FROM dbo.orcs ORDER BY Name DESC"; //'" + TextBox17.Text + "','" + DropDownList8.Text + "'
+            SqlCommand myCommand2 = new SqlCommand(myReadQuery);
+            
+            myCommand2.Connection = myConnection2;
+            myConnection2.Open();
+            myCommand2.ExecuteNonQuery();///
+            DataGrid1.DataSource = myCommand2.ExecuteReader(CommandBehavior.CloseConnection);
+            DataGrid1.DataBind();
+            //myCommand.ExecuteNonQuery();
+            myCommand2.Connection.Close();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -88,6 +115,7 @@ namespace Robot
                 //  string voltage;
             }
 
+            //MS SQL
             //DB Connection
             /*
             if (DB_mysql.myConnection.State == ConnectionState.Open)
@@ -606,11 +634,23 @@ namespace Robot
         protected void Button19_Click(object sender, EventArgs e)
         {
             InsertRow();
+            ReadDataMSSQL();
         }
 
         protected void Button19_Click1(object sender, EventArgs e)
         {
             InsertRow();
+            //ReadDataMSSQL();
+        }
+
+        protected void Button15_Click(object sender, EventArgs e)
+        {
+            ReadDataMSSQL();
+        }
+
+        protected void Button20_Click(object sender, EventArgs e)
+        {
+            RemoveAll();
         }
     }
 }

@@ -13,6 +13,12 @@ using System.Xml.Linq;
 
 namespace Robot
 {
+    //public static class DB_msql
+    //{
+    //    //select data
+    //    public static string CommandText = "select * from web_control_table order by notice limit 10";
+    //}
+
     /*
     public static class DB_mysql
     {

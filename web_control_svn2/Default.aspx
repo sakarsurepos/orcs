@@ -544,14 +544,18 @@ function IBrowserSupported()
                                     </ContentTemplate>
                                     <Triggers>
                                         <asp:AsyncPostBackTrigger ControlID="Button15" EventName="Click" />
+                                        <asp:AsyncPostBackTrigger ControlID="Button20" EventName="Click" />
                                     </Triggers>
                                 </asp:UpdatePanel>
                                     </td>
                         </tr>
             <tr>
                             <td align="center">
-                                <asp:Button ID="Button15" runat="server" Text="Refresh Table" />
-                            &nbsp;</td>
+                                <asp:Button ID="Button15" runat="server" Text="Refresh Table" 
+                                    onclick="Button15_Click" />
+                            &nbsp;<asp:Button ID="Button20" runat="server" onclick="Button20_Click" 
+                                    Text="Remove Data" />
+                            </td>
                         </tr>
             <tr>
                             <td align="center">
