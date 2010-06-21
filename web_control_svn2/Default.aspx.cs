@@ -58,13 +58,16 @@ namespace Robot
         Bitmap objBitmap;
         Graphics objGraphics;
 
+        static string connectionStringR = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861"; //  JONESPC\\SQLEXPRESS
+        static string connectionStringL = "server=JONESPC\\SQLEXPRESS;uid=db2861;pwd=indiana;database=db2861"; //  JONESPC\\SQLEXPRESS
+        static string connectionString = connectionStringR;
+
         //mouse
         int xf;
         int yf;
 
         public void InsertRow() 
         {
-        string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
         SqlConnection myConnection = new SqlConnection(connectionString);
         string x1 = TextBox17.Text;
         string x2 = DropDownList8.Text.ToString();
@@ -78,7 +81,6 @@ namespace Robot
 
         public void RemoveAll()
         {
-            string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
             SqlConnection myConnection = new SqlConnection(connectionString);
             string myInsertQuery = "DELETE FROM dbo.orcs"; //'" + TextBox17.Text + "','" + DropDownList8.Text + "'
             SqlCommand myCommand = new SqlCommand(myInsertQuery);
@@ -90,7 +92,6 @@ namespace Robot
 
         public void ReadDataMSSQL()
         {
-            string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
             SqlConnection myConnection2 = new SqlConnection(connectionString);
             string myReadQuery = "SELECT TOP 5 * FROM dbo.orcs ORDER BY Name DESC"; //'" + TextBox17.Text + "','" + DropDownList8.Text + "'
             SqlCommand myCommand2 = new SqlCommand(myReadQuery);
@@ -651,6 +652,11 @@ namespace Robot
         protected void Button20_Click(object sender, EventArgs e)
         {
             RemoveAll();
+        }
+
+        protected void Button21_Click(object sender, EventArgs e)
+        {
+            connectionString = connectionStringL;
         }
     }
 }
