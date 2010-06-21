@@ -64,32 +64,32 @@ namespace Robot
 
         public void InsertRow() 
         {
-            string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
-            string connectionString2 = "server=localhost;uid=db2861;pwd=indiana;database=db2861";
+        string connectionString = "server=192.168.1.5;uid=db2861;pwd=indiana;database=db2861";
+        //string connectionString2 = "server=localhost;uid=db2861;pwd=indiana;database=db2861";
 
         SqlConnection myConnection = new SqlConnection(connectionString);
-        SqlConnection myConnection2 = new SqlConnection(connectionString2);
-        string myInsertQuery = "INSERT INTO orcs (Name, Country) Values('NWIND', 'Northwind Traders')";
-        string myInsertQuery2 = "INSERT INTO orcs (Name, Country) Values('NWIND2', 'Northwind Traders2')";
+        //SqlConnection myConnection2 = new SqlConnection(connectionString2);
+        string myInsertQuery = "INSERT INTO dbo.orcs (Name, Country) Values('NWIND', 'Northwind')";
+        //string myInsertQuery2 = "INSERT INTO orcs (Name, Country) Values('NWIND2', 'Northwind Traders2')";
 
         SqlCommand myCommand = new SqlCommand(myInsertQuery);
-        SqlCommand myCommand2 = new SqlCommand(myInsertQuery2);
+        //SqlCommand myCommand2 = new SqlCommand(myInsertQuery2);
         
         myCommand.Connection = myConnection;
-        myCommand2.Connection = myConnection2;
+        //myCommand2.Connection = myConnection2;
 
-        try
-        {
+        //try
+        //{
             myConnection.Open();
             myCommand.ExecuteNonQuery();
             myCommand.Connection.Close();
-        }        
-        catch
-        {
-            myConnection2.Open();
-            myCommand2.ExecuteNonQuery();
-            myCommand2.Connection.Close();
-        }
+        //}        
+        //catch
+        //{
+        //    myConnection2.Open();
+        //    myCommand2.ExecuteNonQuery();
+        //    myCommand2.Connection.Close();
+        //}
 
         }
 
@@ -621,6 +621,11 @@ namespace Robot
         }
 
         protected void Button19_Click(object sender, EventArgs e)
+        {
+            InsertRow();
+        }
+
+        protected void Button19_Click1(object sender, EventArgs e)
         {
             InsertRow();
         }
