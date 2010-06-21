@@ -291,8 +291,7 @@ function IBrowserSupported()
             </td>
             <td align="left" rowspan="3" valign="top">
             <cc1:TabContainer ID="TabContainer3" runat="server" ActiveTabIndex="2" 
-                Height="391px" Width="400px"><cc1:TabPanel ID="SpectatorsCam" runat="server" HeaderText="HiRes Cam"><HeaderTemplate>
-                HiRes Cam</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel52" runat="server" UpdateMode="Conditional"><ContentTemplate><table 
+                Height="391px" Width="400px"><cc1:TabPanel ID="SpectatorsCam" runat="server" HeaderText="HiRes Cam"><HeaderTemplate>HiRes Cam</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel52" runat="server" UpdateMode="Conditional"><ContentTemplate><table 
                         style="width:100%;"><tr><td align="center" valign="middle"><br /><asp:Button ID="Button16" runat="server" Height="44px" Text="Connect" />&#160;&#160; <asp:Button ID="Button17" runat="server" Height="44px" Text="Disconnect" /><br /><br /><asp:Panel 
                             ID="Panel9" runat="server" BorderWidth="1px" ForeColor="#999999" Height="240px" 
                             Width="320px"><applet align="middle" code="xplug.class" 
@@ -300,11 +299,7 @@ function IBrowserSupported()
                             style="height: 240px; width: 320px" vspace="0"><param name="RemotePort" 
                                 value="80" /><param name="Timeout" value="5000" /><param name="RotateAngle" 
                                 value="0" /><param name="PreviewFrameRate" value="2" /><param 
-                                name="DeviceSerialNo" value="" />
-                        </applet></asp:Panel></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="Button13" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Maps" runat="server" HeaderText="Maps"><HeaderTemplate>
-                
-                
-                Maps</HeaderTemplate>
+                                name="DeviceSerialNo" value="" /></applet></asp:Panel></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="Button13" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Maps" runat="server" HeaderText="Maps"><HeaderTemplate>Maps</HeaderTemplate>
                 
 <ContentTemplate><asp:UpdatePanel ID="UpdatePanel8" runat="server" 
                             UpdateMode="Conditional"><ContentTemplate><table 
@@ -313,10 +308,11 @@ function IBrowserSupported()
                 Value="TUKE Zoom">TUKE Zoom</asp:ListItem></asp:DropDownList></b></td></tr><tr><td align="left">&#160;&#160;<b>x: <asp:Label ID="Label13" runat="server" Text="00"></asp:Label>&#160;y: <asp:Label ID="Label14" runat="server" Text="00"></asp:Label>&#160;Long: <asp:Label ID="longm" runat="server" Text="00,0000000"></asp:Label>&#160;Latt: <asp:Label ID="lattm" runat="server" Text="00,0000000"></asp:Label></b></td></tr><tr><td 
                 align="center" valign="middle"><b><asp:ImageButton ID="ImageButton1" 
                 runat="server" Height="320px" ImageUrl="~/Resources/mapa_kosice.bmp" 
-                onclick="ImageButton1_Click" Width="320px" /></b></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="mapd" EventName="TextChanged" /><asp:AsyncPostBackTrigger ControlID="ImageButton1" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Kinematics" runat="server" HeaderText="Kinematics"><HeaderTemplate>
-                Kinematics</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel9" runat="server" 
+                onclick="ImageButton1_Click" Width="320px" /></b></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="mapd" EventName="TextChanged" /><asp:AsyncPostBackTrigger ControlID="ImageButton1" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Kinematics" runat="server" HeaderText="Kinematics"><HeaderTemplate>Kinematics</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel9" runat="server" 
                             UpdateMode="Conditional"><ContentTemplate><b>&#160;Kinematics:<br /><br />&#160;</b><asp:Image 
-                                ID="Image1" runat="server" Height="287px" Width="370px" /></ContentTemplate></asp:UpdatePanel></ContentTemplate></cc1:TabPanel></cc1:TabContainer>
+                                ID="Image1" runat="server" Height="287px" Width="370px" /><asp:Button 
+                        ID="Button19" runat="server" onclick="Button19_Click1" 
+                        Text="MS SQL DB insert" /></ContentTemplate></asp:UpdatePanel></ContentTemplate></cc1:TabPanel></cc1:TabContainer>
             </td>
         </tr>
         <tr>
@@ -548,8 +544,7 @@ function IBrowserSupported()
             <tr>
                             <td align="center">
                                 <asp:Button ID="Button15" runat="server" Text="Refresh Table" />
-                            &nbsp;<asp:Button ID="Button19" runat="server" Text="MS SQL DB insert" />
-                            </td>
+                            &nbsp;</td>
                         </tr>
             <tr>
                             <td align="center">
