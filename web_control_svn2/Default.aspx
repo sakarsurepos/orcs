@@ -91,6 +91,14 @@
             font-size: small;
             font-weight: bold;
         }
+        .style88
+        {
+            width: 546px;
+        }
+        .style89
+        {
+            width: 456px;
+        }
         </style>
 <script type="text/JavaScript">
 <!--
@@ -139,10 +147,11 @@ function IBrowserSupported()
         <asp:Timer ID="Timer1" runat="server" Interval="1000" ontick="Timer1_Tick" 
             Enabled="False">
         </asp:Timer>
-    <table style="width: 697px; height: 455px; margin-right: 0px;" border="0">
+    <table style="width: 108%; " border="0">
         <tr align="left">
             <td class="style76" colspan="2">
-                <asp:Panel ID="Panel18" runat="server" BorderWidth="1px" ForeColor="#003366">
+                <asp:Panel ID="Panel18" runat="server" BorderWidth="1px" ForeColor="#003366" 
+                    Width="685px">
                     <table style="width:100%;">
                         <tr>
                             <td class="style84">
@@ -199,10 +208,10 @@ function IBrowserSupported()
                                     </table>
                                 </asp:Panel>
                             </td>
-                            <td>
+                            <td class="style89">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                                     <ContentTemplate>
-                                        <table style="width:100%; height: 56px;" border="0" 
+                                        <table style="width:99%; height: 56px;" border="0" 
                         cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td class="style83">
@@ -289,7 +298,7 @@ function IBrowserSupported()
                     </asp:UpdatePanel>
                 </asp:Panel>
             </td>
-            <td align="left" rowspan="3" valign="top">
+            <td align="left" rowspan="3" valign="top" class="style88">
             <cc1:TabContainer ID="TabContainer3" runat="server" ActiveTabIndex="2" 
                 Height="391px" Width="400px"><cc1:TabPanel ID="SpectatorsCam" runat="server" HeaderText="HiRes Cam"><HeaderTemplate>HiRes Cam</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel52" runat="server" UpdateMode="Conditional"><ContentTemplate><table 
                         style="width:100%;"><tr><td align="center" valign="middle"><br /><asp:Button ID="Button16" runat="server" Height="44px" Text="Connect" />&#160;&#160; <asp:Button ID="Button17" runat="server" Height="44px" Text="Disconnect" /><br /><br /><asp:Panel 
@@ -310,9 +319,10 @@ function IBrowserSupported()
                 runat="server" Height="320px" ImageUrl="~/Resources/mapa_kosice.bmp" 
                 onclick="ImageButton1_Click" Width="320px" /></b></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="mapd" EventName="TextChanged" /><asp:AsyncPostBackTrigger ControlID="ImageButton1" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Kinematics" runat="server" HeaderText="Kinematics"><HeaderTemplate>Kinematics</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel9" runat="server" 
                             UpdateMode="Conditional"><ContentTemplate><b>&#160;Kinematics:<br /><br />&#160;</b><asp:Image 
-                                ID="Image1" runat="server" Height="287px" Width="370px" /><asp:Button 
+                                ID="Image1" runat="server" Height="287px" Width="370px" />
+                    <asp:Button 
                         ID="Button19" runat="server" onclick="Button19_Click1" 
-                        Text="MS SQL DB insert" /></ContentTemplate></asp:UpdatePanel></ContentTemplate></cc1:TabPanel></cc1:TabContainer>
+                        Text="MS SQL DB insert2" Width="123px" /></ContentTemplate></asp:UpdatePanel></ContentTemplate></cc1:TabPanel></cc1:TabContainer>
             </td>
         </tr>
         <tr>
@@ -369,8 +379,7 @@ function IBrowserSupported()
         
         </ContentTemplate></cc1:TabPanel>
         <cc1:TabPanel ID="TabPanel5" runat="server" HeaderText="GPS">
-            <HeaderTemplate>
-        GPS</HeaderTemplate>
+            <HeaderTemplate>GPS</HeaderTemplate>
             
 
 <ContentTemplate><asp:UpdatePanel 
@@ -392,8 +401,7 @@ function IBrowserSupported()
         ControlID="Timer1" EventName="Tick" /></Triggers></asp:UpdatePanel>
         </ContentTemplate></cc1:TabPanel>
         <cc1:TabPanel ID="TabPanel6" runat="server" HeaderText="Camera">
-            <HeaderTemplate>
-        Camera</HeaderTemplate>
+            <HeaderTemplate>Camera</HeaderTemplate>
             
 
 <ContentTemplate><asp:UpdatePanel 
@@ -462,8 +470,7 @@ function IBrowserSupported()
                         class="style1" colspan="3"><asp:TextBox ID="TextBox3s" runat="server" 
                         ontextchanged="TextBox3s_TextChanged" Width="170px">63</asp:TextBox></td></tr></table></asp:Panel></b></td></tr></table></ContentTemplate></asp:UpdatePanel></ContentTemplate></cc1:TabPanel>
         <cc1:TabPanel ID="New" runat="server" HeaderText="P1">
-            <HeaderTemplate>
-        P1</HeaderTemplate>
+            <HeaderTemplate>P1</HeaderTemplate>
             
 
 <ContentTemplate><asp:UpdatePanel ID="UpdatePanel50" runat="server" 
