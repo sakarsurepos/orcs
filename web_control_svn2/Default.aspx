@@ -194,6 +194,7 @@ function IBrowserSupported()
                                                     runat="server" Font-Size="X-Small">
                                                     <asp:ListItem Value="147.232.20.70">Robot IP</asp:ListItem>
                                                     <asp:ListItem Value="147.232.20.241">Old Robot IP</asp:ListItem>
+                                                    <asp:ListItem Value="127.0.0.1">localhost</asp:ListItem>
                                                 </asp:DropDownList>
                                                 &nbsp;<span class="style73">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Port:</b></span>
                                                 <asp:DropDownList ID="DropDownList2" runat="server" Font-Size="X-Small">

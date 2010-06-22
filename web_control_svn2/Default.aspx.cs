@@ -523,7 +523,7 @@ namespace Robot
                 ////DB_mysql.myConnection.Close();
                 //Databaze insert recorded user
 
-                string CommandText_table = "INSERT INTO web_control_table(user,country) values('" + TextBox17.Text + "','" + DropDownList8.Text + "')";
+                ////string CommandText_table = "INSERT INTO web_control_table(user,country) values('" + TextBox17.Text + "','" + DropDownList8.Text + "')";
                 ////OdbcCommand myCommand_update_table = new OdbcCommand(CommandText_table, DB_mysql.myConnection); //command drop
 
                 ////DB_mysql.myConnection.Open();
