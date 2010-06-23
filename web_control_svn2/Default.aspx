@@ -267,7 +267,7 @@ function IBrowserSupported()
                                     <td class="style68">
                                         <asp:Panel ID="Panel16" runat="server" BorderWidth="1px" ForeColor="#003366" 
                                         Width="198px">
-                                            <applet align="middle" code="xplug.class" codebase="http://147.232.20.242:80/" 
+                                            <applet align="middle" code="xplug.class" codebase="http://147.232.20.70:8080/" 
                                             hspace="0" name="cvcs1" style="height: 143px; width: 198px" vspace="0">
                                                 <param name="RemotePort" value="80" />
                                                 <param name="Timeout" value="5000" />
@@ -300,12 +300,12 @@ function IBrowserSupported()
                 </asp:Panel>
             </td>
             <td align="left" rowspan="3" valign="top" class="style88">
-            <cc1:TabContainer ID="TabContainer3" runat="server" ActiveTabIndex="2" 
+            <cc1:TabContainer ID="TabContainer3" runat="server" ActiveTabIndex="0" 
                 Height="391px" Width="400px"><cc1:TabPanel ID="SpectatorsCam" runat="server" HeaderText="HiRes Cam"><HeaderTemplate>HiRes Cam</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel52" runat="server" UpdateMode="Conditional"><ContentTemplate><table 
                         style="width:100%;"><tr><td align="center" valign="middle"><br /><asp:Button ID="Button16" runat="server" Height="44px" Text="Connect" />&#160;&#160; <asp:Button ID="Button17" runat="server" Height="44px" Text="Disconnect" /><br /><br /><asp:Panel 
                             ID="Panel9" runat="server" BorderWidth="1px" ForeColor="#999999" Height="240px" 
                             Width="320px"><applet align="middle" code="xplug.class" 
-                            codebase="http://10.1.10.222:80/" hspace="0" name="cvcs0" 
+                            codebase="http://147.232.20.70:8080/?action=stream" hspace="0" name="cvcs0" 
                             style="height: 240px; width: 320px" vspace="0"><param name="RemotePort" 
                                 value="80" /><param name="Timeout" value="5000" /><param name="RotateAngle" 
                                 value="0" /><param name="PreviewFrameRate" value="2" /><param 
@@ -564,6 +564,12 @@ function IBrowserSupported()
             <tr>
                             <td align="center">
                     <b>Technical University of Kosice, KBIAaM, 2010.</b></td>
+                    <object 
+type="text/x-scriptlet" 
+width=320 height=240 data="http://localhost:8080/"> 
+</object> 
+
+ 
             </tr>
         </table>
     </form>
