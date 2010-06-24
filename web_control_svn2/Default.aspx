@@ -370,12 +370,17 @@ function DoIt1()
             </td>
             <td align="left" rowspan="3" valign="top" class="style88">
             <cc1:TabContainer ID="TabContainer3" runat="server" ActiveTabIndex="0" 
-                Height="391px" Width="400px"><cc1:TabPanel ID="SpectatorsCam" runat="server" HeaderText="HiRes Cam"><HeaderTemplate>HiRes Cam</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel52" runat="server" UpdateMode="Conditional"><ContentTemplate><table 
-                        style="width:100%;"><tr><td align="center" valign="middle"><br /><asp:Button ID="Button16" runat="server" Height="44px" Text="Connect" />&#160;&#160; <asp:Button ID="Button17" runat="server" Height="44px" Text="Disconnect" /><br /><br /><asp:Panel 
-                            ID="Panel9" runat="server" BorderWidth="1px" ForeColor="#999999" Height="240px" 
-                            Width="320px"><object 
-type="text/x-scriptlet" 
-width=320 height=240 data="http://147.232.20.250:8080/"> 
+                Height="399px" Width="400px"><cc1:TabPanel ID="SpectatorsCam" runat="server" HeaderText="HiRes Cam"><HeaderTemplate>HiRes Cam</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel52" runat="server" UpdateMode="Conditional"><ContentTemplate>
+                    <table 
+                        style="width:96%; height: 390px;"><tr><td align="center" valign="middle" 
+                                class="style84"><br /><asp:Button ID="Button16" runat="server" 
+                                Height="22px" Text="Connect" />&#160;&#160; <asp:Button ID="Button17" 
+                                runat="server" Height="22px" Text="Disconnect" /><br /><br />
+                        <asp:Panel 
+                            ID="Panel9" runat="server" BorderWidth="1px" ForeColor="#999999" Height="300px" 
+                            Width="351px" HorizontalAlign="Left">
+                            <object 
+type="text/x-scriptlet" data="http://147.232.20.70:8080/robot.html" style="width: 335px; height: 298px"> 
 </object> </asp:Panel></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="Button13" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Maps" runat="server" HeaderText="Maps"><HeaderTemplate>Maps</HeaderTemplate>
                 
 <ContentTemplate><asp:UpdatePanel ID="UpdatePanel8" runat="server" 
@@ -606,8 +611,7 @@ width=320 height=240 data="http://147.232.20.250:8080/">
                 <td align="center" rowspan="4">
                     &nbsp;</td>
                             <td align="center">
-                     <span class="style11" lang="en-us">Top 10 / Best Robot Operators Table Table</span>
-                    <asp:UpdatePanel ID="UpdatePanel54" runat="server" UpdateMode="Conditional">
+                     <span class="style11" lang="en-us">Top 10 / Best Robot Operators Table Table        <asp:UpdatePanel ID="UpdatePanel54" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
                     <asp:DataGrid ID="DataGrid1" runat="server" 
     BackColor="White" CellPadding="3" 
