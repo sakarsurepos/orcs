@@ -557,7 +557,7 @@ namespace Robot
 
         protected void Button14_Click(object sender, EventArgs e)
         {
-            Panel17.Enabled = false;
+            Panel16.Enabled = false;
            //SoundPlayer sp = new SoundPlayer("Windows XP Battery Critical.wav");
            //sp.Play();
         }
@@ -618,7 +618,7 @@ namespace Robot
 
         protected void Button13_Click(object sender, EventArgs e)
         {
-            Panel17.Enabled = true;
+            Panel16.Enabled = true;
 
         }
 
