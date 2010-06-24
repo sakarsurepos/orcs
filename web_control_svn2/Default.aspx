@@ -266,15 +266,84 @@ function IBrowserSupported()
                                 <tr>
                                     <td class="style68">
                                         <asp:Panel ID="Panel16" runat="server" BorderWidth="1px" ForeColor="#003366" 
-                                        Width="198px">
-                                            <applet align="middle" code="xplug.class" codebase="http://147.232.20.70:8080/" 
-                                            hspace="0" name="cvcs1" style="height: 143px; width: 198px" vspace="0">
-                                                <param name="RemotePort" value="80" />
-                                                <param name="Timeout" value="5000" />
-                                                <param name="RotateAngle" value="0" />
-                                                <param name="PreviewFrameRate" value="2" />
-                                                <param name="DeviceSerialNo" value="" />
-                                            </applet></asp:Panel>
+                                        Width="198px"> 
+                                        <script type="text/javascript">
+  var height_array = new Array();
+  var width_array = new Array();
+  width_array[1] = 352;
+  height_array[1] = 288;
+</script>
+<img src="http://147.232.20.250:8080/loading.jpg" class="webcam" id="webcam1" onmousedown="PTZMouseDown1(event)" width="200" height="150" alt="Live Stream" />
+<script type="text/javascript">
+<!--
+currentCamera1= 1;
+errorimg1= 0;
+document.images.webcam1.onload = DoIt1;
+document.images.webcam1.onerror = ErrorImage1;
+function LoadImage1()
+{
+        uniq1 = Math.random();
+        document.images.webcam1.src = "http://147.232.20.250:8080/cam_" + currentCamera1 + ".jpg?uniq="+uniq1;
+        document.images.webcam1.onload = DoIt1;
+}
+function PTZMouseDown1(e)
+{
+        var IE = document.all?true:false;
+        var x,y;
+        var myx,myy;
+        var myifr = document.getElementById("_iframe-ptz");
+        tp = getElPos1();
+        myx = tp[0];
+        myy = tp[1];
+        if(IE){
+        var scrollX = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft;
+        var scrollY = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
+        x = event.clientX - myx + scrollX;
+        y = event.clientY - myy + scrollY;
+        } else {
+        x = e.pageX - myx;
+        y = e.pageY - myy;
+        }
+        if ((width_array[currentCamera1] != null) && (width_array[currentCamera1] > 0)) x = Math.round((x * 400) / width_array[currentCamera1]);
+        if ((height_array[currentCamera1] != null) && (height_array[currentCamera1] > 0)) y = Math.round((y * 300) / height_array[currentCamera1]);
+        if (x > 400) x = 400;
+        if (y > 300) y = 300;
+        if (myifr != null) myifr.src = "http://147.232.20.250:8080/ptz?src=" + currentCamera1 + "&moveto_x=" + x + "&moveto_y=" + y +"";
+        return true;
+}
+function getElPos1()
+{
+            el = document.images.webcam1;
+            x = el.offsetLeft;
+            y = el.offsetTop;
+            elp = el.offsetParent;
+            while(elp!=null)
+              { x+=elp.offsetLeft;
+                y+=elp.offsetTop;
+                elp=elp.offsetParent;
+              }
+            return new Array(x,y);
+}
+function ErrorImage1()
+{
+        errorimg1++;
+        if (errorimg1>3){
+              document.images.webcam1.onload = "";
+              document.images.webcam1.onerror = "";
+              document.images.webcam1.src = "offline.jpg";
+              }else{
+                uniq1 = Math.random();
+            document.images.webcam1.src = "http://147.232.20.250:8080/cam_" + currentCamera1 + ".jpg?uniq="+uniq1;
+              }
+}
+function DoIt1()
+{
+        errorimg1=0;
+        window.setTimeout("LoadImage1();", 40);
+}
+//-->
+</script>
+                                            </asp:Panel>
                                     </td>
                                     <td class="style74">
                                         <asp:Panel ID="Panel15" runat="server" 
@@ -304,12 +373,10 @@ function IBrowserSupported()
                 Height="391px" Width="400px"><cc1:TabPanel ID="SpectatorsCam" runat="server" HeaderText="HiRes Cam"><HeaderTemplate>HiRes Cam</HeaderTemplate><ContentTemplate><asp:UpdatePanel ID="UpdatePanel52" runat="server" UpdateMode="Conditional"><ContentTemplate><table 
                         style="width:100%;"><tr><td align="center" valign="middle"><br /><asp:Button ID="Button16" runat="server" Height="44px" Text="Connect" />&#160;&#160; <asp:Button ID="Button17" runat="server" Height="44px" Text="Disconnect" /><br /><br /><asp:Panel 
                             ID="Panel9" runat="server" BorderWidth="1px" ForeColor="#999999" Height="240px" 
-                            Width="320px"><applet align="middle" code="xplug.class" 
-                            codebase="http://147.232.20.70:8080/?action=stream" hspace="0" name="cvcs0" 
-                            style="height: 240px; width: 320px" vspace="0"><param name="RemotePort" 
-                                value="80" /><param name="Timeout" value="5000" /><param name="RotateAngle" 
-                                value="0" /><param name="PreviewFrameRate" value="2" /><param 
-                                name="DeviceSerialNo" value="" /></applet></asp:Panel></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="Button13" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Maps" runat="server" HeaderText="Maps"><HeaderTemplate>Maps</HeaderTemplate>
+                            Width="320px"><object 
+type="text/x-scriptlet" 
+width=320 height=240 data="http://147.232.20.250:8080/"> 
+</object> </asp:Panel></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="Button13" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Maps" runat="server" HeaderText="Maps"><HeaderTemplate>Maps</HeaderTemplate>
                 
 <ContentTemplate><asp:UpdatePanel ID="UpdatePanel8" runat="server" 
                             UpdateMode="Conditional"><ContentTemplate><table 
@@ -330,27 +397,35 @@ function IBrowserSupported()
             <td class="style24">
     <cc1:TabContainer ID="Settings" runat="server" ActiveTabIndex="0" 
         Height="188px" Width="280px" Font-Size="Medium">
-        <cc1:TabPanel ID="TabPanel2" runat="server" HeaderText="Control"><ContentTemplate><asp:UpdatePanel ID="UpdatePanel3" runat="server" 
+        <cc1:TabPanel ID="TabPanel2" runat="server" HeaderText="Control">
+            <HeaderTemplate>
+                Control
+            </HeaderTemplate>
+            <ContentTemplate><asp:UpdatePanel ID="UpdatePanel3" runat="server" 
                     UpdateMode="Conditional"><ContentTemplate><b class="paneltitle">Robot control panel:</b><br /><br /><table 
-                        style="width:75%; height: 138px;"><tr><td ><asp:Panel 
-                            ID="Panel1" runat="server" BorderWidth="1px" ForeColor="#003366" 
-                                    Height="142px" HorizontalAlign="Center" style="font-size: xx-small" 
-                                    Width="133px"><span class="textnormal">Robot:</span><br /><br />&#160;<asp:Button 
-                        ID="Button6" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button6_Click" Text="Forward" Width="75px" 
-                        Font-Size="8pt" /><br /><br /><asp:Button 
-                        ID="Button4" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button4_Click" Text="Left" Width="40px" 
-                        Font-Size="8pt" />&#160;<asp:Button 
-                        ID="Button8" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button8_Click" Text="Stop  " Width="35px" 
-                        Font-Size="8pt" />&#160;<asp:Button 
-                        ID="Button5" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button5_Click" Text="Right " Width="40px" 
-                        Font-Size="8pt" /><br /><br /><asp:Button 
-                        ID="Button7" runat="server" Enabled="False" Height="22px" 
-                                        onclick="Button7_Click" Text="Backward" Width="75px" 
-                        Font-Size="8pt" /><br /></asp:Panel></td><td class="style71">&nbsp;</td><td><asp:Panel 
+                        style="width:75%; height: 138px;"><tr><td>
+                        <asp:Panel ID="Panel1" runat="server" BorderWidth="1px" ForeColor="#003366" 
+                            Height="142px" HorizontalAlign="Center" style="font-size: xx-small" 
+                            Width="133px">
+                            <span class="textnormal">Robot:</span><br />
+                            <br />
+                            &nbsp;<asp:Button ID="Button6" runat="server" Enabled="False" Font-Size="8pt" 
+                                Height="22px" onclick="Button6_Click" Text="Forward" Width="75px" />
+                            <br />
+                            <br />
+                            <asp:Button ID="Button4" runat="server" Enabled="False" Font-Size="8pt" 
+                                Height="22px" onclick="Button4_Click" Text="Left" Width="40px" />
+                            &nbsp;<asp:Button ID="Button8" runat="server" Enabled="False" Font-Size="8pt" 
+                                Height="22px" onclick="Button8_Click" Text="Stop  " Width="35px" />
+                            &nbsp;<asp:Button ID="Button5" runat="server" Enabled="False" Font-Size="8pt" 
+                                Height="22px" onclick="Button5_Click" Text="Right " Width="40px" />
+                            <br />
+                            <br />
+                            <asp:Button ID="Button7" runat="server" Enabled="False" Font-Size="8pt" 
+                                Height="22px" onclick="Button7_Click" Text="Backward" Width="75px" />
+                            <br />
+                        </asp:Panel>
+                        </td><td class="style71" >&nbsp;</td><td><asp:Panel 
                         ID="Panel2" runat="server" BorderWidth="1px" ForeColor="#003366" 
                             Height="143px" style="font-size: xx-small" Width="99px"><span class="textnormal">&nbsp; Parameters:</span><br />&#160;<br /><span class="textnormalbold">&#160; Speed: </span><asp:TextBox 
                         ID="ECommand_speed" runat="server" Width="21px">40</asp:TextBox>&#160; &#160;<br /><span class="textnormalbold">&#160;&#160;Angle:&#160; </span><asp:TextBox 
@@ -564,11 +639,6 @@ function IBrowserSupported()
             <tr>
                             <td align="center">
                     <b>Technical University of Kosice, KBIAaM, 2010.</b></td>
-                    <object 
-type="text/x-scriptlet" 
-width=320 height=240 data="http://localhost:8080/"> 
-</object> 
-
  
             </tr>
         </table>
