@@ -415,12 +415,12 @@ function DoIt1()
                                 class="style84"><br /><asp:Button ID="Button16" runat="server" 
                                 Height="22px" Text="Connect" />&#160;&#160; <asp:Button ID="Button17" 
                                 runat="server" Height="22px" Text="Disconnect" /><br /><br />
+                                
                         <asp:Panel 
                             ID="Panel9" runat="server" BorderWidth="1px" ForeColor="#999999" Height="300px" 
                             Width="351px" HorizontalAlign="Left">
-                            <object 
-type="text/x-scriptlet" data="http://147.232.20.70:8080/robot.html" style="width: 335px; height: 298px"> 
-</object> </asp:Panel></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="Button13" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Maps" runat="server" HeaderText="Maps"><HeaderTemplate>Maps</HeaderTemplate>
+                            <div id="webcam"><noscript><img src="http://147.232.20.70:8080/?action=snapshot" /></noscript></div>
+                            </asp:Panel></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="Button13" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Maps" runat="server" HeaderText="Maps"><HeaderTemplate>Maps</HeaderTemplate>
                 
 <ContentTemplate><asp:UpdatePanel ID="UpdatePanel8" runat="server" 
                             UpdateMode="Conditional"><ContentTemplate><table 
@@ -685,34 +685,6 @@ type="text/x-scriptlet" data="http://147.232.20.70:8080/robot.html" style="width
  
             </tr>
         </table>
- 
-<div id="webcam"><noscript><img src="http://147.232.20.70:8080/?action=snapshot" /></noscript></div>
-
-        
-        
-        
-        
-        
-    </form>
-    
-    
-    
-<html>
-  <head>
-    <title>MJPG-Streamer - Java Example</title>
-  </head>
-  <body>
-    <center>
-      <applet code="http://orcs.aspone.cz/w/" archive="/cambozola.jar" width="320" height="240">
-        <param name="url" value="http://147.232.20.70:8080/?action=stream"/>
-      </applet>
-    </center>
-  </body>
-</html>
-  
-    
-    
-    
-    
+     </form>
         </body>
 </html>
