@@ -112,6 +112,16 @@
             width: 315px;
             height: 220px;
         }
+        #Button22
+        {
+            width: 48px;
+            height: 20px;
+        }
+        #Button23
+        {
+            width: 47px;
+            height: 20px;
+        }
         </style>
 <script type="text/JavaScript">
 <!--
@@ -393,9 +403,18 @@ function DoIt1()
         errorimg1=0;
         window.setTimeout("LoadImage1();", 40);
 }
+function Button22_onclick() 
+{
+currentCamera1= 2;
+}
+function Button23_onclick() 
+{
+currentCamera1= 1;
+}
+
 //-->
 </script>
-                                            </asp:Panel>
+                                    </asp:Panel>
                                     </td>
                                     <td class="style74">
                                         <asp:Panel ID="Panel15" runat="server" 
@@ -406,10 +425,16 @@ function DoIt1()
                                             <asp:Button ID="Button13" runat="server" Text="Connect" Width="55px" 
                                                 onclick="Button13_Click" Font-Size="6pt" />
                                             <br />
+                                            <asp:Button ID="Button14" runat="server" Font-Size="6pt" 
+                                                onclick="Button14_Click" Text="Disconnect" Width="70px" />
                                             <br />
-                                            <asp:Button ID="Button14" runat="server" onclick="Button14_Click" 
-                                                Text="Disconnect" Width="70px" Font-Size="6pt" />
-                                        </asp:Panel>
+                                            <br />
+                                            &nbsp;
+                                            <input ID="Button22" type="button" value="cam1
+                                            " onclick="return Button22_onclick()" onclick="return Button22_onclick()" /><br />
+                                            &nbsp;
+                                            <input ID="Button23" onclick="return Button23_onclick()" type="button" 
+                                                value="cam2" /></asp:Panel>
                                     </td>
                                 </tr>
                             </table>
@@ -727,6 +752,8 @@ function DoIt1()
  
             </tr>
         </table>
+        <asp:Panel ID="Panel19" runat="server">
+        </asp:Panel>
      </form>
         </body>
 </html>
