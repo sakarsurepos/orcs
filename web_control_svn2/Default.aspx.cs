@@ -619,7 +619,6 @@ namespace Robot
         protected void Button13_Click(object sender, EventArgs e)
         {
             Panel16.Enabled = true;
-
         }
 
         protected void Button18_Click(object sender, EventArgs e)
