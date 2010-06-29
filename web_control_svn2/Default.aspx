@@ -119,8 +119,20 @@
         }
         #Button23
         {
-            width: 47px;
-            height: 20px;
+            width: 52px;
+            height: 21px;
+            text-align: center;
+        }
+        #Button24
+        {
+            width: 52px;
+            height: 21px;
+            text-align: center;
+        }
+        #Button25
+        {
+            width: 52px;
+            height: 21px;
         }
         </style>
 <script type="text/JavaScript">
@@ -403,13 +415,17 @@ function DoIt1()
         errorimg1=0;
         window.setTimeout("LoadImage1();", 40);
 }
-function Button22_onclick() 
-{
-currentCamera1= 2;
-}
 function Button23_onclick() 
 {
 currentCamera1= 1;
+}
+function Button25_onclick() 
+{
+currentCamera1= 3;
+}
+function Button24_onclick() 
+{
+currentCamera1= 2;
 }
 
 //-->
@@ -420,21 +436,21 @@ currentCamera1= 1;
                                         <asp:Panel ID="Panel15" runat="server" 
                                         Height="142px" Width="71px">
                                             <b>&nbsp;Camera:</b><br />
-                                            <br />
                                             &nbsp;
                                             <asp:Button ID="Button13" runat="server" Text="Connect" Width="55px" 
                                                 onclick="Button13_Click" Font-Size="6pt" />
                                             <br />
                                             <asp:Button ID="Button14" runat="server" Font-Size="6pt" 
-                                                onclick="Button14_Click" Text="Disconnect" Width="70px" />
+                                                onclick="Button14_Click" Text="Disconnect" Width="70px" 
+                                                style="height: 18px" />
                                             <br />
-                                            <br />
-                                            &nbsp;
-                                            <input ID="Button22" type="button" value="cam1
-                                            " onclick="return Button22_onclick()" onclick="return Button22_onclick()" /><br />
-                                            &nbsp;
-                                            <input ID="Button23" onclick="return Button23_onclick()" type="button" 
-                                                value="cam2" /></asp:Panel>
+                                            &nbsp;&nbsp;<input ID="Button23" onclick="return Button23_onclick()" type="button" 
+                                                value="cam1" onclick="return Button23_onclick()" 
+                                                onclick="return Button23_onclick()" align="middle" /><br />
+                                            &nbsp;&nbsp;<input ID="Button24" type="button" value="cam2" 
+                                                onclick="return Button24_onclick()" align="middle" /><br />
+                                            &nbsp;&nbsp;<input ID="Button25" type="button" value="cam3" 
+                                                onclick="return Button25_onclick()" align="middle" /></asp:Panel>
                                     </td>
                                 </tr>
                             </table>
