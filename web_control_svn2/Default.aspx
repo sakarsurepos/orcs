@@ -99,6 +99,19 @@
         {
             width: 456px;
         }
+        .style90
+        {
+            width: 10px;
+        }
+        .style91
+        {
+            width: 315px;
+        }
+        #webcam
+        {
+            width: 315px;
+            height: 220px;
+        }
         </style>
 <script type="text/JavaScript">
 <!--
@@ -419,7 +432,36 @@ function DoIt1()
                         <asp:Panel 
                             ID="Panel9" runat="server" BorderWidth="1px" ForeColor="#999999" Height="300px" 
                             Width="351px" HorizontalAlign="Left">
-                            <div id="webcam"><noscript><img src="http://147.232.20.70:8080/?action=snapshot" /></noscript></div>
+                             
+                            
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td class="style90">
+                                            &nbsp;</td>
+                                        <td class="style91">
+                                            &nbsp;</td>
+                                        <td>
+                                            &nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style90">
+                                            &nbsp;</td>
+                                        <td class="style91">
+                                        <div id="webcam" align="left"><noscript><img src="http://147.232.20.70:8080/?action=snapshot" /></noscript></div>
+                                            &nbsp;</td>
+                                        <td>
+                                            &nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style90">
+                                            &nbsp;</td>
+                                        <td class="style91">
+                                            &nbsp;</td>
+                                        <td>
+                                            &nbsp;</td>
+                                    </tr>
+                                </table>
+                                
                             </asp:Panel></td></tr></table></ContentTemplate><Triggers><asp:AsyncPostBackTrigger ControlID="Button13" EventName="Click" /></Triggers></asp:UpdatePanel></ContentTemplate></cc1:TabPanel><cc1:TabPanel ID="Maps" runat="server" HeaderText="Maps"><HeaderTemplate>Maps</HeaderTemplate>
                 
 <ContentTemplate><asp:UpdatePanel ID="UpdatePanel8" runat="server" 

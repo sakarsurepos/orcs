@@ -137,7 +137,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3493</DevelopmentServerPort>
+          <DevelopmentServerPort>18395</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/web_control_ajax2</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
