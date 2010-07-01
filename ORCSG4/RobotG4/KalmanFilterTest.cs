@@ -38,7 +38,7 @@ namespace Neodym.Test
 	{
         double[] zsres = new double[200];
         // MEMS xAxis test data 557, 553, 558, 564, 556, 559, 559
-        double[] zs = { 555, 561, 554, 563, 555, 558, 559, 557, 557, 553, 558, 564, 556, 559, 559, 556, 556, 557, 554, 564, 556, 555, 564, 563, 559, 553, 560, 556, 559, 556, 556, 559, 557, 561, 559, 560, 562, 556, 557, 556, 557, 557, 565, 558, 558, 554, 554, 558, 557, 559, 554 };
+        public double[] zs = { 0, 561, 554, 563, 555, 558, 559, 557, 557, 553, 558, 564, 556, 559, 559, 556, 556, 557, 554, 564, 556, 555, 564, 563, 559, 553, 560, 556, 559, 556, 556, 559, 557, 561, 559, 560, 562, 556, 557, 556, 557, 557, 565, 558, 558, 554, 554, 558, 557, 559, 554 };
         //double[] zs = { 585, 581, 587, 588, 605, 631, 663, 679, 707, 724, 735, 752, 757, 774, 776, 784, 789, 796, 814, 810, 811, 810, 810, 809, 813, 808, 814, 810, 809, 810, 808, 811, 812, 808, 812, 808, 769, 704, 671, 616, 587, 583, 577, 565, 558, 558, 554, 554, 558, 557, 559, 554, 558, 558, 554, 554, 558, 557, 559, 554 };
         //double[] zs = { 290.16851039, 654.55633793, 968.97141280, 1325.09197161, 1636.35947675, 1974.39053148, 2260.80770553, 2574.36119750, 2901.32285462, 3259.14709098 };
         // Array of measured ranges from cartesian center for a track (noisy - 0.5 units)
@@ -47,6 +47,13 @@ namespace Neodym.Test
 		// Array of measured bearings from cartesian center for a track (noisy - 2deg)
 		double[] bM = { 0.7848, 0.7551, 0.7213, 0.6654, 0.6565, 0.4747, 0.4465, 0.3066,
 			0.0720, -0.2540, -0.6531, -0.9779, -1.2390, -1.4442, -1.5699, -1.6535 };
+
+        DiscreteKalmanFilter dkf;
+        Matrix F;  // State transition matrix
+		Matrix G;  // Plant noise matrix
+		Matrix Q;  // Plant noise variance
+		Matrix R;  // Measurement variance matrix
+		Matrix H;  // Measurement matrix
 
 		double re = 0.5; //0.5
 		double the = 2d * Math.PI / 180d; //2d * Math.PI / 180d;
@@ -115,6 +122,7 @@ namespace Neodym.Test
 		[Test]
 		public void TestDiscreteKalmanFilter(double r, double T, double q, int set)
 		{
+
             if (set == 1) //Stable value
             {
                 double[] zs1 = { 555, 561, 554, 563, 555, 558, 559, 557, 557, 553, 558, 564, 556, 559, 559, 556, 556, 557, 554, 564, 556, 555, 564, 563, 559, 553, 560, 556, 559, 556, 556, 559, 557, 561, 559, 560, 562, 556, 557, 556, 557, 557, 565, 558, 558, 554, 554, 558, 557, 559, 554 };
@@ -122,7 +130,7 @@ namespace Neodym.Test
             }
             if (set == 2) //Unstable value 774
             {
-                double[] zs2 = { 585, 581, 587, 588, 605, 631, 663, 679, 707, 724, 735, 752, 757, 774 , 776, 784, 789, 796, 814, 810, 811, 810, 810, 809, 813, 808, 814, 810, 809, 810, 808, 811, 812, 808, 812, 808, 769, 704, 671, 616, 587, 583, 577, 565, 558, 558, 554, 554, 558, 557, 559, 554, 558, 558, 554, 554, 558, 557, 559, 554 };
+                double[] zs2 = { 585, 581, 587, 588, 605, 631, 663, 679, 707, 724, 735, 752, 757, 774, 776, 784, 789, 796, 814, 810, 811, 810, 810, 809, 813, 808, 814, 810, 809, 810, 808, 811, 812, 808, 812, 808, 769, 704, 671, 616, 587, 583, 577, 565, 558, 558, 554, 554, 558, 557, 559, 554, 558, 558, 554, 554, 558, 557, 559, 554 };
                 zs = zs2;
             }
             if (set == 3) //Unstable value 774
@@ -135,6 +143,7 @@ namespace Neodym.Test
                 double[] zs4 = { 573, 577, 577, 574, 574, 575, 578, 575, 572, 576, 576, 574, 575, 575, 578, 573, 575, 574, 581, 581, 618, 724, 752, 791, 810, 812, 810, 812, 813, 800, 781, 675, 578, 577, 581, 579, 578, 575, 579, 576, 470, 422, 363, 358, 339, 337, 331, 326, 331, 334, 340, 348, 480, 573, 574, 575, 574, 572, 576, 576 };
                 zs = zs4;
             }
+
             // Test constants
             //double r = 30;  // Measurement covariance 30.0
             //double T = 5;  // Time interval between measurements 20.0
@@ -160,43 +169,70 @@ namespace Neodym.Test
 			x0[0,0] = z1;
 			x0[1,0] = (z1 - z0)/T;
 			Matrix P0 = new Matrix(2,2);
-			P0[0,0] = r; P0[1,0] = r/T; P0[0,1] = r/T; P0[1,1] = 2 * r / (T * T);
-			// Setup a DiscreteKalmanFilter to filter
-			DiscreteKalmanFilter dkf = new DiscreteKalmanFilter(x0, P0);
-            //SquareRootFilter dkf = new SquareRootFilter(x0, P0);
+			P0[0,0] = r; 
+            P0[1,0] = r/T; 
+            P0[0,1] = r/T; 
+            P0[1,1] = 2 * r / (T * T);
+            // Setup a DiscreteKalmanFilter to filter
+			dkf = new DiscreteKalmanFilter(x0, P0);
+            //SquareRootFilter dkf = new SquareRootFilter(x0, P0);          
             zsres[0] = zs[0];
             zsres[1] = (double)(dkf.State[0, 0]);
 			double[] aF = { 1d, 0d, T, 1 };
 			double[] aG = { (T * T) / 2d, T };
-			Matrix F = new Matrix(aF,2);   // State transition matrix
-			Matrix G = new Matrix(aG,2);   // Plant noise matrix
-			Matrix Q = new Matrix(1,1); Q[0,0] = q; // Plant noise variance
-			Matrix R = new Matrix(1,1); R[0,0] = r;  // Measurement variance matrix
-			Matrix H = new Matrix(1,2); H[0,0] = 1d; H[0,1] = 0d;  // Measurement matrix
-			
-			// Test the performance of this filter against the stored data from a proven
-			// Kalman Filter of a one dimenional tracker.
-			for (int i = 2; i < zs.Length; i++)
-			{
-				// Perform the prediction
-				dkf.Predict(F, G, Q);
-				// Test against the prediction state/covariance
-				//Assert.IsTrue(Number.AlmostEqual(dkf.State[0,0], posp[i-2], tol), "State Prediction (" + i + ")");
-				//Assert.IsTrue(Number.AlmostEqual(dkf.State[1,0], velp[i-2], tol), "Covariance Prediction (" + i + ")");
-				// Perform the update
-				Matrix z = new Matrix(1,1,zs[i]);
-				dkf.Update(z, H, R);
-				// Test against the update state/covariance
-				// Test against the prediction state/covariance
-				//Assert.IsTrue(Number.AlmostEqual(dkf.State[0,0], posu[i-2], tol), "State Prediction (" + i + ")");
-				//Assert.IsTrue(Number.AlmostEqual(dkf.State[1,0], velu[i-2], tol), "Covariance Prediction (" + i + ")");
+			F = new Matrix(aF,2);   // State transition matrix
+			G = new Matrix(aG,2);   // Plant noise matrix
+			Q = new Matrix(1,1); Q[0,0] = q; // Plant noise variance
+			R = new Matrix(1,1); R[0,0] = r;  // Measurement variance matrix
+			H = new Matrix(1,2); H[0,0] = 1d; H[0,1] = 0d;  // Measurement matrix
+		}
+
+        [Test]
+        public void PredictionUpdateDiscreteKalmanFilter(int i)
+        {
+            // Test the performance of this filter against the stored data from a proven
+            // Kalman Filter of a one dimenional tracker.
+                // Perform the prediction
+                dkf.Predict(F, G, Q);
+                // Test against the prediction state/covariance
+                //Assert.IsTrue(Number.AlmostEqual(dkf.State[0,0], posp[i-2], tol), "State Prediction (" + i + ")");
+                //Assert.IsTrue(Number.AlmostEqual(dkf.State[1,0], velp[i-2], tol), "Covariance Prediction (" + i + ")");
+                // Perform the update
+                Matrix z = new Matrix(1, 1, zs[i]);
+                dkf.Update(z, H, R);
+                // Test against the update state/covariance
+                // Test against the prediction state/covariance
+                //Assert.IsTrue(Number.AlmostEqual(dkf.State[0,0], posu[i-2], tol), "State Prediction (" + i + ")");
+                //Assert.IsTrue(Number.AlmostEqual(dkf.State[1,0], velu[i-2], tol), "Covariance Prediction (" + i + ")");
                 //System.Console.WriteLine((dkf.State[0, 0]).ToString("#00.00") + "\t");
                 //System.Console.WriteLine(dkf.State[1, 0]);
-                zsres[i] = (int)(dkf.State[0,0]);
-			}
-		}
+                zsres[i] = (int)(dkf.State[0, 0]);
+        }
+
+        [Test]
+        public double PredictionUpdateDiscreteKalmanFilterDyn(double zsd)
+        {
+            // Test the performance of this filter against the stored data from a proven
+            // Kalman Filter of a one dimenional tracker.
+            // Perform the prediction
+            dkf.Predict(F, G, Q);
+            // Test against the prediction state/covariance
+            //Assert.IsTrue(Number.AlmostEqual(dkf.State[0,0], posp[i-2], tol), "State Prediction (" + i + ")");
+            //Assert.IsTrue(Number.AlmostEqual(dkf.State[1,0], velp[i-2], tol), "Covariance Prediction (" + i + ")");
+            // Perform the update
+            Matrix z = new Matrix(1, 1, zsd);
+            dkf.Update(z, H, R);
+            // Test against the update state/covariance
+            // Test against the prediction state/covariance
+            //Assert.IsTrue(Number.AlmostEqual(dkf.State[0,0], posu[i-2], tol), "State Prediction (" + i + ")");
+            //Assert.IsTrue(Number.AlmostEqual(dkf.State[1,0], velu[i-2], tol), "Covariance Prediction (" + i + ")");
+            //System.Console.WriteLine((dkf.State[0, 0]).ToString("#00.00") + "\t");
+            //System.Console.WriteLine(dkf.State[1, 0]);
+            double zsres = (int)(dkf.State[0, 0]);
+            return zsres;
+        }
 		
-		[Test]
+        [Test]
 		public void TestInformationFilter()
 		{
 			System.Console.WriteLine("Filter 1 - DiscreteKalmanFilter, Filter 2 - InformationFilter");

@@ -158,7 +158,6 @@ namespace Robot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupCameraView = new System.Windows.Forms.GroupBox();
             this.fpsPanel = new System.Windows.Forms.Label();
-            this.cameraWindow = new Robot.CameraWindow();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label121 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -329,9 +328,10 @@ namespace Robot
             this.textBoxqkal = new System.Windows.Forms.TextBox();
             this.textBoxTkal = new System.Windows.Forms.TextBox();
             this.textBoxrkal = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxKaldyn = new System.Windows.Forms.CheckBox();
             this.button88 = new System.Windows.Forms.Button();
             this.groupBoxGraph = new System.Windows.Forms.GroupBox();
+            this.checkBoxKF = new System.Windows.Forms.CheckBox();
             this.checkBoxShowTraj = new System.Windows.Forms.CheckBox();
             this.checkBoxShowVal = new System.Windows.Forms.CheckBox();
             this.txtOutput = new System.Windows.Forms.TextBox();
@@ -833,6 +833,10 @@ namespace Robot
             this.label169 = new System.Windows.Forms.Label();
             this.label170 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
+            this.cameraWindow = new Robot.CameraWindow();
+            this.buttontukecam1 = new System.Windows.Forms.Button();
+            this.buttontukecam2 = new System.Windows.Forms.Button();
+            this.buttontukecam3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox57.SuspendLayout();
@@ -1785,6 +1789,9 @@ namespace Robot
             // 
             this.Camera2.BackColor = System.Drawing.Color.Lavender;
             this.Camera2.BackgroundImage = global::Robot.Properties.Resources.back;
+            this.Camera2.Controls.Add(this.buttontukecam3);
+            this.Camera2.Controls.Add(this.buttontukecam2);
+            this.Camera2.Controls.Add(this.buttontukecam1);
             this.Camera2.Controls.Add(this.button1);
             this.Camera2.Controls.Add(this.button86);
             this.Camera2.Controls.Add(this.pictureBox23);
@@ -2081,13 +2088,6 @@ namespace Robot
             resources.ApplyResources(this.fpsPanel, "fpsPanel");
             this.fpsPanel.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.fpsPanel.Name = "fpsPanel";
-            // 
-            // cameraWindow
-            // 
-            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
-            this.cameraWindow.Camera = null;
-            resources.ApplyResources(this.cameraWindow, "cameraWindow");
-            this.cameraWindow.Name = "cameraWindow";
             // 
             // groupBox20
             // 
@@ -3365,7 +3365,7 @@ namespace Robot
             this.groupBoxFilterData.Controls.Add(this.textBoxqkal);
             this.groupBoxFilterData.Controls.Add(this.textBoxTkal);
             this.groupBoxFilterData.Controls.Add(this.textBoxrkal);
-            this.groupBoxFilterData.Controls.Add(this.checkBox3);
+            this.groupBoxFilterData.Controls.Add(this.checkBoxKaldyn);
             this.groupBoxFilterData.Controls.Add(this.button88);
             resources.ApplyResources(this.groupBoxFilterData, "groupBoxFilterData");
             this.groupBoxFilterData.Name = "groupBoxFilterData";
@@ -3419,12 +3419,12 @@ namespace Robot
             resources.ApplyResources(this.textBoxrkal, "textBoxrkal");
             this.textBoxrkal.Name = "textBoxrkal";
             // 
-            // checkBox3
+            // checkBoxKaldyn
             // 
-            resources.ApplyResources(this.checkBox3, "checkBox3");
-            this.checkBox3.ForeColor = System.Drawing.Color.Black;
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.checkBoxKaldyn, "checkBoxKaldyn");
+            this.checkBoxKaldyn.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxKaldyn.Name = "checkBoxKaldyn";
+            this.checkBoxKaldyn.UseVisualStyleBackColor = true;
             // 
             // button88
             // 
@@ -3436,11 +3436,19 @@ namespace Robot
             // 
             // groupBoxGraph
             // 
+            this.groupBoxGraph.Controls.Add(this.checkBoxKF);
             this.groupBoxGraph.Controls.Add(this.checkBoxShowTraj);
             this.groupBoxGraph.Controls.Add(this.checkBoxShowVal);
             resources.ApplyResources(this.groupBoxGraph, "groupBoxGraph");
             this.groupBoxGraph.Name = "groupBoxGraph";
             this.groupBoxGraph.TabStop = false;
+            // 
+            // checkBoxKF
+            // 
+            resources.ApplyResources(this.checkBoxKF, "checkBoxKF");
+            this.checkBoxKF.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxKF.Name = "checkBoxKF";
+            this.checkBoxKF.UseVisualStyleBackColor = true;
             // 
             // checkBoxShowTraj
             // 
@@ -7289,6 +7297,37 @@ namespace Robot
             resources.ApplyResources(this.label171, "label171");
             this.label171.Name = "label171";
             // 
+            // cameraWindow
+            // 
+            this.cameraWindow.BackColor = System.Drawing.Color.SlateGray;
+            this.cameraWindow.Camera = null;
+            resources.ApplyResources(this.cameraWindow, "cameraWindow");
+            this.cameraWindow.Name = "cameraWindow";
+            // 
+            // buttontukecam1
+            // 
+            this.buttontukecam1.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttontukecam1, "buttontukecam1");
+            this.buttontukecam1.Name = "buttontukecam1";
+            this.buttontukecam1.UseVisualStyleBackColor = true;
+            this.buttontukecam1.Click += new System.EventHandler(this.buttontukecam1_Click);
+            // 
+            // buttontukecam2
+            // 
+            this.buttontukecam2.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttontukecam2, "buttontukecam2");
+            this.buttontukecam2.Name = "buttontukecam2";
+            this.buttontukecam2.UseVisualStyleBackColor = true;
+            this.buttontukecam2.Click += new System.EventHandler(this.buttontukecam2_Click);
+            // 
+            // buttontukecam3
+            // 
+            this.buttontukecam3.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.buttontukecam3, "buttontukecam3");
+            this.buttontukecam3.Name = "buttontukecam3";
+            this.buttontukecam3.UseVisualStyleBackColor = true;
+            this.buttontukecam3.Click += new System.EventHandler(this.buttontukecam3_Click);
+            // 
             // Robot1
             // 
             resources.ApplyResources(this, "$this");
@@ -8366,7 +8405,7 @@ namespace Robot
         private System.Windows.Forms.GroupBox groupBoxGraph;
         private System.Windows.Forms.GroupBox groupBoxFilterData;
         private System.Windows.Forms.CheckBox checkBoxShowTraj;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBoxKaldyn;
         private System.Windows.Forms.TextBox textBoxTkal;
         private System.Windows.Forms.TextBox textBoxrkal;
         private System.Windows.Forms.TextBox textBoxqkal;
@@ -8377,6 +8416,10 @@ namespace Robot
         private System.Windows.Forms.DomainUpDown domainUpDownSetVal;
         private System.Windows.Forms.Label labelMEMSerror;
         private System.Windows.Forms.Label labelmerr;
+        private System.Windows.Forms.CheckBox checkBoxKF;
+        private System.Windows.Forms.Button buttontukecam3;
+        private System.Windows.Forms.Button buttontukecam2;
+        private System.Windows.Forms.Button buttontukecam1;
 
 
     }
