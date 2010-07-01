@@ -599,6 +599,15 @@ namespace Robot {
         protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
         
         /// <summary>
+        /// CheckBox5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox5;
+        
+        /// <summary>
         /// TabPanel5 control.
         /// </summary>
         /// <remarks>
