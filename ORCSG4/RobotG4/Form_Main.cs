@@ -47,11 +47,14 @@ namespace Robot
     public partial class Robot1 : System.Windows.Forms.Form
     {
         //Filters
+        ///
         Neodym.Test.KalmanFilterTest Kalfilter = new Neodym.Test.KalmanFilterTest();
         public double r0 = 30;
         public double T0 = 5;
         public double q0 = 0.1;
         public int set0 = 1;
+        Thread kalT;
+
         //////////
         //ACCELEROMETER
         public static Int32 ADCset = 4; //10 bit ADC
@@ -123,8 +126,12 @@ namespace Robot
         RollingPointPairList listY;
         RollingPointPairList listXs;
         RollingPointPairList listYs;
+        RollingPointPairList listXKL;
+        RollingPointPairList listYKL;
         LineItem curveX;
         LineItem curveY;
+        LineItem curveXKL;
+        LineItem curveYKL;
         LineItem curveXs;
         LineItem curveYs;
         int GraphXScmin = 0;
@@ -4031,6 +4038,19 @@ namespace Robot
             {
                 graphvalx--;
             }
+            if (checkBoxKF.Checked == true)
+            {
+                double nXaxisK = Kalfilter.PredictionUpdateDiscreteKalmanFilterDyn(nXaxis);
+                
+                curveXKL = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+                //IPointListEdit listX = curveX.Points as IPointListEdit;
+                listXKL.Add(graphvalx, nXaxisK);
+
+                curveYKL = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+                //IPointListEdit listY = curveY.Points as IPointListEdit;
+                listYKL.Add(graphvalx++, nYaxis);
+            }
+
             //Trajectory
             if (checkBoxShowTraj.Checked == true)
             {
@@ -5102,14 +5122,43 @@ namespace Robot
 
         private void button88_Click(object sender, EventArgs e)
         {
-            r0   = double.Parse(textBoxrkal.Text);
-            T0   = double.Parse(textBoxTkal.Text);
-            q0   = double.Parse(textBoxqkal.Text);
-            set0 = int.Parse(domainUpDownSetVal.Text);
-            Kalfilter.TestDiscreteKalmanFilter(r0, T0, q0, set0);
-            Kalfilter.CreateGraph(zedGraphControl1);
-            
+
+                r0 = double.Parse(textBoxrkal.Text);
+                T0 = double.Parse(textBoxTkal.Text);
+                q0 = double.Parse(textBoxqkal.Text);
+                set0 = int.Parse(domainUpDownSetVal.Text);
+                Kalfilter.TestDiscreteKalmanFilter(r0, T0, q0, set0);
+
+                if (checkBoxKaldyn.Checked == true)
+                {
+                    for (int ik = 2; ik < Kalfilter.zs.Length; ik++)
+                    {
+                        Kalfilter.PredictionUpdateDiscreteKalmanFilter(ik);
+                    }
+                    Kalfilter.CreateGraph(zedGraphControl1);
+                }
+                else
+                {
+                  
+                }
+                
         }
+
+        private void buttontukecam1_Click(object sender, EventArgs e)
+        {
+            textBox26.Text = "http://147.232.20.250:8080/cam_1.cgi";
+        }
+
+        private void buttontukecam2_Click(object sender, EventArgs e)
+        {
+            textBox26.Text = "http://147.232.20.250:8080/cam_2.cgi";
+        }
+
+        private void buttontukecam3_Click(object sender, EventArgs e)
+        {
+            textBox26.Text = "http://147.232.20.250:8080/cam_3.cgi";
+        }
+
 
    }
 }
