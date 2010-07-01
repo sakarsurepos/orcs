@@ -134,6 +134,10 @@
             width: 52px;
             height: 21px;
         }
+        .style92
+        {
+            height: 108px;
+        }
         </style>
 <script type="text/JavaScript">
 <!--
@@ -522,7 +526,7 @@ currentCamera1= 2;
         </tr>
         <tr>
             <td class="style24">
-    <cc1:TabContainer ID="Settings" runat="server" ActiveTabIndex="0" 
+    <cc1:TabContainer ID="Settings" runat="server" ActiveTabIndex="1" 
         Height="188px" Width="280px" Font-Size="Medium">
         <cc1:TabPanel ID="TabPanel2" runat="server" HeaderText="Control">
             <HeaderTemplate>
@@ -562,22 +566,36 @@ currentCamera1= 2;
         
         </ContentTemplate></cc1:TabPanel>
         <cc1:TabPanel ID="TabPanel3" runat="server" HeaderText="Devices"><ContentTemplate><asp:UpdatePanel 
-                ID="UpdatePanel4" runat="server" UpdateMode="Conditional"><ContentTemplate><b class="paneltitle">&nbsp;&nbsp;&nbsp;&nbsp;Advanced Settings:<br /></b><br /><table 
-                    style="width: 78%;"><tr><td 
-                    class="style75">&#160;</td><td class="style85"><asp:Panel ID="Panel3" 
-                            runat="server" BorderWidth="1px" ForeColor="#003366" Height="102px" 
-                            Width="160px"><table style="width:99%;"><tr><td class="style84"><b>&#160;Camera:</b></td><td 
+                ID="UpdatePanel4" runat="server" UpdateMode="Conditional"><ContentTemplate><b class="paneltitle">&nbsp;&nbsp;&nbsp;&nbsp;Advanced Settings:<br /></b><br />
+                <table 
+                    style="width: 78%; height: 133px;"><tr><td 
+                    class="style92"></td><td class="style92">
+                            <asp:Panel ID="Panel3" 
+                            runat="server" BorderWidth="1px" ForeColor="#003366" Height="122px" 
+                            Width="160px"><table style="width:99%; height: 111px;"><tr><td class="style84"><b>
+                                    Camera:</b></td><td 
                                 class="style26"><asp:CheckBox ID="CheckBox1" runat="server" Checked="True" 
                                 oncheckedchanged="CheckBox1_CheckedChanged" style="font-weight: 700" Text=" " /></td></tr><tr><td 
-                                    class="style84"><b><b>&#160;Direction Servo:</b> </b></td><td><b><asp:CheckBox 
+                                    class="style84"><b>Direction Servo: </b></td><td><b><asp:CheckBox 
                                         ID="CheckBox2" runat="server" Checked="True" 
                                         oncheckedchanged="CheckBox2_CheckedChanged" Text=" " /></b></td></tr><tr><td 
-                                    class="style84"><b>&#160;Camera Servos:</b></td><td><b><asp:CheckBox ID="CheckBox3" 
+                                    class="style84"><b>Camera Servos:</b></td><td><b><asp:CheckBox ID="CheckBox3" 
                                         runat="server" Checked="True" oncheckedchanged="CheckBox3_CheckedChanged" 
-                                        Text=" " /></b></td></tr><tr><td class="style84"><b><b>&#160;GPS:</b> </b></td><td><b><asp:CheckBox 
+                                        Text=" " /></b></td></tr><tr><td class="style84"><b>GPS: </b></td><td><b><asp:CheckBox 
                                     ID="CheckBox4" runat="server" Checked="True" 
-                                    oncheckedchanged="CheckBox4_CheckedChanged" Text=" " /></b></td></tr></table><br /><b>&#160;</b><br /><b>&#160;</b>&#160; <br /><b>&#160;</b></asp:Panel></td><td 
-                        align="right" valign="top">&#160;<img src="Resources/kcmpci.png" /></td></tr></table><br /></ContentTemplate></asp:UpdatePanel>
+                                    oncheckedchanged="CheckBox4_CheckedChanged" Text=" " /></b></td></tr>
+                                    <tr>
+                                        <td class="style84">
+                                            <b>Light: </b>
+                                        </td>
+                                        <td>
+                                            <asp:CheckBox ID="CheckBox5" runat="server" 
+                                                oncheckedchanged="CheckBox5_CheckedChanged" Text=" " />
+                                        </td>
+                                    </tr>
+                                </table><br /><b>&#160;</b><br /><b>&#160;</b>&#160; <br /><b>&#160;</b></asp:Panel></td>
+                        <td 
+                        align="right" valign="top" class="style92">&#160;<img src="Resources/kcmpci.png" /></td></tr></table><br /></ContentTemplate></asp:UpdatePanel>
         
         
         </ContentTemplate></cc1:TabPanel>

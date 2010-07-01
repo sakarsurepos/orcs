@@ -657,5 +657,17 @@ namespace Robot
         {
             connectionString = connectionStringL;
         }
+
+        protected void CheckBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox5.Checked == true)
+            {
+                SendData(SendMessage.LIGHTS_ON());
+            }
+            else if (CheckBox5.Checked == false)
+            {
+                SendData(SendMessage.LIGHTS_OFF());
+            }
+        }
     }
 }

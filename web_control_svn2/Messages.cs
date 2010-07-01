@@ -87,5 +87,26 @@ namespace Robot
         {
             return Control_Chars_Send + "C50" + End_Bytes;
         }
+
+        public string LIGHTS_ON()
+        {
+            return Control_Chars_Send + "C61" + End_Bytes;
+        }
+
+        public string LIGHTS_OFF()
+        {
+            return Control_Chars_Send + "C60" + End_Bytes;
+        }
+
+        public string LASER_ON()
+        {
+            return Control_Chars_Send + "C71" + End_Bytes;
+        }
+
+        public string LASER_OFF()
+        {
+            return Control_Chars_Send + "C70" + End_Bytes;
+        }
+
     }
 }
