@@ -1,0 +1,14 @@
+[DesignatorManager]
+LogicalDesignator0=U1
+LogicalPartID0=1
+DocumentName0=AP.SchDoc
+ChannelName0=AP
+UniqueID0=\BGUNSODQ
+PhysicalDesignator0=U?
+PhysicalDesignatorLocked0=0
+
+[SheetNumberManager]
+SheetNumberOrder=Display Order
+SheetNumberMethod=Increasing
+
+
