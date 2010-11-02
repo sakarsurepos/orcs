@@ -154,7 +154,7 @@ namespace SampleApp
             // 
             this.UserName.Location = new System.Drawing.Point(293, 31);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(287, 20);
+            this.UserName.Size = new System.Drawing.Size(115, 20);
             this.UserName.TabIndex = 5;
             this.UserName.Text = "sample@gmail.com";
             // 
@@ -169,9 +169,9 @@ namespace SampleApp
             // Go
             // 
             this.Go.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Go.Location = new System.Drawing.Point(414, 53);
+            this.Go.Location = new System.Drawing.Point(414, 31);
             this.Go.Name = "Go";
-            this.Go.Size = new System.Drawing.Size(166, 21);
+            this.Go.Size = new System.Drawing.Size(166, 43);
             this.Go.TabIndex = 7;
             this.Go.Text = "Read Calendar Data";
             this.Go.Click += new System.EventHandler(this.Go_Click);
@@ -214,6 +214,7 @@ namespace SampleApp
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(497, 224);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 23);
@@ -227,7 +228,7 @@ namespace SampleApp
             this.textBox1.Location = new System.Drawing.Point(242, 192);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 55);
+            this.textBox1.Size = new System.Drawing.Size(249, 56);
             this.textBox1.TabIndex = 10;
             this.textBox1.Text = "test text";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
@@ -244,7 +245,7 @@ namespace SampleApp
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(239, 176);
+            this.label5.Location = new System.Drawing.Point(239, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 12;
@@ -253,7 +254,7 @@ namespace SampleApp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 176);
+            this.label6.Location = new System.Drawing.Point(12, 175);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 13;
@@ -278,14 +279,14 @@ namespace SampleApp
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(535, 207);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 15;
-            this.label7.Text = "z 57";
+            this.label7.Text = "z   57";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(505, 191);
+            this.label8.Location = new System.Drawing.Point(505, 190);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 16;
@@ -314,7 +315,7 @@ namespace SampleApp
             this.Controls.Add(this.calendarControl);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Calendar";
-            this.Text = "Google SMS";
+            this.Text = "FreeLifeSMS";
             this.ResumeLayout(false);
             this.PerformLayout();
 
