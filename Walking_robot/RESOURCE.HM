@@ -1,0 +1,4 @@
+// Microsoft Visual C++ generated Help ID include file.
+// Used by control_robot.rc
+//
+#define HIDC_COMBO1                     0x80650408    // IDD_CONTROL_ROBOT_FORM [English (U.S.)]
