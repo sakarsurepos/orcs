@@ -491,15 +491,13 @@ namespace SerialPortTerminal
             ind++;
         }
 
-        private void frmTerminal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             label5.Text = e.X.ToString();
             label6.Text = e.Y.ToString();
+            //try { graph.DrawLine(new Pen(Color.Red), RPoint[ind - 1].X, RPoint[ind - 1].Y, e.X, e.Y); }
+            //catch { }
+
         }
 
         private void button7_Click(object sender, EventArgs e)
