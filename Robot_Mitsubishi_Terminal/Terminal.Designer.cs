@@ -80,6 +80,9 @@ namespace SerialPortTerminal
         this.label6 = new System.Windows.Forms.Label();
         this.timer1 = new System.Windows.Forms.Timer(this.components);
         this.button8 = new System.Windows.Forms.Button();
+        this.buttonPen1 = new System.Windows.Forms.Button();
+        this.button9 = new System.Windows.Forms.Button();
+        this.button10 = new System.Windows.Forms.Button();
         this.gbMode.SuspendLayout();
         this.gbPortSettings.SuspendLayout();
         this.groupBox1.SuspendLayout();
@@ -596,7 +599,7 @@ namespace SerialPortTerminal
         // label5
         // 
         this.label5.AutoSize = true;
-        this.label5.Location = new System.Drawing.Point(850, 294);
+        this.label5.Location = new System.Drawing.Point(804, 332);
         this.label5.Name = "label5";
         this.label5.Size = new System.Drawing.Size(35, 13);
         this.label5.TabIndex = 21;
@@ -605,7 +608,7 @@ namespace SerialPortTerminal
         // label6
         // 
         this.label6.AutoSize = true;
-        this.label6.Location = new System.Drawing.Point(850, 315);
+        this.label6.Location = new System.Drawing.Point(850, 332);
         this.label6.Name = "label6";
         this.label6.Size = new System.Drawing.Size(35, 13);
         this.label6.TabIndex = 22;
@@ -626,11 +629,41 @@ namespace SerialPortTerminal
         this.button8.UseVisualStyleBackColor = true;
         this.button8.Click += new System.EventHandler(this.button8_Click);
         // 
+        // buttonPen1
+        // 
+        this.buttonPen1.Location = new System.Drawing.Point(714, 299);
+        this.buttonPen1.Name = "buttonPen1";
+        this.buttonPen1.Size = new System.Drawing.Size(49, 24);
+        this.buttonPen1.TabIndex = 24;
+        this.buttonPen1.Text = "Pen1";
+        this.buttonPen1.UseVisualStyleBackColor = true;
+        // 
+        // button9
+        // 
+        this.button9.Location = new System.Drawing.Point(769, 299);
+        this.button9.Name = "button9";
+        this.button9.Size = new System.Drawing.Size(49, 23);
+        this.button9.TabIndex = 25;
+        this.button9.Text = "Pen2";
+        this.button9.UseVisualStyleBackColor = true;
+        // 
+        // button10
+        // 
+        this.button10.Location = new System.Drawing.Point(824, 298);
+        this.button10.Name = "button10";
+        this.button10.Size = new System.Drawing.Size(49, 23);
+        this.button10.TabIndex = 26;
+        this.button10.Text = "Pen3";
+        this.button10.UseVisualStyleBackColor = true;
+        // 
         // frmTerminal
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(897, 354);
+        this.Controls.Add(this.button10);
+        this.Controls.Add(this.button9);
+        this.Controls.Add(this.buttonPen1);
         this.Controls.Add(this.button8);
         this.Controls.Add(this.label6);
         this.Controls.Add(this.label5);
@@ -651,7 +684,6 @@ namespace SerialPortTerminal
         this.MinimumSize = new System.Drawing.Size(505, 250);
         this.Name = "frmTerminal";
         this.Text = "SerialPort Terminal";
-        this.Load += new System.EventHandler(this.frmTerminal_Load);
         this.Shown += new System.EventHandler(this.frmTerminal_Shown);
         this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTerminal_FormClosing);
         this.gbMode.ResumeLayout(false);
@@ -720,6 +752,9 @@ namespace SerialPortTerminal
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buttonPen1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
   }
 }
 
