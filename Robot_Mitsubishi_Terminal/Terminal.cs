@@ -39,9 +39,13 @@ namespace SerialPortTerminal
   public partial class frmTerminal : Form
   {
     #region Local Variables
-    float mx;
-    float my;
+    int mx;
+    int my;
     new Point[] RPoint = new Point[100];
+    int ind = 0;
+    int point = 1;
+    int count = 0;
+    Graphics graph;
 
     // The main control for communicating through the RS-232 port
     private SerialPort comport = new SerialPort();
@@ -63,6 +67,7 @@ namespace SerialPortTerminal
 
       // Build the form
       InitializeComponent();
+      graph = pictureBox1.CreateGraphics();
 
       // Restore the users settings
       InitializeControlValues();
@@ -479,6 +484,11 @@ namespace SerialPortTerminal
         {
             mx = e.X;
             my = e.Y;
+            RPoint[ind].X = mx;
+            RPoint[ind].Y = my;
+            try { graph.DrawLine(new Pen(Color.Red), RPoint[ind - 1], RPoint[ind]); }
+            catch { }
+            ind++;
         }
 
         private void frmTerminal_Load(object sender, EventArgs e)
@@ -490,6 +500,36 @@ namespace SerialPortTerminal
         {
             label5.Text = e.X.ToString();
             label6.Text = e.Y.ToString();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            while(count < ind)
+            {
+            txtSendData.Text = "1;1;EXECP" + point.ToString() + "=(" + ((RPoint[count].X) + int.Parse(textBoxRX.Text)).ToString("f2") + "," + (RPoint[count].Y + int.Parse(textBoxRY.Text)).ToString("f2") + "," + textBoxRZ.Text + ",0.00,90.00,0.00)(6,0).";
+            SendData();
+            txtSendData.Text = "1;1;EXECMOV P" + point.ToString() + ".";
+            SendData();
+            point++;
+            }    
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (count < ind)
+            {
+                timer1.Enabled = false;
+            }
+            txtSendData.Text = "1;1;EXECP" + point.ToString() + "=(" + ((RPoint[count].X) + int.Parse(textBoxRX.Text)).ToString("f2") + "," + (RPoint[count].Y + int.Parse(textBoxRY.Text)).ToString("f2") + "," + textBoxRZ.Text + ",0.00,90.00,0.00)(6,0).";
+            SendData();
+            txtSendData.Text = "1;1;EXECMOV P" + point.ToString() + ".";
+            SendData();
+            point++;
         }
 	}
 }
