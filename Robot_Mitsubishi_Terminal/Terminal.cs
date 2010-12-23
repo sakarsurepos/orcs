@@ -523,16 +523,16 @@ namespace SerialPortTerminal
         {
             if(ready == true)
             {
-            if (count < ind)
-            {
-                timer1.Enabled = false;
-            }
-            txtSendData.Text = "1;1;EXECP" + point.ToString() + "=(" + ((RPoint[count].X) + int.Parse(textBoxRX.Text)).ToString("f2") + "," + (RPoint[count].Y + int.Parse(textBoxRY.Text)).ToString("f2") + "," + textBoxRZ.Text + ",0.00,90.00,0.00)(6,0).";
-            SendData();
-            txtSendData.Text = "1;1;EXECMOV P" + point.ToString() + ".";
-            SendData();
-            point++;
-            ready = false;
+                if (count < ind)
+                {
+                    timer1.Enabled = false;
+                }
+                txtSendData.Text = "1;1;EXECP" + point.ToString() + "=(" + ((RPoint[count].X) + int.Parse(textBoxRX.Text)).ToString("f2") + "," + (RPoint[count].Y + int.Parse(textBoxRY.Text)).ToString("f2") + "," + textBoxRZ.Text + ",0.00,90.00,0.00)(6,0).";
+                SendData();
+                txtSendData.Text = "1;1;EXECMOV P" + point.ToString() + ".";
+                SendData();
+                point++;
+                ready = false;
             }
         }
 

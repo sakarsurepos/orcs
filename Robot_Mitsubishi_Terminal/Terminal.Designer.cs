@@ -85,6 +85,8 @@ namespace SerialPortTerminal
         this.button11 = new System.Windows.Forms.Button();
         this.button12 = new System.Windows.Forms.Button();
         this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+        this.label7 = new System.Windows.Forms.Label();
+        this.label8 = new System.Windows.Forms.Label();
         this.gbMode.SuspendLayout();
         this.gbPortSettings.SuspendLayout();
         this.groupBox1.SuspendLayout();
@@ -97,9 +99,9 @@ namespace SerialPortTerminal
         this.rtfTerminal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                     | System.Windows.Forms.AnchorStyles.Left)
                     | System.Windows.Forms.AnchorStyles.Right)));
-        this.rtfTerminal.Location = new System.Drawing.Point(12, 12);
+        this.rtfTerminal.Location = new System.Drawing.Point(12, 26);
         this.rtfTerminal.Name = "rtfTerminal";
-        this.rtfTerminal.Size = new System.Drawing.Size(322, 83);
+        this.rtfTerminal.Size = new System.Drawing.Size(322, 69);
         this.rtfTerminal.TabIndex = 0;
         this.rtfTerminal.Text = "";
         // 
@@ -671,17 +673,37 @@ namespace SerialPortTerminal
         this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                     | System.Windows.Forms.AnchorStyles.Left)
                     | System.Windows.Forms.AnchorStyles.Right)));
-        this.richTextBox1.Location = new System.Drawing.Point(340, 12);
+        this.richTextBox1.Location = new System.Drawing.Point(340, 26);
         this.richTextBox1.Name = "richTextBox1";
-        this.richTextBox1.Size = new System.Drawing.Size(138, 83);
+        this.richTextBox1.Size = new System.Drawing.Size(138, 69);
         this.richTextBox1.TabIndex = 28;
         this.richTextBox1.Text = "";
+        // 
+        // label7
+        // 
+        this.label7.AutoSize = true;
+        this.label7.Location = new System.Drawing.Point(12, 9);
+        this.label7.Name = "label7";
+        this.label7.Size = new System.Drawing.Size(100, 13);
+        this.label7.TabIndex = 29;
+        this.label7.Text = "Communication Log";
+        // 
+        // label8
+        // 
+        this.label8.AutoSize = true;
+        this.label8.Location = new System.Drawing.Point(339, 9);
+        this.label8.Name = "label8";
+        this.label8.Size = new System.Drawing.Size(58, 13);
+        this.label8.TabIndex = 30;
+        this.label8.Text = "Point Array";
         // 
         // frmTerminal
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(897, 354);
+        this.Controls.Add(this.label8);
+        this.Controls.Add(this.label7);
         this.Controls.Add(this.richTextBox1);
         this.Controls.Add(this.button12);
         this.Controls.Add(this.button10);
@@ -779,6 +801,8 @@ namespace SerialPortTerminal
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
   }
 }
 
