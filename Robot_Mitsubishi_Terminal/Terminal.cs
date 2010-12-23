@@ -46,6 +46,7 @@ namespace SerialPortTerminal
     int point = 1;
     int count = 0;
     Graphics graph;
+    bool ready = true;
 
     // The main control for communicating through the RS-232 port
     private SerialPort comport = new SerialPort();
@@ -334,6 +335,7 @@ namespace SerialPortTerminal
 
         // Display the text to the user in the terminal
         Log(LogMsgType.Incoming, data);
+        ready = true;
       }
       else
       {
@@ -488,6 +490,7 @@ namespace SerialPortTerminal
             RPoint[ind].Y = my;
             try { graph.DrawLine(new Pen(Color.Red), RPoint[ind - 1], RPoint[ind]); }
             catch { }
+            richTextBox1.AppendText((RPoint[ind].X).ToString("f2") + ","+ (RPoint[ind].Y).ToString("f2") + "\n" );
             ind++;
         }
 
@@ -497,7 +500,6 @@ namespace SerialPortTerminal
             label6.Text = e.Y.ToString();
             //try { graph.DrawLine(new Pen(Color.Red), RPoint[ind - 1].X, RPoint[ind - 1].Y, e.X, e.Y); }
             //catch { }
-
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -519,6 +521,8 @@ namespace SerialPortTerminal
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(ready == true)
+            {
             if (count < ind)
             {
                 timer1.Enabled = false;
@@ -528,6 +532,8 @@ namespace SerialPortTerminal
             txtSendData.Text = "1;1;EXECMOV P" + point.ToString() + ".";
             SendData();
             point++;
+            ready = false;
+            }
         }
 
         private void button11_Click(object sender, EventArgs e) //RESET
