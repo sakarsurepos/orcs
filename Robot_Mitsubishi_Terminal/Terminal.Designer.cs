@@ -84,6 +84,7 @@ namespace SerialPortTerminal
         this.button10 = new System.Windows.Forms.Button();
         this.button11 = new System.Windows.Forms.Button();
         this.button12 = new System.Windows.Forms.Button();
+        this.richTextBox1 = new System.Windows.Forms.RichTextBox();
         this.gbMode.SuspendLayout();
         this.gbPortSettings.SuspendLayout();
         this.groupBox1.SuspendLayout();
@@ -98,7 +99,7 @@ namespace SerialPortTerminal
                     | System.Windows.Forms.AnchorStyles.Right)));
         this.rtfTerminal.Location = new System.Drawing.Point(12, 12);
         this.rtfTerminal.Name = "rtfTerminal";
-        this.rtfTerminal.Size = new System.Drawing.Size(466, 83);
+        this.rtfTerminal.Size = new System.Drawing.Size(322, 83);
         this.rtfTerminal.TabIndex = 0;
         this.rtfTerminal.Text = "";
         // 
@@ -665,11 +666,23 @@ namespace SerialPortTerminal
         this.button12.Text = "Open Gerber File";
         this.button12.UseVisualStyleBackColor = true;
         // 
+        // richTextBox1
+        // 
+        this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                    | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
+        this.richTextBox1.Location = new System.Drawing.Point(340, 12);
+        this.richTextBox1.Name = "richTextBox1";
+        this.richTextBox1.Size = new System.Drawing.Size(138, 83);
+        this.richTextBox1.TabIndex = 28;
+        this.richTextBox1.Text = "";
+        // 
         // frmTerminal
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(897, 354);
+        this.Controls.Add(this.richTextBox1);
         this.Controls.Add(this.button12);
         this.Controls.Add(this.button10);
         this.Controls.Add(this.button9);
@@ -765,6 +778,7 @@ namespace SerialPortTerminal
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.RichTextBox richTextBox1;
   }
 }
 
