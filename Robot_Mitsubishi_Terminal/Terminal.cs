@@ -39,6 +39,9 @@ namespace SerialPortTerminal
   public partial class frmTerminal : Form
   {
     #region Local Variables
+    float mx;
+    float my;
+    new Point[] RPoint = new Point[100];
 
     // The main control for communicating through the RS-232 port
     private SerialPort comport = new SerialPort();
@@ -49,7 +52,7 @@ namespace SerialPortTerminal
     // Temp holder for whether a key was pressed
     private bool KeyHandled = false;
 
-		private Settings settings = Settings.Default;
+	private Settings settings = Settings.Default;
     #endregion
 
     #region Constructor
@@ -151,8 +154,11 @@ namespace SerialPortTerminal
     {
       if (CurrentDataMode == DataMode.Text)
       {
-        // Send the user's text straight out the port
-        comport.Write(txtSendData.Text);
+          byte[] data1 = HexStringToByteArray("0D");
+          // Send the user's text straight out the port
+          comport.Write(txtSendData.Text);
+          // Send the binary data out the port
+          comport.Write(data1, 0, data1.Length);
 
         // Show in the terminal window the user's text
         Log(LogMsgType.Outgoing, txtSendData.Text + "\n");
@@ -439,34 +445,51 @@ namespace SerialPortTerminal
 			return selected;
 		}
 
-        private void button4_Click(object sender, EventArgs e) //Servo OFF 1;1;SRVOFF.
+        private void button4_Click(object sender, EventArgs e) //Servo OFF 
         {
-            txtSendData.Text = "313B313B5352564F46460D";
+            txtSendData.Text = "1;1;SRVOFF."; // "313B313B5352564F46460D"
         }
 
-        private void button3_Click(object sender, EventArgs e) //Servo ON 1;1;SRVON.
+        private void button3_Click(object sender, EventArgs e) //Servo ON 
         {
-            txtSendData.Text = "313B313B5352564F4E0D";
+            txtSendData.Text = "1;1;SRVON."; //"313B313B5352564F4E0D"
         }
 
-        private void button1_Click(object sender, EventArgs e) //CONTROL ON 1;1;CNTLON.
+        private void button1_Click(object sender, EventArgs e) //CONTROL ON 
         {
-            txtSendData.Text = "313B313B434E544C4F4E2E0D";
+            txtSendData.Text = "1;1;CNTLON."; //"313B313B434E544C4F4E2E0D"
         }
 
-        private void button2_Click(object sender, EventArgs e) //CONTROL OFF 1;1;CNTLOFF.
+        private void button2_Click(object sender, EventArgs e) //CONTROL OFF 
         {
-            txtSendData.Text = "313B313B434E544C4F46462E0D";
+            txtSendData.Text = "1;1;CNTLOFF."; //"313B313B434E544C4F46462E0D"
         }
 
-        private void button5_Click(object sender, EventArgs e) //P1 1;1;EXECP1=(232.00,0.00,550.00,0.00,90.00,0.00)(6,0).
+        private void button5_Click(object sender, EventArgs e) //P1 
         {
-            txtSendData.Text = "313B313B4558454350313D283233322E30302C302E30302C3535302E30302C302E30302C39302E30302C302E30302928362C30290D";
+            txtSendData.Text = "1;1;EXECP1=(" + textBoxRX.Text + "," + textBoxRY.Text + "," + textBoxRZ.Text + ",0.00,90.00,0.00)(6,0)."; //"313B313B4558454350313D283233322E30302C302E30302C3535302E30302C302E30302C39302E30302C302E30302928362C30290D"
         }
 
-        private void button6_Click(object sender, EventArgs e) //MOV 1;1;EXECMOV P1.
+        private void button6_Click(object sender, EventArgs e) //MOV 
         {
-            txtSendData.Text = "313B313B455845434D4F562050310D";       
+            txtSendData.Text = "1;1;EXECMOV P1."; //"313B313B455845434D4F562050310D"       
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            mx = e.X;
+            my = e.Y;
+        }
+
+        private void frmTerminal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            label5.Text = e.X.ToString();
+            label6.Text = e.Y.ToString();
         }
 	}
 }
