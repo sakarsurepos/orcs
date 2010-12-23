@@ -78,6 +78,8 @@ namespace SerialPortTerminal
         this.button7 = new System.Windows.Forms.Button();
         this.label5 = new System.Windows.Forms.Label();
         this.label6 = new System.Windows.Forms.Label();
+        this.timer1 = new System.Windows.Forms.Timer(this.components);
+        this.button8 = new System.Windows.Forms.Button();
         this.gbMode.SuspendLayout();
         this.gbPortSettings.SuspendLayout();
         this.groupBox1.SuspendLayout();
@@ -585,10 +587,11 @@ namespace SerialPortTerminal
         // 
         this.button7.Location = new System.Drawing.Point(484, 300);
         this.button7.Name = "button7";
-        this.button7.Size = new System.Drawing.Size(75, 23);
+        this.button7.Size = new System.Drawing.Size(85, 23);
         this.button7.TabIndex = 20;
-        this.button7.Text = "Draw";
+        this.button7.Text = "Robot Draw";
         this.button7.UseVisualStyleBackColor = true;
+        this.button7.Click += new System.EventHandler(this.button7_Click);
         // 
         // label5
         // 
@@ -608,11 +611,27 @@ namespace SerialPortTerminal
         this.label6.TabIndex = 22;
         this.label6.Text = "label6";
         // 
+        // timer1
+        // 
+        this.timer1.Interval = 2000;
+        this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+        // 
+        // button8
+        // 
+        this.button8.Location = new System.Drawing.Point(584, 300);
+        this.button8.Name = "button8";
+        this.button8.Size = new System.Drawing.Size(124, 23);
+        this.button8.TabIndex = 23;
+        this.button8.Text = "Robot Draw with timer";
+        this.button8.UseVisualStyleBackColor = true;
+        this.button8.Click += new System.EventHandler(this.button8_Click);
+        // 
         // frmTerminal
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(897, 354);
+        this.Controls.Add(this.button8);
         this.Controls.Add(this.label6);
         this.Controls.Add(this.label5);
         this.Controls.Add(this.button7);
@@ -699,6 +718,8 @@ namespace SerialPortTerminal
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button8;
   }
 }
 
