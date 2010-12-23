@@ -112,6 +112,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="App.config" />
+    <None Include="ClassDiagram_robot.cd" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

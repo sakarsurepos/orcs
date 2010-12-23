@@ -49,7 +49,6 @@ namespace SerialPortTerminal
         this.cmbStopBits = new System.Windows.Forms.ComboBox();
         this.btnOpenPort = new System.Windows.Forms.Button();
         this.gbPortSettings = new System.Windows.Forms.GroupBox();
-        this.lnkAbout = new System.Windows.Forms.LinkLabel();
         this.groupBox1 = new System.Windows.Forms.GroupBox();
         this.chkRTS = new System.Windows.Forms.CheckBox();
         this.chkCD = new System.Windows.Forms.CheckBox();
@@ -83,6 +82,8 @@ namespace SerialPortTerminal
         this.buttonPen1 = new System.Windows.Forms.Button();
         this.button9 = new System.Windows.Forms.Button();
         this.button10 = new System.Windows.Forms.Button();
+        this.button11 = new System.Windows.Forms.Button();
+        this.button12 = new System.Windows.Forms.Button();
         this.gbMode.SuspendLayout();
         this.gbPortSettings.SuspendLayout();
         this.groupBox1.SuspendLayout();
@@ -289,7 +290,7 @@ namespace SerialPortTerminal
         // btnOpenPort
         // 
         this.btnOpenPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-        this.btnOpenPort.Location = new System.Drawing.Point(397, 294);
+        this.btnOpenPort.Location = new System.Drawing.Point(397, 300);
         this.btnOpenPort.Name = "btnOpenPort";
         this.btnOpenPort.Size = new System.Drawing.Size(75, 23);
         this.btnOpenPort.TabIndex = 6;
@@ -315,18 +316,6 @@ namespace SerialPortTerminal
         this.gbPortSettings.TabIndex = 4;
         this.gbPortSettings.TabStop = false;
         this.gbPortSettings.Text = "COM Serial Port Settings";
-        // 
-        // lnkAbout
-        // 
-        this.lnkAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-        this.lnkAbout.AutoSize = true;
-        this.lnkAbout.Location = new System.Drawing.Point(437, 329);
-        this.lnkAbout.Name = "lnkAbout";
-        this.lnkAbout.Size = new System.Drawing.Size(35, 13);
-        this.lnkAbout.TabIndex = 8;
-        this.lnkAbout.TabStop = true;
-        this.lnkAbout.Text = "&About";
-        this.lnkAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAbout_LinkClicked);
         // 
         // groupBox1
         // 
@@ -417,7 +406,7 @@ namespace SerialPortTerminal
         // 
         this.chkClearOnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
         this.chkClearOnOpen.AutoSize = true;
-        this.chkClearOnOpen.Location = new System.Drawing.Point(290, 304);
+        this.chkClearOnOpen.Location = new System.Drawing.Point(290, 302);
         this.chkClearOnOpen.Name = "chkClearOnOpen";
         this.chkClearOnOpen.Size = new System.Drawing.Size(94, 17);
         this.chkClearOnOpen.TabIndex = 10;
@@ -428,7 +417,7 @@ namespace SerialPortTerminal
         // 
         this.chkClearWithDTR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
         this.chkClearWithDTR.AutoSize = true;
-        this.chkClearWithDTR.Location = new System.Drawing.Point(290, 325);
+        this.chkClearWithDTR.Location = new System.Drawing.Point(290, 323);
         this.chkClearWithDTR.Name = "chkClearWithDTR";
         this.chkClearWithDTR.Size = new System.Drawing.Size(98, 17);
         this.chkClearWithDTR.TabIndex = 11;
@@ -443,9 +432,9 @@ namespace SerialPortTerminal
         // 
         // button1
         // 
-        this.button1.Location = new System.Drawing.Point(5, 19);
+        this.button1.Location = new System.Drawing.Point(9, 19);
         this.button1.Name = "button1";
-        this.button1.Size = new System.Drawing.Size(75, 23);
+        this.button1.Size = new System.Drawing.Size(72, 23);
         this.button1.TabIndex = 12;
         this.button1.Text = "Control ON";
         this.button1.UseVisualStyleBackColor = true;
@@ -453,9 +442,9 @@ namespace SerialPortTerminal
         // 
         // button2
         // 
-        this.button2.Location = new System.Drawing.Point(83, 19);
+        this.button2.Location = new System.Drawing.Point(80, 19);
         this.button2.Name = "button2";
-        this.button2.Size = new System.Drawing.Size(75, 23);
+        this.button2.Size = new System.Drawing.Size(72, 23);
         this.button2.TabIndex = 13;
         this.button2.Text = "Control OFF";
         this.button2.UseVisualStyleBackColor = true;
@@ -463,9 +452,9 @@ namespace SerialPortTerminal
         // 
         // button3
         // 
-        this.button3.Location = new System.Drawing.Point(161, 19);
+        this.button3.Location = new System.Drawing.Point(152, 19);
         this.button3.Name = "button3";
-        this.button3.Size = new System.Drawing.Size(75, 23);
+        this.button3.Size = new System.Drawing.Size(74, 23);
         this.button3.TabIndex = 14;
         this.button3.Text = "Servo ON";
         this.button3.UseVisualStyleBackColor = true;
@@ -473,9 +462,9 @@ namespace SerialPortTerminal
         // 
         // button4
         // 
-        this.button4.Location = new System.Drawing.Point(241, 19);
+        this.button4.Location = new System.Drawing.Point(227, 19);
         this.button4.Name = "button4";
-        this.button4.Size = new System.Drawing.Size(75, 22);
+        this.button4.Size = new System.Drawing.Size(72, 22);
         this.button4.TabIndex = 15;
         this.button4.Text = "Servo OFF";
         this.button4.UseVisualStyleBackColor = true;
@@ -483,9 +472,9 @@ namespace SerialPortTerminal
         // 
         // button5
         // 
-        this.button5.Location = new System.Drawing.Point(322, 19);
+        this.button5.Location = new System.Drawing.Point(299, 19);
         this.button5.Name = "button5";
-        this.button5.Size = new System.Drawing.Size(75, 23);
+        this.button5.Size = new System.Drawing.Size(63, 23);
         this.button5.TabIndex = 16;
         this.button5.Text = "Set Point";
         this.button5.UseVisualStyleBackColor = true;
@@ -493,9 +482,9 @@ namespace SerialPortTerminal
         // 
         // button6
         // 
-        this.button6.Location = new System.Drawing.Point(403, 19);
+        this.button6.Location = new System.Drawing.Point(362, 19);
         this.button6.Name = "button6";
-        this.button6.Size = new System.Drawing.Size(57, 23);
+        this.button6.Size = new System.Drawing.Size(45, 23);
         this.button6.TabIndex = 17;
         this.button6.Text = "Move";
         this.button6.UseVisualStyleBackColor = true;
@@ -503,6 +492,7 @@ namespace SerialPortTerminal
         // 
         // groupBox2
         // 
+        this.groupBox2.Controls.Add(this.button11);
         this.groupBox2.Controls.Add(this.label4);
         this.groupBox2.Controls.Add(this.textBoxRZ);
         this.groupBox2.Controls.Add(this.label3);
@@ -601,18 +591,18 @@ namespace SerialPortTerminal
         this.label5.AutoSize = true;
         this.label5.Location = new System.Drawing.Point(804, 332);
         this.label5.Name = "label5";
-        this.label5.Size = new System.Drawing.Size(35, 13);
+        this.label5.Size = new System.Drawing.Size(14, 13);
         this.label5.TabIndex = 21;
-        this.label5.Text = "label5";
+        this.label5.Text = "X";
         // 
         // label6
         // 
         this.label6.AutoSize = true;
         this.label6.Location = new System.Drawing.Point(850, 332);
         this.label6.Name = "label6";
-        this.label6.Size = new System.Drawing.Size(35, 13);
+        this.label6.Size = new System.Drawing.Size(14, 13);
         this.label6.TabIndex = 22;
-        this.label6.Text = "label6";
+        this.label6.Text = "Y";
         // 
         // timer1
         // 
@@ -621,7 +611,7 @@ namespace SerialPortTerminal
         // 
         // button8
         // 
-        this.button8.Location = new System.Drawing.Point(584, 300);
+        this.button8.Location = new System.Drawing.Point(579, 300);
         this.button8.Name = "button8";
         this.button8.Size = new System.Drawing.Size(124, 23);
         this.button8.TabIndex = 23;
@@ -656,11 +646,31 @@ namespace SerialPortTerminal
         this.button10.Text = "Pen3";
         this.button10.UseVisualStyleBackColor = true;
         // 
+        // button11
+        // 
+        this.button11.Location = new System.Drawing.Point(407, 19);
+        this.button11.Name = "button11";
+        this.button11.Size = new System.Drawing.Size(51, 23);
+        this.button11.TabIndex = 24;
+        this.button11.Text = "Reset";
+        this.button11.UseVisualStyleBackColor = true;
+        this.button11.Click += new System.EventHandler(this.button11_Click);
+        // 
+        // button12
+        // 
+        this.button12.Location = new System.Drawing.Point(484, 327);
+        this.button12.Name = "button12";
+        this.button12.Size = new System.Drawing.Size(153, 23);
+        this.button12.TabIndex = 27;
+        this.button12.Text = "Open Gerber File";
+        this.button12.UseVisualStyleBackColor = true;
+        // 
         // frmTerminal
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(897, 354);
+        this.Controls.Add(this.button12);
         this.Controls.Add(this.button10);
         this.Controls.Add(this.button9);
         this.Controls.Add(this.buttonPen1);
@@ -673,7 +683,6 @@ namespace SerialPortTerminal
         this.Controls.Add(this.chkClearWithDTR);
         this.Controls.Add(this.chkClearOnOpen);
         this.Controls.Add(this.groupBox1);
-        this.Controls.Add(this.lnkAbout);
         this.Controls.Add(this.gbPortSettings);
         this.Controls.Add(this.btnOpenPort);
         this.Controls.Add(this.gbMode);
@@ -721,7 +730,6 @@ namespace SerialPortTerminal
     private System.Windows.Forms.ComboBox cmbStopBits;
     private System.Windows.Forms.Button btnOpenPort;
     private System.Windows.Forms.GroupBox gbPortSettings;
-		private System.Windows.Forms.LinkLabel lnkAbout;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.CheckBox chkCD;
 		private System.Windows.Forms.CheckBox chkDSR;
@@ -755,6 +763,8 @@ namespace SerialPortTerminal
         private System.Windows.Forms.Button buttonPen1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
   }
 }
 
