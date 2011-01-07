@@ -540,5 +540,15 @@ namespace SerialPortTerminal
         {
 
         }
+
+        private void button13_Click(object sender, EventArgs e) //OPEN HAND
+        {
+            txtSendData.Text = "1;1;EXEC ."; //"" 
+        }
+
+        private void button14_Click(object sender, EventArgs e) //CLOSE HAND
+        {
+            txtSendData.Text = "1;1;EXEC ."; //""
+        }
 	}
 }
