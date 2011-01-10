@@ -67,6 +67,16 @@ namespace SerialPortTerminal
         this.button5 = new System.Windows.Forms.Button();
         this.button6 = new System.Windows.Forms.Button();
         this.groupBox2 = new System.Windows.Forms.GroupBox();
+        this.label11 = new System.Windows.Forms.Label();
+        this.label10 = new System.Windows.Forms.Label();
+        this.label9 = new System.Windows.Forms.Label();
+        this.textBoxRC = new System.Windows.Forms.TextBox();
+        this.textBoxRB = new System.Windows.Forms.TextBox();
+        this.textBoxRA = new System.Windows.Forms.TextBox();
+        this.button16 = new System.Windows.Forms.Button();
+        this.button15 = new System.Windows.Forms.Button();
+        this.button14 = new System.Windows.Forms.Button();
+        this.button13 = new System.Windows.Forms.Button();
         this.button11 = new System.Windows.Forms.Button();
         this.label4 = new System.Windows.Forms.Label();
         this.textBoxRZ = new System.Windows.Forms.TextBox();
@@ -87,9 +97,14 @@ namespace SerialPortTerminal
         this.richTextBox1 = new System.Windows.Forms.RichTextBox();
         this.label7 = new System.Windows.Forms.Label();
         this.label8 = new System.Windows.Forms.Label();
-        this.button13 = new System.Windows.Forms.Button();
-        this.button14 = new System.Windows.Forms.Button();
-        this.button15 = new System.Windows.Forms.Button();
+        this.button17 = new System.Windows.Forms.Button();
+        this.button18 = new System.Windows.Forms.Button();
+        this.button19 = new System.Windows.Forms.Button();
+        this.button20 = new System.Windows.Forms.Button();
+        this.label12 = new System.Windows.Forms.Label();
+        this.label13 = new System.Windows.Forms.Label();
+        this.label14 = new System.Windows.Forms.Label();
+        this.button21 = new System.Windows.Forms.Button();
         this.gbMode.SuspendLayout();
         this.gbPortSettings.SuspendLayout();
         this.groupBox1.SuspendLayout();
@@ -99,29 +114,23 @@ namespace SerialPortTerminal
         // 
         // rtfTerminal
         // 
-        this.rtfTerminal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                    | System.Windows.Forms.AnchorStyles.Left)
-                    | System.Windows.Forms.AnchorStyles.Right)));
         this.rtfTerminal.Location = new System.Drawing.Point(8, 26);
         this.rtfTerminal.Name = "rtfTerminal";
-        this.rtfTerminal.Size = new System.Drawing.Size(326, 69);
+        this.rtfTerminal.Size = new System.Drawing.Size(323, 69);
         this.rtfTerminal.TabIndex = 0;
         this.rtfTerminal.Text = "";
         // 
         // txtSendData
         // 
-        this.txtSendData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                    | System.Windows.Forms.AnchorStyles.Right)));
         this.txtSendData.Location = new System.Drawing.Point(76, 198);
         this.txtSendData.Name = "txtSendData";
-        this.txtSendData.Size = new System.Drawing.Size(402, 20);
+        this.txtSendData.Size = new System.Drawing.Size(399, 20);
         this.txtSendData.TabIndex = 2;
         this.txtSendData.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSendData_KeyDown);
         this.txtSendData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSendData_KeyPress);
         // 
         // lblSend
         // 
-        this.lblSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
         this.lblSend.AutoSize = true;
         this.lblSend.Location = new System.Drawing.Point(9, 201);
         this.lblSend.Name = "lblSend";
@@ -132,9 +141,9 @@ namespace SerialPortTerminal
         // btnSend
         // 
         this.btnSend.Anchor = System.Windows.Forms.AnchorStyles.None;
-        this.btnSend.Location = new System.Drawing.Point(227, 66);
+        this.btnSend.Location = new System.Drawing.Point(331, 66);
         this.btnSend.Name = "btnSend";
-        this.btnSend.Size = new System.Drawing.Size(56, 23);
+        this.btnSend.Size = new System.Drawing.Size(45, 23);
         this.btnSend.TabIndex = 3;
         this.btnSend.Text = "Send";
         this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -198,7 +207,6 @@ namespace SerialPortTerminal
         // 
         // gbMode
         // 
-        this.gbMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
         this.gbMode.Controls.Add(this.rbText);
         this.gbMode.Controls.Add(this.rbHex);
         this.gbMode.Location = new System.Drawing.Point(388, 224);
@@ -295,8 +303,7 @@ namespace SerialPortTerminal
         // 
         // btnOpenPort
         // 
-        this.btnOpenPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-        this.btnOpenPort.Location = new System.Drawing.Point(397, 300);
+        this.btnOpenPort.Location = new System.Drawing.Point(394, 300);
         this.btnOpenPort.Name = "btnOpenPort";
         this.btnOpenPort.Size = new System.Drawing.Size(75, 23);
         this.btnOpenPort.TabIndex = 6;
@@ -305,7 +312,6 @@ namespace SerialPortTerminal
         // 
         // gbPortSettings
         // 
-        this.gbPortSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
         this.gbPortSettings.Controls.Add(this.cmbPortName);
         this.gbPortSettings.Controls.Add(this.cmbBaudRate);
         this.gbPortSettings.Controls.Add(this.cmbStopBits);
@@ -325,7 +331,6 @@ namespace SerialPortTerminal
         // 
         // groupBox1
         // 
-        this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
         this.groupBox1.Controls.Add(this.chkRTS);
         this.groupBox1.Controls.Add(this.chkCD);
         this.groupBox1.Controls.Add(this.chkDSR);
@@ -400,17 +405,15 @@ namespace SerialPortTerminal
         // 
         // btnClear
         // 
-        this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
-        this.btnClear.Location = new System.Drawing.Point(284, 66);
+        this.btnClear.Location = new System.Drawing.Point(291, 4);
         this.btnClear.Name = "btnClear";
-        this.btnClear.Size = new System.Drawing.Size(42, 23);
+        this.btnClear.Size = new System.Drawing.Size(42, 21);
         this.btnClear.TabIndex = 9;
         this.btnClear.Text = "&Clear";
         this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
         // 
         // chkClearOnOpen
         // 
-        this.chkClearOnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
         this.chkClearOnOpen.AutoSize = true;
         this.chkClearOnOpen.Location = new System.Drawing.Point(290, 302);
         this.chkClearOnOpen.Name = "chkClearOnOpen";
@@ -421,7 +424,6 @@ namespace SerialPortTerminal
         // 
         // chkClearWithDTR
         // 
-        this.chkClearWithDTR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
         this.chkClearWithDTR.AutoSize = true;
         this.chkClearWithDTR.Location = new System.Drawing.Point(290, 323);
         this.chkClearWithDTR.Name = "chkClearWithDTR";
@@ -498,6 +500,14 @@ namespace SerialPortTerminal
         // 
         // groupBox2
         // 
+        this.groupBox2.Controls.Add(this.button21);
+        this.groupBox2.Controls.Add(this.label11);
+        this.groupBox2.Controls.Add(this.label10);
+        this.groupBox2.Controls.Add(this.label9);
+        this.groupBox2.Controls.Add(this.textBoxRC);
+        this.groupBox2.Controls.Add(this.textBoxRB);
+        this.groupBox2.Controls.Add(this.textBoxRA);
+        this.groupBox2.Controls.Add(this.button16);
         this.groupBox2.Controls.Add(this.button15);
         this.groupBox2.Controls.Add(this.button14);
         this.groupBox2.Controls.Add(this.button13);
@@ -505,7 +515,6 @@ namespace SerialPortTerminal
         this.groupBox2.Controls.Add(this.label4);
         this.groupBox2.Controls.Add(this.textBoxRZ);
         this.groupBox2.Controls.Add(this.label3);
-        this.groupBox2.Controls.Add(this.btnClear);
         this.groupBox2.Controls.Add(this.textBoxRY);
         this.groupBox2.Controls.Add(this.label2);
         this.groupBox2.Controls.Add(this.textBoxRX);
@@ -518,14 +527,105 @@ namespace SerialPortTerminal
         this.groupBox2.Controls.Add(this.button4);
         this.groupBox2.Location = new System.Drawing.Point(8, 96);
         this.groupBox2.Name = "groupBox2";
-        this.groupBox2.Size = new System.Drawing.Size(329, 96);
+        this.groupBox2.Size = new System.Drawing.Size(380, 96);
         this.groupBox2.TabIndex = 18;
         this.groupBox2.TabStop = false;
         this.groupBox2.Text = "Robot Control";
         // 
+        // label11
+        // 
+        this.label11.AutoSize = true;
+        this.label11.Location = new System.Drawing.Point(274, 71);
+        this.label11.Name = "label11";
+        this.label11.Size = new System.Drawing.Size(14, 13);
+        this.label11.TabIndex = 34;
+        this.label11.Text = "C";
+        // 
+        // label10
+        // 
+        this.label10.AutoSize = true;
+        this.label10.Location = new System.Drawing.Point(218, 71);
+        this.label10.Name = "label10";
+        this.label10.Size = new System.Drawing.Size(14, 13);
+        this.label10.TabIndex = 33;
+        this.label10.Text = "B";
+        // 
+        // label9
+        // 
+        this.label9.AutoSize = true;
+        this.label9.Location = new System.Drawing.Point(163, 71);
+        this.label9.Name = "label9";
+        this.label9.Size = new System.Drawing.Size(14, 13);
+        this.label9.TabIndex = 32;
+        this.label9.Text = "A";
+        // 
+        // textBoxRC
+        // 
+        this.textBoxRC.Location = new System.Drawing.Point(287, 68);
+        this.textBoxRC.Name = "textBoxRC";
+        this.textBoxRC.Size = new System.Drawing.Size(40, 20);
+        this.textBoxRC.TabIndex = 31;
+        this.textBoxRC.Text = "0.00";
+        // 
+        // textBoxRB
+        // 
+        this.textBoxRB.Location = new System.Drawing.Point(233, 68);
+        this.textBoxRB.Name = "textBoxRB";
+        this.textBoxRB.Size = new System.Drawing.Size(40, 20);
+        this.textBoxRB.TabIndex = 30;
+        this.textBoxRB.Text = "90.00";
+        // 
+        // textBoxRA
+        // 
+        this.textBoxRA.Location = new System.Drawing.Point(178, 68);
+        this.textBoxRA.Name = "textBoxRA";
+        this.textBoxRA.Size = new System.Drawing.Size(40, 20);
+        this.textBoxRA.TabIndex = 29;
+        this.textBoxRA.Text = "0.00";
+        // 
+        // button16
+        // 
+        this.button16.Location = new System.Drawing.Point(208, 15);
+        this.button16.Name = "button16";
+        this.button16.Size = new System.Drawing.Size(45, 23);
+        this.button16.TabIndex = 28;
+        this.button16.Text = "Start";
+        this.button16.UseVisualStyleBackColor = true;
+        this.button16.Click += new System.EventHandler(this.button16_Click);
+        // 
+        // button15
+        // 
+        this.button15.Location = new System.Drawing.Point(208, 40);
+        this.button15.Name = "button15";
+        this.button15.Size = new System.Drawing.Size(45, 23);
+        this.button15.TabIndex = 27;
+        this.button15.Text = "Stop";
+        this.button15.UseVisualStyleBackColor = true;
+        this.button15.Click += new System.EventHandler(this.button15_Click);
+        // 
+        // button14
+        // 
+        this.button14.Location = new System.Drawing.Point(253, 40);
+        this.button14.Name = "button14";
+        this.button14.Size = new System.Drawing.Size(74, 23);
+        this.button14.TabIndex = 26;
+        this.button14.Text = "Close Hand";
+        this.button14.UseVisualStyleBackColor = true;
+        this.button14.Click += new System.EventHandler(this.button14_Click);
+        // 
+        // button13
+        // 
+        this.button13.Location = new System.Drawing.Point(253, 15);
+        this.button13.Name = "button13";
+        this.button13.Size = new System.Drawing.Size(74, 23);
+        this.button13.TabIndex = 25;
+        this.button13.Text = "Open Hand";
+        this.button13.UseVisualStyleBackColor = true;
+        this.button13.Click += new System.EventHandler(this.button13_Click);
+        // 
         // button11
         // 
-        this.button11.Location = new System.Drawing.Point(208, 15);
+        this.button11.Location = new System.Drawing.Point(331, 39);
         this.button11.Name = "button11";
         this.button11.Size = new System.Drawing.Size(45, 23);
         this.button11.TabIndex = 24;
@@ -536,7 +636,7 @@ namespace SerialPortTerminal
         // label4
         // 
         this.label4.AutoSize = true;
-        this.label4.Location = new System.Drawing.Point(158, 71);
+        this.label4.Location = new System.Drawing.Point(110, 72);
         this.label4.Name = "label4";
         this.label4.Size = new System.Drawing.Size(14, 13);
         this.label4.TabIndex = 23;
@@ -544,16 +644,16 @@ namespace SerialPortTerminal
         // 
         // textBoxRZ
         // 
-        this.textBoxRZ.Location = new System.Drawing.Point(170, 68);
+        this.textBoxRZ.Location = new System.Drawing.Point(122, 68);
         this.textBoxRZ.Name = "textBoxRZ";
-        this.textBoxRZ.Size = new System.Drawing.Size(51, 20);
+        this.textBoxRZ.Size = new System.Drawing.Size(40, 20);
         this.textBoxRZ.TabIndex = 22;
         this.textBoxRZ.Text = "550.00";
         // 
         // label3
         // 
         this.label3.AutoSize = true;
-        this.label3.Location = new System.Drawing.Point(82, 72);
+        this.label3.Location = new System.Drawing.Point(57, 72);
         this.label3.Name = "label3";
         this.label3.Size = new System.Drawing.Size(14, 13);
         this.label3.TabIndex = 21;
@@ -561,16 +661,16 @@ namespace SerialPortTerminal
         // 
         // textBoxRY
         // 
-        this.textBoxRY.Location = new System.Drawing.Point(96, 69);
+        this.textBoxRY.Location = new System.Drawing.Point(69, 69);
         this.textBoxRY.Name = "textBoxRY";
-        this.textBoxRY.Size = new System.Drawing.Size(59, 20);
+        this.textBoxRY.Size = new System.Drawing.Size(40, 20);
         this.textBoxRY.TabIndex = 20;
         this.textBoxRY.Text = "0.00";
         // 
         // label2
         // 
         this.label2.AutoSize = true;
-        this.label2.Location = new System.Drawing.Point(7, 72);
+        this.label2.Location = new System.Drawing.Point(3, 72);
         this.label2.Name = "label2";
         this.label2.Size = new System.Drawing.Size(14, 13);
         this.label2.TabIndex = 19;
@@ -578,18 +678,18 @@ namespace SerialPortTerminal
         // 
         // textBoxRX
         // 
-        this.textBoxRX.Location = new System.Drawing.Point(22, 69);
+        this.textBoxRX.Location = new System.Drawing.Point(17, 69);
         this.textBoxRX.Name = "textBoxRX";
-        this.textBoxRX.Size = new System.Drawing.Size(57, 20);
+        this.textBoxRX.Size = new System.Drawing.Size(40, 20);
         this.textBoxRX.TabIndex = 18;
         this.textBoxRX.Text = "232.00";
         // 
         // pictureBox1
         // 
         this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-        this.pictureBox1.Location = new System.Drawing.Point(484, 12);
+        this.pictureBox1.Location = new System.Drawing.Point(497, 24);
         this.pictureBox1.Name = "pictureBox1";
-        this.pictureBox1.Size = new System.Drawing.Size(401, 276);
+        this.pictureBox1.Size = new System.Drawing.Size(140, 200);
         this.pictureBox1.TabIndex = 19;
         this.pictureBox1.TabStop = false;
         this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
@@ -597,7 +697,7 @@ namespace SerialPortTerminal
         // 
         // button7
         // 
-        this.button7.Location = new System.Drawing.Point(484, 300);
+        this.button7.Location = new System.Drawing.Point(497, 233);
         this.button7.Name = "button7";
         this.button7.Size = new System.Drawing.Size(85, 23);
         this.button7.TabIndex = 20;
@@ -608,7 +708,7 @@ namespace SerialPortTerminal
         // label5
         // 
         this.label5.AutoSize = true;
-        this.label5.Location = new System.Drawing.Point(804, 332);
+        this.label5.Location = new System.Drawing.Point(555, 7);
         this.label5.Name = "label5";
         this.label5.Size = new System.Drawing.Size(14, 13);
         this.label5.TabIndex = 21;
@@ -617,7 +717,7 @@ namespace SerialPortTerminal
         // label6
         // 
         this.label6.AutoSize = true;
-        this.label6.Location = new System.Drawing.Point(850, 332);
+        this.label6.Location = new System.Drawing.Point(584, 7);
         this.label6.Name = "label6";
         this.label6.Size = new System.Drawing.Size(14, 13);
         this.label6.TabIndex = 22;
@@ -630,7 +730,7 @@ namespace SerialPortTerminal
         // 
         // button8
         // 
-        this.button8.Location = new System.Drawing.Point(579, 300);
+        this.button8.Location = new System.Drawing.Point(497, 263);
         this.button8.Name = "button8";
         this.button8.Size = new System.Drawing.Size(124, 23);
         this.button8.TabIndex = 23;
@@ -640,7 +740,7 @@ namespace SerialPortTerminal
         // 
         // buttonPen1
         // 
-        this.buttonPen1.Location = new System.Drawing.Point(714, 299);
+        this.buttonPen1.Location = new System.Drawing.Point(643, 24);
         this.buttonPen1.Name = "buttonPen1";
         this.buttonPen1.Size = new System.Drawing.Size(49, 24);
         this.buttonPen1.TabIndex = 24;
@@ -649,7 +749,7 @@ namespace SerialPortTerminal
         // 
         // button9
         // 
-        this.button9.Location = new System.Drawing.Point(769, 299);
+        this.button9.Location = new System.Drawing.Point(643, 54);
         this.button9.Name = "button9";
         this.button9.Size = new System.Drawing.Size(49, 23);
         this.button9.TabIndex = 25;
@@ -658,7 +758,7 @@ namespace SerialPortTerminal
         // 
         // button10
         // 
-        this.button10.Location = new System.Drawing.Point(824, 298);
+        this.button10.Location = new System.Drawing.Point(643, 83);
         this.button10.Name = "button10";
         this.button10.Size = new System.Drawing.Size(49, 23);
         this.button10.TabIndex = 26;
@@ -667,7 +767,7 @@ namespace SerialPortTerminal
         // 
         // button12
         // 
-        this.button12.Location = new System.Drawing.Point(484, 327);
+        this.button12.Location = new System.Drawing.Point(490, 300);
         this.button12.Name = "button12";
         this.button12.Size = new System.Drawing.Size(153, 23);
         this.button12.TabIndex = 27;
@@ -676,12 +776,9 @@ namespace SerialPortTerminal
         // 
         // richTextBox1
         // 
-        this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                    | System.Windows.Forms.AnchorStyles.Left)
-                    | System.Windows.Forms.AnchorStyles.Right)));
         this.richTextBox1.Location = new System.Drawing.Point(340, 26);
         this.richTextBox1.Name = "richTextBox1";
-        this.richTextBox1.Size = new System.Drawing.Size(138, 166);
+        this.richTextBox1.Size = new System.Drawing.Size(135, 69);
         this.richTextBox1.TabIndex = 28;
         this.richTextBox1.Text = "";
         // 
@@ -703,40 +800,95 @@ namespace SerialPortTerminal
         this.label8.TabIndex = 30;
         this.label8.Text = "Point Array";
         // 
-        // button13
+        // button17
         // 
-        this.button13.Location = new System.Drawing.Point(253, 15);
-        this.button13.Name = "button13";
-        this.button13.Size = new System.Drawing.Size(74, 23);
-        this.button13.TabIndex = 25;
-        this.button13.Text = "Open Hand";
-        this.button13.UseVisualStyleBackColor = true;
-        this.button13.Click += new System.EventHandler(this.button13_Click);
+        this.button17.Location = new System.Drawing.Point(394, 102);
+        this.button17.Name = "button17";
+        this.button17.Size = new System.Drawing.Size(75, 23);
+        this.button17.TabIndex = 31;
+        this.button17.Text = "Init POS";
+        this.button17.UseVisualStyleBackColor = true;
+        this.button17.Click += new System.EventHandler(this.button17_Click);
         // 
-        // button14
+        // button18
         // 
-        this.button14.Location = new System.Drawing.Point(253, 40);
-        this.button14.Name = "button14";
-        this.button14.Size = new System.Drawing.Size(74, 23);
-        this.button14.TabIndex = 26;
-        this.button14.Text = "Close Hand";
-        this.button14.UseVisualStyleBackColor = true;
-        this.button14.Click += new System.EventHandler(this.button14_Click);
+        this.button18.Location = new System.Drawing.Point(394, 124);
+        this.button18.Name = "button18";
+        this.button18.Size = new System.Drawing.Size(75, 23);
+        this.button18.TabIndex = 32;
+        this.button18.Text = "Catch Pen";
+        this.button18.UseVisualStyleBackColor = true;
+        this.button18.Click += new System.EventHandler(this.button18_Click);
         // 
-        // button15
+        // button19
         // 
-        this.button15.Location = new System.Drawing.Point(208, 40);
-        this.button15.Name = "button15";
-        this.button15.Size = new System.Drawing.Size(45, 23);
-        this.button15.TabIndex = 27;
-        this.button15.Text = "Stop";
-        this.button15.UseVisualStyleBackColor = true;
+        this.button19.Location = new System.Drawing.Point(394, 146);
+        this.button19.Name = "button19";
+        this.button19.Size = new System.Drawing.Size(75, 23);
+        this.button19.TabIndex = 33;
+        this.button19.Text = "Draw POS";
+        this.button19.UseVisualStyleBackColor = true;
+        this.button19.Click += new System.EventHandler(this.button19_Click);
+        // 
+        // button20
+        // 
+        this.button20.Location = new System.Drawing.Point(394, 169);
+        this.button20.Name = "button20";
+        this.button20.Size = new System.Drawing.Size(75, 23);
+        this.button20.TabIndex = 34;
+        this.button20.Text = "Draw";
+        this.button20.UseVisualStyleBackColor = true;
+        this.button20.Click += new System.EventHandler(this.button20_Click);
+        // 
+        // label12
+        // 
+        this.label12.AutoSize = true;
+        this.label12.Location = new System.Drawing.Point(494, 7);
+        this.label12.Name = "label12";
+        this.label12.Size = new System.Drawing.Size(46, 13);
+        this.label12.TabIndex = 35;
+        this.label12.Text = "225,180";
+        // 
+        // label13
+        // 
+        this.label13.AutoSize = true;
+        this.label13.Location = new System.Drawing.Point(619, 7);
+        this.label13.Name = "label13";
+        this.label13.Size = new System.Drawing.Size(18, 13);
+        this.label13.TabIndex = 36;
+        this.label13.Text = "+x";
+        // 
+        // label14
+        // 
+        this.label14.AutoSize = true;
+        this.label14.Location = new System.Drawing.Point(482, 211);
+        this.label14.Name = "label14";
+        this.label14.Size = new System.Drawing.Size(15, 13);
+        this.label14.TabIndex = 37;
+        this.label14.Text = "-y";
+        // 
+        // button21
+        // 
+        this.button21.Location = new System.Drawing.Point(331, 14);
+        this.button21.Name = "button21";
+        this.button21.Size = new System.Drawing.Size(45, 23);
+        this.button21.TabIndex = 35;
+        this.button21.Text = "Init";
+        this.button21.UseVisualStyleBackColor = true;
+        this.button21.Click += new System.EventHandler(this.button21_Click);
         // 
         // frmTerminal
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(897, 354);
+        this.ClientSize = new System.Drawing.Size(701, 354);
+        this.Controls.Add(this.label14);
+        this.Controls.Add(this.label13);
+        this.Controls.Add(this.label12);
+        this.Controls.Add(this.button20);
+        this.Controls.Add(this.button19);
+        this.Controls.Add(this.button18);
+        this.Controls.Add(this.button17);
         this.Controls.Add(this.label8);
         this.Controls.Add(this.label7);
         this.Controls.Add(this.richTextBox1);
@@ -744,6 +896,7 @@ namespace SerialPortTerminal
         this.Controls.Add(this.button10);
         this.Controls.Add(this.button9);
         this.Controls.Add(this.buttonPen1);
+        this.Controls.Add(this.btnClear);
         this.Controls.Add(this.button8);
         this.Controls.Add(this.label6);
         this.Controls.Add(this.label5);
@@ -762,7 +915,7 @@ namespace SerialPortTerminal
         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         this.MinimumSize = new System.Drawing.Size(505, 250);
         this.Name = "frmTerminal";
-        this.Text = "SerialPort Terminal";
+        this.Text = "Mitsubishi RV-2AJ Robot Control Software";
         this.Shown += new System.EventHandler(this.frmTerminal_Shown);
         this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTerminal_FormClosing);
         this.gbMode.ResumeLayout(false);
@@ -841,6 +994,21 @@ namespace SerialPortTerminal
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxRC;
+        private System.Windows.Forms.TextBox textBoxRB;
+        private System.Windows.Forms.TextBox textBoxRA;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button21;
   }
 }
 
