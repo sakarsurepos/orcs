@@ -455,40 +455,46 @@ namespace SerialPortTerminal
         private void button4_Click(object sender, EventArgs e) //Servo OFF 
         {
             txtSendData.Text = "1;1;SRVOFF."; // "313B313B5352564F46460D"
+            SendData();
         }
 
         private void button3_Click(object sender, EventArgs e) //Servo ON 
         {
             txtSendData.Text = "1;1;SRVON."; //"313B313B5352564F4E0D"
+            SendData();
         }
 
         private void button1_Click(object sender, EventArgs e) //CONTROL ON 
         {
             txtSendData.Text = "1;1;CNTLON."; //"313B313B434E544C4F4E2E0D"
+            SendData();
         }
 
         private void button2_Click(object sender, EventArgs e) //CONTROL OFF 
         {
             txtSendData.Text = "1;1;CNTLOFF."; //"313B313B434E544C4F46462E0D"
+            SendData();
         }
 
         private void button5_Click(object sender, EventArgs e) //P1 
         {
-            txtSendData.Text = "1;1;EXECP1=(" + textBoxRX.Text + "," + textBoxRY.Text + "," + textBoxRZ.Text + ",0.00,90.00,0.00)(6,0)."; //"313B313B4558454350313D283233322E30302C302E30302C3535302E30302C302E30302C39302E30302C302E30302928362C30290D"
+            txtSendData.Text = "1;1;EXECP1=(" + textBoxRX.Text + "," + textBoxRY.Text + "," + textBoxRZ.Text + "," + textBoxRA.Text + "," + textBoxRB.Text + "," + textBoxRC.Text + ")(6,0)"; //"313B313B4558454350313D283233322E30302C302E30302C3535302E30302C302E30302C39302E30302C302E30302928362C30290D"
+            SendData();
         }
 
         private void button6_Click(object sender, EventArgs e) //MOV 
         {
-            txtSendData.Text = "1;1;EXECMOV P1."; //"313B313B455845434D4F562050310D"       
+            txtSendData.Text = "1;1;EXECMOV P1"; //"313B313B455845434D4F562050310D"
+            SendData();
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            mx = e.X;
-            my = e.Y;
+            mx = 225 + e.X;
+            my = 180 - e.Y;
             RPoint[ind].X = mx;
             RPoint[ind].Y = my;
-            try { graph.DrawLine(new Pen(Color.Red), RPoint[ind - 1], RPoint[ind]); }
+            try { graph.DrawLine(new Pen(Color.Red), RPoint[ind - 1].X - 225, 180 - RPoint[ind - 1].Y, RPoint[ind].X - 225, 180 - RPoint[ind].Y); }
             catch { }
             richTextBox1.AppendText((RPoint[ind].X).ToString("f2") + ","+ (RPoint[ind].Y).ToString("f2") + "\n" );
             ind++;
@@ -496,8 +502,8 @@ namespace SerialPortTerminal
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            label5.Text = e.X.ToString();
-            label6.Text = e.Y.ToString();
+            label5.Text = (225 + e.X).ToString();
+            label6.Text = (180 - e.Y).ToString();
             //try { graph.DrawLine(new Pen(Color.Red), RPoint[ind - 1].X, RPoint[ind - 1].Y, e.X, e.Y); }
             //catch { }
         }
@@ -538,17 +544,80 @@ namespace SerialPortTerminal
 
         private void button11_Click(object sender, EventArgs e) //RESET
         {
-
+            txtSendData.Text = "1;1;RSTALRM."; //""
+            SendData();
         }
 
         private void button13_Click(object sender, EventArgs e) //OPEN HAND
         {
-            txtSendData.Text = "1;1;EXEC ."; //"" 
+            txtSendData.Text = "1;1;EXECHOPEN 1."; //""
+            SendData();
         }
 
         private void button14_Click(object sender, EventArgs e) //CLOSE HAND
         {
-            txtSendData.Text = "1;1;EXEC ."; //""
+            txtSendData.Text = "1;1;EXECHCLOSE 1."; //""
+            SendData();
+        }
+
+        private void button15_Click(object sender, EventArgs e) //STOP MOVEMENT ???
+        {
+            txtSendData.Text = "1;0;STOP."; //""
+            SendData();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            txtSendData.Text = "1;0;START."; //""
+            SendData();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            textBoxRX.Text = "-6.44"; //X
+            textBoxRY.Text = "260.16"; //Y
+            textBoxRZ.Text = "350.00"; //Z  //220.94
+            textBoxRA.Text = "0.00"; //A
+            textBoxRB.Text = "180.00"; //B
+            textBoxRC.Text = "0.00"; //C
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            textBoxRX.Text = "-6.44"; //X
+            textBoxRY.Text = "260.16"; //Y
+            textBoxRZ.Text = "220.94"; //Z  //220.94
+            textBoxRA.Text = "0.00"; //A
+            textBoxRB.Text = "180.00"; //B
+            textBoxRC.Text = "0.00"; //C
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            textBoxRX.Text = "225"; //X
+            textBoxRY.Text = "180"; //Y
+            textBoxRZ.Text = "250.00"; //Z  //220.94
+            textBoxRA.Text = "0.00"; //A
+            textBoxRB.Text = "180.00"; //B
+            textBoxRC.Text = "0.00"; //C
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            textBoxRX.Text = "225"; //X
+            textBoxRY.Text = "180"; //Y
+            textBoxRZ.Text = "241.20"; //Z  //220.94
+            textBoxRA.Text = "0.00"; //A
+            textBoxRB.Text = "180.00"; //B
+            textBoxRC.Text = "0.00"; //C
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            txtSendData.Text = "1;1;CNTLON."; //"313B313B434E544C4F4E2E0D"
+            SendData();
+            txtSendData.Text = "1;1;SRVON."; //"313B313B5352564F4E0D"
+            SendData();
         }
 	}
 }
