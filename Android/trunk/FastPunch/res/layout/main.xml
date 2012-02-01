@@ -12,7 +12,9 @@
         android:text="MEMS Demo"
         android:textSize="16sp"
         android:textStyle="bold" />
-
+
+
+
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
@@ -32,17 +34,19 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Y-Axis"
-            android:textSize="14sp" />
+            android:textSize="14sp" />  
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content" 
             android:layout_weight="1"
             android:gravity="center"
             android:text="Z-Axis"
             android:textSize="14sp" />
     </LinearLayout>
-
+
+
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="fill_parent"
@@ -67,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center" /> 
     </LinearLayout>
 
 </LinearLayout>
