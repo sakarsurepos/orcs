@@ -1,5 +1,9 @@
 package com.authorwjf;
 
+import com.jjoe64.graphview.*;
+import com.jjoe64.graphview.GraphView.GraphViewData;
+import com.jjoe64.graphview.GraphView.GraphViewSeries;
+import com.jjoe64.graphview.compatible.*;
 import android.app.Activity;
 import android.content.Context;
 import android.hardware.Sensor;
@@ -9,6 +13,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Main extends Activity implements SensorEventListener {
@@ -28,7 +33,44 @@ public class Main extends Activity implements SensorEventListener {
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(this, mAccelerometer , SensorManager.SENSOR_DELAY_FASTEST);
+    	
+        LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout3);
+
+        
+		LineGraphView graphView = new LineGraphView(
+				this
+				, "GraphViewDemo"
+		);
+		graphView.addSeries(new GraphViewSeries(new GraphViewData[] {
+				new GraphViewData(1, 2.0d)
+				, new GraphViewData(2, 1.5d)
+				, new GraphViewData(2.5, 3.0d)
+				, new GraphViewData(3, 2.5d)
+				, new GraphViewData(4, 1.0d)
+				, new GraphViewData(5, 3.0d)
+		}));
+		
+		//setContentView(graphView);
+    	layout.addView(graphView);
     }
+    
+	/*
+	// graph with dynamically genereated horizontal and vertical labels
+	GraphView graphView = new GraphView(new GraphViewData[] {
+			new GraphViewData(1, 2.0d)
+			, new GraphViewData(2, 1.5d)
+			, new GraphViewData(2.5, 3.0d)
+			, new GraphViewData(3, 2.5d)
+			, new GraphViewData(4, 1.0d)
+			, new GraphViewData(5, 3.0d)
+	  } // data
+	  , "GraphViewDemo" // heading
+	  , null // dynamic labels
+	  , null // dynamic labels
+	);
+	LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout3);
+	layout.addView(graphView);
+	*/
 
     protected void onResume() {
         super.onResume();
@@ -44,7 +86,7 @@ public class Main extends Activity implements SensorEventListener {
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
 		// can be safely ignored for this demo
 	}
-
+	
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 		TextView tvX= (TextView)findViewById(R.id.x_axis);
