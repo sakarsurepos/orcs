@@ -26,7 +26,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="X-Axis"
-            android:textSize="14sp" />
+            android:textSize="14sp" /> 
 
         <TextView
             android:layout_width="0dp"
@@ -72,6 +72,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center" /> 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
     </LinearLayout>
 
 </LinearLayout>
