@@ -3,7 +3,6 @@ package com.fastpunch;
 import com.jjoe64.graphview.*;
 import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphView.GraphViewSeries;
-import com.jjoe64.graphview.compatible.*;
 import android.app.Activity;
 import android.content.Context;
 import android.hardware.Sensor;
@@ -15,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Button;
 
 public class Main extends Activity implements SensorEventListener {
 	
@@ -23,7 +23,10 @@ public class Main extends Activity implements SensorEventListener {
 	private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private final float NOISE = (float) 2.0;
-	 
+    TextView textview1=(TextView)findViewById(R.id.textView1);
+    TextView textview2=(TextView)findViewById(R.id.textView2);
+    TextView textview3=(TextView)findViewById(R.id.textView3);
+  	 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,31 @@ public class Main extends Activity implements SensorEventListener {
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(this, mAccelerometer , SensorManager.SENSOR_DELAY_FASTEST);
     	
+        final Button button1 = (Button) findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            	textview1.setText("Max X");
+            }
+        });
+
+        final Button button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            	textview2.setText("Max Y");
+            }
+        });
+        
+        final Button button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            	textview3.setText("Max Z");
+            }
+        });
+        
+        
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout3);
         
 		LineGraphView graphView = new LineGraphView(
@@ -68,7 +96,7 @@ public class Main extends Activity implements SensorEventListener {
 	LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout3);
 	layout.addView(graphView);
 	*/
-
+    
     protected void onResume() {
         super.onResume();
         mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_FASTEST);
