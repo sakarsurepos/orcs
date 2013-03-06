@@ -1,0 +1,472 @@
+Technická univerzita v Košiciach 
+Preh¾ad publikaènej èinnosti vrátane ohlasov 
+Autor: idek, Kamil 
+
+Skupina A2 - Ostatné kniné publikácie (ACA, ACB, BAA, BAB, BCB, BCI, EAI, CAA, CAB, EAJ, FAI)
+Poèet záznamov: 1
+BCI - Skriptá a uèebné texty (1)
+Skupina B - Publikácie v karentovanıch vedeckıch èasopisoch a autorské osvedèenia, patenty a objavy (ADC, ADD, AEG, AEH, BDC, BDD, CDC, CDD, AGJ)
+Poèet záznamov: 1
+ADC - Vedecké práce v zahraniènıch karentovanıch èasopisoch (1)
+Skupina C - Ostatné recenzované publikácie (ACC, ACD, ADE, ADF, AEC, AED, AFA, AFB, AFC, AFD, AFE, AFF, AFG, AFH, BBA, BBB, BCK, BDA, BDB, BDE, BDF, BEC, BED, BFA, BFB, BGH, CDE, CDF) 
+Poèet záznamov: 84
+ADE - Vedecké práce v zahraniènıch nekarentovanıch èasopisoch (10)
+ADF - Vedecké práce v domácich nekarentovanıch èasopisoch (30)
+AEC - Vedecké práce v zahraniènıch recenzovanıch vedeckıch zborníkoch, monografiách (2)
+AFC - Publikované príspevky na zahraniènıch vedeckıch konferenciách (12)
+AFD - Publikované príspevky na domácich vedeckıch konferenciách (29)
+BDF - Odborné práce v domácich nekarentovanıch èasopisoch (1)
+Skupina D - Ostatné - mimo kategórií MŠSR
+Poèet záznamov: 3
+AEE - Vedecké práce v zahraniènıch nerecenzovanıch vedeckıch zborníkoch, monografiách (1)
+AEF - Vedecké práce v domácich nerecenzovanıch vedeckıch zborníkoch, monografiách (2)
+
+Poèet záznamov spolu: 89
+
+Mennı zoznam publikácií:
+
+
+ADC - Vedecké práce v zahraniènıch karentovanıch èasopisoch(1)
+
+ADC001 [123510] Model-based Evolution of a Fast Hybrid Fuzzy Adaptive Controller for a Pneumatic Muscle Actuator / Alexander Hošovskı ... [et al.]  - 2012.In: International Journal of Advanced Robotic Systems. Vol. 9 (56) (2012), p. 1-11. - ISSN 1729-8806  Spôsob prístupu: http://www.intechopen.com/journals/international_journal_of_advanced_robotic_systems/model-based-evolution-of-a-fast-hybrid-fuzzy-adaptive-controller-for-a-pneumatic-muscle-actuator.
+[HOŠOVSKİ, Alexander (40%) - NOVÁK-MARCINÈIN, Jozef (20%) - PITE¼, Ján (20%) - BORÍKOVÁ, Jana (10%) - IDEK, Kamil (10%)]
+
+ADE - Vedecké práce v zahraniènıch nekarentovanıch èasopisoch(10)
+
+ADE001 [55823] Niektoré problémy spracovania informácie zaloené na znalostiach = Some problems of knowlwdge-based information processing / Tomáš Saloky, Ján Pite¾, Kamil idek  - 2006.In: Sborník vìdeckıch prací Vysoké školy báòské - Technické univerzity Ostrava. - Ostrava : VŠB-TU, 2006 Vol. 52, no. 2 (2006), p. 149-154. - ISSN 1210-0471 
+[SALOKY, Tomáš (33%) - PITE¼, Ján (33%) - IDEK, Kamil (33%)]
+Ohlasy:
+
+2010  [3] LUKÁÈOVÁ, I., ŠEMINSKİ, J.: Porovnanie modernıch riadiacich metód s klasickım PID regulátorom pre reguláciu vykurovania. In: Principia Cybernetica 2010 : Sborník mezinárodní konference kateder automatizace a kybernetiky vysokıch škol a univerzit v Èeské a Slovenské republice : Liberec : 8.-9.9.2010. Liberec : TU,  2010. P. 49-54. ISBN 978-80-7372-639-3. 
+
+2010  [4] MAXIM, Marek, ŠEMINSKİ, Jaroslav Support Tools and Information Systems for Development of New Product In: Vırobné ininierstvo Roè. 9, è. 4(2010), s. 48-51 ISSN: 1335-7972 
+
+2010  [3] LUKÁÈOVÁ, I., BORÍKOVÁ, J. Comparison of advanced control methods with classical PID control for using in heating process control based on Outdoor temperature compensation In: Journal of Applied Science in Thermodynamics and Fluid Mechanics Vol. 4, no. 2 (2010), p. 1-6 ISSN: 1802-9388 
+
+2011  [4] HREHOVÁ, Stella Vyuitie prvkov umelej inteligencie v SPC In: Strojárstvo EXTRA Roè. 15., è. 5 (2011), s. 43/1 – 43/2 ISSN: 1335–2938
+
+ADE002 [67688] Vision recognition and application to MPS 500 system / Kamil idek, Vladislav Maxim, Jozef Kováè  - 2007.In: Machines, technologies, materials. No. 4-5 (2007), p. 66-69. - ISSN 1313-0226 
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - KOVÁÈ, Jozef (33%)]
+Ohlasy:
+
+2012  [4] FERIANÈIK, Miloslav - LIŠKA, Ondrej Vyuitie strojového videnia pri riadení polohovacieho zariadenia In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22.-24. február 2012, Stará Lesná, SR S. 22-1-22-6 ISBN: 978-80-553-0835-7 
+
+2012  [2] FERIANÈIK, Miloslav, LÍŠKA, Ondrej Using machine vision to control pointing device In: SAMI 2012 : 10th IEEE Jubilee International Symposium on Applied Machine Intelligence and Informatics : Herl’any, Slovakia S. 469-471 ISBN: 987-1-4577-0195-5 
+
+2012  [4] FERIANÈIK, Miloslav, LÍŠKA, Ondrej Strojové videnie pri navigácii polohovacieho zariadenia In: Strojárstvo extra È. 5 (2012), s. 43/1-43/2 ISSN: 1335-2938
+
+ADE003 [67693] Model of the switched reluctance motor with approximation of profile phase inductance = Mode¾ scep¾ennogo reluktanènogo motora s atrochimovannoj fazovoj indukcijej / Vladislav Maxim ... [et al.]  - 2007.In: Machines Technologies Materials. No. 6-7 (2007), p. 3-5. - ISSN 1313-0226  Spôsob prístupu: http://www.mech-ing.com/journal/Archive/6-7-2007/1.Mashini/1_8.Maxim.model%20SRM.pdf.
+[MAXIM, Vladislav - IDEK, Kamil - LUPTÁK, Miloslav - DUDRIK, Jaroslav]
+
+ADE004 [70064] Simple semiconductor seitch in zero of AC voltage with minimum electromagnetic influence (EMC) on power supply network = Prostoj poluprovodnikoj vykljuèate¾ v nastojaim iug znakoperemennovo napraenija s monima¾nym vlijanijem na tjalovuju se / Kamil idek, Vladislav Maxim, Miloslav Lupták  - 2008.In: Machines, technologies, materials. Vol 2, no. 1 (2008), p. 6-9. - ISSN 1313-0226 
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - LUPTÁK, Miloslav (33%)]
+Ohlasy:
+
+2010  [3] KAÒUCH, Ján, VIŠNYI, Peter EMC of universal DC motor In: Maszyny elektryczne No. 88 (2010), p. 209-215 ISSN: 0239-3646 
+
+2009  [3] KAÒUCH, Ján , VIŠNYI, Peter DC drive for universal motor In: Maszyny elektryczne Vol. 2009, no. 84 (2009), p. 7-11 ISSN: 0239-3646
+
+ADE005 [79569] Global navigation and web monitoring for interoperation transport in outdoor environment / Kamil idek, Ondrej Líška, Vladislav Maxim  - 2008.In: Cybernetics Letters. No. 2 (2008), p. 1-9. - ISSN 1802-3525  Spôsob prístupu: http://www.cybletter.com/index.php?s=file_download&id=61.
+[IDEK, Kamil (34%) - LÍŠKA, Ondrej (33%) - MAXIM, Vladislav (33%)]
+Ohlasy:
+
+2011  [4] BORÍKOVÁ, Jana Vıskum a vıvoj inteligentnıch nekonvenènıch aktuátorov na báze umelıch svalov In: Automatizácia a riadenie v teórii a praxi 2011 : ARTEP 2011 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 16.-18. február 2011, Stará Lesná, SR S. 08-1-08-6 ISBN: 978-80-553-0606-3
+
+ADE006 [93437] Location estimation of mobile devices / Kamil idek, Ondrej Líška  - 2009.In: Sborník vìdeckıch prací Vysoké školy báòské - Technické univerzity Ostrava : øada strojní. Vol. 55, no. 2 (2009), p. 187-191. - ISSN 1210-0471 
+[IDEK, Kamil (50%) - LÍŠKA, Ondrej (50%)]
+
+ADE007 [114689] Accelerometers usability for danger tilt off-highway vehicles and signal filtration with kalman filter / Kamil idek, Ondrej Líška  - 2011.In: Journal of Applied Science in the Thermodynamics and Fluid Mechanics. Vol. 4, no. 2 (2010), p. 1-6. - ISSN 1802-9388 
+[IDEK, Kamil (50%) - LÍŠKA, Ondrej (50%)]
+Ohlasy:
+
+2012  [4] BORÍKOVÁ, Jana - MIÁK, Jozef Zostavenie algoritmu filtrovania s rôznymi funkciami In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22.-24. február 2012, Stará Lesná, SR S. 11-1-11-7 ISBN: 978-80-553-0835-7
+
+ADE008 [123523] Remote control of industrial robot / Kamil idek, Jozef Svetlík, Vladislav Maxim  - 2012.In: International Scientific Herald. Vol. 3, no. 2 (2012), p. 267-271. - ISSN 2218-5348 
+[IDEK, Kamil (40%) - SVETLÍK, Jozef (30%) - MAXIM, Vladislav (30%)]
+
+ADE009 [123524] Environment mapping and localization od mobile robotics / Kamil idek, Jozef Svetlík, Eva Rigasová  - 2012.In: International Scientific Herald. P. 272-280. - ISSN 2218-5348 
+[IDEK, Kamil (50%) - SVETLÍK, Jozef (40%) - RIGASOVÁ, Eva (10%)]
+
+ADE010 [123611] Advanced rehabilitation device based on artificial muscle actuators with neural network implementation / Kamil idek, Ondrej Líška, Vladislav Maxim  - 2012.In: Journal of automation, mobile robotics & inteligent systems. Vol. 6, no. 3 (2012), p. 30-32. - ISSN 1897-8649 
+[IDEK, Kamil (60%) - LÍŠKA, Ondrej (10%) - MAXIM, Vladislav (30%)]
+
+ADF - Vedecké práce v domácich nekarentovanıch èasopisoch(30)
+
+ADF001 [50163] GPS systémy pre navigáciu mobilnıch zariadení s pomocou PC / Kamil idek, Tomáš Saloky  - 2005.In: Transfer inovácií. 8/2005. - Košice : SjF-TU, 2005 S. 158-161. - ISBN 8080734615  Spôsob prístupu: http://www.tuke.sk/sjf-icav/stranky/transfer/8-2005/pdf/158-161.pdf.
+[IDEK, Kamil (50%) - SALOKY, Tomáš (50%)]
+Ohlasy:
+
+2007  [4] PITE¼, Ján: Riadenie vıroby a dodávky tepla s monitorovaním cez i nternet. In: Vırobné ininierstvo. roè. 6, è. 3 (2007), s. 92-94. ISSN 1335-7972.
+
+ADF002 [50681] Implementácia bezdrôtového prenosu informácií pre mobilné roboty = Implementation of wireless communication for mobile robots / Kamil idek, Vladislav Maxim, Tomáš Saloky  - 2006.In: Acta Mechanica Slovaca. Roè. 10, è. 2-A ROBTEP 2006 (2006), s. 625-630. - ISSN 1335-2393 
+[IDEK, Kamil (33%) - SALOKY, Tomáš (33%) - MAXIM, Vladislav (33%)]
+Ohlasy:
+
+2007  [4] KUBINEC, S.: Didaktickı model vıahu. In: ATP Journal plus. È. 1 (2007), s. 283-285. ISSN 1336-5010. Online dokument.
+
+ADF003 [55830] Bezdrôtovı prenos informácií zaloenı na štandarde WI-FI pre riadenie mobilnıch robotov / Kamil idek, Tomáš Saloky  - 2006.In: AT&P journal plus. È. 1 (2006), s. 60-63. - ISSN 1336-5010 
+[IDEK, Kamil (50%) - SALOKY, Tomáš (50%)]
+
+ADF004 [55833] Jednoduchı lineárny model spínaného reluktanèného motora (SRM) / Vladislav Maxim, Kamil idek  - 2006.In: AT&P journal plus. È. 1 (2006), s. 45-47. - ISSN 1336-5010 
+[MAXIM, Vladislav (50%,) - IDEK, Kamil (50%,)]
+Ohlasy:
+
+2007  [4] PITE¼, J., SALOKY, T.: Simulaènı model teplovodného vykurovacieho telesa. In: Acta Metallurgica Slovaca. roè. 13, è. 3 (2007), s. 301-306. ISSN 1335-1532. 
+
+2007  [4] KUBINEC, S.: Didaktickı model vıahu. In: ATP Journal plus. È. 1 (2007), s. 283-285. ISSN 1336-5010. Online dokument. 
+
+2008  [3] PITE¼, J.: Current trends in actuators for industrial robots. In: Proceedings of the 17th International Conference on Manufacturing Systems ICMaS: 13th-14th November 2008. Bucharest: University Politehnica, 2008. P. 199-202. ISSN 1842-3183. 
+
+2008  [3] PITE¼, Ján: Modelling of the PAM based antagonistic actuator. In: Cybernetic Letters. No. 2 (2008), 4 p. ISSN 1802-3525.
+
+ADF005 [57962] Globálna navigácia mobilnıch robotov a pouitie filtrov / Kamil idek, Tomáš Saloky, Vladislav Maxim  - 2006.In: AT&P journal Plus. È. 2 (2006), s. 68-71. - ISSN 1336-5010 
+[IDEK, Kamil (33%) - SALOKY, Tomáš (33%) - MAXIM, Vladislav (33%)]
+Ohlasy:
+
+2007  [4] KUBINEC, Stanislav: Didaktickı model vıahu. In: AtP journal Plus, è. 1 (2007), s. 283-285. ISSN 1336-5010.
+
+ADF006 [58065] Globálna navigácia a jej spresnenie pouitím Kalman filtra / Kamil idek, Tomáš Saloky, Vladimír Maxim  - 2006.In: Transfer inovácií. È. 9 (2006), s. 159-162. - ISBN 80-8073-701-0  Spôsob prístupu: http://www.tuke.sk/sjf-icav/stranky/transfer/9-2006/obsah.htm.
+[IDEK, Kamil (33%) - SALOKY, Tomáš (33%) - MAXIM, Vladislav (33%)]
+Ohlasy:
+
+2008  [3] HONC, D., HABER, R., HAVLÍÈEK, L.: Kalman filtering and generalized predictive control. In: Teorie dopravních systémù. Brno : TRIBUN EU, 2008. ISBN 978-1-56592-479-6. 
+
+2011  [4] K¼ÚÈIK, Marian, DUCHOÒ, František, JURIŠICA, Ladislav et al. Leica GPS 1200 in mobile robotics In: MMaMS 2011 : Modelling of Mechanical and Mechatronical Systems : proceedings of the 4th international conference : Her¾any, Slovakia, 20. - 22. 9. 2011 [CD-ROM] S. 224-228 ISBN: 978-80-553-0731-2
+
+ADF007 [58458] Vıkonovı polovodièovı spínaè v nule napätia = Zero-crossing-voltage power semiconductor switch / Vladislav Maxim, Kamil idek  - 2007.In: Acta Mechanica Slovaca. Roè. 11, è. 1-A/2007 ARTEP (2007), s. 299-302. - ISSN 1335-2393 
+[MAXIM, Vladislav (50%) - IDEK, Kamil (50%)]
+
+ADF008 [64681] Rozpoznávanie obrazu a jeho aplikácia do systému FMS 500 / Kamil idek, Vladislav Maxim, Matúš Janitor  - 2007.In: AT&P Journal plus. È. 1 (2007), s. 245-250. - ISSN 1336-5010 
+[IDEK, Kamil (33%) - MAXIM, Vladislav (33%) - JANITOR, Matúš (33%)]
+Ohlasy:
+
+2008  [4] KOSTÍK, ¼uboš - SALOKY, Tomáš: Rozpoznávanie obrazov v procesoch riadenia a jeho monosti aplikácie vo vıuèbe. In: Acta Mechanica Slovaca. roè. 12, è. 1-A (2008), s. 219-226. ISSN 1335-2393. 
+
+2008  [4] KOSTÍK, ¼uboš - SALOKY, Tomáš: Rozpoznávanie obrazov v procesoch riadenia a jeho monosti aplikácie vo vıuke. In: Automatizácia a riadenie v teórii a praxi ARTEP 2008 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 20.2. - 22.2.2008, Stará Lesná, SR. Košice : TU, 2008. s. 21-1-21-10. ISBN 978-80-8073-981-2.
+
+ADF009 [64682] Model spínaného reluktanèného motora (SRM) s aproximovanım priebehom fázovej indukènosti / Vladislav Maxim, Kamil idek, Miloslav Lupták  - 2007.In: AT&P Journal plus. È. 1 (2007), s. 166-168. - ISSN 1336-5010 
+[MAXIM, Vladislav (33%) - IDEK, Kamil (33%) - LUPTÁK, Miloslav (33%)]
+
+ADF010 [64685] Spínaè v nule napätia s minimálnym spätnım vplyvom na napájaciu sie / Vladislav Maxim, Kamil idek, Miloslav Lupták  - 2007.In: AT&P Journal plus. È. 1 (2007), s. 163-165. - ISSN 1336-5010 
+[MAXIM, Vladislav (33%) - IDEK, Kamil (33%) - LUPTÁK, Miloslav (33%)]
+Ohlasy:
+
+2008  [3] RUŠÈIN, V.,  DUDRÍK, J.:  Soft switching DC/DC converter using auxiliary circuits. In: Journal of Electrical and Electronics Engineering. (2008), p. 242-245. ISSN 1844-6035.
+
+ADF011 [69958] Dia¾kové riadenie mobilnıch robotov cez webové technológie = Remote control of mobile robots based on web technologies / Kamil idek, Vladislav Maxim  - 2008.In: Acta Mechanica Slovaca. Roè. 12, è. 1-A/2008 (2008), s. 161-166. - ISSN 1335-2393 
+[IDEK, Kamil (50%) - MAXIM, Vladislav (50%)]
+
+ADF012 [69961] Návrh riadenia systému na testovanie ivotnosti otoènıch èastí motorovıch vozidiel na báze pneumatiky / Kamil idek, Vladislav Maxim  - 2008.In: Acta Mechanica Slovaca. Roè. 12, è. 1-A/2008 (2008), s. 253-258. - ISSN 1335-2393 
+[IDEK, Kamil (50%) - MAXIM, Vladislav (50%)]
+Ohlasy:
+
+2010  [4] NEYDORF, R., PITE¼, J. Koncepcia návrhu univerzálneho abstraktného modelu pneumatického umelého svalu In: Strojárstvo EXTRA Roè. 14, è. 5 (2010),  s. 14/1-14/3 ISSN: 1335-2938 
+
+2011  [4] BORÍKOVÁ, Jana Vıskum a vıvoj inteligentnıch nekonvenènıch aktuátorov na báze umelıch svalov In: Automatizácia a riadenie v teórii a praxi 2011 : ARTEP 2011 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatitzácie a riadenia : 16.-18. február 2011, Stará Lesná, SR S. 08-1-08-6 ISBN: 978-80-553-0606-3
+
+ADF013 [72892] Some problems of image understanding systems Niektoré problémy systémov pre porozumenie obrazu/ Tomáš Saloky, Kamil idek  - 2008.In: Acta Mechanica Slovaca. Roè. 12, è. 2-A (2008), s. 547-552. - ISSN 1335-2393 
+[SALOKY, Tomáš (50%) - IDEK, Kamil (50%)]
+Ohlasy:
+
+2010  [3] PITE¼, J., BORÍKOVÁ, J., MIÁK, J. Biomass Combustion Process Control Using Artificial Intelligence Techniques In: Instruments and Control : Proceedings of 35. Seminar ASR'2010 P. 317-321 ISBN: 978-80-248-2191-7 
+
+2010  [3] MIÁK, J., PITE¼, J., VOJTKO, I. Aproximácia závislosti CO/lambda pri spa¾ovaní biomasy technikami umelej inteligencie In: PRINCIPIA CYBERNETICA 2010 : sborník : Liberec, Èeská republika P. 61-65 ISBN: 978-80-7372-639-3 
+
+2011  [3] SVETLÍK, Jozef, DOBRÁNSKY, Jozef Analysis of workspace modular serial manipulator In: Annals of Faculty Engineering Hunedoara - international journal of engineering Vol. 9, no. 2 (2011), p. 33-36 ISSN: 1584-2665
+
+ADF014 [72896] Implementácia mobilnıch robotov do medzioperaènej dopravy pre vonkajšie priestory = Implementation of mobile robots to outdoor interoperation transport / Kamil idek, Tomáš Saloky, Vladislav Maxim  - 2008.In: Acta Mechanica Slovaca. Roè. 12, è. 2-A (2008), s. 761-768. - ISSN 1335-2393 
+[IDEK, Kamil (34%) - SALOKY, Tomáš (33%) - MAXIM, Vladislav (33%)]
+
+ADF015 [75809] Vyuitie biomechanickıch charakteristík pri riešení kinematického a dynamického modelu kráèajúcich servisnıch robotov = Use biomechanical characteristics for the design of kinematic and dynamic model of walking service robots / Juraj Smrèek, Martin Nemec, Kamil idek  - 2008.In: Acta Mechanica Slovaca. Roè. 12, è. 2-A (2008), s. 589-600. - ISSN 1335-2393 
+[SMRÈEK, Juraj (34%) - NEMEC, Martin (33%) - IDEK, Kamil (33%)]
+Ohlasy:
+
+2009  [3] PITE¼, J. PWM Control of the PAM Based Antagonistic Actuator In: 34. seminar ASR ´2009 : Instruments and control : 24. april 2009, Ostrava P. 271-275 ISSN: 978-80-248-1953-2
+
+ADF016 [89951] Kurz programovate¾nıch automatov - PLC (èas 1) : obvodová architektúra PLC / Kamil idek, Vladislav Maxim  - 2009.In: Elektrotechnik. Roè. 1, è. 1 (2009), s. 60-61. - ISSN 1337-8546 
+[IDEK, Kamil (50%) - MAXIM, Vladislav (50%)]
+
+ADF017 [89952] Kurz programovate¾nıch automatov - PLC (èas 2) : programovacie jazyky - druhy / Kamil idek, Vladislav Maxim  - 2009.In: Elektrotechnik. Roè. 1, è. 2 (2009), s. 44-45. - ISSN 1337-8546 
+[IDEK, Kamil (50%) - MAXIM, Vladislav (50%)]
+
+ADF018 [89953] Detekcia pohybu kamerovım systémom / Kamil idek, Vladislav Maxim, Tomáš Saloky  - 2009.In: Strojárstvo extra. È. 5 (2009), s. 59/1-59/2. - ISSN 1335-2938 
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - SALOKY, Tomáš (33%)]
+
+ADF019 [90201] Návrh riadiacich systémov na báze vreckovıch poèítaèov / Kamil idek, Vladislav Maxim, Tomáš upa  - 2009.In: Transfer inovácií. È. 14 (2009), s. 93-95. - ISSN 1337-7094  Spôsob prístupu: http://www.sjf.tuke.sk/transferinovacii/pages/archiv/transfer/14-2009/pdf/093-095.pdf.
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - UPA, Tomáš (33%)]
+Ohlasy:
+
+2011  [4] BORÍKOVÁ, Jana Vıskum a vıvoj inteligentnıch nekonvenènıch aktuátorov na báze umelıch svalov In: Automatizácia a riadenie v teórii a praxi 2011 : ARTEP 2011 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 16.-18. február 2011, Stará Lesná, SR S. 08-1-08-6 ISBN: 978-80-553-0606-3
+
+ADF020 [90217] Návrh a realizácia napájacej èasti mobilnıch zariadení na báze lítium-polymérovıch akumulátorov = Design and realization power supply unit of mobile devices based on the lithium-polymer rechargeable / Tomáš upa, Kamil idek, Ondrej Líška  - 2009.In: Transfer inovácií. È. 14 (2009), s. 100-101. - ISSN 1337-7094  Spôsob prístupu: http://www.sjf.tuke.sk/transferinovacii/pages/archiv/transfer/14-2009/pdf/100-101.pdf.
+[UPA, Tomáš (33%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+Ohlasy:
+
+2012  [3] SVETLÍK, Jozef, JÁNOŠ, Rudolf, SEMJON, Ján Workspace analysis of homogenous modular kinematical structure built on the principle of connecting rotary modules In: International Scientific Herald P. 207-214 ISSN: 2218-5348
+
+ADF021 [93153] Dynamika anıch a vysokozdvinıch pohonov pre potreby vıuèby / Sylvia Rovòáková ... [et al.]  - 2009.In: Vırobné ininierstvo. È. 4 (2009), s. 65-67. - ISSN 1335-7972  Spôsob prístupu: http://web.tuke.sk/fvtpo/casopis/.
+[ROVÒÁKOVÁ, Sylvia (20%) - LUKÁÈ, Martin (20%) - IDEK, Kamil (20%) - UPA, Tomáš (20%) - MAXIM, Vladislav (20%)]
+
+ADF022 [106024] New trends in application of artificial muscles for automation devices used in non-productive sector / Marek Fodor ... [et al.]  - 2010.In: Vırobné ininierstvo. È. 4 (2010), s. 78-80. - ISSN 1335-7972 
+[FODOR, Marek (10%) - ŠEMINSKİ, Jaroslav (20%) - VESELINY, Marián (30%) - IDEK, Kamil (30%) - UPA, Tomáš (10%)]
+Ohlasy:
+
+2012  [4] HAVRAN, Michal - PITE¼, Ján Návrh riadiaceho algoritmu s referenènım modelom pre antagonisticky zapojené umelé svaly In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z uviverzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22.-24. február 2012, Stará Lesná, SR S. 26-1-26-10 ISBN: 978-80-553-0835-7 
+
+2011  [3] HOŠOVSKİ, Alexander - HAVRAN, Michal Hill´s muscle model-based modeling of pneumatic artificial muscle In: Annals of DAAAM : 22nd International DAAAM Symposium : 23-26th November 2011, Vienna, Austria P. 1005-1006 ISBN: 978-3-901509-83-4 
+
+2011  [3] PITEL, Ján, NEYDORF, Rudolf, BORZIKOVA, Jana Arm position simulation of pam based actuator In: Annals of DAAAM for 2011  Proceedings of the 22nd International DAAAM Symposium on "Intelligent Manufacturing  Automation : Power of Knowledge and Creativity": 23-26th November 2011, Vienna, Austria P. 0145-0146 ISSN: 1726-9679 ISBN: 978-3-901509-83-4 
+
+2012  [4] HAVRAN, Michal, PITE¼, Ján Hybridné adaptívne riadenie antagonisticky zapojenıch pneumatickıch umelıch svalov In: Strojárstvo extra È. 5 (2012), s. 11/1-11/4 ISSN: 1335-2938 
+
+2012  [4] TÓTHOVÁ, Mária, PITE¼, Ján Klasifikácia pneumatickıch umelıch svalov In: Strojárstvo: Automatizácia a riadenie v teórii a praxi Roè. 16., è. 5 (2012), s. 12/1-12/4 ISSN: 1335-2938
+
+ADF023 [108230] Search algorithm and edge detector combination for outdoor trajectory planning / Kamil idek  - 2010.In: Transfer inovácií. È. 18 (2010), s. 42-44. - ISSN 1337-7094  Spôsob prístupu: http://www.sjf.tuke.sk/transferinovacii/pages/archiv/transfer/18-2010/pdf/042-044.pdf.
+[IDEK, Kamil (100%)]
+
+ADF024 [108233] Rehabilitation device based on artificial muscle with usability of  AI / Marián Veseliny, Kamil idek, Ondrej Líška  - 2010.In: Transfer inovácií. È. 18 (2010), s. 45-47. - ISSN 1337-7094  Spôsob prístupu: http://www.sjf.tuke.sk/transferinovacii/pages/archiv/transfer/18-2010/pdf/045-047.pdf.
+[VESELINY, Marián (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+Ohlasy:
+
+2012  [4] HAVRAN, Michal, PITE¼, Ján Hybridné adaptívne riadenie antagonisticky zapojenıch pneumatickıch umelıch svalov In: Strojárstvo extra È. 5 (2012), s. 11/1-11/4 ISSN: 1335-2938
+
+ADF025 [97660] Optoelektronickı snímaè a meranie jeho teplotnej stability / Vladislav Maxim, Kamil idek, Sylvia Rovòáková  - 2010. - 1 elektronickı optickı disk (CD-ROM).In: Strojárstvo extra. È. 5 (2010), s. 35/1-35/3. - ISSN 1335–2938 
+[MAXIM, Vladislav (34%) - IDEK, Kamil (33%) - ROVÒÁKOVÁ, Sylvia (33%)]
+
+ADF026 [109866] Vyuitie UI a modernıch prvkov v rehabilitaènom procese / Marián Veseliny, Ondrej Líška, Kamil idek  - 2011. - 1 elektronickı optickı disk (CD-ROM).In: Strojárstvo extra. È. 5 (2011), s. 45/1-45/4. - ISSN 1335-2938 
+[VESELINY, Marián (34%) - LÍŠKA, Ondrej (33%) - IDEK, Kamil (33%)]
+
+ADF027 [109868] Riadiaci systém rehabilitacného zariadenia hornıch koncatín / Tomáš upa, Kamil idek, Ondrej Líška  - 2011. - 1 elektronickı optickı disk (CD-ROM).In: Strojárstvo extra. È. 5 (2011), s. 33/1-33/3. - ISSN 1335-2938 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+ADF028 [109872] Návrh testovacieho stendu pre rehabilitaèné zariadenie na báze umelıch svalov / Kamil idek, Vladislav Maxim, Jaroslav Šeminskı  - 2011. - 1 elektronickı optickı disk (CD-ROM).In: Strojárstvo extra. È. 5 (2011), s. 25/1-25/4. - ISSN 1335-2938 
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - ŠEMINSKİ, Jaroslav (33%)]
+
+ADF029 [122076] Návrh bezpeènostného systému pre rehabilitaèné zariadenia / Eva Rigasová, Kamil idek  - 2012.In: Strojárstvo extra. È. 5 (2012), s. 21/1-21/3. - ISSN 1335-2938 
+[RIGASOVÁ, Eva (5%) - IDEK, Kamil (95%)]
+
+ADF030 [122152] Filtrovanie meranıch údajov na báze funkcie príslušnosti / Jana Boríková ... [et al.]  - 2012. - 1 elektronickı optickı disk (CD-ROM).In: Strojárstvo extra. È. 5 (2012), s. 09/1-09/3. - ISSN 1335-2938 
+[BORÍKOVÁ, Jana (40%) - MIÁK, Jozef (10%) - TÓTHOVÁ, Mária (10%) - IDEK, Kamil (40%)]
+
+AEC - Vedecké práce v zahraniènıch recenzovanıch vedeckıch zborníkoch, monografiách(2)
+
+AEC001 [112965] MEMS Accelerometers usability for dangerous tilt with Kalman filter implementation / K. idek, M. Dovica, O. Líška  - 2011.In: Mechatronics : Recent Technological and Scientific Advances. - Berlin Heidelberg : Springer-Verlag, 2011 P. 729-738. - ISBN 978-3-642-23243-5 
+[IDEK, Kamil (40%) - DOVICA, Miroslav (30%) - LÍŠKA, Ondrej (30%)]
+
+AEC002 [114683] Rehabilitation Device Based on Uncoventional Actuator / Kamil idek, Ondrej Líška, Vladislav Maxim  - 2011.In: Mechatronics : Recent Technological and Scientific Advances. - Berlin Heidelberg : Springer-Verlag, 2011 P. 697-702. - ISBN 978-3-642-23243-5 
+[IDEK, Kamil (50%) - LÍŠKA, Ondrej (25%) - MAXIM, Vladislav (25%)]
+
+AEE - Vedecké práce v zahraniènıch nerecenzovanıch vedeckıch zborníkoch, monografiách(1)
+
+AEE001 [0012176] Analıza a simulácia chôdze èloveka / Petruška Pavol, Doliak Martin, idek Kamil  - 2000.In: Mezinárodní vìdecká konference pøi pøíleitosti 50 let zaloení fakulty strojní. - Ostrava : VŠB-TU, 2000 S. 45.1-45.9. - ISBN 8070787996 
+[PETRUŠKA, Pavol - DOLIAK, Martin - IDEK, Kamil]
+
+AEF - Vedecké práce v domácich nerecenzovanıch vedeckıch zborníkoch, monografiách(2)
+
+AEF001 [0012390] Analıza a simulácia chôdze èloveka = Analysis and simulation of motion human / Pavol Petruška ... [et al.]  - 2000.In: COMTEP 2000 - Poèítaèe v teórii a praxi. - Košice : TU-SjF, 2000 S. 177-184. - ISBN 8070996315 
+[PETRUŠKA, Pavol - DOLIAK, Martin - IDEK, Kamil - ŠIDLOVSKÁ, ¼uboslava]
+
+AEF002 [64495] Some problems of knowledge-based information processing = Niektoré problémy spracovania informácie zaloené na znalostiach / Tomáš Saloky, Ján Pite¾, Kamil idek  - 2007.In: The research of the dynamical systems and possibility of its synthesis development. - Prešov : FVT TU, 2007 S. 86-91. - ISBN 9788080738556 
+[SALOKY, Tomáš (34%) - PITE¼, Ján (33%) - IDEK, Kamil (33%)]
+Ohlasy:
+
+2008  [4] TOMKOVÁ, Zuzana: Hlavné zdroje a oblasti získavania informácii a znalosti pre proces navrhovania a konštrukènú èinnos. In: Nové smery vo vırobnıch technológiách 2008. Prešov: 9. medzinárodná vedecká konferencia, 19.-21.6. 2008. Prešov : FVT TU, 2008. S. 348-351. ISBN 978-80-553-0044-3. 
+
+2008  [4] LÍŠKA, Ondrej - MIHALÍKOVÁ, Jana: Koncept vytvárania digitálneho podniku v laboratóriu automatizácie a riadenia. In: Transfer inovácií. È. 12 (2008), s. 58-60. Dostupné aj na http://www.sjf.tuke.sk/transferinovacii/pages/archiv/transfer/12-2008/pdf/58-60.pdf. ISSN 1337-7094. 
+
+2012  [1] HREHOVÁ, Stella, VAGASKÁ, Alena Application of Fuzzy Principles in Evaluating Quality of Manufacturing Process In: WSEAS Transactions on Power Systems Vol. 7, no. 2 (2012), p. 50-59 ISSN: 2224-350X
+
+AFC - Publikované príspevky na zahraniènıch vedeckıch konferenciách(12)
+
+AFC001 [72898] Implementation of mobile robot to part transport / Kamil idek ... [et al.]  - 2008.In: Process Control 2008. - Pardubice : Univerzita Pardubice, 2008 P. C182a-1-C182a-6. - ISBN 9788073950774 
+[IDEK, Kamil (25%) - LÍŠKA, Ondrej (25%) - SALOKY, Tomáš (25%) - MAXIM, Vladislav (25%)]
+
+AFC002 [72900] Implementation of vision recognition to automatic sorting system / Vladislav Maxim, Kamil idek  - 2008. - 1 elektronickı optickı disk (CD-ROM).In: Process Control 2008 : 8. nternational scientific - technical conference : Kouty nad Dìsnou, 9.-12.6.2008. - Pardubice : Univerzita Pardubice, 2008 P. C182b-1-C182b-8. - ISBN 9788073950774 
+[MAXIM, Vladislav (50%) - IDEK, Kamil (50%)]
+Ohlasy:
+
+2012  [4] FERIANÈIK, Miloslav - LÍŠKA, Ondrej Vyuitie strojového videnia pri riadení polohovacieho zariadenia In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22.-24. február 2012, Stará Lesná, SR S. 22-1-22-6 ISBN: 978-80-553-0835-7 
+
+2012  [2] FERIANÈIK, Miloslav, LÍŠKA, Ondrej Using machine vision to control pointing device In: SAMI 2012 : 10th IEEE Jubilee International Symposium on Applied Machine Intelligence and Informatics : Herl’any, Slovakia S. 469-471 ISBN: 978-1-4577-0195-5 
+
+2012  [4] FERIANÈIK, Miloslav, LÍŠKA, Ondrej Strojové videnie pri navigácii polohovacieho zariadenia In: Strojárstvo extra È. 5 (2012), s. 43/1-43/2 ISSN: 1335-2938
+
+AFC003 [89957] Mathematical estimation of Mobile Robot movement / Kamil idek, Ondrej Líška  - 2009.In: 34. Seminar ASR '2008 "Instruments and Control". - Ostrava : VŠB-TU, 2009 P. 369-373. - ISBN 9788024819532 
+[IDEK, Kamil (50%) - LÍŠKA, Ondrej (50%)]
+
+AFC004 [89959] Transformation low-cost LINUX AP hardware to advanced control system = Úprava AP routra na pokroèilı riadiaci systém / Ondrej Líška, Kamil idek  - 2009.In: Instruments and Control. - Ostrava : VŠB-TU, 2009 P. 175-180. - ISBN 9788024819532  Spôsob prístupu: http://www.fs.vsb.cz/akce/2009/asr2009/RegForm/prispevek.asp?Unit=24&IDPaper=1984.
+[LÍŠKA, Ondrej (50%) - IDEK, Kamil (50%)]
+
+AFC005 [100782] Wireless audio signal processing for mobile robot system / Kamil idek, Jaroslav Šeminskı  - 2010. - 1 elektronickı optickı disk (CD-ROM).In: Process Control 2010 : 9th International Conference : June 7 - 10, 2010, Kouty nad Desnou, Czech Republic. - Brno : Tribun EU, 2010 P. C187_c-1-C187_c-5. - ISBN 978-80-7399-951-3 
+[IDEK, Kamil (75%) - ŠEMINSKİ, Jaroslav (25%)]
+Ohlasy:
+
+2011  [4] BORÍKOVÁ, Jana Vıskum a vıvoj inteligentnıch nekonvenènıch aktuátorov na báze umelıch svalov In: Automatizácia a riadenie v teórii a praxi 2011 : ARTEP 2011 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 16.-18. február 2011, Stará Lesná, SR S. 08-1-08-6 ISBN: 987-80-553-0606-3
+
+AFC006 [98717] Design of the charging module for LiFePO4 batteries / Tomáš upa, Kamil idek, Ondrej Líška  - 2010.In: Instruments and Control : 35. Seminar  ASR '2010 : Ostrava, April 30, 2010. - Ostrava : VŠB-TU, 2010 P. 435-438. - ISBN 978-80-248-2191-7  Spôsob prístupu: http://www.fs.vsb.cz/akce/2010/asr2010/proceedings/435.pdf.
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+AFC007 [110069] Application of advanced technologies in rehabilitation prosess / M. Veseliny, K. idek, O. Líška  - 2011.In: Engineering Mechanics 2011 : 17th international conference : May 9-12, 2011, Svratka, Czech Republic. - ïár nad Sázavou  : ÏAS, 2011 P. 651-654. - ISBN 978-80-87012-33-8 
+[VESELINY, Marián (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+AFC008 [110071] Testing of rehabilitation device with industrial robot / K. idek, V. Maxim  - 2011.In: Engineering Mechanics 2011 : 17th international conference : May 9-12, 2011, Svratka, Czech Republic. - ïár nad Sázavou  : ÏAS, 2011 P. 695-698. - ISBN 978-80-87012-33-8 
+[IDEK, Kamil (50%) - MAXIM, Vladislav (50%)]
+
+AFC009 [110073] Design of the control system for rehabilitation device of upper arm / T. upa, K. idek, O. Líška  - 2011.In: Engineering Mechanics 2011 : 17th international conference : May 9-12, 2011, Svratka, Czech Republic. - ïár nad Sázavou  : ÏAS, 2011 P. 703-706. - ISBN 978-80-87012-33-8 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+AFC010 [116266] Automated rehabilitation device based on artificial muscles / Kamil idek, Jaroslav Šeminskı  - 2011.In: Annals of DAAAM for 2011 & Proceedings of the 22nd International DAAAM Symposium on "Intelligent Manufacturing & Automation : Power of Knowledge and Creativity": 23-26th November 2011, Vienna, Austria. - Vienna : DAAAM International, 2011 P. 1113-1114. - ISBN 978-3-901509-83-4  - ISSN 1726-9679 
+[IDEK, Kamil (50%) - ŠEMINSKİ, Jaroslav (50%)]
+
+AFC011 [116354] Elektromodernizácia priemyselnej pohonárskej praxe v oblasti separaènıch odstrediviek pomocou frekvenèného menièa SINAMICS G110 / Vladislav Maxim, Vladimír Rudy, Kamil idek  - 2011. - 1 elektronickı optickı disk (CD-ROM).In: MOPP 2011 : Modelování a optimalizace podnikovıch procesù : 13. roèník mezinárodního semináøe : Plzeò, 24.-25. listopadu 2011. - Plzeò : ZU, 2011 P. 1-5. - ISBN 978-80-261-0060-7 
+[MAXIM, Vladislav (34%) - RUDY, Vladimír (33%) - IDEK, Kamil (33%)]
+
+AFC012 [119397] Rehabilitation device construction based on artificial muscle actuators / Kamil idek ... [et al.]  - 2012. - 1 elektronickı optickı disk (CD-ROM).In: BioMed 2012 : Biomedical Engineering : proceedings of the Ninth IASTED International Conference : February 15-17, 2012, Innsbruck, Austria. - Innsbruck : IEEE, 2012 P. 855-861. - ISBN 978-0-88986-909-7 
+[IDEK, Kamil (30%) - PITE¼, Ján (30%) - GALAJDOVÁ, Alena (30%) - FODOR, Marek (10%)]
+Ohlasy:
+
+2012  [4] JOBBÁGY, Boris - FODOR, Marek - ŠIMŠÍK, Dušan Návrh konštrukcie rehabilitaèného zariadenia s vyuitím umelıch svalov In: Automatizácia a riadenie v teórii a praxi : ARTEP 2012 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22.-24. február 2012, Stará Lesná, SR S. 32-1-32-7 ISBN: 978-80-553-0835-7 
+
+2012  [4] JOBBÁGY, Boris, FODOR, Marek, ŠIMŠÍK, Dušan Návrh konštrukcie rehabilitaèného zariadenia na princípe exoskeletonu s vyuitím umelıch svalov In: Strojárstvo : Automatizácia a riadenie v teórii a praxi Roè. 6., è. 5 (2012), s. 22/1-22/3 ISSN: 1335-2938
+
+AFD - Publikované príspevky na domácich vedeckıch konferenciách(29)
+
+AFD001 [86787] Deliaca linka s priemyselnım robotom / Anton Palko, Kamil idek  - 2002.In: ROBTEP 2002 : Automatizácia - robotika v teórii a praxi :  zborník vedeckıch prác : 22. - 24.5.2002, Košice, Slovensko. - Košice :  TU, 2002 S. 301-304. - ISBN 80-7099-826-1 
+[PALKO, Anton (50%) - IDEK, Kamil (50%)]
+Ohlasy:
+
+2004  [3] BURKOVIÈ, J. Projektování a provoz RTP 112 p ISBN: 80-248-0709-2
+
+AFD002 [95836] Automatizovaná deliaca linka / Anton Palko, Kamil idek  - 2002.In: Nové smery vo vırobnom ininierstve 2002 : zborník referátov 6. medzinárodnej konferencie : Prešov, 13.-14. jún 2002, Slovenská republika. - Prešov : FVT TU, 2002 S. 355-356. - ISBN 80-70099-828-8 
+[PALKO, Anton (50%) - IDEK, Kamil (50%)]
+
+AFD003 [44859] Usability of GPS systems for mobile robots navigation / Kamil idek, Tomáš Saloky, Ivana Polanecká  - 2006.In: SAMI 2006. - Budapest : Budapest Polytechnic, 2006 P. 266-277. - ISBN 9637154442 
+[IDEK, Kamil (33%) - SALOKY, Tomáš (33%) - POLANECKÁ, Ivana (33%)]
+Ohlasy:
+
+2006  [3] PITE¼, Ján - BALARA, Milan: Model aktuátora s pneumatickımi umelımi svalmi. In: Process Control 2006. Proceedings of the 7th international scientific - technical conference. Pardubice: Univerzita Pardubice, 2003. p. r140b-1-r140b-4. ISBN 80-7194-860-8. 
+
+2006  [3] BALARA, Milan - PITE¼, Ján: Koncepcia riadenia aktuátora s pneumatickımi umelımi svalmi. In: Principia Cybernetica 2006. Sborník pøíspìvkù konference kateder automatizace a kybernetiky vysokıch škol Èeské a Slovenské republiky, 6.8. záøí 2006. Zlín: Univerzita Tomáše Bati, 2006. p. P1-1-P1-4. ISBN 80-7138-460-5. 
+
+2010  [1] JURIŠICA, L. et al. Statistical approach to GPS positioning of mobile robot In: Control Engineering and Applied Informatics Vol. 12, no. 2 (2010), p. 44-51 ISSN: 1454-8658
+
+AFD004 [69959] Dia¾kové riadenie mobilnıch robotov cez webové rozhranie zaloené na technológiách RIA / Kamil idek, Vladislav Maxim  - 2008.In: Automatizácia a riadenie v teórii a praxi ARTEP 2008. - Košice : TU, 2008 S. 49-1-49-8. - ISBN 9788080739812 
+[IDEK, Kamil (50%) - MAXIM, Vladislav (50%)]
+
+AFD005 [79166] Global navigation and collision protection system of mobile robots for interoperation transport / T. upa ... [et al.]  - 2008.In: ICCC 2008. - Budapest : IEEE, 2008 S. 199-201. - ISBN 9781424428755 
+[UPA, Tomáš (25%) - IDEK, Kamil (25%) - LÍŠKA, Ondrej (25%) - IVÈÁK, Jozef (25%)]
+
+AFD006 [82878] Sledovanie trajektórie mobilnıch zariadení s vyuitím Google Maps / Kamil idek, Vladislav Maxim, Tomáš upa  - 2009.In: Automatizácia a riadenie v teórii a praxi ARTEP 2009. - Košice : TU, 2009 S. 76-1-76-4. - ISBN 9788055301464 
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - UPA, Tomáš (33%)]
+
+AFD007 [82884] Protikolízny detekènı systém pre mobilné zariadenia / Tomáš upa, Kamil idek, Ondrej Líška  - 2009.In: Automatizácia a riadenie v teórii a praxi ARTEP 2009. - Košice : TU, 2009 S. 79-1-79-6. - ISBN 9788055301464 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+AFD008 [82887] Solárne panely a ich vyuitie v mobilnıch aplikáciách / Tomáš upa, Kamil idek, Ondrej Líška  - 2009.In: Automatizácia a riadenie v teórii a praxi ARTEP 2009. - Košice : TU, 2009 S. 80-1-80-4. - ISBN 9788055301464 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+Ohlasy:
+
+2011  [4] SVETLÍK, Jozef Optimalizácia ekonomiky prevádzky solárneho panelu pomocou rotaèného pohybového modulu In: Nekonferenènı recenzovanı zborník v rámci riešenia projektov „VEGA, KEGA, APVV, ENER SUPPLY“ S. 200-208 ISBN: 978-80-225-3207-5
+
+AFD009 [82888] Univerzálny riadiaci systém pre mobilné zariadenia / Kamil idek, Vladislav Maxim, Tomáš upa  - 2009.In: Automatizácia a riadenie v teórii a praxi ARTEP 2009. - Košice : TU, 2009 S. 77-1-77-5. - ISBN 9788055301464 
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - UPA, Tomáš (33%)]
+
+AFD010 [82889] Dokovacia stanica mobilnıch servisnıch robotov / Tomáš upa, Kamil idek, Ondrej Líška  - 2009.In: Automatizácia a riadenie v teórii a praxi ARTEP 2009. - Košice : TU, 2009 S. 81-1-81-3. - ISBN 9788055301464 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+AFD011 [82891] Detekcia pohyblivıch prekáok pomocou kamerového systému / Kamil idek, Vladislav Maxim, Tomáš Saloky  - 2009.In: Automatizácia a riadenie v teórii a praxi ARTEP 2009. - Košice : TU, 2009 S. 78-1-78-4. - ISBN 9788055301464 
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - SALOKY, Tomáš (33%)]
+
+AFD012 [93594] Vyuitie lítium-polymérovıch akumulátorov v napájacich èastiach mobilnıch zariadení / Tomáš upa, Kamil idek, Ondrej Líška  - 2009. - 1 elektronickı optickı disk (CD-ROM).In: Principia Cybernetica '09 : konferencia katedier a ústavov automatizácie a kybernetiky strojníckych a technologickıch fakúlt univerzít Èeskej republiky a Slovenskej republiky : zborník príspevkov : 2.-4.9. 2009, Her¾any, SR. - Košice : TU, 2009 S. 23-1-23-3. - ISBN 978-80-553-0249-2 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+AFD013 [93807] Návrh riadiacich systémov na vzdialené monitorovanie riadiacich procesov / Kamil idek, Vladislav Maxim, Tomáš upa  - 2009. - 1 elektronickı optickı disk (CD-ROM).In: Principia Cybernetica '09 : konferencia katedier a ústavov automatizácie a kybernetiky strojníckych a technologickıch fakúlt univerzít Èeskej republiky a Slovenskej republiky : zborník príspevkov : 2.-4.9. 2009, Her¾any, SR. - Košice : TU, 2009 S. 21-1-21-5. - ISBN 978-80-553-0249-2  Spôsob prístupu: http://web.tuke.sk/sjf-kbiaam/zbornik/21.pdf.
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - UPA, Tomáš (33%)]
+
+AFD014 [94138] Optimálne uhly riadenia spínaného reluktanèného motora (SRM) / Vladislav Maxim, Kamil idek  - 2009. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi ARTEP 2009 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : zborník príspevkov : 4.3. - 6.3.2009, Stará Lesná, SR. - Košice : TU, 2009 S. 84-1-84-7. - ISBN 978-80-553-0146-4 
+[MAXIM, Vladislav (50%) - IDEK, Kamil (50%)]
+
+AFD015 [108402] Modernizácia vırobnej techniky malıch vırob - elektromodernizácia separaènej odstredivky / Vladimír Rudy, Kamil idek, Vladislav Maxim  - 2010. - 1 elektronickı optickı disk (CD-ROM).In: Trendy a inovatívne prístupy v podnikovıch procesoch : 13. medzinárodná vedecká konferencia : zborník príspevkov : 8.12.2010, Košice. - Košice : SjF TU, 2010 S. 1-6. - ISBN 978-80-553-0570-7 
+[RUDY, Vladimír (33%) - IDEK, Kamil (33%) - MAXIM, Vladislav (34%)]
+
+AFD016 [93431] Cross platform real-time voice transfer / K. idek, J. Šeminskı  - 2010. - 1 elektronickı optickı disk (CD-ROM).In: SAMI 2010 : 8th International Symposium on Applied Machine Intelligence and Informatics : January 28-30, 2010, Her¾any, Slovakia. - [s.l.] : IEEE, 2010 S. 231-232. - ISBN 978-1-4244-6423-4 
+[IDEK, Kamil (50%) - ŠEMINSKİ, Jaroslav (50%)]
+
+AFD017 [94240] Mapovanie prostredia mobilnımi zariadeniami pomocou senzorickıch subsystémov / Tomáš upa, Kamil idek, Ondrej Líška  - 2010. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi ARTEP 2010 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : zborník príspevkov : 24.2.-26.2. 2010, Stará Lesná, SR. - Košice : TU, 2010 S. 42-1-42-7. - ISBN 978-80-553-0347-5 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+AFD018 [94375] Bezdrôtovı prenos hlasu v reálnom èase medzi dvoma platformami / Kamil idek, Vladislav Maxim  - 2010. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi ARTEP 2010 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : zborník príspevkov : 24.2.-26.2. 2010, Stará Lesná, SR. - Košice : TU, 2010 S. 41-1-41-5. - ISBN 978-80-553-0347-5 
+[IDEK, Kamil (50%) - MAXIM, Vladislav (50%)]
+
+AFD019 [94376] Vyuitie MEMS snímaèov pre meranie nebezpeèného náklonu mobilnıch zariadení / Kamil idek, Tomáš upa, Miloslav Ferianèik  - 2010. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi ARTEP 2010 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : zborník príspevkov : 24.2.-26.2. 2010, Stará Lesná, SR. - Košice : TU, 2010 S. 54-1-54-6. - ISBN 978-80-553-0347-5 
+[IDEK, Kamil (34%) - UPA, Tomáš (33%) - FERIANÈIK, Miloslav (33%)]
+
+AFD020 [94396] Meranie teplotnej stability optoelektronického snímaèa / Vladislav Maxim, Kamil idek, Sylvia Rovòáková  - 2010. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi ARTEP 2010 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : zborník príspevkov : 24.2.-26.2. 2010, Stará Lesná, SR. - Košice : TU, 2010 S. 53-1-53-5. - ISBN 978-80-553-0347-5 
+[MAXIM, Vladislav (34%) - IDEK, Kamil (33%) - ROVÒÁKOVÁ, Sylvia (33%)]
+
+AFD021 [108232] Návrh riadiaceho systému pre rehabilitaèné zariadenia hornıch konèatín / Tomáš upa, Kamil idek, Ondrej Líška  - 2011. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi ARTEP 2011 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 16. - 18.2.2011, Stará Lesná. - Košice : TU, 2011 S. 57-1-57-5. - ISBN 978-80-553-0606-3 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]
+
+AFD022 [108241] Pouitie pokroèilıch technológií v rehabilitaènom procese / Marián Veseliny, Ondrej Líška, Kamil idek  - 2011. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi ARTEP 2011 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 16.-18.2.2011, Stará Lesná. - Košice : TU, 2011 S. 54-1-54-8. - ISBN 978-80-553-0606-3 
+[VESELINY, Marián (34%) - LÍŠKA, Ondrej (33%) - IDEK, Kamil (33%)]
+Ohlasy:
+
+2012  [4] JOBBÁGY, Boris - FODOR, Marek - ŠIMŠÍK, Dušan Návrh konštrukcie rehabilitaèného zariadenia s vyuitím umelıch svalov In: Automatizácia a riadenie v teórii a praxi 2012 :  ARTEP 2012 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22.-24. február, Stará Lesná, SR S. 32-1-32-8 ISBN: 978-80-553-0835-7 
+
+2012  [4] JOBBÁGY, Boris, FODOR, Marek, ŠIMŠÍK, Dušan Návrh konštrukcie rehabilitaèného zariadenia na princípe exoskeletonu s vyuitím umelıch svalov In: Strojárstvo : Automatizácia a riadenie v teórii a praxi. Roè. 6., è. 5 (2012): s. 22/1-22/3. ISSN: 1335-2938
+
+AFD023 [113279] Outdoor mobile robot for area monitoring and transport / Kamil idek, Vladislav Maxim, Jaroslav Šeminskı  - 2011. - 1 elektronickı optickı disk (CD-ROM).In: MMaMS 2011 : Modelling of Mechanical and Mechatronical Systems : proceedings of the 4th international conference : Her¾any, Slovakia, 20. - 22. 9. 2011. - Košice : TU, 2011 S. 565-575. - ISBN 978-80-553-0731-2 
+[IDEK, Kamil (34%) - MAXIM, Vladislav (33%) - ŠEMINSKİ, Jaroslav (33%)]
+Ohlasy:
+
+2012  [4] VOJTKO, Imrich - KOÈIŠKO, Marek - ADAMÈÍK, Pavel Vplyv frekvenèného menièa na loisko In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22.-24. február 2012, Stará Lesná, SR S. 67-1-67-11 ISBN: 978-80-553-0835-7 
+
+2012  [4] VOJTKO, Imrich, KOÈIŠKO, Marek, ADAMÈÍK, Pavel Vplyv frekvenèného menièa na loisko In: Strojárstvo : Automatizácia a riadenie v teórii a praxi Roè. 16., è. 5 (2012), s. 15/1-15/4 ISSN: 1335-2938
+
+AFD024 [115493] Security mobile robot for outdoor area monitoring with alarm system based on soundmotion recognition / Kamil idek, Vladislav Maxim  - 2011. - 1 elektronickı optickı disk (CD-ROM).In: EDPE 2011 : 17th International Conference on Electrical Drives and Power Electronics : proceedings : 5th Joint Slovak-Croatian Conference : 28. - 30. September 2011, Stará Lesná, High Tatras, Slovakia. - Košice : TU, 2011 S. 296-301. - ISBN 978-80-553-0734-3 
+[IDEK, Kamil (50%) - MAXIM, Vladislav (50%)]
+
+AFD025 [119561] Vyuitie kåzavého váeného priemeru na filtrovanie meranıch údajov / Jana Boríková ... [et al.]  - 2012. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22. - 24. február 2012, Stará Lesná, SR. - Košice : TU, 2012 S. 10/2-10/6. - ISBN 978-80-553-0835-7 
+[BORÍKOVÁ, Jana (40%) - MIÁK, Jozef (40%) - TÓTHOVÁ, Mária (10%) - IDEK, Kamil (10%)]
+
+AFD026 [119581] Real-time bezpeènostnı systém v automatizovanıch rehabilitaènıch zariadeniach / Eva Rigasová, Kamil idek  - 2012. - 1 elektronickı optickı disk (CD-ROM).In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 22. - 24. február 2012, Stará Lesná, SR. - Košice : TU, 2012 S. 54-1-54-7. - ISBN 978-80-553-0835-7 
+[RIGASOVÁ, Eva (10%) - IDEK, Kamil (90%)]
+
+AFD027 [119666] Path planning algorithm based on search algorithm, edge detector and GPS dataSatellite image for outdoor mobile systems / Kamil idek, Eva Rigasová  - 2012. - 1 elektronickı optickı disk (CD-ROM).In: SAMI 2012 : 10th IEEE Jubilee International Symposium on Applied Machine Intelligence and Informatics : proceedings : Her¾any, Slovakia, January 26-28. - Budapest : Óbuda University, 2012 S. 349-354. - ISBN 978-1-4577-0195-5 
+[IDEK, Kamil (95%) - RIGASOVÁ, Eva (5%)]
+Ohlasy:
+
+2012  [3] JÁNOŠ, Rudolf et al. Design of hybrid mobile service robot - method study In: International Scientific Herald P. 100-104 ISSN: 2218-5348
+
+AFD028 [122048] Hybridized GA-optimization of neural dynamic model for nonlinear process / Alexander Hošovskı, Kamil idek, Cyril Oswald  - 2012. - 1 elektronickı optickı disk (CD-ROM).In: ICCC 2012 : proceedings of the 13th International Carpathian Control Conference : Podbanské, Slovak Republic, May 28-31, 2012. - Košice : TU, 2012 S. 227-232. - ISBN 978-1-4577-1866-3 
+[HOŠOVSKİ, Alexander (60%) - IDEK, Kamil (30%) - OSWALD, Cyril (10%)]
+
+AFD029 [122065] Real-time safety circuit based on combined MEMS sensor data for rehabilitation device / Kamil idek, Alexander Hošovskı, Vladislav Maxim  - 2012. - 1 elektronickı optickı disk (CD-ROM).In: ICCC 2012 : proceedings of the 13th International Carpathian Control Conference : Podbanské, Slovak Republic, May 28-31, 2012. - Košice : TU, 2012 S. 786-790. - ISBN 978-1-4577-1866-3 
+[IDEK, Kamil (50%) - HOŠOVSKİ, Alexander (30%) - MAXIM, Vladislav (20%)]
+
+BCI - Skriptá a uèebné texty(1)
+
+BCI001 [53094] Snímaèe a senzorové systémy -  návody na cvièenia / Ján Pite¾, Ivana Polanecká, Kamil idek  - 1. vyd - Košice : TU, - 2005. - 106 s. - ISBN 80-8073-451-8.
+[PITE¼, Ján (80%) - POLANECKÁ, Ivana (10%) - IDEK, Kamil (10%)]
+Ohlasy:
+
+2007  [4] DOVICA, M., KOVÁÈ, J., PETRÍK, M.: Digitalizácia dvojsúradnicového mikroskopu a vyuitie 2D merania vo virtuálnom laboratóriu. In: ARTEP 2007. Košice, TU 2007. S. 20-1-20-6. ISBN 978-80-8073-758-0. 
+
+2007  [4] DOVICA, M., KOVÁÈ, J., PETRÍK, M.: Digitalizácia dvojsúradnicového mikroskopu a vyuitie 2D merania vo virtuálnom laboratóriu. In: Acta Mechanica Slovaca. Roè. 11, è. 1-A/2007 (2007), s. 153-158. ISSN 1335-2393. 
+
+2007  [4] LOEBL, T., KUREKOVÁ, E., HALAJ, M.: Positional deviation of linear axis and deviation of systems with two axes. In: Mechanical engineering 2007: Proceedings of abstracts. Bratislava: STU, 2007. ISBN 978-80-227-2768-6. 
+
+2007  [3] HALAJ, M., KUREKOVÁ, E., PALENÈÁR, R., et al.: The Positional Deviation in Two Axes. In: Transactions of the VŠB  Technical University of Ostrava. Ostrava: VŠB TU, vol. 53, no. 2, (2007), p. 7-14. ISSN 1210-0471. 
+
+2008  [4] BERNÁT, M., KLIÈ, M.: Vybrané problémy z elektrotechniky 6: Snímaèe, kontaktná logika. Prešov: Prešovská univerzita, 2008. 81 s. ISBN 978-80-8068-852-3. 
+
+2010  [4] FODOR, Marek - LÍŠKA, Ondrej: Simulácia vıšky hladiny v spojitıch nádobách. In: Automatizácia a riadenie v teórii a praxi : workshop odborníkov z univerzít, vysokıch škôl a praxe v oblasti automatizácie a riadenia : 24.-26. februára 2010, Stará Lesná, SR. Košice : TU, 2010. S.  61-1-61-6. [CD-ROM]. ISBN 978-80-553-0347-5. 
+
+2010  [4] LUKÁÈ, M, LÍŠKA O.: Optoelektronické bezpeènostné prvky, ich vyuitie na zabezpeèenie vstupu do robotickej bunky. In: Strojárstvo/Strojírenství : Strojárstvo Extra : Automatizácia a riadenie v teórii a praxi. È. 5 (2010), s. 34/1-34/2. ISSN 1335-2938. 
+
+2010  [4] SENDERSKÁ, Katarína, ZAJAC, Ján Aplikácia snímaèov v ruènej montái In: Transfer inovácií È. 18, (2010), s. 281-291 ISSN: 1337-7094
+
+BDF - Odborné práce v domácich nekarentovanıch èasopisoch(1)
+
+BDF001 [84752] Systém pre detekciu objektov mobilnıch zariadení / Tomáš upa, Kamil idek, Ondrej Líška  - 2009.In: Strojárstvo. Roè. 13, è. 5 (2009), s. 60/1-60/3. - ISSN 1335-2938 
+[UPA, Tomáš (34%) - IDEK, Kamil (33%) - LÍŠKA, Ondrej (33%)]

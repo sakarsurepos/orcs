@@ -1,0 +1,40 @@
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.exe.config
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\body.xml
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\data.xml
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.exe.manifest
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.application
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.exe
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.pdb
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\ResolveAssemblyReference.cache
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\WindowsFormsApplication1.Form1.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\WindowsFormsApplication1.Form2.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\WindowsFormsApplication1.Form3.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\WindowsFormsApplication1.Form4.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT.Properties.Resources.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\GenerateResource.read.1.tlog
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\GenerateResource.write.1.tlog
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT Publikacna cinnost.exe.manifest
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT Publikacna cinnost.application
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT Publikacna cinnost.exe
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT Publikacna cinnost.pdb
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.exe.config
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT Publikacna cinnost.exe
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT Publikacna cinnost.pdb
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\body.xml
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\data.xml
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.exe.manifest
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.application
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.exe
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\FVT Publikacna cinnost.pdb
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\ResolveAssemblyReference.cache
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\WindowsFormsApplication1.Form1.resources
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\WindowsFormsApplication1.Form2.resources
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\WindowsFormsApplication1.Form3.resources
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\WindowsFormsApplication1.Form4.resources
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT.Properties.Resources.resources
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\GenerateResource.read.1.tlog
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\GenerateResource.write.1.tlog
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT Publikacna cinnost.exe.manifest
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\FVT Publikacna cinnost.application
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\obj\Debug\GenerateResource.write.1218.tlog
+M:\_____________________FLASH_NEW\_GPS_ROBOT\__________________________________________pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\body_old.xml

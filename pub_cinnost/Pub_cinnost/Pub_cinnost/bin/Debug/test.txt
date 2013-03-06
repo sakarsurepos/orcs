@@ -1,0 +1,87 @@
+Poèet nájdených záznamov : 12
+
+#	arch. è.	Kat. EPC	Rok vyd.	Záznam	Cit.
+
+1.
+	123510 	ADC 	2012 	
+
+Model-based Evolution of a Fast Hybrid Fuzzy Adaptive Controller for a Pneumatic Muscle Actuator / Alexander Hošovský ... [et al.] - 2012. In: International Journal of Advanced Robotic Systems. Vol. 9 (56) (2012), p. 1-11. - ISSN 1729-8806 Spôsob prístupu: http://www.intechopen.com/journals/international_journal_of_advanced_robotic_systems/model-based-evo...
+[HOŠOVSKÝ, Alexander (40%) - NOVÁK-MARCINÈIN, Jozef (20%) - PITE¼, Ján (20%) - BORŽÍKOVÁ, Jana (10%) - ŽIDEK, Kamil (10%)]
+	0
+
+2.
+	123523 	ADE 	2012 	
+
+Remote control of industrial robot / Kamil Židek, Jozef Svetlík, Vladislav Maxim - 2012. In: International Scientific Herald. Vol. 3, no. 2 (2012), p. 267-271. - ISSN 2218-5348
+[ŽIDEK, Kamil (40%) - SVETLÍK, Jozef (30%) - MAXIM, Vladislav (30%)]
+	0
+
+3.
+	123524 	ADE 	2012 	
+
+Environment mapping and localization od mobile robotics / Kamil Židek, Jozef Svetlík, Eva Rigasová - 2012. In: International Scientific Herald. P. 272-280. - ISSN 2218-5348
+[ŽIDEK, Kamil (50%) - SVETLÍK, Jozef (40%) - RIGASOVÁ, Eva (10%)]
+	0
+
+4.
+	123611 	ADE 	2012 	
+
+Advanced rehabilitation device based on artificial muscle actuators with neural network implementation / Kamil Židek, Ondrej Líška, Vladislav Maxim - 2012. In: Journal of automation, mobile robotics & inteligent systems. Vol. 6, no. 3 (2012), p. 30-32. - ISSN 1897-8649
+[ŽIDEK, Kamil (60%) - LÍŠKA, Ondrej (10%) - MAXIM, Vladislav (30%)]
+	0
+
+5.
+	122076 	ADF 	2012 	
+
+Návrh bezpeènostného systému pre rehabilitaèné zariadenia / Eva Rigasová, Kamil Židek - 2012. In: Strojárstvo extra. È. 5 (2012), s. 21/1-21/3. - ISSN 1335-2938
+[RIGASOVÁ, Eva (5%) - ŽIDEK, Kamil (95%)]
+	0
+
+6.
+	122152 	ADF 	2012 	
+
+Filtrovanie meraných údajov na báze funkcie príslušnosti / Jana Boržíková ... [et al.] - 2012. - 1 elektronický optický disk (CD-ROM). In: Strojárstvo extra. È. 5 (2012), s. 09/1-09/3. - ISSN 1335-2938
+[BORŽÍKOVÁ, Jana (40%) - MIŽÁK, Jozef (10%) - TÓTHOVÁ, Mária (10%) - ŽIDEK, Kamil (40%)]
+	0
+
+7.
+	119397 	AFC 	2012 	
+
+Rehabilitation device construction based on artificial muscle actuators / Kamil Židek ... [et al.] - 2012. - 1 elektronický optický disk (CD-ROM). In: BioMed 2012 : Biomedical Engineering : proceedings of the Ninth IASTED International Conference : February 15-17, 2012, Innsbruck, Austria. - Innsbruck : IEEE, 2012 P. 855-861. - ISBN 978-0-88986-909-7
+[ŽIDEK, Kamil (30%) - PITE¼, Ján (30%) - GALAJDOVÁ, Alena (30%) - FODOR, Marek (10%)]
+	2
+
+8.
+	119561 	AFD 	2012 	
+
+Využitie kåzavého váženého priemeru na filtrovanie meraných údajov / Jana Boržíková ... [et al.] - 2012. - 1 elektronický optický disk (CD-ROM). In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z univerzít, vysokých škôl a praxe v oblasti automatizácie a riadenia : 22. - 24. február 2012, Stará Lesná, SR. - Košice : TU, 2012 S. 10/2-10/6. - ISBN 978-80-553-0835-7
+[BORŽÍKOVÁ, Jana (40%) - MIŽÁK, Jozef (40%) - TÓTHOVÁ, Mária (10%) - ŽIDEK, Kamil (10%)]
+	0
+
+9.
+	119581 	AFD 	2012 	
+
+Real-time bezpeènostný systém v automatizovaných rehabilitaèných zariadeniach / Eva Rigasová, Kamil Židek - 2012. - 1 elektronický optický disk (CD-ROM). In: Automatizácia a riadenie v teórii a praxi 2012 : ARTEP 2012 : workshop odborníkov z univerzít, vysokých škôl a praxe v oblasti automatizácie a riadenia : 22. - 24. február 2012, Stará Lesná, SR. - Košice : TU, 2012 S. 54-1-54-7. - ISBN 978-80-553-0835-7
+[RIGASOVÁ, Eva (10%) - ŽIDEK, Kamil (90%)]
+	0
+
+10.
+	119666 	AFD 	2012 	
+
+Path planning algorithm based on search algorithm, edge detector and GPS dataSatellite image for outdoor mobile systems / Kamil Židek, Eva Rigasová - 2012. - 1 elektronický optický disk (CD-ROM). In: SAMI 2012 : 10th IEEE Jubilee International Symposium on Applied Machine Intelligence and Informatics : proceedings : Her¾any, Slovakia, January 26-28. - Budapest : Óbuda University, 2012 S. 349-354. - ISBN 978-1-4577-0195-5
+[ŽIDEK, Kamil (95%) - RIGASOVÁ, Eva (5%)]
+	1
+
+11.
+	122048 	AFD 	2012 	
+
+Hybridized GA-optimization of neural dynamic model for nonlinear process / Alexander Hošovský, Kamil Židek, Cyril Oswald - 2012. - 1 elektronický optický disk (CD-ROM). In: ICCC 2012 : proceedings of the 13th International Carpathian Control Conference : Podbanské, Slovak Republic, May 28-31, 2012. - Košice : TU, 2012 S. 227-232. - ISBN 978-1-4577-1866-3
+[HOŠOVSKÝ, Alexander (60%) - ŽIDEK, Kamil (30%) - OSWALD, Cyril (10%)]
+	0
+
+12.
+	122065 	AFD 	2012 	
+
+Real-time safety circuit based on combined MEMS sensor data for rehabilitation device / Kamil Židek, Alexander Hošovský, Vladislav Maxim - 2012. - 1 elektronický optický disk (CD-ROM). In: ICCC 2012 : proceedings of the 13th International Carpathian Control Conference : Podbanské, Slovak Republic, May 28-31, 2012. - Košice : TU, 2012 S. 786-790. - ISBN 978-1-4577-1866-3
+[ŽIDEK, Kamil (50%) - HOŠOVSKÝ, Alexander (30%) - MAXIM, Vladislav (20%)]
+	0

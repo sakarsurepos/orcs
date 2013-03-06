@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<users>
+  <user kat="AAA" sk="5" en="10" vyz="50"/>
+  <user kat="AAB" sk="5" en="7" vyz="7"/>
+  <user kat="ABA" sk="3" en="3" vyz="15"/>
+  <user kat="ABB" sk="2" en="2" vyz="2"/>
+  <user kat="ABC" sk="3" en="3" vyz="25"/>
+  <user kat="ABD" sk="2" en="2" vyz="2"/>
+  <user kat="ACA" sk="3" en="6" vyz="6"/>
+  <user kat="ACB" sk="3" en="3" vyz="3"/>
+  <user kat="ACC" sk="3" en="3" vyz="3"/>
+  <user kat="ACD" sk="2" en="2" vyz="2"/>
+  <user kat="ADC" sk="50" en="50" vyz="50"/>
+  <user kat="ADD" sk="25" en="25" vyz="25"/>
+  <user kat="ADE" sk="2" en="5" vyz="15"/>
+  <user kat="ADF" sk="2" en="3" vyz="3"/>
+  <user kat="AEC" sk="5" en="5" vyz="20"/>
+  <user kat="AED" sk="2" en="2" vyz="1"/>
+  <user kat="AEE" sk="1" en="2" vyz="2"/>
+  <user kat="AEF" sk="1" en="1" vyz="1"/>
+  <user kat="AEG" sk="4" en="4" vyz="4"/>
+  <user kat="AEH" sk="2" en="2" vyz="2"/>
+  <user kat="AFA" sk="7" en="7" vyz="7"/>
+  <user kat="AFB" sk="3" en="3" vyz="3"/>
+  <user kat="AFC" sk="2" en="5" vyz="5"/>
+  <user kat="AFD" sk="2" en="2" vyz="1"/>
+  <user kat="AGJ" sk="25" en="25" vyz="25"/>
+  <user kat="AHG" sk="1" en="1" vyz="1"/>
+  <user kat="AHI" sk="0.5" en="0.5" vyz="0.5"/>
+  <user kat="BAA" sk="2" en="4" vyz="4"/>
+  <user kat="BAB" sk="2" en="2" vyz="2"/>
+  <user kat="BBA" sk="2" en="2" vyz="2"/>
+  <user kat="BBB" sk="1" en="1" vyz="1"/>
+  <user kat="BCI" sk="2" en="2" vyz="2"/>
+  <user kat="BCK" sk="1" en="1" vyz="1"/>
+  <user kat="BDC" sk="30" en="30" vyz="30"/>
+  <user kat="BDD" sk="15" en="15" vyz="15"/>
+  <user kat="BDE" sk="2" en="2" vyz="2"/>
+  <user kat="BDF" sk="1" en="1" vyz="1"/>
+  <user kat="BEC" sk="1" en="1" vyz="1"/>
+  <user kat="BED" sk="1" en="1" vyz="1"/>
+  <user kat="BEE" sk="1" en="1" vyz="1"/>
+  <user kat="BGG" sk="2" en="2" vyz="2"/>
+  <user kat="BHG" sk="0.5" en="0.5" vyz="0.5"/>
+  <user kat="EAJ" sk="2" en="2" vyz="2"/>
+</users>

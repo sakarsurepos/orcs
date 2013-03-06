@@ -1,0 +1,10 @@
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\Pub_cinnost.exe
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Debug\Pub_cinnost.pdb
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Debug\GenerateResource.read.1.tlog
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Debug\GenerateResource.write.1.tlog
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Debug\Pub_cinnost.exe
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Debug\Pub_cinnost.pdb
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Debug\WindowsFormsApplication1.Form2.resources

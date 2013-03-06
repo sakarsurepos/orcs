@@ -1,0 +1,21 @@
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\ResolveAssemblyReference.cache
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\WindowsFormsApplication1.Form1.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\WindowsFormsApplication1.Form2.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\GenerateResource.read.1.tlog
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\GenerateResource.write.1.tlog
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Release\data.xml
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Release\body.xml
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\WindowsFormsApplication1.Form3.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\WindowsFormsApplication1.Form4.resources
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\ResGen.read.1.tlog
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\ResGen.write.1.tlog
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Release\FVT Publikacna cinnost.exe.config
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Release\FVT Publikacna cinnost.exe.manifest
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Release\FVT Publikacna cinnost.application
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Release\FVT Publikacna cinnost.exe
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\bin\Release\FVT Publikacna cinnost.pdb
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\FVT Publikacna cinnost.exe.manifest
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\FVT Publikacna cinnost.application
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\FVT Publikacna cinnost.exe
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\FVT Publikacna cinnost.pdb
+M:\pubcinnost\Pub_cinnost\Pub_cinnost\obj\x86\Release\FVT.Properties.Resources.resources
