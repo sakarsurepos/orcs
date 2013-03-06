@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Robot.AboutForm" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cAAAIhAAACAAABAAAACAQAACAAAJAAAAAGAAAABAAAA=</HashCode>
+      <FileName>AboutForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.battery" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJAAAABAAAAAEEAAAAgAAAAAIAGABFAEAAQAQAAE=</HashCode>
+      <FileName>battery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Camera" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEQAgQABCAQAAwAwBAAAEgAAAAAAAAIoQBAAIAAAQI=</HashCode>
+      <FileName>Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.CameraWindow" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASCAAAAQgAAAGAAEAIgAAACAAAAAAAAAAgCEAAAAAA=</HashCode>
+      <FileName>CameraWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.CaptureDeviceForm" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAACACQAAhAAAACAAACCAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CaptureDeviceForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Commands" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQAAAABKEAAAAAAAQAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Communication" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hQABAAACAEAAAAAAAAIAAAAAgAACEAAAFAUAgoKiAAQ=</HashCode>
+      <FileName>Communication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Devices" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAIAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Devices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Robot1" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>//////v///f93////+//////+/////////f/+///5/8=</HashCode>
+      <FileName>Form_Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Form1" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAITAAAAAEACDAAABCAAAAAQCoEAQAAAAQJAA=</HashCode>
+      <FileName>frmMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.GPS" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAIAAAAAAAAAAAIAAAAAAAAAAAAAAASAAAAAAgAo=</HashCode>
+      <FileName>GPS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.HelpForm" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/wAAAAAAACAAABAAAACAAAACAAAAAAAAAAAAAQBAADA=</HashCode>
+      <FileName>HelpForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.JoystickDevice" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAwAAAAAAAAAEAgAAAKAAAAAFBECAAAAAAAAgAAA=</HashCode>
+      <FileName>JoystickDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Kinematics" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAwAAgABAAAAoAAgAEAAAgAGQwEIMICAgUAAGADAgAA=</HashCode>
+      <FileName>kinematics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Messages" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAgAAAEAAQhACAAgAAAAAAAAAgAAACAAIAgACI=</HashCode>
+      <FileName>Messages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Mjpegsmallcam" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCAAAAAAIQAAAAAEACDAAABAAAAAAQCIAAQAAAAAIAA=</HashCode>
+      <FileName>Mjpegsmallcam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.MjpegStream" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAAAAAAAgAAAAYBAAAAAABBAAAIAAAACAAAEAAAAAA=</HashCode>
+      <FileName>MjpegStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.MotionDetector1" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAABAAAgAADAQQQgIAAEAAAgAQAACAAAAAACIAQIA=</HashCode>
+      <FileName>MotionDetector1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Robot.MotionDetector2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAABAQAgAADAQQQgIAAGgAAgAQAAEAAAAAACIAQIA=</HashCode>
+      <FileName>MotionDetector2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Robot.MotionDetector3" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAADAQAgAADAQQQiIQAGAAAgAYAAEAAAAAACIAQIA=</HashCode>
+      <FileName>MotionDetector3.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Robot.MotionDetector3Optimized" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAwgAABAQQQAIAAAAAAAAQAAEAAAAAACIAAIA=</HashCode>
+      <FileName>MotionDetector3Optimized.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Robot.MotionDetector4" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAADAQAAAADAQQQgIQAAAAAAAQACEAAAAAACIAAIA=</HashCode>
+      <FileName>MotionDetector4.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Robot.Movement" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAEQCA=</HashCode>
+      <FileName>Movement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Options" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAABAAAAAAAIAAAACgACIAAAMCQAACAAAAQA=</HashCode>
+      <FileName>Options.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Program" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.UsrCtrlAxis2D" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCARQgAWABAAAAAAiAAgACEAAAAAggQEgAAAAAAAA=</HashCode>
+      <FileName>UsrCtrlAxis2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Utility" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAFAAIAAQABAAAAAEAgBAAAAAAAAAAEgEACABAEFAA=</HashCode>
+      <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.wfrm_Receive" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAAAAABgARAAAEAAAYAQKAgoAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>wfrm_Receive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.wfrm_Receive2" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAwABAIAAAAAAAAIAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>wfrm_Receive2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.wfrm_RTP_Debug" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQDJICCQQABABAAAgQAAEAAAEQhBgQEAAAAAA=</HashCode>
+      <FileName>wfrm_RTP_Debug.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.wfrm_SendAudio" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAaBgEQAAAAAgAAAAAAAIAEAAAAABAAAAAAAAA=</HashCode>
+      <FileName>wfrm_SendAudio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.wfrm_SendMic" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACaDgEQAQAgABQAAAAAAIAAAAAAADAAIABgAAA=</HashCode>
+      <FileName>wfrm_SendMic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.wfrm_SendMic2" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACQDwAAAAAAABAAAAABAAAAAAAACCAAAABgAIA=</HashCode>
+      <FileName>wfrm_SendMic2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.Native.MMSYSERR" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAACABABAIwAAAACABkAAEAAAoBAAACAgABAAICIA=</HashCode>
+      <FileName>Media\Wave\native\MMSYSERR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.Native.WavConstants" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEBAACABACCAACCAAAAAAAANCAAAAAAAAAAE=</HashCode>
+      <FileName>Media\Wave\native\WavConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.Native.WAVEFORMATEX" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAACAkAABAAAAAAAAAAIAAAQAAAAAQAAA=</HashCode>
+      <FileName>Media\Wave\native\WAVEFORMATEX.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.Native.WavFormat" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Media\Wave\native\WavFormat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.Native.WavMethods" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAABAAIAAAIMAgAQAABihAAIAAAAGAAIYgIg=</HashCode>
+      <FileName>Media\Wave\native\WavMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.WaveIn" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABEAASAAAAQACKYAEHAARAgACgAAIAgAACAAUoA=</HashCode>
+      <FileName>Media\Wave\WaveIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.WaveOut" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAggGAASAEAAQAACAAEhAAQAwACgCAgACAAKAAUAA=</HashCode>
+      <FileName>Media\Wave\WaveOut.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.WavInDevice" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAEAAAAAAAACAAAAQAAAAAAAAAAAEAAAAAEAA=</HashCode>
+      <FileName>Media\Wave\WavInDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumiSoft.Media.Wave.WavOutDevice" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAEAAAAAAAACAAAAQAAAAAAAAAAAEAAAAAEAA=</HashCode>
+      <FileName>Media\Wave\WavOutDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Properties.Resources" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAUOlEOIAAAEgIQEsAAhExAIA1YKAAWmHIIQAEMgAKQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAACAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSource.ByteArrayUtils" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAA=</HashCode>
+      <FileName>VideoSource\ByteArrayUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSource.CameraEventArgs" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VideoSource\CameraEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSource.CaptureDevice" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABAQCACAAAAsAABAAAAQAAAAAAAAKIQAQAIAIAAI=</HashCode>
+      <FileName>VideoSource\CaptureDevice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VideoSource.JPEGStream" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEgADAQAACAAEAsIABCAAAQAAQAAAAEKIUAQAoBIEAI=</HashCode>
+      <FileName>VideoSource\JPEGStream.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VideoSource.MJPEGStream" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEgATAQAACAAEAsIABCAAAQAAAAAAAAKIQAQAoAIEAI=</HashCode>
+      <FileName>VideoSource\MJPEGStream.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VideoSource.VideoFileSource" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABAQAACAAAAsAABAAAAQAAAAAAAAKIQAQAIAIAAI=</HashCode>
+      <FileName>VideoSource\VideoFileSource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VideoSource.VideoStream" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABAQCACAAAAsAABAAAAQAAAAAAAAKIQAQAIAIAAI=</HashCode>
+      <FileName>VideoSource\VideoStream.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Struct Name="LumiSoft.Media.Wave.Native.WAVEHDR" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAhIAAAECAAAAAAAAAAgAQAAAAAAAAA=</HashCode>
+      <FileName>Media\Wave\native\WAVEHDR.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LumiSoft.Media.Wave.Native.WAVEOUTCAPS" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgAAAAAAAAAAAAAAgAgAAQAAAAAAAACAAgAAAAEA=</HashCode>
+      <FileName>Media\Wave\native\WAVEOUTCAPS.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Robot.IMotionDetector" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAQAAAAAAAAAAIAAIA=</HashCode>
+      <FileName>IMotionDetector.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="VideoSource.IVideoSource" Collapsed="true">
+    <Position X="2.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAAAgAABAAAAAAAAAAAAAKIQAQAIAIAAA=</HashCode>
+      <FileName>VideoSource\IVideoSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Robot.DirectXTimer" Collapsed="true">
+    <Position X="0.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAABAAAEAAAAAAAAAAAAAAAIEAAAACAAAA=</HashCode>
+      <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Robot.DelegateAddString" Collapsed="true">
+    <Position X="4" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form_Main.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Robot.DelegateAddString1" Collapsed="true">
+    <Position X="5.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form_Main.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumiSoft.Media.Wave.Native.waveOutProc" Collapsed="true">
+    <Position X="9.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAgAAAAECAQAAAAAAAA=</HashCode>
+      <FileName>Media\Wave\native\WavMethods.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumiSoft.Media.Wave.Native.waveInProc" Collapsed="true">
+    <Position X="7.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAgAAAAECAQAAAAAAAA=</HashCode>
+      <FileName>Media\Wave\native\WavMethods.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumiSoft.Media.Wave.BufferFullHandler" Collapsed="true">
+    <Position X="0.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Media\Wave\WaveIn.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="VideoSource.CameraEventHandler" Collapsed="true">
+    <Position X="2.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VideoSource\CameraEvents.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

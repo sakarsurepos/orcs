@@ -1,0 +1,218 @@
+25. 9. 2012 19:01:11 [ThreadException] Application identity is not set.
+   at System.Deployment.Application.ApplicationDeployment.get_CurrentDeployment()
+   at Robot.Robot1.toolStripMenuItem7_Click(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 4504
+   at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.MenuStrip.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+25. 9. 2012 19:01:13 [ThreadException] Application identity is not set.
+   at System.Deployment.Application.ApplicationDeployment.get_CurrentDeployment()
+   at Robot.Robot1.toolStripMenuItem7_Click(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 4504
+   at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.MenuStrip.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+25. 9. 2012 19:01:13 [ThreadException] Application identity is not set.
+   at System.Deployment.Application.ApplicationDeployment.get_CurrentDeployment()
+   at Robot.Robot1.toolStripMenuItem7_Click(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 4504
+   at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.MenuStrip.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+25. 9. 2012 19:01:14 [ThreadException] Application identity is not set.
+   at System.Deployment.Application.ApplicationDeployment.get_CurrentDeployment()
+   at Robot.Robot1.toolStripMenuItem7_Click(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 4504
+   at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.MenuStrip.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+25. 9. 2012 19:01:15 [ThreadException] Application identity is not set.
+   at System.Deployment.Application.ApplicationDeployment.get_CurrentDeployment()
+   at Robot.Robot1.toolStripMenuItem7_Click(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 4504
+   at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.MenuStrip.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+25. 9. 2012 19:01:16 [ThreadException] Application identity is not set.
+   at System.Deployment.Application.ApplicationDeployment.get_CurrentDeployment()
+   at Robot.Robot1.toolStripMenuItem7_Click(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 4504
+   at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.MenuStrip.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:30 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:30 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:30 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:30 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:30 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:30 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:30 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:30 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:31 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:31 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+6. 11. 2012 11:21:31 [ThreadException] The operation is not allowed on non-connected sockets.
+   at System.Net.Sockets.TcpClient.GetStream()
+   at Robot.Communication.Send_Data_By_Client(String data_for_send_by_Client) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Communication.cs:line 91
+   at Robot.Robot1.SendData(String dataForSend) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 1361
+   at Robot.Robot1.direction_Scroll(Object sender, EventArgs e) in M:\_____________________FLASH_NEW\_GPS_ROBOT\Robot_new_G4SVN3\Form_Main.cs:line 545
+   at System.Windows.Forms.TrackBar.OnValueChanged(EventArgs e)
+   at System.Windows.Forms.TrackBar.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
