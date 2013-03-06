@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<users>
+  <user kat="AAA" sk="20" en="20" vyz="50"/>
+  <user kat="AAB" sk="10" en="10" vyz="10"/>
+  <user kat="ABA" sk="15" en="15" vyz="15"/>
+  <user kat="ABC" sk="10" en="10" vyz="10"/>
+  <user kat="ABD" sk="5" en="5" vyz="5"/>
+  <user kat="ACA" sk="8" en="8" vyz="8"/>
+  <user kat="ACB" sk="4" en="4" vyz="4"/>
+  <user kat="ACC" sk="3" en="3" vyz="3"/>
+  <user kat="ACD" sk="2" en="2" vyz="2"/>
+  <user kat="BAA" sk="4" en="4" vyz="4"/>
+  <user kat="BAB" sk="2" en="2" vyz="2"/>
+  <user kat="BCI" sk="2" en="2" vyz="2"/>
+  <user kat="ADC" sk="30" en="30" vyz="30"/>
+  <user kat="ADD" sk="30" en="30" vyz="30"/>
+  <user kat="AEG" sk="10" en="10" vyz="10"/>
+  <user kat="AFG" sk="10" en="10" vyz="10"/>
+  <user kat="BDC" sk="15" en="15" vyz="15"/>
+  <user kat="BDD" sk="15" en="15" vyz="15"/> 
+  <user kat="AGJ" sk="20" en="20" vyz="20"/> 
+  <user kat="ADE" sk="2" en="2" vyz="2"/>
+  <user kat="ADF" sk="1" en="1" vyz="1"/>
+  <user kat="AEC" sk="1" en="1" vyz="4"/>
+  <user kat="AED" sk="0.5" en="0.5" vyz="3"/>
+  <user kat="AFB" sk="0.5" en="0.5" vyz="0.5"/>
+  <user kat="AFC" sk="1" en="1" vyz="4"/>
+  <user kat="AFD" sk="0.5" en="0.5" vyz="3"/>
+  <user kat="ADM" sk="6" en="6" vyz="6"/>
+  <user kat="ADN" sk="5" en="5" vyz="5"/>
+  <user kat="AFA" sk="4" en="4" vyz="4"/>   
+</users>
